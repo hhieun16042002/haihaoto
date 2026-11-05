@@ -7241,3 +7241,475 @@ html, body {
     gap: 14px;
     flex-wrap: wrap;
 }
+
+
+/* ==========================================================================
+   DUCTRI226 MEGA MENU SYSTEM (EXACT REPLICATION FOR HẢI HÀ AUTO)
+   ========================================================================== */
+.has-mega {
+    position: static !important;
+}
+
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(12px);
+    width: min(1240px, calc(100vw - 32px));
+    padding-top: 8px;
+    display: none;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 220ms cubic-bezier(0.16, 1, 0.3, 1),
+                transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+                visibility 220ms;
+}
+
+/* Invisible hover bridge from nav item down to mega menu */
+.mega-menu::before {
+    content: "";
+    position: absolute;
+    top: -14px;
+    left: 0;
+    right: 0;
+    height: 14px;
+    background: transparent;
+}
+
+.has-mega:hover .mega-menu,
+.has-mega.is-open .mega-menu,
+.has-mega:focus-within .mega-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.mega-inner {
+    background: #14171d;
+    border: 1px solid rgba(255, 87, 34, 0.32);
+    border-radius: 12px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 4px 20px rgba(0, 0, 0, 0.4);
+    padding: 16px;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 10px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.mega-group {
+    position: relative;
+}
+
+.mega-cat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 12px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 0.8rem;
+    font-weight: 700;
+    font-family: 'Chakra Petch', -apple-system, sans-serif;
+    letter-spacing: 0.02em;
+    transition: all 180ms ease;
+    cursor: pointer;
+    line-height: 1.25;
+}
+
+.mega-cat span {
+    color: #ffffff !important;
+    min-width: 0;
+    word-break: break-word;
+    transition: color 180ms ease;
+}
+
+.mega-parent {
+    border-color: rgba(255, 87, 34, 0.28);
+}
+
+.mega-arrow {
+    font-size: 1.1rem;
+    color: #ff5722;
+    transition: transform 180ms ease, color 180ms ease;
+    margin-left: 4px;
+    line-height: 1;
+}
+
+.mega-cat:hover,
+.mega-group:hover .mega-cat,
+.mega-group.is-open .mega-cat {
+    background: rgba(255, 87, 34, 0.16);
+    border-color: rgba(255, 87, 34, 0.55);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(255, 87, 34, 0.18);
+}
+
+.mega-cat:hover span,
+.mega-group:hover .mega-cat span {
+    color: #ff7a45 !important;
+}
+
+.mega-group:hover .mega-arrow {
+    transform: translateX(3px);
+    color: #ff7a45;
+}
+
+/* Submenu dropdown directly underneath category card */
+.mega-sub {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 6px);
+    width: max-content;
+    min-width: 250px;
+    max-width: 320px;
+    background: #191c23;
+    border: 1px solid rgba(255, 87, 34, 0.32);
+    border-radius: 8px;
+    padding: 6px;
+    display: none;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65), 0 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 50;
+    animation: megaSubIn 160ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Right alignment for rightmost columns so they stay inside the screen */
+.mega-group:nth-child(4) .mega-sub,
+.mega-group:nth-child(5) .mega-sub,
+.mega-group:nth-child(6) .mega-sub {
+    left: auto;
+    right: 0;
+}
+
+/* Safe bridge across the gap so cursor doesn't drop hover */
+.mega-sub::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: transparent;
+}
+
+.mega-group:hover .mega-sub,
+.mega-group.is-open .mega-sub,
+.mega-group:focus-within .mega-sub {
+    display: grid;
+    gap: 3px;
+}
+
+@keyframes megaSubIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mega-subcat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.03);
+    color: #cbd5e1 !important;
+    text-decoration: none !important;
+    font-size: 0.78rem;
+    font-weight: 500;
+    transition: all 160ms ease;
+}
+
+.mega-subcat span {
+    color: #cbd5e1;
+    transition: color 160ms ease;
+    line-height: 1.3;
+}
+
+.mega-subcat small {
+    color: #94a3b8;
+    font-size: 0.68rem;
+    background: rgba(255, 255, 255, 0.07);
+    padding: 2px 6px;
+    border-radius: 4px;
+    white-space: nowrap;
+    transition: all 160ms ease;
+}
+
+.mega-subcat:hover {
+    background: rgba(255, 87, 34, 0.22);
+    color: #ffffff !important;
+    transform: translateX(3px);
+}
+
+.mega-subcat:hover span {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+.mega-subcat:hover small {
+    background: #ff5722;
+    color: #ffffff;
+}
+
+.mega-footer-bar {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: #94a3b8;
+}
+
+.mega-footer-link {
+    color: #ff7a45 !important;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: all 180ms ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.mega-footer-link:hover {
+    color: #ff9466 !important;
+    text-decoration: underline !important;
+    transform: translateX(3px);
+}
+
+/* Tablet & Compact Desktop Responsive */
+@media (max-width: 1200px) {
+    .mega-inner {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+    }
+    .mega-group:nth-child(1) .mega-sub,
+    .mega-group:nth-child(2) .mega-sub,
+    .mega-group:nth-child(4) .mega-sub,
+    .mega-group:nth-child(5) .mega-sub {
+        left: 0;
+        right: auto;
+    }
+    .mega-group:nth-child(3) .mega-sub,
+    .mega-group:nth-child(6) .mega-sub {
+        left: auto;
+        right: 0;
+    }
+}
+
+/* Mobile Drawer Responsive */
+@media (max-width: 991px) {
+    .mega-menu {
+        position: static !important;
+        transform: none !important;
+        width: 100% !important;
+        padding: 8px 0 !important;
+        display: none;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+    .custom-nav-menu > .nav-item.open-submenu > .mega-menu {
+        display: block !important;
+    }
+    .mega-inner {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+        padding: 8px !important;
+        background: #11141a !important;
+    }
+    .mega-sub {
+        position: static !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        margin-top: 6px !important;
+        display: none !important;
+        box-shadow: none !important;
+    }
+    .mega-group.is-open .mega-sub {
+        display: grid !important;
+    }
+    .mega-footer-bar {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+}
+
+
+/* ==========================================================================
+   BIDIRECTIONAL SCROLL REVEAL ENTRANCE ANIMATIONS (SMOOTH DOWN & UP)
+   ========================================================================== */
+
+/* 1. Section 1B: Tuning Shop / Hero Core Features */
+.shiftup-tuning-shop-section .tuning-shop-head {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.shiftup-tuning-shop-section.is-inview .tuning-shop-head {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.shiftup-tuning-shop-section .tuning-feature-card {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.shiftup-tuning-shop-section.is-inview .tuning-feature-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+.shiftup-tuning-shop-section.is-inview .tuning-feature-card:nth-child(1) { transition-delay: 0.05s; }
+.shiftup-tuning-shop-section.is-inview .tuning-feature-card:nth-child(2) { transition-delay: 0.11s; }
+.shiftup-tuning-shop-section.is-inview .tuning-feature-card:nth-child(3) { transition-delay: 0.17s; }
+.shiftup-tuning-shop-section.is-inview .tuning-feature-card:nth-child(4) { transition-delay: 0.23s; }
+.shiftup-tuning-shop-section.is-inview .tuning-feature-card:nth-child(5) { transition-delay: 0.29s; }
+.shiftup-tuning-shop-section.is-inview .tuning-feature-card:nth-child(6) { transition-delay: 0.35s; }
+
+.shiftup-tuning-shop-section .hero-contact-actions-bar {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.shiftup-tuning-shop-section.is-inview .hero-contact-actions-bar {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.38s;
+}
+
+/* 2. Section 2: Câu chuyện 31 năm & Milestone Stats */
+.shiftup-technicians-section .tech-section-head {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.shiftup-technicians-section.is-inview .tech-section-head {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.shiftup-technicians-section .founder-story-card {
+    opacity: 0;
+    transform: translateY(35px) scale(0.985);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.shiftup-technicians-section.is-inview .founder-story-card {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition-delay: 0.08s;
+}
+
+.shiftup-technicians-section .milestone-stat-card {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.shiftup-technicians-section.is-inview .milestone-stat-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(1) { transition-delay: 0.15s; }
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(2) { transition-delay: 0.23s; }
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(3) { transition-delay: 0.31s; }
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(4) { transition-delay: 0.39s; }
+
+/* 3. Section 6: Panoramic Banners */
+.shiftup-panoramic-banners .pano-banner-col {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.shiftup-panoramic-banners.is-inview .pano-banner-col {
+    opacity: 1;
+    transform: translateY(0);
+}
+.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(1) { transition-delay: 0.06s; }
+.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(2) { transition-delay: 0.16s; }
+.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(3) { transition-delay: 0.26s; }
+.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(4) { transition-delay: 0.36s; }
+
+/* 4. Section 7: Diagnostics Technology Stations */
+.shiftup-flanked-diagnostics .flanked-head {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.shiftup-flanked-diagnostics.is-inview .flanked-head {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.shiftup-flanked-diagnostics .diag-station-card {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.shiftup-flanked-diagnostics.is-inview .diag-station-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+.shiftup-flanked-diagnostics.is-inview .diag-station-card:nth-child(1) { transition-delay: 0.08s; }
+.shiftup-flanked-diagnostics.is-inview .diag-station-card:nth-child(2) { transition-delay: 0.18s; }
+.shiftup-flanked-diagnostics.is-inview .diag-station-card:nth-child(3) { transition-delay: 0.28s; }
+.shiftup-flanked-diagnostics.is-inview .diag-station-card:nth-child(4) { transition-delay: 0.38s; }
+
+/* 5. Section 9: Workshops & Fast Booking Section */
+.shiftup-workshops-booking-section .section-head-dark {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.shiftup-workshops-booking-section.is-inview .section-head-dark {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.shiftup-workshops-booking-section .ws-primary-card {
+    opacity: 0;
+    transform: translateX(-35px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.shiftup-workshops-booking-section.is-inview .ws-primary-card {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.08s;
+}
+
+.shiftup-workshops-booking-section .ws-map-embed-wrapper {
+    opacity: 0;
+    transform: translateX(-35px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.shiftup-workshops-booking-section.is-inview .ws-map-embed-wrapper {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.20s;
+}
+
+.shiftup-workshops-booking-section .fast-booking-card {
+    opacity: 0;
+    transform: translateX(35px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.shiftup-workshops-booking-section.is-inview .fast-booking-card {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.14s;
+}

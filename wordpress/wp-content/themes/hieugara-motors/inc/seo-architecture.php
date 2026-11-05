@@ -285,3 +285,4 @@ class HieuGara_SEO_Architecture {
 }
 
 HieuGara_SEO_Architecture::init();
+

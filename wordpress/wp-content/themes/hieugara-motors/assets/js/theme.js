@@ -282,8 +282,8 @@
             '.shiftup-tuning-shop-section, .shiftup-technicians-section, ' +
             '.shiftup-all-about-cars-section, .shiftup-panoramic-banners, ' +
             '.shiftup-flanked-diagnostics, .shiftup-checkup-offers-section, ' +
-            '.shiftup-brand-marquee-section, .shiftup-workshops-section, ' +
-            '.shiftup-main-footer'
+            '.shiftup-brand-marquee-section, .shiftup-workshops-booking-section, ' +
+            '.shiftup-workshops-section, .shiftup-main-footer'
         );
 
         if ('IntersectionObserver' in window && animatedSections.length) {
@@ -522,6 +522,21 @@
         });
 
         // ==========================================================================
+        
+        // ==========================================================================
+        // Ductri226 Mega Menu: Mobile Accordion Handler
+        // ==========================================================================
+        $(document).on('click', '.mega-cat', function(e) {
+            if ($(window).width() <= 992) {
+                var $group = $(this).closest('.mega-group');
+                var $sub = $group.find('.mega-sub');
+                if ($sub.length) {
+                    e.preventDefault();
+                    $group.toggleClass('is-open');
+                }
+            }
+        });
+
         // SHIFTUP MEGA MENU: Mobile Accordion Toggle
         // ==========================================================================
         $(document).on('click', '.mega-group-toggle', function(e) {

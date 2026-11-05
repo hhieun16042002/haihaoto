@@ -148,88 +148,204 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                 </ul>
             </li>
 
-            <!-- 3. DỊCH VỤ ⌵ -->
-            <li class="nav-item has-dropdown has-mega-menu <?php echo is_post_type_archive('garage_service') || is_singular('garage_service') || is_page('bang-gia') ? 'active' : ''; ?>">
-                <a href="<?php echo esc_url(home_url('/bang-gia/')); ?>" class="nav-link" title="DỊCH VỤ">
+            <!-- 3. DỊCH VỤ ⌲ (DUCTRI226 MEGA MENU STYLE) -->
+            <li class="nav-item has-dropdown has-mega <?php echo is_post_type_archive('garage_service') || is_singular('garage_service') || is_tax('service_category') || is_page('bang-gia') ? 'active' : ''; ?>">
+                <a href="<?php echo esc_url(home_url('/dich-vu/')); ?>" class="nav-link" title="HỆ THỐNG DỊCH VỤ Ô TÔ HẢI HÀ" aria-haspopup="true" aria-expanded="false">
                     <span><?php _e('DỊCH VỤ', 'hieugara-motors'); ?></span>
-                    <i class="fa-solid fa-chevron-down nav-caret"></i>
+                    <i class="fa-solid fa-chevron-down nav-caret" aria-hidden="true"></i>
                 </a>
-                <div class="nav-mega-dropdown">
-                    <div class="mega-dropdown-grid mega-grid-6col">
-                        <!-- Col 1: 01. BẢO DƯỠNG Ô TÔ -->
-                        <div class="mega-dropdown-col">
-                            <div class="mega-title"><span class="mega-dot"></span> 01. BẢO DƯỠNG Ô TÔ</div>
-                            <ul class="mega-list">
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/bao-duong-dinh-ky/')); ?>"><strong>Bảo dưỡng định kỳ</strong> (5k - 40k km)</a></li>
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/thay-dau-va-loc-o-to/')); ?>">Thay dầu và lọc ô tô</a></li>
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/kiem-tra-va-bao-duong-tong-quat/')); ?>">Kiểm tra &amp; bảo dưỡng tổng quát</a></li>
-                            </ul>
+                <div class="mega-menu" role="region" aria-label="Menu dịch vụ ô tô">
+                    <div class="mega-inner">
+
+                        <!-- Group 1: 01. BẢO DƯỠNG Ô TÔ -->
+                        <div class="mega-group">
+                            <a class="mega-cat mega-parent" href="<?php echo esc_url(home_url('/dich-vu/bao-duong-o-to/')); ?>">
+                                <span>01. BẢO DƯỠNG Ô TÔ</span>
+                                <span class="mega-arrow">›</span>
+                            </a>
+                            <div class="mega-sub">
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/bao-duong-dinh-ky/')); ?>">
+                                    <span>Bảo dưỡng định kỳ theo số km</span>
+                                    <small>5k-40k km</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/thay-dau-va-loc-o-to/')); ?>">
+                                    <span>Thay dầu &amp; lọc dầu chính hãng</span>
+                                    <small>OEM</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/kiem-tra-va-bao-duong-tong-quat/')); ?>">
+                                    <span>Kiểm tra &amp; bảo dưỡng tổng quát</span>
+                                    <small>45 mục</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/sua-chua-he-thong-phanh/')); ?>">
+                                    <span>Kiểm tra &amp; bảo dưỡng phanh</span>
+                                    <small>Hunter</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/sua-chua-dieu-hoa-o-to/')); ?>">
+                                    <span>Bảo dưỡng điều hòa ô tô</span>
+                                    <small>Nội soi</small>
+                                </a>
+                            </div>
                         </div>
 
-                        <!-- Col 2: 02. SỬA CHỮA Ô TÔ -->
-                        <div class="mega-dropdown-col">
-                            <div class="mega-title"><span class="mega-dot"></span> 02. SỬA CHỮA Ô TÔ</div>
-                            <ul class="mega-list">
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/sua-chua-dong-co/')); ?>"><strong>Sửa chữa động cơ</strong></a></li>
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/sua-chua-hop-so-va-truyen-dong/')); ?>">Sửa chữa hộp số &amp; truyền động</a></li>
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/sua-chua-he-thong-phanh/')); ?>">Sửa chữa hệ thống phanh</a></li>
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/sua-chua-gam-va-he-thong-treo/')); ?>">Sửa chữa gầm &amp; hệ thống treo</a></li>
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/sua-chua-he-thong-lai/')); ?>">Sửa chữa hệ thống lái</a></li>
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/sua-chua-he-thong-xa-va-khi-thai/')); ?>">Sửa chữa hệ thống xả &amp; khí thải</a></li>
-                            </ul>
+                        <!-- Group 2: 02. SỬA CHỮA Ô TÔ -->
+                        <div class="mega-group">
+                            <a class="mega-cat mega-parent" href="<?php echo esc_url(home_url('/dich-vu/sua-chua-o-to/')); ?>">
+                                <span>02. SỬA CHỮA Ô TÔ</span>
+                                <span class="mega-arrow">›</span>
+                            </a>
+                            <div class="mega-sub">
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/sua-chua-dong-co/')); ?>">
+                                    <span>Sửa chữa &amp; đại tu động cơ</span>
+                                    <small>Chuyên sâu</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/sua-chua-hop-so-va-truyen-dong/')); ?>">
+                                    <span>Sửa chữa hộp số tự động &amp; sàn</span>
+                                    <small>AT/MT</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/sua-chua-he-thong-phanh/')); ?>">
+                                    <span>Sửa chữa hệ thống phanh ABS</span>
+                                    <small>An toàn</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/sua-chua-gam-va-he-thong-treo/')); ?>">
+                                    <span>Sửa chữa gầm &amp; hệ thống treo</span>
+                                    <small>Giảm xóc</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/sua-chua-he-thong-lai/')); ?>">
+                                    <span>Sửa chữa hệ thống lái &amp; thước lái</span>
+                                    <small>3D</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/sua-chua-he-thong-xa-va-khi-thai/')); ?>">
+                                    <span>Sửa chữa hệ thống xả &amp; khí thải</span>
+                                    <small>Catalytic</small>
+                                </a>
+                            </div>
                         </div>
 
-                        <!-- Col 3: 03. ĐIỆN VÀ ĐIỀU HÒA Ô TÔ -->
-                        <div class="mega-dropdown-col">
-                            <div class="mega-title"><span class="mega-dot"></span> 03. ĐIỆN &amp; ĐIỀU HÒA Ô TÔ</div>
-                            <ul class="mega-list">
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/sua-chua-dien-o-to/')); ?>"><strong>Sửa chữa điện ô tô</strong></a></li>
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/sua-chua-dien-tu-va-ecu/')); ?>">Sửa chữa điện tử &amp; ECU</a></li>
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/sua-chua-dieu-hoa-o-to/')); ?>"><strong>Sửa chữa điều hòa ô tô</strong></a></li>
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/he-thong-lam-mat-o-to/')); ?>">Hệ thống làm mát ô tô</a></li>
-                            </ul>
+                        <!-- Group 3: 03. ĐIỆN Ô TÔ & ĐIỀU HÒA -->
+                        <div class="mega-group">
+                            <a class="mega-cat mega-parent" href="<?php echo esc_url(home_url('/dich-vu/dien-o-to-dieu-hoa/')); ?>">
+                                <span>03. ĐIỆN &amp; ĐIỀU HÒA</span>
+                                <span class="mega-arrow">›</span>
+                            </a>
+                            <div class="mega-sub">
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/sua-chua-dien-o-to/')); ?>">
+                                    <span>Sửa chữa điện ô tô &amp; thân xe</span>
+                                    <small>Scan</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/sua-chua-dien-tu-va-ecu/')); ?>">
+                                    <span>Kiểm tra, coding &amp; sửa ECU</span>
+                                    <small>Châu Âu</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/sua-chua-dieu-hoa-o-to/')); ?>">
+                                    <span>Sửa chữa &amp; nạp gas điều hòa</span>
+                                    <small>R134a</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/he-thong-lam-mat-o-to/')); ?>">
+                                    <span>Chẩn đoán lỗi máy &amp; làm mát</span>
+                                    <small>Két nước</small>
+                                </a>
+                            </div>
                         </div>
 
-                        <!-- Col 4: 04. ĐỒNG SƠN VÀ NGOẠI THẤT Ô TÔ -->
-                        <div class="mega-dropdown-col">
-                            <div class="mega-title"><span class="mega-dot"></span> 04. ĐỒNG SƠN &amp; NGOẠI THẤT</div>
-                            <ul class="mega-list">
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/son-o-to/')); ?>"><strong>Sơn ô tô (Sấy hấp vi tính)</strong></a></li>
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/go-han-va-sua-chua-than-vo/')); ?>">Gò hàn &amp; sửa chữa thân vỏ</a></li>
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/sua-chua-kinh-va-den-o-to/')); ?>">Sửa chữa kính &amp; đèn ô tô</a></li>
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/sua-chua-o-to-sau-va-cham/')); ?>">Sửa chữa ô tô sau va chạm</a></li>
-                            </ul>
+                        <!-- Group 4: 04. ĐỒNG SƠN & NGOẠI THẤT -->
+                        <div class="mega-group">
+                            <a class="mega-cat mega-parent" href="<?php echo esc_url(home_url('/dich-vu/dong-son-o-to/')); ?>">
+                                <span>04. ĐỒNG SƠN &amp; THÂN VỎ</span>
+                                <span class="mega-arrow">›</span>
+                            </a>
+                            <div class="mega-sub">
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/son-o-to/')); ?>">
+                                    <span>Sơn ô tô phòng sấy vi tính</span>
+                                    <small>Châu Âu</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/go-han-va-sua-chua-than-vo/')); ?>">
+                                    <span>Gò hàn &amp; sửa chữa thân vỏ</span>
+                                    <small>Nắn sườn</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/sua-chua-kinh-va-den-o-to/')); ?>">
+                                    <span>Sửa chữa kính &amp; phục hồi đèn</span>
+                                    <small>Đánh bóng</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/sua-chua-o-to-sau-va-cham/')); ?>">
+                                    <span>Phục hồi xe sau tai nạn va chạm</span>
+                                    <small>Bảo hiểm</small>
+                                </a>
+                            </div>
                         </div>
 
-                        <!-- Col 5: 05. CHĂM SÓC VÀ NÂNG CẤP Ô TÔ -->
-                        <div class="mega-dropdown-col">
-                            <div class="mega-title"><span class="mega-dot"></span> 05. CHĂM SÓC &amp; NÂNG CẤP</div>
-                            <ul class="mega-list">
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/cham-soc-va-lam-dep-xe-detailing/')); ?>"><strong>Chăm sóc &amp; làm đẹp xe (Detailing)</strong></a></li>
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/ve-sinh-noi-that-o-to/')); ?>">Vệ sinh nội thất ô tô</a></li>
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/danh-bong-va-phu-ceramic/')); ?>">Đánh bóng &amp; phủ Ceramic 9H</a></li>
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/phu-kien-va-nang-cap-o-to/')); ?>">Phụ kiện &amp; nâng cấp ô tô</a></li>
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/nang-cap-anh-sang-va-am-thanh/')); ?>">Nâng cấp ánh sáng &amp; âm thanh</a></li>
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/phim-cach-nhiet-va-ppf/')); ?>">Phim cách nhiệt &amp; dán PPF</a></li>
-                            </ul>
+                        <!-- Group 5: 05. CHĂM SÓC & NÂNG CẤP -->
+                        <div class="mega-group">
+                            <a class="mega-cat mega-parent" href="<?php echo esc_url(home_url('/dich-vu/cham-soc-nang-cap-o-to/')); ?>">
+                                <span>05. CHĂM SÓC &amp; NÂNG CẤP</span>
+                                <span class="mega-arrow">›</span>
+                            </a>
+                            <div class="mega-sub">
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/cham-soc-va-lam-dep-xe-detailing/')); ?>">
+                                    <span>Detailing chăm sóc làm đẹp xe</span>
+                                    <small>Auto Spa</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/ve-sinh-noi-that-o-to/')); ?>">
+                                    <span>Vệ sinh nội thất &amp; khoang máy</span>
+                                    <small>Hơi nóng</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/danh-bong-va-phu-ceramic/')); ?>">
+                                    <span>Đánh bóng &amp; phủ Ceramic 9H</span>
+                                    <small>Bảo vệ</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/phu-kien-va-nang-cap-o-to/')); ?>">
+                                    <span>Phụ kiện &amp; nâng cấp option</span>
+                                    <small>Tiện ích</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/nang-cap-anh-sang-va-am-thanh/')); ?>">
+                                    <span>Nâng cấp ánh sáng Bi-LED &amp; loa</span>
+                                    <small>Laser</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/phim-cach-nhiet-va-ppf/')); ?>">
+                                    <span>Dán phim cách nhiệt 3M &amp; PPF</span>
+                                    <small>Chống nóng</small>
+                                </a>
+                            </div>
                         </div>
 
-                        <!-- Col 6: 06. DỊCH VỤ HỖ TRỢ Ô TÔ -->
-                        <div class="mega-dropdown-col">
-                            <div class="mega-title"><span class="mega-dot"></span> 06. DỊCH VỤ HỖ TRỢ Ô TÔ</div>
-                            <ul class="mega-list">
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/cuu-ho-giao-thong-o-to/')); ?>"><strong>Cứu hộ giao thông ô tô 24/7</strong></a></li>
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/kiem-tra-xe-cu-truoc-khi-mua/')); ?>">Kiểm tra xe cũ trước khi mua</a></li>
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/dich-vu-dang-kiem-o-to/')); ?>">Dịch vụ đăng kiểm ô tô</a></li>
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/sua-chua-o-to-luu-dong/')); ?>">Sửa chữa ô tô lưu động</a></li>
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/bao-duong-xe-doanh-nghiep/')); ?>">Bảo dưỡng xe doanh nghiệp</a></li>
-                                <li><a href="<?php echo esc_url(home_url('/dich-vu/bao-hiem-va-bao-hanh-o-to/')); ?>">Bảo hiểm &amp; bảo hành ô tô</a></li>
-                            </ul>
+                        <!-- Group 6: 06. DỊCH VỤ HỖ TRỢ & CỨU HỘ -->
+                        <div class="mega-group">
+                            <a class="mega-cat mega-parent" href="<?php echo esc_url(home_url('/dich-vu/cuu-ho-ho-tro-o-to/')); ?>">
+                                <span>06. HỖ TRỢ &amp; CỨU HỘ</span>
+                                <span class="mega-arrow">›</span>
+                            </a>
+                            <div class="mega-sub">
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/cuu-ho-giao-thong-o-to/')); ?>">
+                                    <span>Cứu hộ giao thông ô tô 24/7</span>
+                                    <small>Sàn trượt</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/kiem-tra-xe-cu-truoc-khi-mua/')); ?>">
+                                    <span>Kiểm tra xe cũ trước khi mua</span>
+                                    <small>Check test</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/dich-vu-dang-kiem-o-to/')); ?>">
+                                    <span>Dịch vụ hỗ trợ đăng kiểm ô tô</span>
+                                    <small>Trọn gói</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/sua-chua-o-to-luu-dong/')); ?>">
+                                    <span>Sửa chữa &amp; kích bình lưu động</span>
+                                    <small>Tận nơi</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/bao-duong-xe-doanh-nghiep/')); ?>">
+                                    <span>Bảo dưỡng xe doanh nghiệp</span>
+                                    <small>Hợp đồng</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/bao-hiem-va-bao-hanh-o-to/')); ?>">
+                                    <span>Bảo hiểm &amp; bảo hành điện tử</span>
+                                    <small>24 tháng</small>
+                                </a>
+                            </div>
                         </div>
+
                     </div>
-                    <div class="mega-dropdown-footer">
+                    
+                    <div class="mega-footer-bar">
                         <span>Hải Hà Ô Tô &bull; 31 năm giữ trọn chữ Tâm với nghề (1995 - <?php echo date('Y'); ?>) &bull; 80 nhân sự tận tâm</span>
-                        <a href="<?php echo esc_url(home_url('/bang-gia/')); ?>" class="mega-cta-link">Xem bảng giá toàn bộ 6 nhóm dịch vụ niêm yết &rarr;</a>
+                        <a href="<?php echo esc_url(home_url('/bang-gia/')); ?>" class="mega-footer-link">Xem bảng giá toàn bộ 6 nhóm dịch vụ niêm yết &rarr;</a>
                     </div>
                 </div>
             </li>
