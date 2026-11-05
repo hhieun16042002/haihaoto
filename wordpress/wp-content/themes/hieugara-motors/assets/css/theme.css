@@ -6598,3 +6598,646 @@ html, body {
         justify-content: center;
     }
 }
+
+/* =========================================================================
+   PHASE 3: MEGA MENU 3-COL, MOBILE ACCORDION, SEO HUBS & FOUNDER STORY
+   ========================================================================= */
+
+/* --- Brand Marquee Strict Dimensions --- */
+.brand-capsule-card {
+    width: 168px !important;
+    height: 96px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #ffffff !important;
+    border-radius: 9999px !important;
+    border: 1px solid rgba(226, 232, 240, 0.9) !important;
+    overflow: hidden !important;
+    position: relative !important;
+    flex-shrink: 0 !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
+}
+
+.brand-capsule-card .brand-logo-img {
+    position: relative !important;
+    z-index: 10 !important;
+    max-height: 40px !important;
+    max-width: 110px !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+/* --- Section 2: Founder Story Card (Text-Only Editorial) --- */
+.founder-story-card {
+    background: #0f1218;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 4px solid #ff4d24;
+    padding: 42px 46px;
+    margin-bottom: 45px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.founder-story-header {
+    margin-bottom: 24px;
+}
+
+.story-tag {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #ff4d24;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.story-founder-name {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.95rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 6px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.story-since {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.88rem;
+    color: #94a3b8;
+}
+
+.founder-quote-block {
+    position: relative;
+    padding-left: 36px;
+    margin-bottom: 28px;
+}
+
+.quote-mark {
+    position: absolute;
+    left: -10px;
+    top: -24px;
+    font-family: Georgia, serif;
+    font-size: 4.5rem;
+    color: rgba(255, 77, 36, 0.25);
+    line-height: 1;
+    pointer-events: none;
+}
+
+.founder-quote-text {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #e2e8f0;
+    margin: 0;
+}
+
+.highlight-quote {
+    color: #ff6d48;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.founder-signature-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sig-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.sig-author {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.sig-role {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.82rem;
+    color: #94a3b8;
+}
+
+.sig-pledge {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.88rem;
+    color: #cbd5e1;
+}
+
+/* --- Section 4B: Technical Diagnostic Stations Grid --- */
+.diagnostics-tech-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    margin-top: 40px;
+}
+
+.diag-station-card {
+    background: #0f1218;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 34px 30px;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.diag-station-card:hover {
+    transform: translateY(-4px);
+    border-color: #ff4d24;
+}
+
+.diag-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.station-code {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #ff4d24;
+    letter-spacing: 1px;
+}
+
+.station-badge {
+    background: rgba(255, 255, 255, 0.06);
+    color: #cbd5e1;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.station-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 12px 0;
+    letter-spacing: 0.5px;
+}
+
+.station-desc {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #94a3b8;
+    margin: 0 0 20px 0;
+    flex-grow: 1;
+}
+
+.station-spec {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 14px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.08);
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.station-spec strong {
+    color: #cbd5e1;
+}
+
+/* --- Mega Menu 3-Col Desktop Layout --- */
+.mega-dropdown-grid.mega-grid-3col {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 28px 36px !important;
+    padding: 30px 32px 24px !important;
+    background: #ffffff !important;
+}
+
+.mega-title-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #000000;
+    margin-bottom: 12px;
+}
+
+.mega-title-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.98rem;
+    font-weight: 800;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.mega-title-link:hover {
+    color: #ff4d24;
+}
+
+.mega-title-link .mega-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ff4d24;
+}
+
+.mega-title-link .mega-arrow {
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: all 0.2s ease;
+    color: #ff4d24;
+}
+
+.mega-title-link:hover .mega-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mega-group-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #64748b;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.mega-group-card .mega-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mega-group-card .mega-list li {
+    margin-bottom: 8px;
+}
+
+.mega-group-card .mega-list li a {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.88rem;
+    color: #334155;
+    text-decoration: none;
+    display: block;
+    line-height: 1.45;
+    transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.mega-group-card .mega-list li a:hover {
+    color: #ff4d24;
+    transform: translateX(3px);
+}
+
+/* Mobile Mega Accordion */
+@media (max-width: 991px) {
+    .mega-dropdown-grid.mega-grid-3col {
+        grid-template-columns: 1fr !important;
+        padding: 10px !important;
+        gap: 12px !important;
+        background: #141720 !important;
+    }
+
+    .mega-group-card {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding-bottom: 8px;
+    }
+
+    .mega-title-bar {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding: 8px 0;
+    }
+
+    .mega-title-link {
+        color: #ffffff;
+        font-size: 0.9rem;
+    }
+
+    .mega-group-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        color: #ff4d24;
+        background: rgba(255, 77, 36, 0.1);
+        border-radius: 4px;
+    }
+
+    .mega-group-card .mega-list {
+        display: none;
+        padding-top: 8px;
+        padding-left: 12px;
+    }
+
+    .mega-group-card.is-open .mega-list {
+        display: block;
+    }
+
+    .mega-group-card.is-open .mega-group-toggle i {
+        transform: rotate(45deg);
+    }
+
+    .mega-group-card .mega-list li a {
+        color: #94a3b8;
+        padding: 6px 0;
+    }
+
+    .diagnostics-tech-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Category Hub & Breadcrumb Styling --- */
+.hieugara-breadcrumb-nav {
+    margin-bottom: 18px;
+}
+
+.breadcrumb-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+}
+
+.breadcrumb-item a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb-item a:hover {
+    color: #ff4d24;
+}
+
+.breadcrumb-item .breadcrumb-sep {
+    color: #ff4d24;
+    margin-left: 8px;
+}
+
+.breadcrumb-item.current span {
+    color: #ff4d24;
+    font-weight: 700;
+}
+
+.category-hub-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 77, 36, 0.15);
+    border: 1px solid #ff4d24;
+    color: #ffffff;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    padding: 4px 12px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.category-sibling-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.sibling-pill {
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #cbd5e1;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+}
+
+.sibling-pill:hover,
+.sibling-pill.active {
+    background: #ff4d24;
+    border-color: #ff4d24;
+    color: #ffffff;
+}
+
+.category-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+@media (max-width: 1100px) {
+    .category-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .category-services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.cat-service-card {
+    background: #11141b;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.cat-service-card:hover {
+    transform: translateY(-4px);
+    border-color: #ff4d24;
+}
+
+.cat-card-media {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    background: #000000;
+}
+
+.cat-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.cat-service-card:hover .cat-card-media img {
+    transform: scale(1.06);
+}
+
+.cat-tech-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #ff4d24;
+    color: #ffffff;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 4px 8px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.cat-card-body {
+    padding: 24px 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.cat-service-title {
+    margin: 0 0 10px 0;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.cat-service-title a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.cat-service-title a:hover {
+    color: #ff4d24;
+}
+
+.cat-service-excerpt {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: #94a3b8;
+    margin: 0 0 16px 0;
+    flex-grow: 1;
+}
+
+.cat-card-meta {
+    display: flex;
+    gap: 14px;
+    padding: 10px 0;
+    border-top: 1px dashed rgba(255, 255, 255, 0.08);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+    margin-bottom: 16px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.8rem;
+    color: #cbd5e1;
+}
+
+.cat-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.price-lbl {
+    font-size: 0.75rem;
+    color: #64748b;
+    display: block;
+}
+
+.price-val {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.cat-book-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #ff4d24;
+    color: #ffffff;
+    padding: 8px 14px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.2s ease;
+}
+
+.cat-book-btn:hover {
+    background: #e03b14;
+    color: #ffffff;
+}
+
+.category-hub-cta-banner {
+    margin-top: 55px;
+    padding: 38px 40px;
+    background: #11141b;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.cta-eyebrow {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #ff4d24;
+    letter-spacing: 1px;
+}
+
+.cta-heading {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 6px 0;
+}
+
+.cta-desc {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin: 0;
+}
+
+.cta-banner-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}

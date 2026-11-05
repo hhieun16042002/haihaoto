@@ -121,11 +121,14 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                 <div class="tuning-shop-divider"></div>
             </div>
 
-            <div class="tuning-features-grid">
+                        <div class="tuning-features-grid">
                 
                 <div class="tuning-feature-card">
                     <div class="feature-icon-box">
-                        <img src="<?php echo esc_url($shiftup_img . '/icon-paint.svg'); ?>" alt="Phòng sơn sấy Châu Âu" width="48" height="48" loading="lazy">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ff4d24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
                     </div>
                     <div class="feature-body">
                         <h3 class="feature-title"><span class="orange-bar">|</span> KHOANG SƠN SẤY CHÂU ÂU</h3>
@@ -135,7 +138,11 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
 
                 <div class="tuning-feature-card">
                     <div class="feature-icon-box">
-                        <img src="<?php echo esc_url($shiftup_img . '/icon-suspension.svg'); ?>" alt="Cân chỉnh Hunter USA" width="48" height="48" loading="lazy">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ff4d24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 2a7 7 0 0 1 7 7M12 12l4-2M12 12v7M8 10l4 2"/>
+                            <circle cx="12" cy="12" r="2" fill="#ff4d24"/>
+                        </svg>
                     </div>
                     <div class="feature-body">
                         <h3 class="feature-title"><span class="orange-bar">|</span> CÂN CHỈNH GÓC ĐẶT HUNTER USA</h3>
@@ -145,7 +152,11 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
 
                 <div class="tuning-feature-card">
                     <div class="feature-icon-box">
-                        <img src="<?php echo esc_url($shiftup_img . '/icon-engine.svg'); ?>" alt="Máy chẩn đoán ECU" width="48" height="48" loading="lazy">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ff4d24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="4" y="4" width="16" height="16" rx="2"/>
+                            <rect x="9" y="9" width="6" height="6"/>
+                            <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/>
+                        </svg>
                     </div>
                     <div class="feature-body">
                         <h3 class="feature-title"><span class="orange-bar">|</span> MÁY CHẨN ĐOÁN ECU ĐA NĂNG</h3>
@@ -155,7 +166,10 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
 
                 <div class="tuning-feature-card">
                     <div class="feature-icon-box">
-                        <img src="<?php echo esc_url($shiftup_img . '/icon-warranty.svg'); ?>" alt="Bảo hành điện tử" width="48" height="48" loading="lazy">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ff4d24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="m9 12 2 2 4-4"/>
+                        </svg>
                     </div>
                     <div class="feature-body">
                         <h3 class="feature-title"><span class="orange-bar">|</span> BẢO HÀNH ĐIỆN TỬ 24 THÁNG</h3>
@@ -165,7 +179,13 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
 
                 <div class="tuning-feature-card">
                     <div class="feature-icon-box">
-                        <img src="<?php echo esc_url($shiftup_img . '/icon-service.svg'); ?>" alt="Cứu hộ giao thông" width="48" height="48" loading="lazy">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ff4d24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
+                            <path d="M15 18H9"/>
+                            <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/>
+                            <circle cx="17" cy="18" r="2"/>
+                            <circle cx="7" cy="18" r="2"/>
+                        </svg>
                     </div>
                     <div class="feature-body">
                         <h3 class="feature-title"><span class="orange-bar">|</span> CỨU HỘ GIAO THÔNG 24/7</h3>
@@ -175,7 +195,11 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
 
                 <div class="tuning-feature-card">
                     <div class="feature-icon-box">
-                        <img src="<?php echo esc_url($shiftup_img . '/icon-team.svg'); ?>" alt="Đội ngũ kỹ thuật viên" width="48" height="48" loading="lazy">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ff4d24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
                     </div>
                     <div class="feature-body">
                         <h3 class="feature-title"><span class="orange-bar">|</span> ĐỘI NGŨ 80 NHÂN SỰ CHUYÊN NGHIỆP</h3>
@@ -220,47 +244,31 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                 <div class="tuning-shop-divider"></div>
             </div>
 
-            <!-- Two Leadership Profiles -->
-            <div class="tech-profiles-grid">
+            <!-- Founder Story & 31-Year Philosophy (Text-Only Editorial) -->
+            <div class="founder-story-card">
+                <div class="founder-story-header">
+                    <span class="story-tag">NGƯỜI SÁNG LẬP &amp; KỸ SƯ TRƯỞNG</span>
+                    <h3 class="story-founder-name">ÔNG NGUYỄN VĂN HẢI</h3>
+                    <span class="story-since">Khởi dựng cơ nghiệp từ năm 1995 • Km 53+300 Quốc lộ 5, Hải Dương</span>
+                </div>
                 
-                <!-- Founder Card: Nguyen Van Hai -->
-                <div class="tech-person-card">
-                    <div class="person-photo-wrap">
-                        <img src="<?php echo esc_url($shiftup_img . '/mechanic-1.jpg'); ?>" alt="Nguyễn Văn Hải - Người Sáng Lập Hải Hà Ô Tô" loading="lazy">
-                        <span class="person-tag-badge">NGƯỜI SÁNG LẬP</span>
-                    </div>
-                    <div class="person-info-content">
-                        <span class="person-post-title">KỸ SƯ TRƯỞNG &amp; NHÀ SÁNG LẬP</span>
-                        <h3 class="person-name">NGUYỄN VĂN HẢI</h3>
-                        <p class="person-summary">
-                            Hơn <strong>31 năm trực tiếp cầm cờ lê</strong>, chẩn đoán và khắc phục hàng vạn ca bệnh khó cho các dòng xe từ cổ điển đến hiện đại. Ông Hải luôn giữ vững triết lý: <em>"Bắt đúng bệnh, sửa đúng chỗ, báo đúng giá – Tuyệt đối không vẽ việc làm khó khách hàng."</em>
-                        </p>
-                        <div class="person-signature">
-                            <span class="sig-name">Nguyễn Văn Hải</span>
-                            <span class="sig-year">Kể từ năm 1995</span>
-                        </div>
-                    </div>
+                <div class="founder-quote-block">
+                    <div class="quote-mark">“</div>
+                    <p class="founder-quote-text">
+                        Hơn <strong>31 năm trực tiếp cầm cờ lê</strong>, chẩn đoán và khắc phục hàng vạn ca bệnh khó cho các dòng xe từ cổ điển đến xe sang hiện đại. Khởi đầu từ năm 1995 tại mảnh đất Hải Dương, Hải Hà Auto luôn giữ trọn một tôn chỉ bất biến: 
+                        <em class="highlight-quote">“Bắt đúng bệnh, sửa đúng chỗ, báo đúng giá – Tuyệt đối không vẽ việc làm khó khách hàng.”</em>
+                    </p>
                 </div>
 
-                <!-- Executive Card: Vu Hieu -->
-                <div class="tech-person-card">
-                    <div class="person-photo-wrap">
-                        <img src="<?php echo esc_url($shiftup_img . '/mechanic-2.jpg'); ?>" alt="Vũ Hiếu - Giám Đốc Điều Hành" loading="lazy">
-                        <span class="person-tag-badge">BAN ĐIỀU HÀNH</span>
+                <div class="founder-signature-row">
+                    <div class="sig-left">
+                        <span class="sig-author">Nguyễn Văn Hải</span>
+                        <span class="sig-role">Kỹ sư trưởng &bull; Người giữ lửa 31 năm</span>
                     </div>
-                    <div class="person-info-content">
-                        <span class="person-post-title">GIÁM ĐỐC ĐIỀU HÀNH</span>
-                        <h3 class="person-name">VŨ HIẾU</h3>
-                        <p class="person-summary">
-                            Tiên phong số hóa toàn diện quy trình tiếp nhận xe, ứng dụng <strong>Sổ bảo hành điện tử trực tuyến</strong> và trang thiết bị đo kiểm Hunter Hoa Kỳ, chuẩn hóa dịch vụ khách hàng theo tiêu chuẩn 5 sao hiện đại.
-                        </p>
-                        <div class="person-signature">
-                            <span class="sig-name">Vũ Hiếu</span>
-                            <span class="sig-year">Thế hệ kế thừa &amp; đổi mới</span>
-                        </div>
+                    <div class="sig-right">
+                        <span class="sig-pledge"><i class="fa-solid fa-shield-halved text-orange"></i> Cam kết 100% phụ tùng OEM chính hãng &amp; bảo hành điện tử theo biển số</span>
                     </div>
                 </div>
-
             </div>
 
             <!-- 4 CON SỐ NỔI BẬT (MILESTONE STAT COUNTERS) -->
@@ -625,41 +633,60 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
             <div class="flanked-head text-center">
                 <span class="flanked-sub-label"><?php _e('TRANG THIẾT BỊ ĐO KIỂM &amp; CHẨN ĐOÁN HIỆN ĐẠI', 'hieugara-motors'); ?></span>
                 <h2 class="flanked-title">TIÊU CHUẨN XƯỞNG DỊCH VỤ CÔNG NGHỆ CAO</h2>
+                <div class="tuning-shop-divider"></div>
             </div>
 
-            <div class="flanked-grid">
+            <div class="diagnostics-tech-grid">
                 
-                <!-- Left 2 Items -->
-                <div class="flanked-side-col">
-                    <div class="flanked-diag-item">
-                        <h4 class="diag-item-title"><span class="orange-bar">|</span> THỬ LỰC PHANH ĐIỆN TỬ</h4>
-                        <p class="diag-item-text">Bệ thử lực phanh con lăn tự động, đo độ trượt và độ lệch lực phanh giữa 2 bánh chuẩn đăng kiểm.</p>
+                <div class="diag-station-card">
+                    <div class="diag-card-top">
+                        <span class="station-code">STATION // 01</span>
+                        <span class="station-badge">KIỂM ĐỊNH TỰ ĐỘNG</span>
                     </div>
-
-                    <div class="flanked-diag-item">
-                        <h4 class="diag-item-title"><span class="orange-bar">|</span> GÓC ĐẶT BÁNH XE 3D HUNTER</h4>
-                        <p class="diag-item-text">Camera độ nét cao quét 4 bia ngắm gắn trên mâm xe, xuất báo cáo góc camber, caster, toe lệch.</p>
-                    </div>
-                </div>
-
-                <!-- Center Laser Scanner Car Chassis -->
-                <div class="flanked-center-col">
-                    <div class="scanner-chassis-wrap">
-                        <img src="<?php echo esc_url($shiftup_img . '/chassis-diag.png'); ?>" alt="Sơ đồ chẩn đoán gầm xe ô tô" class="scanner-car-img" loading="lazy">
-                        <div class="scanner-laser-bar"></div>
+                    <h3 class="station-title"><span class="orange-bar">|</span> BỆ THỬ LỰC PHANH ĐIỆN TỬ</h3>
+                    <p class="station-desc">Bệ thử lực phanh con lăn tải trọng lớn tự động đo lực phanh 4 bánh, độ trượt bánh và độ lệch lực phanh giữa 2 bên theo đúng quy chuẩn đăng kiểm quốc gia.</p>
+                    <div class="station-spec">
+                        <span>Độ chính xác: <strong>±0.1%</strong></span>
+                        <span>Xuất báo cáo: <strong>In đồ thị trực tiếp</strong></span>
                     </div>
                 </div>
 
-                <!-- Right 2 Items -->
-                <div class="flanked-side-col">
-                    <div class="flanked-diag-item">
-                        <h4 class="diag-item-title"><span class="orange-bar">|</span> NỘI SOI ĐIỀU HÒA Ô TÔ</h4>
-                        <p class="diag-item-text">Nội soi giàn lạnh không cần tháo taplo, khử khuẩn ẩm mốc, nạp gas R134a/R1234yf tinh khiết.</p>
+                <div class="diag-station-card">
+                    <div class="diag-card-top">
+                        <span class="station-code">STATION // 02</span>
+                        <span class="station-badge">CÔNG NGHỆ HOA KỲ</span>
                     </div>
+                    <h3 class="station-title"><span class="orange-bar">|</span> CÂN CHỈNH GÓC LÁI 3D HUNTER</h3>
+                    <p class="station-desc">Hệ thống máy Hunter HawkEye Elite 3D với 4 camera độ phân giải cao quét bia ngắm mâm xe, cân chỉnh góc camber, caster, toe chuẩn xác từng milimet.</p>
+                    <div class="station-spec">
+                        <span>Thiết bị: <strong>Hunter USA HawkEye</strong></span>
+                        <span>Cam kết: <strong>Triệt tiêu nhao lái 100%</strong></span>
+                    </div>
+                </div>
 
-                    <div class="flanked-diag-item">
-                        <h4 class="diag-item-title"><span class="orange-bar">|</span> QUÉT LỖI HỘP ĐEN ECU</h4>
-                        <p class="diag-item-text">Đọc live data stream, kiểm tra kim phun, bugi, áp suất buồng đốt và xóa mã lỗi hệ thống.</p>
+                <div class="diag-station-card">
+                    <div class="diag-card-top">
+                        <span class="station-code">STATION // 03</span>
+                        <span class="station-badge">CÔNG NGHỆ KHÔNG THÁO TAPLO</span>
+                    </div>
+                    <h3 class="station-title"><span class="orange-bar">|</span> NỘI SOI ĐIỀU HÒA Ô TÔ</h3>
+                    <p class="station-desc">Đầu camera siêu nhỏ luồn trực tiếp vào hốc dàn lạnh để kiểm tra rò rỉ gas, vệ sinh sạch ẩm mốc vi khuẩn và nạp gas R134a/R1234yf tinh khiết bảo vệ sức khỏe cả gia đình.</p>
+                    <div class="station-spec">
+                        <span>Phương pháp: <strong>Nội soi vi sóng</strong></span>
+                        <span>Bảo hành: <strong>Gas lạnh tinh khiết 12T</strong></span>
+                    </div>
+                </div>
+
+                <div class="diag-station-card">
+                    <div class="diag-card-top">
+                        <span class="station-code">STATION // 04</span>
+                        <span class="station-badge">CHUYÊN SÂU CHÂU ÂU</span>
+                    </div>
+                    <h3 class="station-title"><span class="orange-bar">|</span> MÁY QUÉT HỘP ĐEN ECU CHUYÊN SÂU</h3>
+                    <p class="station-desc">Đọc dữ liệu thời gian thực (live data), chẩn đoán mạch điện tử, xóa mã lỗi và lập trình thích ứng (coding/programming) cho Mercedes, BMW, Audi, Porsche, Lexus, Ford.</p>
+                    <div class="station-spec">
+                        <span>Dữ liệu: <strong>Hơn 90+ hãng xe toàn cầu</strong></span>
+                        <span>Phần mềm: <strong>Chính hãng OEM Update</strong></span>
                     </div>
                 </div>
 
@@ -675,42 +702,45 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
             <div class="marquee-head text-center">
                 <span class="marquee-sub"><?php _e('CÁC DÒNG XE PHỤC VỤ TẠI XƯỞNG', 'hieugara-motors'); ?></span>
                 <h3 class="marquee-title"><?php _e('TIẾP NHẬN BẢO DƯỠNG &amp; SỬA CHỮA MỌI THƯƠNG HIỆU XE', 'hieugara-motors'); ?></h3>
+                <p class="marquee-desc"><?php _e('Từ các dòng xe sang Châu Âu cao cấp đến xe phổ thông gia đình, đội ngũ kỹ thuật viên Hải Hà Auto đều có thiết bị chuyên dụng và phụ tùng chuẩn hãng đáp ứng.', 'hieugara-motors'); ?></p>
             </div>
         </div>
 
-        <div class="marquee-track-container">
-            <div class="marquee-track">
-                <?php
-                $brands = array(
-                    array('name' => 'Mercedes-Benz', 'logo' => $theme_uri . '/assets/images/brands/mercedes.svg'),
-                    array('name' => 'BMW',           'logo' => $theme_uri . '/assets/images/brands/bmw.svg'),
-                    array('name' => 'Audi',          'logo' => $theme_uri . '/assets/images/brands/audi.svg'),
-                    array('name' => 'Porsche',       'logo' => $theme_uri . '/assets/images/brands/porsche.svg'),
-                    array('name' => 'Lexus',         'logo' => $theme_uri . '/assets/images/brands/lexus.svg'),
-                    array('name' => 'Land Rover',    'logo' => $theme_uri . '/assets/images/brands/landrover.svg'),
-                    array('name' => 'Toyota',        'logo' => $theme_uri . '/assets/images/brands/toyota.svg'),
-                    array('name' => 'Hyundai',       'logo' => $theme_uri . '/assets/images/brands/hyundai.svg'),
-                    array('name' => 'Mazda',         'logo' => $theme_uri . '/assets/images/brands/mazda.svg'),
-                    array('name' => 'Kia',           'logo' => $theme_uri . '/assets/images/brands/kia.svg'),
-                    array('name' => 'Ford',          'logo' => $theme_uri . '/assets/images/brands/ford.svg'),
-                    array('name' => 'Honda',         'logo' => $theme_uri . '/assets/images/brands/honda.svg'),
-                );
-                ?>
-                <div class="marquee-strip">
-                    <?php foreach ($brands as $b) : ?>
-                        <div class="brand-item" title="<?php echo esc_attr($b['name']); ?>">
-                            <img src="<?php echo esc_url($b['logo']); ?>" alt="<?php echo esc_attr($b['name']); ?>" loading="lazy" class="brand-svg-logo">
-                            <span class="brand-text-label"><?php echo esc_html($b['name']); ?></span>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-                <div class="marquee-strip" aria-hidden="true">
-                    <?php foreach ($brands as $b) : ?>
-                        <div class="brand-item" title="<?php echo esc_attr($b['name']); ?>">
-                            <img src="<?php echo esc_url($b['logo']); ?>" alt="<?php echo esc_attr($b['name']); ?>" loading="lazy" class="brand-svg-logo">
-                            <span class="brand-text-label"><?php echo esc_html($b['name']); ?></span>
-                        </div>
-                    <?php endforeach; ?>
+        <div class="marquee-strip-wrap">
+            <div class="brand-marquee">
+                <div class="brand-marquee-track">
+                    <?php
+                    $brands = array(
+                        array('name' => 'Mercedes-Benz', 'logo' => $theme_uri . '/assets/images/brands/mercedes.svg', 'grad' => 'linear-gradient(135deg, rgba(0,0,0,0.06), rgba(0,0,0,0.12))'),
+                        array('name' => 'BMW',           'logo' => $theme_uri . '/assets/images/brands/bmw.svg',      'grad' => 'linear-gradient(135deg, rgba(0,102,177,0.08), rgba(0,102,177,0.15))'),
+                        array('name' => 'Audi',          'logo' => $theme_uri . '/assets/images/brands/audi.svg',     'grad' => 'linear-gradient(135deg, rgba(187,10,48,0.08), rgba(0,0,0,0.12))'),
+                        array('name' => 'Porsche',       'logo' => $theme_uri . '/assets/images/brands/porsche.svg',  'grad' => 'linear-gradient(135deg, rgba(213,0,0,0.08), rgba(255,215,0,0.12))'),
+                        array('name' => 'Lexus',         'logo' => $theme_uri . '/assets/images/brands/lexus.svg',    'grad' => 'linear-gradient(135deg, rgba(30,30,30,0.08), rgba(200,200,200,0.12))'),
+                        array('name' => 'Toyota',        'logo' => $theme_uri . '/assets/images/brands/toyota.svg',   'grad' => 'linear-gradient(135deg, rgba(235,10,30,0.08), rgba(0,0,0,0.1))'),
+                        array('name' => 'Hyundai',       'logo' => $theme_uri . '/assets/images/brands/hyundai.svg',  'grad' => 'linear-gradient(135deg, rgba(0,44,95,0.08), rgba(0,44,95,0.15))'),
+                        array('name' => 'Ford',          'logo' => $theme_uri . '/assets/images/brands/ford.svg',     'grad' => 'linear-gradient(135deg, rgba(0,52,120,0.08), rgba(0,52,120,0.15))'),
+                        array('name' => 'Honda',         'logo' => $theme_uri . '/assets/images/brands/honda.svg',    'grad' => 'linear-gradient(135deg, rgba(204,0,0,0.08), rgba(0,0,0,0.1))'),
+                        array('name' => 'Volkswagen',    'logo' => $theme_uri . '/assets/images/brands/volkswagen.svg', 'grad' => 'linear-gradient(135deg, rgba(0,30,80,0.08), rgba(0,30,80,0.15))'),
+                        array('name' => 'Nissan',        'logo' => $theme_uri . '/assets/images/brands/nissan.svg',   'grad' => 'linear-gradient(135deg, rgba(195,0,25,0.08), rgba(0,0,0,0.1))'),
+                        array('name' => 'Bosch',         'logo' => $theme_uri . '/assets/images/brands/bosch.svg',    'grad' => 'linear-gradient(135deg, rgba(234,0,41,0.08), rgba(0,0,0,0.1))'),
+                    );
+                    ?>
+                    <div class="brand-marquee-group">
+                        <?php foreach ($brands as $b) : ?>
+                            <div class="brand-capsule-card" title="<?php echo esc_attr($b['name']); ?>">
+                                <div class="capsule-gradient-bg" style="background: <?php echo esc_attr($b['grad']); ?>;"></div>
+                                <img src="<?php echo esc_url($b['logo']); ?>" alt="<?php echo esc_attr($b['name']); ?>" loading="lazy" class="brand-logo-img">
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                    <div class="brand-marquee-group" aria-hidden="true">
+                        <?php foreach ($brands as $b) : ?>
+                            <div class="brand-capsule-card" title="<?php echo esc_attr($b['name']); ?>">
+                                <div class="capsule-gradient-bg" style="background: <?php echo esc_attr($b['grad']); ?>;"></div>
+                                <img src="<?php echo esc_url($b['logo']); ?>" alt="<?php echo esc_attr($b['name']); ?>" loading="lazy" class="brand-logo-img">
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
         </div>

@@ -522,6 +522,18 @@
         });
 
         // ==========================================================================
+        // SHIFTUP MEGA MENU: Mobile Accordion Toggle
+        // ==========================================================================
+        $(document).on('click', '.mega-group-toggle', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var $card = $(this).closest('.mega-group-card');
+            var isOpen = $card.hasClass('is-open');
+            $card.toggleClass('is-open', !isOpen);
+            $(this).attr('aria-expanded', !isOpen);
+        });
+
+        // ==========================================================================
         // SHIFTUP FOOTER: Smooth Back to Top Scroll
         // ==========================================================================
         $(document).on('click', '#footerBackToTop', function(e) {

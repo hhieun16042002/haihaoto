@@ -33,13 +33,17 @@ while (have_posts()) : the_post();
     <section class="service-single-header" style="background: #0f1115; padding: 50px 0 40px; border-bottom: 3px solid #ff4d24; position: relative;">
         <div class="container" style="max-width: 1360px; margin: 0 auto; padding: 0 20px;">
             <!-- Breadcrumbs -->
-            <div class="service-breadcrumbs" style="font-family: 'Chakra Petch', sans-serif; font-size: 0.82rem; color: #888888; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; text-transform: uppercase;">
-                <a href="<?php echo esc_url(home_url('/')); ?>" style="color: #bbbbbb; text-decoration: none;"><?php _e('Trang chủ', 'hieugara-motors'); ?></a>
-                <span style="color: #ff4d24;">/</span>
-                <a href="<?php echo esc_url(home_url('/#dich-vu')); ?>" style="color: #bbbbbb; text-decoration: none;"><?php _e('Dịch vụ Gara', 'hieugara-motors'); ?></a>
-                <span style="color: #ff4d24;">/</span>
-                <span style="color: #ff4d24; font-weight: 700;"><?php the_title(); ?></span>
-            </div>
+            <?php if (class_exists('HieuGara_SEO_Architecture')) : ?>
+                <?php HieuGara_SEO_Architecture::render_breadcrumbs(); ?>
+            <?php else : ?>
+                <div class="service-breadcrumbs" style="font-family: 'Chakra Petch', sans-serif; font-size: 0.82rem; color: #888888; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; text-transform: uppercase;">
+                    <a href="<?php echo esc_url(home_url('/')); ?>" style="color: #bbbbbb; text-decoration: none;"><?php _e('Trang chủ', 'hieugara-motors'); ?></a>
+                    <span style="color: #ff4d24;">/</span>
+                    <a href="<?php echo esc_url(home_url('/dich-vu/')); ?>" style="color: #bbbbbb; text-decoration: none;"><?php _e('Dịch vụ Gara', 'hieugara-motors'); ?></a>
+                    <span style="color: #ff4d24;">/</span>
+                    <span style="color: #ff4d24; font-weight: 700;"><?php the_title(); ?></span>
+                </div>
+            <?php endif; ?>
 
             <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
                 <div>
