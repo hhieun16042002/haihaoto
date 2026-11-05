@@ -4,6 +4,14 @@
  * Exact 1:1 Architectural Clone from ShiftUp Car Workshop (Qode Interactive)
  * Minimalist White & Obsidian High-Contrast, Motorsport Typography (Chakra Petch & Be Vietnam Pro)
  *
+ * Reordered 6 Primary Homepage Sections:
+ * 1. Hero, lợi ích chính và nút liên hệ
+ * 2. Câu chuyện 31 năm và các con số nổi bật
+ * 3. Lưới dịch vụ (kèm bảng giá niêm yết)
+ * 4. Quy trình và năng lực xưởng bằng ảnh thật
+ * 5. Các dòng xe phục vụ
+ * 6. Bản đồ, địa chỉ và form đặt lịch
+ *
  * @package HieuGara_Motors
  */
 
@@ -20,9 +28,9 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
 <main id="primary" class="site-main shiftup-main-page">
 
     <!-- =========================================================================
-         SECTION 1: LEXUS FULL-WIDTH CINEMATIC HERO SLIDER (SERVICE PILLARS)
-         Dynamic & Editable via WordPress Admin > Cài Đặt Giao Diện
+         MỤC 1: HERO, LỢI ÍCH CHÍNH VÀ NÚT LIÊN HỆ
          ========================================================================= -->
+    <!-- 1A: HERO SLIDER -->
     <?php
     $slides = function_exists('hieugara_get_slides') ? hieugara_get_slides() : array();
     $active_slides = array();
@@ -93,143 +101,232 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
         <div class="lexus-pagination-bar">
             <div class="container lexus-pagination-inner">
                 <?php foreach ($active_slides as $i => $s) : ?>
-                <button class="lexus-dash-item <?php echo $i === 0 ? 'active' : ''; ?>" data-to="<?php echo $i; ?>">
-                    <span class="dash-meta">
-                        <span class="dash-num"><?php echo sprintf('%02d', $i + 1); ?></span>
-                        <span class="dash-label"><?php echo esc_html(!empty($s['nav_tab']) ? $s['nav_tab'] : $s['title']); ?></span>
-                    </span>
-                    <span class="dash-progress-track">
-                        <span class="dash-progress-fill"></span>
-                    </span>
+                <button class="lexus-dash-item <?php echo $i === 0 ? 'active' : ''; ?>" data-slide-index="<?php echo $i; ?>" aria-label="<?php echo esc_attr($s['title']); ?>">
+                    <span class="dash-index"><?php echo sprintf('%02d', $i + 1); ?></span>
+                    <span class="dash-label"><?php echo esc_html($s['title']); ?></span>
+                    <span class="dash-progress-line"><span class="dash-fill"></span></span>
                 </button>
                 <?php endforeach; ?>
             </div>
         </div>
     </section>
 
-    <!-- =========================================================================
-         SECTION 2: SHIFTUP SECTION 2 (PREMIUM CAR TUNING SHOP REPLICA)
-         ========================================================================= -->
-    <section class="shiftup-tuning-shop-section">
-        <div class="container tuning-shop-grid">
+    <!-- 1B: LỢI ÍCH CHÍNH VÀ NÚT LIÊN HỆ (6 CORE BENEFITS + 3 CONTACT ACTION BUTTONS) -->
+    <section class="shiftup-tuning-shop-section" id="loi-ich-chinh">
+        <div class="container">
             
-            <!-- Left 35%: Big Bold Title -->
-            <div class="tuning-title-col">
-                <h2 class="tuning-title">
-                    HỆ THỐNG XƯỞNG<br>
-                    DỊCH VỤ Ô TÔ<br>
-                    CHUYÊN NGHIỆP
-                </h2>
+            <div class="tuning-shop-head text-center">
+                <span class="tuning-shop-sub-label"><?php _e('TIÊU CHUẨN XƯỞNG DỊCH VỤ Ô TÔ TOÀN DIỆN', 'hieugara-motors'); ?></span>
+                <h2 class="tuning-shop-title">HẢI HÀ AUTO SERVICE & WORKSHOP</h2>
+                <div class="tuning-shop-divider"></div>
             </div>
 
-            <!-- Right 65%: Clean 3-Column / 2-Row Features with Orange Vertical Bar -->
             <div class="tuning-features-grid">
                 
-                <div class="tuning-feature-item">
-                    <h4 class="feature-item-title"><span class="orange-bar">|</span> PHÒNG SƠN AXALTA ĐỨC</h4>
-                    <p class="feature-item-text">Phòng sơn sấy khép kín tiêu chuẩn Châu Âu, sơn gốc nước Dupont/Axalta chống bay màu 24 tháng.</p>
-                </div>
-
-                <div class="tuning-feature-item">
-                    <h4 class="feature-item-title"><span class="orange-bar">|</span> QUY TRÌNH 45 HẠNG MỤC</h4>
-                    <p class="feature-item-text">Bảo dưỡng định kỳ các cấp 5.000km đến 40.000km, quét chẩn đoán ECU và kiểm tra an toàn miễn phí.</p>
-                </div>
-
-                <div class="tuning-feature-item">
-                    <h4 class="feature-item-title"><span class="orange-bar">|</span> CHẨN ĐOÁN ECU CHUYÊN SÂU</h4>
-                    <p class="feature-item-text">Máy đọc lỗi hộp đen chuyên hãng cho Mercedes, BMW, Porsche, Audi, Lexus, Toyota, Hyundai...</p>
-                </div>
-
-                <div class="tuning-feature-item">
-                    <h4 class="feature-item-title"><span class="orange-bar">|</span> BẢO HÀNH ĐIỆN TỬ 24 THÁNG</h4>
-                    <p class="feature-item-text">Mọi lượt xe đều được cấp mã bảo hành điện tử theo biển số, tra cứu lịch sử sửa chữa tức thì 24/7.</p>
-                </div>
-
-                <div class="tuning-feature-item">
-                    <h4 class="feature-item-title"><span class="orange-bar">|</span> 100% PHỤ TÙNG CHÍNH HÃNG</h4>
-                    <p class="feature-item-text">Phụ tùng OEM có tem xuất xứ rõ ràng, báo giá minh bạch trước khi làm và không có chi phí ẩn.</p>
-                </div>
-
-                <div class="tuning-feature-item">
-                    <h4 class="feature-item-title"><span class="orange-bar">|</span> CỨU HỘ 24/7: <?php echo esc_html($rescue_phone); ?></h4>
-                    <p class="feature-item-text">Đội xe cứu hộ kéo sàn trượt trực chiến 24/7 toàn quốc, hỗ trợ giám định bảo hiểm thân vỏ trọn gói.</p>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- =========================================================================
-         SECTION 3: SHIFTUP SECTION 3 (AUTOMOTIVE TECHNICIANS REPLICA)
-         Overlapping Dark Card with 4 Orange Square Corner Dots
-         ========================================================================= -->
-    <section class="shiftup-technicians-section">
-        <div class="container technicians-wrap">
-            
-            <!-- Left: Wide Workshop Photo -->
-            <div class="technicians-photo-frame">
-                <img src="<?php echo esc_url($shiftup_img . '/tech-about.jpg?v=' . HIEUGARA_THEME_VERSION); ?>" alt="Đội ngũ kỹ thuật viên Hải Hà Auto" class="technicians-img" loading="lazy">
-            </div>
-
-            <!-- Right: Overlapping Dark Box with 4 Orange Square Corner Dots -->
-            <div class="technicians-dark-card">
-                <!-- 4 Corner Dots -->
-                <span class="corner-dot dot-tl"></span>
-                <span class="corner-dot dot-tr"></span>
-                <span class="corner-dot dot-bl"></span>
-                <span class="corner-dot dot-br"></span>
-
-                <div class="card-inner">
-                    <span class="card-kicker text-orange" style="font-family: 'Chakra Petch', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 8px;">1995 — <?php echo date('Y'); ?> &bull; 31 NĂM GIỮ TRỌN CHỮ TÂM</span>
-                    <h2 class="card-title">HẢI HÀ Ô TÔ: 31 NĂM VỚI NGHỀ</h2>
-                    <p class="card-text" style="font-size: 0.95rem; line-height: 1.7; margin-bottom: 14px;">
-                        <span class="bullet-square"></span>
-                        Năm 1995, nhà sáng lập <strong>Nguyễn Hải Hà</strong> đặt những viên gạch đầu tiên với niềm tin giản dị: <em>mỗi chiếc xe đều xứng đáng được chăm sóc bằng cái tâm của người thợ</em>. 31 năm trôi qua, Hải Hà Ô Tô tự hào có đội ngũ <strong>80 nhân viên</strong> làm việc chuyên nghiệp, phục vụ tận tâm từ bảo dưỡng định kỳ đến những hạng mục sửa chữa tỉ mỉ nhất.
-                    </p>
-                    <p class="card-subtext" style="color: #cbd5e1; font-size: 0.88rem; line-height: 1.6; margin-bottom: 22px; border-left: 2px solid #ff4d24; padding-left: 12px;">
-                        <em>"Tận tâm với từng chiếc xe, vững tin trên mọi hành trình."</em>
-                    </p>
-                    <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
-                        <a href="<?php echo esc_url(home_url('/ve-chung-toi/')); ?>" class="shiftup-rect-btn btn-dark-view">
-                            <span class="btn-orange-bar">|</span>
-                            <span>+ <?php _e('VỀ CHÚNG TÔI', 'hieugara-motors'); ?></span>
-                        </a>
-                        <a href="https://www.facebook.com/profile.php?id=100069673756551" target="_blank" rel="noopener" class="shiftup-rect-btn" style="background: #1877f2; border-color: #1877f2; color: #ffffff;" title="Theo dõi Fanpage Hải Hà Ô Tô trên Facebook">
-                            <i class="fa-brands fa-facebook-f" style="margin-right: 6px;"></i>
-                            <span>FANPAGE FB</span>
-                        </a>
+                <div class="tuning-feature-card">
+                    <div class="feature-icon-box">
+                        <img src="<?php echo esc_url($shiftup_img . '/icon-paint.svg'); ?>" alt="Phòng sơn sấy Châu Âu" width="48" height="48" loading="lazy">
+                    </div>
+                    <div class="feature-body">
+                        <h3 class="feature-title"><span class="orange-bar">|</span> KHOANG SƠN SẤY CHÂU ÂU</h3>
+                        <p class="feature-desc">Phòng sấy hồng ngoại đối lưu khép kín, triệt tiêu bụi sơn 99.9%, bảo hành màu sơn 24 tháng theo biển số.</p>
                     </div>
                 </div>
+
+                <div class="tuning-feature-card">
+                    <div class="feature-icon-box">
+                        <img src="<?php echo esc_url($shiftup_img . '/icon-suspension.svg'); ?>" alt="Cân chỉnh Hunter USA" width="48" height="48" loading="lazy">
+                    </div>
+                    <div class="feature-body">
+                        <h3 class="feature-title"><span class="orange-bar">|</span> CÂN CHỈNH GÓC ĐẶT HUNTER USA</h3>
+                        <p class="feature-desc">Hệ thống máy Hunter HawkEye Elite 3D căn chỉnh camber, caster, toe-in chuẩn milimet, triệt tiêu nhao lái hoàn toàn.</p>
+                    </div>
+                </div>
+
+                <div class="tuning-feature-card">
+                    <div class="feature-icon-box">
+                        <img src="<?php echo esc_url($shiftup_img . '/icon-engine.svg'); ?>" alt="Máy chẩn đoán ECU" width="48" height="48" loading="lazy">
+                    </div>
+                    <div class="feature-body">
+                        <h3 class="feature-title"><span class="orange-bar">|</span> MÁY CHẨN ĐOÁN ECU ĐA NĂNG</h3>
+                        <p class="feature-desc">Đọc live data, test cảm biến, coding hộp đen ECU cho các dòng xe Châu Âu: Mercedes, BMW, Audi, Porsche, Ford, Lexus.</p>
+                    </div>
+                </div>
+
+                <div class="tuning-feature-card">
+                    <div class="feature-icon-box">
+                        <img src="<?php echo esc_url($shiftup_img . '/icon-warranty.svg'); ?>" alt="Bảo hành điện tử" width="48" height="48" loading="lazy">
+                    </div>
+                    <div class="feature-body">
+                        <h3 class="feature-title"><span class="orange-bar">|</span> BẢO HÀNH ĐIỆN TỬ 24 THÁNG</h3>
+                        <p class="feature-desc">Tra cứu lịch sử bảo dưỡng và thời hạn bảo hành phụ tùng trực tuyến 24/7 theo số biển số xe minh bạch.</p>
+                    </div>
+                </div>
+
+                <div class="tuning-feature-card">
+                    <div class="feature-icon-box">
+                        <img src="<?php echo esc_url($shiftup_img . '/icon-service.svg'); ?>" alt="Cứu hộ giao thông" width="48" height="48" loading="lazy">
+                    </div>
+                    <div class="feature-body">
+                        <h3 class="feature-title"><span class="orange-bar">|</span> CỨU HỘ GIAO THÔNG 24/7</h3>
+                        <p class="feature-desc">Đội xe cứu hộ chuyên dụng sàn trượt cẩu kéo túc trực 24/7, có mặt thần tốc cứu hộ mọi tình huống sự cố trên đường.</p>
+                    </div>
+                </div>
+
+                <div class="tuning-feature-card">
+                    <div class="feature-icon-box">
+                        <img src="<?php echo esc_url($shiftup_img . '/icon-team.svg'); ?>" alt="Đội ngũ kỹ thuật viên" width="48" height="48" loading="lazy">
+                    </div>
+                    <div class="feature-body">
+                        <h3 class="feature-title"><span class="orange-bar">|</span> ĐỘI NGŨ 80 NHÂN SỰ CHUYÊN NGHIỆP</h3>
+                        <p class="feature-desc">Kỹ sư trưởng và thợ máy trên 15 năm kinh nghiệm, liên tục được đào tạo quy trình bảo dưỡng xe đời mới.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- NÚT LIÊN HỆ TRỰC TIẾP (HIGH-IMPACT MOTORSPORT CTA BAR) -->
+            <div class="hero-contact-actions-bar">
+                <div class="contact-actions-inner">
+                    <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="hero-cta-btn btn-rescue">
+                        <span class="btn-pulse-dot"></span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span>GỌI CỨU HỘ 24/7: <?php echo esc_html($rescue_phone); ?></span>
+                    </a>
+                    <a href="#dat-lich-nhanh" class="hero-cta-btn btn-booking">
+                        <span class="btn-orange-strip"></span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2"/><line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2"/><line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/></svg>
+                        <span>ĐẶT LỊCH HẸN TRỰC TUYẾN</span>
+                    </a>
+                    <a href="https://zalo.me/<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" target="_blank" rel="noopener" class="hero-cta-btn btn-zalo">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.145 2 11.258c0 2.922 1.488 5.534 3.81 7.218-.166.974-.75 2.926-.81 3.167-.098.397.147.45.31.341.21-.14 2.815-1.921 3.86-2.651.9.274 1.848.425 2.83.425 5.523 0 10-4.145 10-9.258S17.523 2 12 2z"/></svg>
+                        <span>CHAT ZALO KỸ THUẬT</span>
+                    </a>
+                </div>
             </div>
 
         </div>
     </section>
 
     <!-- =========================================================================
-         SECTION 4: SHIFTUP SECTION 4 (ALL ABOUT CARS REPLICA - SWIPER CAROUSEL)
-         Mousewheel Horizontal Scroll + Touch Drag + Dynamic WP Admin CRUD
+         MỤC 2: CÂU CHUYỆN 31 NĂM VÀ CÁC CON SỐ NỔI BẬT
          ========================================================================= -->
+    <section class="shiftup-technicians-section" id="cau-chuyen-31-nam">
+        <div class="container">
+            
+            <div class="tech-section-head text-center">
+                <span class="tech-sub-label"><?php _e('CÂU CHUYỆN 31 NĂM HẢI HÀ AUTO SERVICE (1995 - 2026)', 'hieugara-motors'); ?></span>
+                <h2 class="tech-title">NGƯỜI THẬT • VIỆC THẬT • TRỌN CHỮ TÂM VỚI NGHỀ</h2>
+                <div class="tuning-shop-divider"></div>
+            </div>
+
+            <!-- Two Leadership Profiles -->
+            <div class="tech-profiles-grid">
+                
+                <!-- Founder Card: Nguyen Van Hai -->
+                <div class="tech-person-card">
+                    <div class="person-photo-wrap">
+                        <img src="<?php echo esc_url($shiftup_img . '/mechanic-1.jpg'); ?>" alt="Nguyễn Văn Hải - Người Sáng Lập Hải Hà Ô Tô" loading="lazy">
+                        <span class="person-tag-badge">NGƯỜI SÁNG LẬP</span>
+                    </div>
+                    <div class="person-info-content">
+                        <span class="person-post-title">KỸ SƯ TRƯỞNG &amp; NHÀ SÁNG LẬP</span>
+                        <h3 class="person-name">NGUYỄN VĂN HẢI</h3>
+                        <p class="person-summary">
+                            Hơn <strong>31 năm trực tiếp cầm cờ lê</strong>, chẩn đoán và khắc phục hàng vạn ca bệnh khó cho các dòng xe từ cổ điển đến hiện đại. Ông Hải luôn giữ vững triết lý: <em>"Bắt đúng bệnh, sửa đúng chỗ, báo đúng giá – Tuyệt đối không vẽ việc làm khó khách hàng."</em>
+                        </p>
+                        <div class="person-signature">
+                            <span class="sig-name">Nguyễn Văn Hải</span>
+                            <span class="sig-year">Kể từ năm 1995</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Executive Card: Vu Hieu -->
+                <div class="tech-person-card">
+                    <div class="person-photo-wrap">
+                        <img src="<?php echo esc_url($shiftup_img . '/mechanic-2.jpg'); ?>" alt="Vũ Hiếu - Giám Đốc Điều Hành" loading="lazy">
+                        <span class="person-tag-badge">BAN ĐIỀU HÀNH</span>
+                    </div>
+                    <div class="person-info-content">
+                        <span class="person-post-title">GIÁM ĐỐC ĐIỀU HÀNH</span>
+                        <h3 class="person-name">VŨ HIẾU</h3>
+                        <p class="person-summary">
+                            Tiên phong số hóa toàn diện quy trình tiếp nhận xe, ứng dụng <strong>Sổ bảo hành điện tử trực tuyến</strong> và trang thiết bị đo kiểm Hunter Hoa Kỳ, chuẩn hóa dịch vụ khách hàng theo tiêu chuẩn 5 sao hiện đại.
+                        </p>
+                        <div class="person-signature">
+                            <span class="sig-name">Vũ Hiếu</span>
+                            <span class="sig-year">Thế hệ kế thừa &amp; đổi mới</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 4 CON SỐ NỔI BẬT (MILESTONE STAT COUNTERS) -->
+            <div class="milestone-stats-grid">
+                <div class="milestone-stat-card">
+                    <div class="stat-number-wrap">
+                        <span class="stat-number">31</span><span class="stat-plus">+</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <h4 class="stat-title">NĂM UY TÍN (1995 - 2026)</h4>
+                    <p class="stat-desc">Garage gia truyền lâu đời nhất, khẳng định chất lượng qua 3 thập kỷ phục vụ tận tâm.</p>
+                </div>
+
+                <div class="milestone-stat-card">
+                    <div class="stat-number-wrap">
+                        <span class="stat-number">80</span><span class="stat-plus">+</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <h4 class="stat-title">NHÂN SỰ &amp; KỸ THUẬT VIÊN</h4>
+                    <p class="stat-desc">100% thợ có chứng chỉ tay nghề cao, được đào tạo bài bản và chuyên môn hóa từng khoang.</p>
+                </div>
+
+                <div class="milestone-stat-card">
+                    <div class="stat-number-wrap">
+                        <span class="stat-number">28</span><span class="stat-plus">+</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <h4 class="stat-title">CẦU NÂNG &amp; KHOANG KỸ THUẬT</h4>
+                    <p class="stat-desc">Mặt bằng xưởng quy mô 2.500m², đầy đủ khoang chẩn đoán, cân lái 3D và buồng sấy hấp.</p>
+                </div>
+
+                <div class="milestone-stat-card">
+                    <div class="stat-number-wrap">
+                        <span class="stat-number">35.000</span><span class="stat-plus">+</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <h4 class="stat-title">LƯỢT XE TIN CHỌN HÀNG NĂM</h4>
+                    <p class="stat-desc">Tỉ lệ khách hàng quay lại định kỳ đạt trên 92%, là đối tác bảo dưỡng của nhiều đội xe lớn.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         MỤC 3: LƯỚI DỊCH VỤ (KÈM BẢNG GIÁ NIÊM YẾT)
+         ========================================================================= -->
+    <!-- 3A: LƯỚI DỊCH VỤ CHUYÊN SÂU (ALL ABOUT CARS CAROUSEL) -->
     <section class="shiftup-all-about-cars-section" id="dich-vu">
         <div class="container">
             
-            <!-- Head with Title and Minimalist Carousel Arrows on Right -->
             <div class="all-about-head">
                 <div class="all-about-title-group">
                     <span class="all-about-sub-label"><?php _e('DỊCH VỤ & NĂNG LỰC KỸ THUẬT', 'hieugara-motors'); ?></span>
-                    <h2 class="all-about-title">ALL ABOUT CARS</h2>
+                    <h2 class="all-about-title">LƯỚI DỊCH VỤ CHUYÊN SÂU</h2>
                 </div>
                 <div class="all-about-arrows">
                     <button class="arrow-btn" id="allCarsPrevBtn" aria-label="<?php esc_attr_e('Trước', 'hieugara-motors'); ?>" title="<?php esc_attr_e('Trước', 'hieugara-motors'); ?>">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
                     </button>
                     <button class="arrow-btn" id="allCarsNextBtn" aria-label="<?php esc_attr_e('Tiếp theo', 'hieugara-motors'); ?>" title="<?php esc_attr_e('Tiếp theo', 'hieugara-motors'); ?>">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 19M19 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
                     </button>
                 </div>
             </div>
 
-            <!-- Dynamic Swiper Container with Mousewheel & Touch Drag -->
             <div class="swiper all-about-swiper" id="allCarsTrack">
                 <div class="swiper-wrapper">
                     <?php
@@ -252,8 +349,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                             } else {
                                 $card_img = $shiftup_img . '/port-' . (($card_i % 4) + 1) . '.jpg';
                             }
-                            $badge = get_post_meta(get_the_ID(), '_garage_badge', true);
-                            $price = get_post_meta(get_the_ID(), '_garage_price_from', true);
+                            $service_badge = get_post_meta(get_the_ID(), '_garage_tech_badge', true) ?: 'TIÊU CHUẨN XƯỞNG';
                             $card_i++;
                             ?>
                             <div class="swiper-slide">
@@ -265,9 +361,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                                                 <span class="view-detail-badge">+ <?php _e('XEM CHI TIẾT', 'hieugara-motors'); ?></span>
                                             </div>
                                         </a>
-                                        <?php if (!empty($badge)) : ?>
-                                            <span class="card-tech-badge"><?php echo esc_html($badge); ?></span>
-                                        <?php endif; ?>
+                                        <span class="card-tech-badge"><?php echo esc_html($service_badge); ?></span>
                                     </div>
                                     <h4 class="card-item-title">
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
@@ -276,7 +370,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                                     </h4>
                                     <p class="card-item-desc"><?php echo wp_trim_words(get_the_excerpt() ?: get_the_content(), 16); ?></p>
                                     <a href="<?php the_permalink(); ?>" class="card-learn-more-link">
-                                        <span><?php _e('Chi tiết quy trình & bảng giá', 'hieugara-motors'); ?></span>
+                                        <span><?php _e('Chi tiết quy trình &amp; bảng giá', 'hieugara-motors'); ?></span>
                                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"/></svg>
                                     </a>
                                 </article>
@@ -288,25 +382,25 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                         // Fallback Default Portfolio Items
                         $fallback_cards = array(
                             array(
-                                'title' => 'CHẨN ĐOÁN ECU ĐỘNG CƠ',
-                                'desc'  => 'Đọc dữ liệu cảm biến thời gian thực, quét lỗi toàn diện hệ thống điều khiển điện tử.',
+                                'title' => 'BẢO DƯỠNG ĐỊNH KỲ 45 HẠNG MỤC',
+                                'desc'  => 'Thay dầu động cơ chính hãng, kiểm tra an toàn hệ thống gầm lái, phanh, lốp và xóa lỗi hộp đen ECU.',
                                 'img'   => $shiftup_img . '/port-1.jpg',
                                 'badge' => 'TIÊU CHUẨN ĐỨC'
                             ),
                             array(
-                                'title' => 'CÀI ĐẶT HỘP ĐIỀU KHIỂN',
-                                'desc'  => 'Coding & programming hộp đen cho xe Châu Âu: Mercedes, BMW, Audi, Porsche, Volkswagen.',
+                                'title' => 'SỬA CHỮA ĐẠI TU ĐỘNG CƠ & HỘP SỐ',
+                                'desc'  => 'Xử lý dứt điểm hao nhớt, khói đen, rung giật số, cân cam điện tử bằng dụng cụ chuyên dụng chính hãng.',
                                 'img'   => $shiftup_img . '/port-2.jpg',
-                                'badge' => 'CODING CHÂU ÂU'
+                                'badge' => 'KỸ THUẬT CHUYÊN SÂU'
                             ),
                             array(
-                                'title' => 'CÂN CHỈNH MÂM LỐP HUNTER',
+                                'title' => 'CÂN CHỈNH GÓC LÁI HUNTER 3D',
                                 'desc'  => 'Cân bằng động Hunter và chỉnh góc đặt bánh xe 3D triệt tiêu hiện tượng nhao lái, mòn vẹt lốp.',
                                 'img'   => $shiftup_img . '/port-3.jpg',
                                 'badge' => 'CÔNG NGHỆ MỸ'
                             ),
                             array(
-                                'title' => 'ĐỒNG SƠN PHÒNG SẤY HẤP',
+                                'title' => 'ĐỒNG SƠN PHÒNG SẤY HẤP CAO CẤP',
                                 'desc'  => 'Quy trình sơn sấy khép kín công nghệ Châu Âu, bảo hành màu sơn 24 tháng theo biển số.',
                                 'img'   => $shiftup_img . '/port-4.jpg',
                                 'badge' => 'SƠN GỐC NƯỚC'
@@ -333,7 +427,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                                     </h4>
                                     <p class="card-item-desc"><?php echo esc_html($f['desc']); ?></p>
                                     <a href="<?php echo esc_url($f_link); ?>" class="card-learn-more-link">
-                                        <span><?php _e('Chi tiết quy trình & bảng giá', 'hieugara-motors'); ?></span>
+                                        <span><?php _e('Chi tiết quy trình &amp; bảng giá', 'hieugara-motors'); ?></span>
                                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"/></svg>
                                     </a>
                                 </article>
@@ -347,138 +441,14 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
         </div>
     </section>
 
-    <!-- =========================================================================
-         SECTION 5: SHIFTUP SECTION 5 (4 FULL-WIDTH PANORAMIC BANNERS)
-         Text-on-hover Glassmorphism Blur & Dual-Layer Sliding Title/Text
-         (Identical to ShiftUp "Fuel System Cleaner" Replica)
-         ========================================================================= -->
-    <section class="shiftup-panoramic-banners">
-        <div class="pano-banners-grid">
-
-            <?php
-            $pano_banners = array(
-                array(
-                    'title' => __('ĐỒNG SƠN SẤY HẤP', 'hieugara-motors'),
-                    'desc'  => __('Quy trình sơn sấy khép kín công nghệ Châu Âu, bảo hành màu sơn 24 tháng theo biển số.', 'hieugara-motors'),
-                    'img'   => $shiftup_img . '/banner-1.jpg',
-                    'link'  => home_url('/bang-gia/#du-toan-son-xe')
-                ),
-                array(
-                    'title' => __('BẢO DƯỠNG ĐỊNH KỲ', 'hieugara-motors'),
-                    'desc'  => __('Quy trình kiểm tra 45 hạng mục toàn diện, quét lỗi điện tử ECU và thay dầu máy chính hãng.', 'hieugara-motors'),
-                    'img'   => $shiftup_img . '/banner-2.jpg',
-                    'link'  => home_url('/dat-lich/?service=' . urlencode('Bảo Dưỡng Định Kỳ'))
-                ),
-                array(
-                    'title' => __('CHẨN ĐOÁN MÁY GẦM', 'hieugara-motors'),
-                    'desc'  => __('Xử lý dứt điểm tiếng kêu gầm, căn chỉnh góc đặt bánh xe 3D Hunter triệt tiêu hoàn toàn nhao lái.', 'hieugara-motors'),
-                    'img'   => $shiftup_img . '/banner-3.jpg',
-                    'link'  => home_url('/dat-lich/?service=' . urlencode('Chẩn Đoán Máy Gầm'))
-                ),
-                array(
-                    'title' => __('CHĂM SÓC XE DETAILING', 'hieugara-motors'),
-                    'desc'  => __('Phủ bóng Ceramic Pro 9H kháng hóa chất, dán phim cách nhiệt 3M Crystalline và dán PPF cao cấp.', 'hieugara-motors'),
-                    'img'   => $shiftup_img . '/banner-4.jpg',
-                    'link'  => home_url('/dat-lich/?service=' . urlencode('Detailing & Dán phim cách nhiệt'))
-                )
-            );
-
-            foreach ($pano_banners as $p) :
-            ?>
-                <div class="pano-banner-col">
-                    <!-- High-Res Background Image that zooms on hover -->
-                    <div class="pano-bg-img" style="background-image: url('<?php echo esc_url($p['img']); ?>');"></div>
-                    
-                    <!-- Base Gradient Darkness -->
-                    <div class="pano-base-overlay"></div>
-
-                    <!-- ShiftUp Frosted Glass Blur Overlay -->
-                    <div class="pano-blur-overlay"></div>
-
-                    <!-- Clickable full column link -->
-                    <a href="<?php echo esc_url($p['link']); ?>" class="pano-full-link" aria-label="<?php echo esc_attr($p['title']); ?>"></a>
-
-                    <!-- Interactive Content with ShiftUp Lift Up Animation -->
-                    <div class="pano-content-wrap">
-                        <div class="pano-content-inner">
-                            <div class="pano-title-wrap">
-                                <h3 class="pano-title pano-title-ghost"><?php echo esc_html($p['title']); ?></h3>
-                                <h3 class="pano-title pano-title-slide"><?php echo esc_html($p['title']); ?></h3>
-                            </div>
-                            <div class="pano-text-wrap">
-                                <p class="pano-text pano-text-ghost"><?php echo esc_html($p['desc']); ?></p>
-                                <p class="pano-text pano-text-slide"><?php echo esc_html($p['desc']); ?></p>
-                            </div>
-                        </div>
-
-                        <div class="pano-btn-wrap">
-                            <a href="<?php echo esc_url($p['link']); ?>" class="pano-action-btn" aria-label="<?php echo esc_attr($p['title']); ?>">
-                                <span class="btn-plus-icon"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-
-        </div>
-    </section>
-
-    <!-- =========================================================================
-         SECTION 6: SHIFTUP SECTION 6 (INTERACTIVE DIAGNOSTICS FLANKED)
-         2 Left Items + Center Chassis Scanner + 2 Right Items
-         ========================================================================= -->
-    <section class="shiftup-flanked-diagnostics">
-        <div class="container">
-            <div class="flanked-grid">
-
-                <!-- Left 2 Items -->
-                <div class="flanked-side-col">
-                    <div class="flanked-diag-item active">
-                        <h4 class="diag-item-title"><span class="orange-bar">|</span> HỆ THỐNG PHANH &amp; ABS</h4>
-                        <p class="diag-item-text">Kiểm tra láng đĩa phanh chống rung giật, thay dầu phanh tuần hoàn chân không áp suất cao.</p>
-                    </div>
-
-                    <div class="flanked-diag-item">
-                        <h4 class="diag-item-title"><span class="orange-bar">|</span> CÂN CHỈNH GÓC LÁI HUNTER 3D</h4>
-                        <p class="diag-item-text">Đo góc nghiêng Camber, Caster, Toe bằng camera quang học 3D chuẩn xác, triệt tiêu nhao lái.</p>
-                    </div>
-                </div>
-
-                <!-- Center: High-Tech Vertical Vehicle Component -->
-                <div class="flanked-center-col">
-                    <div class="center-scanner-box">
-                        <img src="<?php echo esc_url($shiftup_img . '/center-car.jpg'); ?>" alt="Kiểm tra hệ thống gầm máy ô tô" class="center-scanner-img" loading="lazy">
-                        <div class="scanner-laser-bar"></div>
-                    </div>
-                </div>
-
-                <!-- Right 2 Items -->
-                <div class="flanked-side-col">
-                    <div class="flanked-diag-item">
-                        <h4 class="diag-item-title"><span class="orange-bar">|</span> NỘI SOI ĐIỀU HÒA Ô TÔ</h4>
-                        <p class="diag-item-text">Nội soi giàn lạnh không cần tháo taplo, khử khuẩn ẩm mốc, nạp gas R134a/R1234yf tinh khiết.</p>
-                    </div>
-
-                    <div class="flanked-diag-item">
-                        <h4 class="diag-item-title"><span class="orange-bar">|</span> QUÉT LỖI HỘP ĐEN ECU</h4>
-                        <p class="diag-item-text">Đọc live data stream, kiểm tra kim phun, bugi, áp suất buồng đốt và xóa mã lỗi hệ thống.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- =========================================================================
-         SECTION 7: SHIFTUP SECTION 10 (CHECK UP OFFERS / 3 PRICING TABLES)
-         3 Pricing Tables with Top Image, Separator, and + Buttons
-         ========================================================================= -->
+    <!-- 3B: BẢNG GIÁ DỊCH VỤ NIÊM YẾT (3 GÓI BẢO DƯỠNG MINH BẠCH) -->
     <section class="shiftup-checkup-offers-section" id="bang-gia">
         <div class="container">
             
             <div class="checkup-head text-center">
-                <h2 class="checkup-title">CHECK UP OFFERS</h2>
-                <p class="checkup-sub">Bảng giá gói bảo dưỡng định kỳ niêm yết minh bạch 100%, không phát sinh phụ phí.</p>
+                <span class="all-about-sub-label"><?php _e('BẢNG GIÁ DỊCH VỤ NIÊM YẾT', 'hieugara-motors'); ?></span>
+                <h2 class="checkup-title">CHECK UP OFFERS • GÓI BẢO DƯỠNG ĐỊNH KỲ</h2>
+                <p class="checkup-sub">Minh bạch chi phí 100%, sử dụng dầu nhớt và phụ tùng OEM chính hãng, không phát sinh phụ phí.</p>
             </div>
 
             <div class="checkup-pricing-grid">
@@ -527,13 +497,13 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                             <span class="price-cur">đ</span>
                         </div>
                         <ul class="card-features-list">
-                            <li><span class="orange-bar">|</span> Toàn bộ hạng mục cấp 5.000km</li>
-                            <li><span class="orange-bar">|</span> Thay mới lọc dầu động cơ OEM</li>
-                            <li><span class="orange-bar">|</span> Vệ sinh &amp; bảo dưỡng phanh 4 bánh</li>
-                            <li><span class="orange-bar">|</span> Đảo lốp định kỳ chống mòn vẹt</li>
-                            <li><span class="orange-bar">|</span> Quét chẩn đoán lỗi ECU toàn xe</li>
+                            <li><span class="orange-bar">|</span> Toàn bộ hạng mục cấp 5.000 km</li>
+                            <li><span class="orange-bar">|</span> Thay mới lọc dầu động cơ chính hãng</li>
+                            <li><span class="orange-bar">|</span> Bảo dưỡng &amp; tra mỡ hệ thống phanh 4 bánh</li>
+                            <li><span class="orange-bar">|</span> Đảo lốp định kỳ chống mòn lệch</li>
+                            <li><span class="orange-bar">|</span> Quét lỗi ECU bằng máy đọc chuyên sâu</li>
                         </ul>
-                        <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode('Bảo dưỡng cấp trung bình 10.000km'))); ?>" class="checkup-btn btn-primary-featured">
+                        <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode('Bảo dưỡng cấp trung bình 10.000km'))); ?>" class="checkup-btn featured-btn">
                             <span class="btn-orange-bar">|</span>
                             <span>+ ĐẶT LỊCH GÓI NÀY</span>
                         </a>
@@ -547,7 +517,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                     </div>
                     <div class="card-body">
                         <div class="card-cat-label">
-                            <span>TOÀN DIỆN</span>
+                            <span>GÓI TOÀN DIỆN</span>
                             <span class="sep-dot">•</span>
                             <span>CẤP 40.000 KM</span>
                         </div>
@@ -556,11 +526,11 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                             <span class="price-cur">đ</span>
                         </div>
                         <ul class="card-features-list">
-                            <li><span class="orange-bar">|</span> Toàn bộ hạng mục cấp trung bình lớn</li>
-                            <li><span class="orange-bar">|</span> Thay dầu phanh, dầu trợ lực, dầu hộp số</li>
-                            <li><span class="orange-bar">|</span> Thay nước làm mát động cơ tuần hoàn</li>
-                            <li><span class="orange-bar">|</span> Thay bu-gi đánh lửa &amp; kiểm tra curoa</li>
-                            <li><span class="orange-bar">|</span> Nội soi bảo dưỡng giàn lạnh điều hòa</li>
+                            <li><span class="orange-bar">|</span> Toàn bộ hạng mục cấp 10.000 km</li>
+                            <li><span class="orange-bar">|</span> Thay dầu hộp số &amp; dầu cầu tự động</li>
+                            <li><span class="orange-bar">|</span> Thay mới toàn bộ bugi Iridium cao cấp</li>
+                            <li><span class="orange-bar">|</span> Thay dầu phanh DOT4 &amp; nước làm mát máy</li>
+                            <li><span class="orange-bar">|</span> Cân chỉnh góc đặt bánh xe 3D Hunter</li>
                         </ul>
                         <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode('Bảo dưỡng cấp lớn 40.000km'))); ?>" class="checkup-btn">
                             <span class="btn-orange-bar">|</span>
@@ -571,129 +541,384 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
 
             </div>
 
+            <div class="checkup-footer-cta text-center" style="margin-top: 35px;">
+                <a href="<?php echo esc_url(home_url('/bang-gia/')); ?>" class="shiftup-rect-btn btn-white-view" style="display: inline-flex; align-items: center; gap: 8px;">
+                    <span class="btn-orange-bar">|</span>
+                    <span>XEM BẢNG GIÁ ĐẦY ĐỦ 6 NHÓM DỊCH VỤ &amp; DỰ TOÁN SƠN XE &rarr;</span>
+                </a>
+            </div>
+
         </div>
     </section>
 
     <!-- =========================================================================
-         SECTION 8: PARTNERS & LUXURY CAR BRANDS MARQUEE (Continuous Ticker)
-         Replaces Warranty Search, Fully Editable & Managed via WordPress Admin
+         MỤC 4: QUY TRÌNH VÀ NĂNG LỰC XƯỞNG BẰNG ẢNH THẬT
          ========================================================================= -->
-    <?php
-    $brand_logos = function_exists('hieugara_get_brand_logos') ? hieugara_get_brand_logos() : array();
-    $active_brands = array();
-    foreach ($brand_logos as $b) {
-        if (!empty($b['enable']) && !empty($b['logo'])) {
-            $active_brands[] = $b;
-        }
-    }
-    if (empty($active_brands) && function_exists('hieugara_get_default_brand_logos')) {
-        $active_brands = array_values(hieugara_get_default_brand_logos());
-    }
-    ?>
-    <section class="shiftup-brand-marquee-section" id="doi-tac-thuong-hieu">
-        <div class="container marquee-head-container">
-            <div class="marquee-head text-center">
-                <span class="marquee-sub-label"><?php _e('TIÊU CHUẨN KỸ THUẬT QUỐC TẾ', 'hieugara-motors'); ?></span>
-                <h2 class="marquee-title"><span class="orange-bar">|</span> ĐỐI TÁC &amp; THƯƠNG HIỆU ĐỒNG HÀNH</h2>
-                <p class="marquee-desc"><?php _e('Hải Hà Auto Service chuyên sâu bảo dưỡng, đại tu và cung cấp phụ tùng OEM chính hãng cho các dòng xe hàng đầu thế giới.', 'hieugara-motors'); ?></p>
-            </div>
-        </div>
+    <!-- 4A: 4 FULL-WIDTH PANORAMIC REAL PHOTO BANNERS -->
+    <section class="shiftup-panoramic-banners" id="quy-trinh-nang-luc">
+        <div class="pano-banners-grid">
 
-        <div class="marquee-strip-wrap">
-            <div class="brand-marquee" style="mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);">
-                <div class="brand-marquee-track">
-                    <!-- First group of logos -->
-                    <div class="brand-marquee-group">
-                        <?php foreach ($active_brands as $b) : ?>
-                            <a href="<?php echo esc_url(!empty($b['url']) ? $b['url'] : '#'); ?>" <?php echo !empty($b['url']) && $b['url'] !== '#' ? 'target="_blank" rel="noopener"' : ''; ?> class="brand-capsule-card" title="<?php echo esc_attr($b['name']); ?>">
-                                <div class="capsule-gradient-bg" style="background-image: linear-gradient(135deg, <?php echo esc_attr(!empty($b['grad1']) ? $b['grad1'] : '#0f172a'); ?> 0%, <?php echo esc_attr(!empty($b['grad2']) ? $b['grad2'] : '#334155'); ?> 100%);"></div>
-                                <img src="<?php echo esc_url($b['logo']); ?>" alt="<?php echo esc_attr($b['name']); ?>" loading="lazy" class="brand-logo-img">
-                            </a>
-                        <?php endforeach; ?>
-                    </div>
+            <?php
+            $pano_banners = array(
+                array(
+                    'title' => __('ĐỒNG SƠN SẤY HẤP', 'hieugara-motors'),
+                    'desc'  => __('Quy trình sơn sấy khép kín công nghệ Châu Âu, bảo hành màu sơn 24 tháng theo biển số.', 'hieugara-motors'),
+                    'img'   => $shiftup_img . '/banner-1.jpg',
+                    'link'  => home_url('/bang-gia/#du-toan-son-xe')
+                ),
+                array(
+                    'title' => __('BẢO DƯỠNG ĐỊNH KỲ', 'hieugara-motors'),
+                    'desc'  => __('Quy trình kiểm tra 45 hạng mục toàn diện, quét lỗi điện tử ECU và thay dầu máy chính hãng.', 'hieugara-motors'),
+                    'img'   => $shiftup_img . '/banner-2.jpg',
+                    'link'  => home_url('/dat-lich/?service=' . urlencode('Bảo Dưỡng Định Kỳ'))
+                ),
+                array(
+                    'title' => __('CHẨN ĐOÁN MÁY GẦM', 'hieugara-motors'),
+                    'desc'  => __('Xử lý dứt điểm tiếng kêu gầm, căn chỉnh góc đặt bánh xe 3D Hunter triệt tiêu hoàn toàn nhao lái.', 'hieugara-motors'),
+                    'img'   => $shiftup_img . '/banner-3.jpg',
+                    'link'  => home_url('/dat-lich/?service=' . urlencode('Chẩn Đoán Máy Gầm'))
+                ),
+                array(
+                    'title' => __('CHĂM SÓC XE DETAILING', 'hieugara-motors'),
+                    'desc'  => __('Phủ bóng Ceramic Pro 9H kháng hóa chất, dán phim cách nhiệt 3M Crystalline và dán PPF cao cấp.', 'hieugara-motors'),
+                    'img'   => $shiftup_img . '/banner-4.jpg',
+                    'link'  => home_url('/dat-lich/?service=' . urlencode('Detailing & Dán phim cách nhiệt'))
+                )
+            );
 
-                    <!-- Duplicate group for seamless infinite CSS loop -->
-                    <div class="brand-marquee-group" aria-hidden="true">
-                        <?php foreach ($active_brands as $b) : ?>
-                            <a href="<?php echo esc_url(!empty($b['url']) ? $b['url'] : '#'); ?>" <?php echo !empty($b['url']) && $b['url'] !== '#' ? 'target="_blank" rel="noopener"' : ''; ?> class="brand-capsule-card" title="<?php echo esc_attr($b['name']); ?>">
-                                <div class="capsule-gradient-bg" style="background-image: linear-gradient(135deg, <?php echo esc_attr(!empty($b['grad1']) ? $b['grad1'] : '#0f172a'); ?> 0%, <?php echo esc_attr(!empty($b['grad2']) ? $b['grad2'] : '#334155'); ?> 100%);"></div>
-                                <img src="<?php echo esc_url($b['logo']); ?>" alt="<?php echo esc_attr($b['name']); ?>" loading="lazy" class="brand-logo-img">
+            foreach ($pano_banners as $p) :
+            ?>
+                <div class="pano-banner-col">
+                    <div class="pano-bg-img" style="background-image: url('<?php echo esc_url($p['img']); ?>');"></div>
+                    <div class="pano-base-overlay"></div>
+                    <div class="pano-blur-overlay"></div>
+                    <a href="<?php echo esc_url($p['link']); ?>" class="pano-full-link" aria-label="<?php echo esc_attr($p['title']); ?>"></a>
+
+                    <div class="pano-content-wrap">
+                        <div class="pano-content-inner">
+                            <div class="pano-title-wrap">
+                                <h3 class="pano-title pano-title-ghost"><?php echo esc_html($p['title']); ?></h3>
+                                <h3 class="pano-title pano-title-slide"><?php echo esc_html($p['title']); ?></h3>
+                            </div>
+                            <div class="pano-text-wrap">
+                                <p class="pano-text pano-text-ghost"><?php echo esc_html($p['desc']); ?></p>
+                                <p class="pano-text pano-text-slide"><?php echo esc_html($p['desc']); ?></p>
+                            </div>
+                        </div>
+
+                        <div class="pano-btn-wrap">
+                            <a href="<?php echo esc_url($p['link']); ?>" class="pano-action-btn" aria-label="<?php echo esc_attr($p['title']); ?>">
+                                <span class="btn-plus-icon"></span>
                             </a>
-                        <?php endforeach; ?>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <?php endforeach; ?>
+
         </div>
     </section>
 
-    <!-- =========================================================================
-         SECTION 9: WORKSHOP NETWORK (3 Chi Nhánh Xưởng)
-         ========================================================================= -->
-    <section class="shiftup-workshops-section" id="mang-luoi-xuong">
+    <!-- 4B: FLANKED DIAGNOSTICS & THIẾT BỊ KIỂM ĐỊNH HIỆN ĐẠI -->
+    <section class="shiftup-flanked-diagnostics">
         <div class="container">
-            <div class="workshops-head">
-                <h2 class="workshops-title"><span class="orange-bar">|</span> HỆ THỐNG XƯỞNG DỊCH VỤ HẢI HÀ AUTO</h2>
-                <a href="<?php echo esc_url(home_url('/garage-gan-ban/')); ?>" class="workshops-all-link">Xem tất cả 7 chi nhánh &rarr;</a>
+            
+            <div class="flanked-head text-center">
+                <span class="flanked-sub-label"><?php _e('TRANG THIẾT BỊ ĐO KIỂM &amp; CHẨN ĐOÁN HIỆN ĐẠI', 'hieugara-motors'); ?></span>
+                <h2 class="flanked-title">TIÊU CHUẨN XƯỞNG DỊCH VỤ CÔNG NGHỆ CAO</h2>
             </div>
 
-            <div class="workshops-3col-grid">
+            <div class="flanked-grid">
                 
-                <div class="ws-clean-card">
-                    <span class="ws-city-tag">TRỤ SỞ CHÍNH // HẢI HÀ</span>
-                    <h3 class="ws-name">Gara Ô Tô Hải Hà</h3>
-                    <p class="ws-address">Trung tâm chẩn đoán, sửa chữa máy gầm, điều hòa &amp; phòng sơn sấy hấp</p>
-                    <div class="ws-info-line"><i class="fa fa-phone text-orange"></i> Tổng đài: <strong><?php echo esc_html($hotline_phone); ?></strong></div>
-                    <div class="ws-info-line"><i class="fa fa-truck-pickup text-orange"></i> Cứu hộ 24/7: <strong><?php echo esc_html($rescue_phone); ?></strong></div>
-                    <div class="ws-actions">
-                        <a href="<?php echo esc_url(home_url('/dat-lich/?branch=' . urlencode('Trụ sở Gara Hải Hà'))); ?>" class="ws-link-btn">
-                            <span class="btn-orange-bar">|</span>
-                            <span>+ ĐẶT LỊCH</span>
-                        </a>
-                        <a href="https://maps.google.com/?cid=15399047910545937753" target="_blank" rel="noopener" class="ws-link-btn ghost">
-                            <span>BẢN ĐỒ</span>
-                        </a>
+                <!-- Left 2 Items -->
+                <div class="flanked-side-col">
+                    <div class="flanked-diag-item">
+                        <h4 class="diag-item-title"><span class="orange-bar">|</span> THỬ LỰC PHANH ĐIỆN TỬ</h4>
+                        <p class="diag-item-text">Bệ thử lực phanh con lăn tự động, đo độ trượt và độ lệch lực phanh giữa 2 bánh chuẩn đăng kiểm.</p>
+                    </div>
+
+                    <div class="flanked-diag-item">
+                        <h4 class="diag-item-title"><span class="orange-bar">|</span> GÓC ĐẶT BÁNH XE 3D HUNTER</h4>
+                        <p class="diag-item-text">Camera độ nét cao quét 4 bia ngắm gắn trên mâm xe, xuất báo cáo góc camber, caster, toe lệch.</p>
                     </div>
                 </div>
 
-                <div class="ws-clean-card">
-                    <span class="ws-city-tag">KỸ THUẬT &amp; BÁO GIÁ</span>
-                    <h3 class="ws-name">Tư Vấn Kỹ Thuật Trực Tuyến</h3>
-                    <p class="ws-address">Đội ngũ kỹ sư trưởng hỗ trợ chẩn đoán từ xa, tư vấn mã phụ tùng OEM</p>
-                    <div class="ws-info-line"><i class="fa fa-wrench text-orange"></i> Kỹ thuật: <strong>0915 041 989</strong></div>
-                    <div class="ws-info-line"><i class="fa-solid fa-comment-dots text-orange"></i> Zalo: <strong>0911 211 996</strong></div>
-                    <div class="ws-actions">
-                        <a href="https://zalo.me/0911211996" target="_blank" rel="noopener" class="ws-link-btn">
-                            <span class="btn-orange-bar">|</span>
-                            <span>CHAT ZALO</span>
-                        </a>
-                        <a href="tel:0915041989" class="ws-link-btn ghost">
-                            <span>GỌI KỸ THUẬT</span>
-                        </a>
+                <!-- Center Laser Scanner Car Chassis -->
+                <div class="flanked-center-col">
+                    <div class="scanner-chassis-wrap">
+                        <img src="<?php echo esc_url($shiftup_img . '/chassis-diag.png'); ?>" alt="Sơ đồ chẩn đoán gầm xe ô tô" class="scanner-car-img" loading="lazy">
+                        <div class="scanner-laser-bar"></div>
                     </div>
                 </div>
 
-                <div class="ws-clean-card">
-                    <span class="ws-city-tag">CỨU HỘ &amp; LƯU ĐỘNG</span>
-                    <h3 class="ws-name">Cứu Hộ Giao Thông 24/7</h3>
-                    <p class="ws-address">Trực ban cứu hộ kéo xe sàn trượt, kích bình ắc quy, thay lốp dự phòng</p>
-                    <div class="ws-info-line"><i class="fa fa-truck-pickup text-orange"></i> Trực ban: <strong>0911 211 996</strong></div>
-                    <div class="ws-info-line"><i class="fa fa-phone text-orange"></i> Bàn xưởng: <strong>02203 892 207</strong></div>
-                    <div class="ws-actions">
-                        <a href="tel:0911211996" class="ws-link-btn">
-                            <span class="btn-orange-bar">|</span>
-                            <span>GỌI 24/7</span>
-                        </a>
-                        <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>" class="ws-link-btn ghost">
-                            <span>ĐẶT HẸN</span>
-                        </a>
+                <!-- Right 2 Items -->
+                <div class="flanked-side-col">
+                    <div class="flanked-diag-item">
+                        <h4 class="diag-item-title"><span class="orange-bar">|</span> NỘI SOI ĐIỀU HÒA Ô TÔ</h4>
+                        <p class="diag-item-text">Nội soi giàn lạnh không cần tháo taplo, khử khuẩn ẩm mốc, nạp gas R134a/R1234yf tinh khiết.</p>
+                    </div>
+
+                    <div class="flanked-diag-item">
+                        <h4 class="diag-item-title"><span class="orange-bar">|</span> QUÉT LỖI HỘP ĐEN ECU</h4>
+                        <p class="diag-item-text">Đọc live data stream, kiểm tra kim phun, bugi, áp suất buồng đốt và xóa mã lỗi hệ thống.</p>
                     </div>
                 </div>
 
             </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         MỤC 5: CÁC DÒNG XE PHỤC VỤ (BRAND MARQUEE)
+         ========================================================================= -->
+    <section class="shiftup-brand-marquee-section" id="dong-xe-phuc-vu">
+        <div class="container">
+            <div class="marquee-head text-center">
+                <span class="marquee-sub"><?php _e('CÁC DÒNG XE PHỤC VỤ TẠI XƯỞNG', 'hieugara-motors'); ?></span>
+                <h3 class="marquee-title"><?php _e('TIẾP NHẬN BẢO DƯỠNG &amp; SỬA CHỮA MỌI THƯƠNG HIỆU XE', 'hieugara-motors'); ?></h3>
+            </div>
+        </div>
+
+        <div class="marquee-track-container">
+            <div class="marquee-track">
+                <?php
+                $brands = array(
+                    array('name' => 'Mercedes-Benz', 'logo' => $theme_uri . '/assets/images/brands/mercedes.svg'),
+                    array('name' => 'BMW',           'logo' => $theme_uri . '/assets/images/brands/bmw.svg'),
+                    array('name' => 'Audi',          'logo' => $theme_uri . '/assets/images/brands/audi.svg'),
+                    array('name' => 'Porsche',       'logo' => $theme_uri . '/assets/images/brands/porsche.svg'),
+                    array('name' => 'Lexus',         'logo' => $theme_uri . '/assets/images/brands/lexus.svg'),
+                    array('name' => 'Land Rover',    'logo' => $theme_uri . '/assets/images/brands/landrover.svg'),
+                    array('name' => 'Toyota',        'logo' => $theme_uri . '/assets/images/brands/toyota.svg'),
+                    array('name' => 'Hyundai',       'logo' => $theme_uri . '/assets/images/brands/hyundai.svg'),
+                    array('name' => 'Mazda',         'logo' => $theme_uri . '/assets/images/brands/mazda.svg'),
+                    array('name' => 'Kia',           'logo' => $theme_uri . '/assets/images/brands/kia.svg'),
+                    array('name' => 'Ford',          'logo' => $theme_uri . '/assets/images/brands/ford.svg'),
+                    array('name' => 'Honda',         'logo' => $theme_uri . '/assets/images/brands/honda.svg'),
+                );
+                ?>
+                <div class="marquee-strip">
+                    <?php foreach ($brands as $b) : ?>
+                        <div class="brand-item" title="<?php echo esc_attr($b['name']); ?>">
+                            <img src="<?php echo esc_url($b['logo']); ?>" alt="<?php echo esc_attr($b['name']); ?>" loading="lazy" class="brand-svg-logo">
+                            <span class="brand-text-label"><?php echo esc_html($b['name']); ?></span>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <div class="marquee-strip" aria-hidden="true">
+                    <?php foreach ($brands as $b) : ?>
+                        <div class="brand-item" title="<?php echo esc_attr($b['name']); ?>">
+                            <img src="<?php echo esc_url($b['logo']); ?>" alt="<?php echo esc_attr($b['name']); ?>" loading="lazy" class="brand-svg-logo">
+                            <span class="brand-text-label"><?php echo esc_html($b['name']); ?></span>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         MỤC 6: BẢN ĐỒ, ĐỊA CHỈ VÀ FORM ĐẶT LỊCH
+         ========================================================================= -->
+    <section class="shiftup-workshops-booking-section" id="dat-lich-nhanh">
+        <div class="container">
+            
+            <div class="section-head-dark text-center">
+                <span class="section-sub-tag"><?php _e('HỆ THỐNG XƯỞNG DỊCH VỤ &amp; ĐẶT LỊCH HẸN TRỰC TUYẾN', 'hieugara-motors'); ?></span>
+                <h2 class="section-title-white">TRỤ SỞ XƯỞNG DỊCH VỤ &amp; ĐẶT LỊCH TIẾP NHẬN XE</h2>
+                <p class="section-desc-light">Đội ngũ kỹ thuật viên Hải Hà Auto sẵn sàng phục vụ quý khách nhanh chóng, chu đáo và minh bạch 100%.</p>
+                <div class="tuning-shop-divider"></div>
+            </div>
+
+            <div class="workshop-booking-dual-layout">
+                
+                <!-- Left: Workshop Information Cards -->
+                <div class="ws-info-column">
+                    
+                    <div class="ws-primary-card">
+                        <div class="ws-badge-row">
+                            <span class="ws-status-live"><span class="live-dot"></span> ĐANG MỞ CỬA</span>
+                            <span class="ws-type-tag">TRỤ SỞ CHÍNH HẢI DƯƠNG</span>
+                        </div>
+                        <h3 class="ws-main-name">Hải Hà Auto Service &amp; Workshop</h3>
+                        <p class="ws-main-addr">
+                            <i class="fa-solid fa-location-dot text-orange"></i>
+                            <strong>Km 53+300 Quốc lộ 5</strong> (Chiều Hà Nội - Hải Phòng), Phường Cẩm Thượng, TP. Hải Dương
+                        </p>
+                        
+                        <div class="ws-hotline-strip">
+                            <div class="hotline-box rescue">
+                                <span class="hotline-lbl">CỨU HỘ GIAO THÔNG 24/7</span>
+                                <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="hotline-num"><?php echo esc_html($rescue_phone); ?></a>
+                            </div>
+                            <div class="hotline-box desk">
+                                <span class="hotline-lbl">TỔNG ĐÀI ĐẶT LỊCH / BÀN XƯỞNG</span>
+                                <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $hotline_phone)); ?>" class="hotline-num"><?php echo esc_html($hotline_phone); ?></a>
+                            </div>
+                        </div>
+
+                        <div class="ws-hours-row">
+                            <i class="fa-regular fa-clock text-orange"></i>
+                            <span>Giờ làm việc: <strong>07:30 – 18:30</strong> (Tất cả các ngày trong tuần, kể cả Thứ 7 &amp; Chủ Nhật)</span>
+                        </div>
+
+                        <div class="ws-quick-actions">
+                            <a href="https://maps.google.com/?cid=15399047910545937753" target="_blank" rel="noopener" class="ws-action-btn map-btn">
+                                <i class="fa-solid fa-diamond-turn-right"></i>
+                                <span>Chỉ đường Google Maps</span>
+                            </a>
+                            <a href="https://zalo.me/<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" target="_blank" rel="noopener" class="ws-action-btn zalo-btn">
+                                <i class="fa-solid fa-comment-dots"></i>
+                                <span>Chat Zalo Báo Giá</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Google Map Embed -->
+                    <div class="ws-map-embed-wrapper">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.2687595353154!2d106.30906231540166!3d20.981856794754593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31359b3bb895b6a7%3A0xd56d47bf1b28d699!2zR2FyYSBPdG8gSOG6o2kgSMOg!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s" 
+                            width="100%" 
+                            height="240" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Bản đồ chỉ đường Gara Ô Tô Hải Hà">
+                        </iframe>
+                    </div>
+
+                </div>
+
+                <!-- Right: Streamlined Fast Booking Form with Direct AJAX Submit -->
+                <div class="ws-booking-column">
+                    <div class="fast-booking-card" id="homeFastBookingCard">
+                        <div class="booking-card-head">
+                            <div class="booking-head-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="#ff4d24" stroke-width="2"/><line x1="16" y1="2" x2="16" y2="6" stroke="#ff4d24" stroke-width="2"/><line x1="8" y1="2" x2="8" y2="6" stroke="#ff4d24" stroke-width="2"/><line x1="3" y1="10" x2="21" y2="10" stroke="#ff4d24" stroke-width="2"/></svg>
+                            </div>
+                            <div>
+                                <h3 class="booking-card-title">PHIẾU ĐẶT HẸN TIẾP NHẬN XE</h3>
+                                <p class="booking-card-subtitle">Không phải chờ đợi • Nhận ngay ưu đãi giảm 10% công bảo dưỡng</p>
+                            </div>
+                        </div>
+
+                        <form id="homeFastBookingForm" class="home-fast-booking-form">
+                            <input type="hidden" name="action" value="garage_submit_booking">
+                            <input type="hidden" name="nonce" value="<?php echo esc_attr(wp_create_nonce('garage_os_frontend_nonce')); ?>">
+                            <input type="hidden" name="branch" value="Trụ sở chính Hải Hà Auto (Km 53+300 QL5)">
+
+                            <div class="form-row-dual">
+                                <div class="form-group">
+                                    <label class="form-label" for="hb_name">Họ và tên của bạn <span class="required">*</span></label>
+                                    <input type="text" id="hb_name" name="name" class="form-control" placeholder="Nguyễn Văn A" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="hb_phone">Số điện thoại liên hệ <span class="required">*</span></label>
+                                    <input type="tel" id="hb_phone" name="phone" class="form-control" placeholder="09xx xxx xxx" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row-dual">
+                                <div class="form-group">
+                                    <label class="form-label" for="hb_plate">Biển số xe ô tô <span class="required">*</span></label>
+                                    <input type="text" id="hb_plate" name="plate" class="form-control" placeholder="Ví dụ: 34A-123.45" required style="text-transform: uppercase;">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="hb_model">Dòng xe / Đời xe</label>
+                                    <input type="text" id="hb_model" name="model" class="form-control" placeholder="Ví dụ: Mazda CX-5, Camry...">
+                                </div>
+                            </div>
+
+                            <div class="form-row-dual">
+                                <div class="form-group">
+                                    <label class="form-label" for="hb_service">Dịch vụ yêu cầu</label>
+                                    <select id="hb_service" name="service" class="form-control form-select">
+                                        <option value="Bảo dưỡng định kỳ theo cấp km">Bảo dưỡng định kỳ theo cấp km (5k - 40k km)</option>
+                                        <option value="Kiểm tra chẩn đoán tiếng kêu gầm máy">Kiểm tra chẩn đoán tiếng kêu gầm máy</option>
+                                        <option value="Cân chỉnh góc lái 3D Hunter">Cân chỉnh góc lái 3D Hunter &amp; Lực phanh</option>
+                                        <option value="Đồng sơn sấy hấp &amp; Bảo hiểm">Đồng sơn sấy hấp &amp; Bảo hiểm xe tai nạn</option>
+                                        <option value="Bảo dưỡng điều hòa &amp; Nội soi lạnh">Bảo dưỡng điều hòa &amp; Nội soi dàn lạnh</option>
+                                        <option value="Detailing, Phủ Ceramic, Dán PPF/Phim">Detailing, Phủ Ceramic, Dán PPF/Phim cách nhiệt</option>
+                                        <option value="Cứu hộ giao thông &amp; Sửa chữa lưu động">Cứu hộ giao thông &amp; Sửa chữa lưu động</option>
+                                        <option value="Khác">Hạng mục khác (Ghi chú chi tiết bên dưới)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="hb_date">Ngày dự kiến đến xưởng</label>
+                                    <input type="date" id="hb_date" name="date" class="form-control" value="<?php echo esc_attr(date('Y-m-d')); ?>">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="hb_notes">Ghi chú tình trạng xe hoặc yêu cầu riêng</label>
+                                <textarea id="hb_notes" name="notes" rows="2" class="form-control form-textarea" placeholder="Mô tả hiện tượng xe (rung lắc, điều hòa không mát, lịch bảo dưỡng cấp lớn...)"></textarea>
+                            </div>
+
+                            <div class="booking-submit-wrap">
+                                <button type="submit" id="hb_submit_btn" class="booking-submit-button">
+                                    <span class="btn-orange-strip"></span>
+                                    <span class="btn-text">XÁC NHẬN ĐẶT LỊCH HẸN TIẾP NHẬN XE</span>
+                                    <span class="btn-arrow">&rarr;</span>
+                                </button>
+                            </div>
+
+                            <div id="hb_feedback_msg" class="booking-feedback-msg" style="display: none;"></div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </section>
 
 </main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // AJAX handling for the Home Fast Booking Form
+    const bookingForm = document.getElementById('homeFastBookingForm');
+    const feedbackMsg = document.getElementById('hb_feedback_msg');
+    const submitBtn   = document.getElementById('hb_submit_btn');
+
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            submitBtn.disabled = true;
+            submitBtn.querySelector('.btn-text').textContent = 'ĐANG GỬI THÔNG TIN...';
+
+            const formData = new FormData(bookingForm);
+
+            fetch('<?php echo esc_url(admin_url('admin-ajax.php')); ?>', {
+                method: 'POST',
+                body: formData
+            })
+            .then(res => res.json())
+            .then(data => {
+                feedbackMsg.style.display = 'block';
+                if (data.success) {
+                    feedbackMsg.className = 'booking-feedback-msg success';
+                    feedbackMsg.innerHTML = '<strong>ĐẶT LỊCH THÀNH CÔNG!</strong> Mã phiếu: #' + (data.data?.booking_id || 'OK') + '. Kỹ sư trưởng Hải Hà Auto sẽ liên hệ xác nhận trong vòng 10 phút.';
+                    bookingForm.reset();
+                } else {
+                    feedbackMsg.className = 'booking-feedback-msg error';
+                    feedbackMsg.textContent = data.data?.message || 'Có lỗi xảy ra, vui lòng gọi trực tiếp hotline 0911 211 996!';
+                }
+            })
+            .catch(err => {
+                feedbackMsg.style.display = 'block';
+                feedbackMsg.className = 'booking-feedback-msg error';
+                feedbackMsg.textContent = 'Lỗi kết nối máy chủ! Vui lòng gọi trực tiếp 0911 211 996.';
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.querySelector('.btn-text').textContent = 'XÁC NHẬN ĐẶT LỊCH HẸN TIẾP NHẬN XE';
+            });
+        });
+    }
+});
+</script>
 
 <?php
 get_footer();

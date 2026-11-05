@@ -132,37 +132,31 @@ $hotline_clean = preg_replace('/[^0-9]/', '', $hotline_phone);
                     <ul class="footer-links-list">
                         <li>
                             <a href="<?php echo esc_url(home_url('/dich-vu/bao-duong-dinh-ky/')); ?>">
-                                <i class="fa-solid fa-clock-rotate-left"></i>
                                 <span>01. Bảo Dưỡng Ô Tô (Định Kỳ &amp; Thay Dầu)</span>
                             </a>
                         </li>
                         <li>
                             <a href="<?php echo esc_url(home_url('/dich-vu/sua-chua-dong-co/')); ?>">
-                                <i class="fa-solid fa-gears"></i>
                                 <span>02. Sửa Chữa Ô Tô (Máy, Hộp Số, Phanh, Gầm)</span>
                             </a>
                         </li>
                         <li>
                             <a href="<?php echo esc_url(home_url('/dich-vu/sua-chua-dien-o-to/')); ?>">
-                                <i class="fa-solid fa-bolt"></i>
                                 <span>03. Điện &amp; Điều Hòa Ô Tô (ECU &amp; Làm Mát)</span>
                             </a>
                         </li>
                         <li>
                             <a href="<?php echo esc_url(home_url('/dich-vu/son-o-to/')); ?>">
-                                <i class="fa-solid fa-spray-can-sparkles"></i>
                                 <span>04. Đồng Sơn &amp; Ngoại Thất (Sấy Hấp &amp; Gò Hàn)</span>
                             </a>
                         </li>
                         <li>
                             <a href="<?php echo esc_url(home_url('/dich-vu/cham-soc-va-lam-dep-xe-detailing/')); ?>">
-                                <i class="fa-solid fa-wand-magic-sparkles"></i>
                                 <span>05. Chăm Sóc &amp; Nâng Cấp (Detailing &amp; PPF)</span>
                             </a>
                         </li>
                         <li>
                             <a href="<?php echo esc_url(home_url('/dich-vu/cuu-ho-giao-thong-o-to/')); ?>" class="highlight-link">
-                                <i class="fa-solid fa-truck-pickup text-orange"></i>
                                 <span>06. Dịch Vụ Hỗ Trợ Ô Tô (Cứu Hộ 24/7 &amp; Đăng Kiểm)</span>
                                 <span class="badge-mini">24/7</span>
                             </a>
@@ -179,50 +173,42 @@ $hotline_clean = preg_replace('/[^0-9]/', '', $hotline_phone);
                     <ul class="footer-links-list">
                         <li>
                             <a href="<?php echo esc_url($warranty_url); ?>" class="highlight-link">
-                                <i class="fa-solid fa-qrcode"></i>
                                 <span>Tra Cứu Bảo Hành Điện Tử</span>
                                 <span class="badge-mini">HOT</span>
                             </a>
                         </li>
                         <li>
                             <a href="<?php echo esc_url(home_url('/bang-gia/')); ?>">
-                                <i class="fa-solid fa-receipt"></i>
                                 <span>Bảng Giá Dịch Vụ Niêm Yết</span>
                             </a>
                         </li>
                         <li>
                             <a href="<?php echo esc_url(home_url('/ve-chung-toi/')); ?>">
-                                <i class="fa-solid fa-certificate"></i>
                                 <span>Quy Chuẩn Kiểm Định KCS 5 Cấp</span>
                             </a>
                         </li>
                         <li>
                             <a href="<?php echo esc_url(home_url('/ve-chung-toi/#cam-ket')); ?>">
-                                <i class="fa-solid fa-shield-halved"></i>
                                 <span>Cam Kết Phụ Tùng OEM Chính Hãng</span>
                             </a>
                         </li>
                         <li>
                             <a href="<?php echo esc_url(home_url('/ve-chung-toi/#chinh-sach-bao-hanh')); ?>">
-                                <i class="fa-solid fa-medal"></i>
                                 <span>Bảo Hành Màu Sơn Sấy Hấp 24 Tháng</span>
                             </a>
                         </li>
                         <li>
                             <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>">
-                                <i class="fa-solid fa-calendar-check"></i>
                                 <span>Đặt Hẹn Trực Tuyến Tiết Kiệm 30 Phút</span>
                             </a>
                         </li>
                         <li>
                             <a href="<?php echo esc_url(home_url('/ve-chung-toi/#bao-hiem')); ?>">
-                                <i class="fa-solid fa-car-burst"></i>
                                 <span>Hỗ Trợ Giám Định Bảo Hiểm Thân Vỏ</span>
                             </a>
                         </li>
                         <li>
                             <a href="<?php echo esc_url(home_url('/garage-gan-ban/')); ?>">
-                                <i class="fa-solid fa-map-location-dot"></i>
                                 <span>Tìm Đường Đến Gara Hải Hà</span>
                             </a>
                         </li>
