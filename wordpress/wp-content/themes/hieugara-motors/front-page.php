@@ -412,9 +412,8 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                         </div>
 
                         <div class="pano-btn-wrap">
-                            <a href="<?php echo esc_url($p['link']); ?>" class="pano-action-btn">
-                                <span class="btn-orange-bar" style="color: #ff4d24; font-weight: 900;">|</span>
-                                <span class="btn-symbol">+</span>
+                            <a href="<?php echo esc_url($p['link']); ?>" class="pano-action-btn" aria-label="<?php echo esc_attr($p['title']); ?>">
+                                <span class="btn-plus-icon"></span>
                             </a>
                         </div>
                     </div>

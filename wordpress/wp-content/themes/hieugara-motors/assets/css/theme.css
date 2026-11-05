@@ -1926,14 +1926,14 @@ html, body {
     position: relative;
     height: 520px;
     overflow: hidden;
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border: none !important;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
 
 .pano-banner-col:last-child {
-    border-right: none;
+    border: none !important;
 }
 
 /* Background image with smooth zoom on hover */
@@ -2075,34 +2075,94 @@ html, body {
     transform: translateY(0);
 }
 
-/* Plus Action Button */
+/* Plus Action Button (ShiftUp Signature Fill & Rotate Replica) */
 .pano-btn-wrap {
     pointer-events: auto;
     position: relative;
     z-index: 6;
+    margin-top: 10px;
 }
 
 .pano-action-btn {
+    position: relative;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px 18px;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    color: #ffffff;
-    font-family: 'Chakra Petch', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 700;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    background: rgba(209, 209, 209, 0.22);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border: none;
+    outline: none;
+    overflow: hidden;
+    cursor: pointer;
     text-decoration: none;
-    transition: all 0.28s ease;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Orange Strip on left that smoothly sweeps across to fill entire box on hover */
+.pano-action-btn::after {
+    content: "";
+    position: absolute;
+    background-color: #ff4d24;
+    left: 0;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    z-index: 1;
+    transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.pano-action-btn:hover::after,
+.pano-banner-col:hover .pano-action-btn::after {
+    width: 100%;
+}
+
+.pano-action-btn:hover,
 .pano-banner-col:hover .pano-action-btn {
-    background: #ff4d24;
-    border-color: #ff4d24;
-    color: #ffffff;
-    transform: translateX(4px);
-    box-shadow: 0 4px 16px rgba(255, 77, 36, 0.4);
+    box-shadow: 0 4px 18px rgba(255, 77, 36, 0.45);
+}
+
+/* Plus Icon: Perfectly centered cross symbol */
+.pano-action-btn .btn-plus-icon {
+    position: relative;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    z-index: 2;
+    transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Vertical bar of plus */
+.pano-action-btn .btn-plus-icon::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 0;
+    width: 2px;
+    height: 14px;
+    background-color: #ffffff;
+    border-radius: 1px;
+}
+
+/* Horizontal bar of plus */
+.pano-action-btn .btn-plus-icon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 14px;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 1px;
+}
+
+/* Smooth 90deg Rotation on hover (both button hover and column hover) */
+.pano-action-btn:hover .btn-plus-icon,
+.pano-banner-col:hover .pano-action-btn .btn-plus-icon {
+    transform: rotate(90deg);
 }
 
 /* =========================================================================
@@ -3400,20 +3460,10 @@ html, body {
     transform: translateY(0) scale(1);
 }
 
-/* --- Section 5: 4 Panoramic Banners Staggered Rise --- */
+/* --- Section 5: 4 Panoramic Banners --- */
 .pano-banner-col {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: transform, opacity;
-}
-.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(1) { transition-delay: 0.05s; }
-.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(2) { transition-delay: 0.16s; }
-.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(3) { transition-delay: 0.27s; }
-.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(4) { transition-delay: 0.38s; }
-.shiftup-panoramic-banners.is-inview .pano-banner-col {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
 /* --- Section 6: Diagnostics Flanked Columns & Center Laser Scanner --- */
