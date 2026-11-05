@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <title>Mạng Lưới 27+ Chi Nhánh Toàn Quốc | Hà Thành Garage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --ht-primary: #dc2626;
+      --ht-primary-hover: #b91c1c;
+      --ht-accent: #d97706;
+      --ht-dark: #0f172a;
+      --ht-dark-soft: #1e293b;
+      --ht-light: #f8fafc;
+      --ht-border: #e2e8f0;
+      --ht-border-strong: #cbd5e1;
+      --ht-text-main: #1e293b;
+      --ht-text-muted: #64748b;
+      --ht-font-base: "Plus Jakarta Sans", "Be Vietnam Pro", sans-serif;
+      --ht-radius-md: 10px;
+      --ht-radius-lg: 18px;
+      --ht-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+      --ht-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
+      --ht-container: 1360px;
+      --ht-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--ht-font-base); background-color: var(--ht-light); color: var(--ht-text-main); line-height: 1.6; }
+    a { text-decoration: none; color: inherit; transition: var(--ht-transition); }
+    .container { width: 100%; max-width: var(--ht-container); margin: 0 auto; padding: 0 1.25rem; }
+
+    .ht-topbar { background-color: var(--ht-dark); color: #cbd5e1; font-size: 0.8125rem; padding: 0.45rem 0; }
+    .ht-topbar-inner { display: flex; justify-content: space-between; align-items: center; }
+    .ht-header { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--ht-border); }
+    .ht-header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .ht-brand { display: flex; align-items: center; gap: 0.75rem; }
+    .ht-brand-badge { width: 42px; height: 42px; border-radius: var(--ht-radius-md); background: linear-gradient(135deg, var(--ht-primary), #991b1b); color: #fff; display: grid; place-items: center; font-size: 1.3rem; }
+    .ht-brand-name { font-size: 1.35rem; font-weight: 900; color: var(--ht-dark); }
+    .ht-brand-name span { color: var(--ht-primary); }
+    .ht-menu-list { display: flex; align-items: center; gap: 1.25rem; list-style: none; }
+    .ht-menu-link { font-weight: 600; font-size: 0.90625rem; color: var(--ht-dark-soft); padding: 0.5rem 0; }
+    .ht-menu-link:hover, .ht-menu-link.active { color: var(--ht-primary); }
+
+    .ht-breadcrumbs { background: #ffffff; border-bottom: 1px solid var(--ht-border); padding: 0.85rem 0; font-size: 0.875rem; color: var(--ht-text-muted); }
+    .ht-breadcrumbs a:hover { color: var(--ht-primary); }
+    .ht-breadcrumbs span { margin: 0 0.5rem; color: var(--ht-border-strong); }
+
+    .ht-page-hero { background: linear-gradient(180deg, #ffffff 0%, var(--ht-light) 100%); padding: 3.5rem 0 2.5rem; text-align: center; border-bottom: 1px solid var(--ht-border); }
+    .ht-kicker { font-size: 0.8125rem; font-weight: 700; color: var(--ht-primary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; display: block; }
+    .ht-page-title { font-size: 2.5rem; font-weight: 900; color: var(--ht-dark); margin-bottom: 0.85rem; letter-spacing: -0.02em; }
+    .ht-page-desc { max-width: 680px; margin: 0 auto; color: var(--ht-text-muted); font-size: 1.05rem; }
+
+    .ht-filters-wrap { display: flex; justify-content: center; gap: 0.75rem; margin: 2.5rem 0 3rem; flex-wrap: wrap; }
+    .ht-filter-btn { padding: 0.65rem 1.35rem; border-radius: 30px; background: #ffffff; border: 1.5px solid var(--ht-border-strong); font-weight: 700; font-size: 0.90625rem; color: var(--ht-text-muted); cursor: pointer; transition: var(--ht-transition); }
+    .ht-filter-btn:hover { border-color: var(--ht-primary); color: var(--ht-primary); }
+    .ht-filter-btn.active { background: var(--ht-primary); color: #fff; border-color: var(--ht-primary); box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3); }
+
+    .ht-grid-branches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; margin-bottom: 5rem; }
+    @media (max-width: 1024px) { .ht-grid-branches { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px) { .ht-grid-branches { grid-template-columns: 1fr; } }
+
+    .ht-bcard { background: #ffffff; border: 1px solid var(--ht-border); border-radius: var(--ht-radius-md); padding: 1.75rem; box-shadow: var(--ht-shadow-md); display: flex; flex-direction: column; justify-content: space-between; transition: var(--ht-transition); }
+    .ht-bcard:hover { transform: translateY(-4px); border-color: var(--ht-accent); box-shadow: var(--ht-shadow-xl); }
+    .ht-btag { font-size: 0.6875rem; font-weight: 700; color: var(--ht-accent); text-transform: uppercase; margin-bottom: 0.4rem; }
+    .ht-bname { font-size: 1.25rem; font-weight: 800; color: var(--ht-dark); margin-bottom: 0.5rem; }
+    .ht-baddr { font-size: 0.875rem; color: var(--ht-text-muted); line-height: 1.5; margin-bottom: 1rem; flex: 1; }
+    .ht-bphone { font-size: 0.9375rem; font-weight: 700; color: var(--ht-primary); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+    .ht-bactions { display: flex; gap: 0.75rem; border-top: 1px solid var(--ht-border); padding-top: 1rem; }
+    .ht-btn-action { flex: 1; height: 40px; display: flex; align-items: center; justify-content: center; gap: 0.4rem; border-radius: 6px; font-weight: 700; font-size: 0.8125rem; }
+    .ht-btn-red { background: var(--ht-primary); color: #fff; }
+    .ht-btn-gray { background: var(--ht-light); border: 1px solid var(--ht-border-strong); color: var(--ht-dark); }
+  </style>
+</head>
+<body>
+
+  <!-- Topbar -->
+  <div class="ht-topbar">
+    <div class="container ht-topbar-inner">
+      <div>Tổng đài CSKH: <b>0568 05 0505</b> · Cứu hộ 24/7: <b>0945 86 0505</b></div>
+      <div>Trụ sở: Số 9, Ngõ 11 Duy Tân, Cầu Giấy, Hà Nội</div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="ht-header">
+    <div class="container ht-header-inner">
+      <a href="index.html" class="ht-brand">
+        <div class="ht-brand-badge"><i class="fa-solid fa-car-burst"></i></div>
+        <div class="ht-brand-titles">
+          <div class="ht-brand-name">HÀ THÀNH <span>GARAGE</span></div>
+        </div>
+      </a>
+      <nav>
+        <ul class="ht-menu-list">
+          <li><a href="index.html" class="ht-menu-link">Trang chủ</a></li>
+          <li><a href="service-paint.html" class="ht-menu-link">Dịch vụ</a></li>
+          <li><a href="calculator.html" class="ht-menu-link">Bảng giá & Dự toán</a></li>
+          <li><a href="warranty.html" class="ht-menu-link">Tra cứu bảo hành</a></li>
+          <li><a href="branches.html" class="ht-menu-link active">27+ Chi nhánh</a></li>
+          <li><a href="about.html" class="ht-menu-link">Giới thiệu</a></li>
+        </ul>
+      </nav>
+      <a href="index.html#bookingModal" class="ht-btn-action ht-btn-red" style="max-width:140px;height:40px">Đặt lịch hẹn</a>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="ht-breadcrumbs">
+    <div class="container">
+      <a href="index.html">Trang chủ</a> <span>/</span> <b>Hệ thống chi nhánh</b>
+    </div>
+  </div>
+
+  <!-- Hero Header -->
+  <div class="ht-page-hero">
+    <div class="container">
+      <span class="ht-kicker">MẠNG LƯỚI PHỦ SÓNG TOÀN QUỐC</span>
+      <h1 class="ht-page-title">Hệ Thống 27+ Chi Nhánh Hà Thành Garage</h1>
+      <p class="ht-page-desc">Tìm kiếm trạm dịch vụ gần bạn nhất tại Hà Nội, Hải Phòng, Quảng Ninh, TP. Hồ Chí Minh với trang thiết bị phòng sơn sấy và máy chẩn đoán đồng bộ 100%.</p>
+    </div>
+  </div>
+
+  <!-- Filter Buttons -->
+  <div class="container">
+    <div class="ht-filters-wrap">
+      <button class="ht-filter-btn active" onclick="filterB('all', this)">Tất cả (27 Chi nhánh)</button>
+      <button class="ht-filter-btn" onclick="filterB('hn', this)">Khu vực Hà Nội (10 trạm)</button>
+      <button class="ht-filter-btn" onclick="filterB('hp', this)">Hải Phòng (3 trạm)</button>
+      <button class="ht-filter-btn" onclick="filterB('qn', this)">Quảng Ninh (3 trạm)</button>
+      <button class="ht-filter-btn" onclick="filterB('mn', this)">TP. Hồ Chí Minh & Miền Nam</button>
+    </div>
+
+    <!-- Branches Grid -->
+    <div class="ht-grid-branches" id="branchGrid">
+      <div class="ht-bcard" data-r="hn">
+        <div>
+          <span class="ht-btag">TRỤ SỞ CHÍNH HÀ THÀNH</span>
+          <div class="ht-bname">Hà Thành 01 - Tây Hồ (HN)</div>
+          <div class="ht-baddr">Số 500 Võ Chí Công, P. Xuân La, Q. Tây Hồ, Hà Nội. Khuôn viên 2.000m², 6 buồng sơn sấy hồng ngoại.</div>
+          <div class="ht-bphone"><i class="fa-solid fa-phone"></i> 0945 86 0505</div>
+        </div>
+        <div class="ht-bactions">
+          <a href="tel:0945860505" class="ht-btn-action ht-btn-red"><i class="fa-solid fa-phone"></i> Gọi ngay</a>
+          <a href="https://maps.google.com" target="_blank" class="ht-btn-action ht-btn-gray"><i class="fa-solid fa-location-arrow"></i> Bản đồ</a>
+        </div>
+      </div>
+
+      <div class="ht-bcard" data-r="hn">
+        <div>
+          <span class="ht-btag">CHI NHÁNH HOÀNG MAI</span>
+          <div class="ht-bname">Hà Thành 02 - Hoàng Mai (HN)</div>
+          <div class="ht-baddr">Số 300 Trần Điền, P. Định Công, Q. Hoàng Mai, Hà Nội. Chuyên đại tu máy gầm & sơn sấy.</div>
+          <div class="ht-bphone"><i class="fa-solid fa-phone"></i> 0916 86 0505</div>
+        </div>
+        <div class="ht-bactions">
+          <a href="tel:0916860505" class="ht-btn-action ht-btn-red"><i class="fa-solid fa-phone"></i> Gọi ngay</a>
+          <a href="https://maps.google.com" target="_blank" class="ht-btn-action ht-btn-gray"><i class="fa-solid fa-location-arrow"></i> Bản đồ</a>
+        </div>
+      </div>
+
+      <div class="ht-bcard" data-r="hn">
+        <div>
+          <span class="ht-btag">CHI NHÁNH LONG BIÊN</span>
+          <div class="ht-bname">Hà Thành 22 - Long Biên (HN)</div>
+          <div class="ht-baddr">Số 8 Thạch Bàn, Q. Long Biên, Hà Nội. Điểm hẹn thuận tiện phía Đông Thủ đô.</div>
+          <div class="ht-bphone"><i class="fa-solid fa-phone"></i> 0912 86 0505</div>
+        </div>
+        <div class="ht-bactions">
+          <a href="tel:0912860505" class="ht-btn-action ht-btn-red"><i class="fa-solid fa-phone"></i> Gọi ngay</a>
+          <a href="https://maps.google.com" target="_blank" class="ht-btn-action ht-btn-gray"><i class="fa-solid fa-location-arrow"></i> Bản đồ</a>
+        </div>
+      </div>
+
+      <div class="ht-bcard" data-r="hp">
+        <div>
+          <span class="ht-btag">CHI NHÁNH HẢI PHÒNG 01</span>
+          <div class="ht-bname">Hà Thành - Ngô Quyền (Hải Phòng)</div>
+          <div class="ht-baddr">Số 18 Lê Hồng Phong, P. Đông Khê, Q. Ngô Quyền, TP. Hải Phòng. Trung tâm Spa & Sơn sấy.</div>
+          <div class="ht-bphone"><i class="fa-solid fa-phone"></i> 0948 86 0505</div>
+        </div>
+        <div class="ht-bactions">
+          <a href="tel:0948860505" class="ht-btn-action ht-btn-red"><i class="fa-solid fa-phone"></i> Gọi ngay</a>
+          <a href="https://maps.google.com" target="_blank" class="ht-btn-action ht-btn-gray"><i class="fa-solid fa-location-arrow"></i> Bản đồ</a>
+        </div>
+      </div>
+
+      <div class="ht-bcard" data-r="qn">
+        <div>
+          <span class="ht-btag">CHI NHÁNH QUẢNG NINH</span>
+          <div class="ht-bname">Hà Thành - Hạ Long (Quảng Ninh)</div>
+          <div class="ht-baddr">Khu đô thị Cao Xanh, P. Cao Xanh, TP. Hạ Long, Quảng Ninh. Giám định bảo hiểm tai nạn.</div>
+          <div class="ht-bphone"><i class="fa-solid fa-phone"></i> 0936 86 0505</div>
+        </div>
+        <div class="ht-bactions">
+          <a href="tel:0936860505" class="ht-btn-action ht-btn-red"><i class="fa-solid fa-phone"></i> Gọi ngay</a>
+          <a href="https://maps.google.com" target="_blank" class="ht-btn-action ht-btn-gray"><i class="fa-solid fa-location-arrow"></i> Bản đồ</a>
+        </div>
+      </div>
+
+      <div class="ht-bcard" data-r="mn">
+        <div>
+          <span class="ht-btag">CHI NHÁNH TP. HỒ CHÍ MINH</span>
+          <div class="ht-bname">Hà Thành - Bình Thạnh (TP.HCM)</div>
+          <div class="ht-baddr">Số 28 Phan Chu Trinh, P. 12, Q. Bình Thạnh, TP. Hồ Chí Minh. Tiêu chuẩn KCS Đức 100%.</div>
+          <div class="ht-bphone"><i class="fa-solid fa-phone"></i> 0989 86 0505</div>
+        </div>
+        <div class="ht-bactions">
+          <a href="tel:0989860505" class="ht-btn-action ht-btn-red"><i class="fa-solid fa-phone"></i> Gọi ngay</a>
+          <a href="https://maps.google.com" target="_blank" class="ht-btn-action ht-btn-gray"><i class="fa-solid fa-location-arrow"></i> Bản đồ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer style="background:var(--ht-dark);color:#94a3b8;padding:3rem 0;text-align:center">
+    <div class="container">
+      © 2026 Hà Thành Garage — Bản quyền thuộc Công ty TNHH Hà Thành Automotive Việt Nam.
+    </div>
+  </footer>
+
+  <script>
+    function filterB(reg, btn) {
+      document.querySelectorAll('.ht-filter-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.querySelectorAll('#branchGrid .ht-bcard').forEach(function(card){
+        if (reg === 'all' || card.getAttribute('data-r') === reg) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

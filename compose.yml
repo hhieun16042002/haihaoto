@@ -1,0 +1,33 @@
+services:
+  wordpress:
+    image: wordpress:php8.2-apache
+    container_name: lexus-wordpress
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress_password
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - ./wordpress:/var/www/html
+      - ./lexus-motors:/var/www/html/wp-content/themes/lexus-motors
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:11.4
+    container_name: lexus-mariadb
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress_password
+      MYSQL_ROOT_PASSWORD: root_password
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
+

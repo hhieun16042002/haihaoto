@@ -1,0 +1,15 @@
+# Antigravity & Executables
+cloudflared.exe
+*.log
+*.tmp
+
+# WordPress Caching & Uploads Cache
+wordpress/wp-content/cache/
+wordpress/wp-content/upgrade/
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

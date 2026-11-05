@@ -1,0 +1,243 @@
+/**
+ * Hải Hà Auto - Admin Settings Panel Styling
+ */
+
+.hieugara-admin-wrap {
+    max-width: 1100px;
+    margin: 20px auto 40px 10px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.hieugara-admin-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1d2327;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.hieugara-admin-title .dashicons {
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+    color: #ff4d24;
+}
+
+.hieugara-card {
+    background: #ffffff;
+    border: 1px solid #c3c4c7;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.hieugara-card .card-header {
+    background: #f6f7f7;
+    padding: 14px 20px;
+    border-bottom: 1px solid #dcdcde;
+}
+
+.hieugara-card .card-header h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1d2327;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hieugara-card .card-header h2 .dashicons {
+    color: #ff4d24;
+}
+
+.hieugara-card .card-body {
+    padding: 20px 24px;
+}
+
+/* Switch Toggle Button */
+.hieugara-switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 26px;
+    vertical-align: middle;
+}
+
+.hieugara-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.hieugara-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .3s;
+    border-radius: 26px;
+}
+
+.hieugara-switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .3s;
+    border-radius: 50%;
+}
+
+.hieugara-switch input:checked + .slider {
+    background-color: #ff4d24;
+}
+
+.hieugara-switch input:checked + .slider:before {
+    transform: translateX(22px);
+}
+
+.hieugara-switch-desc {
+    margin-left: 12px;
+    font-size: 13px;
+    color: #50575e;
+}
+
+/* Slides Accordion Boxes */
+.slides-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.slide-item-box {
+    border: 1px solid #dcdcde;
+    border-radius: 6px;
+    background: #ffffff;
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+}
+
+.slide-item-box:hover {
+    border-color: #ff4d24;
+}
+
+.slide-item-header {
+    background: #f8f9fa;
+    padding: 12px 18px;
+    border-bottom: 1px solid #e2e4e8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.slide-item-header h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.slide-num-badge {
+    background: #1d2327;
+    color: #ffffff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 800;
+}
+
+.slide-enable-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.slide-item-content {
+    padding: 18px;
+}
+
+.slide-fields-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.slide-field-group label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 13px;
+    color: #1d2327;
+}
+
+.slide-field-row-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.image-preview-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.img-thumb-box img {
+    object-fit: cover;
+    width: 140px;
+    height: 80px;
+}
+
+.menu-guidance-box {
+    background: #f0f6fc;
+    border: 1px solid #c2e0ff;
+    padding: 14px 18px;
+    border-radius: 6px;
+    max-width: 650px;
+}
+
+.menu-guidance-box ul {
+    margin: 8px 0 16px 20px;
+    list-style: disc;
+}
+
+.menu-guidance-box li {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 6px;
+}
+
+.hieugara-submit-bar {
+    position: sticky;
+    bottom: 20px;
+    background: #ffffff;
+    padding: 14px 20px;
+    border: 1px solid #c3c4c7;
+    border-radius: 6px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: flex-end;
+    z-index: 100;
+}
+
+.hieugara-submit-bar .button-primary {
+    background: #ff4d24 !important;
+    border-color: #e03912 !important;
+    font-weight: 700 !important;
+    padding: 6px 24px !important;
+    font-size: 14px !important;
+}
+

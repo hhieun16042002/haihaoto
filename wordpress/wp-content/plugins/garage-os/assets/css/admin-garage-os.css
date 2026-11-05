@@ -1,0 +1,757 @@
+/* ==========================================================================
+   GARAGE OS - TESLA SERVICE / BMW WORKSHOP MANAGEMENT ADMIN STYLES
+   Aesthetic: High-Tech Workshop Operations Hub (Precision Dark/Slate)
+   ========================================================================== */
+
+:root {
+    --gos-primary: #e11d48;
+    --gos-primary-hover: #be123c;
+    --gos-primary-glow: rgba(225, 29, 72, 0.35);
+    --gos-dark-950: #070a13;
+    --gos-dark-900: #0f172a;
+    --gos-dark-800: #1e293b;
+    --gos-dark-700: #334155;
+    --gos-slate-200: #e2e8f0;
+    --gos-slate-100: #f1f5f9;
+    --gos-slate-50:  #f8fafc;
+    --gos-green: #10b981;
+    --gos-amber: #f59e0b;
+    --gos-blue:  #3b82f6;
+    --gos-purple: #a855f7;
+    --gos-radius: 12px;
+}
+
+.garage-os-wrap.tesla-theme {
+    font-family: -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", "Inter", "Segoe UI", Roboto, sans-serif;
+    color: #1e293b;
+    margin: 20px 20px 40px 0;
+}
+
+/* 1. Command Center Top Bar */
+.tesla-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    padding: 24px 32px;
+    border-radius: var(--gos-radius);
+    color: #ffffff;
+    box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.tesla-brand-identity {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.tesla-logo-mark {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 900;
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(225, 29, 72, 0.4);
+}
+
+.tesla-app-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #38bdf8;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.live-pulse-dot {
+    width: 7px;
+    height: 7px;
+    background: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #10b981;
+    animation: livePulse 1.5s infinite;
+}
+
+@keyframes livePulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+.tesla-main-title {
+    font-size: 22px;
+    font-weight: 900;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+/* Nav Toggles (Kanban vs Bay Map) */
+.tesla-nav-toggles {
+    display: flex;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 4px;
+    border-radius: 8px;
+    gap: 4px;
+}
+
+.view-toggle-btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.view-toggle-btn:hover {
+    color: #ffffff;
+}
+
+.view-toggle-btn.active {
+    background: #ffffff;
+    color: #0f172a;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.btn-tesla-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(225, 29, 72, 0.4);
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-tesla-primary:hover {
+    background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+    transform: translateY(-1px);
+}
+
+/* 2. KPI Holographic HUD Row */
+.tesla-hud-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.hud-stat-box {
+    background: #ffffff;
+    border-radius: var(--gos-radius);
+    padding: 20px 24px;
+    border: 1px solid var(--gos-slate-200);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+    display: flex;
+    flex-direction: column;
+}
+
+.hud-stat-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.hud-lbl {
+    font-size: 12px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.hud-icon-pill {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-blue { background: #eff6ff; color: #2563eb; }
+.icon-gold { background: #fffbeb; color: #d97706; }
+.icon-purple { background: #f5f3ff; color: #7c3aed; }
+.icon-green { background: #f0fdf4; color: #16a34a; }
+
+.hud-stat-val {
+    font-size: 26px;
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1.1;
+    margin-bottom: 4px;
+}
+
+.hud-stat-val small {
+    font-size: 14px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.hud-stat-foot {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 4px;
+}
+
+.hud-progress-track {
+    width: 100%;
+    height: 6px;
+    background: #f1f5f9;
+    border-radius: 9999px;
+    margin-top: 6px;
+    overflow: hidden;
+}
+
+.hud-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #f59e0b, #e11d48);
+    border-radius: 9999px;
+    transition: width 0.4s ease;
+}
+
+/* 3. Drag and Drop Kanban Board */
+.garage-kanban-board {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(280px, 1fr));
+    gap: 16px;
+    align-items: flex-start;
+    overflow-x: auto;
+    padding-bottom: 30px;
+}
+
+.kanban-column {
+    background: #f8fafc;
+    border-radius: var(--gos-radius);
+    border: 1px solid var(--gos-slate-200);
+    display: flex;
+    flex-direction: column;
+    min-height: 520px;
+}
+
+.kanban-column-header {
+    background: #ffffff;
+    padding: 16px 18px;
+    border-top: 4px solid var(--gos-dark-700);
+    border-bottom: 1px solid var(--gos-slate-200);
+    border-radius: var(--gos-radius) var(--gos-radius) 0 0;
+}
+
+.kanban-col-title-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.kanban-col-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--gos-dark-900);
+    margin: 0;
+}
+
+.kanban-col-count {
+    font-size: 12px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 9999px;
+}
+
+.kanban-col-desc {
+    display: block;
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 4px;
+}
+
+.kanban-column-body {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+    transition: background 0.2s ease;
+}
+
+.kanban-column-body.drag-over {
+    background: #f1f5f9;
+    border: 2px dashed #3b82f6;
+    border-radius: 0 0 var(--gos-radius) var(--gos-radius);
+}
+
+.kanban-empty {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 12px;
+    padding: 36px 12px;
+    border: 1px dashed #cbd5e1;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+/* Kanban Cards (Draggable) */
+.kanban-card {
+    background: #ffffff;
+    border: 1px solid var(--gos-slate-200);
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    position: relative;
+    cursor: grab;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s;
+}
+
+.kanban-card:hover {
+    box-shadow: 0 8px 16px -4px rgba(15, 23, 42, 0.1);
+    transform: translateY(-2px);
+    border-color: #cbd5e1;
+}
+
+.kanban-card.is-dragging {
+    opacity: 0.4;
+    transform: scale(0.98);
+    cursor: grabbing;
+    border: 2px dashed #e11d48;
+}
+
+.card-drag-handle {
+    position: absolute;
+    top: 14px;
+    right: 12px;
+    color: #94a3b8;
+    cursor: grab;
+    font-size: 16px;
+    display: none;
+}
+.kanban-card:hover .card-drag-handle {
+    display: block;
+}
+
+.card-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-right: 20px;
+}
+
+.plate-badge {
+    background: #fef08a;
+    color: #000000;
+    border: 2px solid #000000;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-weight: 900;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ro-code {
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748b;
+    background: #f1f5f9;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.car-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 6px 0;
+    line-height: 1.3;
+}
+
+.service-brief {
+    font-size: 12px;
+    color: #475569;
+    margin: 0 0 12px 0;
+    line-height: 1.45;
+}
+
+.card-meta {
+    border-top: 1px dashed #e2e8f0;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.meta-row {
+    font-size: 12px;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.meta-row .dashicons {
+    font-size: 15px;
+    width: 15px;
+    height: 15px;
+    color: #94a3b8;
+}
+
+.meta-bay {
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.meta-price-row {
+    margin-top: 4px;
+    justify-content: space-between;
+}
+
+.price-val {
+    font-weight: 900;
+    color: #e11d48;
+    font-size: 14px;
+}
+
+.pay-badge {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.pay-unpaid { background: #fee2e2; color: #dc2626; }
+.pay-deposit_paid { background: #fef3c7; color: #d97706; }
+.pay-paid { background: #dcfce7; color: #16a34a; }
+
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 10px;
+}
+
+.status-quick-switch {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-quick-switch label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.status-quick-switch select {
+    font-size: 11px;
+    padding: 2px 6px;
+    height: 26px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    background: #ffffff;
+    font-weight: 600;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 4px;
+}
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+    text-decoration: none;
+    transition: all 0.15s;
+    background: #ffffff;
+}
+
+.btn-icon:hover {
+    background: #f1f5f9;
+    color: #0f172a;
+    border-color: #94a3b8;
+}
+
+/* 4. SƠ ĐỒ MẶT BẰNG XƯỞNG 12 KHOANG (BAY FLOORPLAN) */
+.tesla-bay-map-container {
+    background: #ffffff;
+    border-radius: var(--gos-radius);
+    padding: 28px;
+    border: 1px solid var(--gos-slate-200);
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05);
+}
+
+.bay-map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 18px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.bay-map-title {
+    font-size: 18px;
+    font-weight: 900;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.bay-map-sub {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0;
+}
+
+.bay-legend {
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #475569;
+}
+
+.legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.dot-green { background: #10b981; }
+.dot-blue { background: #3b82f6; }
+.dot-purple { background: #a855f7; }
+
+/* Bay Grid */
+.bay-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.workshop-bay-slot {
+    border-radius: 12px;
+    padding: 18px;
+    border: 2px solid #e2e8f0;
+    background: #f8fafc;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 190px;
+}
+
+.workshop-bay-slot:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px -4px rgba(15, 23, 42, 0.1);
+}
+
+.slot-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.slot-code {
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: 900;
+    background: #0f172a;
+    color: #ffffff;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.slot-status-indicator {
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    letter-spacing: 0.05em;
+}
+
+.bay-free {
+    border-color: #86efac;
+    background: #ffffff;
+}
+
+.bay-free .slot-status-indicator {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.bay-busy {
+    border-color: #93c5fd;
+    background: linear-gradient(180deg, #ffffff 0%, #eff6ff 100%);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08);
+}
+
+.bay-busy .slot-status-indicator {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.slot-bay-name {
+    font-size: 14px;
+    font-weight: 800;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 2px;
+}
+
+.slot-zone-tag {
+    font-size: 11px;
+    color: #64748b;
+    margin-bottom: 12px;
+}
+
+/* Inside Occupied Slot */
+.slot-car-card {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-top: auto;
+}
+
+.slot-plate-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.slot-ro {
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748b;
+}
+
+.slot-car-model {
+    font-size: 12px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+
+.slot-tech-info {
+    font-size: 11px;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.slot-foot-action {
+    border-top: 1px solid #f1f5f9;
+    padding-top: 6px;
+    text-align: right;
+}
+
+.slot-btn-view {
+    font-size: 11px;
+    font-weight: 700;
+    color: #e11d48;
+    text-decoration: none;
+}
+
+.slot-btn-view:hover {
+    text-decoration: underline;
+}
+
+/* Inside Empty Slot */
+.slot-empty-state {
+    margin-top: auto;
+    text-align: center;
+    padding: 16px 0;
+    color: #10b981;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.slot-btn-assign {
+    font-size: 11px;
+    font-weight: 700;
+    color: #475569;
+    text-decoration: none;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-top: 4px;
+    transition: all 0.15s;
+}
+
+.slot-btn-assign:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+@media (max-width: 1280px) {
+    .bay-grid-layout {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .tesla-hud-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .bay-grid-layout {
+        grid-template-columns: 1fr;
+    }
+}

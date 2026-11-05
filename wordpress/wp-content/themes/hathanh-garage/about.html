@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <title>Về Hà Thành Garage | Triết Lý Kinh Doanh Bằng Sự Tử Tế</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --ht-primary: #dc2626;
+      --ht-primary-hover: #b91c1c;
+      --ht-accent: #d97706;
+      --ht-dark: #0f172a;
+      --ht-dark-soft: #1e293b;
+      --ht-light: #f8fafc;
+      --ht-border: #e2e8f0;
+      --ht-border-strong: #cbd5e1;
+      --ht-text-main: #1e293b;
+      --ht-text-muted: #64748b;
+      --ht-font-base: "Plus Jakarta Sans", "Be Vietnam Pro", sans-serif;
+      --ht-radius-md: 10px;
+      --ht-radius-lg: 18px;
+      --ht-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+      --ht-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
+      --ht-container: 1360px;
+      --ht-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--ht-font-base); background-color: var(--ht-light); color: var(--ht-text-main); line-height: 1.6; }
+    a { text-decoration: none; color: inherit; transition: var(--ht-transition); }
+    .container { width: 100%; max-width: var(--ht-container); margin: 0 auto; padding: 0 1.25rem; }
+
+    .ht-topbar { background-color: var(--ht-dark); color: #cbd5e1; font-size: 0.8125rem; padding: 0.45rem 0; }
+    .ht-topbar-inner { display: flex; justify-content: space-between; align-items: center; }
+    .ht-header { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--ht-border); }
+    .ht-header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .ht-brand { display: flex; align-items: center; gap: 0.75rem; }
+    .ht-brand-badge { width: 42px; height: 42px; border-radius: var(--ht-radius-md); background: linear-gradient(135deg, var(--ht-primary), #991b1b); color: #fff; display: grid; place-items: center; font-size: 1.3rem; }
+    .ht-brand-name { font-size: 1.35rem; font-weight: 900; color: var(--ht-dark); }
+    .ht-brand-name span { color: var(--ht-primary); }
+    .ht-menu-list { display: flex; align-items: center; gap: 1.25rem; list-style: none; }
+    .ht-menu-link { font-weight: 600; font-size: 0.90625rem; color: var(--ht-dark-soft); padding: 0.5rem 0; }
+    .ht-menu-link:hover, .ht-menu-link.active { color: var(--ht-primary); }
+
+    .ht-breadcrumbs { background: #ffffff; border-bottom: 1px solid var(--ht-border); padding: 0.85rem 0; font-size: 0.875rem; color: var(--ht-text-muted); }
+    .ht-breadcrumbs a:hover { color: var(--ht-primary); }
+    .ht-breadcrumbs span { margin: 0 0.5rem; color: var(--ht-border-strong); }
+
+    .ht-about-section { padding: 4rem 0 5rem; }
+    .ht-about-card { background: #ffffff; border: 1px solid var(--ht-border); border-radius: var(--ht-radius-lg); padding: 3rem; box-shadow: var(--ht-shadow-md); max-width: 1000px; margin: 0 auto; }
+    .ht-about-title { font-size: 2.25rem; font-weight: 900; color: var(--ht-dark); margin-bottom: 1.5rem; }
+    .ht-about-p { font-size: 1.05rem; color: #334155; line-height: 1.7; margin-bottom: 1.5rem; }
+    .ht-pillars-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 2.5rem 0; }
+    @media (max-width: 768px) { .ht-pillars-3 { grid-template-columns: 1fr; } }
+    .ht-pcard { background: var(--ht-light); border: 1px solid var(--ht-border); border-radius: var(--ht-radius-md); padding: 1.5rem; text-align: center; }
+    .ht-pcard-icon { width: 50px; height: 50px; border-radius: 50%; background: var(--ht-primary); color: #fff; font-size: 1.5rem; display: grid; place-items: center; margin: 0 auto 1rem; }
+    .ht-pcard-title { font-size: 1.15rem; font-weight: 800; color: var(--ht-dark); margin-bottom: 0.5rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Topbar -->
+  <div class="ht-topbar">
+    <div class="container ht-topbar-inner">
+      <div>Tổng đài CSKH: <b>0568 05 0505</b> · Cứu hộ 24/7: <b>0945 86 0505</b></div>
+      <div>Trụ sở: Số 9, Ngõ 11 Duy Tân, Cầu Giấy, Hà Nội</div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="ht-header">
+    <div class="container ht-header-inner">
+      <a href="index.html" class="ht-brand">
+        <div class="ht-brand-badge"><i class="fa-solid fa-car-burst"></i></div>
+        <div class="ht-brand-titles">
+          <div class="ht-brand-name">HÀ THÀNH <span>GARAGE</span></div>
+        </div>
+      </a>
+      <nav>
+        <ul class="ht-menu-list">
+          <li><a href="index.html" class="ht-menu-link">Trang chủ</a></li>
+          <li><a href="service-paint.html" class="ht-menu-link">Dịch vụ</a></li>
+          <li><a href="calculator.html" class="ht-menu-link">Bảng giá & Dự toán</a></li>
+          <li><a href="warranty.html" class="ht-menu-link">Tra cứu bảo hành</a></li>
+          <li><a href="branches.html" class="ht-menu-link">27+ Chi nhánh</a></li>
+          <li><a href="about.html" class="ht-menu-link active">Giới thiệu</a></li>
+        </ul>
+      </nav>
+      <a href="index.html#bookingModal" style="background:var(--ht-primary);color:#fff;padding:0.6rem 1.25rem;border-radius:8px;font-weight:700;font-size:0.875rem">Đặt lịch hẹn</a>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="ht-breadcrumbs">
+    <div class="container">
+      <a href="index.html">Trang chủ</a> <span>/</span> <b>Về Hà Thành Garage</b>
+    </div>
+  </div>
+
+  <!-- Main Section -->
+  <div class="container ht-about-section">
+    <div class="ht-about-card">
+      <span style="font-size:0.8125rem;font-weight:700;color:var(--ht-primary);text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:0.5rem">TRIẾT LÝ DOANH NGHIỆP</span>
+      <h1 class="ht-about-title">Hà Thành Garage — "Kinh Doanh Bằng Sự Tử Tế"</h1>
+      
+      <p class="ht-about-p">Được thành lập từ năm 2015, <b>Công ty TNHH Hà Thành Automotive Việt Nam</b> đã trải qua hơn 10 năm xây dựng và phát triển để trở thành một trong những hệ thống sửa chữa, bảo dưỡng và chăm sóc ô tô uy tín hàng đầu tại Việt Nam.</p>
+
+      <p class="ht-about-p">Chúng tôi luôn tâm niệm rằng: Mỗi chiếc xe đến với xưởng không chỉ là phương tiện di chuyển, mà là tài sản và sự an toàn của cả một gia đình. Do đó, toàn thể đội ngũ kỹ thuật viên Hà Thành luôn làm việc với sự tận tâm, trung thực và minh bạch tuyệt đối.</p>
+
+      <div class="ht-pillars-3">
+        <div class="ht-pcard">
+          <div class="ht-pcard-icon"><i class="fa-solid fa-heart"></i></div>
+          <div class="ht-pcard-title">Tận Tâm & Tử Tế</div>
+          <p style="font-size:0.875rem;color:var(--ht-text-muted)">Luôn đặt sự an toàn và quyền lợi chính đáng của khách hàng lên vị trí cao nhất.</p>
+        </div>
+        <div class="ht-pcard">
+          <div class="ht-pcard-icon"><i class="fa-solid fa-gem"></i></div>
+          <div class="ht-pcard-title">Chất Lượng Vượt Trội</div>
+          <p style="font-size:0.875rem;color:var(--ht-text-muted)">100% Phụ tùng chính hãng Motul, Bosch, Sikkens cùng phòng sấy hồng ngoại hiện đại.</p>
+        </div>
+        <div class="ht-pcard">
+          <div class="ht-pcard-icon"><i class="fa-solid fa-network-wired"></i></div>
+          <div class="ht-pcard-title">Bảo Hành Đồng Bộ</div>
+          <p style="font-size:0.875rem;color:var(--ht-text-muted)">Bảo hành điện tử tra cứu toàn quốc tại tất cả 27+ chi nhánh Bắc - Trung - Nam.</p>
+        </div>
+      </div>
+
+      <p class="ht-about-p">Hà Thành Garage chân thành cảm ơn hơn 50.000+ lượt khách hàng đã luôn đồng hành, tin tưởng và gửi gắm phương tiện cho chúng tôi trong suốt những năm qua.</p>
+    </div>
+  </div>
+
+  <footer style="background:var(--ht-dark);color:#94a3b8;padding:3rem 0;text-align:center">
+    <div class="container">
+      © 2026 Hà Thành Garage — Bản quyền thuộc Công ty TNHH Hà Thành Automotive Việt Nam.
+    </div>
+  </footer>
+</body>
+</html>

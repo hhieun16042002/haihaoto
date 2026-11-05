@@ -1,0 +1,5986 @@
+@font-face  {
+  font-family: 'Be Vietnam Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/font-1.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+
+@font-face  {
+  font-family: 'Be Vietnam Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/font-2.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+
+@font-face  {
+  font-family: 'Be Vietnam Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/font-3.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+
+@font-face  {
+  font-family: 'Be Vietnam Pro';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/font-4.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+
+@font-face  {
+  font-family: 'Be Vietnam Pro';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/font-5.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+
+@font-face  {
+  font-family: 'Be Vietnam Pro';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/font-6.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+
+@font-face  {
+  font-family: 'Be Vietnam Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/font-7.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+
+@font-face  {
+  font-family: 'Be Vietnam Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/font-8.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+
+@font-face  {
+  font-family: 'Be Vietnam Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/font-9.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* thai */
+
+@font-face  {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/font-10.woff2) format('woff2');
+  unicode-range: U+02D7, U+0303, U+0331, U+0E01-0E5B, U+200C-200D, U+25CC;
+}
+/* vietnamese */
+
+@font-face  {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/font-11.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+
+@font-face  {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/font-12.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+
+@font-face  {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/font-13.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* thai */
+
+@font-face  {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/font-14.woff2) format('woff2');
+  unicode-range: U+02D7, U+0303, U+0331, U+0E01-0E5B, U+200C-200D, U+25CC;
+}
+/* vietnamese */
+
+@font-face  {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/font-15.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+
+@font-face  {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/font-16.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+
+@font-face  {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/font-17.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+
+/* ==========================================================================
+   AUTHENTIC SHIFTUP CAR WORKSHOP DESIGN SYSTEM (Qode Interactive 1:1 Replica)
+   Strict White & Obsidian Contrast, Zero-Radius Crisp Layout, Chakra Petch & Be Vietnam Pro
+   ========================================================================== */
+
+/* Universal Overflow & Box Model Protection */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    margin: 0;
+    padding: 0;
+    font-family: 'Be Vietnam Pro', -apple-system, sans-serif;
+    color: #222226;
+    background: #ffffff;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   GLOBAL CANONICAL CONTAINER & GUTTER SYSTEM (1360px Motorsport Alignment)
+   Enforces consistent left & right margins across all sections, headers & footers
+   ========================================================================== */
+.container,
+.site-main .container,
+.main-brand-header .container,
+.shiftup-main-footer .container {
+    width: 100%;
+    max-width: 1360px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 991px) {
+    .container,
+    .site-main .container,
+    .main-brand-header .container,
+    .shiftup-main-footer .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container,
+    .site-main .container,
+    .main-brand-header .container,
+    .shiftup-main-footer .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+/* ==========================================================================
+   TURBO INSTANT NAVIGATION LOADER (Top 3px Progress Line)
+   ========================================================================== */
+#shiftupPageLoader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, #ff4d24 0%, #ff7a00 60%, #ffffff 100%);
+    box-shadow: 0 0 12px rgba(255, 77, 36, 0.9), 0 0 6px rgba(255, 77, 36, 0.6);
+    z-index: 9999999;
+    pointer-events: none;
+    opacity: 0;
+    transition: width 0.35s cubic-bezier(0.1, 0.5, 0.1, 1), opacity 0.2s ease;
+}
+#shiftupPageLoader.is-loading {
+    opacity: 1;
+    width: 82%;
+}
+
+/* Global ShiftUp Typography */
+.shiftup-main-page,
+.shiftup-main-page button,
+.shiftup-main-page input,
+.shiftup-main-page select,
+.shiftup-main-page textarea {
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.shiftup-main-page h1,
+.shiftup-main-page h2,
+.shiftup-main-page h3,
+.shiftup-main-page h4,
+.shiftup-main-page h5,
+.shiftup-main-page h6,
+.hero-main-title,
+.tuning-title,
+.feature-item-title,
+.card-title,
+.all-about-title,
+.card-item-title,
+.pano-title,
+.diag-item-title,
+.checkup-title,
+.price-val,
+.warranty-title,
+.workshops-title,
+.ws-name,
+.brand-title,
+.shiftup-nav > li > a,
+.shiftup-rect-btn,
+.shiftup-btn-header,
+.checkup-btn,
+.hero-num-btn,
+.orange-bar,
+.btn-orange-bar {
+    font-family: 'Chakra Petch', 'Montserrat', sans-serif;
+}
+
+.orange-bar,
+.btn-orange-bar {
+    color: #ff4d24 !important;
+    font-weight: 900 !important;
+    margin-right: 6px;
+    display: inline-block;
+}
+
+.text-orange {
+    color: #ff4d24 !important;
+}
+
+.text-black {
+    color: #000000 !important;
+}
+
+/* =========================================================================
+   1. SHIFTUP TOPBAR (Permanently Disabled as requested)
+   ========================================================================= */
+.shiftup-topbar {
+    display: none !important;
+    height: 0 !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+.shiftup-topbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.shiftup-topbar-inner .topbar-left,
+.shiftup-topbar-inner .topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.shiftup-topbar-inner .topbar-sep {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.shiftup-topbar-inner a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.shiftup-topbar-inner a:hover {
+    color: #ff4d24;
+}
+
+/* =========================================================================
+   2. MAIN BRAND HEADER (White Corporate Identity)
+   ========================================================================= */
+.main-brand-header {
+    background: #ffffff;
+    border-bottom: 1px solid #eef0f2;
+    padding: 14px 0;
+    width: 100%;
+}
+
+.brand-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.brand-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.brand-link .brand-logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: contain;
+    filter: none !important;
+    background: #0f1117;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.brand-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #000000;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+    font-family: 'Chakra Petch', 'Montserrat', sans-serif;
+}
+
+.brand-subtitle {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #737373;
+    letter-spacing: 1.5px;
+    margin-top: 3px;
+}
+
+.brand-features-row {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.brand-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-feature-item .feature-icon {
+    font-size: 1.35rem;
+}
+
+.brand-feature-item .feature-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-feature-item .feature-lbl {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #888888;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.brand-feature-item strong {
+    font-size: 0.84rem;
+    color: #222222;
+    font-weight: 700;
+}
+
+.brand-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* A. Emergency Rescue 24/7 High-Impact Card */
+.header-rescue-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    padding: 7px 16px;
+    border-radius: 8px;
+    background: #fff3f0;
+    border: 1.5px solid #ff4d24;
+    box-shadow: 0 2px 10px rgba(255, 77, 36, 0.15);
+    transition: all 0.25s ease;
+    position: relative;
+}
+
+.header-rescue-card:hover {
+    background: #ffe8e2;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(255, 77, 36, 0.25);
+}
+
+.rescue-beacon-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #ff4d24;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.rescue-beacon-pulse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(255, 77, 36, 0.5);
+    animation: rescueBeaconPing 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes rescueBeaconPing {
+    0% { transform: scale(1); opacity: 0.8; }
+    70%, 100% { transform: scale(1.6); opacity: 0; }
+}
+
+.rescue-card-details {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.rescue-card-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.rescue-card-badge .badge-text {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: #d32f2f;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.rescue-card-badge .badge-live-dot {
+    width: 6px;
+    height: 6px;
+    background: #16a34a;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.rescue-card-phone {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #d32f2f;
+    letter-spacing: 0.8px;
+}
+
+/* B. Prominent Hotline Box */
+.brand-hotline-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    padding: 7px 16px;
+    border-radius: 8px;
+    background: #fbfbfc;
+    border: 1px solid #dfe3e6;
+    transition: all 0.25s ease;
+}
+
+.brand-hotline-box:hover {
+    border-color: #ff4d24;
+    background: #fff5f2;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.hotline-icon-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #111111;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.brand-hotline-box:hover .hotline-icon-circle {
+    background: #ff4d24;
+}
+
+.hotline-text small {
+    display: block;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: #666666;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.hotline-phone-display {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #111111;
+    letter-spacing: 0.6px;
+}
+
+.brand-hotline-box:hover .hotline-phone-display {
+    color: #ff4d24;
+}
+
+.topbar-rescue-dot {
+    width: 7px;
+    height: 7px;
+    background: #ff4d24;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+    animation: rescueBeaconPing 1.5s infinite;
+}
+
+.brand-btn-book {
+    background: #000000;
+    color: #ffffff;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 11px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.25s ease;
+}
+
+.brand-btn-book .btn-plus {
+    color: #ff4d24;
+    font-size: 1.1rem;
+    font-weight: 900;
+}
+
+.brand-btn-book:hover {
+    background: #ff4d24;
+    color: #ffffff;
+}
+
+.brand-btn-book:hover .btn-plus {
+    color: #ffffff;
+}
+
+.mobile-nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 6px;
+}
+
+.mobile-nav-toggle .hamburger-bar {
+    width: 24px;
+    height: 2px;
+    background: #000000;
+}
+
+/* =========================================================================
+   3. CUSTOM NAVBAR STRIP (Exact Replica of otohathanh.com User Screenshot)
+   TRANG CHỦ | GIỚI THIỆU ⌵ | DỊCH VỤ ⌵ | PHỤ KIỆN ⌵ | BLOG ⌵ | KHUYẾN MẠI | LIÊN HỆ ⌵ | [Tìm kiếm.... 🔍]
+   ========================================================================= */
+.custom-navbar-strip {
+    background: #e9ebed;
+    border-top: 1px solid #dfe2e5;
+    border-bottom: 2px solid #d2d5d9;
+    width: 100%;
+    position: relative;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.custom-navbar-strip.is-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    border-top: none;
+}
+
+.custom-navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 48px;
+}
+
+.custom-nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: clamp(20px, 3.4vw, 54px);
+}
+
+.custom-nav-menu > .nav-item {
+    position: relative;
+    height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+/* ShiftUp Top-Level Orange Accent Indicator */
+.custom-nav-menu > .nav-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #ff4d24;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 2;
+    border-radius: 0 0 2px 2px;
+}
+
+.custom-nav-menu > .nav-item:hover::before,
+.custom-nav-menu > .nav-item.active::before {
+    transform: scaleX(1);
+}
+
+.custom-nav-menu > .nav-item > .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: 'Chakra Petch', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.6px;
+    padding: 10px 4px;
+    transition: color 0.25s ease;
+    white-space: nowrap;
+}
+
+.custom-nav-menu > .nav-item.active > .nav-link,
+.custom-nav-menu > .nav-item:hover > .nav-link {
+    color: #ff4d24;
+}
+
+.custom-nav-menu .nav-caret {
+    font-size: 9px;
+    color: #666666;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease;
+    margin-left: 2px;
+}
+
+.custom-nav-menu > .nav-item:hover .nav-caret {
+    transform: rotate(180deg);
+    color: #ff4d24;
+}
+
+/* ShiftUp Glassmorphism Nav Dropdown Menu */
+.nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-top: 3px solid #ff4d24;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04);
+    min-width: 270px;
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+    border-radius: 0 0 6px 6px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(14px) scale(0.98);
+    transform-origin: top center;
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.custom-nav-menu > .nav-item:hover .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.nav-dropdown-grid-2col {
+    display: grid;
+    grid-template-columns: repeat(2, 245px);
+    gap: 4px;
+    min-width: 505px;
+}
+
+.nav-dropdown-menu > li {
+    margin: 0;
+    padding: 0;
+}
+
+/* ShiftUp Signature Sub-Item Hover with Orange Square Indicator */
+.nav-dropdown-menu > li > a {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px 10px 18px;
+    font-family: 'Chakra Petch', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #2b2b2b;
+    text-decoration: none;
+    transition: padding-left 0.28s cubic-bezier(0.16, 1, 0.3, 1), color 0.22s ease, background 0.22s ease;
+}
+
+.nav-dropdown-menu > li > a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -14px;
+    width: 6px;
+    height: 6px;
+    background: #ff4d24;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: left 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.22s ease;
+    border-radius: 1px;
+}
+
+.nav-dropdown-menu > li > a i {
+    font-size: 12px;
+    color: #888888;
+    width: 16px;
+    flex-shrink: 0;
+    transition: color 0.22s ease, transform 0.22s ease;
+}
+
+.nav-dropdown-menu > li > a:hover {
+    padding-left: 32px;
+    color: #ff4d24;
+    background: rgba(255, 77, 36, 0.05);
+}
+
+.nav-dropdown-menu > li > a:hover::before {
+    left: 16px;
+    opacity: 1;
+}
+
+.nav-dropdown-menu > li > a:hover i {
+    color: #ff4d24;
+    transform: scale(1.12);
+}
+
+/* Mega Dropdown for Dịch vụ (ShiftUp Luxury Glassmorphism) */
+.nav-mega-dropdown {
+    position: absolute;
+    top: 100%;
+    left: -140px;
+    width: 940px;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-top: 3px solid #ff4d24;
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.14), 0 6px 16px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(14px) scale(0.98);
+    transform-origin: top center;
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
+    pointer-events: none;
+    z-index: 999;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+}
+
+.custom-nav-menu > .nav-item.has-mega-menu:hover .nav-mega-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.mega-dropdown-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 28px 24px 22px;
+    gap: 28px;
+}
+
+.mega-dropdown-grid.mega-grid-4col {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    padding: 26px 22px 20px;
+}
+
+.mega-dropdown-grid.mega-grid-6col {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px 32px;
+    padding: 26px 26px 22px;
+}
+
+@media (min-width: 1440px) {
+    .mega-dropdown-grid.mega-grid-6col {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.mega-dropdown-col .mega-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: #111111;
+    letter-spacing: 0.9px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+}
+
+.mega-dropdown-col .mega-dot {
+    width: 6px;
+    height: 6px;
+    background: #ff4d24;
+    border-radius: 1px;
+    display: inline-block;
+}
+
+.mega-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mega-list > li {
+    margin: 0;
+    padding: 0;
+}
+
+.mega-list > li > a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    padding: 7px 0 7px 0;
+    font-family: 'Chakra Petch', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #444444;
+    text-decoration: none;
+    transition: padding-left 0.28s cubic-bezier(0.16, 1, 0.3, 1), color 0.22s ease;
+}
+
+.mega-list > li > a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -12px;
+    width: 5px;
+    height: 5px;
+    background: #ff4d24;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: left 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.22s ease;
+    border-radius: 1px;
+}
+
+.mega-list > li > a i {
+    font-size: 10px;
+    transition: color 0.22s ease;
+}
+
+.mega-list > li > a:hover {
+    color: #ff4d24;
+    padding-left: 14px;
+}
+
+.mega-list > li > a:hover::before {
+    left: 0;
+    opacity: 1;
+}
+
+.mega-dropdown-footer {
+    background: #f8f9fa;
+    border-top: 1px solid #eeeeee;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12.5px;
+    color: #666666;
+}
+
+.mega-cta-link {
+    color: #ff4d24;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.mega-cta-link:hover {
+    transform: translateX(4px);
+    color: #e03b14;
+}
+
+/* Search Pill Input (Exact Replica of User Screenshot with ShiftUp Glow Animation) */
+.menu-search-pill {
+    display: inline-flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1.5px solid #dcdfe4;
+    border-radius: 9999px;
+    height: 36px;
+    padding: 2px 8px 2px 18px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+    flex-shrink: 0;
+    margin-left: 20px;
+}
+
+.menu-search-pill:hover {
+    border-color: #ff4d24;
+    box-shadow: 0 2px 10px rgba(255, 77, 36, 0.12);
+}
+
+.menu-search-pill:focus-within {
+    border-color: #ff4d24;
+    box-shadow: 0 0 0 3px rgba(255, 77, 36, 0.2), 0 3px 12px rgba(255, 77, 36, 0.15);
+    transform: scale(1.02);
+}
+
+.menu-search-pill .search-field {
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 13px;
+    color: #222222;
+    outline: none;
+    width: 140px;
+    padding: 0;
+    font-style: italic;
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menu-search-pill:focus-within .search-field {
+    width: 175px;
+}
+
+.menu-search-pill .search-field::placeholder {
+    color: #999999;
+    font-style: italic;
+}
+
+.menu-search-pill .search-submit {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #ff4d24;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    font-size: 13px;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+}
+
+.menu-search-pill .search-submit:hover {
+    transform: scale(1.22);
+    color: #e03b14;
+}
+
+/* =========================================================================
+   4. LEXUS BANNER SLIDER (Full-Bleed Luxury Automotive Experience)
+   Exact 1:1 Architecture from Lexus Vietnam (lexus.com.vn)
+   ========================================================================= */
+.lexus-banner-slider {
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+    height: 75vh;
+    max-height: 760px;
+    background: #080a0e;
+    overflow: hidden;
+}
+
+.lexus-slides-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.lexus-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.9s ease;
+    z-index: 1;
+}
+
+.lexus-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+.lexus-slide-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.06);
+    transition: transform 7.5s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+.lexus-slide.active .lexus-slide-bg {
+    transform: scale(1.0);
+}
+
+.lexus-slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(6, 8, 12, 0.88) 0%, rgba(6, 8, 12, 0.55) 45%, rgba(6, 8, 12, 0.12) 80%, rgba(6, 8, 12, 0.28) 100%), linear-gradient(to top, rgba(6, 8, 12, 0.85) 0%, transparent 32%);
+    z-index: 2;
+}
+
+.lexus-slide-container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 75px 105px;
+    z-index: 3;
+}
+
+.lexus-slide-content {
+    max-width: 680px;
+    color: #ffffff;
+}
+
+.lexus-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    color: #ffaa40;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+.lexus-slide.active .lexus-eyebrow {
+    animation: lexusFadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+}
+
+.lexus-gold-bar {
+    width: 16px;
+    height: 2px;
+    background: #ffaa40;
+    display: inline-block;
+}
+
+.lexus-slide-title {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: clamp(2.4rem, 4.4vw, 3.8rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 16px 0;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transform: translateY(22px);
+}
+
+.lexus-slide.active .lexus-slide-title {
+    animation: lexusFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+
+.lexus-slide-desc {
+    font-family: 'Montserrat', -apple-system, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 28px 0;
+    max-width: 620px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transform: translateY(22px);
+}
+
+.lexus-slide.active .lexus-slide-desc {
+    animation: lexusFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
+}
+
+.lexus-slide-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(22px);
+}
+
+.lexus-slide.active .lexus-slide-actions {
+    animation: lexusFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+}
+
+@keyframes lexusFadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Authentic Lexus Vietnam Outlined Button */
+.lexus-outline-btn {
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    background: transparent;
+    color: #ffffff;
+    padding: 13px 36px;
+    font-family: 'Montserrat', -apple-system, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.lexus-outline-btn:hover {
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.35);
+}
+
+/* Lexus Navigation Arrows */
+.lexus-nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background: rgba(8, 10, 14, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(4px);
+    border-radius: 2px;
+}
+
+.lexus-prev-btn {
+    left: 20px;
+}
+
+.lexus-next-btn {
+    right: 20px;
+}
+
+.lexus-nav-arrow:hover {
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #000000;
+}
+
+/* Lexus Horizontal Dash Pagination Bar */
+.lexus-pagination-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 14px 0 18px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
+}
+
+.lexus-pagination-inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 75px;
+}
+
+.lexus-dash-item {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    padding: 6px 0;
+    outline: none;
+    opacity: 0.55;
+    transition: opacity 0.3s ease;
+}
+
+.lexus-dash-item:hover,
+.lexus-dash-item.active {
+    opacity: 1;
+}
+
+.dash-meta {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.dash-num {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 400;
+    font-size: 0.78rem;
+}
+
+.lexus-dash-item.active .dash-num {
+    color: #ff4d24;
+    font-weight: 700;
+}
+
+.dash-progress-track {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.22);
+    position: relative;
+    overflow: hidden;
+}
+
+.dash-progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: #ff4d24;
+}
+
+.lexus-dash-item.active .dash-progress-fill {
+    animation: lexusProgressFill 6.5s linear forwards;
+}
+
+@keyframes lexusProgressFill {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+/* =========================================================================
+   4. SECTION 2: PREMIUM CAR TUNING SHOP (ShiftUp Section 2 Replica)
+   ========================================================================= */
+.shiftup-tuning-shop-section {
+    background: #ffffff;
+    padding: 80px 0 100px;
+    border-top: 1px solid #f0f0f0;
+    width: 100%;
+}
+
+.tuning-shop-grid {
+    display: grid;
+    grid-template-columns: 0.38fr 0.62fr;
+    gap: 60px;
+    align-items: flex-start;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.tuning-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: clamp(2.2rem, 3.2vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.12;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.tuning-features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px 30px;
+}
+
+.tuning-feature-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-item-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #000000;
+    letter-spacing: 0.8px;
+    margin: 0 0 10px;
+    display: flex;
+    align-items: baseline;
+}
+
+.feature-item-text {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #737373;
+    margin: 0;
+}
+
+/* =========================================================================
+   5. SECTION 3: AUTOMOTIVE TECHNICIANS (ShiftUp Section 3 with 4 Orange Dots)
+   ========================================================================= */
+/* =========================================================================
+   5. SECTION 3: AUTOMOTIVE TECHNICIANS (ShiftUp Signature Fold & Dots)
+   ========================================================================= */
+.shiftup-technicians-section {
+    background: #ffffff;
+    padding: 60px 0 100px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.technicians-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+/* Left: Wide Workshop Photo with Slide-In Animation */
+.technicians-photo-frame {
+    width: 65%;
+    height: 500px;
+    overflow: hidden;
+    background: #000000;
+    position: relative;
+    opacity: 0;
+    transform: translateX(-120px);
+    transition: opacity 0.85s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.85s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.technicians-photo-frame .technicians-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.shiftup-technicians-section.is-appeared .technicians-photo-frame {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.shiftup-technicians-section.is-appeared .technicians-photo-frame:hover .technicians-img {
+    transform: scale(1.05);
+}
+
+/* Right: Overlapping Glassmorphism Dark Card with Center-Aperture Clip-Path Reveal */
+.technicians-dark-card {
+    position: absolute;
+    right: 20px;
+    width: 48%;
+    background: transparent;
+    padding: 0;
+    z-index: 5;
+}
+
+.technicians-dark-card .card-inner {
+    position: relative;
+    background: rgba(22, 24, 29, 0.95);
+    -webkit-backdrop-filter: blur(14px) brightness(0.85);
+    backdrop-filter: blur(14px) brightness(0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 56px 48px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    /* ShiftUp Signature fold: collapses to center polygon */
+    -webkit-clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+    transition: -webkit-clip-path 0.85s cubic-bezier(0.22, 0.61, 0.36, 1), clip-path 0.85s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.shiftup-technicians-section.is-appeared .technicians-dark-card .card-inner {
+    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+    transition-delay: 0.35s;
+}
+
+/* 4 Magma Orange Corner Dots starting from center and traveling to 4 corners */
+.corner-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #ff4d24;
+    z-index: 10;
+    opacity: 0;
+    transition: top 0.85s cubic-bezier(0.22, 0.61, 0.36, 1),
+                bottom 0.85s cubic-bezier(0.22, 0.61, 0.36, 1),
+                left 0.85s cubic-bezier(0.22, 0.61, 0.36, 1),
+                right 0.85s cubic-bezier(0.22, 0.61, 0.36, 1),
+                opacity 0.35s ease;
+}
+
+/* Initially collapsed at the center of the dark card */
+.dot-tl { top: calc(50% - 6px); left: calc(50% - 6px); }
+.dot-tr { top: calc(50% - 6px); right: calc(50% - 6px); }
+.dot-bl { bottom: calc(50% - 6px); left: calc(50% - 6px); }
+.dot-br { bottom: calc(50% - 6px); right: calc(50% - 6px); }
+
+/* Traveled to the 4 corners when section appears */
+.shiftup-technicians-section.is-appeared .corner-dot {
+    opacity: 1;
+}
+.shiftup-technicians-section.is-appeared .dot-tl {
+    top: -6px;
+    left: -6px;
+    transition-delay: 0.35s;
+}
+.shiftup-technicians-section.is-appeared .dot-tr {
+    top: -6px;
+    right: -6px;
+    transition-delay: 0.35s;
+}
+.shiftup-technicians-section.is-appeared .dot-bl {
+    bottom: -6px;
+    left: -6px;
+    transition-delay: 0.35s;
+}
+.shiftup-technicians-section.is-appeared .dot-br {
+    bottom: -6px;
+    right: -6px;
+    transition-delay: 0.35s;
+}
+
+/* Content inside card fades in and slides up smoothly */
+.technicians-dark-card .card-inner > * {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.75s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.75s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.shiftup-technicians-section.is-appeared .technicians-dark-card .card-inner > * {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.8s;
+}
+
+.technicians-dark-card .card-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: clamp(1.8rem, 2.6vw, 2.3rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin: 0 0 20px;
+    letter-spacing: 0.5px;
+}
+
+.technicians-dark-card .card-text {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #a3a3a3;
+    margin: 0 0 32px;
+}
+
+.technicians-dark-card .bullet-square {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: #ff4d24;
+    margin-right: 8px;
+}
+
+.btn-dark-view {
+    background: #2e2e33;
+    color: #ffffff;
+    border: 1px solid #3a3a40;
+    padding: 14px 28px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.25s ease;
+}
+
+.btn-dark-view:hover {
+    background: #ff4d24;
+    border-color: #ff4d24;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(255, 77, 36, 0.35);
+}
+
+/* =========================================================================
+   6. SECTION 4: ALL ABOUT CARS (ShiftUp Section 4 Replica)
+   ========================================================================= */
+.shiftup-all-about-cars-section {
+    background: #ffffff;
+    padding: 40px 0 100px;
+    width: 100%;
+}
+
+.shiftup-all-about-cars-section .container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.all-about-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 36px;
+    border-bottom: 1px solid #ebebeb;
+    padding-bottom: 22px;
+}
+
+.all-about-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.all-about-sub-label {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #ff4d24;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.all-about-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #000000;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.all-about-arrows {
+    display: flex;
+    gap: 12px;
+}
+
+.all-about-arrows .arrow-btn {
+    background: #ffffff;
+    border: 1px solid #dcdcdc;
+    cursor: pointer;
+    color: #111111;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.all-about-arrows .arrow-btn:hover {
+    background: #ff4d24;
+    border-color: #ff4d24;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(255, 77, 36, 0.25);
+}
+
+.all-about-arrows .arrow-btn:active {
+    transform: translateY(0);
+}
+
+/* Swiper Outer & Slide Mechanics */
+.all-about-swiper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    padding-bottom: 10px;
+}
+
+.all-about-swiper:active {
+    cursor: grabbing;
+}
+
+.all-about-swiper .swiper-wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+.all-about-swiper .swiper-slide {
+    height: auto;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.about-card-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.card-image-wrap {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    background: #111111;
+    margin-bottom: 20px;
+}
+
+.card-image-wrap .card-img-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+    display: block;
+}
+
+.about-card-item:hover .card-image-wrap img {
+    transform: scale(1.08);
+}
+
+.card-hover-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.about-card-item:hover .card-hover-overlay {
+    opacity: 1;
+}
+
+.view-detail-badge {
+    background: #ff4d24;
+    color: #ffffff;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 10px 18px;
+    transform: translateY(14px);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+}
+
+.about-card-item:hover .view-detail-badge {
+    transform: translateY(0);
+}
+
+.card-tech-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(10, 10, 10, 0.82);
+    backdrop-filter: blur(4px);
+    color: #ffffff;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    padding: 4px 10px;
+    border-left: 3px solid #ff4d24;
+    text-transform: uppercase;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.card-item-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.98rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #000000;
+    letter-spacing: 0.8px;
+    margin: 0 0 10px;
+    display: flex;
+    align-items: baseline;
+}
+
+.card-item-title a {
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.card-item-title a:hover {
+    color: #ff4d24;
+}
+
+.card-item-desc {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: #666666;
+    margin: 0 0 14px;
+}
+
+.card-learn-more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #ff4d24;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px dashed #eee;
+    transition: all 0.2s ease;
+}
+
+.card-learn-more-link svg {
+    stroke: #ff4d24;
+    transition: transform 0.2s ease;
+}
+
+.card-learn-more-link:hover {
+    color: #000000;
+    gap: 12px;
+}
+
+.card-learn-more-link:hover svg {
+    stroke: #000000;
+    transform: translateX(3px);
+}
+
+/* =========================================================================
+   7. SECTION 5: 4 FULL-WIDTH PANORAMIC BANNERS (ShiftUp Section 5)
+   ========================================================================= */
+.shiftup-panoramic-banners {
+    width: 100%;
+    overflow: hidden;
+    background: #000000;
+}
+
+/* =========================================================================
+   7. SECTION 5: 4 FULL-WIDTH PANORAMIC BANNERS (ShiftUp Text-On-Hover Replica)
+   ========================================================================= */
+.shiftup-panoramic-banners {
+    width: 100%;
+    overflow: hidden;
+    background: #000000;
+}
+
+.pano-banners-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    min-height: 520px;
+}
+
+.pano-banner-col {
+    position: relative;
+    height: 520px;
+    overflow: hidden;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.pano-banner-col:last-child {
+    border-right: none;
+}
+
+/* Background image with smooth zoom on hover */
+.pano-bg-img {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1);
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 0;
+}
+
+.pano-banner-col:hover .pano-bg-img {
+    transform: scale(1.08) translateX(3px);
+}
+
+/* Base Gradient Overlay */
+.pano-base-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.45) 55%, rgba(0, 0, 0, 0.15) 100%);
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* ShiftUp Signature Frosted Glass Blur Overlay */
+.pano-blur-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.72);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.35s ease;
+}
+
+.pano-banner-col:hover .pano-blur-overlay {
+    opacity: 1;
+}
+
+/* Full clickable anchor */
+.pano-full-link {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+}
+
+/* Content Wrap */
+.pano-content-wrap {
+    position: relative;
+    z-index: 5;
+    padding: 44px 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    pointer-events: none;
+    width: 100%;
+}
+
+.pano-content-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Title Wrap & Lift Up Animation (ShiftUp Dual Title Structure) */
+.pano-title-wrap {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 6px;
+    width: 100%;
+}
+
+.pano-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 0.8px;
+    margin: 0;
+    padding: 0 0 10px;
+}
+
+.pano-title-ghost {
+    visibility: hidden;
+}
+
+.pano-title-slide {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-100%);
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition-delay: 0.08s;
+}
+
+.pano-banner-col:hover .pano-title-slide {
+    top: 0;
+    transform: translateY(0);
+    transition-delay: 0s;
+}
+
+/* Text Wrap & Slide-Up Reveal (ShiftUp Dual Text Structure) */
+.pano-text-wrap {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 18px;
+    width: 100%;
+}
+
+.pano-text {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 8px;
+}
+
+.pano-text-ghost {
+    visibility: hidden;
+}
+
+.pano-text-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #d1d5db;
+    opacity: 0;
+    transform: translateY(110%);
+    transition: transform 0.42s cubic-bezier(0.645, 0.045, 0.355, 1) 0.08s, opacity 0.42s cubic-bezier(0.33, 0.02, 0, 0.93) 0.08s;
+}
+
+.pano-banner-col:hover .pano-text-slide {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Plus Action Button */
+.pano-btn-wrap {
+    pointer-events: auto;
+    position: relative;
+    z-index: 6;
+}
+
+.pano-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: #ffffff;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.28s ease;
+}
+
+.pano-banner-col:hover .pano-action-btn {
+    background: #ff4d24;
+    border-color: #ff4d24;
+    color: #ffffff;
+    transform: translateX(4px);
+    box-shadow: 0 4px 16px rgba(255, 77, 36, 0.4);
+}
+
+/* =========================================================================
+   8. SECTION 6: FLANKED DIAGNOSTICS (ShiftUp Section 6 Replica)
+   ========================================================================= */
+.shiftup-flanked-diagnostics {
+    background: #f7f7f9;
+    padding: 100px 0;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    width: 100%;
+}
+
+.shiftup-flanked-diagnostics .container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.flanked-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.flanked-side-col {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.flanked-diag-item {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    padding: 32px 28px;
+    border-radius: 0px;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.flanked-diag-item:hover,
+.flanked-diag-item.active {
+    border-left: 4px solid #ff4d24;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+    transform: translateY(-3px);
+}
+
+.diag-item-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 0 0 10px;
+    display: flex;
+    align-items: baseline;
+}
+
+.diag-item-text {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #737373;
+    margin: 0;
+}
+
+.center-scanner-box {
+    position: relative;
+    overflow: hidden;
+    background: #000000;
+    border: 1px solid #000000;
+}
+
+.center-scanner-box .center-scanner-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.center-scanner-box:hover .center-scanner-img {
+    transform: scale(1.05);
+}
+
+.scanner-laser-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff4d24, transparent);
+    box-shadow: 0 0 12px #ff4d24;
+    animation: diagLaser 3s linear infinite;
+}
+
+@keyframes diagLaser {
+    0% { top: 0%; opacity: 0; }
+    50% { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
+
+/* =========================================================================
+   9. SECTION 7: CHECK UP OFFERS / 3 PRICING TABLES (ShiftUp Section 10)
+   ========================================================================= */
+.shiftup-checkup-offers-section {
+    background: #ffffff;
+    padding: 100px 0;
+    width: 100%;
+}
+
+.shiftup-checkup-offers-section .container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.checkup-head {
+    margin-bottom: 50px;
+}
+
+.checkup-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 2.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 0 0 12px;
+    letter-spacing: 0.5px;
+}
+
+.checkup-sub {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 1.05rem;
+    color: #737373;
+    margin: 0;
+}
+
+.checkup-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    align-items: stretch;
+}
+
+.checkup-card {
+    background: #f7f7f7;
+    border: 1px solid #e5e5e5;
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.checkup-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+}
+
+.checkup-card.featured {
+    background: #ffffff;
+    border: 2px solid #000000;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-wrap {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background: #000000;
+}
+
+.card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+}
+
+.checkup-card:hover .card-img-wrap img {
+    transform: scale(1.08);
+}
+
+.checkup-card .card-body {
+    padding: 34px 28px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-cat-label {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: #737373;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sep-dot {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.card-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.card-price-row .price-val {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #000000;
+    line-height: 1;
+}
+
+.card-price-row .price-cur {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #737373;
+}
+
+.card-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+}
+
+.card-features-list li {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: #404040;
+    display: flex;
+    align-items: baseline;
+}
+
+.checkup-btn {
+    background: #000000;
+    color: #ffffff;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 13px 20px;
+    text-decoration: none;
+    border-radius: 0px;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+}
+
+.checkup-btn:hover {
+    background: #ff4d24;
+    color: #ffffff;
+}
+
+.checkup-btn.btn-primary-featured {
+    background: #ff4d24;
+    color: #ffffff;
+}
+
+.checkup-btn.btn-primary-featured:hover {
+    background: #e03b14;
+}
+
+/* =========================================================================
+   10. SECTION 8: PARTNERS & LUXURY CAR BRANDS MARQUEE (Continuous Ticker)
+   Exact Marquee Architecture matching reference (Foundation epoch)
+   ========================================================================= */
+.shiftup-brand-marquee-section {
+    background: #ffffff;
+    padding: 85px 0 100px;
+    border-top: 1px solid #f0f0f0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.marquee-head-container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.marquee-head {
+    margin-bottom: 44px;
+    text-align: center;
+}
+
+.marquee-sub-label {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #ff4d24;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.marquee-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: clamp(2rem, 3vw, 2.6rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 0 0 14px;
+    letter-spacing: 0.5px;
+}
+
+.marquee-desc {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 1.05rem;
+    color: #64748b;
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Marquee Mask and Continuous Smooth Track */
+.marquee-strip-wrap {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0;
+}
+
+.brand-marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0;
+    user-select: none;
+    -webkit-user-select: none;
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.brand-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: brandMarquee 34s linear infinite;
+    will-change: transform;
+}
+
+.brand-marquee:hover .brand-marquee-track {
+    animation-play-state: paused;
+}
+
+.brand-marquee-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-right: 20px;
+    flex-shrink: 0;
+}
+
+/* Brand Capsule Card (Exact Replica of Marquee.tsx) */
+.brand-capsule-card {
+    position: relative;
+    height: 96px;
+    width: 168px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background: #ffffff;
+    border: 1px solid rgba(226, 232, 240, 0.85);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brand-capsule-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+    border-color: transparent;
+}
+
+.capsule-gradient-bg {
+    position: absolute;
+    inset: 0;
+    transform: scale(1.5);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+}
+
+.brand-capsule-card:hover .capsule-gradient-bg {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.brand-capsule-card .brand-logo-img {
+    position: relative;
+    z-index: 10;
+    height: 38px;
+    width: auto;
+    max-width: 96px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    filter: grayscale(1) brightness(0.25);
+}
+
+.brand-capsule-card:hover .brand-logo-img {
+    filter: brightness(0) invert(1);
+    transform: scale(1.1);
+}
+
+@keyframes brandMarquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .brand-marquee-track {
+        animation: none;
+    }
+}
+
+/* =========================================================================
+   11. SECTION 9: WORKSHOPS NETWORK (Clean 3 Columns)
+   ========================================================================= */
+.shiftup-workshops-section {
+    background: #f7f7f9;
+    padding: 90px 0;
+    border-top: 1px solid #e5e5e5;
+    width: 100%;
+}
+
+.shiftup-workshops-section .container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.workshops-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.workshops-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.workshops-all-link {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 700;
+    color: #ff4d24;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.workshops-3col-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.ws-clean-card {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    padding: 34px 28px;
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.25s ease;
+}
+
+.ws-clean-card:hover {
+    border-color: #000000;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.ws-city-tag {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #ff4d24;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.ws-clean-card .ws-name {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 0 0 8px;
+}
+
+.ws-clean-card .ws-address {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.92rem;
+    color: #737373;
+    line-height: 1.5;
+    margin: 0 0 16px;
+}
+
+.ws-clean-card .ws-info-line {
+    padding: 12px 0;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.88rem;
+    color: #525252;
+    margin-bottom: 24px;
+}
+
+.ws-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.ws-link-btn {
+    flex: 1;
+    background: #000000;
+    color: #ffffff;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.ws-link-btn:hover {
+    background: #ff4d24;
+}
+
+.ws-link-btn.ghost {
+    background: #f5f5f5;
+    color: #000000;
+    border: 1px solid #e5e5e5;
+}
+
+.ws-link-btn.ghost:hover {
+    background: #000000;
+    color: #ffffff;
+    border-color: #000000;
+}
+
+/* =========================================================================
+   RESPONSIVE DESIGN (Zero Overflow on All Devices)
+   ========================================================================= */
+@media (max-width: 1200px) {
+    .shiftup-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .hero-frame-wrap {
+        height: 420px;
+    }
+    .tuning-shop-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .all-about-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .pano-banners-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .pano-banner-col {
+        height: 400px;
+    }
+    .flanked-grid {
+        grid-template-columns: 1fr;
+    }
+    .technicians-wrap {
+        flex-direction: column;
+    }
+    .technicians-photo-frame {
+        width: 100%;
+        height: 380px;
+    }
+    .technicians-dark-card {
+        position: relative;
+        right: auto;
+        width: 100%;
+        margin-top: -60px;
+        box-shadow: 0 16px 36px rgba(0,0,0,0.2);
+    }
+}
+
+@media (max-width: 991px) {
+    .shiftup-desktop-nav,
+    .shiftup-header-phone {
+        display: none !important;
+    }
+    .mobile-nav-toggle {
+        display: flex;
+    }
+    .tuning-features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .checkup-pricing-grid,
+    .workshops-3col-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .shiftup-topbar {
+        display: none;
+    }
+    .shiftup-header {
+        height: 64px;
+    }
+    .tuning-features-grid {
+        grid-template-columns: 1fr;
+    }
+    .all-about-grid,
+    .pano-banners-grid {
+        grid-template-columns: 1fr;
+    }
+    .plate-search-bar-clean {
+        flex-direction: column;
+    }
+    .plate-flag-tag {
+        padding: 8px 16px;
+    }
+    .plate-btn-clean {
+        padding: 14px 20px;
+    }
+    .hero-actions-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .shiftup-rect-btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+
+/* =========================================================================
+   RESPONSIVE DESIGN FOR BRAND HEADER, NAVBAR STRIP & LEXUS SLIDER
+   ========================================================================= */
+@media (max-width: 1100px) {
+    .custom-nav-menu {
+        gap: 14px;
+    }
+    .custom-nav-menu > .nav-item > .nav-link {
+        font-size: 12.5px;
+    }
+    .brand-features-row {
+        gap: 16px;
+    }
+    .brand-feature-item:nth-child(2) {
+        display: none;
+    }
+}
+
+/* =========================================================================
+   14. MOBILE RESPONSIVE ENGINE (Anti-"Lỏ", WCAG 2.2 AA Compliant)
+   ========================================================================= */
+
+/* Mobile Quick Call Button (Hidden by default on Desktop) */
+.mobile-quick-call {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff4d24 0%, #d83912 100%);
+    color: #ffffff;
+    font-size: 1.15rem;
+    text-decoration: none;
+    position: relative;
+    box-shadow: 0 4px 14px rgba(255, 77, 36, 0.45);
+    flex-shrink: 0;
+}
+.mobile-quick-call:hover {
+    color: #ffffff;
+    transform: scale(1.05);
+}
+.mobile-call-pulse {
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 77, 36, 0.65);
+    animation: beaconPulseRing 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+/* Mobile Drawer Header & Bottom Defaults (Hidden on Desktop) */
+.mobile-drawer-header,
+.mobile-drawer-bottom,
+.mobile-nav-backdrop {
+    display: none;
+}
+
+/* Tablet & Mobile Breakpoint (<= 991px) */
+@media (max-width: 991px) {
+    .brand-features-row,
+    .brand-btn-book,
+    .brand-hotline-box,
+    .header-rescue-card {
+        display: none !important;
+    }
+    .mobile-quick-call {
+        display: inline-flex !important;
+    }
+    .mobile-nav-toggle {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+        border-radius: 8px;
+        background: #0b0c0f;
+        border: 1px solid #272a33;
+        padding: 9px;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    .mobile-nav-toggle .hamburger-bar {
+        display: block;
+        width: 22px;
+        height: 2.2px;
+        background: #ffffff;
+        border-radius: 2px;
+        transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .mobile-nav-toggle.is-active .hamburger-bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+        background: #ff4d24;
+    }
+    .mobile-nav-toggle.is-active .hamburger-bar:nth-child(2) {
+        opacity: 0;
+    }
+    .mobile-nav-toggle.is-active .hamburger-bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+        background: #ff4d24;
+    }
+
+    .main-brand-header {
+        padding: 10px 0;
+        background: #ffffff;
+        border-bottom: 1px solid #eef0f4;
+    }
+    .brand-header-inner {
+        padding: 0 16px;
+    }
+    .brand-link .brand-logo-img {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        object-fit: contain;
+        filter: none !important;
+        background: #0f1117;
+    }
+    .brand-title {
+        font-size: 1.15rem;
+        line-height: 1.1;
+    }
+    .brand-subtitle {
+        font-size: 0.6rem;
+        letter-spacing: 0.8px;
+    }
+    .brand-header-actions {
+        gap: 10px;
+    }
+
+    /* Mobile Backdrop */
+    .mobile-nav-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        z-index: 99998;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+    .mobile-nav-backdrop.is-visible {
+        display: block;
+        opacity: 1;
+        pointer-events: auto;
+    }
+    body.mobile-menu-active {
+        overflow: hidden !important;
+    }
+
+    /* Off-Canvas Navigation Drawer */
+    .custom-navbar-strip {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: flex-start;
+        position: fixed !important;
+        top: 0 !important;
+        right: -340px !important;
+        left: auto !important;
+        width: 320px !important;
+        max-width: 86vw !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+        background: #0d0f14 !important;
+        border-left: 1px solid rgba(255, 77, 36, 0.25) !important;
+        z-index: 99999 !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+        box-shadow: -10px 0 36px rgba(0, 0, 0, 0.7) !important;
+        transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        padding: 0 !important;
+    }
+    .custom-navbar-strip.mobile-nav-open {
+        right: 0 !important;
+    }
+
+    .mobile-drawer-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 16px;
+        background: #07080b;
+        border-bottom: 1px solid #1c202a;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+    .drawer-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .drawer-brand img {
+        border-radius: 50%;
+        background: #181a20;
+    }
+    .drawer-name {
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 1rem;
+        font-weight: 800;
+        color: #ffffff;
+        display: block;
+        line-height: 1.1;
+    }
+    .drawer-sub {
+        font-size: 0.58rem;
+        color: #8c95a6;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        display: block;
+    }
+    .mobile-drawer-close {
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+        min-height: 38px;
+        border-radius: 8px;
+        background: #181b24;
+        border: 1px solid #2a2f3d;
+        color: #e2e8f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.15rem;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    .mobile-drawer-close:hover {
+        background: #ff4d24;
+        color: #ffffff;
+    }
+
+    .custom-navbar-inner {
+        flex-direction: column;
+        height: auto;
+        padding: 14px 16px 0;
+        gap: 12px;
+        align-items: stretch;
+    }
+    .menu-search-pill {
+        order: -1;
+        width: 100%;
+        margin-bottom: 6px;
+        height: 40px;
+        background: #151821;
+        border: 1px solid #272d3b;
+        border-radius: 6px;
+        padding: 0 12px;
+    }
+    .menu-search-pill .search-field {
+        width: 100%;
+        background: transparent;
+        color: #ffffff;
+        border: none;
+        outline: none;
+        font-size: 0.85rem;
+    }
+    .menu-search-pill .search-submit {
+        background: transparent;
+        border: none;
+        color: #ff4d24;
+        font-size: 0.95rem;
+        cursor: pointer;
+    }
+
+    .custom-nav-menu {
+        flex-direction: column;
+        gap: 0;
+        align-items: stretch;
+        width: 100%;
+    }
+    .custom-nav-menu > .nav-item {
+        height: auto;
+        flex-direction: column;
+        align-items: stretch;
+        border-bottom: 1px solid #191c25;
+    }
+    .custom-nav-menu > .nav-item > .nav-link {
+        padding: 13px 4px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #e2e8f0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-transform: uppercase;
+        font-family: 'Chakra Petch', sans-serif;
+    }
+    .custom-nav-menu > .nav-item.active > .nav-link,
+    .custom-nav-menu > .nav-item:hover > .nav-link {
+        color: #ff4d24;
+    }
+    .nav-caret {
+        font-size: 0.8rem;
+        color: #64748b;
+        transition: transform 0.25s ease;
+    }
+    .custom-nav-menu > .nav-item.open-submenu > .nav-link .nav-caret {
+        transform: rotate(180deg);
+        color: #ff4d24;
+    }
+
+    .nav-dropdown-menu,
+    .nav-mega-dropdown {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border: none;
+        background: #141720;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        padding: 8px 12px;
+        border-radius: 6px;
+        margin-bottom: 10px;
+    }
+    .custom-nav-menu > .nav-item.open-submenu > .nav-dropdown-menu,
+    .custom-nav-menu > .nav-item.open-submenu > .nav-mega-dropdown {
+        display: block;
+    }
+    .nav-dropdown-menu li a,
+    .mega-list li a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #cbd5e1;
+        padding: 8px 0;
+        font-size: 0.82rem;
+        text-decoration: none;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+    }
+    .nav-dropdown-menu li a:hover,
+    .mega-list li a:hover {
+        color: #ff4d24;
+    }
+    .mega-dropdown-grid {
+        grid-template-columns: 1fr;
+        padding: 0;
+        gap: 12px;
+    }
+    .mega-title {
+        color: #ff4d24;
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 0.82rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 8px 0 2px;
+    }
+    .mega-dropdown-footer {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 0.72rem;
+        color: #8c95a6;
+    }
+    .mega-cta-link {
+        color: #ff4d24;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    /* Mobile Drawer Bottom CTAs */
+    .mobile-drawer-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 16px 16px 36px;
+        background: #07080b;
+        border-top: 1px solid #1a1d26;
+        margin-top: 14px;
+    }
+    .drawer-btn-rescue {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: linear-gradient(135deg, #ff4d24 0%, #d83912 100%);
+        color: #ffffff;
+        text-decoration: none;
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 0.88rem;
+        font-weight: 700;
+        padding: 12px 14px;
+        border-radius: 6px;
+        box-shadow: 0 4px 14px rgba(255, 77, 36, 0.35);
+    }
+    .drawer-btn-book {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: #141720;
+        border: 1px solid #272d3b;
+        color: #ffffff;
+        text-decoration: none;
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 0.85rem;
+        font-weight: 700;
+        padding: 11px 14px;
+        border-radius: 6px;
+    }
+    .drawer-meta-info {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        font-size: 0.72rem;
+        color: #8c95a6;
+        margin-top: 6px;
+        text-align: center;
+    }
+}
+
+/* Smartphone Breakpoint (<= 768px) */
+@media (max-width: 768px) {
+    /* Safe Bottom Inset Padding for body */
+    body {
+        padding-bottom: 64px !important;
+    }
+
+    /* Banner Slider */
+    .lexus-banner-slider {
+        height: 460px;
+        min-height: 420px;
+    }
+    .lexus-slide-container {
+        padding: 0 16px 60px;
+    }
+    .lexus-slide-title {
+        font-size: 1.65rem;
+        line-height: 1.2;
+    }
+    .lexus-slide-desc {
+        font-size: 0.86rem;
+        line-height: 1.5;
+        margin-bottom: 16px;
+    }
+    .lexus-slide-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+    .lexus-outline-btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding: 11px 16px;
+    }
+    .lexus-nav-arrow {
+        display: none;
+    }
+    .lexus-pagination-inner {
+        padding: 0 16px;
+        gap: 6px;
+    }
+    .dash-label {
+        display: none;
+    }
+    .dash-meta {
+        justify-content: center;
+    }
+    .dash-num {
+        font-size: 0.75rem;
+    }
+
+    /* Pre-footer Bar */
+    .footer-prebar-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 14px;
+        padding: 16px;
+    }
+    .prebar-left {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .prebar-right {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+    .prebar-phone-pill,
+    .prebar-book-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Footer Grid */
+    .footer-grid-4col {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    /* Inner Page Hero Header */
+    .portal-hero-header {
+        padding: 44px 0 34px !important;
+    }
+    .portal-hero-title {
+        font-size: 1.7rem !important;
+    }
+    .portal-hero-lead {
+        font-size: 0.88rem !important;
+    }
+
+    /* Services Grid */
+    .services-grid,
+    .services-12-cards-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+    .service-detail-layout {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* About Story */
+    .about-story-grid,
+    .commitments-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    .about-numbers-bar {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+}
+
+
+/* =========================================================================
+   15. FULL-PAGE BIDIRECTIONAL SCROLL ANIMATION SUITE (ShiftUp Interactive)
+   Smooth 60FPS fluid entrance animations that re-trigger on both forward
+   and reverse scroll (lăn chuột ngược lại cũng có hiệu ứng)
+   ========================================================================= */
+
+/* --- Section 2: Tuning Shop Grid --- */
+.tuning-title-col {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+.shiftup-tuning-shop-section.is-inview .tuning-title-col {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.tuning-feature-item {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+.shiftup-tuning-shop-section.is-inview .tuning-feature-item:nth-child(1) { transition-delay: 0.05s; }
+.shiftup-tuning-shop-section.is-inview .tuning-feature-item:nth-child(2) { transition-delay: 0.12s; }
+.shiftup-tuning-shop-section.is-inview .tuning-feature-item:nth-child(3) { transition-delay: 0.19s; }
+.shiftup-tuning-shop-section.is-inview .tuning-feature-item:nth-child(4) { transition-delay: 0.26s; }
+.shiftup-tuning-shop-section.is-inview .tuning-feature-item:nth-child(5) { transition-delay: 0.33s; }
+.shiftup-tuning-shop-section.is-inview .tuning-feature-item:nth-child(6) { transition-delay: 0.40s; }
+.shiftup-tuning-shop-section.is-inview .tuning-feature-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Section 3: Automotive Technicians Reverse Reset Support --- */
+.shiftup-technicians-section:not(.is-appeared) .technicians-photo-frame {
+    opacity: 0;
+    transform: translateX(-120px);
+}
+.shiftup-technicians-section:not(.is-appeared) .technicians-dark-card .card-inner {
+    -webkit-clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+}
+.shiftup-technicians-section:not(.is-appeared) .corner-dot {
+    opacity: 0;
+}
+.shiftup-technicians-section:not(.is-appeared) .dot-tl { top: calc(50% - 6px); left: calc(50% - 6px); }
+.shiftup-technicians-section:not(.is-appeared) .dot-tr { top: calc(50% - 6px); right: calc(50% - 6px); }
+.shiftup-technicians-section:not(.is-appeared) .dot-bl { bottom: calc(50% - 6px); left: calc(50% - 6px); }
+.shiftup-technicians-section:not(.is-appeared) .dot-br { bottom: calc(50% - 6px); right: calc(50% - 6px); }
+.shiftup-technicians-section:not(.is-appeared) .technicians-dark-card .card-inner > * {
+    opacity: 0;
+    transform: translateY(22px);
+}
+
+/* --- Section 4: All About Cars Swiper Header & Slider --- */
+.all-about-head {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+.shiftup-all-about-cars-section.is-inview .all-about-head {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.all-about-swiper {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s, transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s;
+    will-change: transform, opacity;
+}
+.shiftup-all-about-cars-section.is-inview .all-about-swiper {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* --- Section 5: 4 Panoramic Banners Staggered Rise --- */
+.pano-banner-col {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(1) { transition-delay: 0.05s; }
+.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(2) { transition-delay: 0.16s; }
+.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(3) { transition-delay: 0.27s; }
+.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(4) { transition-delay: 0.38s; }
+.shiftup-panoramic-banners.is-inview .pano-banner-col {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Section 6: Diagnostics Flanked Columns & Center Laser Scanner --- */
+.flanked-side-col:first-child .flanked-diag-item {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), border-left 0.25s, box-shadow 0.25s;
+    will-change: transform, opacity;
+}
+.shiftup-flanked-diagnostics.is-inview .flanked-side-col:first-child .flanked-diag-item:nth-child(1) { transition-delay: 0.08s; }
+.shiftup-flanked-diagnostics.is-inview .flanked-side-col:first-child .flanked-diag-item:nth-child(2) { transition-delay: 0.22s; }
+.shiftup-flanked-diagnostics.is-inview .flanked-side-col:first-child .flanked-diag-item {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.flanked-center-col .center-scanner-box {
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0.92) translateY(20px);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s, transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+    will-change: transform, opacity;
+}
+.shiftup-flanked-diagnostics.is-inview .flanked-center-col .center-scanner-box {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.flanked-side-col:last-child .flanked-diag-item {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), border-left 0.25s, box-shadow 0.25s;
+    will-change: transform, opacity;
+}
+.shiftup-flanked-diagnostics.is-inview .flanked-side-col:last-child .flanked-diag-item:nth-child(1) { transition-delay: 0.12s; }
+.shiftup-flanked-diagnostics.is-inview .flanked-side-col:last-child .flanked-diag-item:nth-child(2) { transition-delay: 0.26s; }
+.shiftup-flanked-diagnostics.is-inview .flanked-side-col:last-child .flanked-diag-item {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scanner-laser-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ff4d24, #ffffff, #ff4d24, transparent);
+    box-shadow: 0 0 12px #ff4d24, 0 0 24px rgba(255, 77, 36, 0.8);
+    opacity: 0;
+    z-index: 10;
+}
+.shiftup-flanked-diagnostics.is-inview .scanner-laser-bar {
+    opacity: 1;
+    animation: scanLaserGlide 3.2s ease-in-out infinite;
+}
+@keyframes scanLaserGlide {
+    0% { top: 2%; opacity: 0.5; }
+    50% { top: 96%; opacity: 1; }
+    100% { top: 2%; opacity: 0.5; }
+}
+
+/* --- Section 7: 3 Pricing Tables Staggered Lift --- */
+.checkup-head {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+.shiftup-checkup-offers-section.is-inview .checkup-head {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.checkup-card {
+    opacity: 0;
+    transform: translateY(50px) scale(0.97);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s, transform 0.3s;
+    will-change: transform, opacity;
+}
+.shiftup-checkup-offers-section.is-inview .checkup-card:nth-child(1) { transition-delay: 0.06s; }
+.shiftup-checkup-offers-section.is-inview .checkup-card:nth-child(2) { transition-delay: 0.18s; }
+.shiftup-checkup-offers-section.is-inview .checkup-card:nth-child(3) { transition-delay: 0.30s; }
+.shiftup-checkup-offers-section.is-inview .checkup-card {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+.shiftup-checkup-offers-section.is-inview .checkup-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+}
+
+/* --- Section 8: Brand Logos Marquee --- */
+.marquee-head {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+.shiftup-brand-marquee-section.is-inview .marquee-head {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.marquee-strip-wrap {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s, transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s;
+    will-change: transform, opacity;
+}
+.shiftup-brand-marquee-section.is-inview .marquee-strip-wrap {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* --- Section 9: Workshops Network 3 Columns --- */
+.workshops-head {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+.shiftup-workshops-section.is-inview .workshops-head {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ws-clean-card {
+    opacity: 0;
+    transform: translateY(45px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s, transform 0.25s;
+    will-change: transform, opacity;
+}
+.shiftup-workshops-section.is-inview .ws-clean-card:nth-child(1) { transition-delay: 0.06s; }
+.shiftup-workshops-section.is-inview .ws-clean-card:nth-child(2) { transition-delay: 0.18s; }
+.shiftup-workshops-section.is-inview .ws-clean-card:nth-child(3) { transition-delay: 0.30s; }
+.shiftup-workshops-section.is-inview .ws-clean-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+.shiftup-workshops-section.is-inview .ws-clean-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
+}
+
+/* Pulse Hover for High-Octane Orange Accent Bars */
+.orange-bar, .btn-orange-bar {
+    display: inline-block;
+    color: #ff4d24;
+    font-weight: 900;
+    margin-right: 6px;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease;
+}
+*:hover > .orange-bar, *:hover > * > .orange-bar {
+    transform: scaleY(1.22);
+    color: #e03b14;
+}
+
+/* ==========================================================================
+   SHIFTUP LUXURY WORKSHOP FOOTER DESIGN SYSTEM
+   ========================================================================== */
+.shiftup-main-footer {
+    background: #0b0c0f;
+    color: #94a3b8;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    overflow: hidden;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.shiftup-main-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, #ff4d24 50%, transparent 100%);
+    opacity: 0.9;
+    z-index: 2;
+}
+
+/* 1. Pre-Footer Action Banner */
+.footer-prebar {
+    background: #111318;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 22px 0;
+    position: relative;
+}
+
+.footer-prebar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.prebar-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.prebar-beacon {
+    position: relative;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+.beacon-pulse {
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    background: rgba(255, 77, 36, 0.45);
+    animation: beaconPulseAnim 1.8s infinite cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.beacon-core {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #ff4d24;
+    box-shadow: 0 0 10px #ff4d24, 0 0 18px rgba(255, 77, 36, 0.8);
+}
+
+@keyframes beaconPulseAnim {
+    0% { transform: scale(0.6); opacity: 0.9; }
+    50% { transform: scale(1.8); opacity: 0.2; }
+    100% { transform: scale(2.4); opacity: 0; }
+}
+
+.prebar-text {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.prebar-badge {
+    display: inline-block;
+    background: #ff4d24;
+    color: #ffffff;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    box-shadow: 0 2px 8px rgba(255, 77, 36, 0.4);
+}
+
+.prebar-title {
+    color: #ffffff;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.prebar-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.prebar-phone-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 77, 36, 0.12);
+    border: 1px solid rgba(255, 77, 36, 0.4);
+    color: #ff4d24;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    padding: 10px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.prebar-phone-pill i {
+    font-size: 0.95rem;
+    animation: phoneShakeAnim 2.5s infinite;
+}
+
+@keyframes phoneShakeAnim {
+    0%, 85%, 100% { transform: rotate(0deg); }
+    88% { transform: rotate(-14deg); }
+    92% { transform: rotate(14deg); }
+    96% { transform: rotate(-8deg); }
+}
+
+.prebar-phone-pill:hover {
+    background: #ff4d24;
+    color: #ffffff;
+    border-color: #ff4d24;
+    box-shadow: 0 0 24px rgba(255, 77, 36, 0.55);
+    transform: translateY(-2px);
+}
+
+.prebar-book-btn {
+    font-size: 0.85rem;
+    padding: 10px 22px;
+}
+
+/* 2. Main Footer Body (4 Columns) */
+.footer-main-body {
+    padding: 64px 0 52px;
+}
+
+.footer-grid-4col {
+    display: grid;
+    grid-template-columns: 1.35fr 1.05fr 1.05fr 1.35fr;
+    gap: 44px;
+}
+
+/* Column 1: Brand & Contacts */
+.footer-brand-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.footer-brand-logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: contain;
+    background: #0f1117;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+}
+
+.footer-brand-heading .brand-name {
+    display: block;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 1.2px;
+}
+
+.footer-brand-heading .brand-tag {
+    background: #ff4d24;
+    color: #ffffff;
+    font-size: 0.68rem;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+.footer-brand-heading .brand-tagline {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #94a3b8;
+    letter-spacing: 0.8px;
+    margin-top: 2px;
+}
+
+.footer-brand-desc {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: #838e9e;
+    margin-bottom: 24px;
+}
+
+.footer-quick-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.quick-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #cbd5e1;
+    transition: color 0.25s ease;
+}
+
+.quick-contact-item i {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff4d24;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.quick-contact-item small {
+    display: block;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 1px;
+}
+
+.quick-contact-item strong {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.quick-contact-item span {
+    font-size: 0.86rem;
+    color: #cbd5e1;
+}
+
+.quick-contact-item:hover i {
+    background: #ff4d24;
+    color: #ffffff;
+    border-color: #ff4d24;
+    transform: scale(1.08);
+    box-shadow: 0 0 14px rgba(255, 77, 36, 0.5);
+}
+
+.quick-contact-item:hover strong,
+.quick-contact-item:hover span {
+    color: #ff4d24;
+}
+
+/* Columns Title */
+.footer-col-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+}
+
+.title-square {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #ff4d24;
+    margin-right: 10px;
+    box-shadow: 0 0 8px rgba(255, 77, 36, 0.6);
+}
+
+/* Links List with ShiftUp Square Dot Slide */
+.footer-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.footer-links-list li a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #8b99ac;
+    text-decoration: none;
+    font-size: 0.875rem;
+    padding: 4px 0;
+    position: relative;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.footer-links-list li a::before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 5px;
+    background: #ff4d24;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+}
+
+.footer-links-list li a i {
+    font-size: 0.78rem;
+    color: #556274;
+    width: 16px;
+    text-align: center;
+    transition: all 0.25s ease;
+}
+
+.footer-links-list li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+.footer-links-list li a:hover::before {
+    width: 6px;
+    height: 6px;
+    opacity: 1;
+    box-shadow: 0 0 6px #ff4d24;
+    margin-right: -4px;
+}
+
+.footer-links-list li a:hover i {
+    color: #ff4d24;
+    transform: translateX(2px);
+}
+
+.footer-links-list li a.highlight-link {
+    color: #f1f5f9;
+    font-weight: 600;
+}
+
+.badge-mini {
+    background: #ff4d24;
+    color: #ffffff;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+    margin-left: 6px;
+}
+
+/* Prebar hotline pill */
+.prebar-phone-pill.pill-hotline {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: #e2e8f0;
+}
+.prebar-phone-pill.pill-hotline:hover {
+    background: #ff4d24;
+    border-color: #ff4d24;
+    color: #ffffff;
+}
+
+/* Column 4: Google Maps Interactive Embed */
+.col-map {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-map-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.footer-map-card:hover {
+    border-color: rgba(255, 77, 36, 0.4);
+    box-shadow: 0 8px 28px rgba(255, 77, 36, 0.15);
+    transform: translateY(-2px);
+}
+
+.footer-map-frame {
+    width: 100%;
+    height: 220px;
+    background: #111318;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-map-frame iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
+    filter: contrast(1.05) saturate(1.1) brightness(0.96);
+    transition: filter 0.3s ease;
+}
+
+.footer-map-card:hover .footer-map-frame iframe {
+    filter: contrast(1.08) saturate(1.15) brightness(1);
+}
+
+.map-card-info {
+    padding: 14px 16px;
+    background: #0e1015;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.map-badge-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.map-live-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff4d24;
+    box-shadow: 0 0 8px #ff4d24;
+    animation: beaconPulseAnim 2s infinite;
+}
+
+.map-loc-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.8px;
+}
+
+.map-loc-desc {
+    font-size: 0.78rem;
+    color: #838e9e;
+    line-height: 1.5;
+    margin: 0 0 10px 0;
+}
+
+.map-loc-hotlines {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    margin-bottom: 12px;
+}
+
+.map-loc-hotlines .sep {
+    color: #475569;
+}
+
+.map-direct-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #ff4d24;
+    text-decoration: none;
+    padding: 6px 14px;
+    background: rgba(255, 77, 36, 0.1);
+    border: 1px solid rgba(255, 77, 36, 0.3);
+    border-radius: 4px;
+    transition: all 0.25s ease;
+}
+
+.map-direct-btn:hover {
+    background: #ff4d24;
+    color: #ffffff;
+    box-shadow: 0 0 14px rgba(255, 77, 36, 0.45);
+}
+
+/* Floating Dock hotline pill */
+.dock-hotline {
+    background: rgba(20, 22, 28, 0.92);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.dock-hotline:hover {
+    background: #ff4d24;
+    border-color: #ff4d24;
+    color: #ffffff;
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 28px rgba(255, 77, 36, 0.45);
+}
+
+/* Column 4: Workshop Locations */
+.footer-workshop-items {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.workshop-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 6px;
+    padding: 13px 15px;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.workshop-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 77, 36, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.workshop-city {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+}
+
+.workshop-city i {
+    color: #ff4d24;
+    font-size: 0.85rem;
+}
+
+.workshop-city strong {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.workshop-address {
+    font-size: 0.8rem;
+    color: #838e9e;
+    line-height: 1.5;
+    margin: 0 0 6px 0;
+}
+
+.workshop-map-link {
+    font-size: 0.76rem;
+    color: #ff4d24;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.workshop-map-link:hover {
+    color: #ffffff;
+    gap: 8px;
+}
+
+/* 3. Footer Bottom Bar */
+.footer-bottom-bar {
+    background: #060709;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 20px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.copy-text {
+    font-size: 0.82rem;
+    color: #64748b;
+}
+
+.copy-text strong {
+    color: #94a3b8;
+}
+
+.bottom-extra-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.82rem;
+}
+
+.bottom-extra-links a {
+    color: #838e9e;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.bottom-extra-links a:hover {
+    color: #ff4d24;
+}
+
+.bottom-extra-links .sep {
+    color: #334155;
+}
+
+.back-to-top-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #cbd5e1;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    padding: 8px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-top-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s ease;
+}
+
+.back-to-top-btn:hover {
+    background: #ff4d24;
+    color: #ffffff;
+    border-color: #ff4d24;
+    box-shadow: 0 0 16px rgba(255, 77, 36, 0.45);
+}
+
+.back-to-top-btn:hover .btn-top-icon {
+    transform: translateY(-3px);
+}
+
+/* 4. ShiftUp Floating Action Dock (Fixed Bottom-Right) */
+.shiftup-floating-dock {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: auto;
+}
+
+.float-dock-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    text-decoration: none;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.dock-rescue {
+    background: linear-gradient(135deg, #ff4d24 0%, #e03b14 100%);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dock-rescue:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 28px rgba(255, 77, 36, 0.55);
+    color: #ffffff;
+}
+
+.dock-pulse-beacon {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.pulse-ring {
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    animation: beaconPulseAnim 1.6s infinite;
+}
+
+.pulse-dot {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #ffffff;
+}
+
+.dock-zalo {
+    background: rgba(0, 104, 255, 0.92);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dock-zalo:hover {
+    background: #0068ff;
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 28px rgba(0, 104, 255, 0.5);
+    color: #ffffff;
+}
+
+.dock-book {
+    background: rgba(18, 20, 26, 0.92);
+    color: #ffffff;
+    border: 1px solid rgba(255, 77, 36, 0.45);
+}
+
+.dock-book:hover {
+    background: #14161c;
+    border-color: #ff4d24;
+    color: #ff4d24;
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 28px rgba(255, 77, 36, 0.35);
+}
+
+/* 5. Full-Page Scroll Animations for Footer (Bidirectional) */
+.shiftup-main-footer .footer-prebar,
+.shiftup-main-footer .footer-col,
+.shiftup-main-footer .footer-bottom-bar {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.shiftup-main-footer.anim-ready .footer-prebar,
+.shiftup-main-footer.anim-ready .footer-col,
+.shiftup-main-footer.anim-ready .footer-bottom-bar {
+    opacity: 0;
+    transform: translateY(32px);
+}
+
+.shiftup-main-footer.is-inview .footer-prebar,
+.shiftup-main-footer.is-inview .footer-col,
+.shiftup-main-footer.is-inview .footer-bottom-bar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.shiftup-main-footer.is-inview .footer-prebar {
+    transition-delay: 0.05s;
+}
+
+.shiftup-main-footer.is-inview .footer-col:nth-child(1) {
+    transition-delay: 0.12s;
+}
+
+.shiftup-main-footer.is-inview .footer-col:nth-child(2) {
+    transition-delay: 0.22s;
+}
+
+.shiftup-main-footer.is-inview .footer-col:nth-child(3) {
+    transition-delay: 0.32s;
+}
+
+.shiftup-main-footer.is-inview .footer-col:nth-child(4) {
+    transition-delay: 0.42s;
+}
+
+.shiftup-main-footer.is-inview .footer-bottom-bar {
+    transition-delay: 0.5s;
+}
+
+/* 6. Responsive Breakpoints */
+@media (max-width: 1024px) {
+    .footer-grid-4col {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-prebar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .prebar-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .footer-grid-4col {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    .footer-bottom-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 14px;
+    }
+    .bottom-extra-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    /* Mobile Bottom Navigation Bar (Native App Style, Non-Intrusive, WCAG AA Compliant) */
+    .shiftup-floating-dock {
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100vw !important;
+        max-width: 100% !important;
+        height: 60px !important;
+        background: rgba(11, 12, 15, 0.96) !important;
+        backdrop-filter: blur(14px) !important;
+        -webkit-backdrop-filter: blur(14px) !important;
+        border-top: 1px solid rgba(255, 77, 36, 0.35) !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        padding: 4px 6px calc(4px + env(safe-area-inset-bottom, 0px)) !important;
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        align-items: center !important;
+        z-index: 99990 !important;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5) !important;
+        gap: 4px !important;
+    }
+    .float-dock-pill {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 2px !important;
+        padding: 6px 2px !important;
+        border-radius: 6px !important;
+        background: transparent !important;
+        border: none !important;
+        color: #e2e8f0 !important;
+        text-decoration: none !important;
+        min-height: 48px !important;
+        box-shadow: none !important;
+        transform: none !important;
+    }
+    .float-dock-pill .dock-text {
+        font-size: 0.65rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.3px !important;
+        text-transform: uppercase !important;
+        font-family: 'Chakra Petch', sans-serif !important;
+        white-space: nowrap !important;
+    }
+    .float-dock-pill i {
+        font-size: 1.15rem !important;
+        margin-bottom: 1px !important;
+    }
+    .float-dock-pill.dock-rescue {
+        color: #ff4d24 !important;
+        background: rgba(255, 77, 36, 0.12) !important;
+    }
+    .float-dock-pill.dock-rescue i {
+        animation: rescuePulse 1.5s infinite;
+    }
+    .float-dock-pill.dock-hotline {
+        color: #f59e0b !important;
+    }
+    .float-dock-pill.dock-zalo {
+        color: #38bdf8 !important;
+    }
+    .float-dock-pill.dock-book {
+        color: #10b981 !important;
+    }
+    .dock-pulse-beacon {
+        display: none !important;
+    }
+}
+
+/* ==========================================================================
+   12 COMPREHENSIVE CAR SERVICES GRID STYLING
+   ========================================================================== */
+.section-12-services {
+    padding: 70px 0;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.services-12-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+}
+
+.service-12-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-12-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #ff4d24;
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-12-card:hover {
+    border-color: #ff4d24;
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+}
+
+.service-12-card:hover::before {
+    width: 100%;
+}
+
+.card-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.card-icon-box {
+    width: 46px;
+    height: 46px;
+    border-radius: 8px;
+    background: rgba(255, 77, 36, 0.1);
+    color: #ff4d24;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-12-card:hover .card-icon-box {
+    background: #ff4d24;
+    color: #ffffff;
+    transform: rotate(-6deg) scale(1.05);
+    box-shadow: 0 4px 12px rgba(255, 77, 36, 0.35);
+}
+
+.card-badge {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 800;
+    color: #ff4d24;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    display: inline-block;
+}
+
+.card-service-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.card-service-title a {
+    color: #0f172a;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.card-service-title a:hover {
+    color: #ff4d24;
+}
+
+.card-meta-row {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr 1fr;
+    gap: 8px;
+    background: #f8fafc;
+    border: 1px solid #edf2f7;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 14px;
+}
+
+.meta-item small {
+    display: block;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: #64748b;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.meta-item strong.price-val {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.95rem;
+    color: #ff4d24;
+    font-weight: 800;
+}
+
+.meta-item span {
+    font-size: 0.8rem;
+    color: #334155;
+    font-weight: 600;
+}
+
+.card-excerpt {
+    font-size: 0.86rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.card-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 18px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.card-feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: #475569;
+    line-height: 1.45;
+}
+
+.card-feature-list li i {
+    color: #ff4d24;
+    font-size: 0.75rem;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.card-action-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 14px;
+    border-top: 1px solid #f1f5f9;
+    margin-top: auto;
+}
+
+.btn-detail-link {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #334155;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.btn-detail-link:hover {
+    color: #ff4d24;
+}
+
+.btn-book-service {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: #ff4d24;
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.25s ease;
+}
+
+.btn-book-service:hover {
+    background: #0f172a;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 1024px) {
+    .services-12-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .services-12-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .card-meta-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+}
+
+/* =========================================================================
+   INNER PAGES STYLING SYSTEM (SHIFTUP LUXURY MOTORSPORT STYLE)
+   Covers About (/ve-chung-toi/), Services (/dich-vu/), Price (/bang-gia/), etc.
+   ========================================================================= */
+
+/* 1. Global Portal Hero Banner */
+.portal-hero-header {
+    background: #0b0c0f;
+    background-image: 
+        radial-gradient(circle at 80% 20%, rgba(255, 77, 36, 0.12) 0%, transparent 40%),
+        linear-gradient(180deg, #07080a 0%, #0e1015 100%);
+    padding: 65px 0 55px;
+    border-bottom: 3px solid #ff4d24;
+    position: relative;
+    overflow: hidden;
+}
+
+.portal-hero-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.015) 0,
+        rgba(255, 255, 255, 0.015) 1px,
+        transparent 0,
+        transparent 16px
+    );
+    pointer-events: none;
+}
+
+.portal-breadcrumb {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #888888;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.portal-breadcrumb a {
+    color: #aaaaaa;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.portal-breadcrumb a:hover {
+    color: #ff4d24;
+}
+
+.portal-breadcrumb span {
+    color: #555555;
+}
+
+.portal-breadcrumb .current {
+    color: #ff4d24;
+}
+
+.portal-page-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: clamp(2rem, 4vw, 2.85rem);
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.25;
+    margin: 0 0 16px;
+    position: relative;
+    z-index: 2;
+}
+
+.portal-page-subtitle {
+    color: #cbd5e1;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 860px;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* 2. About Page (/ve-chung-toi/) */
+.page-about-portal {
+    background: #f8fafc;
+}
+
+.about-story-section {
+    padding: 70px 0;
+    background: #ffffff;
+}
+
+.about-story-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-story-content .story-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 77, 36, 0.1);
+    color: #ff4d24;
+    border: 1px solid rgba(255, 77, 36, 0.3);
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.about-story-media {
+    position: relative;
+}
+
+.about-story-media .story-img-main {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+    border: 2px solid #0b0c0f;
+}
+
+.story-floating-badge {
+    position: absolute;
+    bottom: -22px;
+    left: 20px;
+    background: #0b0c0f;
+    color: #ffffff;
+    border: 1px solid rgba(255, 77, 36, 0.4);
+    padding: 14px 20px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+.story-floating-badge i {
+    font-size: 1.8rem;
+    color: #ff4d24;
+}
+
+.story-floating-badge strong {
+    display: block;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #ff4d24;
+}
+
+.story-floating-badge small {
+    display: block;
+    color: #94a3b8;
+    font-size: 0.78rem;
+    margin-top: 2px;
+}
+
+.about-highlights-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 28px;
+}
+
+.about-highlights-row .hl-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-top: 3px solid #ff4d24;
+    padding: 18px 14px;
+    border-radius: 4px;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-highlights-row .hl-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.about-highlights-row .hl-item strong {
+    display: block;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #0b0c0f;
+    line-height: 1.1;
+    margin-bottom: 6px;
+}
+
+.about-highlights-row .hl-item span {
+    display: block;
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* 3. Commitments Section (5 Cam Kết Vàng) */
+.commitments-section {
+    padding: 75px 0 85px;
+    background: #0b0c0f;
+    color: #ffffff;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.commitments-section .section-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.commitments-section .section-pill {
+    display: inline-block;
+    background: rgba(255, 77, 36, 0.15);
+    color: #ff4d24;
+    border: 1px solid rgba(255, 77, 36, 0.4);
+    padding: 5px 16px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 12px;
+}
+
+.commitments-section .section-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.commitments-section .section-desc {
+    color: #94a3b8;
+    max-width: 680px;
+    margin: 0 auto;
+    font-size: 0.95rem;
+}
+
+.commitments-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+}
+
+.commit-card {
+    background: #14171d;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 3px solid #ff4d24;
+    padding: 26px 18px 22px;
+    border-radius: 4px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.commit-card:hover {
+    transform: translateY(-6px);
+    border-color: #ff4d24;
+    box-shadow: 0 14px 30px rgba(255, 77, 36, 0.14);
+}
+
+.commit-card .commit-num {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: rgba(255, 77, 36, 0.35);
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.commit-card h4 {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.02rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    line-height: 1.35;
+}
+
+.commit-card p {
+    font-size: 0.86rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.btn-carpla,
+.btn-carpla-primary {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    background: #ff4d24;
+    color: #ffffff !important;
+    padding: 14px 32px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 8px 22px rgba(255, 77, 36, 0.35);
+    transition: all 0.25s ease;
+}
+
+.btn-carpla:hover,
+.btn-carpla-primary:hover {
+    background: #e03b14;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(255, 77, 36, 0.45);
+}
+
+/* 4. Services Archive (/dich-vu/) */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 36px;
+}
+
+.service-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: #ff4d24;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.service-media {
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+    background: #0b0c0f;
+}
+
+.service-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.service-card:hover .service-media img {
+    transform: scale(1.08);
+}
+
+.service-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    background: #ff4d24;
+    color: #ffffff;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.service-body {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-body .service-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #0b0c0f;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    line-height: 1.35;
+}
+
+.service-body .service-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.service-body .service-title a:hover {
+    color: #ff4d24;
+}
+
+.service-body .service-price {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.12rem;
+    font-weight: 800;
+    color: #ff4d24;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.service-body .service-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.service-body .service-features-list li {
+    font-size: 0.88rem;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.service-body .service-features-list li i {
+    color: #ff4d24;
+    font-size: 0.95rem;
+}
+
+.service-card-footer {
+    display: flex;
+    gap: 10px;
+    padding-top: 16px;
+    border-top: 1px solid #f1f5f9;
+    align-items: center;
+}
+
+.btn-gara {
+    padding: 10px 14px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex: 1;
+    transition: all 0.25s ease;
+}
+
+.btn-gara-outline-red {
+    background: transparent;
+    color: #0b0c0f;
+    border: 1px solid #cbd5e1;
+}
+
+.btn-gara-outline-red:hover {
+    background: #0b0c0f;
+    color: #ffffff;
+    border-color: #0b0c0f;
+}
+
+.btn-gara-red {
+    background: #ff4d24;
+    color: #ffffff;
+    border: 1px solid #ff4d24;
+}
+
+.btn-gara-red:hover {
+    background: #e03b14;
+    border-color: #e03b14;
+    color: #ffffff;
+}
+
+/* Responsive inner pages */
+@media (max-width: 1024px) {
+    .about-story-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+    .commitments-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .about-highlights-row {
+        grid-template-columns: 1fr;
+    }
+    .commitments-grid {
+        grid-template-columns: 1fr;
+    }
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    .portal-hero-header {
+        padding: 45px 0 35px;
+    }
+}
+
+/* =========================================================================
+   5. BẢNG GIÁ DỊCH VỤ & DỰ TOÁN SƠN GÒ (/bang-gia/)
+   Full Styling System for Carpla Standard Maintenance Tiers & Paint Estimator
+   ========================================================================= */
+
+/* A. Section 1: Maintenance Tiers */
+.price-tables-section {
+    padding: 75px 0 85px;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.price-tables-section .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 48px;
+}
+
+.price-tables-section .section-pill {
+    display: inline-block;
+    background: rgba(255, 77, 36, 0.1);
+    color: #ff4d24;
+    border: 1px solid rgba(255, 77, 36, 0.3);
+    padding: 5px 16px;
+    border-radius: 20px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.price-tables-section .section-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: clamp(1.9rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.price-tables-section .section-desc {
+    color: #64748b;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.maintenance-tiers-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    align-items: stretch;
+}
+
+.tier-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 32px 24px 28px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.tier-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: #cbd5e1;
+}
+
+.tier-card.featured {
+    border: 2px solid #ff4d24;
+    background: linear-gradient(180deg, #ffffff 0%, #fffbf8 100%);
+    box-shadow: 0 12px 32px rgba(255, 77, 36, 0.12);
+    transform: translateY(-4px);
+}
+
+.tier-card.featured:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 24px 48px rgba(255, 77, 36, 0.2);
+}
+
+.featured-ribbon {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff4d24;
+    color: #ffffff;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 4px 14px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(255, 77, 36, 0.4);
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.tier-badge {
+    display: inline-block;
+    align-self: flex-start;
+    background: #f1f5f9;
+    color: #475569;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 14px;
+}
+
+.tier-card.featured .tier-badge {
+    background: rgba(255, 77, 36, 0.12);
+    color: #ff4d24;
+}
+
+.tier-name {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 12px;
+    line-height: 1.3;
+}
+
+.tier-price {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: #ff4d24;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+    line-height: 1;
+}
+
+.tier-desc {
+    font-size: 0.85rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    min-height: 40px;
+}
+
+.tier-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 28px;
+    flex: 1 1 auto;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 18px;
+}
+
+.tier-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.86rem;
+    color: #334155;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.tier-checklist li i {
+    color: #10b981;
+    margin-top: 3px;
+    flex-shrink: 0;
+    font-size: 0.85rem;
+}
+
+.tier-btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 12px 18px;
+    font-size: 0.88rem;
+    font-weight: 800;
+    font-family: 'Chakra Petch', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.25s ease;
+}
+
+.btn-carpla-outline {
+    background: transparent;
+    border: 2px solid #0f172a;
+    color: #0f172a !important;
+}
+
+.btn-carpla-outline:hover {
+    background: #0f172a;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+
+/* B. Section 1B: 12 Danh Mục Kỹ Thuật Cards */
+.section-12-services {
+    padding: 85px 0 95px;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.services-12-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+}
+
+.service-12-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 26px 22px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    border-top: 3px solid transparent;
+}
+
+.service-12-card:hover {
+    transform: translateY(-6px);
+    border-color: #cbd5e1;
+    border-top-color: #ff4d24;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+}
+
+.service-12-card .card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.service-12-card .head-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.service-12-card .card-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background: rgba(255, 77, 36, 0.08);
+    color: #ff4d24;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.service-12-card .card-badge {
+    display: inline-block;
+    background: #f1f5f9;
+    color: #64748b;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-bottom: 6px;
+}
+
+.service-12-card .card-service-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+    line-height: 1.35;
+    margin: 0;
+}
+
+.service-12-card .card-service-title a {
+    color: #0f172a;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.service-12-card .card-service-title a:hover {
+    color: #ff4d24;
+}
+
+.service-12-card .card-meta-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    background: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+}
+
+.service-12-card .meta-item small {
+    display: block;
+    font-size: 0.68rem;
+    color: #94a3b8;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.service-12-card .meta-item .price-val {
+    color: #ff4d24;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+}
+
+.service-12-card .meta-item span {
+    font-size: 0.8rem;
+    color: #334155;
+    font-weight: 600;
+}
+
+.service-12-card .card-excerpt {
+    font-size: 0.86rem;
+    color: #64748b;
+    line-height: 1.55;
+    margin-bottom: 16px;
+}
+
+.service-12-card .card-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    flex: 1 1 auto;
+}
+
+.service-12-card .card-feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: #475569;
+    margin-bottom: 6px;
+}
+
+.service-12-card .card-action-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 16px;
+}
+
+.service-12-card .btn-detail-link {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #475569;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s ease;
+}
+
+.service-12-card .btn-detail-link:hover {
+    color: #ff4d24;
+}
+
+.service-12-card .btn-book-service {
+    background: #0f172a;
+    color: #ffffff !important;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.25s ease;
+}
+
+.service-12-card .btn-book-service:hover {
+    background: #ff4d24;
+    transform: translateY(-2px);
+}
+
+/* C. Section 2: Interactive Paint Estimator */
+.section-paint-estimator {
+    padding: 85px 0 100px;
+    background: #0b0c0f;
+    color: #ffffff;
+    border-top: 3px solid #ff4d24;
+}
+
+.section-paint-estimator .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-paint-estimator .section-pill {
+    display: inline-block;
+    background: rgba(255, 77, 36, 0.15);
+    color: #ff4d24;
+    border: 1px solid rgba(255, 77, 36, 0.4);
+    padding: 5px 16px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.section-paint-estimator .section-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.section-paint-estimator .section-desc {
+    color: #94a3b8;
+    max-width: 760px;
+    margin: 0 auto;
+    font-size: 0.98rem;
+}
+
+.paint-calc-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 36px;
+    align-items: flex-start;
+}
+
+.paint-selectors-col {
+    background: #14171d;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 30px;
+}
+
+.paint-panel-intro {
+    margin-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 18px;
+}
+
+.blueprint-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #ff4d24;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.84rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.paint-panel-intro p {
+    color: #94a3b8;
+    font-size: 0.88rem;
+    margin: 0;
+}
+
+.paint-part-selector {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.paint-part-btn {
+    background: #1a1e26;
+    border: 1.5px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    user-select: none;
+}
+
+.paint-part-btn:hover {
+    border-color: rgba(255, 77, 36, 0.5);
+    background: #202530;
+    transform: translateY(-2px);
+}
+
+.paint-part-btn.is-selected,
+.paint-part-btn.selected {
+    border-color: #ff4d24;
+    background: rgba(255, 77, 36, 0.12);
+    box-shadow: 0 4px 18px rgba(255, 77, 36, 0.2);
+}
+
+.paint-part-btn .part-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.paint-part-btn:hover .part-icon,
+.paint-part-btn.is-selected .part-icon,
+.paint-part-btn.selected .part-icon {
+    background: #ff4d24;
+    color: #ffffff;
+}
+
+.paint-part-btn .part-info {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.paint-part-btn .part-name {
+    display: block;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.94rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 2px;
+}
+
+.paint-part-btn .part-sub {
+    display: block;
+    font-size: 0.74rem;
+    color: #64748b;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.paint-part-btn .part-price {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #ff4d24;
+    white-space: nowrap;
+}
+
+.paint-part-btn.featured-paint-pkg {
+    grid-column: 1 / -1;
+    border-color: rgba(255, 77, 36, 0.4);
+    background: rgba(255, 77, 36, 0.06);
+}
+
+.paint-summary-card {
+    background: #14171d;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 3px solid #ff4d24;
+    border-radius: 8px;
+    padding: 28px 24px;
+    position: sticky;
+    top: 100px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.paint-summary-card .summary-head {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 16px;
+    margin-bottom: 18px;
+}
+
+.paint-summary-card .summary-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #ff4d24;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.paint-summary-card .summary-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+}
+
+.summary-items-list {
+    min-height: 80px;
+    max-height: 240px;
+    overflow-y: auto;
+    margin-bottom: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 14px;
+}
+
+.summary-item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    padding: 6px 0;
+}
+
+.summary-item-row .item-remove {
+    color: #ef4444;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.summary-meta-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.84rem;
+    margin-bottom: 16px;
+}
+
+.summary-meta-box .meta-label {
+    color: #94a3b8;
+}
+
+.summary-meta-box .meta-value {
+    color: #ffffff;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 700;
+}
+
+.summary-total-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 77, 36, 0.1);
+    border: 1px solid rgba(255, 77, 36, 0.25);
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+}
+
+.summary-total-row .total-lbl {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    color: #ffffff;
+}
+
+.summary-total-row .total-val {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: #ff4d24;
+}
+
+.summary-guarantee-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.78rem;
+    color: #94a3b8;
+    line-height: 1.45;
+    margin-bottom: 16px;
+}
+
+.btn-summary-book {
+    width: 100%;
+    justify-content: center;
+    padding: 14px;
+}
+
+/* Responsive Pricing Portal */
+@media (max-width: 1200px) {
+    .maintenance-tiers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .services-12-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 991px) {
+    .paint-calc-layout {
+        grid-template-columns: 1fr;
+    }
+    .paint-summary-card {
+        position: static;
+        margin-top: 24px;
+    }
+}
+
+@media (max-width: 640px) {
+    .maintenance-tiers-grid {
+        grid-template-columns: 1fr;
+    }
+    .services-12-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .paint-part-selector {
+        grid-template-columns: 1fr;
+    }
+    .service-12-card .card-meta-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+    .service-12-card .card-action-btns {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .service-12-card .btn-book-service {
+        justify-content: center;
+    }
+}
+
+
+

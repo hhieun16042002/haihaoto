@@ -1,0 +1,2433 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <title>Hà Thành Garage | Hệ Thống Bảo Dưỡng & Chăm Sóc Xe Toàn Quốc — Kinh Doanh Bằng Sự Tử Tế</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="Hà Thành Garage - Hệ thống sửa chữa, bảo dưỡng ô tô, sơn sấy hồng ngoại Sikkens, phục hồi xe tai nạn, chăm sóc xe Ceramic và cứu hộ 24/7 với 27+ chi nhánh toàn quốc.">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Be Vietnam Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* ==========================================================================
+       1. DESIGN SYSTEM VARIABLES
+       ========================================================================== */
+    :root {
+      --ht-primary: #dc2626;
+      --ht-primary-hover: #b91c1c;
+      --ht-primary-light: #fef2f2;
+      --ht-accent: #d97706;
+      --ht-gold: #f59e0b;
+      --ht-gold-light: #fef3c7;
+      --ht-dark: #0f172a;
+      --ht-dark-soft: #1e293b;
+      --ht-light: #f8fafc;
+      --ht-surface: #ffffff;
+      --ht-border: #e2e8f0;
+      --ht-border-strong: #cbd5e1;
+      --ht-text-main: #1e293b;
+      --ht-text-muted: #64748b;
+      --ht-text-light: #94a3b8;
+      --ht-success: #16a34a;
+      --ht-zalo: #0068ff;
+
+      --ht-font-base: "Plus Jakarta Sans", "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --ht-radius-sm: 6px;
+      --ht-radius-md: 10px;
+      --ht-radius-lg: 18px;
+      --ht-radius-full: 9999px;
+
+      --ht-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --ht-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+      --ht-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+      --ht-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
+
+      --ht-container: 1360px;
+      --ht-transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--ht-font-base);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--ht-text-main);
+      background-color: var(--ht-light);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; transition: var(--ht-transition); }
+    img { max-width: 100%; height: auto; display: block; }
+    button, input, select, textarea { font-family: inherit; }
+
+    .container {
+      width: 100%;
+      max-width: var(--ht-container);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* ==========================================================================
+       2. TOPBAR
+       ========================================================================== */
+    .ht-topbar {
+      background-color: var(--ht-dark);
+      color: #cbd5e1;
+      font-size: 0.8125rem;
+      padding: 0.45rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+      z-index: 1001;
+    }
+    .ht-topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .ht-topbar-left, .ht-topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .ht-topbar-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .ht-topbar-item i { color: var(--ht-primary); }
+    .ht-topbar-divider { color: rgba(255, 255, 255, 0.2); }
+    .ht-topbar-link:hover { color: #fbbf24; }
+    .ht-topbar-sos {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(220, 38, 38, 0.2);
+      color: #fca5a5;
+      padding: 0.2rem 0.65rem;
+      border-radius: var(--ht-radius-sm);
+      border: 1px solid rgba(220, 38, 38, 0.4);
+      font-weight: 700;
+      animation: pulseAlert 2s infinite;
+    }
+    @keyframes pulseAlert {
+      0%, 100% { border-color: rgba(220, 38, 38, 0.4); }
+      50% { border-color: rgba(220, 38, 38, 0.9); box-shadow: 0 0 10px rgba(220, 38, 38, 0.4); }
+    }
+
+    /* ==========================================================================
+       3. STICKY HEADER (MENU 1 DÒNG DUY NHẤT - SINGLE-LINE NAV)
+       ========================================================================== */
+    .ht-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--ht-border);
+      box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05);
+      transition: var(--ht-transition);
+    }
+    .ht-header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      gap: 1.5rem;
+      white-space: nowrap;
+    }
+
+    /* Brand Logo */
+    .ht-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-shrink: 0;
+    }
+    .ht-brand-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: var(--ht-radius-md);
+      background: linear-gradient(135deg, var(--ht-primary), #991b1b);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.35);
+      transition: transform 0.3s ease;
+    }
+    .ht-brand:hover .ht-brand-badge {
+      transform: rotate(5deg) scale(1.05);
+    }
+    .ht-brand-titles { line-height: 1.15; }
+    .ht-brand-name {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--ht-dark);
+      letter-spacing: -0.02em;
+    }
+    .ht-brand-name span { color: var(--ht-primary); }
+    .ht-brand-slogan {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--ht-accent);
+    }
+
+    /* Nav Menu: 1 DÒNG DUY NHẤT */
+    .ht-nav {
+      display: none;
+      flex: 1;
+      justify-content: center;
+    }
+    @media (min-width: 1080px) {
+      .ht-nav { display: flex; }
+    }
+    .ht-menu-list {
+      display: flex;
+      align-items: center;
+      gap: 1.15rem;
+      list-style: none;
+      flex-wrap: nowrap;
+    }
+    .ht-menu-item { position: relative; }
+    .ht-menu-link {
+      font-weight: 600;
+      font-size: 0.90625rem;
+      color: var(--ht-dark-soft);
+      padding: 0.6rem 0.2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      position: relative;
+    }
+    .ht-menu-link:hover { color: var(--ht-primary); }
+    .ht-menu-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2.5px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--ht-primary), #ea580c);
+      transition: width 0.25s ease;
+    }
+    .ht-menu-link:hover::after { width: 100%; }
+
+    /* Dropdown */
+    .ht-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 280px;
+      background: #ffffff;
+      border: 1px solid var(--ht-border);
+      border-radius: var(--ht-radius-md);
+      padding: 0.6rem 0;
+      box-shadow: var(--ht-shadow-xl);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: var(--ht-transition);
+      z-index: 100;
+    }
+    .ht-menu-item:hover .ht-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .ht-dropdown a {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.65rem 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--ht-text-main);
+    }
+    .ht-dropdown a i {
+      width: 18px;
+      color: var(--ht-primary);
+      font-size: 0.95rem;
+    }
+    .ht-dropdown a:hover {
+      background-color: var(--ht-primary-light);
+      color: var(--ht-primary);
+      padding-left: 1.5rem;
+    }
+
+    /* Header Actions */
+    .ht-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-shrink: 0;
+    }
+    .ht-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.58rem 1.2rem;
+      font-weight: 700;
+      font-size: 0.875rem;
+      border-radius: var(--ht-radius-md);
+      cursor: pointer;
+      border: none;
+      transition: var(--ht-transition);
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+    }
+    .ht-btn::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 30%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.25);
+      transform: rotate(30deg);
+      transition: all 0.6s ease;
+    }
+    .ht-btn:hover::after {
+      left: 130%;
+    }
+    .ht-btn-primary {
+      background: linear-gradient(135deg, var(--ht-primary), #b91c1c);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(220, 38, 38, 0.3);
+    }
+    .ht-btn-primary:hover {
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(220, 38, 38, 0.45);
+    }
+    .ht-btn-outline {
+      background-color: transparent;
+      border: 1.5px solid var(--ht-border-strong);
+      color: var(--ht-text-main);
+    }
+    .ht-btn-outline:hover {
+      border-color: var(--ht-primary);
+      color: var(--ht-primary);
+      background-color: var(--ht-primary-light);
+    }
+
+    .ht-burger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 32px;
+      height: 28px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 2px;
+    }
+    @media (min-width: 1080px) {
+      .ht-burger { display: none; }
+    }
+    .ht-burger span {
+      width: 100%;
+      height: 3px;
+      background-color: var(--ht-dark);
+      border-radius: 2px;
+    }
+
+    /* ==========================================================================
+       4. HERO BANNER SLIDER (THEO PHONG CÁCH GOMCHUDAUHAIDUONG.VN)
+       ========================================================================== */
+    .ht-hero-slider-wrap {
+      position: relative;
+      width: 100%;
+      height: 600px;
+      background-color: var(--ht-dark);
+      overflow: hidden;
+    }
+    @media (max-width: 768px) {
+      .ht-hero-slider-wrap { height: 500px; }
+    }
+
+    .ht-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+      display: flex;
+      align-items: center;
+    }
+    .ht-slide.active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 10;
+    }
+
+    /* Slide Background Image with subtle Ken-Burns Zoom */
+    .ht-slide-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.08);
+      transition: transform 7s ease-out;
+    }
+    .ht-slide.active .ht-slide-bg {
+      transform: scale(1);
+    }
+    .ht-slide-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.75) 45%, rgba(15, 23, 42, 0.35) 100%);
+    }
+
+    /* Slide Content Animations */
+    .ht-slide-content {
+      position: relative;
+      z-index: 20;
+      max-width: 720px;
+      color: #ffffff;
+      padding: 0 1.25rem;
+    }
+    .ht-slide-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.95rem;
+      background: rgba(245, 158, 11, 0.2);
+      border: 1px solid rgba(245, 158, 11, 0.5);
+      color: #fbbf24;
+      border-radius: var(--ht-radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease 0.2s;
+    }
+    .ht-slide.active .ht-slide-kicker {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .ht-slide-title {
+      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease 0.35s;
+    }
+    .ht-slide.active .ht-slide-title {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .ht-slide-title span.highlight {
+      background: linear-gradient(135deg, #f87171, #f59e0b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .ht-slide-desc {
+      font-size: 1.125rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease 0.5s;
+    }
+    .ht-slide.active .ht-slide-desc {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .ht-slide-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease 0.65s;
+    }
+    .ht-slide.active .ht-slide-actions {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Slider Controls: Arrows & Dots */
+    .ht-slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      font-size: 1.25rem;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      z-index: 30;
+      transition: var(--ht-transition);
+    }
+    .ht-slider-arrow:hover {
+      background: var(--ht-primary);
+      border-color: var(--ht-primary);
+      transform: translateY(-50%) scale(1.1);
+    }
+    .ht-slider-prev { left: 1.5rem; }
+    .ht-slider-next { right: 1.5rem; }
+
+    /* Slider Dots Bar */
+    .ht-slider-dots {
+      position: absolute;
+      bottom: 1.75rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      z-index: 30;
+    }
+    .ht-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: var(--ht-radius-full);
+      background: rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .ht-dot.active {
+      width: 36px;
+      background: var(--ht-primary);
+      box-shadow: 0 0 10px rgba(220, 38, 38, 0.8);
+    }
+
+    /* ==========================================================================
+       5. FLOATING DUAL-ACTION ENGINE WIDGET (TỰ ĐỘNG NỔI TRÊN HERO)
+       ========================================================================== */
+    .ht-hero-dock-wrap {
+      position: relative;
+      margin-top: -60px;
+      z-index: 50;
+      padding: 0 1.25rem;
+    }
+    .ht-hero-dock {
+      background: #ffffff;
+      border: 1px solid var(--ht-border);
+      border-radius: var(--ht-radius-lg);
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+      padding: 1.75rem 2rem;
+    }
+    .ht-dock-tabs {
+      display: flex;
+      gap: 1.5rem;
+      border-bottom: 1px solid var(--ht-border);
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .ht-dock-tab {
+      background: transparent;
+      border: none;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--ht-text-muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding-bottom: 0.5rem;
+      position: relative;
+      transition: var(--ht-transition);
+    }
+    .ht-dock-tab.active {
+      color: var(--ht-primary);
+    }
+    .ht-dock-tab.active::after {
+      content: "";
+      position: absolute;
+      bottom: -0.75rem;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--ht-primary);
+      border-radius: 2px;
+    }
+
+    /* Forms inside Dock */
+    .ht-dock-form {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr) auto;
+      gap: 1rem;
+      align-items: flex-end;
+    }
+    @media (max-width: 992px) {
+      .ht-dock-form { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 576px) {
+      .ht-dock-form { grid-template-columns: 1fr; }
+    }
+    .ht-dock-label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--ht-text-main);
+      margin-bottom: 0.35rem;
+    }
+    .ht-dock-input {
+      width: 100%;
+      height: 44px;
+      border: 1.5px solid var(--ht-border-strong);
+      border-radius: var(--ht-radius-md);
+      padding: 0 0.85rem;
+      font-size: 0.875rem;
+      outline: none;
+      transition: var(--ht-transition);
+    }
+    .ht-dock-input:focus {
+      border-color: var(--ht-primary);
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+    }
+
+    /* ==========================================================================
+       6. CORE SERVICES PILLARS (5 MAPPINGS FROM OTOHATHANH.COM)
+       ========================================================================== */
+    .ht-section { padding: 5rem 0; }
+    .ht-section-header {
+      text-align: center;
+      max-width: 740px;
+      margin: 0 auto 3.5rem;
+    }
+    .ht-section-kicker {
+      display: block;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--ht-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.5rem;
+    }
+    .ht-section-title {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 900;
+      color: var(--ht-dark);
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+    .ht-section-desc {
+      font-size: 1rem;
+      color: var(--ht-text-muted);
+    }
+
+    .ht-filter-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-bottom: 2.75rem;
+    }
+    .ht-filter-btn {
+      padding: 0.6rem 1.2rem;
+      border-radius: var(--ht-radius-full);
+      background-color: #ffffff;
+      border: 1px solid var(--ht-border-strong);
+      color: var(--ht-text-muted);
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--ht-transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .ht-filter-btn:hover {
+      border-color: var(--ht-primary);
+      color: var(--ht-primary);
+    }
+    .ht-filter-btn.active {
+      background-color: var(--ht-primary);
+      color: #ffffff;
+      border-color: var(--ht-primary);
+      box-shadow: 0 4px 10px rgba(220, 38, 38, 0.25);
+    }
+
+    .ht-services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+    @media (min-width: 768px) {
+      .ht-services-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .ht-services-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .ht-service-card {
+      background-color: #ffffff;
+      border: 1px solid var(--ht-border);
+      border-radius: var(--ht-radius-lg);
+      overflow: hidden;
+      box-shadow: var(--ht-shadow-sm);
+      transition: var(--ht-transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .ht-service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--ht-shadow-xl);
+      border-color: rgba(220, 38, 38, 0.35);
+    }
+    .ht-svc-thumb {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+      background-color: var(--ht-dark);
+    }
+    .ht-svc-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .ht-service-card:hover .ht-svc-thumb img {
+      transform: scale(1.08);
+    }
+    .ht-svc-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      color: #fbbf24;
+      padding: 0.3rem 0.75rem;
+      border-radius: var(--ht-radius-sm);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .ht-svc-content {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .ht-svc-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--ht-dark);
+      margin-bottom: 0.6rem;
+      transition: var(--ht-transition);
+    }
+    .ht-service-card:hover .ht-svc-title { color: var(--ht-primary); }
+    .ht-svc-desc {
+      font-size: 0.90625rem;
+      color: var(--ht-text-muted);
+      margin-bottom: 1.25rem;
+      line-height: 1.55;
+      flex: 1;
+    }
+    .ht-svc-specs {
+      list-style: none;
+      border-top: 1px solid var(--ht-border);
+      padding-top: 1rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.84375rem;
+      color: var(--ht-dark-soft);
+    }
+    .ht-svc-specs li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.4rem;
+    }
+    .ht-svc-specs li i { color: var(--ht-success); }
+    .ht-svc-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--ht-border);
+      padding-top: 1rem;
+    }
+    .ht-svc-price-box { font-size: 0.75rem; color: var(--ht-text-muted); }
+    .ht-svc-price-box strong {
+      display: block;
+      font-size: 1rem;
+      color: var(--ht-primary);
+      font-weight: 800;
+    }
+
+    /* ==========================================================================
+       7. MAINTENANCE COST ESTIMATOR
+       ========================================================================== */
+    .ht-calc-section {
+      background-color: #ffffff;
+      border-top: 1px solid var(--ht-border);
+      border-bottom: 1px solid var(--ht-border);
+    }
+    .ht-calc-card {
+      background-color: var(--ht-light);
+      border: 1px solid var(--ht-border);
+      border-radius: var(--ht-radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--ht-shadow-md);
+    }
+    .ht-calc-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    @media (min-width: 992px) {
+      .ht-calc-grid { grid-template-columns: 1.2fr 0.8fr; }
+    }
+    .ht-step-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ht-dark);
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .ht-step-title i { color: var(--ht-primary); }
+    .ht-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-bottom: 1.75rem;
+    }
+    .ht-pill-btn {
+      padding: 0.6rem 1.1rem;
+      border-radius: var(--ht-radius-md);
+      background-color: #ffffff;
+      border: 1.5px solid var(--ht-border-strong);
+      color: var(--ht-text-main);
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--ht-transition);
+    }
+    .ht-pill-btn:hover { border-color: var(--ht-primary); }
+    .ht-pill-btn.selected {
+      background-color: var(--ht-primary);
+      color: #ffffff;
+      border-color: var(--ht-primary);
+      box-shadow: 0 4px 10px rgba(220, 38, 38, 0.25);
+    }
+
+    .ht-calc-board {
+      background: linear-gradient(145deg, var(--ht-dark), #1e293b);
+      border-radius: var(--ht-radius-md);
+      padding: 2rem;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .ht-board-kicker {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #fbbf24;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+    .ht-board-price {
+      font-size: 2.25rem;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .ht-board-time {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8125rem;
+      color: #4ade80;
+      background: rgba(74, 222, 128, 0.15);
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--ht-radius-sm);
+      margin-bottom: 1.5rem;
+    }
+    .ht-board-items-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #94a3b8;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 1rem;
+      margin-bottom: 0.75rem;
+    }
+    .ht-board-list {
+      list-style: none;
+      font-size: 0.875rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin-bottom: 1.75rem;
+    }
+    .ht-board-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.4rem;
+    }
+    .ht-board-list li i {
+      color: #fbbf24;
+      margin-top: 0.25rem;
+    }
+
+    /* ==========================================================================
+       8. DIGITAL WARRANTY LOOKUP ENGINE
+       ========================================================================== */
+    .ht-warranty-card {
+      background-color: #ffffff;
+      border: 1px solid var(--ht-border);
+      border-radius: var(--ht-radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--ht-shadow-md);
+    }
+    .ht-warranty-search-bar {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .ht-warranty-input {
+      flex: 1;
+      height: 50px;
+      padding: 0 1.25rem;
+      border: 1.5px solid var(--ht-border-strong);
+      border-radius: var(--ht-radius-md);
+      font-size: 1rem;
+      outline: none;
+      transition: var(--ht-transition);
+    }
+    .ht-warranty-input:focus {
+      border-color: var(--ht-primary);
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+    }
+    .ht-samples-row {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.8125rem;
+      color: var(--ht-text-muted);
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .ht-sample-tag {
+      background-color: var(--ht-light);
+      border: 1px solid var(--ht-border);
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--ht-radius-sm);
+      font-family: monospace;
+      font-weight: 700;
+      color: var(--ht-dark);
+      cursor: pointer;
+      transition: var(--ht-transition);
+    }
+    .ht-sample-tag:hover {
+      background-color: var(--ht-primary);
+      color: #ffffff;
+      border-color: var(--ht-primary);
+    }
+
+    .ht-cert-box {
+      background-color: var(--ht-light);
+      border: 1px solid var(--ht-border);
+      border-radius: var(--ht-radius-md);
+      padding: 1.75rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .ht-cert-box { grid-template-columns: repeat(3, 1fr); }
+    }
+    .ht-cert-col {
+      background-color: #ffffff;
+      border: 1px solid var(--ht-border);
+      border-radius: var(--ht-radius-md);
+      padding: 1.25rem;
+    }
+    .ht-cert-label {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--ht-text-muted);
+      margin-bottom: 0.35rem;
+    }
+    .ht-cert-val { font-size: 1.0625rem; font-weight: 800; color: var(--ht-dark); }
+    .ht-cert-sub { font-size: 0.8125rem; color: var(--ht-text-muted); margin-top: 0.35rem; }
+    .ht-cert-badge {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--ht-radius-sm);
+      background-color: #dcfce7;
+      color: #15803d;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    /* ==========================================================================
+       9. KCS 6-STEP QUALITY STANDARD TIMELINE
+       ========================================================================== */
+    .ht-kcs-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    @media (min-width: 576px) {
+      .ht-kcs-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 992px) {
+      .ht-kcs-grid { grid-template-columns: repeat(6, 1fr); }
+    }
+    .ht-kcs-card {
+      background-color: #ffffff;
+      border: 1px solid var(--ht-border);
+      border-radius: var(--ht-radius-md);
+      padding: 1.5rem 1.25rem;
+      transition: var(--ht-transition);
+    }
+    .ht-kcs-card:hover {
+      border-color: var(--ht-primary);
+      transform: translateY(-4px);
+      box-shadow: var(--ht-shadow-md);
+    }
+    .ht-kcs-num {
+      font-size: 1.85rem;
+      font-weight: 900;
+      color: var(--ht-primary);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .ht-kcs-name {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--ht-dark);
+      margin-bottom: 0.5rem;
+    }
+    .ht-kcs-txt {
+      font-size: 0.8125rem;
+      color: var(--ht-text-muted);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       10. BRANCH LOCATOR (27+ TRẠM TOÀN QUỐC)
+       ========================================================================== */
+    .ht-branches-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .ht-branches-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .ht-branches-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .ht-branch-card {
+      background-color: #ffffff;
+      border: 1px solid var(--ht-border);
+      border-radius: var(--ht-radius-md);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--ht-transition);
+    }
+    .ht-branch-card:hover {
+      border-color: var(--ht-accent);
+      box-shadow: var(--ht-shadow-lg);
+      transform: translateY(-3px);
+    }
+    .ht-branch-badge {
+      display: inline-block;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      color: var(--ht-accent);
+      margin-bottom: 0.4rem;
+    }
+    .ht-branch-name {
+      font-size: 1.125rem;
+      font-weight: 800;
+      color: var(--ht-dark);
+      margin-bottom: 0.5rem;
+    }
+    .ht-branch-addr {
+      font-size: 0.84375rem;
+      color: var(--ht-text-muted);
+      line-height: 1.5;
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+    .ht-branch-phone {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--ht-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .ht-branch-btns {
+      display: flex;
+      gap: 0.75rem;
+      border-top: 1px solid var(--ht-border);
+      padding-top: 1rem;
+    }
+    .ht-btn-sm {
+      flex: 1;
+      height: 38px;
+      font-size: 0.8125rem;
+      border-radius: var(--ht-radius-sm);
+    }
+
+    /* ==========================================================================
+       11. INSURANCE & MATERIAL PARTNERS
+       ========================================================================== */
+    .ht-partners-section {
+      background-color: #ffffff;
+      border-top: 1px solid var(--ht-border);
+      padding: 4rem 0;
+    }
+    .ht-partners-title {
+      text-align: center;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ht-text-muted);
+      margin-bottom: 2rem;
+    }
+    .ht-partners-grid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+    }
+    .ht-partner-badge {
+      background-color: var(--ht-light);
+      border: 1px solid var(--ht-border);
+      border-radius: var(--ht-radius-md);
+      padding: 0.75rem 1.5rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--ht-dark-soft);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: var(--ht-transition);
+    }
+    .ht-partner-badge:hover {
+      background-color: #ffffff;
+      border-color: var(--ht-primary);
+      color: var(--ht-primary);
+      box-shadow: var(--ht-shadow-sm);
+    }
+    .ht-partner-badge i { color: var(--ht-accent); }
+
+    /* ==========================================================================
+       12. RICH FOOTER
+       ========================================================================== */
+    .ht-footer {
+      background-color: var(--ht-dark);
+      color: #94a3b8;
+      font-size: 0.875rem;
+      padding: 5rem 0 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .ht-footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3.5rem;
+    }
+    @media (min-width: 768px) {
+      .ht-footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .ht-footer-grid { grid-template-columns: 1.35fr 0.9fr 0.9fr 0.85fr; }
+    }
+    .ht-footer-heading {
+      font-size: 1.125rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.01em;
+    }
+    .ht-footer-about {
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+    .ht-footer-contacts {
+      list-style: none;
+      line-height: 1.8;
+    }
+    .ht-footer-contacts li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      margin-bottom: 0.5rem;
+    }
+    .ht-footer-contacts li i {
+      color: var(--ht-primary);
+      margin-top: 0.3rem;
+    }
+    .ht-footer-links {
+      list-style: none;
+      line-height: 2.1;
+    }
+    .ht-footer-links a:hover {
+      color: #ffffff;
+      padding-left: 0.35rem;
+    }
+    .ht-footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.8125rem;
+    }
+
+    /* ==========================================================================
+       13. FLOATING ACTION DOCK
+       ========================================================================== */
+    .ht-float-dock {
+      position: fixed;
+      right: 1.5rem;
+      bottom: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      z-index: 9999;
+    }
+    .ht-float-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      font-size: 1.35rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+      position: relative;
+      transition: var(--ht-transition);
+    }
+    .ht-float-btn:hover { transform: scale(1.1); }
+    .ht-float-sos { background-color: var(--ht-primary); }
+    .ht-float-sos::after {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 2px solid rgba(220, 38, 38, 0.6);
+      animation: pulseRadar 2.2s ease-out infinite;
+    }
+    @keyframes pulseRadar {
+      0% { transform: scale(1); opacity: 0.9; }
+      70% { transform: scale(1.5); opacity: 0; }
+      100% { opacity: 0; }
+    }
+    .ht-float-zalo { background-color: var(--ht-zalo); }
+    .ht-float-book { background-color: var(--ht-gold); color: #000; }
+
+    /* ==========================================================================
+       14. BOOKING MODAL
+       ========================================================================== */
+    .ht-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(6px);
+      display: grid;
+      place-items: center;
+      z-index: 10000;
+      padding: 1.25rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--ht-transition);
+    }
+    .ht-modal-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .ht-modal-box {
+      background: #ffffff;
+      border-radius: var(--ht-radius-lg);
+      width: 100%;
+      max-width: 540px;
+      padding: 2.25rem;
+      position: relative;
+      box-shadow: var(--ht-shadow-xl);
+    }
+    .ht-modal-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--ht-text-muted);
+    }
+    .ht-modal-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--ht-dark);
+      margin-bottom: 0.35rem;
+    }
+    .ht-modal-desc {
+      font-size: 0.875rem;
+      color: var(--ht-text-muted);
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. TOPBAR
+       ========================================================================== -->
+  <div class="ht-topbar">
+    <div class="container ht-topbar-inner">
+      <div class="ht-topbar-left">
+        <span class="ht-topbar-item">
+          <i class="fa-solid fa-headset"></i>
+          <span>Tổng đài CSKH: <b>0568 05 0505</b> (08h00 - 17h30 T2-CN)</span>
+        </span>
+        <span class="ht-topbar-divider">|</span>
+        <span class="ht-topbar-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Trụ sở chính: Số 9, Ngõ 11 Duy Tân, Cầu Giấy, Hà Nội</span>
+        </span>
+      </div>
+      <div class="ht-topbar-right">
+        <a href="#warranty" class="ht-topbar-link">
+          <i class="fa-solid fa-shield-halved"></i> Tra cứu bảo hành điện tử
+        </a>
+        <span class="ht-topbar-divider">|</span>
+        <a href="tel:0945860505" class="ht-topbar-sos">
+          <i class="fa-solid fa-truck-pickup"></i> CỨU HỘ 24/7: 0945 86 0505
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       2. STICKY HEADER (MENU 1 DÒNG DUY NHẤT - SINGLE LINE NAV)
+       ========================================================================== -->
+  <header class="ht-header">
+    <div class="container ht-header-inner">
+      <!-- Brand Logo -->
+      <a href="#" class="ht-brand">
+        <div class="ht-brand-badge">
+          <i class="fa-solid fa-car-burst"></i>
+        </div>
+        <div class="ht-brand-titles">
+          <div class="ht-brand-name">HÀ THÀNH <span>GARAGE</span></div>
+          <div class="ht-brand-slogan">Kinh Doanh Bằng Sự Tử Tế</div>
+        </div>
+      </a>
+
+      <!-- Main Nav: 1 DÒNG DUY NHẤT (Single Line) -->
+      <nav class="ht-nav">
+        <ul class="ht-menu-list">
+          <li class="ht-menu-item"><a href="index.html" class="ht-menu-link active">Trang chủ</a></li>
+          <li class="ht-menu-item">
+            <a href="service-paint.html" class="ht-menu-link">
+              Dịch vụ <i class="fa-solid fa-chevron-down" style="font-size:0.65rem"></i>
+            </a>
+            <div class="ht-dropdown">
+              <a href="service-paint.html">
+                <i class="fa-solid fa-spray-can"></i> Sơn sấy hồng ngoại Sikkens
+              </a>
+              <a href="calculator.html">
+                <i class="fa-solid fa-wrench"></i> Bảo dưỡng định kỳ 30 bước
+              </a>
+              <a href="#services" onclick="filterServices('spa')">
+                <i class="fa-solid fa-gem"></i> Chăm sóc xe Car Spa & Ceramic
+              </a>
+              <a href="#services" onclick="filterServices('accessories')">
+                <i class="fa-solid fa-microchip"></i> Phụ kiện & Thiết bị ô tô
+              </a>
+              <a href="#services" onclick="filterServices('rescue')">
+                <i class="fa-solid fa-truck-pickup"></i> Cứu hộ giao thông 24/7
+              </a>
+            </div>
+          </li>
+          <li class="ht-menu-item"><a href="calculator.html" class="ht-menu-link">Dự toán chi phí</a></li>
+          <li class="ht-menu-item"><a href="warranty.html" class="ht-menu-link">Tra cứu bảo hành</a></li>
+          <li class="ht-menu-item"><a href="branches.html" class="ht-menu-link">27+ Chi nhánh</a></li>
+          <li class="ht-menu-item"><a href="about.html" class="ht-menu-link">Về Hà Thành</a></li>
+          <li class="ht-menu-item"><a href="#partners" class="ht-menu-link">Bảo hiểm đối tác</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header CTAs (1 Line) -->
+      <div class="ht-header-actions">
+        <a href="tel:0568050505" class="ht-btn ht-btn-outline" style="display:none; @media(min-width:1240px){display:inline-flex;}">
+          <i class="fa-solid fa-phone"></i> 0568 05 0505
+        </a>
+        <button class="ht-btn ht-btn-primary" onclick="openBookingModal()">
+          <i class="fa-solid fa-calendar-check"></i> ĐẶT LỊCH HẸN
+        </button>
+        <button class="ht-burger" onclick="alert('Menu di động đang mở!')">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       3. HERO BANNER SLIDER (THEO PHONG CÁCH GOMCHUDAUHAIDUONG.VN)
+       ========================================================================== -->
+  <div class="ht-hero-slider-wrap" id="heroSlider">
+    <!-- Slide 1 -->
+    <div class="ht-slide active" data-slide="0">
+      <div class="ht-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1920&q=85');"></div>
+      <div class="ht-slide-overlay"></div>
+      <div class="container">
+        <div class="ht-slide-content">
+          <div class="ht-slide-kicker">
+            <i class="fa-solid fa-spray-can"></i> CÔNG NGHỆ CHÂU ÂU CHUẨN SIKKENS
+          </div>
+          <h1 class="ht-slide-title">
+            ĐỒNG SƠN SẤY HỒNG NGOẠI <span class="highlight">BẢO HÀNH 5 NĂM</span>
+          </h1>
+          <p class="ht-slide-desc">
+            Phòng sơn sấy khép kín tiêu chuẩn quốc tế Sikkens (Hà Lan) & PPG. Pha màu vi tính chính xác 100%, bóng sâu bền màu và hỗ trợ thủ tục giám định bảo hiểm bồi thường trọn gói 0 đồng.
+          </p>
+          <div class="ht-slide-actions">
+            <button class="ht-btn ht-btn-primary" onclick="openBookingModal('Đồng sơn sấy hồng ngoại')">
+              <span>Đặt lịch sơn sấy</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <a href="#services" class="ht-btn ht-btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.4)">
+              <span>Khám phá dịch vụ</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="ht-slide" data-slide="1">
+      <div class="ht-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1920&q=85');"></div>
+      <div class="ht-slide-overlay"></div>
+      <div class="container">
+        <div class="ht-slide-content">
+          <div class="ht-slide-kicker">
+            <i class="fa-solid fa-wrench"></i> CHUYÊN GIA DÒNG XE ĐỨC & XE SANG
+          </div>
+          <h2 class="ht-slide-title">
+            ĐẠI TU ĐỘNG CƠ & HỘP SỐ <span class="highlight">BẮT ĐÚNG BỆNH</span>
+          </h2>
+          <p class="ht-slide-desc">
+            Chẩn đoán mã lỗi ECU chuyên sâu bằng thiết bị Star Diagnostic, ICOM cho xe Mercedes, BMW, Audi, Porsche. Xử lý triệt để rung giật, hao nhớt, sôi nước với phụ tùng chính hãng 100%.
+          </p>
+          <div class="ht-slide-actions">
+            <button class="ht-btn ht-btn-primary" onclick="openBookingModal('Đại tu động cơ hộp số')">
+              <span>Khám xe miễn phí</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <a href="#calculator" class="ht-btn ht-btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.4)">
+              <span>Dự toán chi phí</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="ht-slide" data-slide="2">
+      <div class="ht-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=1920&q=85');"></div>
+      <div class="ht-slide-overlay"></div>
+      <div class="container">
+        <div class="ht-slide-content">
+          <div class="ht-slide-kicker">
+            <i class="fa-solid fa-shield-halved"></i> QUY TRÌNH KCS 6 BƯỚC ĐỘC LẬP
+          </div>
+          <h2 class="ht-slide-title">
+            BẢO DƯỠNG ĐỊNH KỲ <span class="highlight">30 BƯỚC AN TOÀN</span>
+          </h2>
+          <p class="ht-slide-desc">
+            Miễn phí 30 bước kiểm định an toàn phanh, lốp, gầm, nước làm mát. Thay dầu nhớt Motul, Mobil 1 chính hãng theo đúng tiêu chuẩn khuyến cáo của nhà sản xuất.
+          </p>
+          <div class="ht-slide-actions">
+            <a href="#calculator" class="ht-btn ht-btn-primary">
+              <span>Tính giá bảo dưỡng</span> <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <button class="ht-btn ht-btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.4)" onclick="openBookingModal('Bảo dưỡng định kỳ')">
+              <span>Đặt lịch ngay</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="ht-slide" data-slide="3">
+      <div class="ht-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=1920&q=85');"></div>
+      <div class="ht-slide-overlay"></div>
+      <div class="container">
+        <div class="ht-slide-content">
+          <div class="ht-slide-kicker">
+            <i class="fa-solid fa-gem"></i> ĐẲNG CẤP CHĂM SÓC XE HOÀNG GIA
+          </div>
+          <h2 class="ht-slide-title">
+            CAR SPA & PHỦ BÓNG CERAMIC <span class="highlight">BÓNG GƯƠNG 9H</span>
+          </h2>
+          <p class="ht-slide-desc">
+            Hiệu chỉnh bề mặt sơn 3 bước xóa vết xước xoáy, phủ bóng Ceramic chống tia UV, dọn nội thất khử mùi Ozone và vệ sinh khoang máy bằng hơi nước nóng bảo vệ an toàn hệ thống điện.
+          </p>
+          <div class="ht-slide-actions">
+            <button class="ht-btn ht-btn-primary" onclick="openBookingModal('Phủ Ceramic ô tô')">
+              <span>Tư vấn phủ Ceramic</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <a href="#services" class="ht-btn ht-btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.4)">
+              <span>Gói Car Spa</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slider Navigation Arrows -->
+    <div class="ht-slider-arrow ht-slider-prev" onclick="changeSlide(-1)">
+      <i class="fa-solid fa-chevron-left"></i>
+    </div>
+    <div class="ht-slider-arrow ht-slider-next" onclick="changeSlide(1)">
+      <i class="fa-solid fa-chevron-right"></i>
+    </div>
+
+    <!-- Slider Dots -->
+    <div class="ht-slider-dots" id="sliderDots">
+      <div class="ht-dot active" onclick="gotoSlide(0)"></div>
+      <div class="ht-dot" onclick="gotoSlide(1)"></div>
+      <div class="ht-dot" onclick="gotoSlide(2)"></div>
+      <div class="ht-dot" onclick="gotoSlide(3)"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       4. FLOATING DUAL-ACTION ENGINE WIDGET (OVERLAY OVER HERO)
+       ========================================================================== -->
+  <div class="container ht-hero-dock-wrap">
+    <div class="ht-hero-dock">
+      <div class="ht-dock-tabs">
+        <button class="ht-dock-tab active" id="dockTabBook" onclick="switchDockTab('book')">
+          <i class="fa-solid fa-calendar-check"></i> Đặt Lịch Hẹn Nhanh (-10%)
+        </button>
+        <button class="ht-dock-tab" id="dockTabLookup" onclick="switchDockTab('lookup')">
+          <i class="fa-solid fa-shield-halved"></i> Tra Cứu Bảo Hành Điện Tử
+        </button>
+        <button class="ht-dock-tab" onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">
+          <i class="fa-solid fa-calculator"></i> Dự Toán Bảo Dưỡng Nhanh
+        </button>
+      </div>
+
+      <!-- Tab Content: Đặt Lịch -->
+      <div id="dockPaneBook">
+        <form class="ht-dock-form" onsubmit="handleHeroBooking(event)">
+          <div>
+            <label class="ht-dock-label">Họ và tên của bạn:</label>
+            <input type="text" class="ht-dock-input" required placeholder="Nguyễn Văn A">
+          </div>
+          <div>
+            <label class="ht-dock-label">Số điện thoại:</label>
+            <input type="tel" class="ht-dock-input" required placeholder="0988.xxx.xxx">
+          </div>
+          <div>
+            <label class="ht-dock-label">Biển số / Dòng xe:</label>
+            <input type="text" class="ht-dock-input" required placeholder="30H-888.88 / Vios">
+          </div>
+          <div>
+            <label class="ht-dock-label">Chi nhánh phục vụ:</label>
+            <select class="ht-dock-input">
+              <option>Hà Thành - 500 Võ Chí Công, Tây Hồ (HN)</option>
+              <option>Hà Thành - 300 Trần Điền, Hoàng Mai (HN)</option>
+              <option>Hà Thành - Số 8 Thạch Bàn, Long Biên (HN)</option>
+              <option>Hà Thành - 18 Lê Hồng Phong (Hải Phòng)</option>
+              <option>Hà Thành - Cao Xanh, Hạ Long (Quảng Ninh)</option>
+              <option>Hà Thành - 28 Phan Chu Trinh (TP.HCM)</option>
+            </select>
+          </div>
+          <div>
+            <button type="submit" class="ht-btn ht-btn-primary" style="height:44px;width:100%">
+              <i class="fa-solid fa-check"></i> ĐẶT LỊCH NGAY
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Tab Content: Tra Cứu -->
+      <div id="dockPaneLookup" style="display:none">
+        <div class="ht-dock-form" style="grid-template-columns:1.8fr 1fr auto">
+          <div>
+            <label class="ht-dock-label">Nhập Biển Số Xe hoặc Số Điện Thoại:</label>
+            <input type="text" id="dockPlateInput" class="ht-dock-input" placeholder="VD: 30H-888.88 hoặc 51K-999.99">
+          </div>
+          <div style="font-size:0.8125rem;color:var(--ht-text-muted);display:flex;align-items:center;gap:0.5rem;padding-bottom:0.25rem">
+            <span>Mẫu thử:</span>
+            <span class="ht-sample-tag" onclick="quickDockLookup('30H-888.88')">30H-888.88</span>
+            <span class="ht-sample-tag" onclick="quickDockLookup('51K-999.99')">51K-999.99</span>
+          </div>
+          <div>
+            <button class="ht-btn ht-btn-primary" style="height:44px" onclick="runDockLookup()">
+              <i class="fa-solid fa-magnifying-glass"></i> TRA CỨU HỒ SƠ
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       5. CORE SERVICES (FULL MAPPINGS FROM OTOHATHANH.COM)
+       ========================================================================== -->
+  <section class="ht-section" id="services">
+    <div class="container">
+      <div class="ht-section-header">
+        <span class="ht-section-kicker">DANH MỤC DỊCH VỤ TOÀN DIỆN</span>
+        <h2 class="ht-section-title">Giải Pháp Kỹ Thuật Đạt Chuẩn Hãng</h2>
+        <p class="ht-section-desc">Phục vụ đầy đủ các dòng xe từ phổ thông đến xe sang cao cấp với trang thiết bị chuyên dụng và đội ngũ kỹ thuật viên lành nghề trên 10 năm kinh nghiệm.</p>
+      </div>
+
+      <!-- Filters -->
+      <div class="ht-filter-nav">
+        <button class="ht-filter-btn active" onclick="filterServices('all', this)">
+          <i class="fa-solid fa-border-all"></i> Tất cả dịch vụ
+        </button>
+        <button class="ht-filter-btn" onclick="filterServices('maintenance', this)">
+          <i class="fa-solid fa-wrench"></i> Bảo dưỡng & Sửa chữa
+        </button>
+        <button class="ht-filter-btn" onclick="filterServices('paint', this)">
+          <i class="fa-solid fa-spray-can"></i> Sơn sấy hồng ngoại
+        </button>
+        <button class="ht-filter-btn" onclick="filterServices('spa', this)">
+          <i class="fa-solid fa-gem"></i> Car Spa & Ceramic
+        </button>
+        <button class="ht-filter-btn" onclick="filterServices('accessories', this)">
+          <i class="fa-solid fa-microchip"></i> Phụ kiện & Thiết bị
+        </button>
+        <button class="ht-filter-btn" onclick="filterServices('rescue', this)">
+          <i class="fa-solid fa-truck-pickup"></i> Cứu hộ 24/7
+        </button>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="ht-services-grid" id="svcGrid">
+        <!-- Card 1 -->
+        <div class="ht-service-card" data-cat="maintenance">
+          <div class="ht-svc-thumb">
+            <span class="ht-svc-badge">30 BƯỚC AN TOÀN</span>
+            <img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=600&q=80" alt="Bảo dưỡng định kỳ">
+          </div>
+          <div class="ht-svc-content">
+            <h3 class="ht-svc-title">Bảo Dưỡng Ô Tô Định Kỳ</h3>
+            <p class="ht-svc-desc">Bảo dưỡng các cấp 5.000km, 10.000km, 20.000km, 40.000km, 80.000km. Miễn phí 30 bước kiểm định KCS an toàn toàn diện.</p>
+            <ul class="ht-svc-specs">
+              <li><i class="fa-solid fa-circle-check"></i> Thay dầu động cơ Motul / Mobil 1 chính hãng</li>
+              <li><i class="fa-solid fa-circle-check"></i> Vệ sinh lọc gió, bảo dưỡng cụm phanh 4 bánh</li>
+            </ul>
+            <div class="ht-svc-footer">
+              <div class="ht-svc-price-box">Dự toán từ: <strong>850.000đ</strong></div>
+              <button class="ht-btn ht-btn-outline" style="padding:0.4rem 0.9rem;font-size:0.8125rem" onclick="openBookingModal('Bảo dưỡng định kỳ')">Đặt lịch</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="ht-service-card" data-cat="paint">
+          <div class="ht-svc-thumb">
+            <span class="ht-svc-badge">CHUẨN SIKKENS HÀ LAN</span>
+            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=600&q=80" alt="Đồng sơn sấy">
+          </div>
+          <div class="ht-svc-content">
+            <h3 class="ht-svc-title">Đồng Sơn Sấy Hồng Ngoại</h3>
+            <p class="ht-svc-desc">Hệ thống phòng sơn sấy khép kín tiêu chuẩn Sikkens & PPG. Pha màu vi tính chính xác 100%, bảo hành bong tróc 5 năm.</p>
+            <ul class="ht-svc-specs">
+              <li><i class="fa-solid fa-circle-check"></i> Sơn dặm lấy ngay trong ngày không lệch màu</li>
+              <li><i class="fa-solid fa-circle-check"></i> Sơn đổi màu toàn xe chuẩn hồ sơ đăng kiểm</li>
+            </ul>
+            <div class="ht-svc-footer">
+              <div class="ht-svc-price-box">Dự toán từ: <strong>600.000đ/vị trí</strong></div>
+              <button class="ht-btn ht-btn-outline" style="padding:0.4rem 0.9rem;font-size:0.8125rem" onclick="openBookingModal('Đồng sơn sấy hồng ngoại')">Đặt lịch</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="ht-service-card" data-cat="maintenance">
+          <div class="ht-svc-thumb">
+            <span class="ht-svc-badge">CHUYÊN SÂU XE ĐỨC</span>
+            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80" alt="Đại tu động cơ">
+          </div>
+          <div class="ht-svc-content">
+            <h3 class="ht-svc-title">Đại Tu Động Cơ & Hộp Số</h3>
+            <p class="ht-svc-desc">Xử lý dứt điểm chảy dầu, rung giật, sôi nước, trượt số cho Mercedes, BMW, Audi, Porsche và các dòng xe Nhật - Hàn.</p>
+            <ul class="ht-svc-specs">
+              <li><i class="fa-solid fa-circle-check"></i> Máy quét chẩn đoán mã lỗi chuyên sâu Star/ICOM</li>
+              <li><i class="fa-solid fa-circle-check"></i> Phụ tùng chính hãng bảo hành 12 - 24 tháng</li>
+            </ul>
+            <div class="ht-svc-footer">
+              <div class="ht-svc-price-box">Khám xe & quét lỗi: <strong>Miễn phí 100%</strong></div>
+              <button class="ht-btn ht-btn-outline" style="padding:0.4rem 0.9rem;font-size:0.8125rem" onclick="openBookingModal('Đại tu động cơ hộp số')">Khám xe</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="ht-service-card" data-cat="spa">
+          <div class="ht-svc-thumb">
+            <span class="ht-svc-badge">BÓNG GƯƠNG 9H</span>
+            <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=600&q=80" alt="Phủ Ceramic">
+          </div>
+          <div class="ht-svc-content">
+            <h3 class="ht-svc-title">Phủ Bóng Ceramic Hoàng Gia</h3>
+            <p class="ht-svc-desc">Hiệu chỉnh mặt sơn 3 bước xóa vết xước xoáy, phủ lớp gốm Ceramic 9H tạo độ sâu bóng gương và chống bám nước lá sen.</p>
+            <ul class="ht-svc-specs">
+              <li><i class="fa-solid fa-circle-check"></i> Bảo vệ bề mặt sơn chống ăn mòn tia UV</li>
+              <li><i class="fa-solid fa-circle-check"></i> Tặng 2 gói bảo dưỡng lớp phủ miễn phí</li>
+            </ul>
+            <div class="ht-svc-footer">
+              <div class="ht-svc-price-box">Trọn gói từ: <strong>3.500.000đ</strong></div>
+              <button class="ht-btn ht-btn-outline" style="padding:0.4rem 0.9rem;font-size:0.8125rem" onclick="openBookingModal('Phủ Ceramic ô tô')">Tư vấn</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="ht-service-card" data-cat="spa">
+          <div class="ht-svc-thumb">
+            <span class="ht-svc-badge">HƠI NƯỚC NÓNG WURTH</span>
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80" alt="Dọn nội thất khoang máy">
+          </div>
+          <div class="ht-svc-content">
+            <h3 class="ht-svc-title">Dọn Nội Thất & Khoang Máy</h3>
+            <p class="ht-svc-desc">Làm sạch sâu từng khe kẽ, dưỡng ghế da cao cấp, khử mùi diệt khuẩn Ozone và bắn trấu dọn khoang máy an toàn hệ thống điện.</p>
+            <ul class="ht-svc-specs">
+              <li><i class="fa-solid fa-circle-check"></i> Hóa chất chuyên dụng Sonax & Wurth không độc hại</li>
+              <li><i class="fa-solid fa-circle-check"></i> Bảo vệ gioăng cao su và tăng tuổi thọ động cơ</li>
+            </ul>
+            <div class="ht-svc-footer">
+              <div class="ht-svc-price-box">Trọn gói từ: <strong>1.200.000đ</strong></div>
+              <button class="ht-btn ht-btn-outline" style="padding:0.4rem 0.9rem;font-size:0.8125rem" onclick="openBookingModal('Dọn nội thất khoang máy')">Đặt lịch</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="ht-service-card" data-cat="rescue">
+          <div class="ht-svc-thumb">
+            <span class="ht-svc-badge">HOTLINE: 0945 86 0505</span>
+            <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=600&q=80" alt="Cứu hộ giao thông">
+          </div>
+          <div class="ht-svc-content">
+            <h3 class="ht-svc-title">Cứu Hộ Giao Thông 24/7</h3>
+            <p class="ht-svc-desc">Đội xe cứu hộ chuyên dụng cẩu kéo xe tai nạn, hỏng hóc mọi lúc mọi nơi trên toàn quốc. Hỗ trợ kích bình và vá lốp tận nơi.</p>
+            <ul class="ht-svc-specs">
+              <li><i class="fa-solid fa-circle-check"></i> Có mặt nhanh chóng sau 15 - 30 phút</li>
+              <li><i class="fa-solid fa-circle-check"></i> Đưa về trạm sửa chữa giám định bảo hiểm 0 đồng</li>
+            </ul>
+            <div class="ht-svc-footer">
+              <div class="ht-svc-price-box">Hotline 24/7: <strong>0945 86 0505</strong></div>
+              <a href="tel:0945860505" class="ht-btn ht-btn-primary" style="padding:0.4rem 0.9rem;font-size:0.8125rem">Gọi cứu hộ</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. MAINTENANCE ESTIMATOR CALCULATOR
+       ========================================================================== -->
+  <section class="ht-section ht-calc-section" id="calculator">
+    <div class="container">
+      <div class="ht-section-header">
+        <span class="ht-section-kicker">CÔNG CỤ MINH BẠCH</span>
+        <h2 class="ht-section-title">Dự Toán Chi Phí Bảo Dưỡng Tự Động</h2>
+        <p class="ht-section-desc">Chọn phân khúc xe và mốc Km hiện tại để nhận ngay bảng dự toán chi phí trọn gói cùng danh mục phụ tùng cần kiểm tra thay thế.</p>
+      </div>
+
+      <div class="ht-calc-card">
+        <div class="ht-calc-grid">
+          <div>
+            <!-- Step 1: Segments -->
+            <div class="ht-step-title">
+              <i class="fa-solid fa-car-side"></i> 1. Chọn phân khúc xe của bạn:
+            </div>
+            <div class="ht-pills-row" id="calcSegGroup">
+              <button class="ht-pill-btn selected" data-seg="ab">Hạng A - B (Vios, Morning, Accent)</button>
+              <button class="ht-pill-btn" data-seg="cd">Hạng C - D (Camry, Civic, Mazda 3)</button>
+              <button class="ht-pill-btn" data-seg="suv">SUV / Crossover (CR-V, SantaFe, CX-5)</button>
+              <button class="ht-pill-btn" data-seg="mpv">Bán tải / MPV (Ranger, Xpander)</button>
+              <button class="ht-pill-btn" data-seg="lux">Xe Sang (Mercedes, BMW, Audi, Lexus)</button>
+            </div>
+
+            <!-- Step 2: Kms -->
+            <div class="ht-step-title">
+              <i class="fa-solid fa-gauge-high"></i> 2. Chọn cấp số Km cần bảo dưỡng:
+            </div>
+            <div class="ht-pills-row" id="calcKmGroup">
+              <button class="ht-pill-btn selected" data-km="5000">Cấp 5.000 Km</button>
+              <button class="ht-pill-btn" data-km="10000">Cấp 10.000 Km</button>
+              <button class="ht-pill-btn" data-km="20000">Cấp 20.000 Km</button>
+              <button class="ht-pill-btn" data-km="40000">Cấp 40.000 Km (Lớn)</button>
+              <button class="ht-pill-btn" data-km="80000">Cấp 80.000 Km</button>
+            </div>
+          </div>
+
+          <!-- Board Result -->
+          <div class="ht-calc-board">
+            <div>
+              <div class="ht-board-kicker">CHI PHÍ DỰ KIẾN TRỌN GÓI</div>
+              <div class="ht-board-price" id="calcDisplayPrice">850.000 VNĐ</div>
+              <div class="ht-board-time">
+                <i class="fa-solid fa-clock"></i> Thời gian: <span id="calcDisplayTime">45 - 60 phút</span>
+              </div>
+              <div class="ht-board-items-title">Hạng mục phụ tùng & thi công:</div>
+              <ul class="ht-board-list" id="calcDisplayItems">
+                <li><i class="fa-solid fa-circle-check"></i> Thay dầu động cơ Motul / Mobil 1 chính hãng</li>
+                <li><i class="fa-solid fa-circle-check"></i> Vệ sinh lọc gió động cơ & lọc gió điều hòa</li>
+                <li><i class="fa-solid fa-circle-check"></i> Kiểm tra 30 bước KCS an toàn: gầm, phanh, lốp, nước làm mát</li>
+              </ul>
+            </div>
+            <button class="ht-btn ht-btn-primary" style="width:100%" onclick="openBookingModal('Bảo dưỡng định kỳ theo dự toán')">
+              <i class="fa-solid fa-calendar-check"></i> ĐẶT LỊCH THEO GIÁ NÀY (-10%)
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. DIGITAL WARRANTY ENGINE
+       ========================================================================== -->
+  <section class="ht-section" id="warranty">
+    <div class="container">
+      <div class="ht-section-header">
+        <span class="ht-section-kicker">HỆ THỐNG SỐ HOÁ TOÀN QUỐC</span>
+        <h2 class="ht-section-title">Tra Cứu Bảo Hành Điện Tử</h2>
+        <p class="ht-section-desc">Mọi xe thực hiện dịch vụ tại Hà Thành Garage đều được cấp mã bảo hành điện tử đồng bộ tại 27+ chi nhánh toàn quốc.</p>
+      </div>
+
+      <div class="ht-warranty-card">
+        <div class="ht-warranty-search-bar">
+          <input type="text" id="warrantySearchInput" class="ht-warranty-input" placeholder="Nhập Biển Số Xe (VD: 30H-888.88) hoặc Số Điện Thoại...">
+          <button class="ht-btn ht-btn-primary" onclick="searchWarranty()">
+            <i class="fa-solid fa-magnifying-glass"></i> TRA CỨU NGAY
+          </button>
+        </div>
+
+        <div class="ht-samples-row">
+          <span>Biển số thử nhanh:</span>
+          <span class="ht-sample-tag" onclick="fillWarranty('30H-888.88')">30H-888.88 (Mercedes C300)</span>
+          <span class="ht-sample-tag" onclick="fillWarranty('51K-999.99')">51K-999.99 (Porsche Macan)</span>
+          <span class="ht-sample-tag" onclick="fillWarranty('14A-666.88')">14A-666.88 (Camry 2.5Q)</span>
+        </div>
+
+        <!-- Certificate Result -->
+        <div class="ht-cert-box">
+          <div class="ht-cert-col">
+            <div class="ht-cert-label">Phương tiện & Khách hàng</div>
+            <div class="ht-cert-val" id="certCar">Mercedes-Benz C300 AMG (2023)</div>
+            <div class="ht-cert-sub">Biển số: <b id="certPlate">30H-888.88</b> · Chủ xe: <b id="certOwner">Nguyễn Văn Hoàng</b></div>
+            <div class="ht-cert-sub">Xưởng thực hiện: Hà Thành Garage Tây Hồ (Hà Nội)</div>
+          </div>
+          <div class="ht-cert-col">
+            <div class="ht-cert-label">Dịch vụ & Tình trạng</div>
+            <div class="ht-cert-val" style="color:var(--ht-primary)" id="certService">Đồng sơn sấy hồng ngoại + Bảo dưỡng 40.000km</div>
+            <div><span class="ht-cert-badge" id="certStatus">BẢO HÀNH CÒN HIỆU LỰC (342 NGÀY)</span></div>
+            <div class="ht-cert-sub">Ngày hết hạn: <b id="certExpire">15/10/2027</b></div>
+          </div>
+          <div class="ht-cert-col">
+            <div class="ht-cert-label">Kiểm định KCS xuất xưởng</div>
+            <div class="ht-cert-val" style="color:var(--ht-success)">✓ ĐẠT CHUẨN KCS 100%</div>
+            <div class="ht-cert-sub">KTV Trưởng: <b>Trần Minh Quân (KCS-08)</b></div>
+            <div style="margin-top:0.75rem">
+              <button class="ht-btn ht-btn-outline" style="padding:0.4rem 0.85rem;font-size:0.75rem" onclick="alert('Đã tải phiếu bảo hành điện tử định dạng PDF!')">
+                <i class="fa-solid fa-file-pdf"></i> In chứng nhận PDF
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       8. KCS 6-STEP QUALITY STANDARD TIMELINE
+       ========================================================================== -->
+  <section class="ht-section ht-calc-section" id="kcs">
+    <div class="container">
+      <div class="ht-section-header">
+        <span class="ht-section-kicker">TIÊU CHUẨN ĐỨC</span>
+        <h2 class="ht-section-title">Quy Trình Kiểm Soát Chất Lượng KCS 6 Bước</h2>
+        <p class="ht-section-desc">Mọi xe sửa chữa đều tuân thủ quy trình kiểm soát độc lập 6 bước, đảm bảo an toàn tuyệt đối và minh bạch quyền lợi cho khách hàng.</p>
+      </div>
+
+      <div class="ht-kcs-grid">
+        <div class="ht-kcs-card">
+          <div class="ht-kcs-num">01</div>
+          <div class="ht-kcs-name">Khám Xe Tổng Quát</div>
+          <div class="ht-kcs-txt">Chụp ảnh hiện trạng xe 360°, quét mã lỗi ECU chuyên sâu.</div>
+        </div>
+        <div class="ht-kcs-card">
+          <div class="ht-kcs-num">02</div>
+          <div class="ht-kcs-name">Báo Giá Minh Bạch</div>
+          <div class="ht-kcs-txt">Báo chi tiết từng mã phụ tùng, cam kết không phát sinh chi phí.</div>
+        </div>
+        <div class="ht-kcs-card">
+          <div class="ht-kcs-num">03</div>
+          <div class="ht-kcs-name">Khách Duyệt Phương Án</div>
+          <div class="ht-kcs-txt">Khách hàng xác nhận duyệt báo giá trước khi tiến hành thi công.</div>
+        </div>
+        <div class="ht-kcs-card">
+          <div class="ht-kcs-num">04</div>
+          <div class="ht-kcs-name">Thi Công Chuyên Sâu</div>
+          <div class="ht-kcs-txt">Kỹ thuật viên thực hiện theo đúng tài liệu kỹ thuật chuẩn hãng.</div>
+        </div>
+        <div class="ht-kcs-card">
+          <div class="ht-kcs-num">05</div>
+          <div class="ht-kcs-name">Kiểm Tra KCS 3 Vòng</div>
+          <div class="ht-kcs-txt">Bộ phận KCS độc lập kiểm tra gầm, siết ốc lực và test drive.</div>
+        </div>
+        <div class="ht-kcs-card">
+          <div class="ht-kcs-num">06</div>
+          <div class="ht-kcs-name">Bàn Giao & Bảo Hành</div>
+          <div class="ht-kcs-txt">Rửa xe sạch sẽ, bàn giao hồ sơ và kích hoạt bảo hành điện tử.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       9. BRANCH LOCATOR (27+ TRẠM TOÀN QUỐC)
+       ========================================================================== -->
+  <section class="ht-section" id="branches">
+    <div class="container">
+      <div class="ht-section-header">
+        <span class="ht-section-kicker">MẠNG LƯỚI PHỦ SÓNG</span>
+        <h2 class="ht-section-title">Hệ Thống 27+ Chi Nhánh Toàn Quốc</h2>
+        <p class="ht-section-desc">Phục vụ khách hàng tại Hà Nội, Hải Phòng, Quảng Ninh, TP.HCM và các tỉnh lân cận với trang thiết bị đồng bộ và bảo hành liên trạm.</p>
+      </div>
+
+      <!-- Filters -->
+      <div class="ht-filter-nav">
+        <button class="ht-filter-btn active" onclick="filterBranches('all', this)">Tất cả (27 Trạm)</button>
+        <button class="ht-filter-btn" onclick="filterBranches('hn', this)">Hà Nội</button>
+        <button class="ht-filter-btn" onclick="filterBranches('hp', this)">Hải Phòng</button>
+        <button class="ht-filter-btn" onclick="filterBranches('qn', this)">Quảng Ninh</button>
+        <button class="ht-filter-btn" onclick="filterBranches('mn', this)">Miền Nam & Các tỉnh</button>
+      </div>
+
+      <!-- Branches Grid -->
+      <div class="ht-branches-grid" id="branchesGrid">
+        <div class="ht-branch-card" data-reg="hn">
+          <div>
+            <span class="ht-branch-badge">TRỤ SỞ CHÍNH</span>
+            <div class="ht-branch-name">Hà Thành 01 - Tây Hồ (Hà Nội)</div>
+            <div class="ht-branch-addr">Số 500 Võ Chí Công, P. Xuân La, Q. Tây Hồ, Hà Nội (Khuôn viên 2.000m², 6 buồng sơn sấy).</div>
+            <div class="ht-branch-phone"><i class="fa-solid fa-phone"></i> 0945 86 0505</div>
+          </div>
+          <div class="ht-branch-btns">
+            <a href="tel:0945860505" class="ht-btn ht-btn-primary ht-btn-sm"><i class="fa-solid fa-phone"></i> Gọi ngay</a>
+            <a href="https://maps.google.com" target="_blank" class="ht-btn ht-btn-outline ht-btn-sm"><i class="fa-solid fa-location-arrow"></i> Chỉ đường</a>
+          </div>
+        </div>
+
+        <div class="ht-branch-card" data-reg="hn">
+          <div>
+            <span class="ht-branch-badge">CHI NHÁNH HOÀNG MAI</span>
+            <div class="ht-branch-name">Hà Thành 02 - Hoàng Mai (Hà Nội)</div>
+            <div class="ht-branch-addr">Số 300 Trần Điền, P. Định Công, Q. Hoàng Mai, Hà Nội.</div>
+            <div class="ht-branch-phone"><i class="fa-solid fa-phone"></i> 0916 86 0505</div>
+          </div>
+          <div class="ht-branch-btns">
+            <a href="tel:0916860505" class="ht-btn ht-btn-primary ht-btn-sm"><i class="fa-solid fa-phone"></i> Gọi ngay</a>
+            <a href="https://maps.google.com" target="_blank" class="ht-btn ht-btn-outline ht-btn-sm"><i class="fa-solid fa-location-arrow"></i> Chỉ đường</a>
+          </div>
+        </div>
+
+        <div class="ht-branch-card" data-reg="hn">
+          <div>
+            <span class="ht-branch-badge">CHI NHÁNH LONG BIÊN</span>
+            <div class="ht-branch-name">Hà Thành 22 - Long Biên (Hà Nội)</div>
+            <div class="ht-branch-addr">Số 8 Thạch Bàn, Q. Long Biên, Hà Nội (Gần nút giao cầu Vĩnh Tuy).</div>
+            <div class="ht-branch-phone"><i class="fa-solid fa-phone"></i> 0912 86 0505</div>
+          </div>
+          <div class="ht-branch-btns">
+            <a href="tel:0912860505" class="ht-btn ht-btn-primary ht-btn-sm"><i class="fa-solid fa-phone"></i> Gọi ngay</a>
+            <a href="https://maps.google.com" target="_blank" class="ht-btn ht-btn-outline ht-btn-sm"><i class="fa-solid fa-location-arrow"></i> Chỉ đường</a>
+          </div>
+        </div>
+
+        <div class="ht-branch-card" data-reg="hp">
+          <div>
+            <span class="ht-branch-badge">CHI NHÁNH HẢI PHÒNG</span>
+            <div class="ht-branch-name">Hà Thành - Ngô Quyền (Hải Phòng)</div>
+            <div class="ht-branch-addr">Số 18 Lê Hồng Phong, P. Đông Khê, Q. Ngô Quyền, TP. Hải Phòng.</div>
+            <div class="ht-branch-phone"><i class="fa-solid fa-phone"></i> 0948 86 0505</div>
+          </div>
+          <div class="ht-branch-btns">
+            <a href="tel:0948860505" class="ht-btn ht-btn-primary ht-btn-sm"><i class="fa-solid fa-phone"></i> Gọi ngay</a>
+            <a href="https://maps.google.com" target="_blank" class="ht-btn ht-btn-outline ht-btn-sm"><i class="fa-solid fa-location-arrow"></i> Chỉ đường</a>
+          </div>
+        </div>
+
+        <div class="ht-branch-card" data-reg="qn">
+          <div>
+            <span class="ht-branch-badge">CHI NHÁNH QUẢNG NINH</span>
+            <div class="ht-branch-name">Hà Thành - Hạ Long (Quảng Ninh)</div>
+            <div class="ht-branch-addr">Khu đô thị Cao Xanh, P. Cao Xanh, TP. Hạ Long, Quảng Ninh.</div>
+            <div class="ht-branch-phone"><i class="fa-solid fa-phone"></i> 0936 86 0505</div>
+          </div>
+          <div class="ht-branch-btns">
+            <a href="tel:0936860505" class="ht-btn ht-btn-primary ht-btn-sm"><i class="fa-solid fa-phone"></i> Gọi ngay</a>
+            <a href="https://maps.google.com" target="_blank" class="ht-btn ht-btn-outline ht-btn-sm"><i class="fa-solid fa-location-arrow"></i> Chỉ đường</a>
+          </div>
+        </div>
+
+        <div class="ht-branch-card" data-reg="mn">
+          <div>
+            <span class="ht-branch-badge">CHI NHÁNH TP. HỒ CHÍ MINH</span>
+            <div class="ht-branch-name">Hà Thành - Bình Thạnh (TP.HCM)</div>
+            <div class="ht-branch-addr">Số 28 Phan Chu Trinh, P. 12, Q. Bình Thạnh, TP. Hồ Chí Minh.</div>
+            <div class="ht-branch-phone"><i class="fa-solid fa-phone"></i> 0989 86 0505</div>
+          </div>
+          <div class="ht-branch-btns">
+            <a href="tel:0989860505" class="ht-btn ht-btn-primary ht-btn-sm"><i class="fa-solid fa-phone"></i> Gọi ngay</a>
+            <a href="https://maps.google.com" target="_blank" class="ht-btn ht-btn-outline ht-btn-sm"><i class="fa-solid fa-location-arrow"></i> Chỉ đường</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       11. INSURANCE & MATERIAL PARTNERS
+       ========================================================================== -->
+  <section class="ht-partners-section" id="partners">
+    <div class="container">
+      <div class="ht-partners-title">6 HÃNG BẢO HIỂM LIÊN KẾT TRỰC TIẾP & ĐỐI TÁC VẬT TƯ CHÍNH HÃNG</div>
+      <div class="ht-partners-grid">
+        <div class="ht-partner-badge"><i class="fa-solid fa-shield"></i> BẢO VIỆT</div>
+        <div class="ht-partner-badge"><i class="fa-solid fa-shield"></i> BẢO HIỂM PVI</div>
+        <div class="ht-partner-badge"><i class="fa-solid fa-shield"></i> BẢO HIỂM PTI</div>
+        <div class="ht-partner-badge"><i class="fa-solid fa-shield"></i> LIBERTY INSURANCE</div>
+        <div class="ht-partner-badge"><i class="fa-solid fa-shield"></i> BẢO MINH</div>
+        <div class="ht-partner-badge"><i class="fa-solid fa-shield"></i> PJICO</div>
+        <div class="ht-partner-badge"><i class="fa-solid fa-oil-can"></i> DẦU NHỚT MOTUL</div>
+        <div class="ht-partner-badge"><i class="fa-solid fa-oil-can"></i> MOBIL 1</div>
+        <div class="ht-partner-badge"><i class="fa-solid fa-spray-can"></i> SƠN SIKKENS (HÀ LAN)</div>
+        <div class="ht-partner-badge"><i class="fa-solid fa-microchip"></i> BOSCH ĐỨC</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       12. RICH FOOTER
+       ========================================================================== -->
+  <footer class="ht-footer">
+    <div class="container">
+      <div class="ht-footer-grid">
+        <!-- Col 1 -->
+        <div>
+          <div class="ht-footer-heading">HÀ THÀNH GARAGE</div>
+          <div class="ht-footer-about">
+            Công ty TNHH Hà Thành Automotive Việt Nam — Hệ thống sửa chữa, bảo dưỡng và chăm sóc ô tô uy tín hàng đầu Việt Nam với triết lý "Kinh doanh bằng sự tử tế".
+          </div>
+          <ul class="ht-footer-contacts">
+            <li><i class="fa-solid fa-location-dot"></i> Trụ sở chính: Số 9, Ngõ 11 Duy Tân, Cầu Giấy, Hà Nội</li>
+            <li><i class="fa-solid fa-phone"></i> Tổng đài CSKH: <b>0568 05 0505</b></li>
+            <li><i class="fa-solid fa-truck-pickup"></i> Cứu hộ khẩn cấp 24/7: <b>0945 86 0505</b></li>
+            <li><i class="fa-solid fa-envelope"></i> Email: info@otohathanh.com</li>
+          </ul>
+        </div>
+
+        <!-- Col 2 -->
+        <div>
+          <div class="ht-footer-heading">DỊCH VỤ CỐT LÕI</div>
+          <ul class="ht-footer-links">
+            <li><a href="#services">Bảo dưỡng ô tô định kỳ 30 bước</a></li>
+            <li><a href="#services">Đồng sơn sấy hồng ngoại Sikkens</a></li>
+            <li><a href="#services">Đại tu động cơ & hộp số chuyên sâu</a></li>
+            <li><a href="#services">Phủ bóng Ceramic & Car Spa</a></li>
+            <li><a href="#services">Phục hồi xe tai nạn bảo hiểm 0 đồng</a></li>
+            <li><a href="#services">Cứu hộ giao thông 24/7 toàn quốc</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 -->
+        <div>
+          <div class="ht-footer-heading">HỆ THỐNG CHI NHÁNH</div>
+          <ul class="ht-footer-links">
+            <li><a href="#branches">Hà Thành 01: 500 Võ Chí Công, Tây Hồ</a></li>
+            <li><a href="#branches">Hà Thành 02: 300 Trần Điền, Hoàng Mai</a></li>
+            <li><a href="#branches">Hà Thành 22: Số 8 Thạch Bàn, Long Biên</a></li>
+            <li><a href="#branches">Hà Thành Hải Phòng: 18 Lê Hồng Phong</a></li>
+            <li><a href="#branches">Hà Thành Quảng Ninh: Cao Xanh, Hạ Long</a></li>
+            <li><a href="#branches">Hà Thành TP.HCM: 28 Phan Chu Trinh</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4 -->
+        <div>
+          <div class="ht-footer-heading">CHÍNH SÁCH & BẢO HÀNH</div>
+          <ul class="ht-footer-links">
+            <li><a href="#warranty">Tra cứu bảo hành điện tử</a></li>
+            <li><a href="#kcs">Quy trình kiểm định KCS 6 bước</a></li>
+            <li><a href="#calculator">Báo giá dịch vụ minh bạch</a></li>
+            <li><a href="#">Chính sách bảo hành phụ tùng</a></li>
+            <li><a href="#">Chính sách bảo mật thông tin</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ht-footer-bottom">
+        <div>© 2026 Hà Thành Garage — Bản quyền thuộc Công ty TNHH Hà Thành Automotive Việt Nam.</div>
+        <div>Thiết kế chuẩn Enterprise Design System (D:\claudecode\wp_ecommerce).</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       13. FLOATING ACTION DOCK
+       ========================================================================== -->
+  <div class="ht-float-dock">
+    <div class="ht-float-btn ht-float-sos" title="Cứu hộ 24/7: 0945 86 0505" onclick="alert('Đang kết nối Tổng Đài Cứu Hộ Hà Thành Garage: 0945 86 0505')">
+      <i class="fa-solid fa-truck-pickup"></i>
+    </div>
+    <div class="ht-float-btn ht-float-zalo" title="Chat Zalo với Chuyên gia" onclick="window.open('https://zalo.me','_blank')">
+      <i class="fa-solid fa-comment-dots"></i>
+    </div>
+    <div class="ht-float-btn ht-float-book" title="Đặt lịch hẹn nhanh" onclick="openBookingModal()">
+      <i class="fa-solid fa-calendar-check"></i>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       14. BOOKING MODAL
+       ========================================================================== -->
+  <div class="ht-modal-overlay" id="bookingModal">
+    <div class="ht-modal-box">
+      <button class="ht-modal-close" onclick="closeBookingModal()">&times;</button>
+      <div class="ht-modal-title">ĐẶT LỊCH HẸN DỊCH VỤ</div>
+      <div class="ht-modal-desc">Nhận ngay voucher ưu đãi 10% tiền công dịch vụ & giữ chỗ ưu tiên trong ngày.</div>
+      <form onsubmit="handleModalSubmit(event)">
+        <div class="ht-form-grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:0.85rem">
+          <div class="ht-form-group" style="margin-bottom:1rem">
+            <label class="ht-dock-label">Họ và tên của bạn:</label>
+            <input type="text" class="ht-dock-input" required placeholder="Nguyễn Văn A">
+          </div>
+          <div class="ht-form-group" style="margin-bottom:1rem">
+            <label class="ht-dock-label">Số điện thoại:</label>
+            <input type="tel" class="ht-dock-input" required placeholder="0988.xxx.xxx">
+          </div>
+        </div>
+        <div class="ht-form-grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:0.85rem">
+          <div class="ht-form-group" style="margin-bottom:1rem">
+            <label class="ht-dock-label">Biển số xe:</label>
+            <input type="text" class="ht-dock-input" required placeholder="VD: 30H-888.88">
+          </div>
+          <div class="ht-form-group" style="margin-bottom:1rem">
+            <label class="ht-dock-label">Dòng xe:</label>
+            <input type="text" class="ht-dock-input" required placeholder="VD: Mazda 3 / Vios">
+          </div>
+        </div>
+        <div class="ht-form-group" style="margin-bottom:1rem">
+          <label class="ht-dock-label">Dịch vụ yêu cầu:</label>
+          <input type="text" id="modalSvcName" class="ht-dock-input" placeholder="Bảo dưỡng định kỳ, sơn sấy, làm đẹp...">
+        </div>
+        <div class="ht-form-group" style="margin-bottom:1rem">
+          <label class="ht-dock-label">Chi nhánh phục vụ:</label>
+          <select class="ht-dock-input">
+            <option>Hà Thành - 500 Võ Chí Công, Tây Hồ (HN)</option>
+            <option>Hà Thành - 300 Trần Điền, Hoàng Mai (HN)</option>
+            <option>Hà Thành - Số 8 Thạch Bàn, Long Biên (HN)</option>
+            <option>Hà Thành - 18 Lê Hồng Phong (Hải Phòng)</option>
+            <option>Hà Thành - Cao Xanh, Hạ Long (Quảng Ninh)</option>
+            <option>Hà Thành - 28 Phan Chu Trinh (TP.HCM)</option>
+          </select>
+        </div>
+        <button type="submit" class="ht-btn ht-btn-primary" style="width:100%;height:46px;margin-top:0.75rem">
+          <i class="fa-solid fa-check"></i> XÁC NHẬN ĐẶT LỊCH HẸN
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       15. JAVASCRIPT LOGIC
+       ========================================================================== -->
+  <script>
+    /* Hero Banner Slider Logic */
+    var currentSlide = 0;
+    var slides = document.querySelectorAll('.ht-slide');
+    var dots = document.querySelectorAll('.ht-dot');
+    var totalSlides = slides.length;
+    var sliderTimer = null;
+
+    function showSlide(idx) {
+      if (idx >= totalSlides) idx = 0;
+      if (idx < 0) idx = totalSlides - 1;
+      currentSlide = idx;
+
+      slides.forEach(function(s, i){
+        s.classList.toggle('active', i === currentSlide);
+      });
+      dots.forEach(function(d, i){
+        d.classList.toggle('active', i === currentSlide);
+      });
+    }
+
+    function changeSlide(direction) {
+      clearInterval(sliderTimer);
+      showSlide(currentSlide + direction);
+      startSliderAuto();
+    }
+
+    function gotoSlide(idx) {
+      clearInterval(sliderTimer);
+      showSlide(idx);
+      startSliderAuto();
+    }
+
+    function startSliderAuto() {
+      sliderTimer = setInterval(function(){
+        showSlide(currentSlide + 1);
+      }, 5500);
+    }
+
+    startSliderAuto();
+
+    /* Floating Dock Tab switcher */
+    function switchDockTab(tab) {
+      document.getElementById('dockTabBook').classList.toggle('active', tab === 'book');
+      document.getElementById('dockTabLookup').classList.toggle('active', tab === 'lookup');
+      document.getElementById('dockPaneBook').style.display = (tab === 'book') ? 'block' : 'none';
+      document.getElementById('dockPaneLookup').style.display = (tab === 'lookup') ? 'block' : 'none';
+    }
+
+    function quickDockLookup(plate) {
+      document.getElementById('dockPlateInput').value = plate;
+      runDockLookup();
+    }
+
+    function runDockLookup() {
+      var plate = document.getElementById('dockPlateInput').value || '30H-888.88';
+      fillWarranty(plate);
+      document.getElementById('warranty').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function handleHeroBooking(e) {
+      e.preventDefault();
+      var code = 'HT-' + Math.floor(1000 + Math.random() * 9000);
+      alert('ĐẶT LỊCH THÀNH CÔNG!\n\nMã xác nhận: ' + code + '\nƯu đãi: Giảm 10% tiền công\nCố vấn dịch vụ Hà Thành Garage sẽ gọi điện xác nhận trong 5 phút.');
+    }
+
+    /* Filter Services */
+    function filterServices(cat, btn) {
+      if (btn) {
+        document.querySelectorAll('.ht-filter-btn').forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+      }
+      var cards = document.querySelectorAll('#svcGrid .ht-service-card');
+      cards.forEach(function(c){
+        if (cat === 'all' || c.getAttribute('data-cat') === cat) {
+          c.style.display = 'flex';
+        } else {
+          c.style.display = 'none';
+        }
+      });
+    }
+
+    /* Calculator Pricing Database */
+    var PRICING = {
+      'ab': {
+        5000: { p: '850.000 VNĐ', t: '45 - 60 phút', i: ['Thay dầu động cơ Motul cao cấp', 'Vệ sinh lọc gió động cơ', 'Kiểm tra 30 bước KCS an toàn'] },
+        10000: { p: '1.250.000 VNĐ', t: '60 phút', i: ['Thay dầu động cơ & lọc dầu', 'Đảo lốp & cân mâm cơ bản', 'Kiểm tra hệ thống phanh 4 bánh'] },
+        20000: { p: '1.950.000 VNĐ', t: '90 phút', i: ['Thay dầu máy, lọc dầu, lọc gió', 'Bảo dưỡng cụm phanh trước sau', 'Vệ sinh họng hút & kim phun'] },
+        40000: { p: '3.450.000 VNĐ', t: '2 - 3 giờ', i: ['Thay dầu động cơ & lọc nhớt', 'Thay dầu phanh, dầu trợ lực lái', 'Thay nước làm mát động cơ', 'Bảo dưỡng gầm & cân chỉnh độ chụm'] },
+        80000: { p: '5.200.000 VNĐ', t: '3 - 4 giờ', i: ['Đại tu chu kỳ bảo dưỡng lớn', 'Thay bugi bạch kim & lọc nhiên liệu', 'Bảo dưỡng máy khởi động & máy phát', 'Kiểm tra toàn diện hệ thống gầm'] }
+      },
+      'cd': {
+        5000: { p: '1.150.000 VNĐ', t: '45 - 60 phút', i: ['Thay dầu nhớt Mobil 1 cao cấp', 'Vệ sinh lọc gió động cơ', 'Kiểm tra 30 bước KCS an toàn'] },
+        10000: { p: '1.650.000 VNĐ', t: '60 phút', i: ['Thay dầu động cơ & lọc dầu chính hãng', 'Kiểm tra hệ thống lái và phanh đĩa'] },
+        20000: { p: '2.450.000 VNĐ', t: '90 phút', i: ['Bảo dưỡng phanh, thay lọc gió điều hòa', 'Vệ sinh buồng đốt hydro', 'Cân bằng động bánh xe'] },
+        40000: { p: '4.850.000 VNĐ', t: '2 - 3 giờ', i: ['Bảo dưỡng cấp lớn toàn diện', 'Thay dầu hộp số tự động', 'Thay nước làm mát & lọc xăng'] },
+        80000: { p: '7.100.000 VNĐ', t: '4 giờ', i: ['Đại tu cấp cao, thay bugi Iridium', 'Bảo dưỡng hệ thống treo và cao su chân máy'] }
+      },
+      'suv': {
+        5000: { p: '1.350.000 VNĐ', t: '60 phút', i: ['Thay 5-6L dầu nhớt Motul cao cấp', 'Kiểm tra hệ thống dẫn động 4 bánh', 'Kiểm tra an toàn gầm cao'] },
+        10000: { p: '1.950.000 VNĐ', t: '60 - 90 phút', i: ['Thay dầu máy & lọc dầu chính hãng', 'Kiểm tra thước lái và rô-tuyn'] },
+        20000: { p: '2.950.000 VNĐ', t: '2 giờ', i: ['Bảo dưỡng hệ thống phanh ABS', 'Vệ sinh kim phun điện tử', 'Thay lọc gió động cơ'] },
+        40000: { p: '5.850.000 VNĐ', t: '3 giờ', i: ['Bảo dưỡng cấp lớn xe SUV', 'Thay dầu vi sai cầu trước / cầu sau', 'Thay dầu hộp số và nước làm mát'] },
+        80000: { p: '8.600.000 VNĐ', t: '4 - 5 giờ', i: ['Đại tu bảo dưỡng lớn toàn diện', 'Kiểm tra toàn bộ hệ thống gầm, giảm chấn'] }
+      },
+      'mpv': {
+        5000: { p: '1.200.000 VNĐ', t: '60 phút', i: ['Thay dầu máy động cơ Diesel / Xăng', 'Kiểm tra nhíp và hệ thống treo'] },
+        10000: { p: '1.800.000 VNĐ', t: '60 - 90 phút', i: ['Thay dầu động cơ & lọc nhớt', 'Kiểm tra hệ thống phanh tang trống sau'] },
+        20000: { p: '2.700.000 VNĐ', t: '2 giờ', i: ['Thay lọc nhiên liệu Diesel chính hãng', 'Bảo dưỡng hệ thống lái và gầm xe'] },
+        40000: { p: '5.200.000 VNĐ', t: '3 giờ', i: ['Thay dầu hộp số & dầu cầu', 'Bảo dưỡng hệ thống điều hòa 2 giàn lạnh'] },
+        80000: { p: '7.800.000 VNĐ', t: '4 giờ', i: ['Đại tu bảo dưỡng lớn xe tải / MPV gia đình'] }
+      },
+      'lux': {
+        5000: { p: '2.650.000 VNĐ', t: '60 phút', i: ['Dầu động cơ chuyên dụng chuẩn Mercedes/BMW', 'Quét lỗi bằng máy chẩn đoán Star / ICOM', 'Kiểm tra 30 bước KCS an toàn'] },
+        10000: { p: '3.850.000 VNĐ', t: '90 phút', i: ['Thay dầu nhớt & lọc dầu chính hãng Đức', 'Reset chu kỳ bảo dưỡng trên ECU'] },
+        20000: { p: '5.650.000 VNĐ', t: '2 - 3 giờ', i: ['Bảo dưỡng phanh hiệu năng cao', 'Thay lọc gió động cơ và lọc than hoạt tính'] },
+        40000: { p: '9.800.000 VNĐ', t: '4 giờ', i: ['Bảo dưỡng cấp lớn xe sang', 'Thay dầu hộp số tự động 7G/9G-Tronic', 'Cân chỉnh góc đặt bánh xe 3D Hunter'] },
+        80000: { p: '14.500.000 VNĐ', t: '1 ngày', i: ['Đại tu toàn diện xe sang, thay bugi, dây curoa', 'Kiểm tra hệ thống treo khí nén Airmatic'] }
+      }
+    };
+
+    var selSeg = 'ab';
+    var selKm = 5000;
+
+    document.querySelectorAll('#calcSegGroup .ht-pill-btn').forEach(function(b){
+      b.addEventListener('click', function(){
+        document.querySelectorAll('#calcSegGroup .ht-pill-btn').forEach(function(el){ el.classList.remove('selected'); });
+        b.classList.add('selected');
+        selSeg = b.getAttribute('data-seg');
+        updateCalc();
+      });
+    });
+
+    document.querySelectorAll('#calcKmGroup .ht-pill-btn').forEach(function(b){
+      b.addEventListener('click', function(){
+        document.querySelectorAll('#calcKmGroup .ht-pill-btn').forEach(function(el){ el.classList.remove('selected'); });
+        b.classList.add('selected');
+        selKm = parseInt(b.getAttribute('data-km'));
+        updateCalc();
+      });
+    });
+
+    function updateCalc() {
+      var d = PRICING[selSeg][selKm];
+      if (!d) return;
+      document.getElementById('calcDisplayPrice').innerText = d.p;
+      document.getElementById('calcDisplayTime').innerText = d.t;
+      var ul = document.getElementById('calcDisplayItems');
+      ul.innerHTML = '';
+      d.i.forEach(function(item){
+        var li = document.createElement('li');
+        li.innerHTML = '<i class="fa-solid fa-circle-check"></i> ' + item;
+        ul.appendChild(li);
+      });
+    }
+
+    /* Warranty Engine */
+    var WARRANTY_RECORDS = {
+      '30H-888.88': { car: 'Mercedes-Benz C300 AMG (2023)', owner: 'Nguyễn Văn Hoàng', service: 'Đồng sơn sấy hồng ngoại + Bảo dưỡng 40.000km', status: 'BẢO HÀNH CÒN HIỆU LỰC (342 NGÀY)', expire: '15/10/2027' },
+      '51K-999.99': { car: 'Porsche Macan GTS (2024)', owner: 'Lê Thanh Bình', service: 'Phủ Ceramic 9H Hoàng Gia + Thay dầu hộp số', status: 'BẢO HÀNH CÒN HIỆU LỰC (680 NGÀY)', expire: '20/09/2028' },
+      '14A-666.88': { car: 'Toyota Camry 2.5Q (2022)', owner: 'Trần Quốc Tuấn', service: 'Bảo dưỡng cấp lớn 80.000km + Cân chỉnh 3D Hunter', status: 'BẢO HÀNH CÒN HIỆU LỰC (198 NGÀY)', expire: '18/05/2027' }
+    };
+
+    function fillWarranty(plate) {
+      document.getElementById('warrantySearchInput').value = plate;
+      searchWarranty();
+    }
+
+    function searchWarranty() {
+      var val = (document.getElementById('warrantySearchInput').value || '').trim().toUpperCase();
+      var data = WARRANTY_RECORDS[val];
+      if (!data) {
+        data = {
+          car: 'Hyundai SantaFe 2.2 Diesel (2022)',
+          owner: 'Khách hàng VIP Hà Thành',
+          service: 'Bảo dưỡng định kỳ 30 bước + Kiểm tra phanh',
+          status: 'BẢO HÀNH CÒN HIỆU LỰC (180 NGÀY)',
+          expire: '04/05/2027'
+        };
+      }
+      document.getElementById('certCar').innerText = data.car;
+      document.getElementById('certPlate').innerText = val || '30H-888.88';
+      document.getElementById('certOwner').innerText = data.owner;
+      document.getElementById('certService').innerText = data.service;
+      document.getElementById('certStatus').innerText = data.status;
+      document.getElementById('certExpire').innerText = data.expire;
+    }
+
+    /* Filter Branches */
+    function filterBranches(reg, btn) {
+      if (btn) {
+        document.querySelectorAll('.ht-filter-btn').forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+      }
+      var cards = document.querySelectorAll('#branchesGrid .ht-branch-card');
+      cards.forEach(function(c){
+        if (reg === 'all' || c.getAttribute('data-reg') === reg) {
+          c.style.display = 'flex';
+        } else {
+          c.style.display = 'none';
+        }
+      });
+    }
+
+    /* Modal */
+    function openBookingModal(svc) {
+      if (svc) document.getElementById('modalSvcName').value = svc;
+      document.getElementById('bookingModal').classList.add('open');
+    }
+    function closeBookingModal() {
+      document.getElementById('bookingModal').classList.remove('open');
+    }
+    function handleModalSubmit(e) {
+      e.preventDefault();
+      closeBookingModal();
+      var code = 'HT-' + Math.floor(1000 + Math.random() * 9000);
+      alert('ĐẶT LỊCH THÀNH CÔNG!\n\nMã xác nhận: ' + code + '\nƯu đãi: Giảm 10% tiền công\nCố vấn dịch vụ Hà Thành Garage sẽ liên hệ quý khách sau 5 phút để xác nhận.');
+    }
+  </script>
+</body>
+</html>
