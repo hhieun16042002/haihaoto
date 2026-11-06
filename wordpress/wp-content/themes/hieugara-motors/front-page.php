@@ -215,35 +215,53 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
         <div class="kobac-bg-pattern" aria-hidden="true"></div>
         <div class="container">
 
-            <!-- ROW 1: VỀ ÔTÔ HẢI HÀ (Text Left - Image 1 Right) -->
+            <!-- ROW 1: VỀ ÔTÔ HẢI HÀ (Text Left - Image 1 Right on Desktop | Heading -> Image 1 -> Text on Mobile) -->
             <div class="kobac-split-row kobac-row-about">
                 <div class="kobac-col kobac-col-text kobac-anim-left">
-                    <h2 class="kobac-heading">VỀ <span class="text-orange">ÔTÔ HẢI HÀ</span></h2>
+                    <div class="kobac-head-block">
+                        <span class="kobac-eyebrow-pill"><i class="fa-solid fa-shield-halved"></i> HÀNH TRÌNH 31 NĂM • TỪ 1995</span>
+                        <h2 class="kobac-heading">VỀ <span class="text-orange">ÔTÔ HẢI HÀ</span></h2>
+                    </div>
+
+                    <!-- Mobile-only Inline Image 1 right under Heading for native mobile editorial flow -->
+                    <div class="kobac-mobile-inline-media">
+                        <figure class="kobac-photo-card kobac-mobile-hero-card">
+                            <img src="<?php echo esc_url($kobac_imgs['img_1']); ?>" alt="Mặt tiền Trung tâm Bảo dưỡng &amp; Sửa chữa Ôtô Hải Hà" loading="lazy" decoding="async">
+                            <figcaption class="kobac-floating-badge">
+                                <i class="fa-solid fa-location-dot"></i> Trung Tâm Bảo Dưỡng &amp; Sửa Chữa Ôtô Hải Hà
+                            </figcaption>
+                        </figure>
+                    </div>
+
                     <div class="kobac-prose">
                         <p>Chúng tôi hiểu rằng, mỗi chiếc xe là một phần quan trọng của cuộc sống, mang theo những hành trình, kỷ niệm và sự an toàn của cả gia đình. Chính vì lý do đó, <strong>Ôtô Hải Hà</strong> đã dành hơn 31 năm (từ năm 1995) để không ngừng đổi mới và hoàn thiện nghệ thuật chăm sóc, bảo dưỡng và sửa chữa xe hơi, đặt sự chính xác và chữ Tâm người thợ làm kim chỉ nam.</p>
-                        <p>Chúng tôi tiên phong đầu tư hệ thống trang thiết bị chẩn đoán hiện đại, chuẩn hóa quy trình bảo dưỡng và đồng sơn công nghệ cao nhằm tối ưu tốc độ và chất lượng dịch vụ mà vẫn giữ vững chuẩn mực khắt khe nhất. Với quy mô xưởng 2.500m², 28 khoang cầu nâng chuyên dụng và đội ngũ hơn 80 kỹ thuật viên lành nghề, <strong>Ôtô Hải Hà</strong> đã trở thành trung tâm bảo dưỡng – sửa chữa ô tô uy tín hàng đầu, khẳng định vị thế vững chắc trong lòng hàng chục nghìn chủ xe.</p>
+                        <p>Chúng tôi tiên phong đầu tư hệ thống trang thiết bị chẩn đoán hiện đại, chuẩn hóa quy trình bảo dưỡng và đồng sơn công nghệ cao nhằm tối ưu tốc độ và chất lượng dịch vụ mà vẫn giữ vững chuẩn mực khắt khe nhất. Với quy mô xưởng <strong>2.500m²</strong>, <strong>28 khoang cầu nâng</strong> chuyên dụng và đội ngũ hơn <strong>80 kỹ thuật viên</strong> lành nghề, <strong>Ôtô Hải Hà</strong> đã trở thành trung tâm bảo dưỡng – sửa chữa ô tô uy tín hàng đầu, khẳng định vị thế vững chắc trong lòng hàng chục nghìn chủ xe.</p>
                         <p>Lý do <strong>Ôtô Hải Hà</strong> tồn tại và phát triển bền vững suốt hơn 3 thập kỷ thật đơn giản: mang lại sự an tâm tuyệt đối cho chủ xe thông qua một dịch vụ minh bạch, không chỉ đạt chuẩn mà còn vượt qua mong đợi.</p>
                     </div>
-                    <div class="kobac-btn-wrap">
+                    <div class="kobac-btn-wrap kobac-desktop-only-btn">
                         <a href="<?php echo esc_url(home_url('/ve-chung-toi/')); ?>" class="kobac-cta-btn">
                             <span>Về chúng tôi</span>
+                            <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="kobac-col kobac-col-media kobac-anim-right">
+                <div class="kobac-col kobac-col-media kobac-anim-right kobac-desktop-media">
                     <div class="kobac-single-media-wrap">
                         <div class="kobac-decor-grid" aria-hidden="true"></div>
                         <figure class="kobac-photo-card kobac-photo-main-1">
                             <img src="<?php echo esc_url($kobac_imgs['img_1']); ?>" alt="Mặt tiền Trung tâm Bảo dưỡng &amp; Sửa chữa Ôtô Hải Hà" loading="lazy" decoding="async">
+                            <figcaption class="kobac-floating-badge">
+                                <i class="fa-solid fa-location-dot"></i> Trung Tâm Bảo Dưỡng &amp; Sửa Chữa Ôtô Hải Hà
+                            </figcaption>
                         </figure>
                     </div>
                 </div>
             </div>
 
-            <!-- ROW 2: SỨ MỆNH (Images 2 & 3 Left - Text Right) -->
+            <!-- ROW 2: SỨ MỆNH (Images 2 & 3 Left - Text Right on Desktop | Heading -> Bento Images 2 & 3 -> Text on Mobile) -->
             <div class="kobac-split-row kobac-row-mission">
-                <div class="kobac-col kobac-col-media kobac-anim-left">
+                <div class="kobac-col kobac-col-media kobac-anim-left kobac-desktop-media">
                     <div class="kobac-dual-media-wrap">
                         <div class="kobac-decor-grid kobac-decor-left" aria-hidden="true"></div>
                         <figure class="kobac-photo-card kobac-photo-main-2">
@@ -259,16 +277,37 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                 </div>
 
                 <div class="kobac-col kobac-col-text kobac-anim-right">
-                    <h2 class="kobac-heading">SỨ MỆNH</h2>
+                    <div class="kobac-head-block">
+                        <span class="kobac-eyebrow-pill"><i class="fa-solid fa-award"></i> TÔN CHỈ PHỤC VỤ</span>
+                        <h2 class="kobac-heading">SỨ <span class="text-orange">MỆNH</span></h2>
+                    </div>
+
+                    <!-- Mobile-only Bento Dual Media Grid right under Heading -->
+                    <div class="kobac-mobile-inline-media">
+                        <div class="kobac-mobile-bento-grid">
+                            <figure class="kobac-photo-card kobac-bento-item">
+                                <img src="<?php echo esc_url($kobac_imgs['img_2']); ?>" alt="Toàn cảnh khu vực xưởng dịch vụ quy mô 2.500m² tại Ôtô Hải Hà" loading="lazy" decoding="async">
+                                <figcaption class="kobac-bento-cap"><i class="fa-solid fa-warehouse"></i> Xưởng Dịch Vụ 2.500m²</figcaption>
+                            </figure>
+                            <figure class="kobac-photo-card kobac-bento-item">
+                                <img src="<?php echo esc_url($kobac_imgs['img_3']); ?>" alt="Phòng sơn sấy hồng ngoại tiêu chuẩn Châu Âu tại Ôtô Hải Hà" loading="lazy" decoding="async">
+                                <figcaption class="kobac-bento-cap"><i class="fa-solid fa-fire-flame-curved"></i> Phòng Sơn Sấy Hồng Ngoại</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
                     <div class="kobac-prose">
                         <p>Chúng tôi nhận thấy rằng tại thị trường Việt Nam, chủ xe thường phải đối mặt với nỗi lo về sự minh bạch trong báo giá, nguồn gốc phụ tùng không rõ ràng và chất lượng dịch vụ thiếu nhất quán. Đây là những rào cản lớn đối với sự an tâm khi sở hữu và bảo dưỡng xe.</p>
-                        <p>Tại <strong>Ôtô Hải Hà</strong>, chúng tôi tin tưởng tuyệt đối vào triết lý: <em>“Giấc mơ và uy tín được vẽ bằng trái tim người thợ thì nhất định sẽ chạm tới niềm tin trọn vẹn của khách hàng.”</em></p>
+                        <blockquote class="kobac-quote-box">
+                            Tại <strong>Ôtô Hải Hà</strong>, chúng tôi tin tưởng tuyệt đối vào triết lý: <em>“Giấc mơ và uy tín được vẽ bằng trái tim người thợ thì nhất định sẽ chạm tới niềm tin trọn vẹn của khách hàng.”</em>
+                        </blockquote>
                         <p>Sứ mệnh của <strong>Ôtô Hải Hà</strong> là biến niềm tin này thành hành động thực tiễn trên từng chiếc xe xuất xưởng. Chúng tôi cam kết mang đến sự chăm sóc, bảo dưỡng, sửa chữa máy gầm và đồng sơn đạt chuẩn mực cao nhất, không chỉ dựa trên quy trình kỹ thuật nghiêm ngặt mà còn dựa trên sự chính trực và tận tâm tuyệt đối.</p>
                         <p>Chúng tôi không chỉ bảo dưỡng và sửa chữa xe; chúng tôi kiến tạo những hành trình bình an, nâng cao tuổi thọ và giá trị bền vững cho tài sản quý giá này. Mục tiêu cuối cùng là mang lại sự an tâm tuyệt đối cho chủ xe thông qua một dịch vụ không chỉ đạt chuẩn mà còn vượt qua mong đợi.</p>
                     </div>
                     <div class="kobac-btn-wrap">
                         <a href="<?php echo esc_url(home_url('/ve-chung-toi/')); ?>" class="kobac-cta-btn">
                             <span>Về chúng tôi</span>
+                            <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>

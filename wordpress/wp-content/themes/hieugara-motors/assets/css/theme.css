@@ -653,13 +653,14 @@ html, body {
    TRANG CHỦ | GIỚI THIỆU ⌵ | DỊCH VỤ ⌵ | PHỤ KIỆN ⌵ | BLOG ⌵ | KHUYẾN MẠI | LIÊN HỆ ⌵ | [Tìm kiếm.... 🔍]
    ========================================================================= */
 .custom-navbar-strip {
-    background: #e9ebed;
-    border-top: 1px solid #dfe2e5;
-    border-bottom: 2px solid #d2d5d9;
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 2px solid #e2e8f0;
     width: 100%;
     position: relative;
     z-index: 100;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
 }
 
 .custom-navbar-strip.is-sticky {
@@ -668,7 +669,7 @@ html, body {
     left: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
     border-top: none;
 }
 
@@ -680,23 +681,29 @@ html, body {
     max-width: 1360px;
     margin: 0 auto;
     padding: 0 24px;
-    height: 48px;
+    height: 54px;
+    gap: 20px;
 }
 
 .custom-nav-menu {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    width: 100%;
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: clamp(20px, 3.4vw, 54px);
+    gap: 10px;
 }
 
 .custom-nav-menu > .nav-item {
     position: relative;
-    height: 48px;
+    height: 54px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex: 1;
 }
 
 /* ShiftUp Top-Level Orange Accent Indicator */
@@ -709,7 +716,7 @@ html, body {
     height: 3px;
     background: #ff4d24;
     transform: scaleX(0);
-    transform-origin: left center;
+    transform-origin: center;
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 2;
     border-radius: 0 0 2px 2px;
@@ -723,17 +730,19 @@ html, body {
 .custom-nav-menu > .nav-item > .nav-link {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 7px;
-    font-family: 'Chakra Petch', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-size: 13.5px;
+    font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.94rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #0f172a;
     text-transform: uppercase;
     text-decoration: none;
-    letter-spacing: 0.6px;
-    padding: 10px 4px;
+    letter-spacing: 0.4px;
+    padding: 12px 10px;
     transition: color 0.25s ease;
     white-space: nowrap;
+    width: 100%;
 }
 
 .custom-nav-menu > .nav-item.active > .nav-link,
@@ -742,8 +751,8 @@ html, body {
 }
 
 .custom-nav-menu .nav-caret {
-    font-size: 9px;
-    color: #666666;
+    font-size: 10px;
+    color: #64748b;
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease;
     margin-left: 2px;
 }
@@ -758,17 +767,17 @@ html, body {
     position: absolute;
     top: 100%;
     left: 0;
-    background: rgba(255, 255, 255, 0.96);
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
     border-top: 3px solid #ff4d24;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04);
-    min-width: 270px;
+    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.12), 0 4px 12px rgba(15, 23, 42, 0.05);
+    min-width: 280px;
     list-style: none;
     margin: 0;
     padding: 10px 0;
-    border-radius: 0 0 6px 6px;
+    border-radius: 0 0 10px 10px;
     opacity: 0;
     visibility: hidden;
     transform: translateY(14px) scale(0.98);
@@ -787,9 +796,9 @@ html, body {
 
 .nav-dropdown-grid-2col {
     display: grid;
-    grid-template-columns: repeat(2, 245px);
+    grid-template-columns: repeat(2, 255px);
     gap: 4px;
-    min-width: 505px;
+    min-width: 525px;
 }
 
 .nav-dropdown-menu > li {
@@ -804,11 +813,11 @@ html, body {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 10px 20px 10px 18px;
-    font-family: 'Chakra Petch', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-size: 13px;
+    padding: 11px 20px 11px 18px;
+    font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.88rem;
     font-weight: 600;
-    color: #2b2b2b;
+    color: #1e293b;
     text-decoration: none;
     transition: padding-left 0.28s cubic-bezier(0.16, 1, 0.3, 1), color 0.22s ease, background 0.22s ease;
 }
@@ -3173,13 +3182,14 @@ html, body {
     }
     .custom-nav-menu > .nav-item {
         height: auto;
+        flex: none;
         flex-direction: column;
         align-items: stretch;
         border-bottom: 1px solid #191c25;
     }
     .custom-nav-menu > .nav-item > .nav-link {
         padding: 13px 4px;
-        font-size: 0.9rem;
+        font-size: 0.92rem;
         font-weight: 700;
         color: #e2e8f0;
         width: 100%;
@@ -3187,7 +3197,7 @@ html, body {
         justify-content: space-between;
         align-items: center;
         text-transform: uppercase;
-        font-family: 'Chakra Petch', sans-serif;
+        font-family: 'Be Vietnam Pro', sans-serif;
     }
     .custom-nav-menu > .nav-item.active > .nav-link,
     .custom-nav-menu > .nav-item:hover > .nav-link {
@@ -3668,12 +3678,12 @@ html, body {
 }
 
 /* ==========================================================================
-   SHIFTUP LUXURY WORKSHOP FOOTER DESIGN SYSTEM
+   SHIFTUP LUXURY WORKSHOP FOOTER DESIGN SYSTEM (PEARL & WARM SLATE LIGHT LUXURY)
    ========================================================================== */
 .shiftup-main-footer {
-    background: #0b0c0f;
-    color: #94a3b8;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+    color: #475569;
+    border-top: 3px solid #ff4d24;
     position: relative;
     overflow: hidden;
     font-family: 'Be Vietnam Pro', sans-serif;
@@ -3685,18 +3695,19 @@ html, body {
     top: 0;
     left: 0;
     right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent 0%, #ff4d24 50%, transparent 100%);
-    opacity: 0.9;
-    z-index: 2;
+    height: 180px;
+    background: radial-gradient(ellipse at 50% -20%, rgba(255, 77, 36, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
 }
 
 /* 1. Pre-Footer Action Banner */
 .footer-prebar {
-    background: #111318;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
     padding: 22px 0;
     position: relative;
+    z-index: 2;
 }
 
 .footer-prebar-inner {
@@ -3759,11 +3770,11 @@ html, body {
     letter-spacing: 1.2px;
     padding: 3px 8px;
     border-radius: 3px;
-    box-shadow: 0 2px 8px rgba(255, 77, 36, 0.4);
+    box-shadow: 0 2px 8px rgba(255, 77, 36, 0.35);
 }
 
 .prebar-title {
-    color: #ffffff;
+    color: #0f172a;
     font-family: 'Chakra Petch', sans-serif;
     font-weight: 700;
     font-size: 0.95rem;
@@ -3781,15 +3792,15 @@ html, body {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: rgba(255, 77, 36, 0.12);
-    border: 1px solid rgba(255, 77, 36, 0.4);
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
     color: #ff4d24;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1.05rem;
     font-weight: 800;
     letter-spacing: 0.8px;
     padding: 10px 22px;
-    border-radius: 6px;
+    border-radius: 8px;
     text-decoration: none;
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -3810,7 +3821,7 @@ html, body {
     background: #ff4d24;
     color: #ffffff;
     border-color: #ff4d24;
-    box-shadow: 0 0 24px rgba(255, 77, 36, 0.55);
+    box-shadow: 0 8px 20px rgba(255, 77, 36, 0.35);
     transform: translateY(-2px);
 }
 
@@ -3819,132 +3830,235 @@ html, body {
     padding: 10px 22px;
 }
 
-/* 2. Main Footer Body (4 Columns) */
+/* 2. Main Footer Body (3 Streamlined Columns) */
 .footer-main-body {
-    padding: 64px 0 52px;
+    padding: 46px 0 38px;
+    position: relative;
+    z-index: 2;
 }
 
-.footer-grid-4col {
+.footer-grid-3col {
     display: grid;
-    grid-template-columns: 1.35fr 1.05fr 1.05fr 1.35fr;
-    gap: 44px;
+    grid-template-columns: 1.38fr 1fr 1.15fr;
+    gap: 36px;
+    align-items: start;
 }
 
-/* Column 1: Brand & Contacts */
+/* Column 1: Brand, Slogan & 2x2 Compact Contact Chips */
 .footer-brand-wrap {
     display: flex;
     align-items: center;
     gap: 14px;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
 }
 
 .footer-brand-logo img {
-    width: 50px;
-    height: 50px;
+    width: 54px;
+    height: 54px;
     border-radius: 50%;
     object-fit: contain;
-    background: #0f1117;
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    padding: 4px;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+    flex-shrink: 0;
+}
+
+.footer-brand-heading {
+    min-width: 0;
 }
 
 .footer-brand-heading .brand-name {
     display: block;
     font-family: 'Chakra Petch', sans-serif;
-    font-size: 1.35rem;
+    font-size: 1.4rem;
     font-weight: 800;
-    color: #ffffff;
-    letter-spacing: 1.2px;
+    color: #0f172a;
+    letter-spacing: 0.8px;
+    line-height: 1.2;
 }
 
 .footer-brand-heading .brand-tag {
     background: #ff4d24;
     color: #ffffff;
-    font-size: 0.68rem;
+    font-size: 0.72rem;
     font-weight: 800;
-    padding: 2px 6px;
-    border-radius: 3px;
+    padding: 2px 8px;
+    border-radius: 4px;
     margin-left: 4px;
     vertical-align: middle;
 }
 
 .footer-brand-heading .brand-tagline {
     display: block;
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: #94a3b8;
-    letter-spacing: 0.8px;
-    margin-top: 2px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: #ea580c;
+    letter-spacing: 0.2px;
+    margin-top: 4px;
+    white-space: nowrap;
 }
 
 .footer-brand-desc {
-    font-size: 0.875rem;
-    line-height: 1.7;
-    color: #838e9e;
-    margin-bottom: 24px;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: #475569;
+    margin-bottom: 16px;
 }
 
-.footer-quick-contacts {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.footer-brand-desc strong {
+    color: #0f172a;
 }
 
-.quick-contact-item {
+/* 2x2 Contact Chips Grid */
+.footer-contact-chips {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.contact-chip {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     text-decoration: none;
-    color: #cbd5e1;
-    transition: color 0.25s ease;
+    color: #334155;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 9px 11px;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    min-width: 0;
 }
 
-.quick-contact-item i {
-    width: 36px;
-    height: 36px;
-    border-radius: 6px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+.contact-chip i {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #ff4d24;
     font-size: 0.85rem;
     flex-shrink: 0;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.22s ease;
 }
 
-.quick-contact-item small {
+.contact-chip div {
+    min-width: 0;
+}
+
+.contact-chip small {
     display: block;
-    font-family: 'Chakra Petch', sans-serif;
-    font-size: 0.68rem;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.65rem;
     font-weight: 700;
     color: #64748b;
-    letter-spacing: 1px;
+    letter-spacing: 0.3px;
+    margin-bottom: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.quick-contact-item strong {
+.contact-chip strong {
+    display: block;
     font-family: 'Chakra Petch', sans-serif;
-    font-size: 1rem;
+    font-size: 0.94rem;
     font-weight: 800;
-    color: #ffffff;
-    letter-spacing: 0.5px;
+    color: #0f172a;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    transition: color 0.2s ease;
 }
 
-.quick-contact-item span {
-    font-size: 0.86rem;
-    color: #cbd5e1;
+.contact-chip span {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #334155;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.quick-contact-item:hover i {
+.contact-chip.chip-rescue {
+    border-color: #fed7aa;
+    background: #fffaf5;
+}
+
+.contact-chip.chip-rescue strong {
+    color: #ea580c;
+}
+
+.contact-chip:hover {
+    border-color: #ff4d24;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 77, 36, 0.12);
+}
+
+.contact-chip:hover i {
     background: #ff4d24;
     color: #ffffff;
     border-color: #ff4d24;
-    transform: scale(1.08);
-    box-shadow: 0 0 14px rgba(255, 77, 36, 0.5);
 }
 
-.quick-contact-item:hover strong,
-.quick-contact-item:hover span {
+.contact-chip:hover strong,
+.contact-chip:hover span {
+    color: #ff4d24;
+}
+
+/* Social & Email Pills Row */
+.footer-social-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer-fb-pill,
+.footer-mail-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 13px;
+    border-radius: 8px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.footer-fb-pill {
+    background: #1877f2;
+    color: #ffffff;
+    box-shadow: 0 3px 10px rgba(24, 119, 242, 0.22);
+}
+
+.footer-fb-pill:hover {
+    background: #1464d2;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.footer-mail-pill {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #334155;
+}
+
+.footer-mail-pill i {
+    color: #ff4d24;
+}
+
+.footer-mail-pill:hover {
+    border-color: #ff4d24;
     color: #ff4d24;
 }
 
@@ -3953,84 +4067,88 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1.05rem;
     font-weight: 800;
-    color: #ffffff;
+    color: #0f172a;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
-    margin-bottom: 22px;
+    letter-spacing: 0.7px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e2e8f0;
     display: flex;
     align-items: center;
+    position: relative;
+}
+
+.footer-col-title::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 44px;
+    height: 2px;
+    background: #ff4d24;
 }
 
 .title-square {
     display: inline-block;
     width: 8px;
     height: 8px;
+    border-radius: 2px;
     background: #ff4d24;
     margin-right: 10px;
-    box-shadow: 0 0 8px rgba(255, 77, 36, 0.6);
+    box-shadow: 0 0 8px rgba(255, 77, 36, 0.45);
 }
 
-/* Links List with ShiftUp Square Dot Slide */
+/* Links List */
 .footer-links-list {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 0 14px 0;
     display: flex;
     flex-direction: column;
-    gap: 11px;
+    gap: 7px;
 }
 
 .footer-links-list li a {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    color: #8b99ac;
+    gap: 9px;
+    color: #334155;
     text-decoration: none;
-    font-size: 0.875rem;
-    padding: 4px 0;
+    font-size: 0.89rem;
+    font-weight: 500;
+    padding: 3px 0;
     position: relative;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.22s ease;
 }
 
 .footer-links-list li a::before {
     content: '';
     display: inline-block;
-    width: 0;
-    height: 5px;
-    background: #ff4d24;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    opacity: 0;
-}
-
-.footer-links-list li a i {
-    font-size: 0.78rem;
-    color: #556274;
-    width: 16px;
-    text-align: center;
-    transition: all 0.25s ease;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #cbd5e1;
+    transition: all 0.22s ease;
+    flex-shrink: 0;
 }
 
 .footer-links-list li a:hover {
-    color: #ffffff;
-    padding-left: 8px;
+    color: #ff4d24;
+    padding-left: 5px;
 }
 
 .footer-links-list li a:hover::before {
-    width: 6px;
-    height: 6px;
-    opacity: 1;
-    box-shadow: 0 0 6px #ff4d24;
-    margin-right: -4px;
-}
-
-.footer-links-list li a:hover i {
-    color: #ff4d24;
-    transform: translateX(2px);
+    background: #ff4d24;
+    transform: scale(1.25);
 }
 
 .footer-links-list li a.highlight-link {
-    color: #f1f5f9;
-    font-weight: 600;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.footer-links-list li a.highlight-link::before {
+    background: #ff4d24;
 }
 
 .badge-mini {
@@ -4040,48 +4158,70 @@ html, body {
     font-size: 0.62rem;
     font-weight: 800;
     padding: 2px 6px;
-    border-radius: 3px;
-    letter-spacing: 0.5px;
-    margin-left: 6px;
+    border-radius: 4px;
+    letter-spacing: 0.4px;
+    margin-left: 4px;
 }
 
-/* Prebar hotline pill */
-.prebar-phone-pill.pill-hotline {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.15);
-    color: #e2e8f0;
+/* Quick Actions Row Under Services */
+.footer-quick-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 10px;
+    border-top: 1px dashed #cbd5e1;
 }
-.prebar-phone-pill.pill-hotline:hover {
-    background: #ff4d24;
+
+.footer-action-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #0f172a;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 7px 11px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.footer-action-link i {
+    color: #ff4d24;
+}
+
+.footer-action-link:hover {
     border-color: #ff4d24;
-    color: #ffffff;
+    background: #fff7ed;
+    color: #ea580c;
 }
 
-/* Column 4: Google Maps Interactive Embed */
+/* Column 3: Google Maps Interactive Embed */
 .col-map {
     display: flex;
     flex-direction: column;
 }
 
 .footer-map-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
 }
 
 .footer-map-card:hover {
-    border-color: rgba(255, 77, 36, 0.4);
-    box-shadow: 0 8px 28px rgba(255, 77, 36, 0.15);
+    border-color: #ff4d24;
+    box-shadow: 0 14px 32px rgba(255, 77, 36, 0.12);
     transform: translateY(-2px);
 }
 
 .footer-map-frame {
     width: 100%;
-    height: 220px;
-    background: #111318;
+    height: 175px;
+    background: #e2e8f0;
     position: relative;
     overflow: hidden;
 }
@@ -4091,25 +4231,26 @@ html, body {
     height: 100%;
     display: block;
     border: 0;
-    filter: contrast(1.05) saturate(1.1) brightness(0.96);
-    transition: filter 0.3s ease;
-}
-
-.footer-map-card:hover .footer-map-frame iframe {
-    filter: contrast(1.08) saturate(1.15) brightness(1);
 }
 
 .map-card-info {
-    padding: 14px 16px;
-    background: #0e1015;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 12px 14px;
+    background: #ffffff;
+    border-top: 1px solid #f1f5f9;
+}
+
+.map-info-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 5px;
 }
 
 .map-badge-wrap {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 6px;
+    gap: 7px;
 }
 
 .map-live-dot {
@@ -4119,144 +4260,52 @@ html, body {
     background: #ff4d24;
     box-shadow: 0 0 8px #ff4d24;
     animation: beaconPulseAnim 2s infinite;
+    flex-shrink: 0;
 }
 
 .map-loc-title {
     font-family: 'Chakra Petch', sans-serif;
-    font-size: 0.95rem;
+    font-size: 0.94rem;
     font-weight: 800;
-    color: #ffffff;
-    letter-spacing: 0.8px;
+    color: #0f172a;
+    letter-spacing: 0.4px;
 }
 
 .map-loc-desc {
-    font-size: 0.78rem;
-    color: #838e9e;
-    line-height: 1.5;
-    margin: 0 0 10px 0;
-}
-
-.map-loc-hotlines {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px;
-    font-family: 'Chakra Petch', sans-serif;
     font-size: 0.8rem;
-    color: #cbd5e1;
-    margin-bottom: 12px;
-}
-
-.map-loc-hotlines .sep {
     color: #475569;
+    line-height: 1.45;
+    margin: 0;
 }
 
 .map-direct-btn {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    font-family: 'Chakra Petch', sans-serif;
+    gap: 6px;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.78rem;
     font-weight: 700;
     color: #ff4d24;
     text-decoration: none;
-    padding: 6px 14px;
-    background: rgba(255, 77, 36, 0.1);
-    border: 1px solid rgba(255, 77, 36, 0.3);
-    border-radius: 4px;
-    transition: all 0.25s ease;
+    padding: 5px 11px;
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-radius: 6px;
+    white-space: nowrap;
+    transition: all 0.22s ease;
 }
 
 .map-direct-btn:hover {
     background: #ff4d24;
-    color: #ffffff;
-    box-shadow: 0 0 14px rgba(255, 77, 36, 0.45);
-}
-
-/* Floating Dock hotline pill */
-.dock-hotline {
-    background: rgba(20, 22, 28, 0.92);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-}
-.dock-hotline:hover {
-    background: #ff4d24;
     border-color: #ff4d24;
     color: #ffffff;
-    transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 12px 28px rgba(255, 77, 36, 0.45);
-}
-
-/* Column 4: Workshop Locations */
-.footer-workshop-items {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.workshop-item {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 6px;
-    padding: 13px 15px;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.workshop-item:hover {
-    background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(255, 77, 36, 0.35);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-}
-
-.workshop-city {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #ffffff;
-    font-size: 0.85rem;
-    margin-bottom: 5px;
-}
-
-.workshop-city i {
-    color: #ff4d24;
-    font-size: 0.85rem;
-}
-
-.workshop-city strong {
-    font-family: 'Chakra Petch', sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}
-
-.workshop-address {
-    font-size: 0.8rem;
-    color: #838e9e;
-    line-height: 1.5;
-    margin: 0 0 6px 0;
-}
-
-.workshop-map-link {
-    font-size: 0.76rem;
-    color: #ff4d24;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    transition: gap 0.2s ease, color 0.2s ease;
-}
-
-.workshop-map-link:hover {
-    color: #ffffff;
-    gap: 8px;
 }
 
 /* 3. Footer Bottom Bar */
 .footer-bottom-bar {
-    background: #060709;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    padding: 20px 0;
+    background: #e2e8f0;
+    border-top: 1px solid #cbd5e1;
+    padding: 14px 0;
     position: relative;
     z-index: 2;
 }
@@ -4266,27 +4315,29 @@ html, body {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 14px;
 }
 
 .copy-text {
-    font-size: 0.82rem;
-    color: #64748b;
+    font-size: 0.84rem;
+    color: #475569;
 }
 
 .copy-text strong {
-    color: #94a3b8;
+    color: #0f172a;
+    font-weight: 700;
 }
 
 .bottom-extra-links {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 0.82rem;
+    gap: 12px;
+    font-size: 0.84rem;
 }
 
 .bottom-extra-links a {
-    color: #838e9e;
+    color: #334155;
+    font-weight: 600;
     text-decoration: none;
     transition: color 0.2s ease;
 }
@@ -4296,24 +4347,25 @@ html, body {
 }
 
 .bottom-extra-links .sep {
-    color: #334155;
+    color: #94a3b8;
 }
 
 .back-to-top-btn {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: #cbd5e1;
+    gap: 8px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #0f172a;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.78rem;
     font-weight: 700;
-    letter-spacing: 1.2px;
-    padding: 8px 18px;
-    border-radius: 4px;
+    letter-spacing: 0.8px;
+    padding: 6px 14px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 2px 5px rgba(15, 23, 42, 0.04);
+    transition: all 0.22s ease;
 }
 
 .btn-top-icon {
@@ -4327,11 +4379,11 @@ html, body {
     background: #ff4d24;
     color: #ffffff;
     border-color: #ff4d24;
-    box-shadow: 0 0 16px rgba(255, 77, 36, 0.45);
+    box-shadow: 0 6px 16px rgba(255, 77, 36, 0.35);
 }
 
 .back-to-top-btn:hover .btn-top-icon {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 }
 
 /* 4. ShiftUp Floating Action Dock (Fixed Bottom-Right) */
@@ -4475,33 +4527,146 @@ html, body {
 
 /* 6. Responsive Breakpoints */
 @media (max-width: 1024px) {
-    .footer-grid-4col {
+    .footer-grid-3col {
         grid-template-columns: 1fr 1fr;
-        gap: 36px;
+        gap: 28px;
+    }
+    .footer-col.col-brand {
+        grid-column: 1 / -1;
     }
 }
 
 @media (max-width: 767px) {
-    .footer-prebar-inner {
-        flex-direction: column;
+    /* Brand Marquee Mobile Heading Compact */
+    .shiftup-brand-marquee-section .marquee-head {
+        margin-bottom: 22px;
+    }
+    .shiftup-brand-marquee-section .marquee-sub {
+        font-size: 0.72rem;
+        letter-spacing: 1px;
+    }
+    .shiftup-brand-marquee-section .marquee-title {
+        font-size: 1.25rem;
+        line-height: 1.3;
+        margin-top: 6px;
+        margin-bottom: 0;
+        padding: 0 8px;
+    }
+
+    /* Compact Mobile Footer */
+    .footer-main-body {
+        padding: 28px 0 24px;
+    }
+    .footer-grid-3col {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+    .footer-brand-wrap {
+        gap: 12px;
+        margin-bottom: 10px;
+    }
+    .footer-brand-logo img {
+        width: 46px;
+        height: 46px;
+    }
+    .footer-brand-heading .brand-name {
+        font-size: 1.25rem;
+    }
+    .footer-brand-heading .brand-tagline {
+        font-size: 0.78rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .footer-brand-desc {
+        font-size: 0.84rem;
+        line-height: 1.55;
+        margin-bottom: 12px;
+    }
+    .footer-contact-chips {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+    .contact-chip {
+        padding: 8px 9px;
+        gap: 8px;
+    }
+    .contact-chip i {
+        width: 30px;
+        height: 30px;
+        font-size: 0.78rem;
+    }
+    .contact-chip small {
+        font-size: 0.6rem;
+    }
+    .contact-chip strong {
+        font-size: 0.84rem;
+    }
+    .contact-chip span {
+        font-size: 0.72rem;
+    }
+    .footer-social-row {
+        gap: 8px;
+    }
+    .footer-fb-pill,
+    .footer-mail-pill {
+        flex: 1;
+        justify-content: center;
+        font-size: 0.76rem;
+        padding: 7px 10px;
+    }
+    .footer-col-title {
+        font-size: 0.96rem;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+    }
+    .footer-services-2col-mobile {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px 10px;
+        margin-bottom: 12px;
+    }
+    .footer-services-2col-mobile li a {
+        font-size: 0.78rem;
+        line-height: 1.35;
         align-items: flex-start;
     }
-    .prebar-right {
-        width: 100%;
-        justify-content: space-between;
+    .footer-services-2col-mobile li a::before {
+        margin-top: 5px;
     }
-    .footer-grid-4col {
-        grid-template-columns: 1fr;
-        gap: 32px;
+    .footer-quick-actions {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    .footer-action-link {
+        justify-content: center;
+        font-size: 0.75rem;
+        padding: 8px 6px;
+    }
+    .footer-map-frame {
+        height: 145px;
+    }
+    .footer-bottom-bar {
+        padding: 12px 0;
     }
     .footer-bottom-inner {
         flex-direction: column;
         text-align: center;
-        gap: 14px;
+        gap: 8px;
+    }
+    .copy-text {
+        font-size: 0.78rem;
     }
     .bottom-extra-links {
         justify-content: center;
         flex-wrap: wrap;
+        font-size: 0.78rem;
+        gap: 8px;
+    }
+    .bottom-back-to-top {
+        display: none;
     }
     /* Mobile Bottom Navigation Bar (Native App Style, Non-Intrusive, WCAG AA Compliant) */
     .shiftup-floating-dock {
@@ -7364,7 +7529,7 @@ html, body {
     top: 100%;
     left: 50%;
     transform: translateX(-50%) translateY(10px);
-    width: min(1240px, calc(100vw - 32px));
+    width: min(1320px, calc(100vw - 32px));
     padding-top: 8px;
     display: none;
     z-index: 9999;
@@ -7399,37 +7564,41 @@ html, body {
 
 .mega-inner {
     background: #ffffff;
-    border: 1px solid rgba(226, 232, 240, 0.95);
+    border: 1px solid #e2e8f0;
     border-top: 3px solid #ff4d24;
-    border-radius: 12px;
-    box-shadow: 0 20px 48px rgba(15, 23, 42, 0.12), 0 4px 16px rgba(15, 23, 42, 0.05);
-    padding: 14px;
+    border-radius: 14px;
+    box-shadow: 0 22px 52px rgba(15, 23, 42, 0.14), 0 6px 18px rgba(15, 23, 42, 0.06);
+    padding: 16px;
     display: grid;
     grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 10px;
+    gap: 12px;
+    align-items: stretch;
 }
 
 .mega-group {
     position: relative;
+    display: flex;
 }
 
 .mega-cat {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 11px 12px;
-    border-radius: 8px;
+    width: 100%;
+    min-height: 58px;
+    padding: 12px 14px;
+    border-radius: 10px;
     background: #f8fafc;
-    border: 1px solid #e2e8f0;
+    border: 1.5px solid #e2e8f0;
     color: #0f172a !important;
     text-decoration: none !important;
-    font-size: 0.8rem;
+    font-size: 0.88rem;
     font-weight: 700;
-    font-family: 'Chakra Petch', -apple-system, sans-serif;
-    letter-spacing: 0.02em;
+    font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    letter-spacing: 0.01em;
     transition: all 180ms ease;
     cursor: pointer;
-    line-height: 1.25;
+    line-height: 1.35;
 }
 
 .mega-cat span {
@@ -7444,11 +7613,12 @@ html, body {
 }
 
 .mega-arrow {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: #ff4d24;
     transition: transform 180ms ease, color 180ms ease;
-    margin-left: 4px;
+    margin-left: 6px;
     line-height: 1;
+    flex-shrink: 0;
 }
 
 .mega-cat:hover,
@@ -7456,8 +7626,8 @@ html, body {
 .mega-group.is-open .mega-cat {
     background: #fff7ed;
     border-color: #ff4d24;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 14px rgba(255, 77, 36, 0.14);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 77, 36, 0.16);
 }
 
 .mega-cat:hover span,
@@ -7474,16 +7644,16 @@ html, body {
 .mega-sub {
     position: absolute;
     left: 0;
-    top: calc(100% + 6px);
+    top: calc(100% + 8px);
     width: max-content;
-    min-width: 250px;
-    max-width: 320px;
+    min-width: 285px;
+    max-width: 350px;
     background: #ffffff;
-    border: 1px solid rgba(255, 77, 36, 0.35);
-    border-radius: 8px;
-    padding: 6px;
+    border: 1.5px solid rgba(255, 77, 36, 0.4);
+    border-radius: 12px;
+    padding: 8px;
     display: none;
-    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.16), 0 2px 8px rgba(15, 23, 42, 0.08);
+    box-shadow: 0 20px 44px rgba(15, 23, 42, 0.16), 0 4px 12px rgba(15, 23, 42, 0.08);
     z-index: 50;
     animation: megaSubIn 160ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -7500,10 +7670,10 @@ html, body {
 .mega-sub::before {
     content: "";
     position: absolute;
-    top: -10px;
+    top: -12px;
     left: 0;
     right: 0;
-    height: 10px;
+    height: 12px;
     background: transparent;
 }
 
@@ -7511,7 +7681,7 @@ html, body {
 .mega-group.is-open .mega-sub,
 .mega-group:focus-within .mega-sub {
     display: grid;
-    gap: 3px;
+    gap: 5px;
 }
 
 @keyframes megaSubIn {
@@ -7529,30 +7699,33 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    padding: 8px 12px;
-    border-radius: 6px;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
     background: #f8fafc;
     border: 1px solid #f1f5f9;
-    color: #334155 !important;
+    color: #1e293b !important;
     text-decoration: none !important;
-    font-size: 0.78rem;
-    font-weight: 500;
+    font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.86rem;
+    font-weight: 600;
     transition: all 160ms ease;
 }
 
 .mega-subcat span {
-    color: #334155;
+    color: #1e293b;
     transition: color 160ms ease;
-    line-height: 1.3;
+    line-height: 1.38;
 }
 
 .mega-subcat small {
-    color: #64748b;
-    font-size: 0.68rem;
+    color: #475569;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
     background: #e2e8f0;
-    padding: 2px 6px;
-    border-radius: 4px;
+    padding: 3px 8px;
+    border-radius: 6px;
     white-space: nowrap;
     transition: all 160ms ease;
 }
@@ -8710,13 +8883,34 @@ html, body {
     margin-bottom: 85px;
 }
 
+.kobac-head-block {
+    margin-bottom: 20px;
+}
+
+.kobac-eyebrow-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    color: #ea580c;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+}
+
 .kobac-heading {
     font-family: 'Chakra Petch', sans-serif;
     font-size: clamp(2.1rem, 3.6vw, 2.75rem);
     font-weight: 800;
     line-height: 1.25;
     color: #0f172a;
-    margin: 0 0 22px 0;
+    margin: 0;
     letter-spacing: 0.5px;
     text-transform: uppercase;
     position: relative;
@@ -8730,6 +8924,22 @@ html, body {
     background: linear-gradient(90deg, #ff4d24 0%, #ff7a59 100%);
     border-radius: 2px;
     margin-top: 12px;
+}
+
+.kobac-mobile-inline-media {
+    display: none;
+}
+
+.kobac-quote-box {
+    margin: 18px 0;
+    padding: 16px 20px;
+    background: #fff7ed;
+    border-left: 4px solid #ff4d24;
+    border-radius: 0 10px 10px 0;
+    color: #1e293b;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.96rem;
+    line-height: 1.65;
 }
 
 .kobac-prose p {
@@ -8763,6 +8973,7 @@ html, body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
     background: #ff4d24;
     color: #ffffff !important;
     font-family: 'Chakra Petch', sans-serif;
@@ -8918,34 +9129,129 @@ html, body {
 
 @media (max-width: 991px) {
     .kobac-about-mission-section {
-        padding: 60px 0 70px;
+        padding: 40px 0 48px;
+        background: #f1f5f9;
     }
+
+    .kobac-desktop-media,
+    .kobac-desktop-only-btn {
+        display: none !important;
+    }
+
+    .kobac-mobile-inline-media {
+        display: block;
+        margin: 16px 0 20px;
+    }
+
     .kobac-split-row {
         grid-template-columns: 1fr;
-        gap: 36px;
+        gap: 0;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-top: 3px solid #ff4d24;
+        border-radius: 16px;
+        padding: 22px 18px 24px;
+        box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
     }
-    .kobac-row-about {
-        margin-bottom: 56px;
-    }
-    .kobac-row-mission .kobac-col-media {
-        order: 2;
-    }
-    .kobac-row-mission .kobac-col-text {
-        order: 1;
-    }
-}
 
-@media (max-width: 576px) {
-    .kobac-dual-media-wrap {
-        padding-bottom: 0;
-        padding-right: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
+    .kobac-row-about {
+        margin-bottom: 24px;
     }
-    .kobac-photo-main-2,
-    .kobac-photo-floating-3 {
+
+    .kobac-head-block {
+        margin-bottom: 12px;
+    }
+
+    .kobac-heading {
+        font-size: 1.65rem;
+    }
+
+    .kobac-heading::after {
+        width: 52px;
+        height: 3px;
+        margin-top: 8px;
+    }
+
+    .kobac-mobile-hero-card {
+        aspect-ratio: 16 / 10;
+        border-radius: 12px;
+        border: none;
+        outline: 1px solid #e2e8f0;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.1);
+    }
+
+    /* Mobile Bento 2-Photo Grid for Images 2 & 3 */
+    .kobac-mobile-bento-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .kobac-bento-item {
+        aspect-ratio: 4 / 3.3;
+        border-radius: 10px;
+        border: none;
+        outline: 1px solid #e2e8f0;
+        box-shadow: 0 6px 16px rgba(15, 23, 42, 0.09);
         position: relative;
+    }
+
+    .kobac-bento-cap {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to top, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.65) 70%, transparent 100%);
+        color: #ffffff;
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 0.68rem;
+        font-weight: 700;
+        padding: 18px 8px 7px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        line-height: 1.25;
+    }
+
+    .kobac-bento-cap i {
+        color: #ff4d24;
+        flex-shrink: 0;
+    }
+
+    .kobac-prose p {
+        font-size: 0.92rem;
+        line-height: 1.68;
+        margin-bottom: 14px;
+        text-align: left;
+    }
+
+    .kobac-quote-box {
+        margin: 14px 0 16px;
+        padding: 13px 15px;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .kobac-btn-wrap {
+        margin-top: 20px;
+    }
+
+    .kobac-cta-btn {
         width: 100%;
+        padding: 14px 20px;
+        font-size: 0.94rem;
+        border-radius: 8px;
+    }
+
+    /* Smooth vertical elevation on mobile instead of horizontal shift */
+    .kobac-about-mission-section .kobac-anim-left,
+    .kobac-about-mission-section .kobac-anim-right {
+        transform: translateY(28px);
+    }
+    .kobac-about-mission-section.is-inview .kobac-row-about .kobac-anim-left,
+    .kobac-about-mission-section.is-inview .kobac-row-about .kobac-anim-right,
+    .kobac-about-mission-section.is-inview .kobac-row-mission .kobac-anim-left,
+    .kobac-about-mission-section.is-inview .kobac-row-mission .kobac-anim-right {
+        transform: translateY(0);
     }
 }
