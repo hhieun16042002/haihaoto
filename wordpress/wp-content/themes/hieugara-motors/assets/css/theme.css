@@ -8170,6 +8170,14 @@ html, body {
     margin: 0 0 12px 0;
 }
 
+.tuning-shop-divider {
+    width: 64px;
+    height: 3px;
+    background: #C5A880;
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
 .accessory-slider-wrap {
     position: relative;
     padding: 0 10px;
@@ -8350,26 +8358,23 @@ html, body {
     right: -14px;
 }
 
-/* Bidirectional Scroll Reveal for Accessories */
+/* Always Visible & Smooth Accessories Section */
 .shiftup-accessories-section .accessory-sec-head {
-    opacity: 0;
-    transform: translateY(26px);
-    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 1 !important;
+    transform: none !important;
 }
 .shiftup-accessories-section.is-inview .accessory-sec-head {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1 !important;
+    transform: none !important;
 }
 
 .shiftup-accessories-section .accessory-slider-wrap {
-    opacity: 0;
-    transform: translateY(32px);
-    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 1 !important;
+    transform: none !important;
 }
 .shiftup-accessories-section.is-inview .accessory-slider-wrap {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.1s;
+    opacity: 1 !important;
+    transform: none !important;
 }
 
 @media (max-width: 768px) {
@@ -8926,32 +8931,27 @@ html, body {
 
 /* 5. Phụ Kiện Ôtô Chính Hãng (#phu-kien-chinh-hang) */
 .shiftup-accessories-section .accessory-sec-head {
-    opacity: 0;
-    transform: translateY(36px);
-    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 1 !important;
+    transform: none !important;
 }
 .shiftup-accessories-section.is-inview .accessory-sec-head {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1 !important;
+    transform: none !important;
 }
 .shiftup-accessories-section .tuning-shop-divider {
-    width: 0;
-    transition: width 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.18s;
+    width: 64px !important;
 }
 .shiftup-accessories-section.is-inview .tuning-shop-divider {
-    width: 64px;
+    width: 64px !important;
 }
 
 .shiftup-accessories-section .accessory-slider-wrap {
-    opacity: 0;
-    transform: translateY(46px) scale(0.96);
-    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.14s,
-                transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.14s;
+    opacity: 1 !important;
+    transform: none !important;
 }
 .shiftup-accessories-section.is-inview .accessory-slider-wrap {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+    opacity: 1 !important;
+    transform: none !important;
 }
 
 /* 6. Các Dòng Xe Phục Vụ – Brand Marquee (#dong-xe-phuc-vu) */

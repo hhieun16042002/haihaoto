@@ -124,7 +124,7 @@ function hieugara_get_default_accessories_items() {
         2 => array(
             'enable'    => '1',
             'title'     => 'Máy bơm lốp ô tô không dây Michelin M2567 Tự Ngắt Thông Minh',
-            'img'       => $acc_img_uri . '/ellisafe-j3.jpg',
+            'img'       => $acc_img_uri . '/michelin-bom-lop.jpg',
             'price'     => '1.180.000',
             'old_price' => '1.450.000',
             'badge'     => 'MICHELIN',
@@ -133,7 +133,7 @@ function hieugara_get_default_accessories_items() {
         3 => array(
             'enable'    => '1',
             'title'     => 'Cảm biến áp suất lốp Steelmate TPMS M10 hiển thị LCD Solar',
-            'img'       => $acc_img_uri . '/ellisafe-i5.jpg',
+            'img'       => $acc_img_uri . '/steelmate-tpms.jpg',
             'price'     => '2.250.000',
             'old_price' => '2.600.000',
             'badge'     => 'STEELMATE',
@@ -141,8 +141,8 @@ function hieugara_get_default_accessories_items() {
         ),
         4 => array(
             'enable'    => '1',
-            'title'     => 'Máy hút bụi cầm tay ô tô Bosch BHN16L lực hút cực mạnh HEPA',
-            'img'       => $acc_img_uri . '/vietmap-c65.jpg',
+            'title'     => 'Máy hút bụi cầm tay ô tô không dây Bosch BHN16L lực hút cực mạnh HEPA',
+            'img'       => $acc_img_uri . '/bosch-may-hut-bui.jpg',
             'price'     => '1.850.000',
             'old_price' => '2.190.000',
             'badge'     => 'BOSCH CHÍNH HÃNG',
@@ -151,7 +151,7 @@ function hieugara_get_default_accessories_items() {
         5 => array(
             'enable'    => '1',
             'title'     => 'Bộ kích nổ ắc quy ô tô khẩn cấp Stanley 12V kiêm sạc dự phòng',
-            'img'       => $acc_img_uri . '/vietmap-c62s.jpg',
+            'img'       => $acc_img_uri . '/stanley-kich-binh.jpg',
             'price'     => '1.450.000',
             'old_price' => '1.790.000',
             'badge'     => 'CỨU HỘ KHẨN CẤP',
@@ -178,10 +178,82 @@ function hieugara_get_default_accessories_items() {
         8 => array(
             'enable'    => '1',
             'title'     => 'Tẩu sạc nhanh ô tô Baseus Digital Display 65W sạc Laptop & Điện thoại',
-            'img'       => $acc_img_uri . '/elliview-u4.jpg',
+            'img'       => $acc_img_uri . '/baseus-tau-sac.jpg',
             'price'     => '390.000',
             'old_price' => '490.000',
             'badge'     => 'BASEUS 65W',
+            'link'      => 'https://meta.vn/phu-kien-oto/',
+        ),
+        9 => array(
+            'enable'    => '1',
+            'title'     => 'Giá đỡ điện thoại ô tô kiêm sạc không dây Baseus cảm ứng tự động 15W',
+            'img'       => $acc_img_uri . '/baseus-gia-do.jpg',
+            'price'     => '420.000',
+            'old_price' => '550.000',
+            'badge'     => 'SẠC KHÔNG DÂY',
+            'link'      => 'https://meta.vn/phu-kien-oto/',
+        ),
+        10 => array(
+            'enable'    => '1',
+            'title'     => 'Máy lọc không khí ô tô Philips GoPure GP5211 khử mùi kháng khuẩn',
+            'img'       => $acc_img_uri . '/philips-loc-khong-khi.jpg',
+            'price'     => '2.490.000',
+            'old_price' => '2.890.000',
+            'badge'     => 'PHILIPS',
+            'link'      => 'https://meta.vn/phu-kien-oto/',
+        ),
+        11 => array(
+            'enable'    => '1',
+            'title'     => 'Bạt phủ ô tô 3 lớp tráng nhôm cách nhiệt chống nóng, mưa đá',
+            'img'       => $acc_img_uri . '/bat-phu-oto.jpg',
+            'price'     => '550.000',
+            'old_price' => '750.000',
+            'badge'     => 'CHỐNG NẮNG 100%',
+            'link'      => 'https://meta.vn/phu-kien-oto/',
+        ),
+        12 => array(
+            'enable'    => '1',
+            'title'     => 'Gối tựa đầu & đệm tựa lưng cao su non công thái học ô tô',
+            'img'       => $acc_img_uri . '/goi-tua-dau-oto.jpg',
+            'price'     => '450.000',
+            'old_price' => '590.000',
+            'badge'     => 'CAO SU NON',
+            'link'      => 'https://meta.vn/phu-kien-oto/',
+        ),
+        13 => array(
+            'enable'    => '1',
+            'title'     => 'Bọc vô lăng ô tô da bò thật vân sợi carbon chống trơn trượt',
+            'img'       => $acc_img_uri . '/boc-vo-lang.jpg',
+            'price'     => '350.000',
+            'old_price' => '450.000',
+            'badge'     => 'DA CAO CẤP',
+            'link'      => 'https://meta.vn/phu-kien-oto/',
+        ),
+        14 => array(
+            'enable'    => '1',
+            'title'     => 'Nước hoa ô tô cao cấp kẹp cửa gió điều hòa Etonner / Areon',
+            'img'       => $acc_img_uri . '/nuoc-hoa-oto.jpg',
+            'price'     => '320.000',
+            'old_price' => '420.000',
+            'badge'     => 'HƯƠNG TỰ NHIÊN',
+            'link'      => 'https://meta.vn/phu-kien-oto/',
+        ),
+        15 => array(
+            'enable'    => '1',
+            'title'     => 'Dung dịch rửa xe không chạm và vệ sinh nội thất ô tô Ekokemika 3M',
+            'img'       => $acc_img_uri . '/dung-dich-cham-soc-xe.jpg',
+            'price'     => '280.000',
+            'old_price' => '350.000',
+            'badge'     => 'CHĂM SÓC XE',
+            'link'      => 'https://meta.vn/phu-kien-oto/',
+        ),
+        16 => array(
+            'enable'    => '1',
+            'title'     => 'Búa thoát hiểm đa năng 4 trong 1 kiêm đèn pin SOS và dao cắt dây đai',
+            'img'       => $acc_img_uri . '/bua-thoat-hiem.jpg',
+            'price'     => '190.000',
+            'old_price' => '250.000',
+            'badge'     => 'AN TOÀN ÔTÔ',
             'link'      => 'https://meta.vn/phu-kien-oto/',
         ),
     );
@@ -190,24 +262,24 @@ function hieugara_get_default_accessories_items() {
 function hieugara_get_accessories_items() {
     $defaults = hieugara_get_default_accessories_items();
     $saved    = get_option('hieugara_accessories_items');
-    if ($saved === false || !is_array($saved)) {
+    if ($saved === false || !is_array($saved) || count($saved) < 4) {
         return $defaults;
     }
     $items = array();
     foreach ($saved as $k => $it) {
         if (!empty($it['title']) || !empty($it['img'])) {
             $items[$k] = array(
-                'enable'    => isset($it['enable']) ? '1' : '0',
+                'enable'    => isset($it['enable']) ? (string)$it['enable'] : '1',
                 'title'     => sanitize_text_field($it['title'] ?? ''),
                 'img'       => esc_url_raw($it['img'] ?? ''),
                 'price'     => sanitize_text_field($it['price'] ?? ''),
                 'old_price' => sanitize_text_field($it['old_price'] ?? ''),
                 'badge'     => sanitize_text_field($it['badge'] ?? ''),
-                'link'      => !empty($it['link']) ? esc_url_raw($it['link']) : home_url('/bang-gia/#phu-kien'),
+                'link'      => !empty($it['link']) ? esc_url_raw($it['link']) : 'https://meta.vn/phu-kien-oto/',
             );
         }
     }
-    return $items;
+    return !empty($items) ? $items : $defaults;
 }
 
 /**

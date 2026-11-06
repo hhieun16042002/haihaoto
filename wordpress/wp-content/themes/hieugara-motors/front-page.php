@@ -326,7 +326,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
             
             <div class="accessory-sec-head text-center">
                 <h2 class="accessory-heading-main">
-                    <span>PHỤ KIỆN ÔTÔ</span> <span class="text-orange">CHÍNH HÃNG</span>
+                    <span>PHỤ KIỆN ÔTÔ</span> <span class="text-black">CHÍNH HÃNG</span>
                 </h2>
                 <div class="tuning-shop-divider"></div>
             </div>
@@ -338,6 +338,9 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                 if (!empty($a_it['enable'])) {
                     $accessories[] = $a_it;
                 }
+            }
+            if (empty($accessories) && function_exists('hieugara_get_default_accessories_items')) {
+                $accessories = hieugara_get_default_accessories_items();
             }
             ?>
 
