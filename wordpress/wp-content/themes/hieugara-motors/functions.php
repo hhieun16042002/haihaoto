@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('HIEUGARA_THEME_VERSION', '5.7.4');
+define('HIEUGARA_THEME_VERSION', '5.7.5');
 define('HIEUGARA_THEME_DIR', get_template_directory());
 define('HIEUGARA_THEME_URI', get_template_directory_uri());
 
