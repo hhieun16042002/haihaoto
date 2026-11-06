@@ -11,27 +11,25 @@ get_header();
 $rescue_phone  = function_exists('hieugara_get_rescue_phone') ? hieugara_get_rescue_phone() : '0911 211 996';
 $hotline_phone = function_exists('hieugara_get_hotline_phone') ? hieugara_get_hotline_phone() : '02 203 892 207';
 
-$raw_accessories = function_exists('hieugara_get_accessories_items') ? hieugara_get_accessories_items() : array();
-$accessories = array();
-foreach ($raw_accessories as $k => $a_it) {
-    if (!empty($a_it['enable'])) {
-        // Tag categories based on title/badge
-        $t_lower = mb_strtolower($a_it['title'] . ' ' . ($a_it['badge'] ?? ''), 'UTF-8');
-        $cat = 'noi-that';
-        if (strpos($t_lower, 'màn hình') !== false || strpos($t_lower, 'camera') !== false || strpos($t_lower, 'zestech') !== false || strpos($t_lower, 'elliview') !== false || strpos($t_lower, '70mai') !== false) {
-            $cat = 'man-hinh';
-        } elseif (strpos($t_lower, 'bơm') !== false || strpos($t_lower, 'áp suất') !== false || strpos($t_lower, 'tpms') !== false || strpos($t_lower, 'michelin') !== false || strpos($t_lower, 'steelmate') !== false) {
-            $cat = 'bom-lop';
-        } elseif (strpos($t_lower, 'kích') !== false || strpos($t_lower, 'hút bụi') !== false || strpos($t_lower, 'búa') !== false || strpos($t_lower, 'stanley') !== false || strpos($t_lower, 'bosch') !== false) {
-            $cat = 'cuu-ho';
+$accessories = function_exists('hieugara_get_native_accessories') ? hieugara_get_native_accessories() : array();
+if (empty($accessories)) {
+    $raw_accessories = function_exists('hieugara_get_accessories_items') ? hieugara_get_accessories_items() : array();
+    foreach ($raw_accessories as $k => $a_it) {
+        if (!empty($a_it['enable'])) {
+            $t_lower = mb_strtolower($a_it['title'] . ' ' . ($a_it['badge'] ?? ''), 'UTF-8');
+            $cat = 'noi-that';
+            if (strpos($t_lower, 'màn hình') !== false || strpos($t_lower, 'camera') !== false || strpos($t_lower, 'zestech') !== false || strpos($t_lower, 'elliview') !== false || strpos($t_lower, '70mai') !== false) {
+                $cat = 'man-hinh';
+            } elseif (strpos($t_lower, 'bơm') !== false || strpos($t_lower, 'áp suất') !== false || strpos($t_lower, 'tpms') !== false || strpos($t_lower, 'michelin') !== false || strpos($t_lower, 'steelmate') !== false) {
+                $cat = 'bom-lop';
+            } elseif (strpos($t_lower, 'kích') !== false || strpos($t_lower, 'hút bụi') !== false || strpos($t_lower, 'búa') !== false || strpos($t_lower, 'stanley') !== false || strpos($t_lower, 'bosch') !== false) {
+                $cat = 'cuu-ho';
+            }
+            $a_it['cat'] = $cat;
+            $a_it['id'] = $k;
+            $accessories[] = $a_it;
         }
-        $a_it['cat'] = $cat;
-        $a_it['id'] = $k;
-        $accessories[] = $a_it;
     }
-}
-if (empty($accessories) && function_exists('hieugara_get_default_accessories_items')) {
-    $accessories = hieugara_get_default_accessories_items();
 }
 
 $initial_cat = isset($_GET['cat']) ? sanitize_key($_GET['cat']) : 'all';
@@ -141,9 +139,9 @@ $initial_cat = isset($_GET['cat']) ? sanitize_key($_GET['cat']) : 'all';
                         <?php endif; ?>
 
                         <!-- Image Box -->
-                        <div class="phukien-card-img-wrap">
+                        <a href="<?php echo esc_url($link); ?>" class="phukien-card-img-wrap" title="<?php echo esc_attr($title); ?>">
                             <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($title); ?>" loading="lazy">
-                        </div>
+                        </a>
 
                         <!-- Card Body -->
                         <div class="phukien-card-body">
@@ -156,7 +154,7 @@ $initial_cat = isset($_GET['cat']) ? sanitize_key($_GET['cat']) : 'all';
                                 ?>
                             </div>
                             <h2 class="phukien-card-title">
-                                <a href="<?php echo esc_url($link); ?>" target="_blank" rel="noopener">
+                                <a href="<?php echo esc_url($link); ?>" title="<?php echo esc_attr($title); ?>">
                                     <?php echo esc_html($title); ?>
                                 </a>
                             </h2>
@@ -175,11 +173,11 @@ $initial_cat = isset($_GET['cat']) ? sanitize_key($_GET['cat']) : 'all';
 
                             <!-- Actions -->
                             <div class="phukien-card-actions">
-                                <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode('Lắp đặt phụ kiện: ' . $title))); ?>" class="btn-pk-book" title="Đặt lịch lắp đặt phụ kiện này">
-                                    <i class="fa-regular fa-calendar-check mr-1"></i> Đặt Lịch Lắp
+                                <a href="<?php echo esc_url($link); ?>" class="btn-pk-detail" title="Xem chi tiết kỹ thuật">
+                                    Chi Tiết
                                 </a>
-                                <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="btn-pk-call" title="Gọi tư vấn kỹ thuật">
-                                    <i class="fa-solid fa-phone"></i>
+                                <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode('Lắp đặt phụ kiện: ' . $title))); ?>" class="btn-pk-book" title="Đặt lịch lắp đặt phụ kiện này">
+                                    <i class="fa-regular fa-calendar-check mr-1"></i> Đặt Lịch
                                 </a>
                             </div>
                         </div>
@@ -312,3 +310,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <?php
 get_footer();
+

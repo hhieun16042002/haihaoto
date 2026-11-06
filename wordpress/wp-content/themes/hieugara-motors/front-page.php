@@ -333,11 +333,13 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
             </div>
 
             <?php
-            $raw_accessories = function_exists('hieugara_get_accessories_items') ? hieugara_get_accessories_items() : array();
-            $accessories = array();
-            foreach ($raw_accessories as $a_it) {
-                if (!empty($a_it['enable'])) {
-                    $accessories[] = $a_it;
+            $accessories = function_exists('hieugara_get_native_accessories') ? hieugara_get_native_accessories() : array();
+            if (empty($accessories)) {
+                $raw_accessories = function_exists('hieugara_get_accessories_items') ? hieugara_get_accessories_items() : array();
+                foreach ($raw_accessories as $a_it) {
+                    if (!empty($a_it['enable'])) {
+                        $accessories[] = $a_it;
+                    }
                 }
             }
             if (empty($accessories) && function_exists('hieugara_get_default_accessories_items')) {
@@ -373,7 +375,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                                         <?php endif; ?>
                                     </div>
                                     <div class="accessory-action">
-                                        <a href="<?php echo esc_url($acc['link']); ?>" title="<?php echo esc_attr($acc['title']); ?>" class="btn-accessory-detail" target="_blank" rel="noopener">
+                                        <a href="<?php echo esc_url($acc['link']); ?>" title="<?php echo esc_attr($acc['title']); ?>" class="btn-accessory-detail">
                                             Chi tiết
                                         </a>
                                         <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode('Lắp đặt ' . $acc['title']))); ?>" class="btn-accessory-install" title="Đặt lịch lắp đặt phụ kiện này">

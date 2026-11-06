@@ -23,7 +23,7 @@ if (!ini_get('zlib.output_compression') && !headers_sent()) {
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('admin_print_scripts', 'print_emoji_detection_script');
 remove_action('wp_print_styles', 'print_emoji_styles');
-remove_action('admin_print_styles', 'print_emoji_styles');
+remove_action('admin_print_styles', 'print_emoji_styles'); 
 remove_filter('the_content_feed', 'wp_staticize_emoji');
 remove_filter('comment_text_rss', 'wp_staticize_emoji');
 remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
@@ -163,6 +163,7 @@ require_once HIEUGARA_THEME_DIR . '/inc/seo-architecture.php';
 require_once HIEUGARA_THEME_DIR . '/inc/prestige-service-content.php';
 require_once HIEUGARA_THEME_DIR . '/inc/media-hub.php';
 require_once HIEUGARA_THEME_DIR . '/inc/accessories-crud.php';
+require_once HIEUGARA_THEME_DIR . '/inc/sample-accessories.php';
 
 // Auto-seed comprehensive META.vn accessories catalog if not yet initialized
 add_action('init', function() {
@@ -221,10 +222,23 @@ function hieugara_ensure_phu_kien_page() {
 }
 add_action('init', 'hieugara_ensure_phu_kien_page');
 
-// 6. SEO Search Optimization: Include Services, Posts & Pages in Frontend Search
+// 5c. Initialize & Seed Accessories System (Saved directly into WordPress)
+function hieugara_init_accessories_system() {
+    if (!get_option('hieugara_accessories_seeded_v1')) {
+        if (function_exists('hieugara_seed_accessories_posts')) {
+            hieugara_seed_accessories_posts();
+        }
+        flush_rewrite_rules(false);
+        update_option('hieugara_accessories_seeded_v1', 1);
+        hieugara_purge_page_cache();
+    }
+}
+add_action('init', 'hieugara_init_accessories_system', 20);
+
+// 6. SEO Search Optimization: Include Services, Accessories, Posts & Pages in Frontend Search
 function hieugara_seo_search_query($query) {
     if (!is_admin() && $query->is_main_query() && $query->is_search()) {
-        $query->set('post_type', array('garage_service', 'post', 'page'));
+        $query->set('post_type', array('garage_service', 'garage_accessory', 'post', 'page'));
         $query->set('posts_per_page', 12);
     }
 }

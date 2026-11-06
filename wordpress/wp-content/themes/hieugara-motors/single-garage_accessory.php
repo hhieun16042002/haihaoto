@@ -1,0 +1,301 @@
+<?php
+/**
+ * Single Template for Garage Accessories (single-garage_accessory.php)
+ * Displays dedicated native accessory product detail page for Ôtô Hải Hà
+ * 100% Internal to website - No external redirects
+ *
+ * @package HieuGara_Motors
+ */
+
+get_header();
+
+$rescue_phone  = function_exists('hieugara_get_rescue_phone') ? hieugara_get_rescue_phone() : '0911 211 996';
+$hotline_phone = function_exists('hieugara_get_hotline_phone') ? hieugara_get_hotline_phone() : '02 203 892 207';
+
+while (have_posts()) : the_post();
+    $post_id    = get_the_ID();
+    $title      = get_the_title();
+    $price      = get_post_meta($post_id, '_accessory_price', true) ?: 'Liên hệ';
+    $old_price  = get_post_meta($post_id, '_accessory_old_price', true);
+    $badge      = get_post_meta($post_id, '_accessory_badge', true) ?: 'CHÍNH HÃNG';
+    $brand      = get_post_meta($post_id, '_accessory_brand', true) ?: 'Chính Hãng Phân Phối';
+    $warranty   = get_post_meta($post_id, '_accessory_warranty', true) ?: '12 tháng 1 đổi 1';
+    $origin     = get_post_meta($post_id, '_accessory_origin', true) ?: 'Chính hãng phân phối';
+    $specs_raw  = get_post_meta($post_id, '_accessory_specs', true);
+
+    $thumb = get_the_post_thumbnail_url($post_id, 'full');
+    if (!$thumb) {
+        $thumb = get_post_meta($post_id, '_accessory_img', true) ?: get_template_directory_uri() . '/assets/images/shiftup/center-car.jpg';
+    }
+
+    $cat_terms = get_the_terms($post_id, 'accessory_category');
+    $cat_name  = (!empty($cat_terms) && !is_wp_error($cat_terms)) ? $cat_terms[0]->name : 'Phụ Kiện Ô Tô';
+    $cat_slug  = (!empty($cat_terms) && !is_wp_error($cat_terms)) ? $cat_terms[0]->slug : 'noi-that';
+?>
+
+<main id="primary" class="site-main page-accessory-single">
+
+    <!-- Header Breadcrumbs -->
+    <section class="acc-single-header">
+        <div class="container">
+            <nav class="acc-breadcrumb" aria-label="Breadcrumb">
+                <a href="<?php echo esc_url(home_url('/')); ?>"><?php _e('Trang chủ', 'hieugara-motors'); ?></a>
+                <span class="sep">/</span>
+                <a href="<?php echo esc_url(home_url('/phu-kien/')); ?>"><?php _e('Phụ kiện ô tô', 'hieugara-motors'); ?></a>
+                <span class="sep">/</span>
+                <a href="<?php echo esc_url(home_url('/phu-kien/?cat=' . $cat_slug)); ?>"><?php echo esc_html($cat_name); ?></a>
+                <span class="sep">/</span>
+                <span class="current"><?php echo esc_html($title); ?></span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section class="acc-single-body">
+        <div class="container">
+            <div class="acc-single-grid">
+
+                <!-- Left Column: Image & In-Depth Details -->
+                <div class="acc-left-col">
+                    
+                    <!-- Product Image Viewer -->
+                    <div class="acc-main-img-box">
+                        <?php if (!empty($badge)) : ?>
+                            <span class="acc-badge-pill"><?php echo esc_html($badge); ?></span>
+                        <?php endif; ?>
+                        <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($title); ?>" class="acc-featured-img">
+                    </div>
+
+                    <!-- Trust Bar Under Image -->
+                    <div class="acc-trust-strip">
+                        <div class="trust-cell">
+                            <i class="fa-solid fa-shield-halved text-gold"></i>
+                            <div>
+                                <strong>100% Chính Hãng</strong>
+                                <small>Đền 200% nếu phát hiện giả</small>
+                            </div>
+                        </div>
+                        <div class="trust-cell">
+                            <i class="fa-solid fa-rotate-left text-gold"></i>
+                            <div>
+                                <strong>Bảo Hành 1 Đổi 1</strong>
+                                <small><?php echo esc_html($warranty); ?></small>
+                            </div>
+                        </div>
+                        <div class="trust-cell">
+                            <i class="fa-solid fa-wrench text-gold"></i>
+                            <div>
+                                <strong>Lắp Đặt Tại Xưởng</strong>
+                                <small>Kỹ thuật viên tay nghề cao</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specifications Table -->
+                    <?php if (!empty($specs_raw)) : 
+                        $specs_lines = array_filter(array_map('trim', explode("\n", str_replace("\r", "", $specs_raw))));
+                    ?>
+                    <div class="acc-specs-card">
+                        <h2 class="specs-heading"><i class="fa-solid fa-list-check text-gold mr-2"></i> Thông Số Kỹ Thuật Chi Tiết</h2>
+                        <table class="acc-specs-table">
+                            <tbody>
+                                <tr>
+                                    <th>Thương hiệu</th>
+                                    <td><?php echo esc_html($brand); ?></td>
+                                </tr>
+                                <tr>
+                                    <th>Bảo hành</th>
+                                    <td><?php echo esc_html($warranty); ?></td>
+                                </tr>
+                                <tr>
+                                    <th>Xuất xứ</th>
+                                    <td><?php echo esc_html($origin); ?></td>
+                                </tr>
+                                <?php foreach ($specs_lines as $s_line) : 
+                                    $parts = explode(':', $s_line, 2);
+                                    if (count($parts) === 2) :
+                                ?>
+                                    <tr>
+                                        <th><?php echo esc_html(trim($parts[0])); ?></th>
+                                        <td><?php echo esc_html(trim($parts[1])); ?></td>
+                                    </tr>
+                                <?php endif; endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <?php endif; ?>
+
+                    <!-- In-depth Product Content -->
+                    <div class="acc-content-card">
+                        <h2 class="content-heading"><i class="fa-solid fa-circle-info text-gold mr-2"></i> Giới Thiệu &amp; Đánh Giá Chi Tiết</h2>
+                        <div class="acc-prose-body">
+                            <?php the_content(); ?>
+                        </div>
+                    </div>
+
+                    <!-- Workshop Installation Guarantee -->
+                    <div class="acc-workshop-guarantee">
+                        <h3><i class="fa-solid fa-medal text-gold"></i> Tiêu Chuẩn Thi Công Lắp Đặt Tại Ôtô Hải Hà</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-check text-green"></i> <strong>Không cắt trích dây zin:</strong> Cắm giắc zin 100% tương thích theo từng đời xe, giữ nguyên chính sách bảo hành điện của hãng xe.</li>
+                            <li><i class="fa-solid fa-check text-green"></i> <strong>Cầu chì bảo vệ độc lập:</strong> Trang bị cầu chì an toàn chống chập cháy và tụt áp ắc quy.</li>
+                            <li><i class="fa-solid fa-check text-green"></i> <strong>Căn chỉnh chuẩn mực:</strong> Căn góc camera 360/hành trình và kiểm tra áp suất lốp bằng máy đo điện tử chuyên dụng.</li>
+                            <li><i class="fa-solid fa-check text-green"></i> <strong>Bảo hành điện tử:</strong> Kích hoạt mã QR bảo hành điện tử toàn quốc, lưu lịch sử sửa chữa minh bạch.</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Sticky Purchasing Card -->
+                <div class="acc-right-col">
+                    <div class="acc-buy-card-sticky">
+                        
+                        <div class="acc-cat-tag"><?php echo esc_html($cat_name); ?></div>
+                        <h1 class="acc-buy-title"><?php echo esc_html($title); ?></h1>
+
+                        <div class="acc-brand-row">
+                            <span>Thương hiệu: <strong><?php echo esc_html($brand); ?></strong></span>
+                            <span class="sep">&bull;</span>
+                            <span class="stock-status"><i class="fa-solid fa-circle-check text-green"></i> Sẵn hàng tại Hải Hà</span>
+                        </div>
+
+                        <!-- Price Box -->
+                        <div class="acc-price-box">
+                            <div class="acc-price-main">
+                                <span class="current-num"><?php echo esc_html($price); ?></span>
+                                <span class="currency">đ</span>
+                            </div>
+                            <?php if (!empty($old_price)) : ?>
+                                <div class="acc-price-old">
+                                    <span class="old-num"><?php echo esc_html($old_price); ?> đ</span>
+                                    <span class="discount-pill">Tiết kiệm giá tốt</span>
+                                </div>
+                            <?php endif; ?>
+                            <small class="tax-note">Đã bao gồm VAT &amp; Hỗ trợ công lắp đặt cơ bản tại xưởng</small>
+                        </div>
+
+                        <!-- Primary CTA Buttons -->
+                        <div class="acc-cta-stack">
+                            <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode('Lắp đặt phụ kiện: ' . $title))); ?>" class="btn-acc-primary-book" title="Đặt lịch lắp đặt phụ kiện này">
+                                <i class="fa-regular fa-calendar-check mr-2"></i>
+                                <span>ĐẶT LỊCH LẮP ĐẶT TẠI XƯỞNG</span>
+                            </a>
+                            
+                            <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="btn-acc-call" title="Gọi hotline tư vấn nhanh">
+                                <i class="fa-solid fa-phone-volume mr-2"></i>
+                                <span>GỌI TƯ VẤN: <strong><?php echo esc_html($rescue_phone); ?></strong></span>
+                            </a>
+
+                            <a href="https://zalo.me/0915041989" target="_blank" rel="noopener" class="btn-acc-zalo" title="Chat Zalo với kỹ thuật viên">
+                                <i class="fa-solid fa-comment-dots mr-2"></i>
+                                <span>CHAT ZALO KỸ THUẬT VIÊN</span>
+                            </a>
+                        </div>
+
+                        <!-- Highlights Box -->
+                        <div class="acc-perks-box">
+                            <h4>ƯU ĐÃI &amp; HỖ TRỢ KÈM THEO:</h4>
+                            <ul>
+                                <li><i class="fa-solid fa-circle-dot text-gold"></i> Miễn phí công kiểm tra tổng quát xe khi lắp phụ kiện</li>
+                                <li><i class="fa-solid fa-circle-dot text-gold"></i> Miễn phí cân chỉnh và hướng dẫn sử dụng chi tiết</li>
+                                <li><i class="fa-solid fa-circle-dot text-gold"></i> Hỗ trợ giao hàng COD tận nơi toàn quốc kiểm tra trước khi thanh toán</li>
+                            </ul>
+                        </div>
+
+                        <!-- Garage Contact Strip -->
+                        <div class="acc-garage-contact">
+                            <div><i class="fa-solid fa-location-dot text-gold mr-1"></i> Xưởng: Km 53+300 Quốc Lộ 5, TP. Hải Dương</div>
+                            <div><i class="fa-solid fa-clock text-gold mr-1"></i> Làm việc: 7h30 - 18h30 (Tất cả các ngày trong tuần)</div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Accessories Section -->
+    <?php
+    $related = get_posts(array(
+        'post_type'      => 'garage_accessory',
+        'post_status'    => 'publish',
+        'posts_per_page' => 4,
+        'post__not_in'   => array($post_id),
+        'tax_query'      => !empty($cat_terms) ? array(
+            array(
+                'taxonomy' => 'accessory_category',
+                'field'    => 'term_id',
+                'terms'    => $cat_terms[0]->term_id,
+            ),
+        ) : '',
+    ));
+
+    if (empty($related)) {
+        $related = get_posts(array(
+            'post_type'      => 'garage_accessory',
+            'post_status'    => 'publish',
+            'posts_per_page' => 4,
+            'post__not_in'   => array($post_id),
+        ));
+    }
+
+    if (!empty($related)) :
+    ?>
+    <section class="acc-related-section">
+        <div class="container">
+            <div class="section-heading-wrap text-center">
+                <span class="sub-pill">PHỤ KIỆN TƯƠNG THÍCH</span>
+                <h3 class="related-title">SẢN PHẨM PHỤ KIỆN LIÊN QUAN</h3>
+                <div class="gold-divider"></div>
+            </div>
+
+            <div class="phukien-products-grid">
+                <?php foreach ($related as $rel) : 
+                    $rel_id    = $rel->ID;
+                    $rel_thumb = get_the_post_thumbnail_url($rel_id, 'full') ?: (get_post_meta($rel_id, '_accessory_img', true) ?: $thumb);
+                    $rel_price = get_post_meta($rel_id, '_accessory_price', true) ?: 'Liên hệ';
+                    $rel_old   = get_post_meta($rel_id, '_accessory_old_price', true);
+                    $rel_badge = get_post_meta($rel_id, '_accessory_badge', true) ?: 'CHÍNH HÃNG';
+                ?>
+                    <article class="phukien-card">
+                        <?php if (!empty($rel_badge)) : ?>
+                            <span class="phukien-card-badge"><?php echo esc_html($rel_badge); ?></span>
+                        <?php endif; ?>
+
+                        <div class="phukien-card-img-wrap">
+                            <img src="<?php echo esc_url($rel_thumb); ?>" alt="<?php echo esc_attr($rel->post_title); ?>" loading="lazy">
+                        </div>
+
+                        <div class="phukien-card-body">
+                            <h4 class="phukien-card-title">
+                                <a href="<?php echo esc_url(get_permalink($rel_id)); ?>">
+                                    <?php echo esc_html($rel->post_title); ?>
+                                </a>
+                            </h4>
+
+                            <div class="phukien-card-pricing">
+                                <span class="price-current"><?php echo esc_html($rel_price); ?> <sup>đ</sup></span>
+                                <?php if (!empty($rel_old)) : ?>
+                                    <span class="price-old"><?php echo esc_html($rel_old); ?> <sup>đ</sup></span>
+                                <?php endif; ?>
+                            </div>
+
+                            <div class="phukien-card-actions">
+                                <a href="<?php echo esc_url(get_permalink($rel_id)); ?>" class="btn-pk-book">
+                                    Xem Chi Tiết
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+    <?php endif; ?>
+
+</main>
+
+<?php
+endwhile;
+get_footer();
