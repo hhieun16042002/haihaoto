@@ -8230,6 +8230,67 @@ html, body {
     border-radius: 2px;
 }
 
+.accessory-cat-pills {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+}
+
+.acc-pill-btn {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    border-radius: 999px;
+    background: #f1f5f9;
+    color: #475569;
+    text-decoration: none;
+    border: 1px solid #e2e8f0;
+    transition: all 0.22s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.acc-pill-btn i {
+    color: #C5A880;
+    font-size: 0.85rem;
+}
+
+.acc-pill-btn:hover {
+    background: #141414;
+    color: #C5A880;
+    border-color: #141414;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(20, 20, 20, 0.12);
+}
+
+.acc-pill-btn.active {
+    background: #141414;
+    color: #C5A880;
+    border-color: #141414;
+}
+
+@media (max-width: 768px) {
+    .accessory-cat-pills {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
+    }
+    .acc-pill-btn {
+        flex-shrink: 0;
+        font-size: 0.76rem;
+        padding: 6px 12px;
+    }
+}
+
 .accessory-slider-wrap {
     position: relative;
     padding: 0 10px;
@@ -10704,6 +10765,122 @@ html, body {
     font-size: 0.75rem;
     cursor: pointer;
     padding: 0;
+}
+
+/* Category Section Blocks */
+.phukien-categories-container {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.phukien-cat-section {
+    padding-top: 16px;
+    scroll-margin-top: 140px;
+}
+
+.phukien-cat-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #141414;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.phukien-cat-header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.phukien-cat-index {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    color: #C5A880;
+    letter-spacing: -0.5px;
+}
+
+.phukien-cat-eyebrow {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: #64748b;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 3px;
+}
+
+.phukien-cat-eyebrow i {
+    color: #C5A880;
+}
+
+.phukien-cat-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #141414;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+}
+
+.phukien-cat-header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.phukien-cat-count-badge {
+    background: #141414;
+    color: #C5A880;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 999px;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+.phukien-back-to-top {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748b;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background: #f1f5f9;
+    transition: all 0.2s;
+}
+
+.phukien-back-to-top:hover {
+    color: #141414;
+    background: #e2e8f0;
+}
+
+.phukien-cat-desc {
+    font-size: 0.92rem;
+    color: #475569;
+    margin: 0 0 20px 0;
+    line-height: 1.6;
+}
+
+.brand-tag {
+    color: #C5A880;
+    font-weight: 700;
+    margin-left: 4px;
 }
 
 /* Products Grid */

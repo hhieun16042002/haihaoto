@@ -348,18 +348,15 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                     <i class="fa-solid fa-chevron-down nav-caret"></i>
                 </a>
                 <ul class="nav-dropdown-menu nav-dropdown-grid-2col">
-                    <li><a href="<?php echo esc_url(home_url('/phu-kien/')); ?>"><strong class="text-gold">★ Xem Tất Cả Phụ Kiện (16+)</strong></a></li>
-                    <li><a href="<?php echo esc_url(home_url('/phu-kien-oto/camera-hanh-trinh-70mai-a810s-4k-hdr-omni/')); ?>">Camera Hành Trình 70mai 4K Omni</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/phu-kien-oto/may-bom-lop-o-to-khong-day-michelin-m2567-tu-ngat/')); ?>">Máy Bơm Lốp Tự Ngắt Michelin</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/phu-kien-oto/cam-bien-ap-suat-lop-steelmate-tpms-m10-solar/')); ?>">Cảm Biến Áp Suất Lốp Steelmate</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/phu-kien-oto/man-hinh-android-o-to-zestech-z500-kiki/')); ?>">Màn Hình Android Zestech Z500</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/phu-kien-oto/man-hinh-android-elliview-s4-basic-cam360/')); ?>">Màn Hình Elliview + Cam 360 Sony</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/phu-kien-oto/may-hut-bui-cam-tay-o-to-bosch-bhn16l-hepa/')); ?>">Máy Hút Bụi Cầm Tay Bosch HEPA</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/phu-kien-oto/bo-kich-no-ac-quy-o-to-stanley-12v-1500a/')); ?>">Bộ Kích Nổ Ắc Quy Stanley 12V</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/phu-kien-oto/tau-sac-nhanh-o-to-baseus-digital-display-65w/')); ?>">Tẩu Sạc Nhanh 65W Baseus</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/phu-kien-oto/gia-do-dien-thoai-o-to-baseus-sac-khong-day-15w/')); ?>">Giá Đỡ Sạc Không Dây Baseus</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/phu-kien-oto/may-loc-khong-khi-o-to-philips-gopure-gp5211/')); ?>">Máy Lọc Không Khí Ô Tô Philips</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/phu-kien-oto/bua-thoat-hiem-da-nang-4-trong-1-sos/')); ?>">Búa Thoát Hiểm SOS 4 trong 1</a></li>
+                    <li style="grid-column: 1 / -1;"><a href="<?php echo esc_url(home_url('/phu-kien/')); ?>"><strong class="text-gold">★ Xem Tất Cả Danh Mục Phụ Kiện (70+)</strong></a></li>
+                    <li><a href="<?php echo esc_url(home_url('/phu-kien/#cat-camera-man-hinh')); ?>"><i class="fa-solid fa-video mr-1 text-gold"></i> 01. Camera &amp; Màn Hình Android</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/phu-kien/#cat-bom-lop-tpms')); ?>"><i class="fa-solid fa-gauge-high mr-1 text-gold"></i> 02. Bơm Lốp &amp; Cảm Biến TPMS</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/phu-kien/#cat-kich-binh-cuu-ho')); ?>"><i class="fa-solid fa-bolt mr-1 text-gold"></i> 03. Bộ Kích Bình &amp; Cứu Hộ Ô Tô</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/phu-kien/#cat-hut-bui-loc-khi')); ?>"><i class="fa-solid fa-wind mr-1 text-gold"></i> 04. Máy Hút Bụi &amp; Lọc Không Khí</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/phu-kien/#cat-tau-sac-gia-do')); ?>"><i class="fa-solid fa-plug mr-1 text-gold"></i> 05. Tẩu Sạc &amp; Giá Đỡ Điện Thoại</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/phu-kien/#cat-boc-vo-lang-tham-san')); ?>"><i class="fa-solid fa-car-side mr-1 text-gold"></i> 06. Bọc Vô Lăng &amp; Thảm Lót Sàn</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/phu-kien/#cat-goi-tua-bat-phu')); ?>"><i class="fa-solid fa-shield-halved mr-1 text-gold"></i> 07. Gối Tựa Đầu &amp; Bạt Phủ Xe</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/phu-kien/#cat-cham-soc-xe-nuoc-hoa')); ?>"><i class="fa-solid fa-spray-can-sparkles mr-1 text-gold"></i> 08. Nước Hoa &amp; Chăm Sóc Xe</a></li>
                 </ul>
             </li>
 

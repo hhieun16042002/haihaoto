@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Phụ Kiện Ô Tô Chính Hãng (META.vn & Hải Hà Workshop)
- * Description: Dedicated accessories catalog page featuring genuine car accessories with live category filtering, search, and booking integration.
+ * Description: Dedicated accessories catalog page featuring genuine car accessories divided into clear category sections with live category filtering, search, and booking integration.
  *
  * @package HieuGara_Motors
  */
@@ -11,25 +11,14 @@ get_header();
 $rescue_phone  = function_exists('hieugara_get_rescue_phone') ? hieugara_get_rescue_phone() : '0911 211 996';
 $hotline_phone = function_exists('hieugara_get_hotline_phone') ? hieugara_get_hotline_phone() : '02 203 892 207';
 
-$accessories = function_exists('hieugara_get_native_accessories') ? hieugara_get_native_accessories() : array();
-if (empty($accessories)) {
-    $raw_accessories = function_exists('hieugara_get_accessories_items') ? hieugara_get_accessories_items() : array();
-    foreach ($raw_accessories as $k => $a_it) {
-        if (!empty($a_it['enable'])) {
-            $t_lower = mb_strtolower($a_it['title'] . ' ' . ($a_it['badge'] ?? ''), 'UTF-8');
-            $cat = 'noi-that';
-            if (strpos($t_lower, 'màn hình') !== false || strpos($t_lower, 'camera') !== false || strpos($t_lower, 'zestech') !== false || strpos($t_lower, 'elliview') !== false || strpos($t_lower, '70mai') !== false) {
-                $cat = 'man-hinh';
-            } elseif (strpos($t_lower, 'bơm') !== false || strpos($t_lower, 'áp suất') !== false || strpos($t_lower, 'tpms') !== false || strpos($t_lower, 'michelin') !== false || strpos($t_lower, 'steelmate') !== false) {
-                $cat = 'bom-lop';
-            } elseif (strpos($t_lower, 'kích') !== false || strpos($t_lower, 'hút bụi') !== false || strpos($t_lower, 'búa') !== false || strpos($t_lower, 'stanley') !== false || strpos($t_lower, 'bosch') !== false) {
-                $cat = 'cuu-ho';
-            }
-            $a_it['cat'] = $cat;
-            $a_it['id'] = $k;
-            $accessories[] = $a_it;
-        }
-    }
+// Get categories & grouped accessories
+$categories = function_exists('hieugara_get_accessories_categories') ? hieugara_get_accessories_categories() : array();
+$grouped_accessories = function_exists('hieugara_get_accessories_grouped_by_category') ? hieugara_get_accessories_grouped_by_category() : array();
+
+// Total count
+$total_products = 0;
+foreach ($grouped_accessories as $g) {
+    $total_products += count($g['items']);
 }
 
 $initial_cat = isset($_GET['cat']) ? sanitize_key($_GET['cat']) : 'all';
@@ -55,7 +44,7 @@ $initial_cat = isset($_GET['cat']) ? sanitize_key($_GET['cat']) : 'all';
                     <span>PHỤ KIỆN &amp; ĐỒ CHƠI XE HƠI</span> <span class="text-gold">CHÍNH HÃNG</span>
                 </h1>
                 <p class="phukien-subtitle">
-                    Cam kết 100% chính hãng từ các thương hiệu hàng đầu: Zestech, Michelin, Steelmate, Bosch, Philips, Baseus, Stanley. Bảo hành điện tử chính hãng &amp; hỗ trợ lắp đặt trực tiếp tại xưởng Ôtô Hải Hà.
+                    Cam kết 100% chính hãng phân phối META.vn từ Zestech, Michelin, Steelmate, Bosch, Philips, Baseus, Stanley. Bảo hành điện tử chính hãng &amp; hỗ trợ kỹ thuật, lắp đặt tiêu chuẩn tại xưởng Ôtô Hải Hà.
                 </p>
 
                 <!-- Value Props Badges -->
@@ -66,7 +55,7 @@ $initial_cat = isset($_GET['cat']) ? sanitize_key($_GET['cat']) : 'all';
                     </div>
                     <div class="prop-item">
                         <i class="fa-solid fa-award text-gold"></i>
-                        <span>Bảo Hành 1 Đổi 1 Đến 24 Tháng</span>
+                        <span>Bảo Hành 1 Đổi 1 Đến 36 Tháng</span>
                     </div>
                     <div class="prop-item">
                         <i class="fa-solid fa-screwdriver-wrench text-gold"></i>
@@ -85,104 +74,133 @@ $initial_cat = isset($_GET['cat']) ? sanitize_key($_GET['cat']) : 'all';
     <section class="phukien-catalog-section">
         <div class="container">
 
-            <!-- Controls: Category Tabs + Live Search -->
-            <div class="phukien-controls-bar">
+            <!-- Controls: Category Sticky Tabs + Live Search -->
+            <div class="phukien-controls-bar" id="phukienStickyNav">
                 <!-- Filter Tabs -->
                 <div class="phukien-tabs-nav" id="phukienTabsNav" role="tablist">
-                    <button type="button" class="tab-btn <?php echo $initial_cat === 'all' ? 'active' : ''; ?>" data-category="all">
+                    <button type="button" class="tab-btn <?php echo $initial_cat === 'all' ? 'active' : ''; ?>" data-category="all" title="Xem tất cả các danh mục">
                         <i class="fa-solid fa-border-all"></i>
-                        <span>Tất Cả (<?php echo count($accessories); ?>)</span>
+                        <span>Tất Cả (<?php echo esc_html($total_products); ?>)</span>
                     </button>
-                    <button type="button" class="tab-btn <?php echo $initial_cat === 'man-hinh' ? 'active' : ''; ?>" data-category="man-hinh">
-                        <i class="fa-solid fa-mobile-screen"></i>
-                        <span>Màn Hình &amp; Camera 4K</span>
-                    </button>
-                    <button type="button" class="tab-btn <?php echo $initial_cat === 'bom-lop' ? 'active' : ''; ?>" data-category="bom-lop">
-                        <i class="fa-solid fa-gauge-high"></i>
-                        <span>Bơm Lốp &amp; TPMS</span>
-                    </button>
-                    <button type="button" class="tab-btn <?php echo $initial_cat === 'cuu-ho' ? 'active' : ''; ?>" data-category="cuu-ho">
-                        <i class="fa-solid fa-bolt"></i>
-                        <span>Cứu Hộ &amp; Hút Bụi</span>
-                    </button>
-                    <button type="button" class="tab-btn <?php echo $initial_cat === 'noi-that' ? 'active' : ''; ?>" data-category="noi-that">
-                        <i class="fa-solid fa-car-side"></i>
-                        <span>Nội Thất &amp; Tiện Ích</span>
-                    </button>
+                    <?php foreach ($categories as $cat_key => $c_info) : 
+                        $count = isset($grouped_accessories[$cat_key]['items']) ? count($grouped_accessories[$cat_key]['items']) : 0;
+                    ?>
+                        <button type="button" class="tab-btn <?php echo $initial_cat === $cat_key ? 'active' : ''; ?>" data-category="<?php echo esc_attr($cat_key); ?>" title="<?php echo esc_attr($c_info['name']); ?>">
+                            <i class="<?php echo esc_attr($c_info['icon']); ?>"></i>
+                            <span><?php echo esc_html($c_info['short_name']); ?> (<?php echo esc_html($count); ?>)</span>
+                        </button>
+                    <?php endforeach; ?>
                 </div>
 
                 <!-- Instant Search Filter -->
                 <div class="phukien-search-box">
                     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                    <input type="search" id="phukienSearchInput" placeholder="Tìm tên phụ kiện (vd: michelin, camera, zestech...)" autocomplete="off">
+                    <input type="search" id="phukienSearchInput" placeholder="Tìm tên phụ kiện (vd: michelin, camera, 70mai, zestech, bosch...)" autocomplete="off">
                     <button type="button" id="phukienClearSearch" class="clear-search-btn" title="Xóa tìm kiếm" style="display: none;">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- Product Grid -->
-            <div class="phukien-products-grid" id="phukienProductsGrid">
-                <?php foreach ($accessories as $item) : 
-                    $cat = $item['cat'] ?? 'noi-that';
-                    $title = $item['title'];
-                    $img = function_exists('hieugara_normalize_local_media_urls') ? hieugara_normalize_local_media_urls($item['img']) : $item['img'];
-                    $price = $item['price'];
-                    $old_price = !empty($item['old_price']) ? $item['old_price'] : '';
-                    $badge = !empty($item['badge']) ? $item['badge'] : 'CHÍNH HÃNG';
-                    $link = !empty($item['link']) ? $item['link'] : 'https://meta.vn/phu-kien-oto/';
+            <!-- Categories Sections Container -->
+            <div class="phukien-categories-container" id="phukienCategoriesContainer">
+
+                <?php foreach ($grouped_accessories as $cat_key => $group_data) : 
+                    $meta = $group_data['meta'];
+                    $items = $group_data['items'];
+                    if (empty($items)) continue;
                 ?>
-                    <article class="phukien-card" data-category="<?php echo esc_attr($cat); ?>" data-title="<?php echo esc_attr(mb_strtolower($title, 'UTF-8')); ?>">
-                        <!-- Badge -->
-                        <?php if (!empty($badge)) : ?>
-                            <span class="phukien-card-badge"><?php echo esc_html($badge); ?></span>
-                        <?php endif; ?>
-
-                        <!-- Image Box -->
-                        <a href="<?php echo esc_url($link); ?>" class="phukien-card-img-wrap" title="<?php echo esc_attr($title); ?>">
-                            <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($title); ?>" loading="lazy">
-                        </a>
-
-                        <!-- Card Body -->
-                        <div class="phukien-card-body">
-                            <div class="phukien-card-cat-label">
-                                <?php 
-                                    if ($cat === 'man-hinh') echo 'MÀN HÌNH & CAMERA Ô TÔ';
-                                    elseif ($cat === 'bom-lop') echo 'CẢM BIẾN & BƠM LỐP CHUYÊN DỤNG';
-                                    elseif ($cat === 'cuu-ho') echo 'CỨU HỘ & VỆ SINH Ô TÔ';
-                                    else echo 'PHỤ KIỆN & TIỆN ÍCH XE HƠI';
-                                ?>
+                    <section class="phukien-cat-section" id="cat-<?php echo esc_attr($cat_key); ?>" data-cat-id="<?php echo esc_attr($cat_key); ?>">
+                        <!-- Section Header -->
+                        <div class="phukien-cat-header">
+                            <div class="phukien-cat-header-left">
+                                <span class="phukien-cat-index"><?php echo esc_html($meta['index_num']); ?></span>
+                                <div class="phukien-cat-title-wrap">
+                                    <div class="phukien-cat-eyebrow">
+                                        <i class="<?php echo esc_attr($meta['icon']); ?>"></i>
+                                        <span><?php echo esc_html($meta['eyebrow']); ?></span>
+                                    </div>
+                                    <h2 class="phukien-cat-title"><?php echo esc_html($meta['name']); ?></h2>
+                                </div>
                             </div>
-                            <h2 class="phukien-card-title">
-                                <a href="<?php echo esc_url($link); ?>" title="<?php echo esc_attr($title); ?>">
-                                    <?php echo esc_html($title); ?>
-                                </a>
-                            </h2>
-
-                            <!-- Pricing -->
-                            <div class="phukien-card-pricing">
-                                <span class="price-current"><?php echo esc_html($price); ?> <sup>đ</sup></span>
-                                <?php if (!empty($old_price)) : ?>
-                                    <span class="price-old"><?php echo esc_html($old_price); ?> <sup>đ</sup></span>
-                                <?php endif; ?>
-                            </div>
-
-                            <div class="phukien-card-guarantee">
-                                <i class="fa-solid fa-circle-check text-green mr-1"></i> Sẵn hàng tại Hải Hà &bull; Hỗ trợ lắp đặt
-                            </div>
-
-                            <!-- Actions -->
-                            <div class="phukien-card-actions">
-                                <a href="<?php echo esc_url($link); ?>" class="btn-pk-detail" title="Xem chi tiết kỹ thuật">
-                                    Chi Tiết
-                                </a>
-                                <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode('Lắp đặt phụ kiện: ' . $title))); ?>" class="btn-pk-book" title="Đặt lịch lắp đặt phụ kiện này">
-                                    <i class="fa-regular fa-calendar-check mr-1"></i> Đặt Lịch
+                            <div class="phukien-cat-header-right">
+                                <span class="phukien-cat-count-badge" data-count-orig="<?php echo count($items); ?>">
+                                    <?php echo count($items); ?> sản phẩm
+                                </span>
+                                <a href="#phukienStickyNav" class="phukien-back-to-top" title="Lên đầu danh mục">
+                                    <i class="fa-solid fa-arrow-up"></i> Đầu mục
                                 </a>
                             </div>
                         </div>
-                    </article>
+
+                        <!-- Section Description -->
+                        <p class="phukien-cat-desc"><?php echo esc_html($meta['desc']); ?></p>
+
+                        <!-- Products Grid for this category -->
+                        <div class="phukien-products-grid">
+                            <?php foreach ($items as $item) : 
+                                $title = $item['title'];
+                                $img = function_exists('hieugara_normalize_local_media_urls') ? hieugara_normalize_local_media_urls($item['img']) : $item['img'];
+                                $price = $item['price'];
+                                $old_price = !empty($item['old_price']) ? $item['old_price'] : '';
+                                $badge = !empty($item['badge']) ? $item['badge'] : 'CHÍNH HÃNG';
+                                $link = !empty($item['link']) ? $item['link'] : home_url('/phu-kien-oto/' . ($item['slug'] ?? '') . '/');
+                                $brand = !empty($item['brand']) ? $item['brand'] : 'Chính Hãng';
+                            ?>
+                                <article class="phukien-card" data-category="<?php echo esc_attr($cat_key); ?>" data-title="<?php echo esc_attr(mb_strtolower($title . ' ' . $brand, 'UTF-8')); ?>">
+                                    <!-- Badge -->
+                                    <?php if (!empty($badge)) : ?>
+                                        <span class="phukien-card-badge"><?php echo esc_html($badge); ?></span>
+                                    <?php endif; ?>
+
+                                    <!-- Image Box (100% INTERNAL LINK TO SINGLE POST) -->
+                                    <a href="<?php echo esc_url($link); ?>" class="phukien-card-img-wrap" title="<?php echo esc_attr($title); ?>">
+                                        <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($title); ?>" loading="lazy">
+                                    </a>
+
+                                    <!-- Card Body -->
+                                    <div class="phukien-card-body">
+                                        <div class="phukien-card-cat-label">
+                                            <span><?php echo esc_html($meta['short_name']); ?></span>
+                                            <?php if (!empty($brand)) : ?>
+                                                <span class="brand-tag">&bull; <?php echo esc_html($brand); ?></span>
+                                            <?php endif; ?>
+                                        </div>
+
+                                        <h3 class="phukien-card-title">
+                                            <a href="<?php echo esc_url($link); ?>" title="<?php echo esc_attr($title); ?>">
+                                                <?php echo esc_html($title); ?>
+                                            </a>
+                                        </h3>
+
+                                        <!-- Pricing -->
+                                        <div class="phukien-card-pricing">
+                                            <span class="price-current"><?php echo esc_html($price); ?> <sup>đ</sup></span>
+                                            <?php if (!empty($old_price)) : ?>
+                                                <span class="price-old"><?php echo esc_html($old_price); ?> <sup>đ</sup></span>
+                                            <?php endif; ?>
+                                        </div>
+
+                                        <div class="phukien-card-guarantee">
+                                            <i class="fa-solid fa-circle-check text-green mr-1"></i> Sẵn hàng tại Hải Hà &bull; Hỗ trợ lắp đặt
+                                        </div>
+
+                                        <!-- Actions -->
+                                        <div class="phukien-card-actions">
+                                            <a href="<?php echo esc_url($link); ?>" class="btn-pk-detail" title="Xem thông số kỹ thuật &amp; mô tả">
+                                                Chi Tiết
+                                            </a>
+                                            <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode('Lắp đặt phụ kiện: ' . $title))); ?>" class="btn-pk-book" title="Đặt lịch lắp đặt phụ kiện này">
+                                                <i class="fa-regular fa-calendar-check mr-1"></i> Đặt Lịch
+                                            </a>
+                                        </div>
+                                    </div>
+                                </article>
+                            <?php endforeach; ?>
+                        </div>
+                    </section>
                 <?php endforeach; ?>
+
             </div>
 
             <!-- Empty State for Search / Filter -->
@@ -224,7 +242,7 @@ $initial_cat = isset($_GET['cat']) ? sanitize_key($_GET['cat']) : 'all';
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     var tabs = document.querySelectorAll('#phukienTabsNav .tab-btn');
-    var cards = document.querySelectorAll('.phukien-card');
+    var sections = document.querySelectorAll('.phukien-cat-section');
     var searchInput = document.getElementById('phukienSearchInput');
     var clearBtn = document.getElementById('phukienClearSearch');
     var emptyState = document.getElementById('phukienEmptyState');
@@ -233,57 +251,93 @@ document.addEventListener('DOMContentLoaded', function() {
     var currentCat = '<?php echo esc_js($initial_cat); ?>';
     var currentSearch = '';
 
-    function filterCards() {
-        var visibleCount = 0;
+    function filterCatalog() {
+        var totalVisibleCards = 0;
         var searchLower = currentSearch.trim().toLowerCase();
 
-        cards.forEach(function(card) {
-            var cardCat = card.getAttribute('data-category');
-            var cardTitle = card.getAttribute('data-title') || '';
+        sections.forEach(function(sec) {
+            var catId = sec.getAttribute('data-cat-id');
+            var cards = sec.querySelectorAll('.phukien-card');
+            var catMatchesFilter = (currentCat === 'all' || catId === currentCat);
 
-            var matchCat = (currentCat === 'all' || cardCat === currentCat);
-            var matchSearch = (!searchLower || cardTitle.indexOf(searchLower) !== -1);
+            if (!catMatchesFilter) {
+                sec.style.display = 'none';
+                return;
+            }
 
-            if (matchCat && matchSearch) {
-                card.style.display = '';
-                visibleCount++;
+            var visibleInSec = 0;
+            cards.forEach(function(card) {
+                var title = card.getAttribute('data-title') || '';
+                var matchSearch = (!searchLower || title.indexOf(searchLower) !== -1);
+
+                if (matchSearch) {
+                    card.style.display = '';
+                    visibleInSec++;
+                    totalVisibleCards++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // If searching and this section has 0 matching cards, hide whole section
+            if (visibleInSec === 0 && searchLower) {
+                sec.style.display = 'none';
             } else {
-                card.style.display = 'none';
+                sec.style.display = '';
+                var countBadge = sec.querySelector('.phukien-cat-count-badge');
+                if (countBadge) {
+                    var orig = countBadge.getAttribute('data-count-orig');
+                    countBadge.textContent = searchLower ? (visibleInSec + ' kết quả') : (orig + ' sản phẩm');
+                }
             }
         });
 
         if (emptyState) {
-            emptyState.style.display = (visibleCount === 0) ? 'block' : 'none';
+            emptyState.style.display = (totalVisibleCards === 0) ? 'block' : 'none';
         }
     }
 
+    // Tab Clicks
     tabs.forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
+        btn.addEventListener('click', function() {
             tabs.forEach(function(b) { b.classList.remove('active'); });
-            btn.classList.add('active');
-            currentCat = btn.getAttribute('data-category');
-            filterCards();
+            this.classList.add('active');
+            currentCat = this.getAttribute('data-category');
+            filterCatalog();
+
+            // If a specific category is clicked, smoothly scroll to it if all categories visible
+            if (currentCat !== 'all') {
+                var targetSec = document.getElementById('cat-' + currentCat);
+                if (targetSec) {
+                    var stickyNav = document.getElementById('phukienStickyNav');
+                    var navHeight = stickyNav ? stickyNav.offsetHeight + 90 : 120;
+                    var topPos = targetSec.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                    window.scrollTo({ top: topPos, behavior: 'smooth' });
+                }
+            }
         });
     });
 
+    // Search Input
     if (searchInput) {
         searchInput.addEventListener('input', function() {
             currentSearch = this.value;
             if (clearBtn) {
                 clearBtn.style.display = currentSearch ? 'flex' : 'none';
             }
-            filterCards();
+            filterCatalog();
         });
     }
 
     if (clearBtn) {
         clearBtn.addEventListener('click', function() {
-            searchInput.value = '';
-            currentSearch = '';
-            clearBtn.style.display = 'none';
-            filterCards();
-            searchInput.focus();
+            if (searchInput) {
+                searchInput.value = '';
+                currentSearch = '';
+                this.style.display = 'none';
+                filterCatalog();
+                searchInput.focus();
+            }
         });
     }
 
@@ -294,20 +348,23 @@ document.addEventListener('DOMContentLoaded', function() {
             if (searchInput) searchInput.value = '';
             if (clearBtn) clearBtn.style.display = 'none';
             tabs.forEach(function(b) {
-                if (b.getAttribute('data-category') === 'all') b.classList.add('active');
-                else b.classList.remove('active');
+                b.classList.toggle('active', b.getAttribute('data-category') === 'all');
             });
-            filterCards();
+            filterCatalog();
         });
     }
 
-    // Initial check
-    if (currentCat !== 'all') {
-        filterCards();
+    // Initial check for hash in URL (e.g. /phu-kien/#cat-bom-lop-tpms)
+    if (window.location.hash) {
+        var hash = window.location.hash.replace('#cat-', '').replace('#', '');
+        var matchedBtn = document.querySelector('#phukienTabsNav .tab-btn[data-category="' + hash + '"]');
+        if (matchedBtn) {
+            matchedBtn.click();
+        }
+    } else {
+        filterCatalog();
     }
 });
 </script>
 
-<?php
-get_footer();
-
+<?php get_footer(); ?>

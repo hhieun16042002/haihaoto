@@ -330,6 +330,19 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                 <p class="accessory-sec-sub">
                     100% Phụ kiện chính hãng META.vn &bull; Zestech &bull; Michelin &bull; Steelmate &bull; Bosch &bull; Philips &bull; Hỗ trợ lắp đặt tại xưởng Hải Hà
                 </p>
+
+                <!-- Category Pills Navigation -->
+                <div class="accessory-cat-pills">
+                    <a href="<?php echo esc_url(home_url('/phu-kien/')); ?>" class="acc-pill-btn active"><i class="fa-solid fa-border-all"></i> Tất Cả</a>
+                    <a href="<?php echo esc_url(home_url('/phu-kien/#cat-camera-man-hinh')); ?>" class="acc-pill-btn"><i class="fa-solid fa-video"></i> Camera &amp; Màn Hình</a>
+                    <a href="<?php echo esc_url(home_url('/phu-kien/#cat-bom-lop-tpms')); ?>" class="acc-pill-btn"><i class="fa-solid fa-gauge-high"></i> Bơm Lốp &amp; TPMS</a>
+                    <a href="<?php echo esc_url(home_url('/phu-kien/#cat-kich-binh-cuu-ho')); ?>" class="acc-pill-btn"><i class="fa-solid fa-bolt"></i> Kích Bình &amp; Cứu Hộ</a>
+                    <a href="<?php echo esc_url(home_url('/phu-kien/#cat-hut-bui-loc-khi')); ?>" class="acc-pill-btn"><i class="fa-solid fa-wind"></i> Hút Bụi &amp; Lọc Khí</a>
+                    <a href="<?php echo esc_url(home_url('/phu-kien/#cat-tau-sac-gia-do')); ?>" class="acc-pill-btn"><i class="fa-solid fa-plug"></i> Tẩu Sạc &amp; Giá Đỡ</a>
+                    <a href="<?php echo esc_url(home_url('/phu-kien/#cat-boc-vo-lang-tham-san')); ?>" class="acc-pill-btn"><i class="fa-solid fa-car-side"></i> Bọc Vô Lăng &amp; Thảm Sàn</a>
+                    <a href="<?php echo esc_url(home_url('/phu-kien/#cat-goi-tua-bat-phu')); ?>" class="acc-pill-btn"><i class="fa-solid fa-shield-halved"></i> Gối Tựa &amp; Bạt Phủ</a>
+                    <a href="<?php echo esc_url(home_url('/phu-kien/#cat-cham-soc-xe-nuoc-hoa')); ?>" class="acc-pill-btn"><i class="fa-solid fa-spray-can-sparkles"></i> Nước Hoa &amp; Chăm Sóc Xe</a>
+                </div>
             </div>
 
             <?php
@@ -399,7 +412,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
             <!-- CTA View All Accessories Button -->
             <div class="accessory-bottom-cta text-center">
                 <a href="<?php echo esc_url(home_url('/phu-kien/')); ?>" class="btn-accessory-view-all">
-                    <span>XEM TOÀN BỘ 16+ PHỤ KIỆN CHÍNH HÃNG</span>
+                    <span>XEM TOÀN BỘ 70+ PHỤ KIỆN THEO DANH MỤC</span>
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
