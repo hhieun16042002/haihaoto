@@ -8293,12 +8293,12 @@ html, body {
 
 .accessory-slider-wrap {
     position: relative;
-    padding: 0 10px;
+    padding: 0 40px;
 }
 
 .shiftup-accessories-section .all-about-swiper {
-    padding: 12px 8px 24px !important;
-    margin: -12px -8px -24px !important;
+    padding: 14px 4px 26px !important;
+    margin: 0 !important;
 }
 
 .shiftup-accessories-section .swiper-slide {
@@ -8481,19 +8481,46 @@ html, body {
 }
 
 .acc-nav-btn.acc-prev {
-    left: -22px;
+    left: -28px;
 }
 
 .acc-nav-btn.acc-next {
-    right: -22px;
+    right: -28px;
+}
+
+@media (min-width: 1400px) {
+    .accessory-slider-wrap {
+        padding: 0 48px;
+    }
+    .acc-nav-btn.acc-prev {
+        left: -32px;
+    }
+    .acc-nav-btn.acc-next {
+        right: -32px;
+    }
 }
 
 @media (max-width: 991px) {
+    .accessory-slider-wrap {
+        padding: 0 24px;
+    }
     .acc-nav-btn.acc-prev {
-        left: 2px;
+        left: -8px;
     }
     .acc-nav-btn.acc-next {
-        right: 2px;
+        right: -8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .accessory-slider-wrap {
+        padding: 0 16px;
+    }
+    .acc-nav-btn.acc-prev {
+        left: -4px;
+    }
+    .acc-nav-btn.acc-next {
+        right: -4px;
     }
 }
 
