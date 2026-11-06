@@ -274,22 +274,10 @@ $hotline_clean = preg_replace('/[^0-9]/', '', $hotline_phone);
         <span class="dock-text">CỨU HỘ: <?php echo esc_html($rescue_phone); ?></span>
     </a>
 
-    <!-- Hotline Xưởng -->
-    <a href="tel:<?php echo esc_attr($hotline_clean); ?>" class="float-dock-pill dock-hotline" title="Gọi hotline tiếp nhận xưởng: <?php echo esc_attr($hotline_phone); ?>">
-        <i class="fa-solid fa-phone-volume"></i>
-        <span class="dock-text"><?php echo esc_html($hotline_phone); ?></span>
-    </a>
-
     <!-- Zalo Kỹ Thuật -->
     <a href="https://zalo.me/<?php echo esc_attr($tech_clean); ?>" target="_blank" rel="noopener" class="float-dock-pill dock-zalo" title="Tư vấn kỹ thuật qua Zalo: <?php echo esc_attr($tech_phone); ?>">
         <i class="fa-solid fa-comment-dots"></i>
         <span class="dock-text">ZALO KỸ THUẬT</span>
-    </a>
-
-    <!-- Đặt Lịch Hẹn -->
-    <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>" class="float-dock-pill dock-book" title="Đặt lịch hẹn dịch vụ">
-        <i class="fa-regular fa-calendar-check"></i>
-        <span class="dock-text">ĐẶT LỊCH</span>
     </a>
 </div>
 
