@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('HIEUGARA_THEME_VERSION', '5.5.3');
+define('HIEUGARA_THEME_VERSION', '5.6.1');
 define('HIEUGARA_THEME_DIR', get_template_directory());
 define('HIEUGARA_THEME_URI', get_template_directory_uri());
 
@@ -191,5 +191,15 @@ function hieugara_purge_page_cache() {
 }
 add_action('save_post', 'hieugara_purge_page_cache');
 add_action('after_switch_theme', 'hieugara_purge_page_cache');
+
+// 6. SEO Search Optimization: Include Services, Posts & Pages in Frontend Search
+function hieugara_seo_search_query($query) {
+    if (!is_admin() && $query->is_main_query() && $query->is_search()) {
+        $query->set('post_type', array('garage_service', 'post', 'page'));
+        $query->set('posts_per_page', 12);
+    }
+}
+add_action('pre_get_posts', 'hieugara_seo_search_query');
+
 
 

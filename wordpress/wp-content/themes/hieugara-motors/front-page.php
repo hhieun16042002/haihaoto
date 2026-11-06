@@ -403,18 +403,18 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                 <div class="brand-marquee-track">
                     <?php
                     $brands = array(
-                        array('name' => 'Mercedes-Benz', 'logo' => $theme_uri . '/assets/images/brands/mercedes.svg', 'grad' => 'linear-gradient(135deg, rgba(0,0,0,0.06), rgba(0,0,0,0.12))'),
-                        array('name' => 'BMW',           'logo' => $theme_uri . '/assets/images/brands/bmw.svg',      'grad' => 'linear-gradient(135deg, rgba(0,102,177,0.08), rgba(0,102,177,0.15))'),
-                        array('name' => 'Audi',          'logo' => $theme_uri . '/assets/images/brands/audi.svg',     'grad' => 'linear-gradient(135deg, rgba(187,10,48,0.08), rgba(0,0,0,0.12))'),
-                        array('name' => 'Porsche',       'logo' => $theme_uri . '/assets/images/brands/porsche.svg',  'grad' => 'linear-gradient(135deg, rgba(213,0,0,0.08), rgba(255,215,0,0.12))'),
-                        array('name' => 'Lexus',         'logo' => $theme_uri . '/assets/images/brands/lexus.svg',    'grad' => 'linear-gradient(135deg, rgba(30,30,30,0.08), rgba(200,200,200,0.12))'),
-                        array('name' => 'Toyota',        'logo' => $theme_uri . '/assets/images/brands/toyota.svg',   'grad' => 'linear-gradient(135deg, rgba(235,10,30,0.08), rgba(0,0,0,0.1))'),
-                        array('name' => 'Hyundai',       'logo' => $theme_uri . '/assets/images/brands/hyundai.svg',  'grad' => 'linear-gradient(135deg, rgba(0,44,95,0.08), rgba(0,44,95,0.15))'),
-                        array('name' => 'Ford',          'logo' => $theme_uri . '/assets/images/brands/ford.svg',     'grad' => 'linear-gradient(135deg, rgba(0,52,120,0.08), rgba(0,52,120,0.15))'),
-                        array('name' => 'Honda',         'logo' => $theme_uri . '/assets/images/brands/honda.svg',    'grad' => 'linear-gradient(135deg, rgba(204,0,0,0.08), rgba(0,0,0,0.1))'),
-                        array('name' => 'Volkswagen',    'logo' => $theme_uri . '/assets/images/brands/volkswagen.svg', 'grad' => 'linear-gradient(135deg, rgba(0,30,80,0.08), rgba(0,30,80,0.15))'),
-                        array('name' => 'Nissan',        'logo' => $theme_uri . '/assets/images/brands/nissan.svg',   'grad' => 'linear-gradient(135deg, rgba(195,0,25,0.08), rgba(0,0,0,0.1))'),
-                        array('name' => 'Bosch',         'logo' => $theme_uri . '/assets/images/brands/bosch.svg',    'grad' => 'linear-gradient(135deg, rgba(234,0,41,0.08), rgba(0,0,0,0.1))'),
+                        array('name' => 'Mercedes-Benz', 'logo' => $theme_uri . '/assets/images/brands/mercedes.svg?v=' . HIEUGARA_THEME_VERSION, 'grad' => 'linear-gradient(135deg, rgba(0,40,90,0.06), rgba(0,40,90,0.12))'),
+                        array('name' => 'BMW',           'logo' => $theme_uri . '/assets/images/brands/bmw.svg?v=' . HIEUGARA_THEME_VERSION,      'grad' => 'linear-gradient(135deg, rgba(0,102,177,0.08), rgba(0,102,177,0.15))'),
+                        array('name' => 'Audi',          'logo' => $theme_uri . '/assets/images/brands/audi.svg?v=' . HIEUGARA_THEME_VERSION,     'grad' => 'linear-gradient(135deg, rgba(226,0,26,0.08), rgba(20,20,20,0.12))'),
+                        array('name' => 'Porsche',       'logo' => $theme_uri . '/assets/images/brands/porsche.svg?v=' . HIEUGARA_THEME_VERSION,  'grad' => 'linear-gradient(135deg, rgba(217,45,32,0.08), rgba(245,163,0,0.14))'),
+                        array('name' => 'Lexus',         'logo' => $theme_uri . '/assets/images/brands/lexus.svg?v=' . HIEUGARA_THEME_VERSION,    'grad' => 'linear-gradient(135deg, rgba(0,82,204,0.08), rgba(0,31,92,0.12))'),
+                        array('name' => 'Toyota',        'logo' => $theme_uri . '/assets/images/brands/toyota.svg?v=' . HIEUGARA_THEME_VERSION,   'grad' => 'linear-gradient(135deg, rgba(235,10,30,0.08), rgba(235,10,30,0.14))'),
+                        array('name' => 'Hyundai',       'logo' => $theme_uri . '/assets/images/brands/hyundai.svg?v=' . HIEUGARA_THEME_VERSION,  'grad' => 'linear-gradient(135deg, rgba(0,75,147,0.08), rgba(0,75,147,0.15))'),
+                        array('name' => 'Ford',          'logo' => $theme_uri . '/assets/images/brands/ford.svg?v=' . HIEUGARA_THEME_VERSION,     'grad' => 'linear-gradient(135deg, rgba(0,52,120,0.08), rgba(0,52,120,0.15))'),
+                        array('name' => 'Honda',         'logo' => $theme_uri . '/assets/images/brands/honda.svg?v=' . HIEUGARA_THEME_VERSION,    'grad' => 'linear-gradient(135deg, rgba(228,5,33,0.08), rgba(228,5,33,0.14))'),
+                        array('name' => 'Volkswagen',    'logo' => $theme_uri . '/assets/images/brands/volkswagen.svg?v=' . HIEUGARA_THEME_VERSION, 'grad' => 'linear-gradient(135deg, rgba(0,67,122,0.08), rgba(0,67,122,0.15))'),
+                        array('name' => 'Nissan',        'logo' => $theme_uri . '/assets/images/brands/nissan.svg?v=' . HIEUGARA_THEME_VERSION,   'grad' => 'linear-gradient(135deg, rgba(195,0,47,0.08), rgba(195,0,47,0.14))'),
+                        array('name' => 'Bosch',         'logo' => $theme_uri . '/assets/images/brands/bosch.svg?v=' . HIEUGARA_THEME_VERSION,    'grad' => 'linear-gradient(135deg, rgba(234,0,22,0.08), rgba(0,86,145,0.12))'),
                     );
                     ?>
                     <div class="brand-marquee-group">

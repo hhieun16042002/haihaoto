@@ -59,7 +59,7 @@ get_header();
                 </div>
 
                 <div class="policy-card">
-                    <div class="policy-icon" style="background: #eff6ff; color: #2563eb;">
+                    <div class="policy-icon" style="background: #F5F5F5; color: #F5A300;">
                         <i class="fa fa-gears"></i>
                     </div>
                     <h3>Bảo Hành Phụ Tùng Thay Thế (6 - 12 Tháng)</h3>

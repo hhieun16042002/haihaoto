@@ -91,7 +91,7 @@ $prestige_services = array(
     </div>
 </section>
 
-<main id="primary" class="site-main" style="padding: 60px 0 90px; background: #f8fafc; min-height: 70vh;">
+<main id="primary" class="site-main" style="padding: 60px 0 90px; background: #F5F5F5; min-height: 70vh;">
     <div class="container">
 
         <div class="services-grid">
@@ -112,7 +112,7 @@ $prestige_services = array(
                             <a href="<?php echo esc_url($srv['link']); ?>"><?php echo esc_html($srv['title']); ?></a>
                         </h2>
 
-                        <p style="font-size: 0.9rem; color: #475569; line-height: 1.65; margin-bottom: 22px; flex: 1;">
+                        <p style="font-size: 0.9rem; color: #5F6368; line-height: 1.65; margin-bottom: 22px; flex: 1;">
                             <?php echo esc_html($srv['desc']); ?>
                         </p>
 

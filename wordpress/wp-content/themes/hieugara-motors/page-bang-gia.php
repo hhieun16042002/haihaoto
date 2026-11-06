@@ -118,13 +118,13 @@ get_header();
     <section class="section-12-services" id="danh-muc-dich-vu">
         <div class="container">
             <div class="section-header" style="text-align: center; margin-bottom: 40px;">
-                <div class="section-pill" style="display: inline-block; background: rgba(29, 78, 216, 0.1); color: #1d4ed8; border: 1px solid rgba(29, 78, 216, 0.3); padding: 4px 14px; border-radius: 20px; font-weight: 700; font-size: 0.8rem; margin-bottom: 12px; font-family: 'Chakra Petch', sans-serif;">
+                <div class="section-pill" style="display: inline-block; background: rgba(245, 163, 0, 0.1); color: #F5A300; border: 1px solid rgba(245, 163, 0, 0.3); padding: 4px 14px; border-radius: 20px; font-weight: 700; font-size: 0.8rem; margin-bottom: 12px; font-family: 'Chakra Petch', sans-serif;">
                     HỆ THỐNG 6 NHÓM DỊCH VỤ Ô TÔ TOÀN DIỆN
                 </div>
-                <h2 class="section-title" style="font-size: 2rem; font-weight: 800; color: #0c1e3a; margin-bottom: 10px; font-family: 'Chakra Petch', sans-serif;">
+                <h2 class="section-title" style="font-size: 2rem; font-weight: 800; color: #141414; margin-bottom: 10px; font-family: 'Chakra Petch', sans-serif;">
                     Danh Mục Dịch Vụ Kỹ Thuật Ô Tô Chuyên Nghiệp
                 </h2>
-                <p class="section-desc" style="color: #64748b; max-width: 760px; margin: 0 auto; font-size: 0.95rem;">
+                <p class="section-desc" style="color: #5F6368; max-width: 760px; margin: 0 auto; font-size: 0.95rem;">
                     Ôtô Hải Hà (31 năm kinh nghiệm từ 1995 &bull; 80 nhân sự tận tâm) phân chia hệ thống dịch vụ thành 6 nhóm chuẩn SEO giúp khách hàng dễ dàng tra cứu quy trình, thời gian xử lý và bảng giá minh bạch.
                 </p>
             </div>

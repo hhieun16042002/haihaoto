@@ -32,7 +32,7 @@ get_header();
             <div class="about-story-grid">
                 <div class="about-story-content">
                     <span class="story-tag"><i class="fa fa-award"></i> HÀNH TRÌNH 31 NĂM (1995 — <?php echo date('Y'); ?>)</span>
-                    <h2 style="font-size: 2rem; line-height: 1.35; margin-bottom: 20px; color: #0c1e3a;">Ôtô Hải Hà: 31 năm giữ trọn chữ Tâm với nghề</h2>
+                    <h2 style="font-size: 2rem; line-height: 1.35; margin-bottom: 20px; color: #141414;">Ôtô Hải Hà: 31 năm giữ trọn chữ Tâm với nghề</h2>
                     
                     <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 16px;">
                         Năm 1995, nhà sáng lập ông <strong>Nguyễn Hải Hà</strong> đặt những viên gạch đầu tiên cho Ôtô Hải Hà với một niềm tin giản dị: <em>mỗi chiếc xe đều xứng đáng được chăm sóc bằng cái tâm của người thợ</em>. 31 năm đã trôi qua, niềm tin ấy vẫn là kim chỉ nam trong từng công việc chúng tôi làm mỗi ngày.
@@ -46,7 +46,7 @@ get_header();
                         Ngày nay, Ôtô Hải Hà tự hào có <strong>đội ngũ 80 nhân viên</strong> làm việc chuyên nghiệp và phục vụ tận tâm, cung cấp đầy đủ các dịch vụ sửa chữa và bảo dưỡng ô tô. Từ lần bảo dưỡng định kỳ đến những hạng mục sửa chữa cần sự tỉ mỉ, mọi nhu cầu của chiếc xe đều được chăm lo tại một địa chỉ duy nhất.
                     </p>
 
-                    <blockquote style="border-left: 4px solid #1d4ed8; background: #eff6ff; padding: 14px 20px; font-weight: 700; color: #1e3a8a; font-size: 1.05rem; margin-bottom: 26px; border-radius: 0 6px 6px 0;">
+                    <blockquote style="border-left: 4px solid #F5A300; background: #F5F5F5; padding: 14px 20px; font-weight: 700; color: #1e3a8a; font-size: 1.05rem; margin-bottom: 26px; border-radius: 0 6px 6px 0;">
                         "Ôtô Hải Hà: Tận tâm với từng chiếc xe, vững tin trên mọi hành trình."
                     </blockquote>
 
@@ -55,7 +55,7 @@ get_header();
                             <i class="fa-brands fa-facebook" style="font-size: 1.3rem;"></i>
                             <span>Theo dõi Fanpage Ôtô Hải Hà trên Facebook &rarr;</span>
                         </a>
-                        <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>" style="display: inline-flex; align-items: center; gap: 8px; background: #1d4ed8; color: #ffffff; padding: 12px 22px; border-radius: 6px; font-size: 0.95rem; font-weight: 700; text-decoration: none;">
+                        <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>" style="display: inline-flex; align-items: center; gap: 8px; background: #F5A300; color: #ffffff; padding: 12px 22px; border-radius: 6px; font-size: 0.95rem; font-weight: 700; text-decoration: none;">
                             <i class="fa-solid fa-calendar-check"></i>
                             <span>Đặt lịch tiếp nhận xe</span>
                         </a>
@@ -79,10 +79,10 @@ get_header();
 
                 <div class="about-story-media">
                     <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/shiftup/tech-about.jpg?v=' . HIEUGARA_THEME_VERSION); ?>" alt="Kỹ thuật viên xưởng dịch vụ Ôtô Hải Hà" class="story-img-main" style="border-radius: 8px; box-shadow: 0 16px 36px rgba(0,0,0,0.15);">
-                    <div class="story-floating-badge" style="background: #0a192f; color: #ffffff; border: 1px solid rgba(29, 78, 216, 0.4);">
-                        <i class="fa fa-shield-heart" style="color: #1d4ed8;"></i>
+                    <div class="story-floating-badge" style="background: #141414; color: #ffffff; border: 1px solid rgba(245, 163, 0, 0.4);">
+                        <i class="fa fa-shield-heart" style="color: #F5A300;"></i>
                         <div>
-                            <strong style="color: #1d4ed8;">CHỮ TÂM VỚI NGHỀ</strong>
+                            <strong style="color: #F5A300;">CHỮ TÂM VỚI NGHỀ</strong>
                             <small style="color: #94a3b8;">Ôtô Hải Hà từ 1995 &bull; 80 nhân sự tận tâm</small>
                         </div>
                     </div>

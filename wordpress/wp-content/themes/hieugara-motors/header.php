@@ -31,46 +31,43 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
 $menu_search   = get_option('hieugara_menu_search_enable', '1');
 ?>
 
-<!-- 2. Main Brand Header Row -->
-<header class="main-brand-header">
+<!-- Schema.org WebSite + SearchAction for SEO Sitelinks Search Box -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Ôtô Hải Hà - Trung Tâm Bảo Dưỡng & Sửa Chữa Ô Tô Chuyên Nghiệp",
+  "alternateName": "Gara Ô Tô Hải Hà",
+  "url": "<?php echo esc_url(home_url('/')); ?>",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "<?php echo esc_url(home_url('/?s={search_term_string}')); ?>"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- 2. Mobile-Only Top Brand Bar (Hidden on Desktop >= 992px; Desktop uses Unified Mega Menu Bar) -->
+<header class="main-brand-header mobile-only-brand-header">
     <div class="container brand-header-inner">
         <!-- Logo -->
         <a href="<?php echo esc_url(home_url('/')); ?>" class="brand-link">
             <div class="brand-logo-wrap">
-                <img src="<?php echo esc_url($site_logo_url); ?>" alt="Ôtô Hải Hà Service" class="brand-logo-img" width="54" height="54">
+                <img src="<?php echo esc_url($site_logo_url); ?>" alt="Ôtô Hải Hà Service" class="brand-logo-img" width="46" height="46">
             </div>
             <div class="brand-text-wrap">
                 <div class="brand-title">ÔTÔ <span class="text-orange">HẢI HÀ</span></div>
             </div>
         </a>
 
-        <!-- Right: Prominent Rescue 24/7 + High-Impact Hotline + Booking Button -->
+        <!-- Right: Mobile Quick Rescue Call + Hamburger Toggle -->
         <div class="brand-header-actions">
-            <!-- Mobile Quick Phone Call (Only visible on mobile screens) -->
-            <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="mobile-quick-call" aria-label="<?php esc_attr_e('Gọi hotline cứu hộ', 'hieugara-motors'); ?>" title="<?php echo esc_attr($rescue_phone); ?>">
+            <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="mobile-quick-call" aria-label="<?php esc_attr_e('Gọi hotline cứu hộ 24/7', 'hieugara-motors'); ?>" title="Cứu hộ 24/7: <?php echo esc_attr($rescue_phone); ?>">
                 <span class="mobile-call-pulse"></span>
                 <i class="fa-solid fa-phone-volume"></i>
-            </a>
-
-            <!-- A. CỨU HỘ 24/7 NỔI BẬT CAO ĐỘ (Emergency Beacon Card - Desktop & Tablet) -->
-            <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="header-rescue-card" title="<?php esc_attr_e('Gọi cứu hộ ô tô 24/7 khẩn cấp', 'hieugara-motors'); ?>">
-                <div class="rescue-beacon-icon">
-                    <span class="rescue-beacon-pulse"></span>
-                    <i class="fa-solid fa-truck-pickup"></i>
-                </div>
-                <div class="rescue-card-details">
-                    <div class="rescue-card-badge">
-                        <span class="badge-text"><?php _e('CỨU HỘ 24/7', 'hieugara-motors'); ?></span>
-                        <span class="badge-live-dot"></span>
-                    </div>
-                    <strong class="rescue-card-phone"><?php echo esc_html($rescue_phone); ?></strong>
-                </div>
-            </a>
-
-            <!-- C. ĐẶT LỊCH HẸN CTA -->
-            <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>" class="brand-btn-book">
-                <span class="btn-plus">+</span>
-                <span><?php _e('ĐẶT LỊCH HẸN', 'hieugara-motors'); ?></span>
             </a>
 
             <!-- Mobile Hamburger Toggle -->
@@ -86,8 +83,8 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
 <!-- Backdrop Overlay for Mobile Navigation Drawer -->
 <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
 
-<!-- 3. Navigation Bar (Desktop Sticky Strip & Mobile Drawer) -->
-<nav class="custom-navbar-strip" id="mainStickyNavbar">
+<!-- 3. Unified Mega Menu Bar (Logo + Menu + Cứu Hộ 24/7 + Đặt Lịch + Tìm Kiếm SEO on 1 Row) -->
+<nav class="custom-navbar-strip" id="mainStickyNavbar" aria-label="Điều hướng chính">
     <!-- Mobile Drawer Top Bar -->
     <div class="mobile-drawer-header">
         <div class="drawer-brand">
@@ -103,6 +100,15 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
     </div>
 
     <div class="container custom-navbar-inner">
+        <!-- Left: Inline Brand Logo on Mega Menu Bar (Desktop) -->
+        <a href="<?php echo esc_url(home_url('/')); ?>" class="navbar-inline-brand" title="Ôtô Hải Hà - Trang chủ">
+            <img src="<?php echo esc_url($site_logo_url); ?>" alt="Ôtô Hải Hà" class="navbar-brand-img" width="44" height="44">
+            <div class="navbar-brand-text">
+                <span class="navbar-brand-name">ÔTÔ <span class="brand-accent">HẢI HÀ</span></span>
+                <small class="navbar-brand-sub">GARAGE SERVICE</small>
+            </div>
+        </a>
+
         <?php if (has_nav_menu('primary')) : ?>
             <?php
             wp_nav_menu(array(
@@ -373,15 +379,8 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                 </ul>
             </li>
 
-            <!-- 6. KHUYẾN MẠI -->
-            <li class="nav-item">
-                <a href="<?php echo esc_url(home_url('/bang-gia/#khuyen-mai')); ?>" class="nav-link" title="KHUYẾN MẠI">
-                    <?php _e('KHUYẾN MẠI', 'hieugara-motors'); ?>
-                </a>
-            </li>
-
-            <!-- 7. LIÊN HỆ ⌵ -->
-            <li class="nav-item has-dropdown">
+            <!-- 6. LIÊN HỆ ⌵ -->
+            <li class="nav-item has-dropdown <?php echo is_page('dat-lich') || is_page('tra-cuu-bao-hanh') ? 'active' : ''; ?>">
                 <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>" class="nav-link" title="LIÊN HỆ">
                     <span><?php _e('LIÊN HỆ', 'hieugara-motors'); ?></span>
                     <i class="fa-solid fa-chevron-down nav-caret"></i>
@@ -397,15 +396,48 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
         </ul>
         <?php endif; ?>
 
-        <!-- Right: Rounded Pill Search Form (Có thể bật/tắt trong Admin) -->
-        <?php if ($menu_search === '1' || $menu_search === true || $menu_search === 'yes') : ?>
-        <form class="menu-search-pill" role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
-            <input type="text" class="search-field" placeholder="Tìm kiếm dịch vụ, phụ tùng..." value="<?php echo get_search_query(); ?>" name="s" autocomplete="off" aria-label="Tìm kiếm trên trang">
-            <button type="submit" class="search-submit" aria-label="Nút tìm kiếm">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-        </form>
-        <?php endif; ?>
+        <!-- Right: Cứu Hộ 24/7 + Đặt Lịch + Tìm Kiếm Chuẩn SEO ở Cuối Cùng -->
+        <div class="navbar-inline-actions">
+            <!-- 1. Cứu hộ 24/7 (Khẩn cấp #D92D20) -->
+            <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="navbar-rescue-btn" title="Gọi cứu hộ ô tô 24/7 khẩn cấp: <?php echo esc_attr($rescue_phone); ?>">
+                <span class="rescue-live-dot" aria-hidden="true"></span>
+                <i class="fa-solid fa-truck-pickup" aria-hidden="true"></i>
+                <span class="rescue-btn-text">
+                    <small>CỨU HỘ 24/7</small>
+                    <strong><?php echo esc_html($rescue_phone); ?></strong>
+                </span>
+            </a>
+
+            <!-- 2. Đặt lịch hẹn (Màu nhấn #F5A300, chữ đen #141414) -->
+            <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>" class="navbar-book-btn" title="Đặt lịch bảo dưỡng &amp; sửa chữa trực tuyến">
+                <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
+                <span><?php _e('ĐẶT LỊCH', 'hieugara-motors'); ?></span>
+            </a>
+
+            <!-- 3. Tìm kiếm chuẩn SEO ở cuối cùng -->
+            <?php if ($menu_search === '1' || $menu_search === true || $menu_search === 'yes') : ?>
+            <div class="seo-search-wrap">
+                <form class="menu-search-pill" role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>" aria-label="Tìm kiếm dịch vụ và phụ tùng ô tô">
+                    <label for="seoMenuSearchInput" class="screen-reader-text">Tìm kiếm dịch vụ, phụ tùng ô tô tại Ôtô Hải Hà</label>
+                    <input type="search" id="seoMenuSearchInput" class="search-field" placeholder="Tìm dịch vụ, phụ tùng..." value="<?php echo esc_attr(get_search_query()); ?>" name="s" inputmode="search" enterkeyhint="search" autocomplete="off" aria-label="Tìm kiếm dịch vụ, phụ tùng ô tô">
+                    <button type="submit" class="search-submit" aria-label="Tìm kiếm">
+                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                    </button>
+                </form>
+                <div class="seo-search-suggestions" aria-label="Gợi ý tìm kiếm phổ biến">
+                    <div class="seo-suggest-title">Từ khóa tìm kiếm phổ biến</div>
+                    <div class="seo-suggest-tags">
+                        <a href="<?php echo esc_url(home_url('/?s=Bảo+dưỡng+định+kỳ')); ?>">Bảo dưỡng định kỳ</a>
+                        <a href="<?php echo esc_url(home_url('/?s=Đồng+sơn+ô+tô')); ?>">Đồng sơn phòng sấy</a>
+                        <a href="<?php echo esc_url(home_url('/?s=Sửa+chữa+động+cơ')); ?>">Sửa chữa động cơ</a>
+                        <a href="<?php echo esc_url(home_url('/?s=Điều+hòa+ô+tô')); ?>">Điện &amp; điều hòa</a>
+                        <a href="<?php echo esc_url(home_url('/?s=Phủ+Ceramic')); ?>">Phủ Ceramic 9H</a>
+                        <a href="<?php echo esc_url(home_url('/?s=Cứu+hộ+24/7')); ?>">Cứu hộ 24/7</a>
+                    </div>
+                </div>
+            </div>
+            <?php endif; ?>
+        </div>
     </div>
 
     <!-- Mobile Drawer Bottom Actions -->
