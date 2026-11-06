@@ -1094,10 +1094,10 @@ html, body {
 .lexus-banner-slider {
     position: relative;
     width: 100%;
-    height: calc(100vh - 134px);
-    height: calc(100dvh - 134px);
-    min-height: 500px;
-    max-height: 820px;
+    height: calc(100vh - 156px);
+    height: calc(100dvh - 156px);
+    min-height: 520px;
+    max-height: none !important;
     background: #0a192f;
     overflow: hidden;
 }
@@ -1129,56 +1129,45 @@ html, body {
     z-index: 2;
 }
 
-/* Top Image Block (Ảnh ở trên) */
-.lexus-slide-visual {
-    position: relative;
-    width: 100%;
-    flex: 1 1 auto;
-    min-height: 0;
-    overflow: hidden;
-    background: #0a192f;
-}
-
+/* Top Image Block (Ảnh ở trên - 1st Flex Child) */
 .lexus-slide-bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center center;
-    transform: scale(1.05);
-    transition: transform 7.5s cubic-bezier(0.25, 1, 0.5, 1);
-    will-change: transform;
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    flex: 1 1 auto !important;
+    min-height: 220px !important;
+    height: auto !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    transform: none !important;
+    overflow: hidden;
+    z-index: 1;
 }
 
-.lexus-slide.active .lexus-slide-bg {
-    transform: scale(1.0);
-}
-
-.lexus-slide-overlay {
+.lexus-slide-bg::after {
+    content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(10, 25, 47, 0.16) 0%, rgba(10, 25, 47, 0) 25%, rgba(10, 25, 47, 0) 68%, rgba(10, 25, 47, 0.82) 89%, #0a192f 100%);
+    background: linear-gradient(180deg, rgba(10, 25, 47, 0.14) 0%, rgba(10, 25, 47, 0) 28%, rgba(10, 25, 47, 0) 64%, rgba(10, 25, 47, 0.88) 88%, #0a192f 100%);
+    pointer-events: none;
     z-index: 2;
 }
 
-/* Bottom Editorial Content Block (Nội dung ở dưới trên nền đen) */
-.lexus-slide-bottom-panel {
-    position: relative;
-    width: 100%;
-    flex: 0 0 auto;
-    background: #0a192f;
-    padding: 10px 0 64px;
-    z-index: 3;
+.lexus-slide-overlay {
+    display: none !important;
 }
 
+/* Bottom Editorial Content Block (Nội dung ở dưới - 2nd Flex Child) */
 .lexus-slide-container {
-    position: relative;
-    height: auto;
-    display: block;
-    max-width: 1360px;
-    margin: 0 auto;
-    padding: 0 75px;
+    position: relative !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    background: #0a192f !important;
+    margin: 0 auto !important;
+    padding: 18px max(75px, calc((100vw - 1210px) / 2)) 78px !important;
     z-index: 3;
 }
 
@@ -1200,13 +1189,13 @@ html, body {
 
 .lexus-slide-title {
     font-family: 'Montserrat', 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    font-size: clamp(1.65rem, 2.5vw, 2.45rem);
+    font-size: clamp(1.45rem, 2.2vw, 2.15rem);
     font-weight: 300;
     line-height: 1.2;
     color: #ffffff;
     text-transform: uppercase;
-    letter-spacing: 3.5px;
-    margin: 0 0 10px 0;
+    letter-spacing: 3px;
+    margin: 0 0 8px 0;
     text-shadow: none;
     opacity: 0;
     transform: translateY(18px);
@@ -1218,11 +1207,11 @@ html, body {
 
 .lexus-slide-desc {
     font-family: 'Be Vietnam Pro', 'Montserrat', -apple-system, sans-serif;
-    font-size: 0.96rem;
+    font-size: 0.92rem;
     font-weight: 400;
-    line-height: 1.55;
+    line-height: 1.5;
     color: rgba(255, 255, 255, 0.92);
-    margin: 0 0 18px 0;
+    margin: 0 0 14px 0;
     max-width: 680px;
     text-shadow: none;
     display: -webkit-box;
@@ -1242,12 +1231,14 @@ html, body {
     align-items: center;
     gap: 16px;
     flex-wrap: wrap;
-    opacity: 0;
-    transform: translateY(18px);
+    opacity: 1;
+    transform: none;
 }
 
 .lexus-slide.active .lexus-slide-actions {
-    animation: lexusFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+    opacity: 1 !important;
+    visibility: visible !important;
+    animation: lexusFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
 }
 
 @keyframes lexusFadeUp {
@@ -1263,28 +1254,33 @@ html, body {
 
 /* Authentic Lexus Vietnam Outlined Button */
 .lexus-outline-btn {
-    display: inline-flex;
+    display: inline-flex !important;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.88);
-    background: transparent;
-    color: #ffffff;
-    padding: 11px 30px;
+    border: 1.5px solid rgba(255, 255, 255, 0.92) !important;
+    background: rgba(29, 78, 216, 0.18);
+    color: #ffffff !important;
+    padding: 10px 28px;
     font-family: 'Be Vietnam Pro', 'Montserrat', -apple-system, sans-serif;
     font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 2.5px;
+    font-weight: 600;
+    letter-spacing: 2.2px;
     text-transform: uppercase;
-    text-decoration: none;
+    text-decoration: none !important;
     border-radius: 0;
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
-.lexus-outline-btn:hover {
+.lexus-outline-btn span {
+    color: #ffffff !important;
+}
+
+.lexus-outline-btn:hover,
+.lexus-outline-btn:hover span {
     background: #ffffff;
-    color: #0a192f;
-    border-color: #ffffff;
+    color: #0a192f !important;
+    border-color: #ffffff !important;
     box-shadow: 0 4px 20px rgba(255, 255, 255, 0.35);
 }
 
@@ -3342,6 +3338,12 @@ html, body {
         margin-top: 6px;
         text-align: center;
     }
+
+    .lexus-banner-slider {
+        height: calc(100vh - 65px) !important;
+        height: calc(100dvh - 65px) !important;
+        max-height: none !important;
+    }
 }
 
 /* Smartphone Breakpoint (<= 768px) */
@@ -3351,54 +3353,54 @@ html, body {
         padding-bottom: 72px !important;
     }
 
-    /* Authentic Lexus Vietnam 1-Screen Split Hero (Ảnh ở trên + Nội dung ở dưới vừa khít 1 trang màn hình) */
+    /* Authentic Lexus Vietnam 1-Screen Split Hero (Ảnh ở trên + Nội dung ở dưới vừa khít 100% màn hình không hở trắng) */
     .lexus-banner-slider {
-        height: calc(100vh - 134px);
-        height: calc(100dvh - 134px);
-        min-height: 440px;
-        max-height: 760px;
+        height: calc(100vh - 137px) !important;
+        height: calc(100svh - 137px) !important;
+        height: calc(100dvh - 137px) !important;
+        min-height: 460px !important;
+        max-height: none !important;
         background: #0a192f;
-    }
-    .lexus-slide-visual {
-        flex: 1 1 auto;
-        min-height: 0;
-        width: 100%;
     }
     .lexus-slide-bg {
-        inset: 0;
-        height: 100%;
-        background-position: center center;
+        position: relative !important;
+        inset: auto !important;
+        flex: 1 1 auto !important;
+        min-height: 200px !important;
+        width: 100% !important;
+        height: auto !important;
+        background-position: center center !important;
     }
     .lexus-slide-overlay {
-        background: linear-gradient(180deg, rgba(10, 25, 47, 0.18) 0%, rgba(10, 25, 47, 0) 28%, rgba(10, 25, 47, 0) 64%, rgba(10, 25, 47, 0.84) 88%, #0a192f 100%);
-    }
-    .lexus-slide-bottom-panel {
-        flex: 0 0 auto;
-        background: #0a192f;
-        padding: 8px 0 28px;
+        display: none !important;
     }
     .lexus-slide-container {
-        padding: 0 20px;
+        position: relative !important;
+        flex: 0 0 auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        background: #0a192f !important;
+        padding: 18px 20px 48px !important;
     }
     .lexus-eyebrow {
         display: none;
     }
     .lexus-slide-title {
         font-family: 'Montserrat', 'Be Vietnam Pro', sans-serif;
-        font-size: 1.38rem;
+        font-size: 1.28rem;
         font-weight: 300;
-        letter-spacing: 2.5px;
-        line-height: 1.24;
-        margin-bottom: 8px;
+        letter-spacing: 2.2px;
+        line-height: 1.22;
+        margin-bottom: 6px;
         text-shadow: none;
     }
     .lexus-slide-desc {
         font-family: 'Be Vietnam Pro', sans-serif;
-        font-size: 0.88rem;
+        font-size: 0.85rem;
         font-weight: 400;
-        line-height: 1.48;
+        line-height: 1.44;
         color: rgba(255, 255, 255, 0.92);
-        margin-bottom: 16px;
+        margin-bottom: 12px;
         text-shadow: none;
         display: -webkit-box;
         -webkit-line-clamp: 2;
@@ -8616,13 +8618,11 @@ html, body {
 
 /* 1. Hero Banner Slider (#lexusHeroSlider) Entrance & Slide Transitions */
 .lexus-banner-slider .lexus-slide .lexus-slide-bg {
-    transform: scale(1.12);
-    transition: transform 6.8s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: transform;
+    transform: none;
 }
 .lexus-banner-slider.is-inview .lexus-slide.active .lexus-slide-bg,
 .lexus-banner-slider .lexus-slide.active .lexus-slide-bg {
-    transform: scale(1);
+    transform: none;
 }
 
 .lexus-banner-slider .lexus-slide .lexus-eyebrow {
