@@ -231,71 +231,132 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
         </div>
     </section>
 
-    <!-- 4B: FLANKED DIAGNOSTICS & THIẾT BỊ KIỂM ĐỊNH HIỆN ĐẠI -->
-    <section class="shiftup-flanked-diagnostics">
+    <!-- =========================================================================
+         MỤC 4B: PHỤ KIỆN ÔTÔ CHÍNH HÃNG (HÀ THÀNH GARAGE STYLE)
+         ========================================================================= -->
+    <section class="shiftup-accessories-section index-accessory" id="phu-kien-chinh-hang">
         <div class="container">
             
-            <div class="flanked-head text-center">
-                <span class="flanked-sub-label"><?php _e('TRANG THIẾT BỊ ĐO KIỂM &amp; CHẨN ĐOÁN HIỆN ĐẠI', 'hieugara-motors'); ?></span>
-                <h2 class="flanked-title">TIÊU CHUẨN XƯỞNG DỊCH VỤ CÔNG NGHỆ CAO</h2>
+            <div class="accessory-sec-head text-center">
+                <h2 class="accessory-heading-main">
+                    <span>PHỤ KIỆN ÔTÔ</span> <span class="text-orange">CHÍNH HÃNG</span>
+                </h2>
                 <div class="tuning-shop-divider"></div>
             </div>
 
-            <div class="diagnostics-tech-grid">
-                
-                <div class="diag-station-card">
-                    <div class="diag-card-top">
-                        <span class="station-code">STATION // 01</span>
-                        <span class="station-badge">KIỂM ĐỊNH TỰ ĐỘNG</span>
-                    </div>
-                    <h3 class="station-title"><span class="orange-bar">|</span> BỆ THỬ LỰC PHANH ĐIỆN TỬ</h3>
-                    <p class="station-desc">Bệ thử lực phanh con lăn tải trọng lớn tự động đo lực phanh 4 bánh, độ trượt bánh và độ lệch lực phanh giữa 2 bên theo đúng quy chuẩn đăng kiểm quốc gia.</p>
-                    <div class="station-spec">
-                        <span>Độ chính xác: <strong>±0.1%</strong></span>
-                        <span>Xuất báo cáo: <strong>In đồ thị trực tiếp</strong></span>
+            <?php
+            $acc_img_uri = $theme_uri . '/assets/images/accessories';
+            $accessories = array(
+                array(
+                    'title'     => 'Màn hình Zestech Z500 Chính Hãng',
+                    'img'       => $acc_img_uri . '/zestech-z500.jpg',
+                    'price'     => '8.500.000',
+                    'old_price' => '9.500.000',
+                    'badge'     => 'BÁN CHẠY',
+                    'link'      => home_url('/bang-gia/#phu-kien')
+                ),
+                array(
+                    'title'     => 'Màn Hình Android Elliview U4 Basic [3GB/32GB]',
+                    'img'       => $acc_img_uri . '/elliview-u4.jpg',
+                    'price'     => '6.800.000',
+                    'old_price' => '7.800.000',
+                    'badge'     => 'CHÍNH HÃNG',
+                    'link'      => home_url('/bang-gia/#phu-kien')
+                ),
+                array(
+                    'title'     => 'Màn Hình Android Elliview S4 Basic [3GB/32GB + Camera 360]',
+                    'img'       => $acc_img_uri . '/elliview-s4.jpg',
+                    'price'     => '12.800.000',
+                    'old_price' => '14.500.000',
+                    'badge'     => 'TẶNG CAM 360',
+                    'link'      => home_url('/bang-gia/#phu-kien')
+                ),
+                array(
+                    'title'     => 'Cam hành trình VIETMAP C61 Pro Ghi Hình 4K',
+                    'img'       => $acc_img_uri . '/vietmap-c61-pro.jpg',
+                    'price'     => '3.190.000',
+                    'old_price' => '3.600.000',
+                    'badge'     => 'VIETMAP',
+                    'link'      => home_url('/bang-gia/#phu-kien')
+                ),
+                array(
+                    'title'     => 'Cảm biến áp suất lốp "Zin" ELLISAFE i5 cho Mercedes-Benz',
+                    'img'       => $acc_img_uri . '/ellisafe-i5.jpg',
+                    'price'     => '4.500.000',
+                    'old_price' => '5.200.000',
+                    'badge'     => 'THEO XE MERCEDES',
+                    'link'      => home_url('/bang-gia/#phu-kien')
+                ),
+                array(
+                    'title'     => 'Camera hành trình Vietmap C65 Cảnh Báo Giao Thông',
+                    'img'       => $acc_img_uri . '/vietmap-c65.jpg',
+                    'price'     => '4.290.000',
+                    'old_price' => '4.790.000',
+                    'badge'     => 'VIETMAP',
+                    'link'      => home_url('/bang-gia/#phu-kien')
+                ),
+                array(
+                    'title'     => 'Cảm Biến Áp Suất Lốp Ellisafe J3 Cho Màn Hình DVD Nguyên Bản',
+                    'img'       => $acc_img_uri . '/ellisafe-j3.jpg',
+                    'price'     => '2.800.000',
+                    'old_price' => '3.200.000',
+                    'badge'     => 'CẮM ZIN 100%',
+                    'link'      => home_url('/bang-gia/#phu-kien')
+                ),
+                array(
+                    'title'     => 'Camera Hành Trình Trước & Sau Vietmap C62S',
+                    'img'       => $acc_img_uri . '/vietmap-c62s.jpg',
+                    'price'     => '3.590.000',
+                    'old_price' => '3.990.000',
+                    'badge'     => 'GHI HÌNH KÉP',
+                    'link'      => home_url('/bang-gia/#phu-kien')
+                ),
+            );
+            ?>
+
+            <div class="accessory-slider-wrap">
+                <button class="acc-nav-btn acc-prev" id="allCarsPrevBtn" aria-label="Trước">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div class="swiper all-about-swiper" id="allCarsTrack">
+                    <div class="swiper-wrapper">
+                        <?php foreach ($accessories as $acc) : ?>
+                            <div class="swiper-slide">
+                                <article class="accessory-item">
+                                    <a href="<?php echo esc_url($acc['link']); ?>" title="<?php echo esc_attr($acc['title']); ?>" class="accessory-img-box">
+                                        <?php if (!empty($acc['badge'])) : ?>
+                                            <span class="accessory-badge"><?php echo esc_html($acc['badge']); ?></span>
+                                        <?php endif; ?>
+                                        <img src="<?php echo esc_url($acc['img']); ?>" alt="<?php echo esc_attr($acc['title']); ?>" loading="lazy">
+                                    </a>
+                                    <h3 class="accessory-title">
+                                        <a href="<?php echo esc_url($acc['link']); ?>" title="<?php echo esc_attr($acc['title']); ?>">
+                                            <?php echo esc_html($acc['title']); ?>
+                                        </a>
+                                    </h3>
+                                    <div class="accessory-price">
+                                        <span class="price-current"><?php echo esc_html($acc['price']); ?> <sup>đ</sup></span>
+                                        <?php if (!empty($acc['old_price'])) : ?>
+                                            <span class="price-old"><?php echo esc_html($acc['old_price']); ?> <sup>đ</sup></span>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="accessory-action">
+                                        <a href="<?php echo esc_url($acc['link']); ?>" title="<?php echo esc_attr($acc['title']); ?>" class="btn-accessory-detail">
+                                            Chi tiết
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
 
-                <div class="diag-station-card">
-                    <div class="diag-card-top">
-                        <span class="station-code">STATION // 02</span>
-                        <span class="station-badge">CÔNG NGHỆ HOA KỲ</span>
-                    </div>
-                    <h3 class="station-title"><span class="orange-bar">|</span> CÂN CHỈNH GÓC LÁI 3D HUNTER</h3>
-                    <p class="station-desc">Hệ thống máy Hunter HawkEye Elite 3D với 4 camera độ phân giải cao quét bia ngắm mâm xe, cân chỉnh góc camber, caster, toe chuẩn xác từng milimet.</p>
-                    <div class="station-spec">
-                        <span>Thiết bị: <strong>Hunter USA HawkEye</strong></span>
-                        <span>Cam kết: <strong>Triệt tiêu nhao lái 100%</strong></span>
-                    </div>
-                </div>
-
-                <div class="diag-station-card">
-                    <div class="diag-card-top">
-                        <span class="station-code">STATION // 03</span>
-                        <span class="station-badge">CÔNG NGHỆ KHÔNG THÁO TAPLO</span>
-                    </div>
-                    <h3 class="station-title"><span class="orange-bar">|</span> NỘI SOI ĐIỀU HÒA Ô TÔ</h3>
-                    <p class="station-desc">Đầu camera siêu nhỏ luồn trực tiếp vào hốc dàn lạnh để kiểm tra rò rỉ gas, vệ sinh sạch ẩm mốc vi khuẩn và nạp gas R134a/R1234yf tinh khiết bảo vệ sức khỏe cả gia đình.</p>
-                    <div class="station-spec">
-                        <span>Phương pháp: <strong>Nội soi vi sóng</strong></span>
-                        <span>Bảo hành: <strong>Gas lạnh tinh khiết 12T</strong></span>
-                    </div>
-                </div>
-
-                <div class="diag-station-card">
-                    <div class="diag-card-top">
-                        <span class="station-code">STATION // 04</span>
-                        <span class="station-badge">CHUYÊN SÂU CHÂU ÂU</span>
-                    </div>
-                    <h3 class="station-title"><span class="orange-bar">|</span> MÁY QUÉT HỘP ĐEN ECU CHUYÊN SÂU</h3>
-                    <p class="station-desc">Đọc dữ liệu thời gian thực (live data), chẩn đoán mạch điện tử, xóa mã lỗi và lập trình thích ứng (coding/programming) cho Mercedes, BMW, Audi, Porsche, Lexus, Ford.</p>
-                    <div class="station-spec">
-                        <span>Dữ liệu: <strong>Hơn 90+ hãng xe toàn cầu</strong></span>
-                        <span>Phần mềm: <strong>Chính hãng OEM Update</strong></span>
-                    </div>
-                </div>
-
+                <button class="acc-nav-btn acc-next" id="allCarsNextBtn" aria-label="Tiếp theo">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
             </div>
+
         </div>
     </section>
 

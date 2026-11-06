@@ -281,7 +281,7 @@
         var animatedSections = document.querySelectorAll(
             '.shiftup-tuning-shop-section, .shiftup-technicians-section, ' +
             '.shiftup-all-about-cars-section, .shiftup-panoramic-banners, ' +
-            '.shiftup-flanked-diagnostics, .shiftup-checkup-offers-section, ' +
+            '.shiftup-flanked-diagnostics, .shiftup-accessories-section, .shiftup-checkup-offers-section, ' +
             '.shiftup-brand-marquee-section, .shiftup-workshops-booking-section, ' +
             '.shiftup-workshops-section, .shiftup-main-footer'
         );
