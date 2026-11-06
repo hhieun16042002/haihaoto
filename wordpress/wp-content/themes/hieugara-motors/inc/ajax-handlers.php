@@ -1,6 +1,6 @@
 <?php
 /**
- * AJAX Handlers for Hải Hà Auto Service Booking
+ * AJAX Handlers for Hải Hà ÔTô Service Booking
  *
  * @package HieuGara_Motors
  */
@@ -65,12 +65,12 @@ function hieugara_handle_booking_submission() {
 
     // Send email to admin
     $admin_email = get_option('admin_email');
-    $subject = sprintf('[Hải Hà Auto] Đặt lịch dịch vụ mới: %s (%s)', $name, $phone);
+    $subject = sprintf('[Hải Hà ÔTô] Đặt lịch dịch vụ mới: %s (%s)', $name, $phone);
     $body = "Họ và tên: {$name}\nSố điện thoại: {$phone}\nDòng xe: {$car}\nDịch vụ: {$service}\nChi nhánh: {$branch}\nNgày hẹn: {$date}\nGhi chú: {$note}\nThời gian gửi: " . current_time('d/m/Y H:i:s');
     @wp_mail($admin_email, $subject, $body);
 
     wp_send_json_success(array(
-        'message' => __('Đặt hẹn thành công! Kỹ thuật viên Hải Hà Auto sẽ gọi điện xác nhận và chuẩn bị cầu nâng đón xe của Quý khách.', 'hieugara-motors')
+        'message' => __('Đặt hẹn thành công! Kỹ thuật viên Hải Hà ÔTô sẽ gọi điện xác nhận và chuẩn bị cầu nâng đón xe của Quý khách.', 'hieugara-motors')
     ));
 }
 add_action('wp_ajax_hieugara_submit_booking', 'hieugara_handle_booking_submission');

@@ -1,6 +1,6 @@
 <?php
 /**
- * Hải Hà Auto Service - ShiftUp Flagship Front Page
+ * Hải Hà ÔTô Service - ShiftUp Flagship Front Page
  * Exact 1:1 Architectural Clone from ShiftUp Car Workshop (Qode Interactive)
  * Minimalist White & Obsidian High-Contrast, Motorsport Typography (Chakra Petch & Be Vietnam Pro)
  *
@@ -117,7 +117,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
             
             <div class="tuning-shop-head text-center">
                 <span class="tuning-shop-sub-label"><?php _e('TIÊU CHUẨN XƯỞNG DỊCH VỤ Ô TÔ TOÀN DIỆN', 'hieugara-motors'); ?></span>
-                <h2 class="tuning-shop-title">HẢI HÀ AUTO SERVICE & WORKSHOP</h2>
+                <h2 class="tuning-shop-title">HẢI HÀ ÔTÔ SERVICE & WORKSHOP</h2>
                 <div class="tuning-shop-divider"></div>
             </div>
 
@@ -239,7 +239,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
         <div class="container">
             
             <div class="tech-section-head text-center">
-                <span class="tech-sub-label"><?php _e('CÂU CHUYỆN 31 NĂM HẢI HÀ AUTO SERVICE (1995 - 2026)', 'hieugara-motors'); ?></span>
+                <span class="tech-sub-label"><?php _e('CÂU CHUYỆN 31 NĂM HẢI HÀ ÔTÔ SERVICE (1995 - 2026)', 'hieugara-motors'); ?></span>
                 <h2 class="tech-title">NGƯỜI THẬT • VIỆC THẬT • TRỌN CHỮ TÂM VỚI NGHỀ</h2>
                 <div class="tuning-shop-divider"></div>
             </div>
@@ -255,7 +255,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                 <div class="founder-quote-block">
                     <div class="quote-mark">“</div>
                     <p class="founder-quote-text">
-                        Hơn <strong>31 năm trực tiếp cầm cờ lê</strong>, chẩn đoán và khắc phục hàng vạn ca bệnh khó cho các dòng xe từ cổ điển đến xe sang hiện đại. Khởi đầu từ năm 1995 tại mảnh đất Hải Dương, Hải Hà Auto luôn giữ trọn một tôn chỉ bất biến: 
+                        Hơn <strong>31 năm trực tiếp cầm cờ lê</strong>, chẩn đoán và khắc phục hàng vạn ca bệnh khó cho các dòng xe từ cổ điển đến xe sang hiện đại. Khởi đầu từ năm 1995 tại mảnh đất Hải Dương, Hải Hà ÔTô luôn giữ trọn một tôn chỉ bất biến: 
                         <em class="highlight-quote">“Bắt đúng bệnh, sửa đúng chỗ, báo đúng giá – Tuyệt đối không vẽ việc làm khó khách hàng.”</em>
                     </p>
                 </div>
@@ -702,7 +702,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
             <div class="marquee-head text-center">
                 <span class="marquee-sub"><?php _e('CÁC DÒNG XE PHỤC VỤ TẠI XƯỞNG', 'hieugara-motors'); ?></span>
                 <h3 class="marquee-title"><?php _e('TIẾP NHẬN BẢO DƯỠNG &amp; SỬA CHỮA MỌI THƯƠNG HIỆU XE', 'hieugara-motors'); ?></h3>
-                <p class="marquee-desc"><?php _e('Từ các dòng xe sang Châu Âu cao cấp đến xe phổ thông gia đình, đội ngũ kỹ thuật viên Hải Hà Auto đều có thiết bị chuyên dụng và phụ tùng chuẩn hãng đáp ứng.', 'hieugara-motors'); ?></p>
+                <p class="marquee-desc"><?php _e('Từ các dòng xe sang Châu Âu cao cấp đến xe phổ thông gia đình, đội ngũ kỹ thuật viên Hải Hà ÔTô đều có thiết bị chuyên dụng và phụ tùng chuẩn hãng đáp ứng.', 'hieugara-motors'); ?></p>
             </div>
         </div>
 
@@ -755,7 +755,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
             <div class="section-head-dark text-center">
                 <span class="section-sub-tag"><?php _e('HỆ THỐNG XƯỞNG DỊCH VỤ &amp; ĐẶT LỊCH HẸN TRỰC TUYẾN', 'hieugara-motors'); ?></span>
                 <h2 class="section-title-white">TRỤ SỞ XƯỞNG DỊCH VỤ &amp; ĐẶT LỊCH TIẾP NHẬN XE</h2>
-                <p class="section-desc-light">Đội ngũ kỹ thuật viên Hải Hà Auto sẵn sàng phục vụ quý khách nhanh chóng, chu đáo và minh bạch 100%.</p>
+                <p class="section-desc-light">Đội ngũ kỹ thuật viên Hải Hà ÔTô sẵn sàng phục vụ quý khách nhanh chóng, chu đáo và minh bạch 100%.</p>
                 <div class="tuning-shop-divider"></div>
             </div>
 
@@ -769,7 +769,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                             <span class="ws-status-live"><span class="live-dot"></span> ĐANG MỞ CỬA</span>
                             <span class="ws-type-tag">TRỤ SỞ CHÍNH HẢI DƯƠNG</span>
                         </div>
-                        <h3 class="ws-main-name">Hải Hà Auto Service &amp; Workshop</h3>
+                        <h3 class="ws-main-name">Hải Hà ÔTô Service &amp; Workshop</h3>
                         <p class="ws-main-addr">
                             <i class="fa-solid fa-location-dot text-orange"></i>
                             <strong>Km 53+300 Quốc lộ 5</strong> (Chiều Hà Nội - Hải Phòng), Phường Cẩm Thượng, TP. Hải Dương
@@ -835,7 +835,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                         <form id="homeFastBookingForm" class="home-fast-booking-form">
                             <input type="hidden" name="action" value="garage_submit_booking">
                             <input type="hidden" name="nonce" value="<?php echo esc_attr(wp_create_nonce('garage_os_frontend_nonce')); ?>">
-                            <input type="hidden" name="branch" value="Trụ sở chính Hải Hà Auto (Km 53+300 QL5)">
+                            <input type="hidden" name="branch" value="Trụ sở chính Hải Hà ÔTô (Km 53+300 QL5)">
 
                             <div class="form-row-dual">
                                 <div class="form-group">
@@ -929,7 +929,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 feedbackMsg.style.display = 'block';
                 if (data.success) {
                     feedbackMsg.className = 'booking-feedback-msg success';
-                    feedbackMsg.innerHTML = '<strong>ĐẶT LỊCH THÀNH CÔNG!</strong> Mã phiếu: #' + (data.data?.booking_id || 'OK') + '. Kỹ sư trưởng Hải Hà Auto sẽ liên hệ xác nhận trong vòng 10 phút.';
+                    feedbackMsg.innerHTML = '<strong>ĐẶT LỊCH THÀNH CÔNG!</strong> Mã phiếu: #' + (data.data?.booking_id || 'OK') + '. Kỹ sư trưởng Hải Hà ÔTô sẽ liên hệ xác nhận trong vòng 10 phút.';
                     bookingForm.reset();
                 } else {
                     feedbackMsg.className = 'booking-feedback-msg error';

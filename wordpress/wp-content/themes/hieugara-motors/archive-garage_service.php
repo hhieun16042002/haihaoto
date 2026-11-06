@@ -16,7 +16,7 @@ get_header();
             <span>/</span>
             <span class="current"><?php _e('Hệ thống dịch vụ ô tô', 'hieugara-motors'); ?></span>
         </div>
-        <h1 class="portal-page-title"><?php _e('TẤT CẢ DỊCH VỤ TẠI HẢI HÀ AUTO', 'hieugara-motors'); ?></h1>
+        <h1 class="portal-page-title"><?php _e('TẤT CẢ DỊCH VỤ TẠI HẢI HÀ ÔTÔ', 'hieugara-motors'); ?></h1>
         <p class="portal-page-subtitle">
             <?php _e('Hải Hà Ô Tô (31 năm kinh nghiệm từ 1995 &bull; 80 nhân sự tận tâm): Cam kết 100% phụ tùng chính hãng OEM, quy trình sửa chữa chuẩn hãng và bảo hành điện tử theo biển số.', 'hieugara-motors'); ?>
         </p>

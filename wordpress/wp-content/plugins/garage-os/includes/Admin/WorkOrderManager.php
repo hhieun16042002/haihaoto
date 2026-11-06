@@ -394,7 +394,7 @@ class WorkOrderManager {
         <html lang="vi">
         <head>
             <meta charset="UTF-8">
-            <title>Lệnh Sửa Chữa <?php echo esc_html($order->order_code); ?> - Hải Hà Auto</title>
+            <title>Lệnh Sửa Chữa <?php echo esc_html($order->order_code); ?> - Hải Hà ÔTô</title>
             <style>
                 body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1e293b; background: #fff; margin: 0; padding: 20px; font-size: 13px; }
                 .sheet { max-width: 800px; margin: 0 auto; border: 1px solid #e2e8f0; padding: 30px; }
@@ -430,7 +430,7 @@ class WorkOrderManager {
                 <table class="header-table">
                     <tr>
                         <td style="width:60%;">
-                            <h1 class="logo-title">HẢI HÀ AUTO SERVICE</h1>
+                            <h1 class="logo-title">HẢI HÀ ÔTÔ SERVICE</h1>
                             <p class="logo-sub">HỆ THỐNG XƯỞNG DỊCH VỤ Ô TÔ TOÀN QUỐC (CHUẨN CARPLA)</p>
                             <div style="font-size:11px;color:#64748b;margin-top:4px;">
                                 Hotline Kỹ Thuật: 0988.888.999 &bull; Đ/c: Số 18 Cầu Giấy, Q. Cầu Giấy, TP. Hà Nội
@@ -522,7 +522,7 @@ class WorkOrderManager {
                         <strong>GIÁM ĐỐC XƯỞNG DỊCH VỤ</strong>
                         <div style="font-size:11px;color:#64748b;">(Duyệt xuất kho phụ tùng & bàn giao)</div>
                         <div class="sign-space"></div>
-                        <div>Hải Hà Auto</div>
+                        <div>Hải Hà ÔTô</div>
                     </div>
                 </div>
             </div>

@@ -150,7 +150,7 @@ class AjaxHandlers {
 
         if ($inserted) {
             wp_send_json_success([
-                'message'      => 'Đặt lịch bảo dưỡng thành công! Cố vấn dịch vụ Hải Hà Auto sẽ liên hệ xác nhận trong ít phút.',
+                'message'      => 'Đặt lịch bảo dưỡng thành công! Cố vấn dịch vụ Hải Hà ÔTô sẽ liên hệ xác nhận trong ít phút.',
                 'booking_code' => $booking_code
             ]);
         } else {

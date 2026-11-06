@@ -134,7 +134,7 @@ while (have_posts()) : the_post();
                     <div style="margin-top: 40px; padding: 24px; background: #f8fafc; border: 1px dashed #cbd5e1; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
                         <div>
                             <strong style="font-family: 'Chakra Petch', sans-serif; font-size: 1rem; color: #0f172a; display: block; margin-bottom: 4px;"><?php _e('CẦN TƯ VẤN KỸ THUẬT CHUYÊN SÂU?', 'hieugara-motors'); ?></strong>
-                            <span style="color: #64748b; font-size: 0.9rem;"><?php _e('Kỹ sư trưởng Hải Hà Auto hỗ trợ trực tiếp 24/7 không qua trung gian.', 'hieugara-motors'); ?></span>
+                            <span style="color: #64748b; font-size: 0.9rem;"><?php _e('Kỹ sư trưởng Hải Hà ÔTô hỗ trợ trực tiếp 24/7 không qua trung gian.', 'hieugara-motors'); ?></span>
                         </div>
                         <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $hotline_phone)); ?>" class="shiftup-rect-btn btn-orange-solid" style="background: #ff4d24; color: #fff; padding: 12px 24px; text-decoration: none; font-family: 'Chakra Petch', sans-serif; font-weight: 700; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px;">
                             <i class="fa fa-phone"></i> <?php echo esc_html($hotline_phone); ?>

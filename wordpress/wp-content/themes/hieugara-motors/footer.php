@@ -1,6 +1,6 @@
 <?php
 /**
- * Hải Hà Auto - ShiftUp Luxury Workshop Footer
+ * Hải Hà ÔTô - ShiftUp Luxury Workshop Footer
  * Matching ShiftUp Car Workshop Design System
  *
  * @package HieuGara_Motors

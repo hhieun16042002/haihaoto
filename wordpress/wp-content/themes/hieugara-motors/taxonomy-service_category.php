@@ -10,7 +10,7 @@ get_header();
 
 $current_term = get_queried_object();
 $term_name = $current_term ? $current_term->name : __('Dịch Vụ Ô Tô', 'hieugara-motors');
-$term_desc = $current_term && !empty($current_term->description) ? $current_term->description : __('Hải Hà Auto Service cam kết tính minh bạch 100%: Quy trình kiểm định chuẩn hãng, phụ tùng chính hãng OEM, bảo hành điện tử theo biển số xe.', 'hieugara-motors');
+$term_desc = $current_term && !empty($current_term->description) ? $current_term->description : __('Hải Hà ÔTô Service cam kết tính minh bạch 100%: Quy trình kiểm định chuẩn hãng, phụ tùng chính hãng OEM, bảo hành điện tử theo biển số xe.', 'hieugara-motors');
 $rescue_phone  = get_option('hieugara_rescue_phone', '0911 211 996');
 $hotline_phone = get_option('hieugara_hotline_phone', '02203 892 207');
 $theme_uri     = get_template_directory_uri();
@@ -140,7 +140,7 @@ $theme_uri     = get_template_directory_uri();
         <!-- Category Hub Bottom Fast Booking Strip -->
         <div class="category-hub-cta-banner">
             <div class="cta-banner-content">
-                <span class="cta-eyebrow"><?php _e('CAM KẾT CHẤT LƯỢNG HẢI HÀ AUTO SERVICE', 'hieugara-motors'); ?></span>
+                <span class="cta-eyebrow"><?php _e('CAM KẾT CHẤT LƯỢNG HẢI HÀ ÔTÔ SERVICE', 'hieugara-motors'); ?></span>
                 <h3 class="cta-heading"><?php _e('BÁO ĐÚNG GIÁ • BẮT ĐÚNG BỆNH • BẢO HÀNH ĐIỆN TỬ 24 THÁNG', 'hieugara-motors'); ?></h3>
                 <p class="cta-desc"><?php _e('Đặt lịch trực tuyến ngay để được ưu tiên khoang kỹ thuật và nhận ưu đãi giảm 10% công bảo dưỡng.', 'hieugara-motors'); ?></p>
             </div>

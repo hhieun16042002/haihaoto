@@ -21,7 +21,7 @@ get_header();
             </div>
             <h1 class="portal-page-title"><?php _e('Cổng Tra Cứu Hồ Sơ Xe & Sổ Bảo Hành Điện Tử', 'hieugara-motors'); ?></h1>
             <p class="portal-page-subtitle">
-                <?php _e('Toàn bộ lịch sử bảo dưỡng định kỳ, nhật ký sửa chữa kỹ thuật và chứng thư bảo hành chất lượng đồng sơn tại Hải Hà Auto Service đều được số hóa trực tuyến theo biển số xe.', 'hieugara-motors'); ?>
+                <?php _e('Toàn bộ lịch sử bảo dưỡng định kỳ, nhật ký sửa chữa kỹ thuật và chứng thư bảo hành chất lượng đồng sơn tại Hải Hà ÔTô Service đều được số hóa trực tuyến theo biển số xe.', 'hieugara-motors'); ?>
             </p>
         </div>
     </section>
@@ -40,7 +40,7 @@ get_header();
                 <div class="section-pill"><?php _e('CHÍNH SÁCH BẢO HÀNH CHUẨN CARPLA', 'hieugara-motors'); ?></div>
                 <h2 class="section-title"><?php _e('Quyền Lợi & Cam Kết Bảo Hành Chính Hãng', 'hieugara-motors'); ?></h2>
                 <p class="section-desc">
-                    <?php _e('Hải Hà Auto cam kết mang đến sự an tâm tuyệt đối trên mọi cung đường cho chủ xe với chính sách bảo hành rõ ràng, minh bạch.', 'hieugara-motors'); ?>
+                    <?php _e('Hải Hà ÔTô cam kết mang đến sự an tâm tuyệt đối trên mọi cung đường cho chủ xe với chính sách bảo hành rõ ràng, minh bạch.', 'hieugara-motors'); ?>
                 </p>
             </div>
 
@@ -76,7 +76,7 @@ get_header();
                         <i class="fa fa-certificate"></i>
                     </div>
                     <h3>Không Cần Giữ Sổ Giấy & Thẻ Cứng</h3>
-                    <p>Chỉ cần đọc biển số xe khi đến bất kỳ cơ sở nào trong hệ thống xưởng Hải Hà Auto Service toàn quốc, kỹ thuật viên sẽ tra cứu được toàn bộ hồ sơ kỹ thuật.</p>
+                    <p>Chỉ cần đọc biển số xe khi đến bất kỳ cơ sở nào trong hệ thống xưởng Hải Hà ÔTô Service toàn quốc, kỹ thuật viên sẽ tra cứu được toàn bộ hồ sơ kỹ thuật.</p>
                     <ul class="policy-list">
                         <li><i class="fa fa-check"></i> Tra cứu tức thì trong 3 giây</li>
                         <li><i class="fa fa-check"></i> Nhắc hẹn bảo dưỡng qua SMS/Zalo</li>

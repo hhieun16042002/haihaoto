@@ -78,7 +78,7 @@ get_header();
                 </div>
 
                 <div class="about-story-media">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/shiftup/tech-about.jpg?v=' . HIEUGARA_THEME_VERSION); ?>" alt="Kỹ thuật viên xưởng dịch vụ Hải Hà Auto" class="story-img-main" style="border-radius: 8px; box-shadow: 0 16px 36px rgba(0,0,0,0.15);">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/shiftup/tech-about.jpg?v=' . HIEUGARA_THEME_VERSION); ?>" alt="Kỹ thuật viên xưởng dịch vụ Hải Hà ÔTô" class="story-img-main" style="border-radius: 8px; box-shadow: 0 16px 36px rgba(0,0,0,0.15);">
                     <div class="story-floating-badge" style="background: #0b0c0f; color: #ffffff; border: 1px solid rgba(255, 77, 36, 0.4);">
                         <i class="fa fa-shield-heart" style="color: #ff4d24;"></i>
                         <div>
@@ -96,7 +96,7 @@ get_header();
         <div class="container">
             <div class="section-header">
                 <div class="section-pill"><?php _e('NGUYÊN TẮC HOẠT ĐỘNG', 'hieugara-motors'); ?></div>
-                <h2 class="section-title"><?php _e('5 Cam Kết "Vàng" Từ Hải Hà Auto', 'hieugara-motors'); ?></h2>
+                <h2 class="section-title"><?php _e('5 Cam Kết "Vàng" Từ Hải Hà ÔTô', 'hieugara-motors'); ?></h2>
                 <p class="section-desc">
                     <?php _e('Kim chỉ nam trong mọi hoạt động tiếp nhận xe và phục vụ khách hàng trên toàn bộ hệ thống xưởng.', 'hieugara-motors'); ?>
                 </p>

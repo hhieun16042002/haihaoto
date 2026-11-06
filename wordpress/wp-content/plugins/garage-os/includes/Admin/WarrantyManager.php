@@ -165,7 +165,7 @@ class WarrantyManager {
 
                     <div style="margin-bottom:18px;">
                         <label style="display:block;font-weight:600;font-size:13px;margin-bottom:4px;">Điều Khoản & Cam Kết Bảo Hành</label>
-                        <textarea name="terms" rows="2" class="widefat">Cam kết 1 đổi 1 hoặc xử lý miễn phí 100% nếu phát sinh lỗi kỹ thuật từ quy trình sửa chữa của Hải Hà Auto Service.</textarea>
+                        <textarea name="terms" rows="2" class="widefat">Cam kết 1 đổi 1 hoặc xử lý miễn phí 100% nếu phát sinh lỗi kỹ thuật từ quy trình sửa chữa của Hải Hà ÔTô Service.</textarea>
                     </div>
 
                     <button type="submit" class="btn-garage-primary" style="padding:10px 20px;">

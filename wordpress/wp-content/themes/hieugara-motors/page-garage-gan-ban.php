@@ -120,7 +120,7 @@ $workshops = [
                 <span>/</span>
                 <span class="current"><?php _e('Hệ thống garage gần bạn', 'hieugara-motors'); ?></span>
             </div>
-            <h1 class="portal-page-title"><?php _e('Hệ Thống Xưởng Dịch Vụ Ô Tô Hải Hà Auto', 'hieugara-motors'); ?></h1>
+            <h1 class="portal-page-title"><?php _e('Hệ Thống Xưởng Dịch Vụ Ô Tô Hải Hà ÔTô', 'hieugara-motors'); ?></h1>
             <p class="portal-page-subtitle">
                 <?php _e('Mạng lưới cơ sở xưởng dịch vụ phủ rộng tại Hà Nội, TP. Hồ Chí Minh và Đà Nẵng với trang thiết bị đồng bộ, đáp ứng tiêu chuẩn khắt khe nhất của các hãng xe.', 'hieugara-motors'); ?>
             </p>

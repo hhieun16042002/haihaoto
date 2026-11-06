@@ -1,7 +1,7 @@
 <?php
 /**
- * Hải Hà Auto - Modern Admin Customizer & Dashboard Command Center
- * Tối ưu hóa toàn diện giao diện quản trị WordPress cho Chủ Gara Hải Hà Auto
+ * Hải Hà ÔTô - Modern Admin Customizer & Dashboard Command Center
+ * Tối ưu hóa toàn diện giao diện quản trị WordPress cho Chủ Gara Hải Hà ÔTô
  *
  * @package HieuGara_Motors
  */
@@ -32,7 +32,7 @@ function hieugara_admin_bar_customization($wp_admin_bar) {
     // Add Brand Node
     $wp_admin_bar->add_node(array(
         'id'    => 'hieugara-brand',
-        'title' => '<span class="ab-icon dashicons dashicons-car" style="color:#ff4d24 !important;"></span> <strong style="color:#fff;font-weight:700;">HẢI HÀ AUTO</strong>',
+        'title' => '<span class="ab-icon dashicons dashicons-car" style="color:#ff4d24 !important;"></span> <strong style="color:#fff;font-weight:700;">HẢI HÀ ÔTÔ</strong>',
         'href'  => admin_url('index.php'),
         'meta'  => array('class' => 'hieugara-topbar-brand')
     ));
@@ -184,7 +184,7 @@ function hieugara_clean_admin_menu() {
 }
 add_action('admin_menu', 'hieugara_clean_admin_menu', 999);
 
-// 6. Replace Default Dashboard with Hải Hà Auto Command Center
+// 6. Replace Default Dashboard with Hải Hà ÔTô Command Center
 function hieugara_customize_dashboard_widgets() {
     global $wp_meta_boxes;
 
@@ -377,7 +377,7 @@ function hieugara_render_dashboard_hub_widget() {
 // 8. Custom Admin Footer
 function hieugara_custom_admin_footer() {
     echo '<span id="footer-thankyou" style="font-weight: 600; color: #475569;">
-        HẢI HÀ AUTO SERVICE — Km 53+300 Quốc lộ 5, TP. Hải Dương | Hotline: <strong>0911 211 996</strong> | Bản quyền © ' . date('Y') . '
+        HẢI HÀ ÔTÔ SERVICE — Km 53+300 Quốc lộ 5, TP. Hải Dương | Hotline: <strong>0911 211 996</strong> | Bản quyền © ' . date('Y') . '
     </span>';
 }
 add_filter('admin_footer_text', 'hieugara_custom_admin_footer');

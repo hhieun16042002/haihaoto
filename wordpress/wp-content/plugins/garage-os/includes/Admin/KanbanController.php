@@ -282,7 +282,7 @@ class KanbanController {
                 <div class="tesla-bay-map-container">
                     <div class="bay-map-header">
                         <div>
-                            <h3 class="bay-map-title"><span class="dashicons dashicons-building"></span> Sơ Đồ Không Gian Mặt Bằng Xưởng Dịch Vụ Hải Hà Auto</h3>
+                            <h3 class="bay-map-title"><span class="dashicons dashicons-building"></span> Sơ Đồ Không Gian Mặt Bằng Xưởng Dịch Vụ Hải Hà ÔTô</h3>
                             <p class="bay-map-sub">Giám sát trạng thái hoạt động thực tế của từng cầu nâng và phòng sơn sấy.</p>
                         </div>
                         <div class="bay-legend">

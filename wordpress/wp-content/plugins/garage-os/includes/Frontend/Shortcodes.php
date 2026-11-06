@@ -19,7 +19,7 @@ class Shortcodes {
             <div class="lookup-search-card">
                 <div class="lookup-badge">
                     <span class="lookup-badge-dot"></span>
-                    <span>CỔNG BẢO HÀNH ĐIỆN TỬ HẢI HÀ AUTO</span>
+                    <span>CỔNG BẢO HÀNH ĐIỆN TỬ HẢI HÀ ÔTÔ</span>
                 </div>
                 
                 <h2 class="lookup-title">

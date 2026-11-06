@@ -1,6 +1,6 @@
 <?php
 /**
- * SEO Information Architecture & Schema Markup for Hải Hà Auto
+ * SEO Information Architecture & Schema Markup for Hải Hà ÔTô
  *
  * Handles:
  * 1. Category Hub URL Rewrites: /dich-vu/[category-slug]/
@@ -174,7 +174,7 @@ class HieuGara_SEO_Architecture {
             '@context'         => 'https://schema.org',
             '@type'            => 'AutoRepair',
             '@id'              => home_url('/#business'),
-            'name'             => 'Hải Hà Auto Service & Workshop',
+            'name'             => 'Hải Hà ÔTô Service & Workshop',
             'alternateName'    => 'Gara Ô Tô Hải Hà',
             'url'              => home_url('/'),
             'logo'             => $logo_url,
@@ -259,7 +259,7 @@ class HieuGara_SEO_Architecture {
                 'description' => wp_strip_all_tags(get_the_excerpt() ?: get_the_content()),
                 'provider'    => array(
                     '@id'   => home_url('/#business'),
-                    'name'  => 'Hải Hà Auto Service & Workshop'
+                    'name'  => 'Hải Hà ÔTô Service & Workshop'
                 ),
                 'areaServed'  => array(
                     '@type' => 'State',

@@ -21,7 +21,7 @@ get_header();
             </div>
             <h1 class="portal-page-title"><?php _e('Bảng Giá Niêm Yết & Dự Toán Sơn Gò Ô Tô', 'hieugara-motors'); ?></h1>
             <p class="portal-page-subtitle">
-                <?php _e('Hải Hà Auto Service cam kết tính minh bạch 100%: Giá dịch vụ đã bao gồm công thợ kỹ thuật, phụ tùng chính hãng và không phát sinh bất kỳ chi phí ẩn nào.', 'hieugara-motors'); ?>
+                <?php _e('Hải Hà ÔTô Service cam kết tính minh bạch 100%: Giá dịch vụ đã bao gồm công thợ kỹ thuật, phụ tùng chính hãng và không phát sinh bất kỳ chi phí ẩn nào.', 'hieugara-motors'); ?>
             </p>
         </div>
     </section>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Hải Hà Auto - Theme Options & Management Panel
+ * Hải Hà ÔTô - Theme Options & Management Panel
  * Cho phép Quản trị viên bật/tắt Topbar, chỉnh sửa Banner Slider, quản lý Hotline, Cứu hộ và Menu
  *
  * @package HieuGara_Motors
@@ -292,7 +292,7 @@ function hieugara_render_theme_settings_page() {
     <div class="wrap hieugara-admin-wrap">
         <h1 class="hieugara-admin-title">
             <span class="dashicons dashicons-car"></span>
-            <?php _e('Cài Đặt Giao Diện Hải Hà Auto Service', 'hieugara-motors'); ?>
+            <?php _e('Cài Đặt Giao Diện Hải Hà ÔTô Service', 'hieugara-motors'); ?>
         </h1>
         <p class="description">
             <?php _e('Tùy biến nhanh thanh tiện ích trên cùng, thông tin hotline/cứu hộ, banner slider và quản lý menu hiển thị ngoài trang chủ.', 'hieugara-motors'); ?>

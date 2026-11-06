@@ -215,7 +215,7 @@ function hieugara_populate_sample_services($force = false) {
             'image'     => $shiftup_img . '/port-4.jpg',
             'excerpt'   => 'Nâng cấp hệ thống chiếu sáng bi LED/Laser tăng sáng 500%, lắp camera 360, camera hành trình và màn hình Android liền camera.',
             'features'  => "Độ đèn bi LED, bi gầm, bi Laser tăng sáng vượt trội không gây chói mắt xe đối diện\nLắp đặt hoàn toàn cắm giắc zin 100%, không cắt trích dây điện, giữ nguyên bảo hành hãng\nLắp màn hình Android thông minh điều khiển giọng nói, tích hợp bản đồ Vietmap Live\nLắp camera 360 độ toàn cảnh hỗ trợ đỗ xe và lưu hành trình 4 hướng\nBọc ghế da Nappa cao cấp, thảm lót sàn 6D may đo chuẩn form từng dòng xe",
-            'content'   => '<p>Hải Hà Auto chỉ cung cấp các dòng phụ kiện chính hãng có chứng nhận an toàn kỹ thuật. Kỹ thuật viên điện của chúng tôi thi công gọn gàng, sử dụng giắc cắm chuyên dụng để xe đăng kiểm hoàn toàn hợp lệ.</p>'
+            'content'   => '<p>Hải Hà ÔTô chỉ cung cấp các dòng phụ kiện chính hãng có chứng nhận an toàn kỹ thuật. Kỹ thuật viên điện của chúng tôi thi công gọn gàng, sử dụng giắc cắm chuyên dụng để xe đăng kiểm hoàn toàn hợp lệ.</p>'
         ),
 
         // 12. Dịch vụ hỗ trợ
