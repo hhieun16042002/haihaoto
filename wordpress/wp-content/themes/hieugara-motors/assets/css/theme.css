@@ -6251,11 +6251,13 @@ html, body {
     margin: 0;
 }
 
-/* --- 6: Section Workshops & Fast Booking Form --- */
+/* --- 6: Section Workshops & Fast Booking Form (Modern Light Luxury Hub) --- */
 .shiftup-workshops-booking-section {
-    background: #0b0d11;
+    background: #f8fafc;
     padding: 85px 0 95px;
-    color: #ffffff;
+    color: #0f172a;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .section-head-dark {
@@ -6279,14 +6281,14 @@ html, body {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: #ffffff;
+    color: #0f172a;
     margin: 0 0 14px 0;
 }
 
 .section-desc-light {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.95rem;
-    color: #94a3b8;
+    color: #475569;
     max-width: 650px;
     margin: 0 auto;
 }
@@ -6306,8 +6308,11 @@ html, body {
 }
 
 .ws-primary-card {
-    background: #11141b;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-top: 3px solid #ff4d24;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
     padding: 34px;
     position: relative;
 }
@@ -6323,12 +6328,13 @@ html, body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: rgba(34, 197, 94, 0.15);
-    color: #22c55e;
+    background: rgba(34, 197, 94, 0.12);
+    color: #16a34a;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.75rem;
     font-weight: 700;
     padding: 4px 10px;
+    border-radius: 4px;
     letter-spacing: 0.5px;
 }
 
@@ -6336,7 +6342,7 @@ html, body {
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: #22c55e;
+    background: #16a34a;
 }
 
 .ws-type-tag {
@@ -6351,7 +6357,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1.55rem;
     font-weight: 800;
-    color: #ffffff;
+    color: #0f172a;
     margin: 0 0 12px 0;
     letter-spacing: 0.5px;
 }
@@ -6359,7 +6365,7 @@ html, body {
 .ws-main-addr {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.92rem;
-    color: #cbd5e1;
+    color: #334155;
     line-height: 1.6;
     margin: 0 0 24px 0;
     display: flex;
@@ -6373,8 +6379,9 @@ html, body {
     gap: 14px;
     margin-bottom: 22px;
     padding: 18px;
-    background: #0b0d11;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
 }
 
 .hotline-box {
@@ -6387,7 +6394,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.72rem;
     font-weight: 700;
-    color: #94a3b8;
+    color: #64748b;
     letter-spacing: 0.5px;
 }
 
@@ -6398,16 +6405,17 @@ html, body {
     color: #ff4d24;
     text-decoration: none;
     letter-spacing: 0.5px;
+    transition: color 0.2s ease;
 }
 
 .hotline-num:hover {
-    color: #ff6d48;
+    color: #e03b14;
 }
 
 .ws-hours-row {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.88rem;
-    color: #94a3b8;
+    color: #475569;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -6430,49 +6438,60 @@ html, body {
     font-weight: 700;
     text-transform: uppercase;
     text-decoration: none;
+    border-radius: 6px;
     transition: all 0.2s ease;
 }
 
 .ws-action-btn.map-btn {
     background: #ff4d24;
     color: #ffffff;
+    box-shadow: 0 4px 12px rgba(255, 77, 36, 0.25);
 }
 
 .ws-action-btn.map-btn:hover {
     background: #e03b14;
     color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(255, 77, 36, 0.35);
 }
 
 .ws-action-btn.zalo-btn {
-    background: rgba(255, 255, 255, 0.08);
+    background: #0f172a;
     color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid #0f172a;
 }
 
 .ws-action-btn.zalo-btn:hover {
     background: #0068ff;
     border-color: #0068ff;
     color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(0, 104, 255, 0.25);
 }
 
 .ws-map-embed-wrapper {
-    background: #11141b;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
     overflow: hidden;
     height: 250px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
 }
 
 .ws-map-embed-wrapper iframe {
     display: block;
     width: 100%;
     height: 100%;
-    filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%);
+    filter: none;
 }
 
 /* Right Fast Booking Card */
 .fast-booking-card {
-    background: #11141b;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-top: 3px solid #ff4d24;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
     padding: 34px;
 }
 
@@ -6482,24 +6501,27 @@ html, body {
     gap: 14px;
     margin-bottom: 24px;
     padding-bottom: 18px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid #f1f5f9;
 }
 
 .booking-head-icon {
     width: 44px;
     height: 44px;
-    background: rgba(255, 77, 36, 0.12);
+    background: rgba(255, 77, 36, 0.1);
+    color: #ff4d24;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    font-size: 1.2rem;
 }
 
 .booking-card-title {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1.35rem;
     font-weight: 800;
-    color: #ffffff;
+    color: #0f172a;
     margin: 0 0 4px 0;
     letter-spacing: 0.5px;
 }
@@ -6507,7 +6529,7 @@ html, body {
 .booking-card-subtitle {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.85rem;
-    color: #94a3b8;
+    color: #64748b;
     margin: 0;
 }
 
@@ -6529,7 +6551,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.82rem;
     font-weight: 700;
-    color: #e2e8f0;
+    color: #1e293b;
     letter-spacing: 0.3px;
 }
 
@@ -6538,24 +6560,32 @@ html, body {
 }
 
 .home-fast-booking-form .form-control {
-    background: #0b0d11;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: #ffffff;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    color: #0f172a;
     padding: 12px 14px;
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.9rem;
+    border-radius: 6px;
     outline: none;
-    transition: border-color 0.2s ease;
+    transition: all 0.2s ease;
     width: 100%;
     box-sizing: border-box;
 }
 
 .home-fast-booking-form .form-control:focus {
     border-color: #ff4d24;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(255, 77, 36, 0.12);
 }
 
 .home-fast-booking-form .form-select {
     cursor: pointer;
+}
+
+.home-fast-booking-form .form-select option {
+    background: #ffffff;
+    color: #0f172a;
 }
 
 .home-fast-booking-form .form-textarea {
@@ -6575,6 +6605,7 @@ html, body {
     background: #ff4d24;
     color: #ffffff;
     border: none;
+    border-radius: 6px;
     padding: 16px 24px;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1rem;
@@ -6585,12 +6616,13 @@ html, body {
     transition: all 0.25s ease;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 16px rgba(255, 77, 36, 0.3);
 }
 
 .booking-submit-button:hover {
     background: #e03b14;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 77, 36, 0.4);
+    box-shadow: 0 6px 22px rgba(255, 77, 36, 0.45);
 }
 
 .booking-submit-button:disabled {
@@ -6605,12 +6637,13 @@ html, body {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.9rem;
     line-height: 1.5;
+    border-radius: 6px;
 }
 
 .booking-feedback-msg.success {
-    background: rgba(34, 197, 94, 0.15);
-    border: 1px solid #22c55e;
-    color: #4ade80;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #065f46;
 }
 
 .booking-feedback-msg.error {

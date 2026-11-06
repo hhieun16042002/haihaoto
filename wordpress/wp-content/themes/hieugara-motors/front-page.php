@@ -579,7 +579,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                     'title'      => __('BẢO DƯỠNG ĐỊNH KỲ', 'hieugara-motors'),
                     'desc'       => __('Quy trình kiểm tra 45 hạng mục toàn diện, quét lỗi điện tử ECU và thay dầu máy chính hãng.', 'hieugara-motors'),
                     'img'        => $shiftup_img . '/banner-2.jpg',
-                    'img_mobile' => get_template_directory_uri() . '/assets/images/slider/slide-bao-duong.jpg',
+                    'img_mobile' => $shiftup_img . '/slide-2.jpg',
                     'link'       => home_url('/dat-lich/?service=' . urlencode('Bảo Dưỡng Định Kỳ'))
                 ),
                 array(
