@@ -9,9 +9,15 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('HIEUGARA_THEME_VERSION', '5.7.5');
+define('HIEUGARA_THEME_VERSION', '5.7.6');
 define('HIEUGARA_THEME_DIR', get_template_directory());
 define('HIEUGARA_THEME_URI', get_template_directory_uri());
+
+// 0. Turbo Performance: Enable gzip output compression for all HTML documents (shrinks HTML from ~140KB to ~22KB)
+if (!ini_get('zlib.output_compression') && !headers_sent()) {
+    @ini_set('zlib.output_compression', 'On');
+    @ini_set('zlib.output_compression_level', '5');
+}
 
 // 0. Performance: Remove WordPress bloat from <head>
 remove_action('wp_head', 'print_emoji_detection_script', 7);
@@ -125,15 +131,6 @@ function hieugara_enqueue_scripts() {
         HIEUGARA_THEME_URI . '/assets/js/theme.js',
         array('jquery', 'swiper-js'),
         $js_version,
-        true
-    );
-
-    // Instant Speculative Preloader (0ms Page Transitions)
-    wp_enqueue_script(
-        'hieugara-instantpage',
-        HIEUGARA_THEME_URI . '/assets/js/instantpage.js',
-        array(),
-        HIEUGARA_THEME_VERSION,
         true
     );
 
