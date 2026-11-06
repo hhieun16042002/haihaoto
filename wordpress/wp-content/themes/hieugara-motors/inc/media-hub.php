@@ -114,75 +114,75 @@ function hieugara_get_default_accessories_items() {
     return array(
         1 => array(
             'enable'    => '1',
-            'title'     => 'Màn hình Zestech Z500 Chính Hãng',
-            'img'       => $acc_img_uri . '/zestech-z500.jpg',
-            'price'     => '8.500.000',
-            'old_price' => '9.500.000',
+            'title'     => 'Camera hành trình 70mai A810S 4K HDR Omni (Sony Starvis 2)',
+            'img'       => $acc_img_uri . '/vietmap-c61-pro.jpg',
+            'price'     => '3.690.000',
+            'old_price' => '4.200.000',
             'badge'     => 'BÁN CHẠY',
-            'link'      => home_url('/bang-gia/#phu-kien'),
+            'link'      => 'https://meta.vn/phu-kien-oto/',
         ),
         2 => array(
             'enable'    => '1',
-            'title'     => 'Màn Hình Android Elliview U4 Basic [3GB/32GB]',
-            'img'       => $acc_img_uri . '/elliview-u4.jpg',
-            'price'     => '6.800.000',
-            'old_price' => '7.800.000',
-            'badge'     => 'CHÍNH HÃNG',
-            'link'      => home_url('/bang-gia/#phu-kien'),
+            'title'     => 'Máy bơm lốp ô tô không dây Michelin M2567 Tự Ngắt Thông Minh',
+            'img'       => $acc_img_uri . '/ellisafe-j3.jpg',
+            'price'     => '1.180.000',
+            'old_price' => '1.450.000',
+            'badge'     => 'MICHELIN',
+            'link'      => 'https://meta.vn/phu-kien-oto/',
         ),
         3 => array(
             'enable'    => '1',
-            'title'     => 'Màn Hình Android Elliview S4 Basic [3GB/32GB + Camera 360]',
+            'title'     => 'Cảm biến áp suất lốp Steelmate TPMS M10 hiển thị LCD Solar',
+            'img'       => $acc_img_uri . '/ellisafe-i5.jpg',
+            'price'     => '2.250.000',
+            'old_price' => '2.600.000',
+            'badge'     => 'STEELMATE',
+            'link'      => 'https://meta.vn/phu-kien-oto/',
+        ),
+        4 => array(
+            'enable'    => '1',
+            'title'     => 'Máy hút bụi cầm tay ô tô Bosch BHN16L lực hút cực mạnh HEPA',
+            'img'       => $acc_img_uri . '/vietmap-c65.jpg',
+            'price'     => '1.850.000',
+            'old_price' => '2.190.000',
+            'badge'     => 'BOSCH CHÍNH HÃNG',
+            'link'      => 'https://meta.vn/phu-kien-oto/',
+        ),
+        5 => array(
+            'enable'    => '1',
+            'title'     => 'Bộ kích nổ ắc quy ô tô khẩn cấp Stanley 12V kiêm sạc dự phòng',
+            'img'       => $acc_img_uri . '/vietmap-c62s.jpg',
+            'price'     => '1.450.000',
+            'old_price' => '1.790.000',
+            'badge'     => 'CỨU HỘ KHẨN CẤP',
+            'link'      => 'https://meta.vn/phu-kien-oto/',
+        ),
+        6 => array(
+            'enable'    => '1',
+            'title'     => 'Màn hình thông minh Android Zestech Z500 tích hợp Giọng nói Kiki',
+            'img'       => $acc_img_uri . '/zestech-z500.jpg',
+            'price'     => '8.500.000',
+            'old_price' => '9.500.000',
+            'badge'     => 'ZESTECH',
+            'link'      => 'https://meta.vn/phu-kien-oto/',
+        ),
+        7 => array(
+            'enable'    => '1',
+            'title'     => 'Màn Hình Android Elliview S4 Basic [3GB/32GB + Camera 360 Sony]',
             'img'       => $acc_img_uri . '/elliview-s4.jpg',
             'price'     => '12.800.000',
             'old_price' => '14.500.000',
             'badge'     => 'TẶNG CAM 360',
-            'link'      => home_url('/bang-gia/#phu-kien'),
-        ),
-        4 => array(
-            'enable'    => '1',
-            'title'     => 'Cam hành trình VIETMAP C61 Pro Ghi Hình 4K',
-            'img'       => $acc_img_uri . '/vietmap-c61-pro.jpg',
-            'price'     => '3.190.000',
-            'old_price' => '3.600.000',
-            'badge'     => 'VIETMAP',
-            'link'      => home_url('/bang-gia/#phu-kien'),
-        ),
-        5 => array(
-            'enable'    => '1',
-            'title'     => 'Cảm biến áp suất lốp "Zin" ELLISAFE i5 cho Mercedes-Benz',
-            'img'       => $acc_img_uri . '/ellisafe-i5.jpg',
-            'price'     => '4.500.000',
-            'old_price' => '5.200.000',
-            'badge'     => 'THEO XE MERCEDES',
-            'link'      => home_url('/bang-gia/#phu-kien'),
-        ),
-        6 => array(
-            'enable'    => '1',
-            'title'     => 'Camera hành trình Vietmap C65 Cảnh Báo Giao Thông',
-            'img'       => $acc_img_uri . '/vietmap-c65.jpg',
-            'price'     => '4.290.000',
-            'old_price' => '4.790.000',
-            'badge'     => 'VIETMAP',
-            'link'      => home_url('/bang-gia/#phu-kien'),
-        ),
-        7 => array(
-            'enable'    => '1',
-            'title'     => 'Cảm Biến Áp Suất Lốp Ellisafe J3 Cho Màn Hình DVD Nguyên Bản',
-            'img'       => $acc_img_uri . '/ellisafe-j3.jpg',
-            'price'     => '2.800.000',
-            'old_price' => '3.200.000',
-            'badge'     => 'CẮM ZIN 100%',
-            'link'      => home_url('/bang-gia/#phu-kien'),
+            'link'      => 'https://meta.vn/phu-kien-oto/',
         ),
         8 => array(
             'enable'    => '1',
-            'title'     => 'Camera Hành Trình Trước & Sau Vietmap C62S',
-            'img'       => $acc_img_uri . '/vietmap-c62s.jpg',
-            'price'     => '3.590.000',
-            'old_price' => '3.990.000',
-            'badge'     => 'GHI HÌNH KÉP',
-            'link'      => home_url('/bang-gia/#phu-kien'),
+            'title'     => 'Tẩu sạc nhanh ô tô Baseus Digital Display 65W sạc Laptop & Điện thoại',
+            'img'       => $acc_img_uri . '/elliview-u4.jpg',
+            'price'     => '390.000',
+            'old_price' => '490.000',
+            'badge'     => 'BASEUS 65W',
+            'link'      => 'https://meta.vn/phu-kien-oto/',
         ),
     );
 }
@@ -819,9 +819,14 @@ function hieugara_render_media_hub_page() {
                 <div class="haiha-folder-box">
                     <div class="haiha-folder-head">
                         <h2><span class="dashicons dashicons-cart" style="color: #1d4ed8;"></span> Mục 2.4: Ảnh Phụ Kiện Ôtô Chính Hãng (Thanh Trượt Sản Phẩm Trang Chủ)</h2>
-                        <button type="button" class="button button-primary" id="hub-add-acc-btn" style="background: #0c1e3a; border-color: #0c1e3a;">
-                            + Thêm Phụ Kiện Mới
-                        </button>
+                        <div style="display: flex; gap: 8px;">
+                            <a href="<?php echo esc_url(admin_url('admin.php?page=hieugara-accessories-crud')); ?>" class="button" style="background: #C5A880; color: #141414; font-weight: 700; border: none;">
+                                🛍️ Mở Quản Lý Phụ Kiện (Full CRUD)
+                            </a>
+                            <button type="button" class="button button-primary" id="hub-add-acc-btn" style="background: #0c1e3a; border-color: #0c1e3a;">
+                                + Thêm Phụ Kiện Mới
+                            </button>
+                        </div>
                     </div>
                     <div class="haiha-folder-body">
                         <div class="haiha-cards-grid" id="hub-acc-grid">

@@ -236,8 +236,8 @@ html, body {
     left: 0;
     height: 3px;
     width: 0%;
-    background: linear-gradient(90deg, #F5A300 0%, #F5A300 60%, #ffffff 100%);
-    box-shadow: 0 0 12px rgba(245, 163, 0, 0.9), 0 0 6px rgba(245, 163, 0, 0.6);
+    background: linear-gradient(90deg, #C5A880 0%, #C5A880 60%, #ffffff 100%);
+    box-shadow: 0 0 12px rgba(197, 168, 128, 0.9), 0 0 6px rgba(197, 168, 128, 0.6);
     z-index: 9999999;
     pointer-events: none;
     opacity: 0;
@@ -289,15 +289,13 @@ html, body {
 
 .orange-bar,
 .btn-orange-bar {
-    color: #F5A300 !important;
+    color: #C5A880 !important;
     font-weight: 900 !important;
     margin-right: 6px;
     display: inline-block;
 }
 
-.text-orange {
-    color: #F5A300 !important;
-}
+.text-orange { color: #141414 !important; }
 
 .text-black {
     color: #141414 !important;
@@ -344,7 +342,7 @@ html, body {
 }
 
 .shiftup-topbar-inner a:hover {
-    color: #F5A300;
+    color: #C5A880;
 }
 
 /* =========================================================================
@@ -454,8 +452,8 @@ html, body {
     padding: 7px 16px;
     border-radius: 8px;
     background: #F5F5F5;
-    border: 1.5px solid #F5A300;
-    box-shadow: 0 2px 10px rgba(245, 163, 0, 0.15);
+    border: 1.5px solid #C5A880;
+    box-shadow: 0 2px 10px rgba(197, 168, 128, 0.15);
     transition: all 0.25s ease;
     position: relative;
 }
@@ -463,14 +461,14 @@ html, body {
 .header-rescue-card:hover {
     background: #e5e5e5;
     transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(245, 163, 0, 0.25);
+    box-shadow: 0 4px 16px rgba(197, 168, 128, 0.25);
 }
 
 .rescue-beacon-icon {
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    background: #F5A300;
+    background: #C5A880;
     color: #ffffff;
     display: flex;
     align-items: center;
@@ -485,7 +483,7 @@ html, body {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: rgba(245, 163, 0, 0.5);
+    background: rgba(197, 168, 128, 0.5);
     animation: rescueBeaconPing 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
@@ -510,7 +508,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.65rem;
     font-weight: 800;
-    color: #F5A300;
+    color: #C5A880;
     letter-spacing: 0.6px;
     text-transform: uppercase;
 }
@@ -527,7 +525,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1.15rem;
     font-weight: 800;
-    color: #F5A300;
+    color: #C5A880;
     letter-spacing: 0.8px;
 }
 
@@ -545,7 +543,7 @@ html, body {
 }
 
 .brand-hotline-box:hover {
-    border-color: #F5A300;
+    border-color: #C5A880;
     background: #F5F5F5;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
 }
@@ -565,7 +563,7 @@ html, body {
 }
 
 .brand-hotline-box:hover .hotline-icon-circle {
-    background: #F5A300;
+    background: #C5A880;
 }
 
 .hotline-text small {
@@ -587,13 +585,13 @@ html, body {
 }
 
 .brand-hotline-box:hover .hotline-phone-display {
-    color: #F5A300;
+    color: #C5A880;
 }
 
 .topbar-rescue-dot {
     width: 7px;
     height: 7px;
-    background: #F5A300;
+    background: #C5A880;
     border-radius: 50%;
     display: inline-block;
     margin-right: 6px;
@@ -618,13 +616,13 @@ html, body {
 }
 
 .brand-btn-book .btn-plus {
-    color: #F5A300;
+    color: #C5A880;
     font-size: 1.1rem;
     font-weight: 900;
 }
 
 .brand-btn-book:hover {
-    background: #F5A300;
+    background: #C5A880;
     color: #ffffff;
 }
 
@@ -654,8 +652,8 @@ html, body {
    ========================================================================= */
 .custom-navbar-strip {
     background: linear-gradient(90deg, #141414 0%, #1c1c1c 50%, #141414 100%);
-    border-top: 1px solid rgba(245, 163, 0, 0.22);
-    border-bottom: 2px solid #F5A300;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
     width: 100%;
     position: relative;
     z-index: 100;
@@ -714,7 +712,7 @@ html, body {
     left: 0;
     width: 100%;
     height: 3px;
-    background: #F5A300;
+    background: #C5A880;
     transform: scaleX(0);
     transform-origin: center;
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -747,19 +745,19 @@ html, body {
 
 .custom-nav-menu > .nav-item.active > .nav-link,
 .custom-nav-menu > .nav-item:hover > .nav-link {
-    color: #F5A300;
+    color: #C5A880;
 }
 
 .custom-nav-menu .nav-caret {
     font-size: 10px;
-    color: #F5A300;
+    color: #C5A880;
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease;
     margin-left: 2px;
 }
 
 .custom-nav-menu > .nav-item:hover .nav-caret {
     transform: rotate(180deg);
-    color: #F5A300;
+    color: #C5A880;
 }
 
 /* ShiftUp Glassmorphism Nav Dropdown Menu */
@@ -771,7 +769,7 @@ html, body {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid #e2e8f0;
-    border-top: 3px solid #F5A300;
+    border-top: 3px solid #C5A880;
     box-shadow: 0 18px 42px rgba(20, 20, 20, 0.12), 0 4px 12px rgba(20, 20, 20, 0.05);
     min-width: 280px;
     list-style: none;
@@ -829,7 +827,7 @@ html, body {
     left: -14px;
     width: 6px;
     height: 6px;
-    background: #F5A300;
+    background: #C5A880;
     transform: translateY(-50%);
     opacity: 0;
     transition: left 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.22s ease;
@@ -846,8 +844,8 @@ html, body {
 
 .nav-dropdown-menu > li > a:hover {
     padding-left: 32px;
-    color: #F5A300;
-    background: rgba(245, 163, 0, 0.05);
+    color: #C5A880;
+    background: rgba(197, 168, 128, 0.05);
 }
 
 .nav-dropdown-menu > li > a:hover::before {
@@ -856,7 +854,7 @@ html, body {
 }
 
 .nav-dropdown-menu > li > a:hover i {
-    color: #F5A300;
+    color: #C5A880;
     transform: scale(1.12);
 }
 
@@ -870,7 +868,7 @@ html, body {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(0, 0, 0, 0.08);
-    border-top: 3px solid #F5A300;
+    border-top: 3px solid #C5A880;
     box-shadow: 0 20px 48px rgba(0, 0, 0, 0.14), 0 6px 16px rgba(0, 0, 0, 0.05);
     opacity: 0;
     visibility: hidden;
@@ -933,7 +931,7 @@ html, body {
 .mega-dropdown-col .mega-dot {
     width: 6px;
     height: 6px;
-    background: #F5A300;
+    background: #C5A880;
     border-radius: 1px;
     display: inline-block;
 }
@@ -971,7 +969,7 @@ html, body {
     left: -12px;
     width: 5px;
     height: 5px;
-    background: #F5A300;
+    background: #C5A880;
     transform: translateY(-50%);
     opacity: 0;
     transition: left 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.22s ease;
@@ -984,7 +982,7 @@ html, body {
 }
 
 .mega-list > li > a:hover {
-    color: #F5A300;
+    color: #C5A880;
     padding-left: 14px;
 }
 
@@ -1005,7 +1003,7 @@ html, body {
 }
 
 .mega-cta-link {
-    color: #F5A300;
+    color: #C5A880;
     font-weight: 700;
     text-decoration: none;
     display: inline-flex;
@@ -1035,13 +1033,13 @@ html, body {
 }
 
 .menu-search-pill:hover {
-    border-color: #F5A300;
-    box-shadow: 0 2px 10px rgba(245, 163, 0, 0.12);
+    border-color: #C5A880;
+    box-shadow: 0 2px 10px rgba(197, 168, 128, 0.12);
 }
 
 .menu-search-pill:focus-within {
-    border-color: #F5A300;
-    box-shadow: 0 0 0 3px rgba(245, 163, 0, 0.2), 0 3px 12px rgba(245, 163, 0, 0.15);
+    border-color: #C5A880;
+    box-shadow: 0 0 0 3px rgba(197, 168, 128, 0.2), 0 3px 12px rgba(197, 168, 128, 0.15);
     transform: scale(1.02);
 }
 
@@ -1071,7 +1069,7 @@ html, body {
     background: transparent;
     border: none;
     cursor: pointer;
-    color: #F5A300;
+    color: #C5A880;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1094,10 +1092,9 @@ html, body {
 .lexus-banner-slider {
     position: relative;
     width: 100%;
+    min-height: 580px;
     height: calc(100vh - 68px);
-    height: calc(100dvh - 68px);
-    min-height: 520px;
-    max-height: none !important;
+    max-height: 780px;
     background: #141414;
     overflow: hidden;
 }
@@ -1113,9 +1110,7 @@ html, body {
     inset: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: block;
     background: #141414;
     opacity: 0;
     visibility: hidden;
@@ -1129,101 +1124,109 @@ html, body {
     z-index: 2;
 }
 
-/* Top Image Block (Ảnh ở trên - 1st Flex Child) */
 .lexus-slide-bg {
-    position: relative !important;
-    inset: auto !important;
+    position: absolute !important;
+    inset: 0 !important;
     width: 100% !important;
-    flex: 1 1 auto !important;
-    min-height: 220px !important;
-    height: auto !important;
+    height: 100% !important;
     background-size: cover !important;
     background-position: center center !important;
-    transform: none !important;
+    transform: scale(1.06);
+    transition: transform 7.5s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
     overflow: hidden;
     z-index: 1;
 }
 
-.lexus-slide-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(20, 20, 20, 0.14) 0%, rgba(20, 20, 20, 0) 28%, rgba(20, 20, 20, 0) 64%, rgba(20, 20, 20, 0.88) 88%, #141414 100%);
-    pointer-events: none;
-    z-index: 2;
+.lexus-slide.active .lexus-slide-bg {
+    transform: scale(1.0) !important;
 }
 
 .lexus-slide-overlay {
-    display: none !important;
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: linear-gradient(90deg, rgba(20, 20, 20, 0.88) 0%, rgba(20, 20, 20, 0.55) 45%, rgba(20, 20, 20, 0.12) 80%, rgba(20, 20, 20, 0.30) 100%), linear-gradient(to top, rgba(20, 20, 20, 0.88) 0%, transparent 35%) !important;
+    z-index: 2;
+    pointer-events: none;
 }
 
-/* Bottom Editorial Content Block (Nội dung ở dưới - 2nd Flex Child) */
 .lexus-slide-container {
     position: relative !important;
-    flex: 0 0 auto !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    display: block !important;
-    background: #141414 !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    max-width: 1360px !important;
     margin: 0 auto !important;
-    padding: 18px max(75px, calc((100vw - 1210px) / 2)) 78px !important;
+    padding: 0 75px 105px !important;
+    background: transparent !important;
     z-index: 3;
 }
 
 .lexus-slide-content {
-    max-width: 780px;
+    max-width: 700px;
     color: #ffffff;
 }
 
 .lexus-eyebrow {
-    display: none;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    color: #C5A880;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+.lexus-slide.active .lexus-eyebrow {
+    animation: lexusFadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
 }
 
 .lexus-gold-bar {
-    width: 18px;
-    height: 1.5px;
-    background: #ffffff;
+    width: 20px;
+    height: 2px;
+    background: #C5A880;
     display: inline-block;
 }
 
 .lexus-slide-title {
     font-family: 'Chakra Petch', sans-serif;
-    font-size: clamp(1.45rem, 2.2vw, 2.15rem);
-    font-weight: 300;
-    line-height: 1.2;
+    font-size: clamp(2.2rem, 4.2vw, 3.6rem);
+    font-weight: 700;
+    line-height: 1.15;
     color: #ffffff;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    margin: 0 0 8px 0;
-    text-shadow: none;
+    letter-spacing: 2px;
+    margin: 0 0 16px 0;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(22px);
 }
 
 .lexus-slide.active .lexus-slide-title {
-    animation: lexusFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+    animation: lexusFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
 }
 
 .lexus-slide-desc {
     font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 0.92rem;
+    font-size: 1.02rem;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.6;
     color: rgba(255, 255, 255, 0.92);
-    margin: 0 0 14px 0;
-    max-width: 680px;
-    text-shadow: none;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    margin: 0 0 26px 0;
+    max-width: 640px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(22px);
 }
 
 .lexus-slide.active .lexus-slide-desc {
-    animation: lexusFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+    animation: lexusFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
 }
 
 .lexus-slide-actions {
@@ -1231,20 +1234,20 @@ html, body {
     align-items: center;
     gap: 16px;
     flex-wrap: wrap;
-    opacity: 1;
-    transform: none;
+    opacity: 0;
+    transform: translateY(22px);
 }
 
 .lexus-slide.active .lexus-slide-actions {
     opacity: 1 !important;
     visibility: visible !important;
-    animation: lexusFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+    animation: lexusFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
 }
 
 @keyframes lexusFadeUp {
     0% {
         opacity: 0;
-        transform: translateY(18px);
+        transform: translateY(22px);
     }
     100% {
         opacity: 1;
@@ -1252,47 +1255,52 @@ html, body {
     }
 }
 
-/* Authentic Lexus Vietnam Outlined Button */
+/* Authentic Lexus Outlined Button */
 .lexus-outline-btn {
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
-    border: 1.5px solid rgba(255, 255, 255, 0.92) !important;
-    background: rgba(245, 163, 0, 0.18);
-    color: #ffffff !important;
-    padding: 10px 28px;
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 2.2px;
+    border: 1.5px solid #C5A880 !important;
+    background: rgba(197, 168, 128, 0.12);
+    color: #C5A880 !important;
+    padding: 13px 36px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 2px;
     text-transform: uppercase;
     text-decoration: none !important;
-    border-radius: 0;
+    border-radius: 4px;
     transition: all 0.3s ease;
     cursor: pointer;
+    backdrop-filter: blur(4px);
 }
 
 .lexus-outline-btn span {
-    color: #ffffff !important;
+    color: #C5A880 !important;
+    transition: color 0.3s ease;
 }
 
-.lexus-outline-btn:hover,
-.lexus-outline-btn:hover span {
-    background: #ffffff;
+.lexus-outline-btn:hover {
+    background: #C5A880 !important;
     color: #141414 !important;
-    border-color: #ffffff !important;
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.35);
+    border-color: #C5A880 !important;
+    box-shadow: 0 6px 20px rgba(197, 168, 128, 0.45);
 }
 
-/* Lexus Navigation Arrows (Centered in Top Image Area) */
+.lexus-outline-btn:hover span {
+    color: #141414 !important;
+}
+
+/* Lexus Navigation Arrows */
 .lexus-nav-arrow {
     position: absolute;
-    top: 32%;
+    top: 50%;
     transform: translateY(-50%);
     width: 48px;
     height: 48px;
-    background: rgba(8, 10, 14, 0.35);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(20, 20, 20, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.22);
     color: #ffffff;
     display: flex;
     align-items: center;
@@ -1301,20 +1309,20 @@ html, body {
     z-index: 10;
     transition: all 0.25s ease;
     backdrop-filter: blur(4px);
-    border-radius: 2px;
+    border-radius: 4px;
 }
 
 .lexus-prev-btn {
-    left: 20px;
+    left: 24px;
 }
 
 .lexus-next-btn {
-    right: 20px;
+    right: 24px;
 }
 
 .lexus-nav-arrow:hover {
-    background: #ffffff;
-    border-color: #ffffff;
+    background: #C5A880;
+    border-color: #C5A880;
     color: #141414;
 }
 
@@ -1326,7 +1334,7 @@ html, body {
     width: 100%;
     z-index: 10;
     padding: 14px 0 18px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
+    background: linear-gradient(to top, rgba(20, 20, 20, 0.85) 0%, transparent 100%);
 }
 
 .lexus-pagination-inner {
@@ -1375,7 +1383,7 @@ html, body {
 }
 
 .lexus-dash-item.active .dash-num {
-    color: #F5A300;
+    color: #C5A880;
     font-weight: 700;
 }
 
@@ -1394,7 +1402,7 @@ html, body {
     left: 0;
     height: 100%;
     width: 0%;
-    background: #F5A300;
+    background: #C5A880;
 }
 
 .lexus-dash-item.active .dash-progress-fill {
@@ -1556,7 +1564,7 @@ html, body {
     position: absolute;
     width: 12px;
     height: 12px;
-    background: #F5A300;
+    background: #C5A880;
     z-index: 10;
     opacity: 0;
     transition: top 0.85s cubic-bezier(0.22, 0.61, 0.36, 1),
@@ -1632,7 +1640,7 @@ html, body {
     display: inline-block;
     width: 7px;
     height: 7px;
-    background: #F5A300;
+    background: #C5A880;
     margin-right: 8px;
 }
 
@@ -1654,11 +1662,11 @@ html, body {
 }
 
 .btn-dark-view:hover {
-    background: #F5A300;
-    border-color: #F5A300;
+    background: #C5A880;
+    border-color: #C5A880;
     color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(245, 163, 0, 0.35);
+    box-shadow: 0 6px 18px rgba(197, 168, 128, 0.35);
 }
 
 /* =========================================================================
@@ -1695,7 +1703,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.78rem;
     font-weight: 700;
-    color: #F5A300;
+    color: #C5A880;
     letter-spacing: 1.8px;
     text-transform: uppercase;
 }
@@ -1729,11 +1737,11 @@ html, body {
 }
 
 .all-about-arrows .arrow-btn:hover {
-    background: #F5A300;
-    border-color: #F5A300;
+    background: #C5A880;
+    border-color: #C5A880;
     color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(245, 163, 0, 0.25);
+    box-shadow: 0 6px 14px rgba(197, 168, 128, 0.25);
 }
 
 .all-about-arrows .arrow-btn:active {
@@ -1821,7 +1829,7 @@ html, body {
 }
 
 .view-detail-badge {
-    background: #F5A300;
+    background: #C5A880;
     color: #ffffff;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.78rem;
@@ -1850,7 +1858,7 @@ html, body {
     font-weight: 700;
     letter-spacing: 0.8px;
     padding: 4px 10px;
-    border-left: 3px solid #F5A300;
+    border-left: 3px solid #C5A880;
     text-transform: uppercase;
     z-index: 3;
     pointer-events: none;
@@ -1875,7 +1883,7 @@ html, body {
 }
 
 .card-item-title a:hover {
-    color: #F5A300;
+    color: #C5A880;
 }
 
 .card-item-desc {
@@ -1893,7 +1901,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.82rem;
     font-weight: 700;
-    color: #F5A300;
+    color: #C5A880;
     text-decoration: none;
     text-transform: uppercase;
     margin-top: auto;
@@ -1903,7 +1911,7 @@ html, body {
 }
 
 .card-learn-more-link svg {
-    stroke: #F5A300;
+    stroke: #C5A880;
     transition: transform 0.2s ease;
 }
 
@@ -2175,7 +2183,7 @@ html, body {
 .pano-action-btn::after {
     content: "";
     position: absolute;
-    background-color: #F5A300;
+    background-color: #C5A880;
     left: 0;
     top: 0;
     width: 6px;
@@ -2191,7 +2199,7 @@ html, body {
 
 .pano-action-btn:hover,
 .pano-banner-col:hover .pano-action-btn {
-    box-shadow: 0 4px 18px rgba(245, 163, 0, 0.45);
+    box-shadow: 0 4px 18px rgba(197, 168, 128, 0.45);
 }
 
 /* Plus Icon: Perfectly centered cross symbol */
@@ -2275,7 +2283,7 @@ html, body {
 
 .flanked-diag-item:hover,
 .flanked-diag-item.active {
-    border-left: 4px solid #F5A300;
+    border-left: 4px solid #C5A880;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
     transform: translateY(-3px);
 }
@@ -2323,8 +2331,8 @@ html, body {
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #F5A300, transparent);
-    box-shadow: 0 0 12px #F5A300;
+    background: linear-gradient(90deg, transparent, #C5A880, transparent);
+    box-shadow: 0 0 12px #C5A880;
     animation: diagLaser 3s linear infinite;
 }
 
@@ -2500,12 +2508,12 @@ html, body {
 }
 
 .checkup-btn:hover {
-    background: #F5A300;
+    background: #C5A880;
     color: #ffffff;
 }
 
 .checkup-btn.btn-primary-featured {
-    background: #F5A300;
+    background: #C5A880;
     color: #ffffff;
 }
 
@@ -2540,7 +2548,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.8rem;
     font-weight: 700;
-    color: #F5A300;
+    color: #C5A880;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 8px;
@@ -2710,7 +2718,7 @@ html, body {
 .workshops-all-link {
     font-family: 'Chakra Petch', sans-serif;
     font-weight: 700;
-    color: #F5A300;
+    color: #C5A880;
     text-decoration: none;
     font-size: 0.95rem;
 }
@@ -2741,7 +2749,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.75rem;
     font-weight: 800;
-    color: #F5A300;
+    color: #C5A880;
     letter-spacing: 1.5px;
     margin-bottom: 10px;
 }
@@ -2799,7 +2807,7 @@ html, body {
 }
 
 .ws-link-btn:hover {
-    background: #F5A300;
+    background: #C5A880;
 }
 
 .ws-link-btn.ghost {
@@ -2943,12 +2951,12 @@ html, body {
     min-width: 44px;
     min-height: 44px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #F5A300 0%, #d98e00 100%);
+    background: linear-gradient(135deg, #C5A880 0%, #d98e00 100%);
     color: #ffffff;
     font-size: 1.15rem;
     text-decoration: none;
     position: relative;
-    box-shadow: 0 4px 14px rgba(245, 163, 0, 0.45);
+    box-shadow: 0 4px 14px rgba(197, 168, 128, 0.45);
     flex-shrink: 0;
 }
 .mobile-quick-call:hover {
@@ -2959,7 +2967,7 @@ html, body {
     position: absolute;
     inset: -3px;
     border-radius: 50%;
-    border: 2px solid rgba(245, 163, 0, 0.65);
+    border: 2px solid rgba(197, 168, 128, 0.65);
     animation: beaconPulseRing 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
 }
 
@@ -3008,14 +3016,14 @@ html, body {
     }
     .mobile-nav-toggle.is-active .hamburger-bar:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
-        background: #F5A300;
+        background: #C5A880;
     }
     .mobile-nav-toggle.is-active .hamburger-bar:nth-child(2) {
         opacity: 0;
     }
     .mobile-nav-toggle.is-active .hamburger-bar:nth-child(3) {
         transform: translateY(-7px) rotate(-45deg);
-        background: #F5A300;
+        background: #C5A880;
     }
 
     .main-brand-header {
@@ -3084,7 +3092,7 @@ html, body {
         height: 100vh !important;
         height: 100dvh !important;
         background: #141414 !important;
-        border-left: 1px solid rgba(245, 163, 0, 0.25) !important;
+        border-left: 1px solid rgba(197, 168, 128, 0.25) !important;
         z-index: 99999 !important;
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch;
@@ -3151,7 +3159,7 @@ html, body {
         transition: all 0.2s;
     }
     .mobile-drawer-close:hover {
-        background: #F5A300;
+        background: #C5A880;
         color: #ffffff;
     }
 
@@ -3183,7 +3191,7 @@ html, body {
     .menu-search-pill .search-submit {
         background: transparent;
         border: none;
-        color: #F5A300;
+        color: #C5A880;
         font-size: 0.95rem;
         cursor: pointer;
     }
@@ -3215,7 +3223,7 @@ html, body {
     }
     .custom-nav-menu > .nav-item.active > .nav-link,
     .custom-nav-menu > .nav-item:hover > .nav-link {
-        color: #F5A300;
+        color: #C5A880;
     }
     .nav-caret {
         font-size: 0.8rem;
@@ -3224,7 +3232,7 @@ html, body {
     }
     .custom-nav-menu > .nav-item.open-submenu > .nav-link .nav-caret {
         transform: rotate(180deg);
-        color: #F5A300;
+        color: #C5A880;
     }
 
     .nav-dropdown-menu,
@@ -3259,7 +3267,7 @@ html, body {
     }
     .nav-dropdown-menu li a:hover,
     .mega-list li a:hover {
-        color: #F5A300;
+        color: #C5A880;
     }
     .mega-dropdown-grid {
         grid-template-columns: 1fr;
@@ -3267,7 +3275,7 @@ html, body {
         gap: 12px;
     }
     .mega-title {
-        color: #F5A300;
+        color: #C5A880;
         font-family: 'Chakra Petch', sans-serif;
         font-size: 0.82rem;
         font-weight: 800;
@@ -3284,7 +3292,7 @@ html, body {
         color: #8c95a6;
     }
     .mega-cta-link {
-        color: #F5A300;
+        color: #C5A880;
         font-weight: 700;
         text-decoration: underline;
     }
@@ -3304,7 +3312,7 @@ html, body {
         align-items: center;
         justify-content: center;
         gap: 10px;
-        background: linear-gradient(135deg, #F5A300 0%, #d98e00 100%);
+        background: linear-gradient(135deg, #C5A880 0%, #d98e00 100%);
         color: #ffffff;
         text-decoration: none;
         font-family: 'Chakra Petch', sans-serif;
@@ -3312,7 +3320,7 @@ html, body {
         font-weight: 700;
         padding: 12px 14px;
         border-radius: 6px;
-        box-shadow: 0 4px 14px rgba(245, 163, 0, 0.35);
+        box-shadow: 0 4px 14px rgba(197, 168, 128, 0.35);
     }
     .drawer-btn-book {
         display: flex;
@@ -3353,83 +3361,111 @@ html, body {
         padding-bottom: 72px !important;
     }
 
-    /* Authentic Lexus Vietnam 1-Screen Split Hero (Ảnh ở trên + Nội dung ở dưới vừa khít 100% màn hình không hở trắng) */
+    /* Ductri226 Full-Bleed Cinematic Hero Slider for Mobile */
     .lexus-banner-slider {
-        height: calc(100vh - 137px) !important;
-        height: calc(100svh - 137px) !important;
-        height: calc(100dvh - 137px) !important;
-        min-height: 460px !important;
+        height: 480px !important;
+        min-height: 440px !important;
         max-height: none !important;
         background: #141414;
     }
     .lexus-slide-bg {
-        position: relative !important;
-        inset: auto !important;
-        flex: 1 1 auto !important;
-        min-height: 200px !important;
+        position: absolute !important;
+        inset: 0 !important;
         width: 100% !important;
-        height: auto !important;
-        background-position: center center !important;
+        height: 100% !important;
+        background-size: cover !important;
+        background-position: center !important;
     }
     .lexus-slide-overlay {
-        display: none !important;
+        display: block !important;
+        position: absolute !important;
+        inset: 0 !important;
+        background: linear-gradient(180deg, rgba(20, 20, 20, 0.25) 0%, rgba(20, 20, 20, 0.65) 45%, rgba(20, 20, 20, 0.92) 100%) !important;
+        z-index: 2;
     }
     .lexus-slide-container {
         position: relative !important;
-        flex: 0 0 auto !important;
+        height: 100% !important;
+        display: flex !important;
+        align-items: flex-end !important;
         width: 100% !important;
         max-width: 100% !important;
-        background: #141414 !important;
-        padding: 18px 20px 48px !important;
+        background: transparent !important;
+        padding: 0 16px 56px !important;
+        z-index: 3;
     }
     .lexus-eyebrow {
-        display: none;
+        display: inline-flex !important;
+        align-items: center;
+        gap: 6px;
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: #C5A880;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+    }
+    .lexus-gold-bar {
+        width: 16px;
+        height: 2px;
+        background: #C5A880;
+        display: inline-block;
     }
     .lexus-slide-title {
         font-family: 'Chakra Petch', sans-serif;
-        font-size: 1.28rem;
-        font-weight: 300;
-        letter-spacing: 2.2px;
-        line-height: 1.22;
-        margin-bottom: 6px;
-        text-shadow: none;
+        font-size: 1.55rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        line-height: 1.2;
+        margin-bottom: 8px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+        color: #ffffff;
     }
     .lexus-slide-desc {
         font-family: 'Be Vietnam Pro', sans-serif;
         font-size: 0.85rem;
         font-weight: 400;
-        line-height: 1.44;
+        line-height: 1.45;
         color: rgba(255, 255, 255, 0.92);
-        margin-bottom: 12px;
-        text-shadow: none;
+        margin-bottom: 14px;
+        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
     .lexus-slide-actions {
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
         flex-direction: row;
         align-items: center;
-        justify-content: flex-start;
-        gap: 12px;
+        gap: 10px;
     }
     .lexus-outline-btn {
         width: auto;
-        display: inline-flex;
+        display: inline-flex !important;
         justify-content: center;
         text-align: center;
         padding: 10px 24px;
-        font-size: 0.74rem;
-        font-weight: 500;
-        letter-spacing: 2px;
-        border: 1px solid rgba(255, 255, 255, 0.88);
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        border: 1.5px solid #C5A880 !important;
+        background: rgba(197, 168, 128, 0.15) !important;
+        color: #C5A880 !important;
+    }
+    .lexus-outline-btn span {
+        color: #C5A880 !important;
     }
     .lexus-nav-arrow {
         display: none;
     }
     .lexus-pagination-bar {
-        padding: 6px 0 10px;
-        background: transparent;
+        padding: 6px 0 12px;
+        background: linear-gradient(to top, rgba(20, 20, 20, 0.85) 0%, transparent 100%);
     }
     .lexus-pagination-inner {
         padding: 0 20px;
@@ -3630,8 +3666,8 @@ html, body {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, transparent, #F5A300, #ffffff, #F5A300, transparent);
-    box-shadow: 0 0 12px #F5A300, 0 0 24px rgba(245, 163, 0, 0.8);
+    background: linear-gradient(90deg, transparent, #C5A880, #ffffff, #C5A880, transparent);
+    box-shadow: 0 0 12px #C5A880, 0 0 24px rgba(197, 168, 128, 0.8);
     opacity: 0;
     z-index: 10;
 }
@@ -3731,7 +3767,7 @@ html, body {
 /* Pulse Hover for High-Octane Orange Accent Bars */
 .orange-bar, .btn-orange-bar {
     display: inline-block;
-    color: #F5A300;
+    color: #C5A880;
     font-weight: 900;
     margin-right: 6px;
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease;
@@ -3747,7 +3783,7 @@ html, body {
 .shiftup-main-footer {
     background: linear-gradient(180deg, #F5F5F5 0%, #F5F5F5 100%);
     color: #5F6368;
-    border-top: 3px solid #F5A300;
+    border-top: 3px solid #C5A880;
     position: relative;
     overflow: hidden;
     font-family: 'Be Vietnam Pro', sans-serif;
@@ -3760,7 +3796,7 @@ html, body {
     left: 0;
     right: 0;
     height: 180px;
-    background: radial-gradient(ellipse at 50% -20%, rgba(245, 163, 0, 0.08) 0%, transparent 70%);
+    background: radial-gradient(ellipse at 50% -20%, rgba(197, 168, 128, 0.08) 0%, transparent 70%);
     pointer-events: none;
     z-index: 1;
 }
@@ -3799,7 +3835,7 @@ html, body {
     position: absolute;
     inset: -6px;
     border-radius: 50%;
-    background: rgba(245, 163, 0, 0.45);
+    background: rgba(197, 168, 128, 0.45);
     animation: beaconPulseAnim 1.8s infinite cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -3807,8 +3843,8 @@ html, body {
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: #F5A300;
-    box-shadow: 0 0 10px #F5A300, 0 0 18px rgba(245, 163, 0, 0.8);
+    background: #C5A880;
+    box-shadow: 0 0 10px #C5A880, 0 0 18px rgba(197, 168, 128, 0.8);
 }
 
 @keyframes beaconPulseAnim {
@@ -3826,7 +3862,7 @@ html, body {
 
 .prebar-badge {
     display: inline-block;
-    background: #F5A300;
+    background: #C5A880;
     color: #ffffff;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.72rem;
@@ -3834,7 +3870,7 @@ html, body {
     letter-spacing: 1.2px;
     padding: 3px 8px;
     border-radius: 3px;
-    box-shadow: 0 2px 8px rgba(245, 163, 0, 0.35);
+    box-shadow: 0 2px 8px rgba(197, 168, 128, 0.35);
 }
 
 .prebar-title {
@@ -3858,7 +3894,7 @@ html, body {
     gap: 10px;
     background: #F5F5F5;
     border: 1px solid #e0e0e0;
-    color: #F5A300;
+    color: #C5A880;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1.05rem;
     font-weight: 800;
@@ -3882,10 +3918,10 @@ html, body {
 }
 
 .prebar-phone-pill:hover {
-    background: #F5A300;
+    background: #C5A880;
     color: #ffffff;
-    border-color: #F5A300;
-    box-shadow: 0 8px 20px rgba(245, 163, 0, 0.35);
+    border-color: #C5A880;
+    box-shadow: 0 8px 20px rgba(197, 168, 128, 0.35);
     transform: translateY(-2px);
 }
 
@@ -3943,7 +3979,7 @@ html, body {
 }
 
 .footer-brand-heading .brand-tag {
-    background: #F5A300;
+    background: #C5A880;
     color: #ffffff;
     font-size: 0.72rem;
     font-weight: 800;
@@ -4008,7 +4044,7 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #F5A300;
+    color: #C5A880;
     font-size: 0.85rem;
     flex-shrink: 0;
     transition: all 0.22s ease;
@@ -4062,20 +4098,20 @@ html, body {
 }
 
 .contact-chip:hover {
-    border-color: #F5A300;
+    border-color: #C5A880;
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(245, 163, 0, 0.12);
+    box-shadow: 0 6px 16px rgba(197, 168, 128, 0.12);
 }
 
 .contact-chip:hover i {
-    background: #F5A300;
+    background: #C5A880;
     color: #ffffff;
-    border-color: #F5A300;
+    border-color: #C5A880;
 }
 
 .contact-chip:hover strong,
 .contact-chip:hover span {
-    color: #F5A300;
+    color: #C5A880;
 }
 
 /* Social & Email Pills Row */
@@ -4119,12 +4155,12 @@ html, body {
 }
 
 .footer-mail-pill i {
-    color: #F5A300;
+    color: #C5A880;
 }
 
 .footer-mail-pill:hover {
-    border-color: #F5A300;
-    color: #F5A300;
+    border-color: #C5A880;
+    color: #C5A880;
 }
 
 /* Columns Title */
@@ -4150,7 +4186,7 @@ html, body {
     left: 0;
     width: 44px;
     height: 2px;
-    background: #F5A300;
+    background: #C5A880;
 }
 
 .title-square {
@@ -4158,9 +4194,9 @@ html, body {
     width: 8px;
     height: 8px;
     border-radius: 2px;
-    background: #F5A300;
+    background: #C5A880;
     margin-right: 10px;
-    box-shadow: 0 0 8px rgba(245, 163, 0, 0.45);
+    box-shadow: 0 0 8px rgba(197, 168, 128, 0.45);
 }
 
 /* Links List */
@@ -4198,12 +4234,12 @@ html, body {
 }
 
 .footer-links-list li a:hover {
-    color: #F5A300;
+    color: #C5A880;
     padding-left: 5px;
 }
 
 .footer-links-list li a:hover::before {
-    background: #F5A300;
+    background: #C5A880;
     transform: scale(1.25);
 }
 
@@ -4213,11 +4249,11 @@ html, body {
 }
 
 .footer-links-list li a.highlight-link::before {
-    background: #F5A300;
+    background: #C5A880;
 }
 
 .badge-mini {
-    background: #F5A300;
+    background: #C5A880;
     color: #ffffff;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.62rem;
@@ -4253,11 +4289,11 @@ html, body {
 }
 
 .footer-action-link i {
-    color: #F5A300;
+    color: #C5A880;
 }
 
 .footer-action-link:hover {
-    border-color: #F5A300;
+    border-color: #C5A880;
     background: #F5F5F5;
     color: #d98e00;
 }
@@ -4278,8 +4314,8 @@ html, body {
 }
 
 .footer-map-card:hover {
-    border-color: #F5A300;
-    box-shadow: 0 14px 32px rgba(245, 163, 0, 0.12);
+    border-color: #C5A880;
+    box-shadow: 0 14px 32px rgba(197, 168, 128, 0.12);
     transform: translateY(-2px);
 }
 
@@ -4322,8 +4358,8 @@ html, body {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #F5A300;
-    box-shadow: 0 0 8px #F5A300;
+    background: #C5A880;
+    box-shadow: 0 0 8px #C5A880;
     animation: beaconPulseAnim 2s infinite;
     flex-shrink: 0;
 }
@@ -4350,7 +4386,7 @@ html, body {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.78rem;
     font-weight: 700;
-    color: #F5A300;
+    color: #C5A880;
     text-decoration: none;
     padding: 5px 11px;
     background: #F5F5F5;
@@ -4361,8 +4397,8 @@ html, body {
 }
 
 .map-direct-btn:hover {
-    background: #F5A300;
-    border-color: #F5A300;
+    background: #C5A880;
+    border-color: #C5A880;
     color: #ffffff;
 }
 
@@ -4408,7 +4444,7 @@ html, body {
 }
 
 .bottom-extra-links a:hover {
-    color: #F5A300;
+    color: #C5A880;
 }
 
 .bottom-extra-links .sep {
@@ -4441,10 +4477,10 @@ html, body {
 }
 
 .back-to-top-btn:hover {
-    background: #F5A300;
+    background: #C5A880;
     color: #ffffff;
-    border-color: #F5A300;
-    box-shadow: 0 6px 16px rgba(245, 163, 0, 0.35);
+    border-color: #C5A880;
+    box-shadow: 0 6px 16px rgba(197, 168, 128, 0.35);
 }
 
 .back-to-top-btn:hover .btn-top-icon {
@@ -4486,14 +4522,14 @@ html, body {
 }
 
 .dock-rescue {
-    background: linear-gradient(135deg, #F5A300 0%, #d98e00 100%);
+    background: linear-gradient(135deg, #C5A880 0%, #d98e00 100%);
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .dock-rescue:hover {
     transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 12px 28px rgba(245, 163, 0, 0.55);
+    box-shadow: 0 12px 28px rgba(197, 168, 128, 0.55);
     color: #ffffff;
 }
 
@@ -4536,15 +4572,15 @@ html, body {
 .dock-book {
     background: rgba(18, 20, 26, 0.92);
     color: #ffffff;
-    border: 1px solid rgba(245, 163, 0, 0.45);
+    border: 1px solid rgba(197, 168, 128, 0.45);
 }
 
 .dock-book:hover {
     background: #1c1c1c;
-    border-color: #F5A300;
-    color: #F5A300;
+    border-color: #C5A880;
+    color: #C5A880;
     transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 12px 28px rgba(245, 163, 0, 0.35);
+    box-shadow: 0 12px 28px rgba(197, 168, 128, 0.35);
 }
 
 /* 5. Full-Page Scroll Animations for Footer (Bidirectional) */
@@ -4809,7 +4845,7 @@ html, body {
         color: #f59e0b !important;
     }
     .float-dock-pill.dock-zalo {
-        color: #F5A300 !important;
+        color: #C5A880 !important;
     }
     .float-dock-pill.dock-book {
         color: #10b981 !important;
@@ -4856,12 +4892,12 @@ html, body {
     left: 0;
     width: 0;
     height: 3px;
-    background: #F5A300;
+    background: #C5A880;
     transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .service-12-card:hover {
-    border-color: #F5A300;
+    border-color: #C5A880;
     transform: translateY(-4px);
     box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
 }
@@ -4881,8 +4917,8 @@ html, body {
     width: 46px;
     height: 46px;
     border-radius: 8px;
-    background: rgba(245, 163, 0, 0.1);
-    color: #F5A300;
+    background: rgba(197, 168, 128, 0.1);
+    color: #C5A880;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4892,17 +4928,17 @@ html, body {
 }
 
 .service-12-card:hover .card-icon-box {
-    background: #F5A300;
+    background: #C5A880;
     color: #ffffff;
     transform: rotate(-6deg) scale(1.05);
-    box-shadow: 0 4px 12px rgba(245, 163, 0, 0.35);
+    box-shadow: 0 4px 12px rgba(197, 168, 128, 0.35);
 }
 
 .card-badge {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.68rem;
     font-weight: 800;
-    color: #F5A300;
+    color: #C5A880;
     letter-spacing: 0.8px;
     text-transform: uppercase;
     margin-bottom: 4px;
@@ -4924,7 +4960,7 @@ html, body {
 }
 
 .card-service-title a:hover {
-    color: #F5A300;
+    color: #C5A880;
 }
 
 .card-meta-row {
@@ -4951,7 +4987,7 @@ html, body {
 .meta-item strong.price-val {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.95rem;
-    color: #F5A300;
+    color: #C5A880;
     font-weight: 800;
 }
 
@@ -4987,7 +5023,7 @@ html, body {
 }
 
 .card-feature-list li i {
-    color: #F5A300;
+    color: #C5A880;
     font-size: 0.75rem;
     margin-top: 3px;
     flex-shrink: 0;
@@ -5012,7 +5048,7 @@ html, body {
 }
 
 .btn-detail-link:hover {
-    color: #F5A300;
+    color: #C5A880;
 }
 
 .btn-book-service {
@@ -5021,7 +5057,7 @@ html, body {
     font-weight: 800;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    background: #F5A300;
+    background: #C5A880;
     color: #ffffff;
     padding: 8px 14px;
     border-radius: 4px;
@@ -5063,10 +5099,10 @@ html, body {
 .portal-hero-header {
     background: #141414;
     background-image: 
-        radial-gradient(circle at 80% 20%, rgba(245, 163, 0, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(197, 168, 128, 0.12) 0%, transparent 40%),
         linear-gradient(180deg, #101010 0%, #141414 100%);
     padding: 65px 0 55px;
-    border-bottom: 3px solid #F5A300;
+    border-bottom: 3px solid #C5A880;
     position: relative;
     overflow: hidden;
 }
@@ -5110,7 +5146,7 @@ html, body {
 }
 
 .portal-breadcrumb a:hover {
-    color: #F5A300;
+    color: #C5A880;
 }
 
 .portal-breadcrumb span {
@@ -5118,7 +5154,7 @@ html, body {
 }
 
 .portal-breadcrumb .current {
-    color: #F5A300;
+    color: #C5A880;
 }
 
 .portal-page-title {
@@ -5165,9 +5201,9 @@ html, body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(245, 163, 0, 0.1);
-    color: #F5A300;
-    border: 1px solid rgba(245, 163, 0, 0.3);
+    background: rgba(197, 168, 128, 0.1);
+    color: #C5A880;
+    border: 1px solid rgba(197, 168, 128, 0.3);
     padding: 6px 14px;
     border-radius: 4px;
     font-family: 'Chakra Petch', sans-serif;
@@ -5197,7 +5233,7 @@ html, body {
     left: 20px;
     background: #141414;
     color: #ffffff;
-    border: 1px solid rgba(245, 163, 0, 0.4);
+    border: 1px solid rgba(197, 168, 128, 0.4);
     padding: 14px 20px;
     border-radius: 6px;
     display: flex;
@@ -5208,7 +5244,7 @@ html, body {
 
 .story-floating-badge i {
     font-size: 1.8rem;
-    color: #F5A300;
+    color: #C5A880;
 }
 
 .story-floating-badge strong {
@@ -5217,7 +5253,7 @@ html, body {
     font-size: 0.95rem;
     font-weight: 800;
     letter-spacing: 1px;
-    color: #F5A300;
+    color: #C5A880;
 }
 
 .story-floating-badge small {
@@ -5237,7 +5273,7 @@ html, body {
 .about-highlights-row .hl-item {
     background: #F5F5F5;
     border: 1px solid #e2e8f0;
-    border-top: 3px solid #F5A300;
+    border-top: 3px solid #C5A880;
     padding: 18px 14px;
     border-radius: 4px;
     text-align: center;
@@ -5283,9 +5319,9 @@ html, body {
 
 .commitments-section .section-pill {
     display: inline-block;
-    background: rgba(245, 163, 0, 0.15);
-    color: #F5A300;
-    border: 1px solid rgba(245, 163, 0, 0.4);
+    background: rgba(197, 168, 128, 0.15);
+    color: #C5A880;
+    border: 1px solid rgba(197, 168, 128, 0.4);
     padding: 5px 16px;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.8rem;
@@ -5319,7 +5355,7 @@ html, body {
 .commit-card {
     background: #1c1c1c;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-top: 3px solid #F5A300;
+    border-top: 3px solid #C5A880;
     padding: 26px 18px 22px;
     border-radius: 4px;
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
@@ -5329,15 +5365,15 @@ html, body {
 
 .commit-card:hover {
     transform: translateY(-6px);
-    border-color: #F5A300;
-    box-shadow: 0 14px 30px rgba(245, 163, 0, 0.14);
+    border-color: #C5A880;
+    box-shadow: 0 14px 30px rgba(197, 168, 128, 0.14);
 }
 
 .commit-card .commit-num {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 2.2rem;
     font-weight: 800;
-    color: rgba(245, 163, 0, 0.35);
+    color: rgba(197, 168, 128, 0.35);
     line-height: 1;
     margin-bottom: 12px;
 }
@@ -5366,7 +5402,7 @@ html, body {
     font-weight: 800;
     letter-spacing: 0.8px;
     text-transform: uppercase;
-    background: #F5A300;
+    background: #C5A880;
     color: #ffffff !important;
     padding: 14px 32px;
     border-radius: 4px;
@@ -5374,7 +5410,7 @@ html, body {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 8px 22px rgba(245, 163, 0, 0.35);
+    box-shadow: 0 8px 22px rgba(197, 168, 128, 0.35);
     transition: all 0.25s ease;
 }
 
@@ -5382,7 +5418,7 @@ html, body {
 .btn-carpla-primary:hover {
     background: #d98e00;
     transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(245, 163, 0, 0.45);
+    box-shadow: 0 12px 28px rgba(197, 168, 128, 0.45);
 }
 
 /* 4. Services Archive (/dich-vu/) */
@@ -5407,7 +5443,7 @@ html, body {
 
 .service-card:hover {
     transform: translateY(-8px);
-    border-color: #F5A300;
+    border-color: #C5A880;
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
 }
 
@@ -5435,7 +5471,7 @@ html, body {
     top: 14px;
     left: 14px;
     z-index: 2;
-    background: #F5A300;
+    background: #C5A880;
     color: #ffffff;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.72rem;
@@ -5471,14 +5507,14 @@ html, body {
 }
 
 .service-body .service-title a:hover {
-    color: #F5A300;
+    color: #C5A880;
 }
 
 .service-body .service-price {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1.12rem;
     font-weight: 800;
-    color: #F5A300;
+    color: #C5A880;
     margin-bottom: 14px;
     display: flex;
     align-items: center;
@@ -5504,7 +5540,7 @@ html, body {
 }
 
 .service-body .service-features-list li i {
-    color: #F5A300;
+    color: #C5A880;
     font-size: 0.95rem;
 }
 
@@ -5546,9 +5582,9 @@ html, body {
 }
 
 .btn-gara-red {
-    background: #F5A300;
+    background: #C5A880;
     color: #ffffff;
-    border: 1px solid #F5A300;
+    border: 1px solid #C5A880;
 }
 
 .btn-gara-red:hover {
@@ -5606,9 +5642,9 @@ html, body {
 
 .price-tables-section .section-pill {
     display: inline-block;
-    background: rgba(245, 163, 0, 0.1);
-    color: #F5A300;
-    border: 1px solid rgba(245, 163, 0, 0.3);
+    background: rgba(197, 168, 128, 0.1);
+    color: #C5A880;
+    border: 1px solid rgba(197, 168, 128, 0.3);
     padding: 5px 16px;
     border-radius: 20px;
     font-family: 'Chakra Petch', sans-serif;
@@ -5662,15 +5698,15 @@ html, body {
 }
 
 .tier-card.featured {
-    border: 2px solid #F5A300;
+    border: 2px solid #C5A880;
     background: linear-gradient(180deg, #ffffff 0%, #F5F5F5 100%);
-    box-shadow: 0 12px 32px rgba(245, 163, 0, 0.12);
+    box-shadow: 0 12px 32px rgba(197, 168, 128, 0.12);
     transform: translateY(-4px);
 }
 
 .tier-card.featured:hover {
     transform: translateY(-10px);
-    box-shadow: 0 24px 48px rgba(245, 163, 0, 0.2);
+    box-shadow: 0 24px 48px rgba(197, 168, 128, 0.2);
 }
 
 .featured-ribbon {
@@ -5678,7 +5714,7 @@ html, body {
     top: -14px;
     left: 50%;
     transform: translateX(-50%);
-    background: #F5A300;
+    background: #C5A880;
     color: #ffffff;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.72rem;
@@ -5686,7 +5722,7 @@ html, body {
     letter-spacing: 1px;
     padding: 4px 14px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(245, 163, 0, 0.4);
+    box-shadow: 0 4px 12px rgba(197, 168, 128, 0.4);
     white-space: nowrap;
     text-transform: uppercase;
 }
@@ -5706,8 +5742,8 @@ html, body {
 }
 
 .tier-card.featured .tier-badge {
-    background: rgba(245, 163, 0, 0.12);
-    color: #F5A300;
+    background: rgba(197, 168, 128, 0.12);
+    color: #C5A880;
 }
 
 .tier-name {
@@ -5723,7 +5759,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1.85rem;
     font-weight: 800;
-    color: #F5A300;
+    color: #C5A880;
     letter-spacing: -0.5px;
     margin-bottom: 12px;
     line-height: 1;
@@ -5820,7 +5856,7 @@ html, body {
 .service-12-card:hover {
     transform: translateY(-6px);
     border-color: #cbd5e1;
-    border-top-color: #F5A300;
+    border-top-color: #C5A880;
     box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
 }
 
@@ -5841,8 +5877,8 @@ html, body {
     width: 48px;
     height: 48px;
     border-radius: 8px;
-    background: rgba(245, 163, 0, 0.08);
-    color: #F5A300;
+    background: rgba(197, 168, 128, 0.08);
+    color: #C5A880;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -5878,7 +5914,7 @@ html, body {
 }
 
 .service-12-card .card-service-title a:hover {
-    color: #F5A300;
+    color: #C5A880;
 }
 
 .service-12-card .card-meta-row {
@@ -5902,7 +5938,7 @@ html, body {
 }
 
 .service-12-card .meta-item .price-val {
-    color: #F5A300;
+    color: #C5A880;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.95rem;
     font-weight: 800;
@@ -5959,7 +5995,7 @@ html, body {
 }
 
 .service-12-card .btn-detail-link:hover {
-    color: #F5A300;
+    color: #C5A880;
 }
 
 .service-12-card .btn-book-service {
@@ -5980,7 +6016,7 @@ html, body {
 }
 
 .service-12-card .btn-book-service:hover {
-    background: #F5A300;
+    background: #C5A880;
     transform: translateY(-2px);
 }
 
@@ -5989,7 +6025,7 @@ html, body {
     padding: 85px 0 100px;
     background: #141414;
     color: #ffffff;
-    border-top: 3px solid #F5A300;
+    border-top: 3px solid #C5A880;
 }
 
 .section-paint-estimator .section-header {
@@ -5999,9 +6035,9 @@ html, body {
 
 .section-paint-estimator .section-pill {
     display: inline-block;
-    background: rgba(245, 163, 0, 0.15);
-    color: #F5A300;
-    border: 1px solid rgba(245, 163, 0, 0.4);
+    background: rgba(197, 168, 128, 0.15);
+    color: #C5A880;
+    border: 1px solid rgba(197, 168, 128, 0.4);
     padding: 5px 16px;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.82rem;
@@ -6050,7 +6086,7 @@ html, body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: #F5A300;
+    color: #C5A880;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.84rem;
     font-weight: 800;
@@ -6085,16 +6121,16 @@ html, body {
 }
 
 .paint-part-btn:hover {
-    border-color: rgba(245, 163, 0, 0.5);
+    border-color: rgba(197, 168, 128, 0.5);
     background: #1b3b69;
     transform: translateY(-2px);
 }
 
 .paint-part-btn.is-selected,
 .paint-part-btn.selected {
-    border-color: #F5A300;
-    background: rgba(245, 163, 0, 0.12);
-    box-shadow: 0 4px 18px rgba(245, 163, 0, 0.2);
+    border-color: #C5A880;
+    background: rgba(197, 168, 128, 0.12);
+    box-shadow: 0 4px 18px rgba(197, 168, 128, 0.2);
 }
 
 .paint-part-btn .part-icon {
@@ -6114,7 +6150,7 @@ html, body {
 .paint-part-btn:hover .part-icon,
 .paint-part-btn.is-selected .part-icon,
 .paint-part-btn.selected .part-icon {
-    background: #F5A300;
+    background: #C5A880;
     color: #ffffff;
 }
 
@@ -6145,20 +6181,20 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.95rem;
     font-weight: 800;
-    color: #F5A300;
+    color: #C5A880;
     white-space: nowrap;
 }
 
 .paint-part-btn.featured-paint-pkg {
     grid-column: 1 / -1;
-    border-color: rgba(245, 163, 0, 0.4);
-    background: rgba(245, 163, 0, 0.06);
+    border-color: rgba(197, 168, 128, 0.4);
+    background: rgba(197, 168, 128, 0.06);
 }
 
 .paint-summary-card {
     background: #1c1c1c;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-top: 3px solid #F5A300;
+    border-top: 3px solid #C5A880;
     border-radius: 8px;
     padding: 28px 24px;
     position: sticky;
@@ -6176,7 +6212,7 @@ html, body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: #F5A300;
+    color: #C5A880;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.75rem;
     font-weight: 800;
@@ -6212,7 +6248,7 @@ html, body {
 }
 
 .summary-item-row .item-remove {
-    color: #F5A300;
+    color: #C5A880;
     cursor: pointer;
     margin-left: 8px;
 }
@@ -6239,8 +6275,8 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(245, 163, 0, 0.1);
-    border: 1px solid rgba(245, 163, 0, 0.25);
+    background: rgba(197, 168, 128, 0.1);
+    border: 1px solid rgba(197, 168, 128, 0.25);
     border-radius: 6px;
     padding: 12px 14px;
     margin-bottom: 16px;
@@ -6258,7 +6294,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1.45rem;
     font-weight: 800;
-    color: #F5A300;
+    color: #C5A880;
 }
 
 .summary-guarantee-note {
@@ -6361,13 +6397,13 @@ html, body {
 }
 
 .hero-cta-btn.btn-rescue {
-    background: #F5A300;
+    background: #C5A880;
     color: #ffffff;
     box-shadow: 0 4px 18px rgba(229, 57, 53, 0.35);
 }
 
 .hero-cta-btn.btn-rescue:hover {
-    background: #F5A300;
+    background: #C5A880;
     transform: translateY(-2px);
     box-shadow: 0 6px 24px rgba(229, 57, 53, 0.5);
     color: #ffffff;
@@ -6395,7 +6431,7 @@ html, body {
 
 .hero-cta-btn.btn-booking:hover {
     background: #2a2a2a;
-    border-color: #F5A300;
+    border-color: #C5A880;
     color: #ffffff;
     transform: translateY(-2px);
 }
@@ -6403,7 +6439,7 @@ html, body {
 .hero-cta-btn.btn-booking .btn-orange-strip {
     width: 4px;
     height: 20px;
-    background: #F5A300;
+    background: #C5A880;
 }
 
 .hero-cta-btn.btn-zalo {
@@ -6437,20 +6473,21 @@ html, body {
 
 .milestone-stat-card {
     background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-top: 3px solid #F5A300;
+    border: 1px solid transparent !important;
+    border-top: 3px solid transparent !important;
     border-radius: 12px;
-    box-shadow: 0 10px 28px rgba(20, 20, 20, 0.05);
+    box-shadow: 0 8px 24px rgba(20, 20, 20, 0.05);
     padding: 32px 24px;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
     display: flex;
     flex-direction: column;
 }
 
 .milestone-stat-card:hover {
-    transform: translateY(-5px);
-    border-color: #F5A300;
-    box-shadow: 0 16px 36px rgba(245, 163, 0, 0.12);
+    transform: translateY(-6px);
+    border-color: #C5A880 !important;
+    border-top: 3px solid #C5A880 !important;
+    box-shadow: 0 18px 40px rgba(197, 168, 128, 0.18), 0 6px 16px rgba(20, 20, 20, 0.06) !important;
 }
 
 .stat-number-wrap {
@@ -6473,15 +6510,27 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 2rem;
     font-weight: 700;
-    color: #F5A300;
+    color: #141414;
+    transition: color 0.25s ease;
+}
+
+.milestone-stat-card:hover .stat-plus {
+    color: #C5A880;
 }
 
 .stat-divider {
     width: 32px;
     height: 3px;
-    background: #F5A300;
+    background: #e2e8f0;
     border-radius: 2px;
     margin-bottom: 16px;
+    transition: all 0.3s ease;
+}
+
+.milestone-stat-card:hover .stat-divider {
+    background: #C5A880;
+    width: 64px;
+}
 }
 
 .stat-title {
@@ -6521,7 +6570,7 @@ html, body {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: #F5A300;
+    color: #C5A880;
     display: inline-block;
     margin-bottom: 10px;
 }
@@ -6561,7 +6610,7 @@ html, body {
 .ws-primary-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-top: 3px solid #F5A300;
+    border-top: 3px solid #C5A880;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(20, 20, 20, 0.06);
     padding: 34px;
@@ -6599,7 +6648,7 @@ html, body {
 .ws-type-tag {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.75rem;
-    color: #F5A300;
+    color: #C5A880;
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -6653,7 +6702,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1.15rem;
     font-weight: 800;
-    color: #F5A300;
+    color: #C5A880;
     text-decoration: none;
     letter-spacing: 0.5px;
     transition: color 0.2s ease;
@@ -6694,16 +6743,16 @@ html, body {
 }
 
 .ws-action-btn.map-btn {
-    background: #F5A300;
+    background: #C5A880;
     color: #ffffff;
-    box-shadow: 0 4px 12px rgba(245, 163, 0, 0.25);
+    box-shadow: 0 4px 12px rgba(197, 168, 128, 0.25);
 }
 
 .ws-action-btn.map-btn:hover {
     background: #d98e00;
     color: #ffffff;
     transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(245, 163, 0, 0.35);
+    box-shadow: 0 6px 16px rgba(197, 168, 128, 0.35);
 }
 
 .ws-action-btn.zalo-btn {
@@ -6740,7 +6789,7 @@ html, body {
 .fast-booking-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-top: 3px solid #F5A300;
+    border-top: 3px solid #C5A880;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(20, 20, 20, 0.06);
     padding: 34px;
@@ -6758,8 +6807,8 @@ html, body {
 .booking-head-icon {
     width: 44px;
     height: 44px;
-    background: rgba(245, 163, 0, 0.1);
-    color: #F5A300;
+    background: rgba(197, 168, 128, 0.1);
+    color: #C5A880;
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -6807,7 +6856,7 @@ html, body {
 }
 
 .home-fast-booking-form .form-label .required {
-    color: #F5A300;
+    color: #C5A880;
 }
 
 .home-fast-booking-form .form-control {
@@ -6825,9 +6874,9 @@ html, body {
 }
 
 .home-fast-booking-form .form-control:focus {
-    border-color: #F5A300;
+    border-color: #C5A880;
     background: #ffffff;
-    box-shadow: 0 0 0 3px rgba(245, 163, 0, 0.12);
+    box-shadow: 0 0 0 3px rgba(197, 168, 128, 0.12);
 }
 
 .home-fast-booking-form .form-select {
@@ -6853,7 +6902,7 @@ html, body {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    background: #F5A300;
+    background: #C5A880;
     color: #ffffff;
     border: none;
     border-radius: 6px;
@@ -6867,13 +6916,13 @@ html, body {
     transition: all 0.25s ease;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 16px rgba(245, 163, 0, 0.3);
+    box-shadow: 0 4px 16px rgba(197, 168, 128, 0.3);
 }
 
 .booking-submit-button:hover {
     background: #d98e00;
     transform: translateY(-2px);
-    box-shadow: 0 6px 22px rgba(245, 163, 0, 0.45);
+    box-shadow: 0 6px 22px rgba(197, 168, 128, 0.45);
 }
 
 .booking-submit-button:disabled {
@@ -6899,8 +6948,8 @@ html, body {
 
 .booking-feedback-msg.error {
     background: rgba(239, 68, 68, 0.15);
-    border: 1px solid #F5A300;
-    color: #F5A300;
+    border: 1px solid #C5A880;
+    color: #C5A880;
 }
 
 /* Responsive adjustments */
@@ -6989,7 +7038,7 @@ html, body {
 .founder-story-card {
     background: #141414;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-left: 4px solid #F5A300;
+    border-left: 4px solid #C5A880;
     padding: 42px 46px;
     margin-bottom: 45px;
     position: relative;
@@ -7004,7 +7053,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.8rem;
     font-weight: 700;
-    color: #F5A300;
+    color: #C5A880;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     display: block;
@@ -7039,7 +7088,7 @@ html, body {
     top: -24px;
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 4.5rem;
-    color: rgba(245, 163, 0, 0.25);
+    color: rgba(197, 168, 128, 0.25);
     line-height: 1;
     pointer-events: none;
 }
@@ -7053,7 +7102,7 @@ html, body {
 }
 
 .highlight-quote {
-    color: #F5A300;
+    color: #C5A880;
     font-weight: 600;
     font-style: italic;
 }
@@ -7112,7 +7161,7 @@ html, body {
 
 .diag-station-card:hover {
     transform: translateY(-4px);
-    border-color: #F5A300;
+    border-color: #C5A880;
 }
 
 .diag-card-top {
@@ -7126,7 +7175,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.75rem;
     font-weight: 700;
-    color: #F5A300;
+    color: #C5A880;
     letter-spacing: 1px;
 }
 
@@ -7208,21 +7257,21 @@ html, body {
 }
 
 .mega-title-link:hover {
-    color: #F5A300;
+    color: #C5A880;
 }
 
 .mega-title-link .mega-dot {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #F5A300;
+    background: #C5A880;
 }
 
 .mega-title-link .mega-arrow {
     opacity: 0;
     transform: translateX(-4px);
     transition: all 0.2s ease;
-    color: #F5A300;
+    color: #C5A880;
 }
 
 .mega-title-link:hover .mega-arrow {
@@ -7261,7 +7310,7 @@ html, body {
 }
 
 .mega-group-card .mega-list li a:hover {
-    color: #F5A300;
+    color: #C5A880;
     transform: translateX(3px);
 }
 
@@ -7296,8 +7345,8 @@ html, body {
         justify-content: center;
         width: 32px;
         height: 32px;
-        color: #F5A300;
-        background: rgba(245, 163, 0, 0.1);
+        color: #C5A880;
+        background: rgba(197, 168, 128, 0.1);
         border-radius: 4px;
     }
 
@@ -7350,16 +7399,16 @@ html, body {
 }
 
 .breadcrumb-item a:hover {
-    color: #F5A300;
+    color: #C5A880;
 }
 
 .breadcrumb-item .breadcrumb-sep {
-    color: #F5A300;
+    color: #C5A880;
     margin-left: 8px;
 }
 
 .breadcrumb-item.current span {
-    color: #F5A300;
+    color: #C5A880;
     font-weight: 700;
 }
 
@@ -7367,8 +7416,8 @@ html, body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: rgba(245, 163, 0, 0.15);
-    border: 1px solid #F5A300;
+    background: rgba(197, 168, 128, 0.15);
+    border: 1px solid #C5A880;
     color: #ffffff;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.72rem;
@@ -7402,8 +7451,8 @@ html, body {
 
 .sibling-pill:hover,
 .sibling-pill.active {
-    background: #F5A300;
-    border-color: #F5A300;
+    background: #C5A880;
+    border-color: #C5A880;
     color: #ffffff;
 }
 
@@ -7436,7 +7485,7 @@ html, body {
 
 .cat-service-card:hover {
     transform: translateY(-4px);
-    border-color: #F5A300;
+    border-color: #C5A880;
 }
 
 .cat-card-media {
@@ -7461,7 +7510,7 @@ html, body {
     position: absolute;
     top: 12px;
     left: 12px;
-    background: #F5A300;
+    background: #C5A880;
     color: #ffffff;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.7rem;
@@ -7492,7 +7541,7 @@ html, body {
 }
 
 .cat-service-title a:hover {
-    color: #F5A300;
+    color: #C5A880;
 }
 
 .cat-service-excerpt {
@@ -7538,7 +7587,7 @@ html, body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: #F5A300;
+    background: #C5A880;
     color: #ffffff;
     padding: 8px 14px;
     font-family: 'Chakra Petch', sans-serif;
@@ -7570,7 +7619,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.8rem;
     font-weight: 700;
-    color: #F5A300;
+    color: #C5A880;
     letter-spacing: 1px;
 }
 
@@ -7644,7 +7693,7 @@ html, body {
 .mega-inner {
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-top: 3px solid #F5A300;
+    border-top: 3px solid #C5A880;
     border-radius: 14px;
     box-shadow: 0 22px 52px rgba(20, 20, 20, 0.14), 0 6px 18px rgba(20, 20, 20, 0.06);
     padding: 16px;
@@ -7693,7 +7742,7 @@ html, body {
 
 .mega-arrow {
     font-size: 1.2rem;
-    color: #F5A300;
+    color: #C5A880;
     transition: transform 180ms ease, color 180ms ease;
     margin-left: 6px;
     line-height: 1;
@@ -7704,9 +7753,9 @@ html, body {
 .mega-group:hover .mega-cat,
 .mega-group.is-open .mega-cat {
     background: #F5F5F5;
-    border-color: #F5A300;
+    border-color: #C5A880;
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(245, 163, 0, 0.16);
+    box-shadow: 0 6px 16px rgba(197, 168, 128, 0.16);
 }
 
 .mega-cat:hover span,
@@ -7728,7 +7777,7 @@ html, body {
     min-width: 285px;
     max-width: 350px;
     background: #ffffff;
-    border: 1.5px solid rgba(245, 163, 0, 0.4);
+    border: 1.5px solid rgba(197, 168, 128, 0.4);
     border-radius: 12px;
     padding: 8px;
     display: none;
@@ -7822,7 +7871,7 @@ html, body {
 }
 
 .mega-subcat:hover small {
-    background: #F5A300;
+    background: #C5A880;
     color: #ffffff;
 }
 
@@ -7867,7 +7916,7 @@ html, body {
         padding: 10px !important;
         background: #1c1c1c !important;
         border: 1px solid #2e2e2e !important;
-        border-top: 2px solid #F5A300 !important;
+        border-top: 2px solid #C5A880 !important;
         border-radius: 10px !important;
     }
     .mega-group {
@@ -7890,11 +7939,11 @@ html, body {
         color: #F5F5F5 !important;
     }
     .mega-group.is-open .mega-cat {
-        background: rgba(245, 163, 0, 0.14) !important;
-        border-color: #F5A300 !important;
+        background: rgba(197, 168, 128, 0.14) !important;
+        border-color: #C5A880 !important;
     }
     .mega-group.is-open .mega-cat span {
-        color: #F5A300 !important;
+        color: #C5A880 !important;
     }
     .mega-group.is-open .mega-arrow {
         transform: rotate(90deg) !important;
@@ -7909,7 +7958,7 @@ html, body {
         display: none !important;
         box-shadow: none !important;
         background: #141414 !important;
-        border: 1px solid rgba(245, 163, 0, 0.3) !important;
+        border: 1px solid rgba(197, 168, 128, 0.3) !important;
         border-radius: 8px !important;
     }
     .mega-subcat {
@@ -7923,8 +7972,8 @@ html, body {
         color: #e2e8f0 !important;
     }
     .mega-subcat small {
-        background: rgba(245, 163, 0, 0.15) !important;
-        color: #F5A300 !important;
+        background: rgba(197, 168, 128, 0.15) !important;
+        color: #C5A880 !important;
         font-size: 0.68rem !important;
     }
     .mega-group.is-open .mega-sub {
@@ -8150,8 +8199,8 @@ html, body {
 
 .accessory-item:hover {
     transform: translateY(-6px);
-    border-color: #F5A300;
-    box-shadow: 0 14px 32px rgba(245, 163, 0, 0.14);
+    border-color: #C5A880;
+    box-shadow: 0 14px 32px rgba(197, 168, 128, 0.14);
 }
 
 .accessory-img-box {
@@ -8181,16 +8230,16 @@ html, body {
     top: 10px;
     left: 10px;
     z-index: 2;
-    background: #F5A300;
-    color: #ffffff;
+    background: #C5A880;
+    color: #141414;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.68rem;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 0.5px;
     padding: 4px 10px;
     border-radius: 4px;
     text-transform: uppercase;
-    box-shadow: 0 2px 8px rgba(245, 163, 0, 0.35);
+    box-shadow: 0 2px 8px rgba(197, 168, 128, 0.35);
 }
 
 .accessory-title {
@@ -8214,7 +8263,7 @@ html, body {
 }
 
 .accessory-title a:hover {
-    color: #F5A300;
+    color: #C5A880;
 }
 
 .accessory-price {
@@ -8230,7 +8279,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1.18rem;
     font-weight: 800;
-    color: #F5A300;
+    color: #C5A880;
 }
 
 .accessory-price .price-old {
@@ -8249,11 +8298,11 @@ html, body {
     align-items: center;
     justify-content: center;
     padding: 9px 28px;
-    background: #F5A300;
-    color: #ffffff !important;
+    background: #C5A880;
+    color: #141414 !important;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.85rem;
-    font-weight: 700;
+    font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     border-radius: 6px;
@@ -8263,7 +8312,7 @@ html, body {
 
 .btn-accessory-detail:hover {
     background: #141414;
-    color: #ffffff !important;
+    color: #C5A880 !important;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(20, 20, 20, 0.2);
 }
@@ -8288,8 +8337,8 @@ html, body {
 }
 
 .acc-nav-btn:hover {
-    background: #F5A300;
-    border-color: #F5A300;
+    background: #C5A880;
+    border-color: #C5A880;
     color: #ffffff;
 }
 
@@ -8357,7 +8406,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.9rem;
     font-weight: 800;
-    color: #F5A300;
+    color: #C5A880;
     text-transform: uppercase;
     letter-spacing: 2.5px;
     margin: 0 0 6px;
@@ -8376,7 +8425,7 @@ html, body {
 .gallery-heading-divider {
     width: 64px;
     height: 3px;
-    background: #F5A300;
+    background: #C5A880;
     margin: 14px auto 0;
     border-radius: 2px;
 }
@@ -8445,13 +8494,13 @@ html, body {
     width: 46px;
     height: 46px;
     border-radius: 50%;
-    background: rgba(245, 163, 0, 0.92);
+    background: rgba(197, 168, 128, 0.92);
     color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.1rem;
-    box-shadow: 0 6px 18px rgba(245, 163, 0, 0.4);
+    box-shadow: 0 6px 18px rgba(197, 168, 128, 0.4);
     transition: transform 0.3s ease;
 }
 
@@ -8531,8 +8580,8 @@ html, body {
 }
 
 .lightbox-close-btn:hover {
-    background: #F5A300;
-    border-color: #F5A300;
+    background: #C5A880;
+    border-color: #C5A880;
 }
 
 .lightbox-nav-btn {
@@ -8554,8 +8603,8 @@ html, body {
 }
 
 .lightbox-nav-btn:hover {
-    background: #F5A300;
-    border-color: #F5A300;
+    background: #C5A880;
+    border-color: #C5A880;
 }
 
 .lightbox-prev {
@@ -8618,11 +8667,13 @@ html, body {
 
 /* 1. Hero Banner Slider (#lexusHeroSlider) Entrance & Slide Transitions */
 .lexus-banner-slider .lexus-slide .lexus-slide-bg {
-    transform: none;
+    transform: scale(1.08);
+    transition: transform 6.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
 }
 .lexus-banner-slider.is-inview .lexus-slide.active .lexus-slide-bg,
 .lexus-banner-slider .lexus-slide.active .lexus-slide-bg {
-    transform: none;
+    transform: scale(1);
 }
 
 .lexus-banner-slider .lexus-slide .lexus-eyebrow {
@@ -8702,9 +8753,9 @@ html, body {
     background: linear-gradient(
         115deg,
         transparent 0%,
-        rgba(245, 163, 0, 0.08) 45%,
+        rgba(197, 168, 128, 0.08) 45%,
         rgba(255, 255, 255, 0.65) 50%,
-        rgba(245, 163, 0, 0.08) 55%,
+        rgba(197, 168, 128, 0.08) 55%,
         transparent 100%
     );
     transform: skewX(-20deg);
@@ -8742,7 +8793,7 @@ html, body {
 
 @keyframes statPlusBouncePulse {
     0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.18); text-shadow: 0 0 12px rgba(245, 163, 0, 0.45); }
+    50% { transform: scale(1.18); text-shadow: 0 0 12px rgba(197, 168, 128, 0.45); }
 }
 .shiftup-technicians-section.is-inview .milestone-stat-card .stat-plus {
     display: inline-block;
@@ -8752,7 +8803,7 @@ html, body {
 .shiftup-technicians-section .milestone-stat-card .stat-divider {
     width: 0;
     height: 3px;
-    background: linear-gradient(90deg, #F5A300 0%, #F5A300 100%);
+    background: linear-gradient(90deg, #C5A880 0%, #C5A880 100%);
     transition: width 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.32s;
 }
 .shiftup-technicians-section.is-inview .milestone-stat-card .stat-divider {
@@ -8775,15 +8826,16 @@ html, body {
 .shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(4) .stat-title { opacity: 1; transform: translateY(0); transition-delay: 0.61s; }
 .shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(4) .stat-desc  { opacity: 1; transform: translateY(0); transition-delay: 0.69s; }
 
-/* Hover Effect on Milestone Cards */
+/* Hover Effect on Milestone Cards (Viền chỉ xuất hiện và sáng màu khi di chuột vào) */
 .shiftup-technicians-section.is-inview .milestone-stat-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    border-color: #F5A300;
-    box-shadow: 0 20px 42px rgba(245, 163, 0, 0.16), 0 6px 16px rgba(20, 20, 20, 0.06);
+    transform: translateY(-8px) scale(1.02);
+    border-color: #C5A880 !important;
+    border-top: 3px solid #C5A880 !important;
+    box-shadow: 0 20px 42px rgba(197, 168, 128, 0.2), 0 6px 16px rgba(20, 20, 20, 0.06) !important;
     transition-delay: 0s !important;
 }
 .shiftup-technicians-section.is-inview .milestone-stat-card:hover .stat-number {
-    color: #F5A300;
+    color: #C5A880;
     transition: color 0.25s ease;
 }
 .shiftup-technicians-section.is-inview .milestone-stat-card:hover .stat-divider {
@@ -8975,7 +9027,7 @@ html, body {
     inset: 0;
     background-image:
         radial-gradient(rgba(20, 20, 20, 0.05) 1.5px, transparent 1.5px),
-        radial-gradient(circle at 12% 35%, rgba(245, 163, 0, 0.05) 0%, transparent 45%);
+        radial-gradient(circle at 12% 35%, rgba(197, 168, 128, 0.05) 0%, transparent 45%);
     background-size: 28px 28px, 100% 100%;
     pointer-events: none;
     z-index: 1;
@@ -9035,7 +9087,7 @@ html, body {
     display: block;
     width: 68px;
     height: 4px;
-    background: linear-gradient(90deg, #F5A300 0%, #F5A300 100%);
+    background: linear-gradient(90deg, #C5A880 0%, #C5A880 100%);
     border-radius: 2px;
     margin-top: 12px;
 }
@@ -9048,7 +9100,7 @@ html, body {
     margin: 18px 0;
     padding: 16px 20px;
     background: #F5F5F5;
-    border-left: 4px solid #F5A300;
+    border-left: 4px solid #C5A880;
     border-radius: 0 10px 10px 0;
     color: #1e293b;
     font-family: 'Be Vietnam Pro', sans-serif;
@@ -9088,7 +9140,7 @@ html, body {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    background: #F5A300;
+    background: #C5A880;
     color: #ffffff !important;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.96rem;
@@ -9098,7 +9150,7 @@ html, body {
     text-decoration: none !important;
     padding: 14px 34px;
     border-radius: 6px;
-    box-shadow: 0 10px 24px rgba(245, 163, 0, 0.25);
+    box-shadow: 0 10px 24px rgba(197, 168, 128, 0.25);
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
                 background 0.25s ease,
                 box-shadow 0.25s ease;
@@ -9123,7 +9175,7 @@ html, body {
     right: -22px;
     width: 170px;
     height: 240px;
-    background-image: radial-gradient(rgba(245, 163, 0, 0.35) 2.2px, transparent 2.2px);
+    background-image: radial-gradient(rgba(197, 168, 128, 0.35) 2.2px, transparent 2.2px);
     background-size: 16px 16px;
     z-index: 1;
     pointer-events: none;
@@ -9203,7 +9255,7 @@ html, body {
 }
 
 .kobac-floating-badge i {
-    color: #F5A300;
+    color: #C5A880;
 }
 
 /* Entrance Animations (fadeInLeft & fadeInRight like KOBAC CARS) */
@@ -9262,7 +9314,7 @@ html, body {
         gap: 0;
         background: #ffffff;
         border: 1px solid #e2e8f0;
-        border-top: 3px solid #F5A300;
+        border-top: 3px solid #C5A880;
         border-radius: 16px;
         padding: 22px 18px 24px;
         box-shadow: 0 10px 28px rgba(20, 20, 20, 0.06);
@@ -9328,7 +9380,7 @@ html, body {
     }
 
     .kobac-bento-cap i {
-        color: #F5A300;
+        color: #C5A880;
         flex-shrink: 0;
     }
 
@@ -9372,7 +9424,7 @@ html, body {
 
 
 /* ==========================================================================
-   V5.6.0 OBSIDIAN (#141414) & AMBER GOLD (#F5A300) DESIGN SYSTEM OVERRIDES
+   V5.6.0 OBSIDIAN (#141414) & AMBER GOLD (#C5A880) DESIGN SYSTEM OVERRIDES
    + UNIFIED MEGA MENU BAR + ALL-BLACK FOOTER + SEO SEARCH SUITE
    ========================================================================== */
 
@@ -9383,19 +9435,19 @@ html, body {
     }
 }
 
-/* Mobile Top Bar (< 992px): Obsidian #141414 with #F5A300 accent & #D92D20 Rescue Call */
+/* Mobile Top Bar (< 992px): Obsidian #141414 with #C5A880 accent & #D92D20 Rescue Call */
 @media (max-width: 991px) {
     .mobile-only-brand-header {
         display: block !important;
         background: #141414 !important;
-        border-bottom: 2px solid #F5A300 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
         padding: 9px 0 !important;
     }
     .mobile-only-brand-header .brand-title {
         color: #ffffff !important;
     }
     .mobile-only-brand-header .brand-title .text-orange {
-        color: #F5A300 !important;
+        color: #ffffff !important;
     }
     .mobile-quick-call {
         background: #D92D20 !important;
@@ -9410,7 +9462,7 @@ html, body {
         border: 1px solid #333333 !important;
     }
     .mobile-nav-toggle .hamburger-bar {
-        background: #F5A300 !important;
+        background: #C5A880 !important;
     }
     .navbar-inline-brand,
     .navbar-inline-actions .navbar-rescue-btn,
@@ -9426,11 +9478,11 @@ html, body {
     }
 }
 
-/* 2. Unified Desktop Mega Menu Bar (#141414 + #F5A300) */
+/* 2. Unified Desktop Mega Menu Bar (#141414 + #C5A880) */
 .custom-navbar-strip {
     background: #141414 !important;
     border-top: none !important;
-    border-bottom: 2px solid #F5A300 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.28) !important;
 }
 
@@ -9463,7 +9515,7 @@ html, body {
         object-fit: contain;
         background: #ffffff;
         padding: 2px;
-        border: 1.5px solid #F5A300;
+        border: 1.5px solid #C5A880;
         flex-shrink: 0;
     }
 
@@ -9483,7 +9535,7 @@ html, body {
     }
 
     .navbar-brand-name .brand-accent {
-        color: #F5A300;
+        color: #C5A880;
     }
 
     .navbar-brand-sub {
@@ -9518,11 +9570,11 @@ html, body {
 
     .custom-nav-menu > .nav-item.active > .nav-link,
     .custom-nav-menu > .nav-item:hover > .nav-link {
-        color: #F5A300 !important;
+        color: #C5A880 !important;
     }
 
     .custom-nav-menu > .nav-item::before {
-        background: #F5A300 !important;
+        background: #C5A880 !important;
         height: 3px !important;
     }
 
@@ -9532,7 +9584,7 @@ html, body {
 
     .custom-nav-menu > .nav-item:hover .nav-caret,
     .custom-nav-menu > .nav-item.active .nav-caret {
-        color: #F5A300 !important;
+        color: #C5A880 !important;
     }
 
     /* Right: Inline Rescue 24/7 + Book Appointment + SEO Search at the End */
@@ -9601,12 +9653,12 @@ html, body {
         letter-spacing: 0.3px;
     }
 
-    /* 2. Đặt lịch (#F5A300 Màu nhấn, chữ đen #141414 tương phản 8:1) */
+    /* 2. Đặt lịch (#C5A880 Màu nhấn, chữ đen #141414 tương phản 8:1) */
     .navbar-book-btn {
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        background: #F5A300 !important;
+        background: #C5A880 !important;
         color: #141414 !important;
         font-family: 'Chakra Petch', sans-serif;
         font-size: 0.78rem;
@@ -9618,7 +9670,7 @@ html, body {
         border-radius: 6px;
         transition: all 0.22s ease;
         white-space: nowrap;
-        box-shadow: 0 4px 12px rgba(245, 163, 0, 0.25);
+        box-shadow: 0 4px 12px rgba(197, 168, 128, 0.25);
     }
 
     .navbar-book-btn i,
@@ -9655,9 +9707,9 @@ html, body {
     }
 
     .custom-navbar-inner .menu-search-pill:focus-within {
-        border-color: #F5A300 !important;
+        border-color: #C5A880 !important;
         background: #141414 !important;
-        box-shadow: 0 0 0 2px rgba(245, 163, 0, 0.25) !important;
+        box-shadow: 0 0 0 2px rgba(197, 168, 128, 0.25) !important;
     }
 
     .custom-navbar-inner .menu-search-pill:focus-within .search-field {
@@ -9670,7 +9722,7 @@ html, body {
     }
 
     .custom-navbar-inner .menu-search-pill .search-submit {
-        color: #F5A300 !important;
+        color: #C5A880 !important;
     }
 }
 
@@ -9696,7 +9748,7 @@ html, body {
     width: 290px;
     background: #ffffff;
     border: 1px solid #e5e7eb;
-    border-top: 3px solid #F5A300;
+    border-top: 3px solid #C5A880;
     border-radius: 10px;
     padding: 12px 14px;
     box-shadow: 0 16px 36px rgba(20, 20, 20, 0.18);
@@ -9745,9 +9797,9 @@ html, body {
 }
 
 .seo-suggest-tags a:hover {
-    background: #F5A300;
+    background: #C5A880;
     color: #141414;
-    border-color: #F5A300;
+    border-color: #C5A880;
 }
 
 @media (max-width: 991px) {
@@ -9757,7 +9809,7 @@ html, body {
 }
 
 /* 3. Strict Contrast Enforcement:
-   - Black text (#141414) on all #F5A300 buttons
+   - Black text (#141414) on all #C5A880 buttons
    - No small yellow text on white backgrounds (#141414 or #5F6368 instead)
    - #D92D20 Red only for 24/7 Rescue */
 .kobac-cta-btn,
@@ -9766,9 +9818,9 @@ html, body {
 .btn-accessory-detail:hover,
 .plate-btn-clean,
 .drawer-btn-book {
-    background: #F5A300 !important;
+    background: #C5A880 !important;
     color: #141414 !important;
-    border-color: #F5A300 !important;
+    border-color: #C5A880 !important;
     font-weight: 800 !important;
 }
 
@@ -9784,14 +9836,14 @@ html, body {
 .shiftup-rect-btn.primary:hover,
 .checkup-btn.btn-primary-featured:hover {
     background: #141414 !important;
-    color: #F5A300 !important;
+    color: #C5A880 !important;
     border-color: #141414 !important;
 }
 
 .kobac-cta-btn:hover *,
 .shiftup-rect-btn.primary:hover *,
 .checkup-btn.btn-primary-featured:hover * {
-    color: #F5A300 !important;
+    color: #C5A880 !important;
 }
 
 /* Emergency Red (#D92D20) exclusively for 24/7 Rescue */
@@ -9805,7 +9857,7 @@ html, body {
 /* Avoid low-contrast yellow text on white backgrounds */
 .kobac-eyebrow-pill {
     background: #141414 !important;
-    color: #F5A300 !important;
+    color: #C5A880 !important;
     border-color: #141414 !important;
 }
 
@@ -9819,16 +9871,16 @@ html, body {
     font-weight: 800 !important;
 }
 
-/* Mega Menu Dropdown on White Background: Dark text #141414 + Amber #F5A300 active background with #141414 text */
+/* Mega Menu Dropdown on White Background: Dark text #141414 + Amber #C5A880 active background with #141414 text */
 .mega-menu {
-    border-top: 3px solid #F5A300 !important;
+    border-top: 3px solid #C5A880 !important;
 }
 .mega-cat.mega-parent {
     color: #141414 !important;
 }
 .mega-group:hover .mega-cat.mega-parent,
 .mega-cat.mega-parent:hover {
-    background: #F5A300 !important;
+    background: #C5A880 !important;
     color: #141414 !important;
 }
 .mega-group:hover .mega-cat.mega-parent *,
@@ -9836,7 +9888,7 @@ html, body {
     color: #141414 !important;
 }
 .mega-subcat:hover {
-    border-color: #F5A300 !important;
+    border-color: #C5A880 !important;
     background: #F5F5F5 !important;
     color: #141414 !important;
 }
@@ -9848,7 +9900,7 @@ html, body {
     color: #5F6368 !important;
 }
 .mega-subcat:hover small {
-    background: #F5A300 !important;
+    background: #C5A880 !important;
     color: #141414 !important;
 }
 
@@ -10046,7 +10098,7 @@ html, body {
     background: #141414 !important;
     color: #ffffff !important;
     padding: 56px 0 48px !important;
-    border-bottom: 3px solid #F5A300;
+    border-bottom: 3px solid #C5A880;
 }
 
 .seo-breadcrumb {
@@ -10059,7 +10111,7 @@ html, body {
 }
 
 .seo-breadcrumb a {
-    color: #F5A300;
+    color: #C5A880;
     text-decoration: none;
     font-weight: 600;
 }
@@ -10073,7 +10125,7 @@ html, body {
 }
 
 .seo-search-hero .search-kw-highlight {
-    color: #F5A300;
+    color: #C5A880;
 }
 
 .seo-search-hero .portal-hero-lead {
@@ -10088,7 +10140,7 @@ html, body {
     background: #ffffff;
     border-radius: 8px;
     overflow: hidden;
-    border: 2px solid #F5A300;
+    border: 2px solid #C5A880;
     margin-bottom: 16px;
 }
 
@@ -10102,7 +10154,7 @@ html, body {
 }
 
 .seo-page-search-box .seo-search-btn {
-    background: #F5A300;
+    background: #C5A880;
     color: #141414;
     border: none;
     padding: 0 24px;
@@ -10140,9 +10192,9 @@ html, body {
 }
 
 .seo-popular-keywords a:hover {
-    background: #F5A300;
+    background: #C5A880;
     color: #141414;
-    border-color: #F5A300;
+    border-color: #C5A880;
 }
 
 .seo-search-body {
@@ -10193,7 +10245,7 @@ html, body {
 .seo-result-badge {
     display: inline-block;
     background: #141414;
-    color: #F5A300;
+    color: #C5A880;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.7rem;
     font-weight: 800;
@@ -10256,7 +10308,7 @@ html, body {
 }
 
 .seo-result-book {
-    background: #F5A300;
+    background: #C5A880;
     color: #141414;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.78rem;
@@ -10320,8 +10372,8 @@ html, body {
 }
 
 .seo-fallback-pillars a:hover {
-    background: #F5A300;
-    border-color: #F5A300;
+    background: #C5A880;
+    border-color: #C5A880;
     color: #141414;
 }
 
@@ -10333,7 +10385,7 @@ html, body {
 }
 
 .seo-btn-amber {
-    background: #F5A300;
+    background: #C5A880;
     color: #141414;
     font-family: 'Chakra Petch', sans-serif;
     font-weight: 800;
