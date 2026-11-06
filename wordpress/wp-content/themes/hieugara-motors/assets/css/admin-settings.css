@@ -22,7 +22,7 @@
     font-size: 32px;
     width: 32px;
     height: 32px;
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 .hieugara-card {
@@ -51,7 +51,7 @@
 }
 
 .hieugara-card .card-header h2 .dashicons {
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 .hieugara-card .card-body {
@@ -98,7 +98,7 @@
 }
 
 .hieugara-switch input:checked + .slider {
-    background-color: #ff4d24;
+    background-color: #1d4ed8;
 }
 
 .hieugara-switch input:checked + .slider:before {
@@ -127,7 +127,7 @@
 }
 
 .slide-item-box:hover {
-    border-color: #ff4d24;
+    border-color: #1d4ed8;
 }
 
 .slide-item-header {
@@ -234,7 +234,7 @@
 }
 
 .hieugara-submit-bar .button-primary {
-    background: #ff4d24 !important;
+    background: #1d4ed8 !important;
     border-color: #e03912 !important;
     font-weight: 700 !important;
     padding: 6px 24px !important;

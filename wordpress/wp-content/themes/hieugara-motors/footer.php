@@ -40,12 +40,12 @@ $hotline_clean = preg_replace('/[^0-9]/', '', $hotline_phone);
                         </div>
                         <div class="footer-brand-heading">
                             <span class="brand-name">ÔTÔ <span class="brand-tag">HẢI HÀ</span></span>
-                            <span class="brand-tagline">Uy tín chất lượng làm nên thương hiệu</span>
+                            <span class="brand-tagline">Uy tín - chất lượng - hiệu quả là sự tồn tại của doanh nghiệp</span>
                         </div>
                     </div>
 
                     <p class="footer-brand-desc">
-                        <strong>Ôtô Hải Hà (1995 - <?php echo date('Y'); ?>):</strong> 31 năm kinh nghiệm bảo dưỡng, sửa chữa máy gầm, điện điều hòa và đồng sơn công nghệ cao với đội ngũ 80 nhân sự tận tâm.
+                        <strong>Ôtô Hải Hà (1995 - <?php echo date('Y'); ?>):</strong> Khởi nguồn từ năm 1995 bởi nhà sáng lập ông Nguyễn Hải Hà — 31 năm kinh nghiệm bảo dưỡng, sửa chữa máy gầm, điện điều hòa và đồng sơn công nghệ cao.
                     </p>
 
                     <div class="footer-contact-chips">
@@ -189,7 +189,7 @@ $hotline_clean = preg_replace('/[^0-9]/', '', $hotline_phone);
     <div class="footer-bottom-bar">
         <div class="container footer-bottom-inner">
             <div class="bottom-copyright">
-                <span class="copy-text">© <?php echo date('Y'); ?> <strong>Ôtô Hải Hà</strong> — Uy tín chất lượng làm nên thương hiệu.</span>
+                <span class="copy-text">© <?php echo date('Y'); ?> <strong>Ôtô Hải Hà</strong> — Uy tín - chất lượng - hiệu quả là sự tồn tại của doanh nghiệp.</span>
             </div>
 
             <div class="bottom-extra-links">
@@ -214,23 +214,57 @@ $hotline_clean = preg_replace('/[^0-9]/', '', $hotline_phone);
 </footer>
 
 <!-- =========================================================================
-     SHIFTUP HIGH-TECH FLOATING ACTION DOCK (Fixed Bottom-Right)
+     LEXUS VIETNAM 3-COLUMN BOTTOM BAR (MOBILE) & FLOATING DOCK (DESKTOP)
      ========================================================================= -->
-<div class="shiftup-floating-dock" id="shiftupFloatingDock">
-    <!-- Hotline Cứu Hộ 24/7 -->
+<div class="shiftup-floating-dock lexus-bottom-action-bar" id="shiftupFloatingDock">
+    <!-- 1. Đặt lịch bảo dưỡng của bạn (Lexus Car + Sliders Icon) -->
+    <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>" class="float-dock-pill dock-book" title="Đặt lịch bảo dưỡng &amp; sửa chữa">
+        <span class="lexus-dock-svg" aria-hidden="true">
+            <svg width="28" height="26" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 11.5L7.8 6.5C8.3 5.6 9.2 5 10.2 5H21.8C22.8 5 23.7 5.6 24.2 6.5L27 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3.5 11.5H28.5C29.3 11.5 30 12.2 30 13V16C30 16.6 29.5 17 29 17H26.5M3.5 11.5C2.7 11.5 2 12.2 2 13V16C2 16.6 2.5 17 3 17H5.5M10.5 17H21.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="8" cy="17" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="24" cy="17" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+                <line x1="4" y1="22.5" x2="28" y2="22.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                <circle cx="12" cy="22.5" r="1.6" fill="#1c1d21" stroke="currentColor" stroke-width="1.4"/>
+                <line x1="4" y1="26" x2="28" y2="26" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                <circle cx="21" cy="26" r="1.6" fill="#1c1d21" stroke="currentColor" stroke-width="1.4"/>
+            </svg>
+        </span>
+        <i class="fa-regular fa-calendar-check dock-fa-icon"></i>
+        <span class="dock-text dock-text-desktop">ĐẶT LỊCH HẸN</span>
+        <span class="dock-text dock-text-mobile">Đặt lịch bảo dưỡng<br>của bạn</span>
+    </a>
+
+    <!-- 2. So sánh bảng giá / Cứu hộ 24/7 (Lexus Dual Arrows Icon) -->
     <a href="tel:<?php echo esc_attr($rescue_clean); ?>" class="float-dock-pill dock-rescue" title="Gọi cứu hộ 24/7 khẩn cấp: <?php echo esc_attr($rescue_phone); ?>">
         <div class="dock-pulse-beacon">
             <span class="pulse-ring"></span>
             <span class="pulse-dot"></span>
         </div>
-        <i class="fa-solid fa-truck-pickup"></i>
-        <span class="dock-text">CỨU HỘ: <?php echo esc_html($rescue_phone); ?></span>
+        <span class="lexus-dock-svg" aria-hidden="true">
+            <svg width="26" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 8.5H19M19 8.5L14.5 4M19 8.5L14.5 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M24 15.5H9M9 15.5L13.5 11M9 15.5L13.5 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </span>
+        <i class="fa-solid fa-truck-pickup dock-fa-icon"></i>
+        <span class="dock-text dock-text-desktop">CỨU HỘ: <?php echo esc_html($rescue_phone); ?></span>
+        <span class="dock-text dock-text-mobile">Cứu hộ &amp; Hỗ trợ<br>24/7: <?php echo esc_html($rescue_phone); ?></span>
     </a>
 
-    <!-- Zalo Kỹ Thuật -->
+    <!-- 3. Chat tư vấn kỹ thuật Zalo (Lexus Square Chat Icon) -->
     <a href="https://zalo.me/<?php echo esc_attr($tech_clean); ?>" target="_blank" rel="noopener" class="float-dock-pill dock-zalo" title="Tư vấn kỹ thuật qua Zalo: <?php echo esc_attr($tech_phone); ?>">
-        <i class="fa-solid fa-comment-dots"></i>
-        <span class="dock-text">ZALO KỸ THUẬT</span>
+        <span class="lexus-dock-svg" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 4H20V16H13L9 20V16H4V4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="8" y1="8.5" x2="16" y2="8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="8" y1="12" x2="13.5" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+        </span>
+        <i class="fa-solid fa-comment-dots dock-fa-icon"></i>
+        <span class="dock-text dock-text-desktop">ZALO KỸ THUẬT</span>
+        <span class="dock-text dock-text-mobile">Chat</span>
     </a>
 </div>
 

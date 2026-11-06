@@ -32,7 +32,7 @@ function hieugara_admin_bar_customization($wp_admin_bar) {
     // Add Brand Node
     $wp_admin_bar->add_node(array(
         'id'    => 'hieugara-brand',
-        'title' => '<span class="ab-icon dashicons dashicons-car" style="color:#ff4d24 !important;"></span> <strong style="color:#fff;font-weight:700;">ÔTÔ HẢI HÀ</strong>',
+        'title' => '<span class="ab-icon dashicons dashicons-car" style="color:#1d4ed8 !important;"></span> <strong style="color:#fff;font-weight:700;">ÔTÔ HẢI HÀ</strong>',
         'href'  => admin_url('index.php'),
         'meta'  => array('class' => 'hieugara-topbar-brand')
     ));
@@ -112,9 +112,9 @@ function hieugara_admin_customizer_notices() {
         </div>';
     }
     if (isset($_GET['hieugara_settings_saved']) && $_GET['hieugara_settings_saved'] == '1') {
-        echo '<div class="notice notice-success is-dismissible" style="border-left-color: #ff4d24; padding: 12px 16px;">
-            <p style="font-size: 15px; margin: 0; font-weight: 600; color: #9a3412;">
-                <span class="dashicons dashicons-saved" style="vertical-align: middle; margin-right: 6px; color:#ff4d24;"></span>
+        echo '<div class="notice notice-success is-dismissible" style="border-left-color: #1d4ed8; padding: 12px 16px;">
+            <p style="font-size: 15px; margin: 0; font-weight: 600; color: #1e3a8a;">
+                <span class="dashicons dashicons-saved" style="vertical-align: middle; margin-right: 6px; color:#1d4ed8;"></span>
                 ✅ ĐÃ LƯU THÔNG TIN LIÊN HỆ & TỰ ĐỘNG XÓA BỘ NHỚ ĐỆM THÀNH CÔNG!
             </p>
         </div>';

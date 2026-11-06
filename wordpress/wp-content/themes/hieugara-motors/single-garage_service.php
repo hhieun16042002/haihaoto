@@ -24,7 +24,7 @@ while (have_posts()) : the_post();
     ?>
 
     <!-- Service Header Banner -->
-    <section class="service-single-header" style="background: #0f1115; padding: 50px 0 40px; border-bottom: 3px solid #ff4d24; position: relative;">
+    <section class="service-single-header" style="background: #0f1115; padding: 50px 0 40px; border-bottom: 3px solid #1d4ed8; position: relative;">
         <div class="container" style="max-width: 1360px; margin: 0 auto; padding: 0 20px;">
             <!-- Breadcrumbs -->
             <?php if (class_exists('HieuGara_SEO_Architecture')) : ?>
@@ -34,20 +34,20 @@ while (have_posts()) : the_post();
             <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
                 <div style="max-width: 900px;">
                     <?php if (!empty($badge)) : ?>
-                        <div style="display: inline-block; background: #ff4d24; color: #ffffff; font-family: 'Chakra Petch', sans-serif; font-size: 0.75rem; font-weight: 800; padding: 4px 12px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px;">
+                        <div style="display: inline-block; background: #1d4ed8; color: #ffffff; font-family: 'Chakra Petch', sans-serif; font-size: 0.75rem; font-weight: 800; padding: 4px 12px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px;">
                             <?php echo esc_html($badge); ?>
                         </div>
                     <?php endif; ?>
                     <h1 style="font-family: 'Chakra Petch', sans-serif; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; color: #ffffff; margin: 0; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.3;">
-                        <span style="color: #ff4d24;">|</span> <?php echo esc_html($page_title); ?>
+                        <span style="color: #1d4ed8;">|</span> <?php echo esc_html($page_title); ?>
                     </h1>
                 </div>
 
                 <!-- Emergency Contact Badge -->
                 <div style="display: flex; gap: 14px; align-items: center;">
-                    <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 77, 36, 0.15); border: 1px solid #ff4d24; color: #ffffff; padding: 10px 18px; font-family: 'Chakra Petch', sans-serif; font-size: 0.85rem; font-weight: 700; text-decoration: none; text-transform: uppercase;">
-                        <i class="fa fa-phone-volume" style="color: #ff4d24;"></i>
-                        <span>CỨU HỘ 24/7: <strong style="color: #ff4d24;"><?php echo esc_html($rescue_phone); ?></strong></span>
+                    <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(29, 78, 216, 0.15); border: 1px solid #1d4ed8; color: #ffffff; padding: 10px 18px; font-family: 'Chakra Petch', sans-serif; font-size: 0.85rem; font-weight: 700; text-decoration: none; text-transform: uppercase;">
+                        <i class="fa fa-phone-volume" style="color: #1d4ed8;"></i>
+                        <span>CỨU HỘ 24/7: <strong style="color: #1d4ed8;"><?php echo esc_html($rescue_phone); ?></strong></span>
                     </a>
                 </div>
             </div>
@@ -64,10 +64,10 @@ while (have_posts()) : the_post();
                 <article class="service-detail-main" style="background: #ffffff; padding: 40px; border: 1px solid #ebebeb; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
                     
                     <!-- Key Service Metrics Bar -->
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; padding: 22px; background: #0f1115; border-radius: 4px; margin-bottom: 32px; border-left: 4px solid #ff4d24;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; padding: 22px; background: #0f1115; border-radius: 4px; margin-bottom: 32px; border-left: 4px solid #1d4ed8;">
                         <div>
                             <small style="color: #999999; font-size: 0.72rem; text-transform: uppercase; font-family: 'Chakra Petch', sans-serif; font-weight: 700; letter-spacing: 0.5px;"><?php _e('Chi phí tham khảo:', 'hieugara-motors'); ?></small>
-                            <div style="font-family: 'Chakra Petch', sans-serif; font-size: 1.05rem; font-weight: 800; color: #ff4d24; margin-top: 4px;"><?php echo esc_html($price ? $price : 'Khảo sát báo giá miễn phí'); ?></div>
+                            <div style="font-family: 'Chakra Petch', sans-serif; font-size: 1.05rem; font-weight: 800; color: #1d4ed8; margin-top: 4px;"><?php echo esc_html($price ? $price : 'Khảo sát báo giá miễn phí'); ?></div>
                         </div>
                         <?php if (!empty($duration)) : ?>
                             <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 16px;">
@@ -102,10 +102,10 @@ while (have_posts()) : the_post();
                     <!-- Workshop Guarantee Box -->
                     <div style="margin-top: 36px; padding: 24px; background: #f8fafc; border: 1px dashed #cbd5e1; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
                         <div>
-                            <strong style="font-family: 'Chakra Petch', sans-serif; font-size: 1rem; color: #0f172a; display: block; margin-bottom: 4px;"><?php _e('CẦN TƯ VẤN KỸ THUẬT CHUYÊN SÂU?', 'hieugara-motors'); ?></strong>
+                            <strong style="font-family: 'Chakra Petch', sans-serif; font-size: 1rem; color: #0c1e3a; display: block; margin-bottom: 4px;"><?php _e('CẦN TƯ VẤN KỸ THUẬT CHUYÊN SÂU?', 'hieugara-motors'); ?></strong>
                             <span style="color: #64748b; font-size: 0.9rem;"><?php _e('Đội ngũ cố vấn dịch vụ Ôtô Hải Hà hỗ trợ trực tiếp 24/7 không qua trung gian.', 'hieugara-motors'); ?></span>
                         </div>
-                        <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="shiftup-rect-btn btn-orange-solid" style="background: #ff4d24; color: #fff; padding: 12px 24px; text-decoration: none; font-family: 'Chakra Petch', sans-serif; font-weight: 700; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px;">
+                        <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="shiftup-rect-btn btn-orange-solid" style="background: #1d4ed8; color: #fff; padding: 12px 24px; text-decoration: none; font-family: 'Chakra Petch', sans-serif; font-weight: 700; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px;">
                             <i class="fa fa-phone"></i> <?php echo esc_html($rescue_phone); ?>
                         </a>
                     </div>
@@ -113,10 +113,10 @@ while (have_posts()) : the_post();
 
                 <!-- Right: Sticky Booking Form -->
                 <aside class="service-sidebar" style="position: sticky; top: 120px;">
-                    <div style="background: #ffffff; border: 2px solid #000000; padding: 32px; box-shadow: 0 12px 30px rgba(0,0,0,0.08);">
-                        <div style="border-bottom: 2px solid #ff4d24; padding-bottom: 16px; margin-bottom: 24px;">
-                            <span style="font-family: 'Chakra Petch', sans-serif; font-size: 0.75rem; font-weight: 800; color: #ff4d24; text-transform: uppercase; letter-spacing: 1.5px;"><?php _e('ÔTÔ HẢI HÀ SERVICE', 'hieugara-motors'); ?></span>
-                            <h3 style="font-family: 'Chakra Petch', sans-serif; font-size: 1.35rem; font-weight: 800; color: #000000; text-transform: uppercase; margin: 6px 0 0;"><?php _e('ĐẶT HẸN DỊCH VỤ', 'hieugara-motors'); ?></h3>
+                    <div style="background: #ffffff; border: 2px solid #0a192f; padding: 32px; box-shadow: 0 12px 30px rgba(0,0,0,0.08);">
+                        <div style="border-bottom: 2px solid #1d4ed8; padding-bottom: 16px; margin-bottom: 24px;">
+                            <span style="font-family: 'Chakra Petch', sans-serif; font-size: 0.75rem; font-weight: 800; color: #1d4ed8; text-transform: uppercase; letter-spacing: 1.5px;"><?php _e('ÔTÔ HẢI HÀ SERVICE', 'hieugara-motors'); ?></span>
+                            <h3 style="font-family: 'Chakra Petch', sans-serif; font-size: 1.35rem; font-weight: 800; color: #0a192f; text-transform: uppercase; margin: 6px 0 0;"><?php _e('ĐẶT HẸN DỊCH VỤ', 'hieugara-motors'); ?></h3>
                         </div>
 
                         <form class="hieugara-ajax-form">
@@ -146,16 +146,16 @@ while (have_posts()) : the_post();
                                 </select>
                             </div>
 
-                            <button type="submit" class="shiftup-rect-btn btn-orange-solid" style="width: 100%; padding: 15px; background: #ff4d24; color: #fff; border: none; font-family: 'Chakra Petch', sans-serif; font-size: 0.95rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+                            <button type="submit" class="shiftup-rect-btn btn-orange-solid" style="width: 100%; padding: 15px; background: #1d4ed8; color: #fff; border: none; font-family: 'Chakra Petch', sans-serif; font-size: 0.95rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
                                 <span class="btn-orange-bar" style="color: #fff;">|</span> + <?php _e('XÁC NHẬN TIẾP NHẬN XE', 'hieugara-motors'); ?>
                             </button>
                             <div class="form-response-msg" style="display:none; margin-top: 12px; font-size: 0.9rem; padding: 10px; text-align: center;"></div>
                         </form>
 
                         <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #eee; font-size: 0.82rem; color: #666; line-height: 1.6;">
-                            <p style="margin-bottom: 6px;"><i class="fa fa-check" style="color: #ff4d24;"></i> Kiểm tra tổng quát miễn phí 45 hạng mục.</p>
-                            <p style="margin-bottom: 6px;"><i class="fa fa-check" style="color: #ff4d24;"></i> Báo giá trước minh bạch, khách duyệt mới làm.</p>
-                            <p style="margin-bottom: 0;"><i class="fa fa-check" style="color: #ff4d24;"></i> Bảo hành điện tử tra cứu theo biển số.</p>
+                            <p style="margin-bottom: 6px;"><i class="fa fa-check" style="color: #1d4ed8;"></i> Kiểm tra tổng quát miễn phí 45 hạng mục.</p>
+                            <p style="margin-bottom: 6px;"><i class="fa fa-check" style="color: #1d4ed8;"></i> Báo giá trước minh bạch, khách duyệt mới làm.</p>
+                            <p style="margin-bottom: 0;"><i class="fa fa-check" style="color: #1d4ed8;"></i> Bảo hành điện tử tra cứu theo biển số.</p>
                         </div>
                     </div>
                 </aside>

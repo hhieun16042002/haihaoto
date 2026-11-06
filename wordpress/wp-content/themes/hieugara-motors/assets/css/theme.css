@@ -236,8 +236,8 @@ html, body {
     left: 0;
     height: 3px;
     width: 0%;
-    background: linear-gradient(90deg, #ff4d24 0%, #ff7a00 60%, #ffffff 100%);
-    box-shadow: 0 0 12px rgba(255, 77, 36, 0.9), 0 0 6px rgba(255, 77, 36, 0.6);
+    background: linear-gradient(90deg, #1d4ed8 0%, #3b82f6 60%, #ffffff 100%);
+    box-shadow: 0 0 12px rgba(29, 78, 216, 0.9), 0 0 6px rgba(29, 78, 216, 0.6);
     z-index: 9999999;
     pointer-events: none;
     opacity: 0;
@@ -289,18 +289,18 @@ html, body {
 
 .orange-bar,
 .btn-orange-bar {
-    color: #ff4d24 !important;
+    color: #1d4ed8 !important;
     font-weight: 900 !important;
     margin-right: 6px;
     display: inline-block;
 }
 
 .text-orange {
-    color: #ff4d24 !important;
+    color: #1d4ed8 !important;
 }
 
 .text-black {
-    color: #000000 !important;
+    color: #0a192f !important;
 }
 
 /* =========================================================================
@@ -344,7 +344,7 @@ html, body {
 }
 
 .shiftup-topbar-inner a:hover {
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 /* =========================================================================
@@ -381,14 +381,14 @@ html, body {
     border-radius: 50%;
     object-fit: contain;
     filter: none !important;
-    background: #0f1117;
+    background: #0a192f;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .brand-title {
     font-size: 1.35rem;
     font-weight: 800;
-    color: #000000;
+    color: #0a192f;
     letter-spacing: 0.5px;
     line-height: 1.1;
     font-family: 'Chakra Petch', 'Montserrat', sans-serif;
@@ -453,24 +453,24 @@ html, body {
     text-decoration: none;
     padding: 7px 16px;
     border-radius: 8px;
-    background: #fff3f0;
-    border: 1.5px solid #ff4d24;
-    box-shadow: 0 2px 10px rgba(255, 77, 36, 0.15);
+    background: #eff6ff;
+    border: 1.5px solid #1d4ed8;
+    box-shadow: 0 2px 10px rgba(29, 78, 216, 0.15);
     transition: all 0.25s ease;
     position: relative;
 }
 
 .header-rescue-card:hover {
-    background: #ffe8e2;
+    background: #dbeafe;
     transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(255, 77, 36, 0.25);
+    box-shadow: 0 4px 16px rgba(29, 78, 216, 0.25);
 }
 
 .rescue-beacon-icon {
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff;
     display: flex;
     align-items: center;
@@ -485,7 +485,7 @@ html, body {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: rgba(255, 77, 36, 0.5);
+    background: rgba(29, 78, 216, 0.5);
     animation: rescueBeaconPing 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
@@ -510,7 +510,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.65rem;
     font-weight: 800;
-    color: #d32f2f;
+    color: #1d4ed8;
     letter-spacing: 0.6px;
     text-transform: uppercase;
 }
@@ -527,7 +527,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1.15rem;
     font-weight: 800;
-    color: #d32f2f;
+    color: #1d4ed8;
     letter-spacing: 0.8px;
 }
 
@@ -545,8 +545,8 @@ html, body {
 }
 
 .brand-hotline-box:hover {
-    border-color: #ff4d24;
-    background: #fff5f2;
+    border-color: #1d4ed8;
+    background: #eff6ff;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
 }
 
@@ -554,7 +554,7 @@ html, body {
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    background: #111111;
+    background: #0c1e3a;
     color: #ffffff;
     display: flex;
     align-items: center;
@@ -565,7 +565,7 @@ html, body {
 }
 
 .brand-hotline-box:hover .hotline-icon-circle {
-    background: #ff4d24;
+    background: #1d4ed8;
 }
 
 .hotline-text small {
@@ -582,18 +582,18 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1.15rem;
     font-weight: 800;
-    color: #111111;
+    color: #0c1e3a;
     letter-spacing: 0.6px;
 }
 
 .brand-hotline-box:hover .hotline-phone-display {
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 .topbar-rescue-dot {
     width: 7px;
     height: 7px;
-    background: #ff4d24;
+    background: #1d4ed8;
     border-radius: 50%;
     display: inline-block;
     margin-right: 6px;
@@ -601,7 +601,7 @@ html, body {
 }
 
 .brand-btn-book {
-    background: #000000;
+    background: #0a192f;
     color: #ffffff;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.82rem;
@@ -618,13 +618,13 @@ html, body {
 }
 
 .brand-btn-book .btn-plus {
-    color: #ff4d24;
+    color: #1d4ed8;
     font-size: 1.1rem;
     font-weight: 900;
 }
 
 .brand-btn-book:hover {
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff;
 }
 
@@ -645,7 +645,7 @@ html, body {
 .mobile-nav-toggle .hamburger-bar {
     width: 24px;
     height: 2px;
-    background: #000000;
+    background: #0a192f;
 }
 
 /* =========================================================================
@@ -653,14 +653,14 @@ html, body {
    TRANG CHỦ | GIỚI THIỆU ⌵ | DỊCH VỤ ⌵ | PHỤ KIỆN ⌵ | BLOG ⌵ | KHUYẾN MẠI | LIÊN HỆ ⌵ | [Tìm kiếm.... 🔍]
    ========================================================================= */
 .custom-navbar-strip {
-    background: #ffffff;
-    border-top: 1px solid #e2e8f0;
-    border-bottom: 2px solid #e2e8f0;
+    background: linear-gradient(90deg, #0a192f 0%, #0f294a 50%, #0a192f 100%);
+    border-top: 1px solid rgba(59, 130, 246, 0.22);
+    border-bottom: 2px solid #2563eb;
     width: 100%;
     position: relative;
     z-index: 100;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+    box-shadow: 0 6px 20px rgba(10, 25, 47, 0.18);
 }
 
 .custom-navbar-strip.is-sticky {
@@ -669,7 +669,7 @@ html, body {
     left: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    box-shadow: 0 10px 28px rgba(10, 25, 47, 0.28);
     border-top: none;
 }
 
@@ -706,7 +706,7 @@ html, body {
     flex: 1;
 }
 
-/* ShiftUp Top-Level Orange Accent Indicator */
+/* ShiftUp Top-Level Blue Accent Indicator */
 .custom-nav-menu > .nav-item::before {
     content: '';
     position: absolute;
@@ -714,7 +714,7 @@ html, body {
     left: 0;
     width: 100%;
     height: 3px;
-    background: #ff4d24;
+    background: #38bdf8;
     transform: scaleX(0);
     transform-origin: center;
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -735,7 +735,7 @@ html, body {
     font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-size: 0.94rem;
     font-weight: 700;
-    color: #0f172a;
+    color: #ffffff;
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 0.4px;
@@ -747,19 +747,19 @@ html, body {
 
 .custom-nav-menu > .nav-item.active > .nav-link,
 .custom-nav-menu > .nav-item:hover > .nav-link {
-    color: #ff4d24;
+    color: #60a5fa;
 }
 
 .custom-nav-menu .nav-caret {
     font-size: 10px;
-    color: #64748b;
+    color: #93c5fd;
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease;
     margin-left: 2px;
 }
 
 .custom-nav-menu > .nav-item:hover .nav-caret {
     transform: rotate(180deg);
-    color: #ff4d24;
+    color: #60a5fa;
 }
 
 /* ShiftUp Glassmorphism Nav Dropdown Menu */
@@ -771,7 +771,7 @@ html, body {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid #e2e8f0;
-    border-top: 3px solid #ff4d24;
+    border-top: 3px solid #1d4ed8;
     box-shadow: 0 18px 42px rgba(15, 23, 42, 0.12), 0 4px 12px rgba(15, 23, 42, 0.05);
     min-width: 280px;
     list-style: none;
@@ -829,7 +829,7 @@ html, body {
     left: -14px;
     width: 6px;
     height: 6px;
-    background: #ff4d24;
+    background: #1d4ed8;
     transform: translateY(-50%);
     opacity: 0;
     transition: left 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.22s ease;
@@ -846,8 +846,8 @@ html, body {
 
 .nav-dropdown-menu > li > a:hover {
     padding-left: 32px;
-    color: #ff4d24;
-    background: rgba(255, 77, 36, 0.05);
+    color: #1d4ed8;
+    background: rgba(29, 78, 216, 0.05);
 }
 
 .nav-dropdown-menu > li > a:hover::before {
@@ -856,7 +856,7 @@ html, body {
 }
 
 .nav-dropdown-menu > li > a:hover i {
-    color: #ff4d24;
+    color: #1d4ed8;
     transform: scale(1.12);
 }
 
@@ -870,7 +870,7 @@ html, body {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(0, 0, 0, 0.08);
-    border-top: 3px solid #ff4d24;
+    border-top: 3px solid #1d4ed8;
     box-shadow: 0 20px 48px rgba(0, 0, 0, 0.14), 0 6px 16px rgba(0, 0, 0, 0.05);
     opacity: 0;
     visibility: hidden;
@@ -919,7 +919,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.88rem;
     font-weight: 800;
-    color: #111111;
+    color: #0c1e3a;
     letter-spacing: 0.9px;
     margin-bottom: 16px;
     padding-bottom: 10px;
@@ -933,7 +933,7 @@ html, body {
 .mega-dropdown-col .mega-dot {
     width: 6px;
     height: 6px;
-    background: #ff4d24;
+    background: #1d4ed8;
     border-radius: 1px;
     display: inline-block;
 }
@@ -971,7 +971,7 @@ html, body {
     left: -12px;
     width: 5px;
     height: 5px;
-    background: #ff4d24;
+    background: #1d4ed8;
     transform: translateY(-50%);
     opacity: 0;
     transition: left 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.22s ease;
@@ -984,7 +984,7 @@ html, body {
 }
 
 .mega-list > li > a:hover {
-    color: #ff4d24;
+    color: #1d4ed8;
     padding-left: 14px;
 }
 
@@ -1005,7 +1005,7 @@ html, body {
 }
 
 .mega-cta-link {
-    color: #ff4d24;
+    color: #1d4ed8;
     font-weight: 700;
     text-decoration: none;
     display: inline-flex;
@@ -1016,7 +1016,7 @@ html, body {
 
 .mega-cta-link:hover {
     transform: translateX(4px);
-    color: #e03b14;
+    color: #1e40af;
 }
 
 /* Search Pill Input (Exact Replica of User Screenshot with ShiftUp Glow Animation) */
@@ -1035,13 +1035,13 @@ html, body {
 }
 
 .menu-search-pill:hover {
-    border-color: #ff4d24;
-    box-shadow: 0 2px 10px rgba(255, 77, 36, 0.12);
+    border-color: #1d4ed8;
+    box-shadow: 0 2px 10px rgba(29, 78, 216, 0.12);
 }
 
 .menu-search-pill:focus-within {
-    border-color: #ff4d24;
-    box-shadow: 0 0 0 3px rgba(255, 77, 36, 0.2), 0 3px 12px rgba(255, 77, 36, 0.15);
+    border-color: #1d4ed8;
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.2), 0 3px 12px rgba(29, 78, 216, 0.15);
     transform: scale(1.02);
 }
 
@@ -1071,7 +1071,7 @@ html, body {
     background: transparent;
     border: none;
     cursor: pointer;
-    color: #ff4d24;
+    color: #1d4ed8;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1084,7 +1084,7 @@ html, body {
 
 .menu-search-pill .search-submit:hover {
     transform: scale(1.22);
-    color: #e03b14;
+    color: #1e40af;
 }
 
 /* =========================================================================
@@ -1094,10 +1094,11 @@ html, body {
 .lexus-banner-slider {
     position: relative;
     width: 100%;
-    min-height: 600px;
-    height: 75vh;
-    max-height: 760px;
-    background: #080a0e;
+    height: calc(100vh - 134px);
+    height: calc(100dvh - 134px);
+    min-height: 500px;
+    max-height: 820px;
+    background: #0a192f;
     overflow: hidden;
 }
 
@@ -1112,6 +1113,10 @@ html, body {
     inset: 0;
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #0a192f;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.9s ease;
@@ -1124,14 +1129,24 @@ html, body {
     z-index: 2;
 }
 
+/* Top Image Block (Ảnh ở trên) */
+.lexus-slide-visual {
+    position: relative;
+    width: 100%;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+    background: #0a192f;
+}
+
 .lexus-slide-bg {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: center;
-    transform: scale(1.06);
+    background-position: center center;
+    transform: scale(1.05);
     transition: transform 7.5s cubic-bezier(0.25, 1, 0.5, 1);
     will-change: transform;
 }
@@ -1143,85 +1158,83 @@ html, body {
 .lexus-slide-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgba(6, 8, 12, 0.88) 0%, rgba(6, 8, 12, 0.55) 45%, rgba(6, 8, 12, 0.12) 80%, rgba(6, 8, 12, 0.28) 100%), linear-gradient(to top, rgba(6, 8, 12, 0.85) 0%, transparent 32%);
+    background: linear-gradient(180deg, rgba(10, 25, 47, 0.16) 0%, rgba(10, 25, 47, 0) 25%, rgba(10, 25, 47, 0) 68%, rgba(10, 25, 47, 0.82) 89%, #0a192f 100%);
     z-index: 2;
+}
+
+/* Bottom Editorial Content Block (Nội dung ở dưới trên nền đen) */
+.lexus-slide-bottom-panel {
+    position: relative;
+    width: 100%;
+    flex: 0 0 auto;
+    background: #0a192f;
+    padding: 10px 0 64px;
+    z-index: 3;
 }
 
 .lexus-slide-container {
     position: relative;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
+    height: auto;
+    display: block;
     max-width: 1360px;
     margin: 0 auto;
-    padding: 0 75px 105px;
+    padding: 0 75px;
     z-index: 3;
 }
 
 .lexus-slide-content {
-    max-width: 680px;
+    max-width: 780px;
     color: #ffffff;
 }
 
 .lexus-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 2.5px;
-    color: #ffaa40;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-    opacity: 0;
-    transform: translateY(15px);
-}
-
-.lexus-slide.active .lexus-eyebrow {
-    animation: lexusFadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+    display: none;
 }
 
 .lexus-gold-bar {
-    width: 16px;
-    height: 2px;
-    background: #ffaa40;
+    width: 18px;
+    height: 1.5px;
+    background: #ffffff;
     display: inline-block;
 }
 
 .lexus-slide-title {
-    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-size: clamp(2.4rem, 4.4vw, 3.8rem);
+    font-family: 'Montserrat', 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: clamp(1.65rem, 2.5vw, 2.45rem);
     font-weight: 300;
-    line-height: 1.15;
+    line-height: 1.2;
     color: #ffffff;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin: 0 0 16px 0;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+    letter-spacing: 3.5px;
+    margin: 0 0 10px 0;
+    text-shadow: none;
     opacity: 0;
-    transform: translateY(22px);
+    transform: translateY(18px);
 }
 
 .lexus-slide.active .lexus-slide-title {
-    animation: lexusFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+    animation: lexusFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
 }
 
 .lexus-slide-desc {
-    font-family: 'Montserrat', -apple-system, sans-serif;
-    font-size: 1.05rem;
-    font-weight: 300;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
-    margin: 0 0 28px 0;
-    max-width: 620px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    font-family: 'Be Vietnam Pro', 'Montserrat', -apple-system, sans-serif;
+    font-size: 0.96rem;
+    font-weight: 400;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.92);
+    margin: 0 0 18px 0;
+    max-width: 680px;
+    text-shadow: none;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     opacity: 0;
-    transform: translateY(22px);
+    transform: translateY(18px);
 }
 
 .lexus-slide.active .lexus-slide-desc {
-    animation: lexusFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
+    animation: lexusFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
 }
 
 .lexus-slide-actions {
@@ -1230,17 +1243,17 @@ html, body {
     gap: 16px;
     flex-wrap: wrap;
     opacity: 0;
-    transform: translateY(22px);
+    transform: translateY(18px);
 }
 
 .lexus-slide.active .lexus-slide-actions {
-    animation: lexusFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+    animation: lexusFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
 }
 
 @keyframes lexusFadeUp {
     0% {
         opacity: 0;
-        transform: translateY(22px);
+        transform: translateY(18px);
     }
     100% {
         opacity: 1;
@@ -1250,14 +1263,16 @@ html, body {
 
 /* Authentic Lexus Vietnam Outlined Button */
 .lexus-outline-btn {
-    display: inline-block;
-    border: 1px solid rgba(255, 255, 255, 0.85);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.88);
     background: transparent;
     color: #ffffff;
-    padding: 13px 36px;
-    font-family: 'Montserrat', -apple-system, sans-serif;
-    font-size: 0.82rem;
-    font-weight: 600;
+    padding: 11px 30px;
+    font-family: 'Be Vietnam Pro', 'Montserrat', -apple-system, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
     letter-spacing: 2.5px;
     text-transform: uppercase;
     text-decoration: none;
@@ -1268,15 +1283,15 @@ html, body {
 
 .lexus-outline-btn:hover {
     background: #ffffff;
-    color: #000000;
+    color: #0a192f;
     border-color: #ffffff;
     box-shadow: 0 4px 20px rgba(255, 255, 255, 0.35);
 }
 
-/* Lexus Navigation Arrows */
+/* Lexus Navigation Arrows (Centered in Top Image Area) */
 .lexus-nav-arrow {
     position: absolute;
-    top: 50%;
+    top: 32%;
     transform: translateY(-50%);
     width: 48px;
     height: 48px;
@@ -1304,7 +1319,7 @@ html, body {
 .lexus-nav-arrow:hover {
     background: #ffffff;
     border-color: #ffffff;
-    color: #000000;
+    color: #0a192f;
 }
 
 /* Lexus Horizontal Dash Pagination Bar */
@@ -1364,7 +1379,7 @@ html, body {
 }
 
 .lexus-dash-item.active .dash-num {
-    color: #ff4d24;
+    color: #1d4ed8;
     font-weight: 700;
 }
 
@@ -1383,7 +1398,7 @@ html, body {
     left: 0;
     height: 100%;
     width: 0%;
-    background: #ff4d24;
+    background: #1d4ed8;
 }
 
 .lexus-dash-item.active .dash-progress-fill {
@@ -1421,7 +1436,7 @@ html, body {
     font-weight: 800;
     line-height: 1.12;
     text-transform: uppercase;
-    color: #000000;
+    color: #0a192f;
     margin: 0;
     letter-spacing: 0.5px;
 }
@@ -1442,7 +1457,7 @@ html, body {
     font-size: 0.95rem;
     font-weight: 800;
     text-transform: uppercase;
-    color: #000000;
+    color: #0a192f;
     letter-spacing: 0.8px;
     margin: 0 0 10px;
     display: flex;
@@ -1486,7 +1501,7 @@ html, body {
     width: 65%;
     height: 500px;
     overflow: hidden;
-    background: #000000;
+    background: #0a192f;
     position: relative;
     opacity: 0;
     transform: translateX(-120px);
@@ -1545,7 +1560,7 @@ html, body {
     position: absolute;
     width: 12px;
     height: 12px;
-    background: #ff4d24;
+    background: #1d4ed8;
     z-index: 10;
     opacity: 0;
     transition: top 0.85s cubic-bezier(0.22, 0.61, 0.36, 1),
@@ -1621,7 +1636,7 @@ html, body {
     display: inline-block;
     width: 7px;
     height: 7px;
-    background: #ff4d24;
+    background: #1d4ed8;
     margin-right: 8px;
 }
 
@@ -1643,11 +1658,11 @@ html, body {
 }
 
 .btn-dark-view:hover {
-    background: #ff4d24;
-    border-color: #ff4d24;
+    background: #1d4ed8;
+    border-color: #1d4ed8;
     color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(255, 77, 36, 0.35);
+    box-shadow: 0 6px 18px rgba(29, 78, 216, 0.35);
 }
 
 /* =========================================================================
@@ -1684,7 +1699,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.78rem;
     font-weight: 700;
-    color: #ff4d24;
+    color: #1d4ed8;
     letter-spacing: 1.8px;
     text-transform: uppercase;
 }
@@ -1693,7 +1708,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 2.2rem;
     font-weight: 800;
-    color: #000000;
+    color: #0a192f;
     text-transform: uppercase;
     margin: 0;
     letter-spacing: 0.5px;
@@ -1708,7 +1723,7 @@ html, body {
     background: #ffffff;
     border: 1px solid #dcdcdc;
     cursor: pointer;
-    color: #111111;
+    color: #0c1e3a;
     width: 44px;
     height: 44px;
     display: inline-flex;
@@ -1718,11 +1733,11 @@ html, body {
 }
 
 .all-about-arrows .arrow-btn:hover {
-    background: #ff4d24;
-    border-color: #ff4d24;
+    background: #1d4ed8;
+    border-color: #1d4ed8;
     color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(255, 77, 36, 0.25);
+    box-shadow: 0 6px 14px rgba(29, 78, 216, 0.25);
 }
 
 .all-about-arrows .arrow-btn:active {
@@ -1769,7 +1784,7 @@ html, body {
     height: 250px;
     position: relative;
     overflow: hidden;
-    background: #111111;
+    background: #0c1e3a;
     margin-bottom: 20px;
 }
 
@@ -1810,7 +1825,7 @@ html, body {
 }
 
 .view-detail-badge {
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.78rem;
@@ -1839,7 +1854,7 @@ html, body {
     font-weight: 700;
     letter-spacing: 0.8px;
     padding: 4px 10px;
-    border-left: 3px solid #ff4d24;
+    border-left: 3px solid #1d4ed8;
     text-transform: uppercase;
     z-index: 3;
     pointer-events: none;
@@ -1850,7 +1865,7 @@ html, body {
     font-size: 0.98rem;
     font-weight: 800;
     text-transform: uppercase;
-    color: #000000;
+    color: #0a192f;
     letter-spacing: 0.8px;
     margin: 0 0 10px;
     display: flex;
@@ -1858,13 +1873,13 @@ html, body {
 }
 
 .card-item-title a {
-    color: #000000;
+    color: #0a192f;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .card-item-title a:hover {
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 .card-item-desc {
@@ -1882,7 +1897,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.82rem;
     font-weight: 700;
-    color: #ff4d24;
+    color: #1d4ed8;
     text-decoration: none;
     text-transform: uppercase;
     margin-top: auto;
@@ -1892,17 +1907,17 @@ html, body {
 }
 
 .card-learn-more-link svg {
-    stroke: #ff4d24;
+    stroke: #1d4ed8;
     transition: transform 0.2s ease;
 }
 
 .card-learn-more-link:hover {
-    color: #000000;
+    color: #0a192f;
     gap: 12px;
 }
 
 .card-learn-more-link:hover svg {
-    stroke: #000000;
+    stroke: #0a192f;
     transform: translateX(3px);
 }
 
@@ -1912,7 +1927,7 @@ html, body {
 .shiftup-panoramic-banners {
     width: 100%;
     overflow: hidden;
-    background: #000000;
+    background: #0a192f;
 }
 
 /* =========================================================================
@@ -1921,7 +1936,7 @@ html, body {
 .shiftup-panoramic-banners {
     width: 100%;
     overflow: hidden;
-    background: #000000;
+    background: #0a192f;
 }
 
 .pano-banners-grid {
@@ -2164,7 +2179,7 @@ html, body {
 .pano-action-btn::after {
     content: "";
     position: absolute;
-    background-color: #ff4d24;
+    background-color: #1d4ed8;
     left: 0;
     top: 0;
     width: 6px;
@@ -2180,7 +2195,7 @@ html, body {
 
 .pano-action-btn:hover,
 .pano-banner-col:hover .pano-action-btn {
-    box-shadow: 0 4px 18px rgba(255, 77, 36, 0.45);
+    box-shadow: 0 4px 18px rgba(29, 78, 216, 0.45);
 }
 
 /* Plus Icon: Perfectly centered cross symbol */
@@ -2264,7 +2279,7 @@ html, body {
 
 .flanked-diag-item:hover,
 .flanked-diag-item.active {
-    border-left: 4px solid #ff4d24;
+    border-left: 4px solid #1d4ed8;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
     transform: translateY(-3px);
 }
@@ -2274,7 +2289,7 @@ html, body {
     font-size: 1.05rem;
     font-weight: 800;
     text-transform: uppercase;
-    color: #000000;
+    color: #0a192f;
     margin: 0 0 10px;
     display: flex;
     align-items: baseline;
@@ -2291,8 +2306,8 @@ html, body {
 .center-scanner-box {
     position: relative;
     overflow: hidden;
-    background: #000000;
-    border: 1px solid #000000;
+    background: #0a192f;
+    border: 1px solid #0a192f;
 }
 
 .center-scanner-box .center-scanner-img {
@@ -2312,8 +2327,8 @@ html, body {
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #ff4d24, transparent);
-    box-shadow: 0 0 12px #ff4d24;
+    background: linear-gradient(90deg, transparent, #1d4ed8, transparent);
+    box-shadow: 0 0 12px #1d4ed8;
     animation: diagLaser 3s linear infinite;
 }
 
@@ -2347,7 +2362,7 @@ html, body {
     font-size: 2.6rem;
     font-weight: 800;
     text-transform: uppercase;
-    color: #000000;
+    color: #0a192f;
     margin: 0 0 12px;
     letter-spacing: 0.5px;
 }
@@ -2382,7 +2397,7 @@ html, body {
 
 .checkup-card.featured {
     background: #ffffff;
-    border: 2px solid #000000;
+    border: 2px solid #0a192f;
     box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
 }
 
@@ -2390,7 +2405,7 @@ html, body {
     width: 100%;
     height: 180px;
     overflow: hidden;
-    background: #000000;
+    background: #0a192f;
 }
 
 .card-img-wrap img {
@@ -2441,7 +2456,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 2.2rem;
     font-weight: 800;
-    color: #000000;
+    color: #0a192f;
     line-height: 1;
 }
 
@@ -2471,7 +2486,7 @@ html, body {
 }
 
 .checkup-btn {
-    background: #000000;
+    background: #0a192f;
     color: #ffffff;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.85rem;
@@ -2489,17 +2504,17 @@ html, body {
 }
 
 .checkup-btn:hover {
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff;
 }
 
 .checkup-btn.btn-primary-featured {
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff;
 }
 
 .checkup-btn.btn-primary-featured:hover {
-    background: #e03b14;
+    background: #1e40af;
 }
 
 /* =========================================================================
@@ -2529,7 +2544,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.8rem;
     font-weight: 700;
-    color: #ff4d24;
+    color: #1d4ed8;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 8px;
@@ -2541,7 +2556,7 @@ html, body {
     font-size: clamp(2rem, 3vw, 2.6rem);
     font-weight: 800;
     text-transform: uppercase;
-    color: #000000;
+    color: #0a192f;
     margin: 0 0 14px;
     letter-spacing: 0.5px;
 }
@@ -2691,7 +2706,7 @@ html, body {
     font-size: 2.2rem;
     font-weight: 800;
     text-transform: uppercase;
-    color: #000000;
+    color: #0a192f;
     margin: 0;
     letter-spacing: 0.5px;
 }
@@ -2699,7 +2714,7 @@ html, body {
 .workshops-all-link {
     font-family: 'Chakra Petch', sans-serif;
     font-weight: 700;
-    color: #ff4d24;
+    color: #1d4ed8;
     text-decoration: none;
     font-size: 0.95rem;
 }
@@ -2721,7 +2736,7 @@ html, body {
 }
 
 .ws-clean-card:hover {
-    border-color: #000000;
+    border-color: #0a192f;
     transform: translateY(-4px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
 }
@@ -2730,7 +2745,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.75rem;
     font-weight: 800;
-    color: #ff4d24;
+    color: #1d4ed8;
     letter-spacing: 1.5px;
     margin-bottom: 10px;
 }
@@ -2740,7 +2755,7 @@ html, body {
     font-size: 1.25rem;
     font-weight: 800;
     text-transform: uppercase;
-    color: #000000;
+    color: #0a192f;
     margin: 0 0 8px;
 }
 
@@ -2769,7 +2784,7 @@ html, body {
 
 .ws-link-btn {
     flex: 1;
-    background: #000000;
+    background: #0a192f;
     color: #ffffff;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.8rem;
@@ -2788,19 +2803,19 @@ html, body {
 }
 
 .ws-link-btn:hover {
-    background: #ff4d24;
+    background: #1d4ed8;
 }
 
 .ws-link-btn.ghost {
     background: #f5f5f5;
-    color: #000000;
+    color: #0a192f;
     border: 1px solid #e5e5e5;
 }
 
 .ws-link-btn.ghost:hover {
-    background: #000000;
+    background: #0a192f;
     color: #ffffff;
-    border-color: #000000;
+    border-color: #0a192f;
 }
 
 /* =========================================================================
@@ -2932,12 +2947,12 @@ html, body {
     min-width: 44px;
     min-height: 44px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #ff4d24 0%, #d83912 100%);
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
     color: #ffffff;
     font-size: 1.15rem;
     text-decoration: none;
     position: relative;
-    box-shadow: 0 4px 14px rgba(255, 77, 36, 0.45);
+    box-shadow: 0 4px 14px rgba(29, 78, 216, 0.45);
     flex-shrink: 0;
 }
 .mobile-quick-call:hover {
@@ -2948,7 +2963,7 @@ html, body {
     position: absolute;
     inset: -3px;
     border-radius: 50%;
-    border: 2px solid rgba(255, 77, 36, 0.65);
+    border: 2px solid rgba(29, 78, 216, 0.65);
     animation: beaconPulseRing 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
 }
 
@@ -2981,8 +2996,8 @@ html, body {
         min-width: 44px;
         min-height: 44px;
         border-radius: 8px;
-        background: #0b0c0f;
-        border: 1px solid #272a33;
+        background: #0a192f;
+        border: 1px solid #1e3a5f;
         padding: 9px;
         cursor: pointer;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -2997,14 +3012,14 @@ html, body {
     }
     .mobile-nav-toggle.is-active .hamburger-bar:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
-        background: #ff4d24;
+        background: #1d4ed8;
     }
     .mobile-nav-toggle.is-active .hamburger-bar:nth-child(2) {
         opacity: 0;
     }
     .mobile-nav-toggle.is-active .hamburger-bar:nth-child(3) {
         transform: translateY(-7px) rotate(-45deg);
-        background: #ff4d24;
+        background: #1d4ed8;
     }
 
     .main-brand-header {
@@ -3021,7 +3036,7 @@ html, body {
         border-radius: 50%;
         object-fit: contain;
         filter: none !important;
-        background: #0f1117;
+        background: #0a192f;
     }
     .brand-title {
         font-size: 1.15rem;
@@ -3072,8 +3087,8 @@ html, body {
         max-width: 86vw !important;
         height: 100vh !important;
         height: 100dvh !important;
-        background: #0d0f14 !important;
-        border-left: 1px solid rgba(255, 77, 36, 0.25) !important;
+        background: #0a192f !important;
+        border-left: 1px solid rgba(29, 78, 216, 0.25) !important;
         z-index: 99999 !important;
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch;
@@ -3090,8 +3105,8 @@ html, body {
         align-items: center;
         justify-content: space-between;
         padding: 14px 16px;
-        background: #07080b;
-        border-bottom: 1px solid #1c202a;
+        background: #071324;
+        border-bottom: 1px solid #183661;
         position: sticky;
         top: 0;
         z-index: 10;
@@ -3103,7 +3118,7 @@ html, body {
     }
     .drawer-brand img {
         border-radius: 50%;
-        background: #181a20;
+        background: #122b4d;
     }
     .drawer-name {
         font-family: 'Chakra Petch', sans-serif;
@@ -3114,11 +3129,14 @@ html, body {
         line-height: 1.1;
     }
     .drawer-sub {
-        font-size: 0.58rem;
-        color: #8c95a6;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
+        font-size: 0.62rem;
+        color: #94a3b8;
+        letter-spacing: 0.1px;
+        text-transform: none;
         display: block;
+        white-space: normal;
+        line-height: 1.3;
+        margin-top: 2px;
     }
     .mobile-drawer-close {
         width: 38px;
@@ -3126,8 +3144,8 @@ html, body {
         min-width: 38px;
         min-height: 38px;
         border-radius: 8px;
-        background: #181b24;
-        border: 1px solid #2a2f3d;
+        background: #122b4d;
+        border: 1px solid #23456e;
         color: #e2e8f0;
         display: flex;
         align-items: center;
@@ -3137,7 +3155,7 @@ html, body {
         transition: all 0.2s;
     }
     .mobile-drawer-close:hover {
-        background: #ff4d24;
+        background: #1d4ed8;
         color: #ffffff;
     }
 
@@ -3153,8 +3171,8 @@ html, body {
         width: 100%;
         margin-bottom: 6px;
         height: 40px;
-        background: #151821;
-        border: 1px solid #272d3b;
+        background: #0f2544;
+        border: 1px solid #1e3a5f;
         border-radius: 6px;
         padding: 0 12px;
     }
@@ -3169,7 +3187,7 @@ html, body {
     .menu-search-pill .search-submit {
         background: transparent;
         border: none;
-        color: #ff4d24;
+        color: #1d4ed8;
         font-size: 0.95rem;
         cursor: pointer;
     }
@@ -3185,7 +3203,7 @@ html, body {
         flex: none;
         flex-direction: column;
         align-items: stretch;
-        border-bottom: 1px solid #191c25;
+        border-bottom: 1px solid #122b4d;
     }
     .custom-nav-menu > .nav-item > .nav-link {
         padding: 13px 4px;
@@ -3201,7 +3219,7 @@ html, body {
     }
     .custom-nav-menu > .nav-item.active > .nav-link,
     .custom-nav-menu > .nav-item:hover > .nav-link {
-        color: #ff4d24;
+        color: #1d4ed8;
     }
     .nav-caret {
         font-size: 0.8rem;
@@ -3210,7 +3228,7 @@ html, body {
     }
     .custom-nav-menu > .nav-item.open-submenu > .nav-link .nav-caret {
         transform: rotate(180deg);
-        color: #ff4d24;
+        color: #1d4ed8;
     }
 
     .nav-dropdown-menu,
@@ -3219,7 +3237,7 @@ html, body {
         width: 100%;
         box-shadow: none;
         border: none;
-        background: #141720;
+        background: #0f2544;
         opacity: 1;
         visibility: visible;
         transform: none;
@@ -3245,7 +3263,7 @@ html, body {
     }
     .nav-dropdown-menu li a:hover,
     .mega-list li a:hover {
-        color: #ff4d24;
+        color: #1d4ed8;
     }
     .mega-dropdown-grid {
         grid-template-columns: 1fr;
@@ -3253,7 +3271,7 @@ html, body {
         gap: 12px;
     }
     .mega-title {
-        color: #ff4d24;
+        color: #1d4ed8;
         font-family: 'Chakra Petch', sans-serif;
         font-size: 0.82rem;
         font-weight: 800;
@@ -3270,7 +3288,7 @@ html, body {
         color: #8c95a6;
     }
     .mega-cta-link {
-        color: #ff4d24;
+        color: #1d4ed8;
         font-weight: 700;
         text-decoration: underline;
     }
@@ -3281,8 +3299,8 @@ html, body {
         flex-direction: column;
         gap: 10px;
         padding: 16px 16px 36px;
-        background: #07080b;
-        border-top: 1px solid #1a1d26;
+        background: #071324;
+        border-top: 1px solid #153158;
         margin-top: 14px;
     }
     .drawer-btn-rescue {
@@ -3290,7 +3308,7 @@ html, body {
         align-items: center;
         justify-content: center;
         gap: 10px;
-        background: linear-gradient(135deg, #ff4d24 0%, #d83912 100%);
+        background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
         color: #ffffff;
         text-decoration: none;
         font-family: 'Chakra Petch', sans-serif;
@@ -3298,15 +3316,15 @@ html, body {
         font-weight: 700;
         padding: 12px 14px;
         border-radius: 6px;
-        box-shadow: 0 4px 14px rgba(255, 77, 36, 0.35);
+        box-shadow: 0 4px 14px rgba(29, 78, 216, 0.35);
     }
     .drawer-btn-book {
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 8px;
-        background: #141720;
-        border: 1px solid #272d3b;
+        background: #0f2544;
+        border: 1px solid #1e3a5f;
         color: #ffffff;
         text-decoration: none;
         font-family: 'Chakra Petch', sans-serif;
@@ -3328,54 +3346,98 @@ html, body {
 
 /* Smartphone Breakpoint (<= 768px) */
 @media (max-width: 768px) {
-    /* Safe Bottom Inset Padding for body */
+    /* Safe Bottom Inset Padding for body (accommodates 72px Lexus Bottom Bar) */
     body {
-        padding-bottom: 64px !important;
+        padding-bottom: 72px !important;
     }
 
-    /* Banner Slider */
+    /* Authentic Lexus Vietnam 1-Screen Split Hero (Ảnh ở trên + Nội dung ở dưới vừa khít 1 trang màn hình) */
     .lexus-banner-slider {
-        height: 460px;
-        min-height: 420px;
+        height: calc(100vh - 134px);
+        height: calc(100dvh - 134px);
+        min-height: 440px;
+        max-height: 760px;
+        background: #0a192f;
+    }
+    .lexus-slide-visual {
+        flex: 1 1 auto;
+        min-height: 0;
+        width: 100%;
+    }
+    .lexus-slide-bg {
+        inset: 0;
+        height: 100%;
+        background-position: center center;
+    }
+    .lexus-slide-overlay {
+        background: linear-gradient(180deg, rgba(10, 25, 47, 0.18) 0%, rgba(10, 25, 47, 0) 28%, rgba(10, 25, 47, 0) 64%, rgba(10, 25, 47, 0.84) 88%, #0a192f 100%);
+    }
+    .lexus-slide-bottom-panel {
+        flex: 0 0 auto;
+        background: #0a192f;
+        padding: 8px 0 28px;
     }
     .lexus-slide-container {
-        padding: 0 16px 60px;
+        padding: 0 20px;
+    }
+    .lexus-eyebrow {
+        display: none;
     }
     .lexus-slide-title {
-        font-size: 1.65rem;
-        line-height: 1.2;
+        font-family: 'Montserrat', 'Be Vietnam Pro', sans-serif;
+        font-size: 1.38rem;
+        font-weight: 300;
+        letter-spacing: 2.5px;
+        line-height: 1.24;
+        margin-bottom: 8px;
+        text-shadow: none;
     }
     .lexus-slide-desc {
-        font-size: 0.86rem;
-        line-height: 1.5;
+        font-family: 'Be Vietnam Pro', sans-serif;
+        font-size: 0.88rem;
+        font-weight: 400;
+        line-height: 1.48;
+        color: rgba(255, 255, 255, 0.92);
         margin-bottom: 16px;
+        text-shadow: none;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
     .lexus-slide-actions {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 12px;
     }
     .lexus-outline-btn {
-        width: 100%;
+        width: auto;
+        display: inline-flex;
         justify-content: center;
         text-align: center;
-        padding: 11px 16px;
+        padding: 10px 24px;
+        font-size: 0.74rem;
+        font-weight: 500;
+        letter-spacing: 2px;
+        border: 1px solid rgba(255, 255, 255, 0.88);
     }
     .lexus-nav-arrow {
         display: none;
     }
+    .lexus-pagination-bar {
+        padding: 6px 0 10px;
+        background: transparent;
+    }
     .lexus-pagination-inner {
-        padding: 0 16px;
-        gap: 6px;
+        padding: 0 20px;
+        gap: 8px;
     }
     .dash-label {
         display: none;
     }
     .dash-meta {
-        justify-content: center;
-    }
-    .dash-num {
-        font-size: 0.75rem;
+        display: none;
     }
 
     /* Pre-footer Bar */
@@ -3566,8 +3628,8 @@ html, body {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, transparent, #ff4d24, #ffffff, #ff4d24, transparent);
-    box-shadow: 0 0 12px #ff4d24, 0 0 24px rgba(255, 77, 36, 0.8);
+    background: linear-gradient(90deg, transparent, #1d4ed8, #ffffff, #1d4ed8, transparent);
+    box-shadow: 0 0 12px #1d4ed8, 0 0 24px rgba(29, 78, 216, 0.8);
     opacity: 0;
     z-index: 10;
 }
@@ -3667,14 +3729,14 @@ html, body {
 /* Pulse Hover for High-Octane Orange Accent Bars */
 .orange-bar, .btn-orange-bar {
     display: inline-block;
-    color: #ff4d24;
+    color: #1d4ed8;
     font-weight: 900;
     margin-right: 6px;
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease;
 }
 *:hover > .orange-bar, *:hover > * > .orange-bar {
     transform: scaleY(1.22);
-    color: #e03b14;
+    color: #1e40af;
 }
 
 /* ==========================================================================
@@ -3683,7 +3745,7 @@ html, body {
 .shiftup-main-footer {
     background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
     color: #475569;
-    border-top: 3px solid #ff4d24;
+    border-top: 3px solid #1d4ed8;
     position: relative;
     overflow: hidden;
     font-family: 'Be Vietnam Pro', sans-serif;
@@ -3696,7 +3758,7 @@ html, body {
     left: 0;
     right: 0;
     height: 180px;
-    background: radial-gradient(ellipse at 50% -20%, rgba(255, 77, 36, 0.08) 0%, transparent 70%);
+    background: radial-gradient(ellipse at 50% -20%, rgba(29, 78, 216, 0.08) 0%, transparent 70%);
     pointer-events: none;
     z-index: 1;
 }
@@ -3735,7 +3797,7 @@ html, body {
     position: absolute;
     inset: -6px;
     border-radius: 50%;
-    background: rgba(255, 77, 36, 0.45);
+    background: rgba(29, 78, 216, 0.45);
     animation: beaconPulseAnim 1.8s infinite cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -3743,8 +3805,8 @@ html, body {
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: #ff4d24;
-    box-shadow: 0 0 10px #ff4d24, 0 0 18px rgba(255, 77, 36, 0.8);
+    background: #1d4ed8;
+    box-shadow: 0 0 10px #1d4ed8, 0 0 18px rgba(29, 78, 216, 0.8);
 }
 
 @keyframes beaconPulseAnim {
@@ -3762,7 +3824,7 @@ html, body {
 
 .prebar-badge {
     display: inline-block;
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.72rem;
@@ -3770,11 +3832,11 @@ html, body {
     letter-spacing: 1.2px;
     padding: 3px 8px;
     border-radius: 3px;
-    box-shadow: 0 2px 8px rgba(255, 77, 36, 0.35);
+    box-shadow: 0 2px 8px rgba(29, 78, 216, 0.35);
 }
 
 .prebar-title {
-    color: #0f172a;
+    color: #0c1e3a;
     font-family: 'Chakra Petch', sans-serif;
     font-weight: 700;
     font-size: 0.95rem;
@@ -3792,9 +3854,9 @@ html, body {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: #fff7ed;
-    border: 1px solid #fed7aa;
-    color: #ff4d24;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #1d4ed8;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1.05rem;
     font-weight: 800;
@@ -3818,10 +3880,10 @@ html, body {
 }
 
 .prebar-phone-pill:hover {
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff;
-    border-color: #ff4d24;
-    box-shadow: 0 8px 20px rgba(255, 77, 36, 0.35);
+    border-color: #1d4ed8;
+    box-shadow: 0 8px 20px rgba(29, 78, 216, 0.35);
     transform: translateY(-2px);
 }
 
@@ -3873,13 +3935,13 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1.4rem;
     font-weight: 800;
-    color: #0f172a;
+    color: #0c1e3a;
     letter-spacing: 0.8px;
     line-height: 1.2;
 }
 
 .footer-brand-heading .brand-tag {
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff;
     font-size: 0.72rem;
     font-weight: 800;
@@ -3892,12 +3954,13 @@ html, body {
 .footer-brand-heading .brand-tagline {
     display: block;
     font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 0.84rem;
+    font-size: 0.82rem;
     font-weight: 700;
-    color: #ea580c;
-    letter-spacing: 0.2px;
+    color: #1e40af;
+    letter-spacing: 0.15px;
     margin-top: 4px;
-    white-space: nowrap;
+    line-height: 1.35;
+    white-space: normal;
 }
 
 .footer-brand-desc {
@@ -3908,7 +3971,7 @@ html, body {
 }
 
 .footer-brand-desc strong {
-    color: #0f172a;
+    color: #0c1e3a;
 }
 
 /* 2x2 Contact Chips Grid */
@@ -3938,12 +4001,12 @@ html, body {
     width: 34px;
     height: 34px;
     border-radius: 8px;
-    background: #fff7ed;
-    border: 1px solid #fed7aa;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ff4d24;
+    color: #1d4ed8;
     font-size: 0.85rem;
     flex-shrink: 0;
     transition: all 0.22s ease;
@@ -3971,7 +4034,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.94rem;
     font-weight: 800;
-    color: #0f172a;
+    color: #0c1e3a;
     letter-spacing: 0.3px;
     white-space: nowrap;
     transition: color 0.2s ease;
@@ -3988,29 +4051,29 @@ html, body {
 }
 
 .contact-chip.chip-rescue {
-    border-color: #fed7aa;
-    background: #fffaf5;
+    border-color: #bfdbfe;
+    background: #f0f7ff;
 }
 
 .contact-chip.chip-rescue strong {
-    color: #ea580c;
+    color: #1e40af;
 }
 
 .contact-chip:hover {
-    border-color: #ff4d24;
+    border-color: #1d4ed8;
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(255, 77, 36, 0.12);
+    box-shadow: 0 6px 16px rgba(29, 78, 216, 0.12);
 }
 
 .contact-chip:hover i {
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff;
-    border-color: #ff4d24;
+    border-color: #1d4ed8;
 }
 
 .contact-chip:hover strong,
 .contact-chip:hover span {
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 /* Social & Email Pills Row */
@@ -4054,12 +4117,12 @@ html, body {
 }
 
 .footer-mail-pill i {
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 .footer-mail-pill:hover {
-    border-color: #ff4d24;
-    color: #ff4d24;
+    border-color: #1d4ed8;
+    color: #1d4ed8;
 }
 
 /* Columns Title */
@@ -4067,7 +4130,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1.05rem;
     font-weight: 800;
-    color: #0f172a;
+    color: #0c1e3a;
     text-transform: uppercase;
     letter-spacing: 0.7px;
     margin-bottom: 16px;
@@ -4085,7 +4148,7 @@ html, body {
     left: 0;
     width: 44px;
     height: 2px;
-    background: #ff4d24;
+    background: #1d4ed8;
 }
 
 .title-square {
@@ -4093,9 +4156,9 @@ html, body {
     width: 8px;
     height: 8px;
     border-radius: 2px;
-    background: #ff4d24;
+    background: #1d4ed8;
     margin-right: 10px;
-    box-shadow: 0 0 8px rgba(255, 77, 36, 0.45);
+    box-shadow: 0 0 8px rgba(29, 78, 216, 0.45);
 }
 
 /* Links List */
@@ -4133,26 +4196,26 @@ html, body {
 }
 
 .footer-links-list li a:hover {
-    color: #ff4d24;
+    color: #1d4ed8;
     padding-left: 5px;
 }
 
 .footer-links-list li a:hover::before {
-    background: #ff4d24;
+    background: #1d4ed8;
     transform: scale(1.25);
 }
 
 .footer-links-list li a.highlight-link {
-    color: #0f172a;
+    color: #0c1e3a;
     font-weight: 700;
 }
 
 .footer-links-list li a.highlight-link::before {
-    background: #ff4d24;
+    background: #1d4ed8;
 }
 
 .badge-mini {
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.62rem;
@@ -4178,7 +4241,7 @@ html, body {
     gap: 6px;
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    color: #0f172a;
+    color: #0c1e3a;
     font-size: 0.78rem;
     font-weight: 700;
     padding: 7px 11px;
@@ -4188,13 +4251,13 @@ html, body {
 }
 
 .footer-action-link i {
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 .footer-action-link:hover {
-    border-color: #ff4d24;
-    background: #fff7ed;
-    color: #ea580c;
+    border-color: #1d4ed8;
+    background: #eff6ff;
+    color: #1e40af;
 }
 
 /* Column 3: Google Maps Interactive Embed */
@@ -4213,8 +4276,8 @@ html, body {
 }
 
 .footer-map-card:hover {
-    border-color: #ff4d24;
-    box-shadow: 0 14px 32px rgba(255, 77, 36, 0.12);
+    border-color: #1d4ed8;
+    box-shadow: 0 14px 32px rgba(29, 78, 216, 0.12);
     transform: translateY(-2px);
 }
 
@@ -4257,8 +4320,8 @@ html, body {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #ff4d24;
-    box-shadow: 0 0 8px #ff4d24;
+    background: #1d4ed8;
+    box-shadow: 0 0 8px #1d4ed8;
     animation: beaconPulseAnim 2s infinite;
     flex-shrink: 0;
 }
@@ -4267,7 +4330,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.94rem;
     font-weight: 800;
-    color: #0f172a;
+    color: #0c1e3a;
     letter-spacing: 0.4px;
 }
 
@@ -4285,19 +4348,19 @@ html, body {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.78rem;
     font-weight: 700;
-    color: #ff4d24;
+    color: #1d4ed8;
     text-decoration: none;
     padding: 5px 11px;
-    background: #fff7ed;
-    border: 1px solid #fed7aa;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
     border-radius: 6px;
     white-space: nowrap;
     transition: all 0.22s ease;
 }
 
 .map-direct-btn:hover {
-    background: #ff4d24;
-    border-color: #ff4d24;
+    background: #1d4ed8;
+    border-color: #1d4ed8;
     color: #ffffff;
 }
 
@@ -4324,7 +4387,7 @@ html, body {
 }
 
 .copy-text strong {
-    color: #0f172a;
+    color: #0c1e3a;
     font-weight: 700;
 }
 
@@ -4343,7 +4406,7 @@ html, body {
 }
 
 .bottom-extra-links a:hover {
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 .bottom-extra-links .sep {
@@ -4356,7 +4419,7 @@ html, body {
     gap: 8px;
     background: #ffffff;
     border: 1px solid #cbd5e1;
-    color: #0f172a;
+    color: #0c1e3a;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.78rem;
     font-weight: 700;
@@ -4376,17 +4439,17 @@ html, body {
 }
 
 .back-to-top-btn:hover {
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff;
-    border-color: #ff4d24;
-    box-shadow: 0 6px 16px rgba(255, 77, 36, 0.35);
+    border-color: #1d4ed8;
+    box-shadow: 0 6px 16px rgba(29, 78, 216, 0.35);
 }
 
 .back-to-top-btn:hover .btn-top-icon {
     transform: translateY(-2px);
 }
 
-/* 4. ShiftUp Floating Action Dock (Fixed Bottom-Right) */
+/* 4. ShiftUp Floating Action Dock (Fixed Bottom-Right on Desktop, Lexus 3-Col Bar on Mobile) */
 .shiftup-floating-dock {
     position: fixed;
     bottom: 24px;
@@ -4396,6 +4459,11 @@ html, body {
     flex-direction: column;
     gap: 10px;
     pointer-events: auto;
+}
+
+.float-dock-pill .lexus-dock-svg,
+.float-dock-pill .dock-text-mobile {
+    display: none;
 }
 
 .float-dock-pill {
@@ -4416,14 +4484,14 @@ html, body {
 }
 
 .dock-rescue {
-    background: linear-gradient(135deg, #ff4d24 0%, #e03b14 100%);
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .dock-rescue:hover {
     transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 12px 28px rgba(255, 77, 36, 0.55);
+    box-shadow: 0 12px 28px rgba(29, 78, 216, 0.55);
     color: #ffffff;
 }
 
@@ -4466,15 +4534,15 @@ html, body {
 .dock-book {
     background: rgba(18, 20, 26, 0.92);
     color: #ffffff;
-    border: 1px solid rgba(255, 77, 36, 0.45);
+    border: 1px solid rgba(29, 78, 216, 0.45);
 }
 
 .dock-book:hover {
-    background: #14161c;
-    border-color: #ff4d24;
-    color: #ff4d24;
+    background: #0f2544;
+    border-color: #1d4ed8;
+    color: #1d4ed8;
     transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 12px 28px rgba(255, 77, 36, 0.35);
+    box-shadow: 0 12px 28px rgba(29, 78, 216, 0.35);
 }
 
 /* 5. Full-Page Scroll Animations for Footer (Bidirectional) */
@@ -4573,10 +4641,10 @@ html, body {
         font-size: 1.25rem;
     }
     .footer-brand-heading .brand-tagline {
-        font-size: 0.78rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        font-size: 0.76rem;
+        line-height: 1.35;
+        white-space: normal;
+        overflow: visible;
     }
     .footer-brand-desc {
         font-size: 0.84rem;
@@ -4668,7 +4736,7 @@ html, body {
     .bottom-back-to-top {
         display: none;
     }
-    /* Mobile Bottom Navigation Bar (Native App Style, Non-Intrusive, WCAG AA Compliant) */
+    /* Authentic Lexus Vietnam 3-Column Mobile Bottom Action Bar */
     .shiftup-floating-dock {
         position: fixed !important;
         bottom: 0 !important;
@@ -4676,55 +4744,64 @@ html, body {
         right: 0 !important;
         width: 100vw !important;
         max-width: 100% !important;
-        height: 60px !important;
-        background: rgba(11, 12, 15, 0.96) !important;
-        backdrop-filter: blur(14px) !important;
-        -webkit-backdrop-filter: blur(14px) !important;
-        border-top: 1px solid rgba(255, 77, 36, 0.35) !important;
+        height: 72px !important;
+        background: #0c1e3a !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
         border-radius: 0 !important;
         margin: 0 !important;
-        padding: 4px 6px calc(4px + env(safe-area-inset-bottom, 0px)) !important;
+        padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px)) !important;
         display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        align-items: center !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        align-items: start !important;
         z-index: 99990 !important;
-        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5) !important;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.45) !important;
         gap: 4px !important;
     }
     .float-dock-pill {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        justify-content: center !important;
-        gap: 2px !important;
-        padding: 6px 2px !important;
-        border-radius: 6px !important;
+        justify-content: flex-start !important;
+        gap: 5px !important;
+        padding: 4px 4px !important;
+        border-radius: 0 !important;
         background: transparent !important;
         border: none !important;
-        color: #e2e8f0 !important;
+        color: #ffffff !important;
         text-decoration: none !important;
-        min-height: 48px !important;
+        min-height: 60px !important;
         box-shadow: none !important;
         transform: none !important;
     }
-    .float-dock-pill .dock-text {
-        font-size: 0.65rem !important;
-        font-weight: 700 !important;
-        letter-spacing: 0.3px !important;
-        text-transform: uppercase !important;
-        font-family: 'Chakra Petch', sans-serif !important;
-        white-space: nowrap !important;
+    .float-dock-pill .dock-fa-icon,
+    .float-dock-pill .dock-pulse-beacon,
+    .float-dock-pill .dock-text-desktop {
+        display: none !important;
     }
-    .float-dock-pill i {
-        font-size: 1.15rem !important;
-        margin-bottom: 1px !important;
+    .float-dock-pill .lexus-dock-svg {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: 26px !important;
+        color: #ffffff !important;
+    }
+    .float-dock-pill .dock-text-mobile {
+        display: block !important;
+        font-family: 'Be Vietnam Pro', -apple-system, sans-serif !important;
+        font-size: 0.68rem !important;
+        font-weight: 400 !important;
+        letter-spacing: 0.1px !important;
+        line-height: 1.28 !important;
+        text-transform: none !important;
+        color: rgba(255, 255, 255, 0.92) !important;
+        text-align: center !important;
+        white-space: normal !important;
     }
     .float-dock-pill.dock-rescue {
-        color: #ff4d24 !important;
-        background: rgba(255, 77, 36, 0.12) !important;
-    }
-    .float-dock-pill.dock-rescue i {
-        animation: rescuePulse 1.5s infinite;
+        color: #ffffff !important;
+        background: transparent !important;
     }
     .float-dock-pill.dock-hotline {
         color: #f59e0b !important;
@@ -4777,12 +4854,12 @@ html, body {
     left: 0;
     width: 0;
     height: 3px;
-    background: #ff4d24;
+    background: #1d4ed8;
     transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .service-12-card:hover {
-    border-color: #ff4d24;
+    border-color: #1d4ed8;
     transform: translateY(-4px);
     box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
 }
@@ -4802,8 +4879,8 @@ html, body {
     width: 46px;
     height: 46px;
     border-radius: 8px;
-    background: rgba(255, 77, 36, 0.1);
-    color: #ff4d24;
+    background: rgba(29, 78, 216, 0.1);
+    color: #1d4ed8;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4813,17 +4890,17 @@ html, body {
 }
 
 .service-12-card:hover .card-icon-box {
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff;
     transform: rotate(-6deg) scale(1.05);
-    box-shadow: 0 4px 12px rgba(255, 77, 36, 0.35);
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.35);
 }
 
 .card-badge {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.68rem;
     font-weight: 800;
-    color: #ff4d24;
+    color: #1d4ed8;
     letter-spacing: 0.8px;
     text-transform: uppercase;
     margin-bottom: 4px;
@@ -4839,13 +4916,13 @@ html, body {
 }
 
 .card-service-title a {
-    color: #0f172a;
+    color: #0c1e3a;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .card-service-title a:hover {
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 .card-meta-row {
@@ -4872,7 +4949,7 @@ html, body {
 .meta-item strong.price-val {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.95rem;
-    color: #ff4d24;
+    color: #1d4ed8;
     font-weight: 800;
 }
 
@@ -4908,7 +4985,7 @@ html, body {
 }
 
 .card-feature-list li i {
-    color: #ff4d24;
+    color: #1d4ed8;
     font-size: 0.75rem;
     margin-top: 3px;
     flex-shrink: 0;
@@ -4933,7 +5010,7 @@ html, body {
 }
 
 .btn-detail-link:hover {
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 .btn-book-service {
@@ -4942,7 +5019,7 @@ html, body {
     font-weight: 800;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff;
     padding: 8px 14px;
     border-radius: 4px;
@@ -4954,7 +5031,7 @@ html, body {
 }
 
 .btn-book-service:hover {
-    background: #0f172a;
+    background: #0c1e3a;
     color: #ffffff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
@@ -4982,12 +5059,12 @@ html, body {
 
 /* 1. Global Portal Hero Banner */
 .portal-hero-header {
-    background: #0b0c0f;
+    background: #0a192f;
     background-image: 
-        radial-gradient(circle at 80% 20%, rgba(255, 77, 36, 0.12) 0%, transparent 40%),
-        linear-gradient(180deg, #07080a 0%, #0e1015 100%);
+        radial-gradient(circle at 80% 20%, rgba(29, 78, 216, 0.12) 0%, transparent 40%),
+        linear-gradient(180deg, #071324 0%, #0a192f 100%);
     padding: 65px 0 55px;
-    border-bottom: 3px solid #ff4d24;
+    border-bottom: 3px solid #1d4ed8;
     position: relative;
     overflow: hidden;
 }
@@ -5031,7 +5108,7 @@ html, body {
 }
 
 .portal-breadcrumb a:hover {
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 .portal-breadcrumb span {
@@ -5039,7 +5116,7 @@ html, body {
 }
 
 .portal-breadcrumb .current {
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 .portal-page-title {
@@ -5086,9 +5163,9 @@ html, body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255, 77, 36, 0.1);
-    color: #ff4d24;
-    border: 1px solid rgba(255, 77, 36, 0.3);
+    background: rgba(29, 78, 216, 0.1);
+    color: #1d4ed8;
+    border: 1px solid rgba(29, 78, 216, 0.3);
     padding: 6px 14px;
     border-radius: 4px;
     font-family: 'Chakra Petch', sans-serif;
@@ -5109,16 +5186,16 @@ html, body {
     border-radius: 8px;
     display: block;
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
-    border: 2px solid #0b0c0f;
+    border: 2px solid #0a192f;
 }
 
 .story-floating-badge {
     position: absolute;
     bottom: -22px;
     left: 20px;
-    background: #0b0c0f;
+    background: #0a192f;
     color: #ffffff;
-    border: 1px solid rgba(255, 77, 36, 0.4);
+    border: 1px solid rgba(29, 78, 216, 0.4);
     padding: 14px 20px;
     border-radius: 6px;
     display: flex;
@@ -5129,7 +5206,7 @@ html, body {
 
 .story-floating-badge i {
     font-size: 1.8rem;
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 .story-floating-badge strong {
@@ -5138,7 +5215,7 @@ html, body {
     font-size: 0.95rem;
     font-weight: 800;
     letter-spacing: 1px;
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 .story-floating-badge small {
@@ -5158,7 +5235,7 @@ html, body {
 .about-highlights-row .hl-item {
     background: #f8fafc;
     border: 1px solid #e2e8f0;
-    border-top: 3px solid #ff4d24;
+    border-top: 3px solid #1d4ed8;
     padding: 18px 14px;
     border-radius: 4px;
     text-align: center;
@@ -5175,7 +5252,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 2.2rem;
     font-weight: 800;
-    color: #0b0c0f;
+    color: #0a192f;
     line-height: 1.1;
     margin-bottom: 6px;
 }
@@ -5192,7 +5269,7 @@ html, body {
 /* 3. Commitments Section (5 Cam Kết Vàng) */
 .commitments-section {
     padding: 75px 0 85px;
-    background: #0b0c0f;
+    background: #0a192f;
     color: #ffffff;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -5204,9 +5281,9 @@ html, body {
 
 .commitments-section .section-pill {
     display: inline-block;
-    background: rgba(255, 77, 36, 0.15);
-    color: #ff4d24;
-    border: 1px solid rgba(255, 77, 36, 0.4);
+    background: rgba(29, 78, 216, 0.15);
+    color: #1d4ed8;
+    border: 1px solid rgba(29, 78, 216, 0.4);
     padding: 5px 16px;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.8rem;
@@ -5238,9 +5315,9 @@ html, body {
 }
 
 .commit-card {
-    background: #14171d;
+    background: #0f2544;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-top: 3px solid #ff4d24;
+    border-top: 3px solid #1d4ed8;
     padding: 26px 18px 22px;
     border-radius: 4px;
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
@@ -5250,15 +5327,15 @@ html, body {
 
 .commit-card:hover {
     transform: translateY(-6px);
-    border-color: #ff4d24;
-    box-shadow: 0 14px 30px rgba(255, 77, 36, 0.14);
+    border-color: #1d4ed8;
+    box-shadow: 0 14px 30px rgba(29, 78, 216, 0.14);
 }
 
 .commit-card .commit-num {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 2.2rem;
     font-weight: 800;
-    color: rgba(255, 77, 36, 0.35);
+    color: rgba(29, 78, 216, 0.35);
     line-height: 1;
     margin-bottom: 12px;
 }
@@ -5287,7 +5364,7 @@ html, body {
     font-weight: 800;
     letter-spacing: 0.8px;
     text-transform: uppercase;
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff !important;
     padding: 14px 32px;
     border-radius: 4px;
@@ -5295,15 +5372,15 @@ html, body {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 8px 22px rgba(255, 77, 36, 0.35);
+    box-shadow: 0 8px 22px rgba(29, 78, 216, 0.35);
     transition: all 0.25s ease;
 }
 
 .btn-carpla:hover,
 .btn-carpla-primary:hover {
-    background: #e03b14;
+    background: #1e40af;
     transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(255, 77, 36, 0.45);
+    box-shadow: 0 12px 28px rgba(29, 78, 216, 0.45);
 }
 
 /* 4. Services Archive (/dich-vu/) */
@@ -5328,7 +5405,7 @@ html, body {
 
 .service-card:hover {
     transform: translateY(-8px);
-    border-color: #ff4d24;
+    border-color: #1d4ed8;
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
 }
 
@@ -5336,7 +5413,7 @@ html, body {
     position: relative;
     height: 230px;
     overflow: hidden;
-    background: #0b0c0f;
+    background: #0a192f;
 }
 
 .service-media img {
@@ -5356,7 +5433,7 @@ html, body {
     top: 14px;
     left: 14px;
     z-index: 2;
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.72rem;
@@ -5379,7 +5456,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1.25rem;
     font-weight: 800;
-    color: #0b0c0f;
+    color: #0a192f;
     margin-bottom: 12px;
     text-transform: uppercase;
     line-height: 1.35;
@@ -5392,14 +5469,14 @@ html, body {
 }
 
 .service-body .service-title a:hover {
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 .service-body .service-price {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1.12rem;
     font-weight: 800;
-    color: #ff4d24;
+    color: #1d4ed8;
     margin-bottom: 14px;
     display: flex;
     align-items: center;
@@ -5425,7 +5502,7 @@ html, body {
 }
 
 .service-body .service-features-list li i {
-    color: #ff4d24;
+    color: #1d4ed8;
     font-size: 0.95rem;
 }
 
@@ -5456,25 +5533,25 @@ html, body {
 
 .btn-gara-outline-red {
     background: transparent;
-    color: #0b0c0f;
+    color: #0a192f;
     border: 1px solid #cbd5e1;
 }
 
 .btn-gara-outline-red:hover {
-    background: #0b0c0f;
+    background: #0a192f;
     color: #ffffff;
-    border-color: #0b0c0f;
+    border-color: #0a192f;
 }
 
 .btn-gara-red {
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff;
-    border: 1px solid #ff4d24;
+    border: 1px solid #1d4ed8;
 }
 
 .btn-gara-red:hover {
-    background: #e03b14;
-    border-color: #e03b14;
+    background: #1e40af;
+    border-color: #1e40af;
     color: #ffffff;
 }
 
@@ -5527,9 +5604,9 @@ html, body {
 
 .price-tables-section .section-pill {
     display: inline-block;
-    background: rgba(255, 77, 36, 0.1);
-    color: #ff4d24;
-    border: 1px solid rgba(255, 77, 36, 0.3);
+    background: rgba(29, 78, 216, 0.1);
+    color: #1d4ed8;
+    border: 1px solid rgba(29, 78, 216, 0.3);
     padding: 5px 16px;
     border-radius: 20px;
     font-family: 'Chakra Petch', sans-serif;
@@ -5544,7 +5621,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: clamp(1.9rem, 3.5vw, 2.5rem);
     font-weight: 800;
-    color: #0f172a;
+    color: #0c1e3a;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: 12px;
@@ -5583,15 +5660,15 @@ html, body {
 }
 
 .tier-card.featured {
-    border: 2px solid #ff4d24;
-    background: linear-gradient(180deg, #ffffff 0%, #fffbf8 100%);
-    box-shadow: 0 12px 32px rgba(255, 77, 36, 0.12);
+    border: 2px solid #1d4ed8;
+    background: linear-gradient(180deg, #ffffff 0%, #f0f7ff 100%);
+    box-shadow: 0 12px 32px rgba(29, 78, 216, 0.12);
     transform: translateY(-4px);
 }
 
 .tier-card.featured:hover {
     transform: translateY(-10px);
-    box-shadow: 0 24px 48px rgba(255, 77, 36, 0.2);
+    box-shadow: 0 24px 48px rgba(29, 78, 216, 0.2);
 }
 
 .featured-ribbon {
@@ -5599,7 +5676,7 @@ html, body {
     top: -14px;
     left: 50%;
     transform: translateX(-50%);
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.72rem;
@@ -5607,7 +5684,7 @@ html, body {
     letter-spacing: 1px;
     padding: 4px 14px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(255, 77, 36, 0.4);
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.4);
     white-space: nowrap;
     text-transform: uppercase;
 }
@@ -5627,15 +5704,15 @@ html, body {
 }
 
 .tier-card.featured .tier-badge {
-    background: rgba(255, 77, 36, 0.12);
-    color: #ff4d24;
+    background: rgba(29, 78, 216, 0.12);
+    color: #1d4ed8;
 }
 
 .tier-name {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1.25rem;
     font-weight: 800;
-    color: #0f172a;
+    color: #0c1e3a;
     margin: 0 0 12px;
     line-height: 1.3;
 }
@@ -5644,7 +5721,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1.85rem;
     font-weight: 800;
-    color: #ff4d24;
+    color: #1d4ed8;
     letter-spacing: -0.5px;
     margin-bottom: 12px;
     line-height: 1;
@@ -5703,12 +5780,12 @@ html, body {
 
 .btn-carpla-outline {
     background: transparent;
-    border: 2px solid #0f172a;
-    color: #0f172a !important;
+    border: 2px solid #0c1e3a;
+    color: #0c1e3a !important;
 }
 
 .btn-carpla-outline:hover {
-    background: #0f172a;
+    background: #0c1e3a;
     color: #ffffff !important;
     transform: translateY(-2px);
 }
@@ -5741,7 +5818,7 @@ html, body {
 .service-12-card:hover {
     transform: translateY(-6px);
     border-color: #cbd5e1;
-    border-top-color: #ff4d24;
+    border-top-color: #1d4ed8;
     box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
 }
 
@@ -5762,8 +5839,8 @@ html, body {
     width: 48px;
     height: 48px;
     border-radius: 8px;
-    background: rgba(255, 77, 36, 0.08);
-    color: #ff4d24;
+    background: rgba(29, 78, 216, 0.08);
+    color: #1d4ed8;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -5793,13 +5870,13 @@ html, body {
 }
 
 .service-12-card .card-service-title a {
-    color: #0f172a;
+    color: #0c1e3a;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .service-12-card .card-service-title a:hover {
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 .service-12-card .card-meta-row {
@@ -5823,7 +5900,7 @@ html, body {
 }
 
 .service-12-card .meta-item .price-val {
-    color: #ff4d24;
+    color: #1d4ed8;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.95rem;
     font-weight: 800;
@@ -5880,11 +5957,11 @@ html, body {
 }
 
 .service-12-card .btn-detail-link:hover {
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 .service-12-card .btn-book-service {
-    background: #0f172a;
+    background: #0c1e3a;
     color: #ffffff !important;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.8rem;
@@ -5901,16 +5978,16 @@ html, body {
 }
 
 .service-12-card .btn-book-service:hover {
-    background: #ff4d24;
+    background: #1d4ed8;
     transform: translateY(-2px);
 }
 
 /* C. Section 2: Interactive Paint Estimator */
 .section-paint-estimator {
     padding: 85px 0 100px;
-    background: #0b0c0f;
+    background: #0a192f;
     color: #ffffff;
-    border-top: 3px solid #ff4d24;
+    border-top: 3px solid #1d4ed8;
 }
 
 .section-paint-estimator .section-header {
@@ -5920,9 +5997,9 @@ html, body {
 
 .section-paint-estimator .section-pill {
     display: inline-block;
-    background: rgba(255, 77, 36, 0.15);
-    color: #ff4d24;
-    border: 1px solid rgba(255, 77, 36, 0.4);
+    background: rgba(29, 78, 216, 0.15);
+    color: #1d4ed8;
+    border: 1px solid rgba(29, 78, 216, 0.4);
     padding: 5px 16px;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.82rem;
@@ -5955,7 +6032,7 @@ html, body {
 }
 
 .paint-selectors-col {
-    background: #14171d;
+    background: #0f2544;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 8px;
     padding: 30px;
@@ -5971,7 +6048,7 @@ html, body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: #ff4d24;
+    color: #1d4ed8;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.84rem;
     font-weight: 800;
@@ -5993,7 +6070,7 @@ html, body {
 }
 
 .paint-part-btn {
-    background: #1a1e26;
+    background: #153158;
     border: 1.5px solid rgba(255, 255, 255, 0.08);
     border-radius: 6px;
     padding: 16px 18px;
@@ -6006,16 +6083,16 @@ html, body {
 }
 
 .paint-part-btn:hover {
-    border-color: rgba(255, 77, 36, 0.5);
-    background: #202530;
+    border-color: rgba(29, 78, 216, 0.5);
+    background: #1b3b69;
     transform: translateY(-2px);
 }
 
 .paint-part-btn.is-selected,
 .paint-part-btn.selected {
-    border-color: #ff4d24;
-    background: rgba(255, 77, 36, 0.12);
-    box-shadow: 0 4px 18px rgba(255, 77, 36, 0.2);
+    border-color: #1d4ed8;
+    background: rgba(29, 78, 216, 0.12);
+    box-shadow: 0 4px 18px rgba(29, 78, 216, 0.2);
 }
 
 .paint-part-btn .part-icon {
@@ -6035,7 +6112,7 @@ html, body {
 .paint-part-btn:hover .part-icon,
 .paint-part-btn.is-selected .part-icon,
 .paint-part-btn.selected .part-icon {
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff;
 }
 
@@ -6066,20 +6143,20 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.95rem;
     font-weight: 800;
-    color: #ff4d24;
+    color: #1d4ed8;
     white-space: nowrap;
 }
 
 .paint-part-btn.featured-paint-pkg {
     grid-column: 1 / -1;
-    border-color: rgba(255, 77, 36, 0.4);
-    background: rgba(255, 77, 36, 0.06);
+    border-color: rgba(29, 78, 216, 0.4);
+    background: rgba(29, 78, 216, 0.06);
 }
 
 .paint-summary-card {
-    background: #14171d;
+    background: #0f2544;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-top: 3px solid #ff4d24;
+    border-top: 3px solid #1d4ed8;
     border-radius: 8px;
     padding: 28px 24px;
     position: sticky;
@@ -6097,7 +6174,7 @@ html, body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: #ff4d24;
+    color: #1d4ed8;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.75rem;
     font-weight: 800;
@@ -6133,7 +6210,7 @@ html, body {
 }
 
 .summary-item-row .item-remove {
-    color: #ef4444;
+    color: #2563eb;
     cursor: pointer;
     margin-left: 8px;
 }
@@ -6160,8 +6237,8 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(255, 77, 36, 0.1);
-    border: 1px solid rgba(255, 77, 36, 0.25);
+    background: rgba(29, 78, 216, 0.1);
+    border: 1px solid rgba(29, 78, 216, 0.25);
     border-radius: 6px;
     padding: 12px 14px;
     margin-bottom: 16px;
@@ -6179,7 +6256,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1.45rem;
     font-weight: 800;
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 .summary-guarantee-note {
@@ -6282,13 +6359,13 @@ html, body {
 }
 
 .hero-cta-btn.btn-rescue {
-    background: #e53935;
+    background: #1d4ed8;
     color: #ffffff;
     box-shadow: 0 4px 18px rgba(229, 57, 53, 0.35);
 }
 
 .hero-cta-btn.btn-rescue:hover {
-    background: #d32f2f;
+    background: #1d4ed8;
     transform: translateY(-2px);
     box-shadow: 0 6px 24px rgba(229, 57, 53, 0.5);
     color: #ffffff;
@@ -6309,14 +6386,14 @@ html, body {
 }
 
 .hero-cta-btn.btn-booking {
-    background: #11141a;
+    background: #0c1e3a;
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .hero-cta-btn.btn-booking:hover {
-    background: #1a1e27;
-    border-color: #ff4d24;
+    background: #153158;
+    border-color: #1d4ed8;
     color: #ffffff;
     transform: translateY(-2px);
 }
@@ -6324,7 +6401,7 @@ html, body {
 .hero-cta-btn.btn-booking .btn-orange-strip {
     width: 4px;
     height: 20px;
-    background: #ff4d24;
+    background: #1d4ed8;
 }
 
 .hero-cta-btn.btn-zalo {
@@ -6359,7 +6436,7 @@ html, body {
 .milestone-stat-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-top: 3px solid #ff4d24;
+    border-top: 3px solid #1d4ed8;
     border-radius: 12px;
     box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
     padding: 32px 24px;
@@ -6370,8 +6447,8 @@ html, body {
 
 .milestone-stat-card:hover {
     transform: translateY(-5px);
-    border-color: #ff4d24;
-    box-shadow: 0 16px 36px rgba(255, 77, 36, 0.12);
+    border-color: #1d4ed8;
+    box-shadow: 0 16px 36px rgba(29, 78, 216, 0.12);
 }
 
 .stat-number-wrap {
@@ -6386,7 +6463,7 @@ html, body {
     font-size: 2.8rem;
     font-weight: 800;
     line-height: 1;
-    color: #0f172a;
+    color: #0c1e3a;
     letter-spacing: -1px;
 }
 
@@ -6394,13 +6471,13 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 2rem;
     font-weight: 700;
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 .stat-divider {
     width: 32px;
     height: 3px;
-    background: #ff4d24;
+    background: #1d4ed8;
     border-radius: 2px;
     margin-bottom: 16px;
 }
@@ -6409,7 +6486,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1rem;
     font-weight: 700;
-    color: #0f172a;
+    color: #0c1e3a;
     text-transform: uppercase;
     margin: 0 0 8px 0;
     letter-spacing: 0.5px;
@@ -6427,7 +6504,7 @@ html, body {
 .shiftup-workshops-booking-section {
     background: #f8fafc;
     padding: 85px 0 95px;
-    color: #0f172a;
+    color: #0c1e3a;
     border-top: 1px solid #e2e8f0;
     border-bottom: 1px solid #e2e8f0;
 }
@@ -6442,7 +6519,7 @@ html, body {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: #ff4d24;
+    color: #1d4ed8;
     display: inline-block;
     margin-bottom: 10px;
 }
@@ -6453,7 +6530,7 @@ html, body {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: #0f172a;
+    color: #0c1e3a;
     margin: 0 0 14px 0;
 }
 
@@ -6482,7 +6559,7 @@ html, body {
 .ws-primary-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-top: 3px solid #ff4d24;
+    border-top: 3px solid #1d4ed8;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
     padding: 34px;
@@ -6520,7 +6597,7 @@ html, body {
 .ws-type-tag {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.75rem;
-    color: #ff4d24;
+    color: #1d4ed8;
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -6529,7 +6606,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1.55rem;
     font-weight: 800;
-    color: #0f172a;
+    color: #0c1e3a;
     margin: 0 0 12px 0;
     letter-spacing: 0.5px;
 }
@@ -6574,14 +6651,14 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1.15rem;
     font-weight: 800;
-    color: #ff4d24;
+    color: #1d4ed8;
     text-decoration: none;
     letter-spacing: 0.5px;
     transition: color 0.2s ease;
 }
 
 .hotline-num:hover {
-    color: #e03b14;
+    color: #1e40af;
 }
 
 .ws-hours-row {
@@ -6615,22 +6692,22 @@ html, body {
 }
 
 .ws-action-btn.map-btn {
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff;
-    box-shadow: 0 4px 12px rgba(255, 77, 36, 0.25);
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25);
 }
 
 .ws-action-btn.map-btn:hover {
-    background: #e03b14;
+    background: #1e40af;
     color: #ffffff;
     transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(255, 77, 36, 0.35);
+    box-shadow: 0 6px 16px rgba(29, 78, 216, 0.35);
 }
 
 .ws-action-btn.zalo-btn {
-    background: #0f172a;
+    background: #0c1e3a;
     color: #ffffff;
-    border: 1px solid #0f172a;
+    border: 1px solid #0c1e3a;
 }
 
 .ws-action-btn.zalo-btn:hover {
@@ -6661,7 +6738,7 @@ html, body {
 .fast-booking-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-top: 3px solid #ff4d24;
+    border-top: 3px solid #1d4ed8;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
     padding: 34px;
@@ -6679,8 +6756,8 @@ html, body {
 .booking-head-icon {
     width: 44px;
     height: 44px;
-    background: rgba(255, 77, 36, 0.1);
-    color: #ff4d24;
+    background: rgba(29, 78, 216, 0.1);
+    color: #1d4ed8;
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -6693,7 +6770,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1.35rem;
     font-weight: 800;
-    color: #0f172a;
+    color: #0c1e3a;
     margin: 0 0 4px 0;
     letter-spacing: 0.5px;
 }
@@ -6728,13 +6805,13 @@ html, body {
 }
 
 .home-fast-booking-form .form-label .required {
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 .home-fast-booking-form .form-control {
     background: #f8fafc;
     border: 1px solid #cbd5e1;
-    color: #0f172a;
+    color: #0c1e3a;
     padding: 12px 14px;
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.9rem;
@@ -6746,9 +6823,9 @@ html, body {
 }
 
 .home-fast-booking-form .form-control:focus {
-    border-color: #ff4d24;
+    border-color: #1d4ed8;
     background: #ffffff;
-    box-shadow: 0 0 0 3px rgba(255, 77, 36, 0.12);
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.12);
 }
 
 .home-fast-booking-form .form-select {
@@ -6757,7 +6834,7 @@ html, body {
 
 .home-fast-booking-form .form-select option {
     background: #ffffff;
-    color: #0f172a;
+    color: #0c1e3a;
 }
 
 .home-fast-booking-form .form-textarea {
@@ -6774,7 +6851,7 @@ html, body {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff;
     border: none;
     border-radius: 6px;
@@ -6788,13 +6865,13 @@ html, body {
     transition: all 0.25s ease;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 16px rgba(255, 77, 36, 0.3);
+    box-shadow: 0 4px 16px rgba(29, 78, 216, 0.3);
 }
 
 .booking-submit-button:hover {
-    background: #e03b14;
+    background: #1e40af;
     transform: translateY(-2px);
-    box-shadow: 0 6px 22px rgba(255, 77, 36, 0.45);
+    box-shadow: 0 6px 22px rgba(29, 78, 216, 0.45);
 }
 
 .booking-submit-button:disabled {
@@ -6820,8 +6897,8 @@ html, body {
 
 .booking-feedback-msg.error {
     background: rgba(239, 68, 68, 0.15);
-    border: 1px solid #ef4444;
-    color: #f87171;
+    border: 1px solid #2563eb;
+    color: #60a5fa;
 }
 
 /* Responsive adjustments */
@@ -6908,9 +6985,9 @@ html, body {
 
 /* --- Section 2: Founder Story Card (Text-Only Editorial) --- */
 .founder-story-card {
-    background: #0f1218;
+    background: #0a192f;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-left: 4px solid #ff4d24;
+    border-left: 4px solid #1d4ed8;
     padding: 42px 46px;
     margin-bottom: 45px;
     position: relative;
@@ -6925,7 +7002,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.8rem;
     font-weight: 700;
-    color: #ff4d24;
+    color: #1d4ed8;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     display: block;
@@ -6960,7 +7037,7 @@ html, body {
     top: -24px;
     font-family: Georgia, serif;
     font-size: 4.5rem;
-    color: rgba(255, 77, 36, 0.25);
+    color: rgba(29, 78, 216, 0.25);
     line-height: 1;
     pointer-events: none;
 }
@@ -6974,7 +7051,7 @@ html, body {
 }
 
 .highlight-quote {
-    color: #ff6d48;
+    color: #3b82f6;
     font-weight: 600;
     font-style: italic;
 }
@@ -7023,7 +7100,7 @@ html, body {
 }
 
 .diag-station-card {
-    background: #0f1218;
+    background: #0a192f;
     border: 1px solid rgba(255, 255, 255, 0.08);
     padding: 34px 30px;
     transition: transform 0.25s ease, border-color 0.25s ease;
@@ -7033,7 +7110,7 @@ html, body {
 
 .diag-station-card:hover {
     transform: translateY(-4px);
-    border-color: #ff4d24;
+    border-color: #1d4ed8;
 }
 
 .diag-card-top {
@@ -7047,7 +7124,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.75rem;
     font-weight: 700;
-    color: #ff4d24;
+    color: #1d4ed8;
     letter-spacing: 1px;
 }
 
@@ -7110,7 +7187,7 @@ html, body {
     align-items: center;
     justify-content: space-between;
     padding-bottom: 10px;
-    border-bottom: 2px solid #000000;
+    border-bottom: 2px solid #0a192f;
     margin-bottom: 12px;
 }
 
@@ -7121,7 +7198,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.98rem;
     font-weight: 800;
-    color: #000000;
+    color: #0a192f;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     text-decoration: none;
@@ -7129,21 +7206,21 @@ html, body {
 }
 
 .mega-title-link:hover {
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 .mega-title-link .mega-dot {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #ff4d24;
+    background: #1d4ed8;
 }
 
 .mega-title-link .mega-arrow {
     opacity: 0;
     transform: translateX(-4px);
     transition: all 0.2s ease;
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 .mega-title-link:hover .mega-arrow {
@@ -7182,7 +7259,7 @@ html, body {
 }
 
 .mega-group-card .mega-list li a:hover {
-    color: #ff4d24;
+    color: #1d4ed8;
     transform: translateX(3px);
 }
 
@@ -7192,7 +7269,7 @@ html, body {
         grid-template-columns: 1fr !important;
         padding: 10px !important;
         gap: 12px !important;
-        background: #141720 !important;
+        background: #0f2544 !important;
     }
 
     .mega-group-card {
@@ -7217,8 +7294,8 @@ html, body {
         justify-content: center;
         width: 32px;
         height: 32px;
-        color: #ff4d24;
-        background: rgba(255, 77, 36, 0.1);
+        color: #1d4ed8;
+        background: rgba(29, 78, 216, 0.1);
         border-radius: 4px;
     }
 
@@ -7271,16 +7348,16 @@ html, body {
 }
 
 .breadcrumb-item a:hover {
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 .breadcrumb-item .breadcrumb-sep {
-    color: #ff4d24;
+    color: #1d4ed8;
     margin-left: 8px;
 }
 
 .breadcrumb-item.current span {
-    color: #ff4d24;
+    color: #1d4ed8;
     font-weight: 700;
 }
 
@@ -7288,8 +7365,8 @@ html, body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: rgba(255, 77, 36, 0.15);
-    border: 1px solid #ff4d24;
+    background: rgba(29, 78, 216, 0.15);
+    border: 1px solid #1d4ed8;
     color: #ffffff;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.72rem;
@@ -7323,8 +7400,8 @@ html, body {
 
 .sibling-pill:hover,
 .sibling-pill.active {
-    background: #ff4d24;
-    border-color: #ff4d24;
+    background: #1d4ed8;
+    border-color: #1d4ed8;
     color: #ffffff;
 }
 
@@ -7347,7 +7424,7 @@ html, body {
 }
 
 .cat-service-card {
-    background: #11141b;
+    background: #0c1e3a;
     border: 1px solid rgba(255, 255, 255, 0.08);
     display: flex;
     flex-direction: column;
@@ -7357,14 +7434,14 @@ html, body {
 
 .cat-service-card:hover {
     transform: translateY(-4px);
-    border-color: #ff4d24;
+    border-color: #1d4ed8;
 }
 
 .cat-card-media {
     position: relative;
     height: 220px;
     overflow: hidden;
-    background: #000000;
+    background: #0a192f;
 }
 
 .cat-card-media img {
@@ -7382,7 +7459,7 @@ html, body {
     position: absolute;
     top: 12px;
     left: 12px;
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.7rem;
@@ -7413,7 +7490,7 @@ html, body {
 }
 
 .cat-service-title a:hover {
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 .cat-service-excerpt {
@@ -7459,7 +7536,7 @@ html, body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff;
     padding: 8px 14px;
     font-family: 'Chakra Petch', sans-serif;
@@ -7471,14 +7548,14 @@ html, body {
 }
 
 .cat-book-btn:hover {
-    background: #e03b14;
+    background: #1e40af;
     color: #ffffff;
 }
 
 .category-hub-cta-banner {
     margin-top: 55px;
     padding: 38px 40px;
-    background: #11141b;
+    background: #0c1e3a;
     border: 1px solid rgba(255, 255, 255, 0.08);
     display: flex;
     justify-content: space-between;
@@ -7491,7 +7568,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.8rem;
     font-weight: 700;
-    color: #ff4d24;
+    color: #1d4ed8;
     letter-spacing: 1px;
 }
 
@@ -7565,7 +7642,7 @@ html, body {
 .mega-inner {
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-top: 3px solid #ff4d24;
+    border-top: 3px solid #1d4ed8;
     border-radius: 14px;
     box-shadow: 0 22px 52px rgba(15, 23, 42, 0.14), 0 6px 18px rgba(15, 23, 42, 0.06);
     padding: 16px;
@@ -7590,7 +7667,7 @@ html, body {
     border-radius: 10px;
     background: #f8fafc;
     border: 1.5px solid #e2e8f0;
-    color: #0f172a !important;
+    color: #0c1e3a !important;
     text-decoration: none !important;
     font-size: 0.88rem;
     font-weight: 700;
@@ -7602,7 +7679,7 @@ html, body {
 }
 
 .mega-cat span {
-    color: #0f172a !important;
+    color: #0c1e3a !important;
     min-width: 0;
     word-break: break-word;
     transition: color 180ms ease;
@@ -7614,7 +7691,7 @@ html, body {
 
 .mega-arrow {
     font-size: 1.2rem;
-    color: #ff4d24;
+    color: #1d4ed8;
     transition: transform 180ms ease, color 180ms ease;
     margin-left: 6px;
     line-height: 1;
@@ -7624,20 +7701,20 @@ html, body {
 .mega-cat:hover,
 .mega-group:hover .mega-cat,
 .mega-group.is-open .mega-cat {
-    background: #fff7ed;
-    border-color: #ff4d24;
+    background: #eff6ff;
+    border-color: #1d4ed8;
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(255, 77, 36, 0.16);
+    box-shadow: 0 6px 16px rgba(29, 78, 216, 0.16);
 }
 
 .mega-cat:hover span,
 .mega-group:hover .mega-cat span {
-    color: #ea580c !important;
+    color: #1e40af !important;
 }
 
 .mega-group:hover .mega-arrow {
     transform: translateX(3px);
-    color: #ea580c;
+    color: #1e40af;
 }
 
 /* Submenu dropdown directly underneath category card */
@@ -7649,7 +7726,7 @@ html, body {
     min-width: 285px;
     max-width: 350px;
     background: #ffffff;
-    border: 1.5px solid rgba(255, 77, 36, 0.4);
+    border: 1.5px solid rgba(29, 78, 216, 0.4);
     border-radius: 12px;
     padding: 8px;
     display: none;
@@ -7731,19 +7808,19 @@ html, body {
 }
 
 .mega-subcat:hover {
-    background: #ffedd5;
-    border-color: #fed7aa;
-    color: #c2410c !important;
+    background: #dbeafe;
+    border-color: #bfdbfe;
+    color: #1e3a8a !important;
     transform: translateX(3px);
 }
 
 .mega-subcat:hover span {
-    color: #c2410c !important;
+    color: #1e3a8a !important;
     font-weight: 600;
 }
 
 .mega-subcat:hover small {
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff;
 }
 
@@ -7773,7 +7850,7 @@ html, body {
         position: static !important;
         transform: none !important;
         width: 100% !important;
-        padding: 8px 0 !important;
+        padding: 6px 0 !important;
         display: none;
         opacity: 1 !important;
         visibility: visible !important;
@@ -7785,17 +7862,40 @@ html, body {
     .mega-inner {
         grid-template-columns: 1fr !important;
         gap: 8px !important;
-        padding: 8px !important;
-        background: #ffffff !important;
-        border: 1px solid #e2e8f0 !important;
+        padding: 10px !important;
+        background: #0f2544 !important;
+        border: 1px solid #1e3a5f !important;
+        border-top: 2px solid #1d4ed8 !important;
+        border-radius: 10px !important;
+    }
+    .mega-group {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        width: 100% !important;
     }
     .mega-cat {
-        background: #f8fafc !important;
-        border: 1px solid #e2e8f0 !important;
-        color: #0f172a !important;
+        width: 100% !important;
+        min-height: 46px !important;
+        padding: 10px 12px !important;
+        background: #153158 !important;
+        border: 1px solid #23456e !important;
+        border-radius: 8px !important;
+        color: #f8fafc !important;
+        font-size: 0.85rem !important;
     }
     .mega-cat span {
-        color: #0f172a !important;
+        color: #f8fafc !important;
+    }
+    .mega-group.is-open .mega-cat {
+        background: rgba(29, 78, 216, 0.14) !important;
+        border-color: #1d4ed8 !important;
+    }
+    .mega-group.is-open .mega-cat span {
+        color: #3b82f6 !important;
+    }
+    .mega-group.is-open .mega-arrow {
+        transform: rotate(90deg) !important;
     }
     .mega-sub {
         position: static !important;
@@ -7803,17 +7903,31 @@ html, body {
         min-width: 0 !important;
         max-width: 100% !important;
         margin-top: 6px !important;
+        padding: 6px !important;
         display: none !important;
         box-shadow: none !important;
-        background: #ffffff !important;
-        border: 1px solid #fed7aa !important;
+        background: #0a192f !important;
+        border: 1px solid rgba(29, 78, 216, 0.3) !important;
+        border-radius: 8px !important;
     }
     .mega-subcat {
-        background: #f8fafc !important;
-        color: #334155 !important;
+        background: #122b4d !important;
+        border: 1px solid #1e3a5f !important;
+        color: #e2e8f0 !important;
+        padding: 9px 11px !important;
+        font-size: 0.81rem !important;
+    }
+    .mega-subcat span {
+        color: #e2e8f0 !important;
+    }
+    .mega-subcat small {
+        background: rgba(29, 78, 216, 0.15) !important;
+        color: #60a5fa !important;
+        font-size: 0.68rem !important;
     }
     .mega-group.is-open .mega-sub {
         display: grid !important;
+        gap: 5px !important;
     }
 }
 
@@ -8001,7 +8115,7 @@ html, body {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: #0f172a;
+    color: #0c1e3a;
     margin: 0 0 12px 0;
 }
 
@@ -8034,8 +8148,8 @@ html, body {
 
 .accessory-item:hover {
     transform: translateY(-6px);
-    border-color: #ff4d24;
-    box-shadow: 0 14px 32px rgba(255, 77, 36, 0.14);
+    border-color: #1d4ed8;
+    box-shadow: 0 14px 32px rgba(29, 78, 216, 0.14);
 }
 
 .accessory-img-box {
@@ -8065,7 +8179,7 @@ html, body {
     top: 10px;
     left: 10px;
     z-index: 2;
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.68rem;
@@ -8074,7 +8188,7 @@ html, body {
     padding: 4px 10px;
     border-radius: 4px;
     text-transform: uppercase;
-    box-shadow: 0 2px 8px rgba(255, 77, 36, 0.35);
+    box-shadow: 0 2px 8px rgba(29, 78, 216, 0.35);
 }
 
 .accessory-title {
@@ -8092,13 +8206,13 @@ html, body {
 }
 
 .accessory-title a {
-    color: #0f172a;
+    color: #0c1e3a;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .accessory-title a:hover {
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 .accessory-price {
@@ -8114,7 +8228,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 1.18rem;
     font-weight: 800;
-    color: #df0012;
+    color: #1d4ed8;
 }
 
 .accessory-price .price-old {
@@ -8133,7 +8247,7 @@ html, body {
     align-items: center;
     justify-content: center;
     padding: 9px 28px;
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff !important;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.85rem;
@@ -8146,7 +8260,7 @@ html, body {
 }
 
 .btn-accessory-detail:hover {
-    background: #0f172a;
+    background: #0c1e3a;
     color: #ffffff !important;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
@@ -8162,7 +8276,7 @@ html, body {
     border-radius: 50%;
     background: #ffffff;
     border: 1px solid #cbd5e1;
-    color: #0f172a;
+    color: #0c1e3a;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8172,8 +8286,8 @@ html, body {
 }
 
 .acc-nav-btn:hover {
-    background: #ff4d24;
-    border-color: #ff4d24;
+    background: #1d4ed8;
+    border-color: #1d4ed8;
     color: #ffffff;
 }
 
@@ -8241,7 +8355,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.9rem;
     font-weight: 800;
-    color: #ff4d24;
+    color: #1d4ed8;
     text-transform: uppercase;
     letter-spacing: 2.5px;
     margin: 0 0 6px;
@@ -8251,7 +8365,7 @@ html, body {
     font-family: 'Chakra Petch', sans-serif;
     font-size: clamp(1.8rem, 3vw, 2.35rem);
     font-weight: 800;
-    color: #0f172a;
+    color: #0c1e3a;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin: 0;
@@ -8260,7 +8374,7 @@ html, body {
 .gallery-heading-divider {
     width: 64px;
     height: 3px;
-    background: #ff4d24;
+    background: #1d4ed8;
     margin: 14px auto 0;
     border-radius: 2px;
 }
@@ -8281,7 +8395,7 @@ html, body {
     position: relative;
     border-radius: 8px;
     overflow: hidden;
-    background: #0f172a;
+    background: #0c1e3a;
     box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
     text-decoration: none;
 }
@@ -8329,13 +8443,13 @@ html, body {
     width: 46px;
     height: 46px;
     border-radius: 50%;
-    background: rgba(255, 77, 36, 0.92);
+    background: rgba(29, 78, 216, 0.92);
     color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.1rem;
-    box-shadow: 0 6px 18px rgba(255, 77, 36, 0.4);
+    box-shadow: 0 6px 18px rgba(29, 78, 216, 0.4);
     transition: transform 0.3s ease;
 }
 
@@ -8415,8 +8529,8 @@ html, body {
 }
 
 .lightbox-close-btn:hover {
-    background: #ff4d24;
-    border-color: #ff4d24;
+    background: #1d4ed8;
+    border-color: #1d4ed8;
 }
 
 .lightbox-nav-btn {
@@ -8438,8 +8552,8 @@ html, body {
 }
 
 .lightbox-nav-btn:hover {
-    background: #ff4d24;
-    border-color: #ff4d24;
+    background: #1d4ed8;
+    border-color: #1d4ed8;
 }
 
 .lightbox-prev {
@@ -8588,9 +8702,9 @@ html, body {
     background: linear-gradient(
         115deg,
         transparent 0%,
-        rgba(255, 77, 36, 0.08) 45%,
+        rgba(29, 78, 216, 0.08) 45%,
         rgba(255, 255, 255, 0.65) 50%,
-        rgba(255, 77, 36, 0.08) 55%,
+        rgba(29, 78, 216, 0.08) 55%,
         transparent 100%
     );
     transform: skewX(-20deg);
@@ -8628,7 +8742,7 @@ html, body {
 
 @keyframes statPlusBouncePulse {
     0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.18); text-shadow: 0 0 12px rgba(255, 77, 36, 0.45); }
+    50% { transform: scale(1.18); text-shadow: 0 0 12px rgba(29, 78, 216, 0.45); }
 }
 .shiftup-technicians-section.is-inview .milestone-stat-card .stat-plus {
     display: inline-block;
@@ -8638,7 +8752,7 @@ html, body {
 .shiftup-technicians-section .milestone-stat-card .stat-divider {
     width: 0;
     height: 3px;
-    background: linear-gradient(90deg, #ff4d24 0%, #ff8552 100%);
+    background: linear-gradient(90deg, #1d4ed8 0%, #60a5fa 100%);
     transition: width 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.32s;
 }
 .shiftup-technicians-section.is-inview .milestone-stat-card .stat-divider {
@@ -8664,12 +8778,12 @@ html, body {
 /* Hover Effect on Milestone Cards */
 .shiftup-technicians-section.is-inview .milestone-stat-card:hover {
     transform: translateY(-10px) scale(1.02);
-    border-color: #ff4d24;
-    box-shadow: 0 20px 42px rgba(255, 77, 36, 0.16), 0 6px 16px rgba(15, 23, 42, 0.06);
+    border-color: #1d4ed8;
+    box-shadow: 0 20px 42px rgba(29, 78, 216, 0.16), 0 6px 16px rgba(15, 23, 42, 0.06);
     transition-delay: 0s !important;
 }
 .shiftup-technicians-section.is-inview .milestone-stat-card:hover .stat-number {
-    color: #ff4d24;
+    color: #1d4ed8;
     transition: color 0.25s ease;
 }
 .shiftup-technicians-section.is-inview .milestone-stat-card:hover .stat-divider {
@@ -8861,7 +8975,7 @@ html, body {
     inset: 0;
     background-image:
         radial-gradient(rgba(15, 23, 42, 0.05) 1.5px, transparent 1.5px),
-        radial-gradient(circle at 12% 35%, rgba(255, 77, 36, 0.05) 0%, transparent 45%);
+        radial-gradient(circle at 12% 35%, rgba(29, 78, 216, 0.05) 0%, transparent 45%);
     background-size: 28px 28px, 100% 100%;
     pointer-events: none;
     z-index: 1;
@@ -8891,9 +9005,9 @@ html, body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: #fff7ed;
-    border: 1px solid #fed7aa;
-    color: #ea580c;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #1e40af;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.76rem;
     font-weight: 800;
@@ -8909,7 +9023,7 @@ html, body {
     font-size: clamp(2.1rem, 3.6vw, 2.75rem);
     font-weight: 800;
     line-height: 1.25;
-    color: #0f172a;
+    color: #0c1e3a;
     margin: 0;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -8921,7 +9035,7 @@ html, body {
     display: block;
     width: 68px;
     height: 4px;
-    background: linear-gradient(90deg, #ff4d24 0%, #ff7a59 100%);
+    background: linear-gradient(90deg, #1d4ed8 0%, #3b82f6 100%);
     border-radius: 2px;
     margin-top: 12px;
 }
@@ -8933,8 +9047,8 @@ html, body {
 .kobac-quote-box {
     margin: 18px 0;
     padding: 16px 20px;
-    background: #fff7ed;
-    border-left: 4px solid #ff4d24;
+    background: #eff6ff;
+    border-left: 4px solid #1d4ed8;
     border-radius: 0 10px 10px 0;
     color: #1e293b;
     font-family: 'Be Vietnam Pro', sans-serif;
@@ -8955,12 +9069,12 @@ html, body {
 }
 
 .kobac-prose strong {
-    color: #0f172a;
+    color: #0c1e3a;
     font-weight: 700;
 }
 
 .kobac-prose em {
-    color: #ea580c;
+    color: #1e40af;
     font-style: italic;
     font-weight: 600;
 }
@@ -8974,7 +9088,7 @@ html, body {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #ffffff !important;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.96rem;
@@ -8984,14 +9098,14 @@ html, body {
     text-decoration: none !important;
     padding: 14px 34px;
     border-radius: 6px;
-    box-shadow: 0 10px 24px rgba(255, 77, 36, 0.25);
+    box-shadow: 0 10px 24px rgba(29, 78, 216, 0.25);
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
                 background 0.25s ease,
                 box-shadow 0.25s ease;
 }
 
 .kobac-cta-btn:hover {
-    background: #0f172a;
+    background: #0c1e3a;
     color: #ffffff !important;
     transform: translateY(-3px);
     box-shadow: 0 14px 30px rgba(15, 23, 42, 0.22);
@@ -9009,7 +9123,7 @@ html, body {
     right: -22px;
     width: 170px;
     height: 240px;
-    background-image: radial-gradient(rgba(255, 77, 36, 0.35) 2.2px, transparent 2.2px);
+    background-image: radial-gradient(rgba(29, 78, 216, 0.35) 2.2px, transparent 2.2px);
     background-size: 16px 16px;
     z-index: 1;
     pointer-events: none;
@@ -9030,7 +9144,7 @@ html, body {
     box-shadow: 0 20px 45px rgba(15, 23, 42, 0.14);
     border: 4px solid #ffffff;
     outline: 1px solid #e2e8f0;
-    background: #0f172a;
+    background: #0c1e3a;
 }
 
 .kobac-photo-card img {
@@ -9089,7 +9203,7 @@ html, body {
 }
 
 .kobac-floating-badge i {
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 /* Entrance Animations (fadeInLeft & fadeInRight like KOBAC CARS) */
@@ -9148,7 +9262,7 @@ html, body {
         gap: 0;
         background: #ffffff;
         border: 1px solid #e2e8f0;
-        border-top: 3px solid #ff4d24;
+        border-top: 3px solid #1d4ed8;
         border-radius: 16px;
         padding: 22px 18px 24px;
         box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
@@ -9214,7 +9328,7 @@ html, body {
     }
 
     .kobac-bento-cap i {
-        color: #ff4d24;
+        color: #1d4ed8;
         flex-shrink: 0;
     }
 

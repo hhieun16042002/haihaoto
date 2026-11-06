@@ -411,16 +411,16 @@ function hieugara_upload_page_top_banner() {
         return;
     }
     ?>
-    <div class="notice notice-info" style="border-left: 4px solid #ff4d24; padding: 14px 20px; background: #fff8f6; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; margin-top: 15px;">
+    <div class="notice notice-info" style="border-left: 4px solid #1d4ed8; padding: 14px 20px; background: #fff8f6; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; margin-top: 15px;">
         <div>
-            <strong style="font-size: 1rem; color: #0f172a; display: block; margin-bottom: 4px;">
+            <strong style="font-size: 1rem; color: #0c1e3a; display: block; margin-bottom: 4px;">
                 🖼️ QUẢN LÝ ẢNH THEO NHÓM &amp; VỊ TRÍ HIỂN THỊ TRÊN WEBSITE ÔTÔ HẢI HÀ
             </strong>
             <span style="color: #475569; font-size: 0.9rem;">
                 Muốn đổi nhanh <strong>Logo quán, Ảnh Trang Chủ (Slider, 4 Banner, Gallery, Phụ kiện)</strong> hoặc <strong>Ảnh 6 Mảng Dịch Vụ &amp; Mục Con</strong>? Hãy mở trình Quản Lý Ảnh Theo Nhóm để thay ảnh trực quan!
             </span>
         </div>
-        <a href="<?php echo esc_url(admin_url('admin.php?page=hieugara-media-hub')); ?>" class="button button-primary button-hero" style="background: #ff4d24; border-color: #ff4d24; font-weight: 700;">
+        <a href="<?php echo esc_url(admin_url('admin.php?page=hieugara-media-hub')); ?>" class="button button-primary button-hero" style="background: #1d4ed8; border-color: #1d4ed8; font-weight: 700;">
             <span class="dashicons dashicons-images-alt2" style="margin-top: 4px;"></span> MỞ THƯ VIỆN ẢNH THEO NHÓM WEB
         </a>
     </div>
@@ -605,41 +605,41 @@ function hieugara_render_media_hub_page() {
     ?>
     <style>
         .haiha-media-hub-wrap { max-width: 1380px; margin: 20px auto; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        .haiha-hub-header { background: linear-gradient(135deg, #0f172a, #1e293b); color: #fff; padding: 26px 32px; border-radius: 10px; border-bottom: 4px solid #ff4d24; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; box-shadow: 0 10px 25px rgba(15,23,42,0.12); }
+        .haiha-hub-header { background: linear-gradient(135deg, #0c1e3a, #1e293b); color: #fff; padding: 26px 32px; border-radius: 10px; border-bottom: 4px solid #1d4ed8; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; box-shadow: 0 10px 25px rgba(15,23,42,0.12); }
         .haiha-hub-header h1 { color: #fff; margin: 0 0 6px; font-size: 1.55rem; font-weight: 800; display: flex; align-items: center; gap: 10px; }
         .haiha-hub-header p { margin: 0; color: #cbd5e1; font-size: 0.92rem; }
         .haiha-hub-tabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; }
         .haiha-tab-btn { background: #ffffff; border: 1.5px solid #cbd5e1; color: #1e293b; padding: 12px 22px; border-radius: 8px; font-size: 0.95rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s ease; }
-        .haiha-tab-btn:hover { border-color: #ff4d24; color: #ff4d24; }
-        .haiha-tab-btn.is-active { background: #ff4d24; border-color: #ff4d24; color: #ffffff; box-shadow: 0 4px 14px rgba(255,77,36,0.3); }
+        .haiha-tab-btn:hover { border-color: #1d4ed8; color: #1d4ed8; }
+        .haiha-tab-btn.is-active { background: #1d4ed8; border-color: #1d4ed8; color: #ffffff; box-shadow: 0 4px 14px rgba(29, 78, 216,0.3); }
         .haiha-tab-pane { display: none; }
         .haiha-tab-pane.is-active { display: block; }
         .haiha-folder-box { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; margin-bottom: 28px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
         .haiha-folder-head { background: #f8fafc; padding: 16px 24px; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
-        .haiha-folder-head h2 { margin: 0; font-size: 1.1rem; font-weight: 800; color: #0f172a; display: flex; align-items: center; gap: 8px; }
+        .haiha-folder-head h2 { margin: 0; font-size: 1.1rem; font-weight: 800; color: #0c1e3a; display: flex; align-items: center; gap: 8px; }
         .haiha-folder-body { padding: 24px; }
         .haiha-cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 20px; }
         .haiha-img-card { border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; background: #fff; display: flex; flex-direction: column; gap: 10px; transition: box-shadow 0.2s; }
         .haiha-img-card:hover { box-shadow: 0 6px 18px rgba(15,23,42,0.08); border-color: #cbd5e1; }
-        .haiha-img-thumb { width: 100%; height: 160px; background: #0f172a; border-radius: 6px; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; }
+        .haiha-img-thumb { width: 100%; height: 160px; background: #0c1e3a; border-radius: 6px; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; }
         .haiha-img-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
         .haiha-img-card label { font-size: 0.8rem; font-weight: 700; color: #475569; display: block; margin-bottom: 3px; }
         .haiha-img-card input[type="text"] { width: 100%; font-size: 0.85rem; padding: 7px 10px; border: 1px solid #cbd5e1; border-radius: 5px; }
-        .haiha-sticky-save { position: sticky; bottom: 16px; background: #0f172a; color: #fff; padding: 16px 28px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 10px 30px rgba(0,0,0,0.28); z-index: 999; border-left: 5px solid #ff4d24; margin-top: 24px; }
-        .haiha-subcat-pill { display: inline-block; background: #fff0ed; color: #ff4d24; border: 1px solid #ffd4cc; font-size: 0.75rem; font-weight: 700; padding: 2px 10px; border-radius: 999px; }
+        .haiha-sticky-save { position: sticky; bottom: 16px; background: #0c1e3a; color: #fff; padding: 16px 28px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 10px 30px rgba(0,0,0,0.28); z-index: 999; border-left: 5px solid #1d4ed8; margin-top: 24px; }
+        .haiha-subcat-pill { display: inline-block; background: #fff0ed; color: #1d4ed8; border: 1px solid #ffd4cc; font-size: 0.75rem; font-weight: 700; padding: 2px 10px; border-radius: 999px; }
     </style>
 
     <div class="wrap haiha-media-hub-wrap">
         <div class="haiha-hub-header">
             <div>
-                <h1><span class="dashicons dashicons-format-gallery" style="color: #ff4d24; font-size: 28px; width: 28px; height: 28px;"></span> THƯ VIỆN ẢNH GARA ÔTÔ HẢI HÀ (CHIA THEO NHÓM WEBSITE)</h1>
+                <h1><span class="dashicons dashicons-format-gallery" style="color: #1d4ed8; font-size: 28px; width: 28px; height: 28px;"></span> THƯ VIỆN ẢNH GARA ÔTÔ HẢI HÀ (CHIA THEO NHÓM WEBSITE)</h1>
                 <p>Toàn bộ hình ảnh của quán được chia sẵn theo từng nhóm: <strong>Logo Nhận Diện</strong> • <strong>Trang Chủ (4 Mục Con)</strong> • <strong>Dịch Vụ (6 Mảng Lớn &amp; Các Mục Con)</strong>. Thay ảnh tại đây sẽ tự động cập nhật trực tiếp ngoài website!</p>
             </div>
             <div style="display: flex; gap: 10px;">
                 <a href="<?php echo esc_url(admin_url('upload.php')); ?>" class="button button-secondary" style="font-weight: 600;">
                     📁 Mở Kho File Media Gốc
                 </a>
-                <a href="<?php echo esc_url(home_url('/')); ?>" target="_blank" class="button button-primary" style="background: #ff4d24; border-color: #ff4d24; font-weight: 700;">
+                <a href="<?php echo esc_url(home_url('/')); ?>" target="_blank" class="button button-primary" style="background: #1d4ed8; border-color: #1d4ed8; font-weight: 700;">
                     🚗 Xem Trang Chủ ↗
                 </a>
             </div>
@@ -676,12 +676,12 @@ function hieugara_render_media_hub_page() {
             <div class="haiha-tab-pane <?php echo $active_tab === 'tab-logo' ? 'is-active' : ''; ?>" id="tab-logo">
                 <div class="haiha-folder-box">
                     <div class="haiha-folder-head">
-                        <h2><span class="dashicons dashicons-awards" style="color: #ff4d24;"></span> 1. Ảnh Logo Ôtô Hải Hà (Tự động đồng bộ Header, Mobile Menu, Footer &amp; Icon Tab Web)</h2>
+                        <h2><span class="dashicons dashicons-awards" style="color: #1d4ed8;"></span> 1. Ảnh Logo Ôtô Hải Hà (Tự động đồng bộ Header, Mobile Menu, Footer &amp; Icon Tab Web)</h2>
                         <span class="haiha-subcat-pill">Đổi 1 nơi – Tự động thay toàn web</span>
                     </div>
                     <div class="haiha-folder-body">
                         <div style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap;">
-                            <div style="width: 140px; height: 140px; border-radius: 14px; background: #0f172a; border: 2px solid #ff4d24; display: flex; align-items: center; justify-content: center; padding: 14px;">
+                            <div style="width: 140px; height: 140px; border-radius: 14px; background: #0c1e3a; border: 2px solid #1d4ed8; display: flex; align-items: center; justify-content: center; padding: 14px;">
                                 <img src="<?php echo esc_url($site_logo); ?>" id="preview-site-logo" alt="Logo Ôtô Hải Hà" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                             </div>
                             <div style="flex: 1; min-width: 280px;">
@@ -690,7 +690,7 @@ function hieugara_render_media_hub_page() {
                                 </p>
                                 <div style="display: flex; gap: 10px; align-items: center; max-width: 680px;">
                                     <input type="text" name="hieugara_site_logo" id="input-site-logo" value="<?php echo esc_attr($site_logo); ?>" class="regular-text" style="flex: 1; padding: 8px 12px;">
-                                    <button type="button" class="button button-primary hub-pick-img-btn" data-input="#input-site-logo" data-preview="#preview-site-logo" style="background: #ff4d24; border-color: #ff4d24; font-weight: 700;">
+                                    <button type="button" class="button button-primary hub-pick-img-btn" data-input="#input-site-logo" data-preview="#preview-site-logo" style="background: #1d4ed8; border-color: #1d4ed8; font-weight: 700;">
                                         <span class="dashicons dashicons-upload" style="margin-top: 3px;"></span> Tải Lên / Đổi Ảnh Logo
                                     </button>
                                 </div>
@@ -709,7 +709,7 @@ function hieugara_render_media_hub_page() {
                 <!-- 2.1: 3 ẢNH KHỐI "VỀ ÔTÔ HẢI HÀ & SỨ MỆNH" -->
                 <div class="haiha-folder-box">
                     <div class="haiha-folder-head">
-                        <h2><span class="dashicons dashicons-awards" style="color: #ff4d24;"></span> Mục 2.1: 3 Ảnh Khối "Về Ôtô Hải Hà &amp; Sứ Mệnh" Trên Trang Chủ</h2>
+                        <h2><span class="dashicons dashicons-awards" style="color: #1d4ed8;"></span> Mục 2.1: 3 Ảnh Khối "Về Ôtô Hải Hà &amp; Sứ Mệnh" Trên Trang Chủ</h2>
                         <span class="haiha-subcat-pill">Trang Chủ &rarr; Về Ôtô Hải Hà</span>
                     </div>
                     <div class="haiha-folder-body">
@@ -743,7 +743,7 @@ function hieugara_render_media_hub_page() {
                 <!-- 2.2: 4 ẢNH BANNER SLIDER ĐẦU TRANG -->
                 <div class="haiha-folder-box">
                     <div class="haiha-folder-head">
-                        <h2><span class="dashicons dashicons-slides" style="color: #ff4d24;"></span> Mục 2.2: 4 Ảnh Banner Slider Đầu Trang Chủ</h2>
+                        <h2><span class="dashicons dashicons-slides" style="color: #1d4ed8;"></span> Mục 2.2: 4 Ảnh Banner Slider Đầu Trang Chủ</h2>
                         <span class="haiha-subcat-pill">Trang Chủ &rarr; Hero Slider</span>
                     </div>
                     <div class="haiha-folder-body">
@@ -782,7 +782,7 @@ function hieugara_render_media_hub_page() {
                 <!-- 2.3: 4 CỘT ẢNH NĂNG LỰC XƯỞNG (SỬA CHỮA, BẢO DƯỠNG, ĐỒNG SƠN, CHĂM SÓC XE) -->
                 <div class="haiha-folder-box">
                     <div class="haiha-folder-head">
-                        <h2><span class="dashicons dashicons-columns" style="color: #ff4d24;"></span> Mục 2.3: 4 Ảnh Năng Lực Xưởng (Sửa Chữa, Bảo Dưỡng, Đồng Sơn, Chăm Sóc Xe)</h2>
+                        <h2><span class="dashicons dashicons-columns" style="color: #1d4ed8;"></span> Mục 2.3: 4 Ảnh Năng Lực Xưởng (Sửa Chữa, Bảo Dưỡng, Đồng Sơn, Chăm Sóc Xe)</h2>
                         <span class="haiha-subcat-pill">Trang Chủ &rarr; 4 Cột Ảnh Lớn</span>
                     </div>
                     <div class="haiha-folder-body">
@@ -818,8 +818,8 @@ function hieugara_render_media_hub_page() {
                 <!-- 2.4: ẢNH PHỤ KIỆN ÔTÔ CHÍNH HÃNG -->
                 <div class="haiha-folder-box">
                     <div class="haiha-folder-head">
-                        <h2><span class="dashicons dashicons-cart" style="color: #ff4d24;"></span> Mục 2.4: Ảnh Phụ Kiện Ôtô Chính Hãng (Thanh Trượt Sản Phẩm Trang Chủ)</h2>
-                        <button type="button" class="button button-primary" id="hub-add-acc-btn" style="background: #0f172a; border-color: #0f172a;">
+                        <h2><span class="dashicons dashicons-cart" style="color: #1d4ed8;"></span> Mục 2.4: Ảnh Phụ Kiện Ôtô Chính Hãng (Thanh Trượt Sản Phẩm Trang Chủ)</h2>
+                        <button type="button" class="button button-primary" id="hub-add-acc-btn" style="background: #0c1e3a; border-color: #0c1e3a;">
                             + Thêm Phụ Kiện Mới
                         </button>
                     </div>
@@ -871,25 +871,25 @@ function hieugara_render_media_hub_page() {
                 ?>
                     <div class="haiha-folder-box">
                         <div class="haiha-folder-head">
-                            <h2><span class="dashicons dashicons-category" style="color: #ff4d24;"></span> <?php echo esc_html($group_info['group_title']); ?></h2>
+                            <h2><span class="dashicons dashicons-category" style="color: #1d4ed8;"></span> <?php echo esc_html($group_info['group_title']); ?></h2>
                             <span class="haiha-subcat-pill"><?php echo count($group_info['children']); ?> dịch vụ con trong mảng này</span>
                         </div>
                         <div class="haiha-folder-body">
                             <div class="haiha-cards-grid">
                                 <!-- Ảnh Đại Diện Của Mảng Lớn -->
-                                <div class="haiha-img-card" style="border: 2px solid #ff4d24; background: #fff8f6;">
+                                <div class="haiha-img-card" style="border: 2px solid #1d4ed8; background: #fff8f6;">
                                     <div class="haiha-img-thumb">
                                         <img src="<?php echo esc_url($group_current_img); ?>" id="prev-srv-<?php echo esc_attr($group_slug); ?>" alt="">
                                     </div>
                                     <div>
                                         <span class="haiha-subcat-pill" style="margin-bottom: 6px;">ẢNH CHÍNH CỦA MẢNG LỚN</span>
-                                        <label style="color: #0f172a; font-size: 0.88rem;"><?php echo esc_html($group_info['group_title']); ?></label>
+                                        <label style="color: #0c1e3a; font-size: 0.88rem;"><?php echo esc_html($group_info['group_title']); ?></label>
                                     </div>
                                     <div style="margin-top: auto;">
                                         <label>Đường dẫn ảnh đại diện mảng:</label>
                                         <div style="display: flex; gap: 6px;">
                                             <input type="text" name="hieugara_service_images[<?php echo esc_attr($group_slug); ?>]" id="inp-srv-<?php echo esc_attr($group_slug); ?>" value="<?php echo esc_attr($group_current_img); ?>">
-                                            <button type="button" class="button button-primary hub-pick-img-btn" data-input="#inp-srv-<?php echo esc_attr($group_slug); ?>" data-preview="#prev-srv-<?php echo esc_attr($group_slug); ?>" style="background: #ff4d24; border-color: #ff4d24;">Đổi ảnh</button>
+                                            <button type="button" class="button button-primary hub-pick-img-btn" data-input="#inp-srv-<?php echo esc_attr($group_slug); ?>" data-preview="#prev-srv-<?php echo esc_attr($group_slug); ?>" style="background: #1d4ed8; border-color: #1d4ed8;">Đổi ảnh</button>
                                         </div>
                                     </div>
                                 </div>
@@ -904,7 +904,7 @@ function hieugara_render_media_hub_page() {
                                         </div>
                                         <div>
                                             <span style="font-size: 0.72rem; color: #64748b; font-weight: 700; text-transform: uppercase;">Mục con thuộc <?php echo esc_html($group_info['group_title']); ?></span>
-                                            <label style="color: #0f172a; font-size: 0.86rem; margin-top: 2px;"><?php echo esc_html($child_info['title']); ?></label>
+                                            <label style="color: #0c1e3a; font-size: 0.86rem; margin-top: 2px;"><?php echo esc_html($child_info['title']); ?></label>
                                         </div>
                                         <div style="margin-top: auto;">
                                             <label>Đường dẫn ảnh mục con:</label>
@@ -927,7 +927,7 @@ function hieugara_render_media_hub_page() {
                     <strong style="font-size: 1rem; display: block;">💾 LƯU THƯ VIỆN ẢNH GARA &amp; CẬP NHẬT RA WEBSITE</strong>
                     <span style="font-size: 0.84rem; color: #cbd5e1;">Mọi thay đổi về Logo, Ảnh Trang Chủ, Gallery, Phụ Kiện và 6 Mảng Dịch Vụ sẽ có hiệu lực ngay lập tức.</span>
                 </div>
-                <button type="submit" class="button button-primary button-hero" style="background: #ff4d24; border-color: #ff4d24; font-weight: 800; font-size: 0.98rem;">
+                <button type="submit" class="button button-primary button-hero" style="background: #1d4ed8; border-color: #1d4ed8; font-weight: 800; font-size: 0.98rem;">
                     LƯU TẤT CẢ HÌNH ẢNH NGAY
                 </button>
             </div>

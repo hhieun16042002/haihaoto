@@ -102,9 +102,11 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
             <div class="container lexus-pagination-inner">
                 <?php foreach ($active_slides as $i => $s) : ?>
                 <button class="lexus-dash-item <?php echo $i === 0 ? 'active' : ''; ?>" data-slide-index="<?php echo $i; ?>" aria-label="<?php echo esc_attr($s['title']); ?>">
-                    <span class="dash-index"><?php echo sprintf('%02d', $i + 1); ?></span>
-                    <span class="dash-label"><?php echo esc_html($s['title']); ?></span>
-                    <span class="dash-progress-line"><span class="dash-fill"></span></span>
+                    <div class="dash-meta">
+                        <span class="dash-num"><?php echo sprintf('%02d', $i + 1); ?></span>
+                        <span class="dash-label"><?php echo esc_html(!empty($s['nav_tab']) ? $s['nav_tab'] : $s['title']); ?></span>
+                    </div>
+                    <span class="dash-progress-track"><span class="dash-progress-fill"></span></span>
                 </button>
                 <?php endforeach; ?>
             </div>

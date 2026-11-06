@@ -151,7 +151,7 @@ function hieugara_get_default_brand_logos() {
             'enable' => '1',
             'name'   => 'Mercedes-Benz',
             'logo'   => $brand_dir . '/mercedes.svg',
-            'grad1'  => '#0f172a',
+            'grad1'  => '#0c1e3a',
             'grad2'  => '#334155',
             'url'    => 'https://www.mercedes-benz.com.vn/',
         ),
@@ -170,7 +170,7 @@ function hieugara_get_default_brand_logos() {
             'name'   => 'Audi',
             'logo'   => $brand_dir . '/audi.svg',
             'grad1'  => '#bb0a30',
-            'grad2'  => '#f87171',
+            'grad2'  => '#60a5fa',
             'url'    => 'https://www.audi.vn/',
         ),
         4 => array(
@@ -197,7 +197,7 @@ function hieugara_get_default_brand_logos() {
             'name'   => 'Toyota',
             'logo'   => $brand_dir . '/toyota.svg',
             'grad1'  => '#dc2626',
-            'grad2'  => '#ef4444',
+            'grad2'  => '#2563eb',
             'url'    => 'https://www.toyota.com.vn/',
         ),
         7 => array(
@@ -224,7 +224,7 @@ function hieugara_get_default_brand_logos() {
             'name'   => 'Honda',
             'logo'   => $brand_dir . '/honda.svg',
             'grad1'  => '#cc0000',
-            'grad2'  => '#ef4444',
+            'grad2'  => '#2563eb',
             'url'    => 'https://www.honda.com.vn/',
         ),
         10 => array(
@@ -241,8 +241,8 @@ function hieugara_get_default_brand_logos() {
             'enable' => '1',
             'name'   => '3M Automotive',
             'logo'   => $brand_dir . '/3m.svg',
-            'grad1'  => '#ef4444',
-            'grad2'  => '#ff4d24',
+            'grad1'  => '#2563eb',
+            'grad2'  => '#1d4ed8',
             'url'    => 'https://www.3m.com.vn/',
         ),
         12 => array(
@@ -274,7 +274,7 @@ function hieugara_get_brand_logos() {
                 'enable' => isset($item['enable']) ? $item['enable'] : '0',
                 'name'   => sanitize_text_field($item['name']),
                 'logo'   => esc_url_raw($item['logo']),
-                'grad1'  => !empty($item['grad1']) ? sanitize_hex_color($item['grad1']) : '#0f172a',
+                'grad1'  => !empty($item['grad1']) ? sanitize_hex_color($item['grad1']) : '#0c1e3a',
                 'grad2'  => !empty($item['grad2']) ? sanitize_hex_color($item['grad2']) : '#334155',
                 'url'    => !empty($item['url']) ? esc_url_raw($item['url']) : '#',
             );
@@ -418,7 +418,7 @@ function hieugara_render_theme_settings_page() {
                         <tr>
                             <th scope="row"><?php _e('Hotline Cứu Hộ 24/7 (Nổi bật)', 'hieugara-motors'); ?></th>
                             <td>
-                                <input type="text" name="hieugara_rescue_phone" value="<?php echo esc_attr($rescue_phone); ?>" class="regular-text" style="font-weight: bold; color: #ff4d24;">
+                                <input type="text" name="hieugara_rescue_phone" value="<?php echo esc_attr($rescue_phone); ?>" class="regular-text" style="font-weight: bold; color: #1d4ed8;">
                                 <p class="description"><?php _e('Số điện thoại cứu hộ khẩn cấp 24/7 (hiển thị nổi bật với icon chớp đèn ở Header và Topbar).', 'hieugara-motors'); ?></p>
                             </td>
                         </tr>
@@ -582,7 +582,7 @@ function hieugara_render_theme_settings_page() {
                     </p>
 
                     <div style="display: flex; gap: 14px; margin-bottom: 24px; flex-wrap: wrap;">
-                        <a href="<?php echo esc_url(admin_url('post-new.php?post_type=garage_service')); ?>" class="button button-primary button-hero" style="display: inline-flex; align-items: center; gap: 6px; background: #ff4d24; border-color: #ff4d24;">
+                        <a href="<?php echo esc_url(admin_url('post-new.php?post_type=garage_service')); ?>" class="button button-primary button-hero" style="display: inline-flex; align-items: center; gap: 6px; background: #1d4ed8; border-color: #1d4ed8;">
                             <span class="dashicons dashicons-plus-alt2"></span>
                             <span><?php _e('THÊM DỊCH VỤ MỚI', 'hieugara-motors'); ?></span>
                         </a>
@@ -598,7 +598,7 @@ function hieugara_render_theme_settings_page() {
 
                     <!-- Live Services List Preview in Admin -->
                     <div style="background: #fafafa; border: 1px solid #e2e8f0; border-radius: 6px; padding: 20px;">
-                        <h3 style="margin-top: 0; font-size: 1rem; color: #0f172a; display: flex; align-items: center; justify-content: space-between;">
+                        <h3 style="margin-top: 0; font-size: 1rem; color: #0c1e3a; display: flex; align-items: center; justify-content: space-between;">
                             <span><?php _e('Các dịch vụ hiện đang hiển thị trên thanh trượt All About Cars:', 'hieugara-motors'); ?></span>
                             <?php
                             $services_admin_list = get_posts(array(
@@ -609,7 +609,7 @@ function hieugara_render_theme_settings_page() {
                                 'order'          => 'ASC'
                             ));
                             ?>
-                            <span style="font-size: 0.82rem; background: #0f172a; color: #fff; padding: 2px 10px; border-radius: 12px;">
+                            <span style="font-size: 0.82rem; background: #0c1e3a; color: #fff; padding: 2px 10px; border-radius: 12px;">
                                 <?php echo count($services_admin_list); ?> dịch vụ
                             </span>
                         </h3>
@@ -640,20 +640,20 @@ function hieugara_render_theme_settings_page() {
                                                 <?php endif; ?>
                                             </td>
                                             <td>
-                                                <strong><a href="<?php echo esc_url(get_edit_post_link($srv_item->ID)); ?>" style="color: #0f172a;"><?php echo esc_html($srv_item->post_title); ?></a></strong>
+                                                <strong><a href="<?php echo esc_url(get_edit_post_link($srv_item->ID)); ?>" style="color: #0c1e3a;"><?php echo esc_html($srv_item->post_title); ?></a></strong>
                                                 <div style="font-size: 0.8rem; color: #64748b;">
                                                     <a href="<?php echo esc_url(get_permalink($srv_item->ID)); ?>" target="_blank" style="color: #0284c7;">Xem trang chi tiết ↗</a>
                                                 </div>
                                             </td>
                                             <td>
                                                 <?php if ($s_badge) : ?>
-                                                    <span style="display: inline-block; background: #fff0ed; color: #ff4d24; border: 1px solid #ffcdbf; padding: 2px 8px; border-radius: 3px; font-size: 0.75rem; font-weight: 700;"><?php echo esc_html($s_badge); ?></span>
+                                                    <span style="display: inline-block; background: #fff0ed; color: #1d4ed8; border: 1px solid #ffcdbf; padding: 2px 8px; border-radius: 3px; font-size: 0.75rem; font-weight: 700;"><?php echo esc_html($s_badge); ?></span>
                                                 <?php else : ?>
                                                     <span style="color: #94a3b8; font-size: 0.8rem;">—</span>
                                                 <?php endif; ?>
                                             </td>
                                             <td>
-                                                <strong style="color: #ff4d24;"><?php echo esc_html($s_price ? $s_price : 'Miễn phí khảo sát'); ?></strong>
+                                                <strong style="color: #1d4ed8;"><?php echo esc_html($s_price ? $s_price : 'Miễn phí khảo sát'); ?></strong>
                                             </td>
                                             <td style="text-align: right;">
                                                 <a href="<?php echo esc_url(get_edit_post_link($srv_item->ID)); ?>" class="button button-small">
@@ -676,17 +676,17 @@ function hieugara_render_theme_settings_page() {
 
             <!-- TAB 5: QUẢN LÝ ĐỐI TÁC & THƯƠNG HIỆU (BRAND LOGOS INFINITE MARQUEE) -->
             <div class="hieugara-card" id="hieugara-brands-card">
-                <div class="card-header" style="display: flex; align-items: center; justify-content: space-between; background: #0f172a; color: #ffffff; border-bottom: 2px solid #ff4d24;">
+                <div class="card-header" style="display: flex; align-items: center; justify-content: space-between; background: #0c1e3a; color: #ffffff; border-bottom: 2px solid #1d4ed8;">
                     <h2 style="color: #ffffff; display: flex; align-items: center; gap: 8px; margin: 0; font-size: 1rem;">
-                        <span class="dashicons dashicons-star-filled" style="color: #ff4d24;"></span>
+                        <span class="dashicons dashicons-star-filled" style="color: #1d4ed8;"></span>
                         5. Quản Lý Đối Tác &amp; Thương Hiệu (Brand Logos Infinite Marquee)
                     </h2>
-                    <span style="font-size: 0.75rem; background: #ff4d24; color: #ffffff; padding: 3px 12px; border-radius: 9999px; font-weight: 800; letter-spacing: 0.5px;">
+                    <span style="font-size: 0.75rem; background: #1d4ed8; color: #ffffff; padding: 3px 12px; border-radius: 9999px; font-weight: 800; letter-spacing: 0.5px;">
                         MARQUEE TICKER VÔ TẬN
                     </span>
                 </div>
                 <div class="card-body" style="padding: 24px;">
-                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #ff4d24; padding: 14px 18px; border-radius: 4px; margin-bottom: 20px;">
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #1d4ed8; padding: 14px 18px; border-radius: 4px; margin-bottom: 20px;">
                         <p style="margin: 0; font-size: 0.88rem; color: #334155; line-height: 1.5;">
                             Thanh logo các thương hiệu xe và đối tác phụ tùng chạy tự động vô tận ngoài trang chủ (thay thế khối tra cứu bảo hành). Bạn có thể <strong>Thêm thương hiệu mới, sửa tên/logo/màu gradient, bật/tắt hoặc xóa</strong> bất kỳ thương hiệu nào. Rê chuột vào từng ô xem trước bên dưới để thấy hiệu ứng gradient và logo phát sáng!
                         </p>
@@ -714,7 +714,7 @@ function hieugara_render_theme_settings_page() {
                                 $b_en    = !empty($b_item['enable']) ? '1' : '0';
                                 $b_nm    = !empty($b_item['name']) ? $b_item['name'] : '';
                                 $b_lg    = !empty($b_item['logo']) ? $b_item['logo'] : '';
-                                $b_g1    = !empty($b_item['grad1']) ? $b_item['grad1'] : '#0f172a';
+                                $b_g1    = !empty($b_item['grad1']) ? $b_item['grad1'] : '#0c1e3a';
                                 $b_g2    = !empty($b_item['grad2']) ? $b_item['grad2'] : '#334155';
                                 $b_link  = !empty($b_item['url']) ? $b_item['url'] : '#';
                             ?>
@@ -763,7 +763,7 @@ function hieugara_render_theme_settings_page() {
 
                     <!-- Add New Brand & Template Actions -->
                     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 14px;">
-                        <button type="button" class="button button-primary button-hero" id="btn-add-brand-item" style="display: inline-flex; align-items: center; gap: 6px; background: #0f172a; border-color: #0f172a; font-size: 0.88rem;">
+                        <button type="button" class="button button-primary button-hero" id="btn-add-brand-item" style="display: inline-flex; align-items: center; gap: 6px; background: #0c1e3a; border-color: #0c1e3a; font-size: 0.88rem;">
                             <span class="dashicons dashicons-plus-alt"></span>
                             <span><?php _e('THÊM THƯƠNG HIỆU MỚI', 'hieugara-motors'); ?></span>
                         </button>
@@ -777,17 +777,17 @@ function hieugara_render_theme_settings_page() {
 
             <!-- TAB 6: QUẢN LÝ GALLERY - HÌNH ẢNH ÔTÔ HẢI HÀ (THÊM, SỬA, XÓA) -->
             <div class="hieugara-card" id="hieugara-gallery-card">
-                <div class="card-header" style="display: flex; align-items: center; justify-content: space-between; background: #0f172a; color: #ffffff; border-bottom: 2px solid #ff4d24;">
+                <div class="card-header" style="display: flex; align-items: center; justify-content: space-between; background: #0c1e3a; color: #ffffff; border-bottom: 2px solid #1d4ed8;">
                     <h2 style="color: #ffffff; display: flex; align-items: center; gap: 8px; margin: 0; font-size: 1rem;">
-                        <span class="dashicons dashicons-format-gallery" style="color: #ff4d24;"></span>
+                        <span class="dashicons dashicons-format-gallery" style="color: #1d4ed8;"></span>
                         6. Quản Lý Mục "GALLERY – HÌNH ẢNH ÔTÔ HẢI HÀ" (Thêm, Sửa, Xóa Ảnh Trang Chủ)
                     </h2>
-                    <span style="font-size: 0.75rem; background: #ff4d24; color: #ffffff; padding: 3px 12px; border-radius: 9999px; font-weight: 800; letter-spacing: 0.5px;">
+                    <span style="font-size: 0.75rem; background: #1d4ed8; color: #ffffff; padding: 3px 12px; border-radius: 9999px; font-weight: 800; letter-spacing: 0.5px;">
                         GALLERY TRANG CHỦ
                     </span>
                 </div>
                 <div class="card-body" style="padding: 24px;">
-                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #ff4d24; padding: 14px 18px; border-radius: 4px; margin-bottom: 20px;">
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #1d4ed8; padding: 14px 18px; border-radius: 4px; margin-bottom: 20px;">
                         <p style="margin: 0; font-size: 0.88rem; color: #334155; line-height: 1.5;">
                             Quản lý toàn bộ hình ảnh hiển thị trong mục <strong>GALLERY – HÌNH ẢNH ÔTÔ HẢI HÀ</strong> nằm phía trên mục Phụ kiện ngoài trang chủ. Bạn có thể <strong>Thêm ảnh mới (tải lên từ máy tính/Thư viện Media), sửa chú thích ảnh, bật/tắt hiển thị hoặc xóa</strong> bất kỳ ảnh nào.
                         </p>
@@ -818,7 +818,7 @@ function hieugara_render_theme_settings_page() {
                                     <span class="gallery-row-num"><?php echo $g_num; ?></span>
                                 </td>
                                 <td style="text-align: center; vertical-align: middle;">
-                                    <img src="<?php echo esc_url($g_img); ?>" alt="" class="gallery-img-preview" style="width: 110px; height: 68px; object-fit: cover; border-radius: 6px; border: 1px solid #cbd5e1; display: inline-block; background: #0f172a;">
+                                    <img src="<?php echo esc_url($g_img); ?>" alt="" class="gallery-img-preview" style="width: 110px; height: 68px; object-fit: cover; border-radius: 6px; border: 1px solid #cbd5e1; display: inline-block; background: #0c1e3a;">
                                 </td>
                                 <td style="vertical-align: middle;">
                                     <input type="text" name="hieugara_gallery_items[<?php echo esc_attr($g_key); ?>][title]" value="<?php echo esc_attr($g_title); ?>" class="regular-text" style="width: 100%; font-weight: 600;" placeholder="Nhập mô tả hình ảnh...">
@@ -845,7 +845,7 @@ function hieugara_render_theme_settings_page() {
                     </table>
 
                     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 14px;">
-                        <button type="button" class="button button-primary button-hero" id="btn-add-gallery-item" style="display: inline-flex; align-items: center; gap: 6px; background: #ff4d24; border-color: #ff4d24; font-size: 0.88rem;">
+                        <button type="button" class="button button-primary button-hero" id="btn-add-gallery-item" style="display: inline-flex; align-items: center; gap: 6px; background: #1d4ed8; border-color: #1d4ed8; font-size: 0.88rem;">
                             <span class="dashicons dashicons-plus-alt"></span>
                             <span><?php _e('THÊM HÌNH ẢNH MỚI VÀO GALLERY', 'hieugara-motors'); ?></span>
                         </button>
@@ -953,7 +953,7 @@ function hieugara_render_theme_settings_page() {
                 </td>
                 <td style="text-align: center; vertical-align: middle;">
                     <div class="brand-capsule-preview" style="display: inline-flex; align-items: center; justify-content: center; width: 110px; height: 55px; border-radius: 9999px; background: #ffffff; border: 1.5px solid #e2e8f0; overflow: hidden; position: relative; box-shadow: 0 1px 4px rgba(0,0,0,0.06); cursor: pointer; transition: all 0.3s ease;">
-                        <div class="capsule-bg-preview" style="position: absolute; inset: 0; background: linear-gradient(135deg, #0f172a, #334155); opacity: 0; transition: opacity 0.35s ease;"></div>
+                        <div class="capsule-bg-preview" style="position: absolute; inset: 0; background: linear-gradient(135deg, #0c1e3a, #334155); opacity: 0; transition: opacity 0.35s ease;"></div>
                         <img src="" alt="" class="brand-img-preview" style="max-height: 26px; max-width: 65px; object-fit: contain; position: relative; z-index: 2; transition: filter 0.3s ease;">
                     </div>
                 </td>
@@ -970,7 +970,7 @@ function hieugara_render_theme_settings_page() {
                 </td>
                 <td style="vertical-align: middle;">
                     <div style="display: flex; gap: 6px; align-items: center;">
-                        <input type="color" name="hieugara_brand_logos[${newId}][grad1]" value="#0f172a" class="brand-color-1" title="Màu gradient 1" style="width: 34px; height: 32px; padding: 0; border: none; cursor: pointer; border-radius: 4px;">
+                        <input type="color" name="hieugara_brand_logos[${newId}][grad1]" value="#0c1e3a" class="brand-color-1" title="Màu gradient 1" style="width: 34px; height: 32px; padding: 0; border: none; cursor: pointer; border-radius: 4px;">
                         <input type="color" name="hieugara_brand_logos[${newId}][grad2]" value="#334155" class="brand-color-2" title="Màu gradient 2" style="width: 34px; height: 32px; padding: 0; border: none; cursor: pointer; border-radius: 4px;">
                     </div>
                 </td>
@@ -1044,7 +1044,7 @@ function hieugara_render_theme_settings_page() {
                     <span class="gallery-row-num">${nextNum}</span>
                 </td>
                 <td style="text-align: center; vertical-align: middle;">
-                    <img src="" alt="" class="gallery-img-preview" style="width: 110px; height: 68px; object-fit: cover; border-radius: 6px; border: 1px solid #cbd5e1; display: inline-block; background: #0f172a;">
+                    <img src="" alt="" class="gallery-img-preview" style="width: 110px; height: 68px; object-fit: cover; border-radius: 6px; border: 1px solid #cbd5e1; display: inline-block; background: #0c1e3a;">
                 </td>
                 <td style="vertical-align: middle;">
                     <input type="text" name="hieugara_gallery_items[${newId}][title]" value="Hình ảnh xưởng dịch vụ Ôtô Hải Hà" class="regular-text" style="width: 100%; font-weight: 600;" placeholder="Nhập mô tả hình ảnh...">

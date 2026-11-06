@@ -16,8 +16,8 @@ body.wp-admin {
    2. WP ADMIN BAR (TOP BAR)
    ========================================================================== */
 #wpadminbar {
-    background: #0f172a !important;
-    border-bottom: 2px solid #ff4d24;
+    background: #0c1e3a !important;
+    border-bottom: 2px solid #1d4ed8;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
@@ -35,7 +35,7 @@ body.wp-admin {
 }
 
 #wpadminbar .hieugara-topbar-brand .ab-item {
-    background: rgba(255, 77, 36, 0.15) !important;
+    background: rgba(29, 78, 216, 0.15) !important;
     border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -60,7 +60,7 @@ body.wp-admin {
 }
 
 #wpadminbar .hieugara-topbar-view-btn .ab-item {
-    background: #ff4d24 !important;
+    background: #1d4ed8 !important;
     color: #ffffff !important;
     font-weight: 700 !important;
     border-radius: 4px;
@@ -103,7 +103,7 @@ body.wp-admin {
 
 #adminmenu li.current > a.menu-top,
 #adminmenu li.wp-has-current-submenu > a.menu-top {
-    background: #ff4d24 !important;
+    background: #1d4ed8 !important;
     color: #ffffff !important;
     font-weight: 700;
 }
@@ -115,7 +115,7 @@ body.wp-admin {
 
 #adminmenu .wp-submenu {
     background-color: #080c14 !important;
-    border-left: 3px solid #ff4d24;
+    border-left: 3px solid #1d4ed8;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
@@ -127,8 +127,8 @@ body.wp-admin {
 
 #adminmenu .wp-submenu a:hover,
 #adminmenu .wp-submenu li.current a {
-    color: #ff4d24 !important;
-    background-color: rgba(255, 77, 36, 0.08) !important;
+    color: #1d4ed8 !important;
+    background-color: rgba(29, 78, 216, 0.08) !important;
 }
 
 /* ==========================================================================
@@ -178,7 +178,7 @@ body.wp-admin {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-left: 6px solid #ff4d24;
+    border-left: 6px solid #1d4ed8;
     box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
     margin-bottom: 24px;
     flex-wrap: wrap;
@@ -187,7 +187,7 @@ body.wp-admin {
 
 .hub-badge {
     display: inline-block;
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #fff;
     font-size: 11px;
     font-weight: 800;
@@ -241,14 +241,14 @@ body.wp-admin {
 }
 
 .hub-btn-view {
-    background: #ff4d24;
+    background: #1d4ed8;
     color: #fff !important;
 }
 
 .hub-btn-view:hover {
     background: #e03e17;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 77, 36, 0.3);
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3);
 }
 
 /* KPI Grid */
@@ -288,7 +288,7 @@ body.wp-admin {
     font-size: 24px;
 }
 
-.hub-kpi-card.kpi-orange .kpi-icon { background: #fff7ed; color: #ff4d24; }
+.hub-kpi-card.kpi-orange .kpi-icon { background: #eff6ff; color: #1d4ed8; }
 .hub-kpi-card.kpi-blue .kpi-icon { background: #eff6ff; color: #3b82f6; }
 .hub-kpi-card.kpi-green .kpi-icon { background: #f0fdf4; color: #22c55e; }
 .hub-kpi-card.kpi-purple .kpi-icon { background: #faf5ff; color: #a855f7; }
@@ -306,7 +306,7 @@ body.wp-admin {
     display: block;
     font-size: 26px;
     font-weight: 800;
-    color: #0f172a;
+    color: #0c1e3a;
     line-height: 1;
     margin-bottom: 4px;
 }
@@ -330,7 +330,7 @@ body.wp-admin {
 }
 
 .hub-section-title .dashicons {
-    color: #ff4d24;
+    color: #1d4ed8;
 }
 
 /* Shortcuts */
@@ -357,18 +357,18 @@ body.wp-admin {
 }
 
 .shortcut-box:hover {
-    border-color: #ff4d24;
+    border-color: #1d4ed8;
     background: #fffaf8;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 77, 36, 0.12);
-    color: #ff4d24;
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.12);
+    color: #1d4ed8;
 }
 
 .shortcut-box .sc-icon {
     font-size: 28px;
     width: 28px;
     height: 28px;
-    color: #ff4d24;
+    color: #1d4ed8;
     margin-bottom: 4px;
 }
 
@@ -430,15 +430,15 @@ body.wp-admin {
     border: 1px solid #cbd5e1 !important;
     border-radius: 6px !important;
     font-size: 14px !important;
-    color: #0f172a !important;
+    color: #0c1e3a !important;
     background: #f8fafc !important;
     transition: all 0.2s ease;
 }
 
 .hub-form-group input:focus {
-    border-color: #ff4d24 !important;
+    border-color: #1d4ed8 !important;
     background: #ffffff !important;
-    box-shadow: 0 0 0 3px rgba(255, 77, 36, 0.15) !important;
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.15) !important;
     outline: none !important;
 }
 
@@ -448,15 +448,15 @@ body.wp-admin {
 }
 
 .hub-submit-btn {
-    background: #ff4d24 !important;
-    border-color: #ff4d24 !important;
+    background: #1d4ed8 !important;
+    border-color: #1d4ed8 !important;
     color: #ffffff !important;
     font-weight: 700 !important;
     padding: 10px 24px !important;
     height: auto !important;
     font-size: 14px !important;
     border-radius: 6px !important;
-    box-shadow: 0 4px 12px rgba(255, 77, 36, 0.25) !important;
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25) !important;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -472,13 +472,13 @@ body.wp-admin {
    ========================================================================== */
 .wrap > h1 {
     font-weight: 800 !important;
-    color: #0f172a !important;
+    color: #0c1e3a !important;
     margin-bottom: 20px !important;
 }
 
 .wp-core-ui .button-primary {
-    background: #ff4d24 !important;
-    border-color: #ff4d24 !important;
+    background: #1d4ed8 !important;
+    border-color: #1d4ed8 !important;
     text-shadow: none !important;
     box-shadow: none !important;
     font-weight: 600 !important;
