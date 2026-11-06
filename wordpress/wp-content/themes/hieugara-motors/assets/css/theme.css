@@ -8537,12 +8537,13 @@ html, body {
 .shiftup-accessories-section .accessory-slider-wrap,
 .shiftup-accessories-section.is-inview .accessory-slider-wrap,
 .shiftup-accessories-section .all-about-swiper,
-.shiftup-accessories-section .swiper-wrapper,
-.shiftup-accessories-section .swiper-slide,
 .shiftup-accessories-section .accessory-item {
     opacity: 1 !important;
-    transform: none !important;
     visibility: visible !important;
+}
+.shiftup-accessories-section .accessory-slider-wrap,
+.shiftup-accessories-section .all-about-swiper {
+    transform: none !important;
 }
 
 @media (max-width: 768px) {
@@ -9121,12 +9122,13 @@ html, body {
 .shiftup-accessories-section .accessory-slider-wrap,
 .shiftup-accessories-section.is-inview .accessory-slider-wrap,
 .shiftup-accessories-section .all-about-swiper,
-.shiftup-accessories-section .swiper-wrapper,
-.shiftup-accessories-section .swiper-slide,
 .shiftup-accessories-section .accessory-item {
     opacity: 1 !important;
-    transform: none !important;
     visibility: visible !important;
+}
+.shiftup-accessories-section .accessory-slider-wrap,
+.shiftup-accessories-section .all-about-swiper {
+    transform: none !important;
 }
 
 /* 6. Các Dòng Xe Phục Vụ – Brand Marquee (#dong-xe-phuc-vu) */

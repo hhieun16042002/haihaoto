@@ -411,6 +411,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
 
             <script>
             (function() {
+                var initAttempts = 0;
                 function initAccessorySlider() {
                     var track = document.getElementById('allCarsTrack');
                     var prevBtn = document.getElementById('allCarsPrevBtn');
@@ -428,8 +429,9 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                                 speed: 450,
                                 grabCursor: true,
                                 watchSlidesProgress: true,
+                                touchRatio: 1.2,
                                 autoplay: {
-                                    delay: 4500,
+                                    delay: 4000,
                                     disableOnInteraction: false,
                                     pauseOnMouseEnter: true,
                                 },
@@ -440,20 +442,26 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                                 }
                             });
                         }
+                    } else if (initAttempts < 25) {
+                        initAttempts++;
+                        setTimeout(initAccessorySlider, 120);
+                        return;
                     }
 
                     function slideToNext() {
-                        if (window.hieuGaraAccessorySwiper && typeof window.hieuGaraAccessorySwiper.slideNext === 'function') {
-                            window.hieuGaraAccessorySwiper.slideNext(400);
-                        } else {
+                        var sw = window.hieuGaraAccessorySwiper || (track ? track.swiper : null);
+                        if (sw && typeof sw.slideNext === 'function') {
+                            sw.slideNext(400);
+                        } else if (track) {
                             track.scrollBy({ left: 320, behavior: 'smooth' });
                         }
                     }
 
                     function slideToPrev() {
-                        if (window.hieuGaraAccessorySwiper && typeof window.hieuGaraAccessorySwiper.slidePrev === 'function') {
-                            window.hieuGaraAccessorySwiper.slidePrev(400);
-                        } else {
+                        var sw = window.hieuGaraAccessorySwiper || (track ? track.swiper : null);
+                        if (sw && typeof sw.slidePrev === 'function') {
+                            sw.slidePrev(400);
+                        } else if (track) {
                             track.scrollBy({ left: -320, behavior: 'smooth' });
                         }
                     }
