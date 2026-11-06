@@ -8442,33 +8442,59 @@ html, body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 10;
-    width: 42px;
-    height: 42px;
+    z-index: 45 !important;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
     background: #ffffff;
-    border: 1px solid #cbd5e1;
+    border: 2px solid #C5A880;
     color: #141414;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 4px 14px rgba(20, 20, 20, 0.12);
-    transition: all 0.2s ease;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+    transition: all 0.22s ease;
+}
+
+.acc-nav-btn i {
+    pointer-events: none !important;
+    font-size: 1.1rem;
+    color: #141414;
+    transition: color 0.2s;
 }
 
 .acc-nav-btn:hover {
-    background: #C5A880;
-    border-color: #C5A880;
-    color: #ffffff;
+    background: #141414;
+    border-color: #141414;
+    box-shadow: 0 8px 24px rgba(20, 20, 20, 0.28);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.acc-nav-btn:hover i {
+    color: #C5A880;
+}
+
+.acc-nav-btn:active {
+    transform: translateY(-50%) scale(0.95);
 }
 
 .acc-nav-btn.acc-prev {
-    left: -14px;
+    left: -22px;
 }
 
 .acc-nav-btn.acc-next {
-    right: -14px;
+    right: -22px;
+}
+
+@media (max-width: 991px) {
+    .acc-nav-btn.acc-prev {
+        left: 2px;
+    }
+    .acc-nav-btn.acc-next {
+        right: 2px;
+    }
 }
 
 /* Always Visible & Smooth Accessories Section */

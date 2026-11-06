@@ -192,69 +192,78 @@
         // With Mousewheel horizontal scrolling, Touch Drag & Prev/Next Arrows
         // ==========================================================================
         if ($('.all-about-swiper').length) {
-            if (typeof Swiper !== 'undefined') {
-                var allAboutSwiper = new Swiper('.all-about-swiper', {
+            var allAboutSwiper = window.hieuGaraAccessorySwiper;
+            if (!allAboutSwiper && typeof Swiper !== 'undefined') {
+                allAboutSwiper = new Swiper('.all-about-swiper', {
                     slidesPerView: 1,
                     spaceBetween: 24,
                     loop: true,
                     grabCursor: true,
                     watchSlidesProgress: true,
-                    speed: 650,
-                    mousewheel: {
-                        forceToAxis: true,
-                        sensitivity: 1,
-                        releaseOnEdges: true,
-                    },
+                    speed: 500,
                     autoplay: {
                         delay: 4500,
                         disableOnInteraction: false,
                         pauseOnMouseEnter: true,
                     },
-                    navigation: {
-                        prevEl: '#allCarsPrevBtn',
-                        nextEl: '#allCarsNextBtn',
-                    },
                     breakpoints: {
                         576: {
                             slidesPerView: 2,
-                            spaceBetween: 22
+                            spaceBetween: 20
                         },
-                        992: {
+                        768: {
                             slidesPerView: 3,
-                            spaceBetween: 28
+                            spaceBetween: 24
                         },
                         1200: {
                             slidesPerView: 4,
-                            spaceBetween: 32
+                            spaceBetween: 28
                         }
                     }
                 });
+                window.hieuGaraAccessorySwiper = allAboutSwiper;
+            }
 
-                // Smooth wheel response directly forwarding to Swiper
-                var swiperElem = document.querySelector('.all-about-swiper');
-                if (swiperElem) {
-                    swiperElem.addEventListener('wheel', function(e) {
-                        if (Math.abs(e.deltaY) > 25) {
+            // Always wire up Prev & Next buttons directly
+            $(document).off('click', '#allCarsPrevBtn').on('click', '#allCarsPrevBtn', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var sw = window.hieuGaraAccessorySwiper || allAboutSwiper;
+                if (sw && typeof sw.slidePrev === 'function') {
+                    sw.slidePrev(400);
+                } else {
+                    var el = document.getElementById('allCarsTrack');
+                    if (el) el.scrollBy({ left: -320, behavior: 'smooth' });
+                }
+            });
+
+            $(document).off('click', '#allCarsNextBtn').on('click', '#allCarsNextBtn', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var sw = window.hieuGaraAccessorySwiper || allAboutSwiper;
+                if (sw && typeof sw.slideNext === 'function') {
+                    sw.slideNext(400);
+                } else {
+                    var el = document.getElementById('allCarsTrack');
+                    if (el) el.scrollBy({ left: 320, behavior: 'smooth' });
+                }
+            });
+
+            // Smooth wheel response directly forwarding to Swiper
+            var swiperElem = document.querySelector('.all-about-swiper');
+            if (swiperElem) {
+                swiperElem.addEventListener('wheel', function(e) {
+                    if (Math.abs(e.deltaY) > 25) {
+                        var sw = window.hieuGaraAccessorySwiper || allAboutSwiper;
+                        if (sw && typeof sw.slideNext === 'function') {
                             if (e.deltaY > 0) {
-                                allAboutSwiper.slideNext();
+                                sw.slideNext(400);
                             } else {
-                                allAboutSwiper.slidePrev();
+                                sw.slidePrev(400);
                             }
                         }
-                    }, { passive: true });
-                }
-            } else {
-                // Fallback scroll
-                $('#allCarsPrevBtn').on('click', function(e) {
-                    e.preventDefault();
-                    var $track = $('#allCarsTrack');
-                    $track.animate({ scrollLeft: $track.scrollLeft() - 320 }, 300);
-                });
-                $('#allCarsNextBtn').on('click', function(e) {
-                    e.preventDefault();
-                    var $track = $('#allCarsTrack');
-                    $track.animate({ scrollLeft: $track.scrollLeft() + 320 }, 300);
-                });
+                    }
+                }, { passive: true });
             }
         }
 

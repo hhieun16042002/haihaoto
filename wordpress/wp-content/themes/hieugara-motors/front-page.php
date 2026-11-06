@@ -361,7 +361,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
             ?>
 
             <div class="accessory-slider-wrap">
-                <button class="acc-nav-btn acc-prev" id="allCarsPrevBtn" aria-label="Trước">
+                <button type="button" class="acc-nav-btn acc-prev" id="allCarsPrevBtn" aria-label="Sản phẩm trước">
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>
 
@@ -404,18 +404,85 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                     </div>
                 </div>
 
-                <button class="acc-nav-btn acc-next" id="allCarsNextBtn" aria-label="Tiếp theo">
+                <button type="button" class="acc-nav-btn acc-next" id="allCarsNextBtn" aria-label="Sản phẩm tiếp theo">
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
             </div>
 
-            <!-- CTA View All Accessories Button -->
-            <div class="accessory-bottom-cta text-center">
-                <a href="<?php echo esc_url(home_url('/phu-kien/')); ?>" class="btn-accessory-view-all">
-                    <span>XEM TOÀN BỘ 70+ PHỤ KIỆN THEO DANH MỤC</span>
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
-            </div>
+            <script>
+            (function() {
+                function initAccessorySlider() {
+                    var track = document.getElementById('allCarsTrack');
+                    var prevBtn = document.getElementById('allCarsPrevBtn');
+                    var nextBtn = document.getElementById('allCarsNextBtn');
+                    if (!track) return;
+
+                    if (typeof Swiper !== 'undefined') {
+                        if (track.swiper) {
+                            window.hieuGaraAccessorySwiper = track.swiper;
+                        } else {
+                            window.hieuGaraAccessorySwiper = new Swiper(track, {
+                                slidesPerView: 1,
+                                spaceBetween: 20,
+                                loop: true,
+                                speed: 450,
+                                grabCursor: true,
+                                watchSlidesProgress: true,
+                                autoplay: {
+                                    delay: 4500,
+                                    disableOnInteraction: false,
+                                    pauseOnMouseEnter: true,
+                                },
+                                breakpoints: {
+                                    576: { slidesPerView: 2, spaceBetween: 20 },
+                                    768: { slidesPerView: 3, spaceBetween: 24 },
+                                    1200: { slidesPerView: 4, spaceBetween: 28 }
+                                }
+                            });
+                        }
+                    }
+
+                    function slideToNext() {
+                        if (window.hieuGaraAccessorySwiper && typeof window.hieuGaraAccessorySwiper.slideNext === 'function') {
+                            window.hieuGaraAccessorySwiper.slideNext(400);
+                        } else {
+                            track.scrollBy({ left: 320, behavior: 'smooth' });
+                        }
+                    }
+
+                    function slideToPrev() {
+                        if (window.hieuGaraAccessorySwiper && typeof window.hieuGaraAccessorySwiper.slidePrev === 'function') {
+                            window.hieuGaraAccessorySwiper.slidePrev(400);
+                        } else {
+                            track.scrollBy({ left: -320, behavior: 'smooth' });
+                        }
+                    }
+
+                    if (nextBtn) {
+                        nextBtn.onclick = function(e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            slideToNext();
+                        };
+                    }
+
+                    if (prevBtn) {
+                        prevBtn.onclick = function(e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            slideToPrev();
+                        };
+                    }
+                }
+
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', initAccessorySlider);
+                } else {
+                    initAccessorySlider();
+                }
+                window.addEventListener('load', initAccessorySlider);
+            })();
+            </script>
 
         </div>
     </section>

@@ -348,7 +348,7 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                     <i class="fa-solid fa-chevron-down nav-caret"></i>
                 </a>
                 <ul class="nav-dropdown-menu nav-dropdown-grid-2col">
-                    <li style="grid-column: 1 / -1;"><a href="<?php echo esc_url(home_url('/phu-kien/')); ?>"><strong class="text-gold">★ Xem Tất Cả Danh Mục Phụ Kiện (70+)</strong></a></li>
+                    <li style="grid-column: 1 / -1;"><a href="<?php echo esc_url(home_url('/phu-kien/')); ?>"><strong class="text-gold">★ Xem Tất Cả Phụ Kiện Chính Hãng</strong></a></li>
                     <li><a href="<?php echo esc_url(home_url('/phu-kien/#cat-camera-man-hinh')); ?>"><i class="fa-solid fa-video mr-1 text-gold"></i> 01. Camera &amp; Màn Hình Android</a></li>
                     <li><a href="<?php echo esc_url(home_url('/phu-kien/#cat-bom-lop-tpms')); ?>"><i class="fa-solid fa-gauge-high mr-1 text-gold"></i> 02. Bơm Lốp &amp; Cảm Biến TPMS</a></li>
                     <li><a href="<?php echo esc_url(home_url('/phu-kien/#cat-kich-binh-cuu-ho')); ?>"><i class="fa-solid fa-bolt mr-1 text-gold"></i> 03. Bộ Kích Bình &amp; Cứu Hộ Ô Tô</a></li>
