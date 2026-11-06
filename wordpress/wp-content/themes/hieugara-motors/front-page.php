@@ -221,8 +221,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
             <div class="kobac-split-row kobac-row-about">
                 <div class="kobac-col kobac-col-text kobac-anim-left">
                     <div class="kobac-head-block">
-                        <span class="kobac-eyebrow-pill"><i class="fa-solid fa-shield-halved"></i> HÀNH TRÌNH 31 NĂM • TỪ 1995</span>
-                        <h2 class="kobac-heading">VỀ <span class="text-orange">ÔTÔ HẢI HÀ</span></h2>
+                        <h2 class="kobac-heading">VỀ ÔTÔ HẢI HÀ</h2>
                     </div>
 
                     <!-- Mobile-only Inline Image 1 right under Heading for native mobile editorial flow -->
@@ -236,9 +235,9 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                     </div>
 
                     <div class="kobac-prose">
-                        <p>Chúng tôi hiểu rằng, mỗi chiếc xe là một phần quan trọng của cuộc sống, mang theo những hành trình, kỷ niệm và sự an toàn của cả gia đình. Chính vì lý do đó, <strong>Ôtô Hải Hà</strong> đã dành hơn 31 năm (từ năm 1995) để không ngừng đổi mới và hoàn thiện nghệ thuật chăm sóc, bảo dưỡng và sửa chữa xe hơi, đặt sự chính xác và chữ Tâm người thợ làm kim chỉ nam.</p>
-                        <p>Chúng tôi tiên phong đầu tư hệ thống trang thiết bị chẩn đoán hiện đại, chuẩn hóa quy trình bảo dưỡng và đồng sơn công nghệ cao nhằm tối ưu tốc độ và chất lượng dịch vụ mà vẫn giữ vững chuẩn mực khắt khe nhất. Với quy mô xưởng <strong>2.500m²</strong>, <strong>28 khoang cầu nâng</strong> chuyên dụng và đội ngũ hơn <strong>80 kỹ thuật viên</strong> lành nghề, <strong>Ôtô Hải Hà</strong> đã trở thành trung tâm bảo dưỡng – sửa chữa ô tô uy tín hàng đầu, khẳng định vị thế vững chắc trong lòng hàng chục nghìn chủ xe.</p>
-                        <p>Lý do <strong>Ôtô Hải Hà</strong> tồn tại và phát triển bền vững suốt hơn 3 thập kỷ thật đơn giản: mang lại sự an tâm tuyệt đối cho chủ xe thông qua một dịch vụ minh bạch, không chỉ đạt chuẩn mà còn vượt qua mong đợi.</p>
+                        <p>Chúng tôi hiểu rằng, mỗi chiếc xe là một phần quan trọng của cuộc sống, mang theo những hành trình, kỷ niệm và sự an toàn của cả gia đình. Chính vì lý do đó, Ôtô Hải Hà đã dành hơn 31 năm (từ năm 1995) để không ngừng đổi mới và hoàn thiện nghệ thuật chăm sóc, bảo dưỡng và sửa chữa xe hơi, đặt sự chính xác và chữ Tâm người thợ làm kim chỉ nam.</p>
+                        <p>Chúng tôi tiên phong đầu tư hệ thống trang thiết bị chẩn đoán hiện đại, chuẩn hóa quy trình bảo dưỡng và đồng sơn công nghệ cao nhằm tối ưu tốc độ và chất lượng dịch vụ mà vẫn giữ vững chuẩn mực khắt khe nhất. Với quy mô xưởng 2.500m², 28 khoang cầu nâng chuyên dụng và đội ngũ hơn 80 kỹ thuật viên lành nghề, Ôtô Hải Hà đã trở thành trung tâm bảo dưỡng – sửa chữa ô tô uy tín hàng đầu, khẳng định vị thế vững chắc trong lòng hàng chục nghìn chủ xe.</p>
+                        <p>Lý do Ôtô Hải Hà tồn tại và phát triển bền vững suốt hơn 3 thập kỷ thật đơn giản: mang lại sự an tâm tuyệt đối cho chủ xe thông qua một dịch vụ minh bạch, không chỉ đạt chuẩn mà còn vượt qua mong đợi.</p>
                     </div>
                     <div class="kobac-btn-wrap kobac-desktop-only-btn">
                         <a href="<?php echo esc_url(home_url('/ve-chung-toi/')); ?>" class="kobac-cta-btn">
@@ -280,8 +279,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
 
                 <div class="kobac-col kobac-col-text kobac-anim-right">
                     <div class="kobac-head-block">
-                        <span class="kobac-eyebrow-pill"><i class="fa-solid fa-award"></i> TÔN CHỈ PHỤC VỤ</span>
-                        <h2 class="kobac-heading">SỨ <span class="text-orange">MỆNH</span></h2>
+                        <h2 class="kobac-heading">SỨ MỆNH</h2>
                     </div>
 
                     <!-- Mobile-only Bento Dual Media Grid right under Heading -->
@@ -301,9 +299,9 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                     <div class="kobac-prose">
                         <p>Chúng tôi nhận thấy rằng tại thị trường Việt Nam, chủ xe thường phải đối mặt với nỗi lo về sự minh bạch trong báo giá, nguồn gốc phụ tùng không rõ ràng và chất lượng dịch vụ thiếu nhất quán. Đây là những rào cản lớn đối với sự an tâm khi sở hữu và bảo dưỡng xe.</p>
                         <blockquote class="kobac-quote-box">
-                            Tại <strong>Ôtô Hải Hà</strong>, chúng tôi tin tưởng tuyệt đối vào triết lý: <em>“Giấc mơ và uy tín được vẽ bằng trái tim người thợ thì nhất định sẽ chạm tới niềm tin trọn vẹn của khách hàng.”</em>
+                            Tại Ôtô Hải Hà, chúng tôi tin tưởng tuyệt đối vào triết lý: “Giấc mơ và uy tín được vẽ bằng trái tim người thợ thì nhất định sẽ chạm tới niềm tin trọn vẹn của khách hàng.”
                         </blockquote>
-                        <p>Sứ mệnh của <strong>Ôtô Hải Hà</strong> là biến niềm tin này thành hành động thực tiễn trên từng chiếc xe xuất xưởng. Chúng tôi cam kết mang đến sự chăm sóc, bảo dưỡng, sửa chữa máy gầm và đồng sơn đạt chuẩn mực cao nhất, không chỉ dựa trên quy trình kỹ thuật nghiêm ngặt mà còn dựa trên sự chính trực và tận tâm tuyệt đối.</p>
+                        <p>Sứ mệnh của Ôtô Hải Hà là biến niềm tin này thành hành động thực tiễn trên từng chiếc xe xuất xưởng. Chúng tôi cam kết mang đến sự chăm sóc, bảo dưỡng, sửa chữa máy gầm và đồng sơn đạt chuẩn mực cao nhất, không chỉ dựa trên quy trình kỹ thuật nghiêm ngặt mà còn dựa trên sự chính trực và tận tâm tuyệt đối.</p>
                         <p>Chúng tôi không chỉ bảo dưỡng và sửa chữa xe; chúng tôi kiến tạo những hành trình bình an, nâng cao tuổi thọ và giá trị bền vững cho tài sản quý giá này. Mục tiêu cuối cùng là mang lại sự an tâm tuyệt đối cho chủ xe thông qua một dịch vụ không chỉ đạt chuẩn mà còn vượt qua mong đợi.</p>
                     </div>
                     <div class="kobac-btn-wrap">

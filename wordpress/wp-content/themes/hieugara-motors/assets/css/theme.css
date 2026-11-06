@@ -6531,7 +6531,6 @@ html, body {
     background: #C5A880;
     width: 64px;
 }
-}
 
 .stat-title {
     font-family: 'Chakra Petch', sans-serif;
@@ -8798,18 +8797,22 @@ html, body {
 
 @keyframes statPlusBouncePulse {
     0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.18); text-shadow: 0 0 12px rgba(197, 168, 128, 0.45); }
+    50% { transform: scale(1.15); }
 }
 .shiftup-technicians-section.is-inview .milestone-stat-card .stat-plus {
     display: inline-block;
-    animation: statPlusBouncePulse 2.2s ease-in-out infinite;
+    color: #141414;
+    transition: color 0.25s ease;
+}
+.shiftup-technicians-section.is-inview .milestone-stat-card:hover .stat-plus {
+    color: #C5A880 !important;
 }
 
 .shiftup-technicians-section .milestone-stat-card .stat-divider {
     width: 0;
     height: 3px;
-    background: linear-gradient(90deg, #C5A880 0%, #C5A880 100%);
-    transition: width 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.32s;
+    background: #e2e8f0;
+    transition: width 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.32s, background 0.3s ease;
 }
 .shiftup-technicians-section.is-inview .milestone-stat-card .stat-divider {
     width: 46px;
@@ -8844,6 +8847,7 @@ html, body {
     transition: color 0.25s ease;
 }
 .shiftup-technicians-section.is-inview .milestone-stat-card:hover .stat-divider {
+    background: #C5A880 !important;
     width: 78px;
     transition-delay: 0s;
 }
@@ -9121,14 +9125,14 @@ html, body {
 }
 
 .kobac-prose strong {
-    color: #141414;
-    font-weight: 700;
+    color: inherit;
+    font-weight: 400 !important;
 }
 
 .kobac-prose em {
-    color: #d98e00;
-    font-style: italic;
-    font-weight: 600;
+    color: inherit;
+    font-style: normal;
+    font-weight: 400 !important;
 }
 
 .kobac-btn-wrap {
@@ -9861,7 +9865,6 @@ html, body {
     border-color: #141414 !important;
 }
 
-.kobac-prose em,
 .marquee-sub,
 .marquee-sub-label,
 .ws-city-tag,
