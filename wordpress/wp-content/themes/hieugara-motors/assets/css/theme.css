@@ -6681,6 +6681,26 @@ html, body {
     margin: 0 auto !important;
 }
 
+/* Mobile Compact Brand Marquee (Keep Desktop Intact, Smaller on Mobile) */
+@media (max-width: 768px) {
+    .shiftup-brand-marquee-section {
+        padding: 50px 0 !important;
+    }
+    .brand-marquee-group {
+        gap: 10px !important;
+        padding-right: 10px !important;
+    }
+    .brand-capsule-card {
+        width: 110px !important;
+        height: 58px !important;
+        padding: 0 10px !important;
+    }
+    .brand-capsule-card .brand-logo-img {
+        max-height: 24px !important;
+        max-width: 72px !important;
+    }
+}
+
 /* --- Section 2: Founder Story Card (Text-Only Editorial) --- */
 .founder-story-card {
     background: #0f1218;
