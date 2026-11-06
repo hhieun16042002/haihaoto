@@ -21,7 +21,7 @@ get_header();
             </div>
             <h1 class="portal-page-title"><?php _e('Bảng Giá Niêm Yết & Dự Toán Sơn Gò Ô Tô', 'hieugara-motors'); ?></h1>
             <p class="portal-page-subtitle">
-                <?php _e('Hải Hà ÔTô Service cam kết tính minh bạch 100%: Giá dịch vụ đã bao gồm công thợ kỹ thuật, phụ tùng chính hãng và không phát sinh bất kỳ chi phí ẩn nào.', 'hieugara-motors'); ?>
+                <?php _e('Ôtô Hải Hà Service cam kết tính minh bạch 100%: Giá dịch vụ đã bao gồm công thợ kỹ thuật, phụ tùng chính hãng và không phát sinh bất kỳ chi phí ẩn nào.', 'hieugara-motors'); ?>
             </p>
         </div>
     </section>
@@ -125,7 +125,7 @@ get_header();
                     Danh Mục Dịch Vụ Kỹ Thuật Ô Tô Chuyên Nghiệp
                 </h2>
                 <p class="section-desc" style="color: #64748b; max-width: 760px; margin: 0 auto; font-size: 0.95rem;">
-                    Hải Hà Ô Tô (31 năm kinh nghiệm từ 1995 &bull; 80 nhân sự tận tâm) phân chia hệ thống dịch vụ thành 6 nhóm chuẩn SEO giúp khách hàng dễ dàng tra cứu quy trình, thời gian xử lý và bảng giá minh bạch.
+                    Ôtô Hải Hà (31 năm kinh nghiệm từ 1995 &bull; 80 nhân sự tận tâm) phân chia hệ thống dịch vụ thành 6 nhóm chuẩn SEO giúp khách hàng dễ dàng tra cứu quy trình, thời gian xử lý và bảng giá minh bạch.
                 </p>
             </div>
 

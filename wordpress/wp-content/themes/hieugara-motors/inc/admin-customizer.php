@@ -1,7 +1,7 @@
 <?php
 /**
- * Hải Hà ÔTô - Modern Admin Customizer & Dashboard Command Center
- * Tối ưu hóa toàn diện giao diện quản trị WordPress cho Chủ Gara Hải Hà ÔTô
+ * Ôtô Hải Hà - Modern Admin Customizer & Dashboard Command Center
+ * Tối ưu hóa toàn diện giao diện quản trị WordPress cho Chủ Gara Ôtô Hải Hà
  *
  * @package HieuGara_Motors
  */
@@ -32,7 +32,7 @@ function hieugara_admin_bar_customization($wp_admin_bar) {
     // Add Brand Node
     $wp_admin_bar->add_node(array(
         'id'    => 'hieugara-brand',
-        'title' => '<span class="ab-icon dashicons dashicons-car" style="color:#ff4d24 !important;"></span> <strong style="color:#fff;font-weight:700;">HẢI HÀ ÔTÔ</strong>',
+        'title' => '<span class="ab-icon dashicons dashicons-car" style="color:#ff4d24 !important;"></span> <strong style="color:#fff;font-weight:700;">ÔTÔ HẢI HÀ</strong>',
         'href'  => admin_url('index.php'),
         'meta'  => array('class' => 'hieugara-topbar-brand')
     ));
@@ -184,7 +184,7 @@ function hieugara_clean_admin_menu() {
 }
 add_action('admin_menu', 'hieugara_clean_admin_menu', 999);
 
-// 6. Replace Default Dashboard with Hải Hà ÔTô Command Center
+// 6. Replace Default Dashboard with Ôtô Hải Hà Command Center
 function hieugara_customize_dashboard_widgets() {
     global $wp_meta_boxes;
 
@@ -199,7 +199,7 @@ function hieugara_customize_dashboard_widgets() {
     // Add our custom Command Center widget
     wp_add_dashboard_widget(
         'hieugara_dashboard_hub',
-        '🚗 TRUNG TÂM ĐIỀU HÀNH GARA Ô TÔ HẢI HÀ (COMMAND CENTER)',
+        '🚗 TRUNG TÂM ĐIỀU HÀNH ÔTÔ HẢI HÀ (COMMAND CENTER)',
         'hieugara_render_dashboard_hub_widget'
     );
 }
@@ -241,7 +241,7 @@ function hieugara_render_dashboard_hub_widget() {
         <div class="hieugara-hub-banner">
             <div class="hieugara-hub-banner-content">
                 <span class="hub-badge">HỆ THỐNG ĐIỀU HÀNH 5.0</span>
-                <h2>GARA Ô TÔ HẢI HÀ SERVICE</h2>
+                <h2>ÔTÔ HẢI HÀ SERVICE</h2>
                 <p>Địa chỉ: Km 53+300 Quốc lộ 5, Phường Cẩm Thượng, TP. Hải Dương | Cứu hộ 24/7 toàn miền Bắc</p>
             </div>
             <div class="hieugara-hub-banner-actions">
@@ -377,7 +377,7 @@ function hieugara_render_dashboard_hub_widget() {
 // 8. Custom Admin Footer
 function hieugara_custom_admin_footer() {
     echo '<span id="footer-thankyou" style="font-weight: 600; color: #475569;">
-        HẢI HÀ ÔTÔ SERVICE — Km 53+300 Quốc lộ 5, TP. Hải Dương | Hotline: <strong>0911 211 996</strong> | Bản quyền © ' . date('Y') . '
+        ÔTÔ HẢI HÀ SERVICE — Km 53+300 Quốc lộ 5, TP. Hải Dương | Hotline: <strong>0911 211 996</strong> | Bản quyền © ' . date('Y') . '
     </span>';
 }
 add_filter('admin_footer_text', 'hieugara_custom_admin_footer');

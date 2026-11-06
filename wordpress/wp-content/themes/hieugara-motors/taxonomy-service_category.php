@@ -2,158 +2,157 @@
 /**
  * Taxonomy Template for Service Categories (Category Hubs)
  * Handles: /dich-vu/bao-duong-o-to/, /dich-vu/sua-chua-o-to/, etc.
+ * Displays full Prestige Automobile service detail content adapted for Ôtô Hải Hà
+ * inside our HieuGara Motors layout.
  *
  * @package HieuGara_Motors
  */
 
 get_header();
 
-$current_term = get_queried_object();
-$term_name = $current_term ? $current_term->name : __('Dịch Vụ Ô Tô', 'hieugara-motors');
-$term_desc = $current_term && !empty($current_term->description) ? $current_term->description : __('Hải Hà ÔTô Service cam kết tính minh bạch 100%: Quy trình kiểm định chuẩn hãng, phụ tùng chính hãng OEM, bảo hành điện tử theo biển số xe.', 'hieugara-motors');
+$current_term  = get_queried_object();
+$term_slug     = $current_term ? $current_term->slug : 'bao-duong-o-to';
+$prestige_data = function_exists('hieugara_get_prestige_service_data') ? hieugara_get_prestige_service_data($term_slug) : array();
+
+$page_title    = !empty($prestige_data['title']) ? $prestige_data['title'] : ($current_term ? $current_term->name : __('Dịch Vụ Ôtô Hải Hà', 'hieugara-motors'));
+$badge         = !empty($prestige_data['badge']) ? $prestige_data['badge'] : __('TIÊU CHUẨN KỸ THUẬT ÔTÔ HẢI HÀ', 'hieugara-motors');
+$thumb         = !empty($prestige_data['img']) ? $prestige_data['img'] : get_template_directory_uri() . '/assets/images/shiftup/slide-2.jpg';
+$price         = !empty($prestige_data['price']) ? $prestige_data['price'] : 'Khảo sát báo giá miễn phí';
+$duration      = !empty($prestige_data['duration']) ? $prestige_data['duration'] : '45 - 90 phút';
+$warranty      = !empty($prestige_data['warranty']) ? $prestige_data['warranty'] : '12 - 24 tháng';
+
 $rescue_phone  = get_option('hieugara_rescue_phone', '0911 211 996');
 $hotline_phone = get_option('hieugara_hotline_phone', '02203 892 207');
 $theme_uri     = get_template_directory_uri();
 ?>
 
 <!-- Category Hero Header Banner -->
-<section class="portal-hero-header category-hub-header">
-    <div class="container">
+<section class="service-single-header" style="background: #0f1115; padding: 50px 0 40px; border-bottom: 3px solid #ff4d24; position: relative;">
+    <div class="container" style="max-width: 1360px; margin: 0 auto; padding: 0 20px;">
         <?php if (class_exists('HieuGara_SEO_Architecture')) : ?>
             <?php HieuGara_SEO_Architecture::render_breadcrumbs(); ?>
         <?php endif; ?>
 
-        <div class="category-hub-badge">
-            <span class="badge-dot"></span>
-            <span><?php _e('TIÊU CHUẨN KỸ THUẬT XƯỞNG HẢI HÀ', 'hieugara-motors'); ?></span>
-        </div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
+            <div style="max-width: 900px;">
+                <div style="display: inline-block; background: #ff4d24; color: #ffffff; font-family: 'Chakra Petch', sans-serif; font-size: 0.75rem; font-weight: 800; padding: 4px 12px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px;">
+                    <?php echo esc_html($badge); ?>
+                </div>
+                <h1 style="font-family: 'Chakra Petch', sans-serif; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; color: #ffffff; margin: 0; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.3;">
+                    <span style="color: #ff4d24;">|</span> <?php echo esc_html($page_title); ?>
+                </h1>
+            </div>
 
-        <h1 class="portal-page-title category-hub-title">
-            <span class="orange-bar">|</span> <?php echo esc_html($term_name); ?>
-        </h1>
-        <p class="portal-page-subtitle category-hub-subtitle">
-            <?php echo esc_html($term_desc); ?>
-        </p>
-
-        <!-- Sibling Categories Navigation Pills -->
-        <div class="category-sibling-pills">
-            <?php
-            $sibling_terms = get_terms(array(
-                'taxonomy'   => 'service_category',
-                'hide_empty' => false,
-                'parent'     => 0,
-                'orderby'    => 'term_id',
-                'order'      => 'ASC'
-            ));
-
-            if (!empty($sibling_terms) && !is_wp_error($sibling_terms)) :
-                foreach ($sibling_terms as $s) :
-                    // Only show the 6 primary categories
-                    $slug = HieuGara_SEO_Architecture::$legacy_map[$s->slug] ?? $s->slug;
-                    $is_active = ($current_term && ($current_term->term_id === $s->term_id || $current_term->slug === $s->slug));
-                    ?>
-                    <a href="<?php echo esc_url(home_url('/dich-vu/' . $slug . '/')); ?>" class="sibling-pill <?php echo $is_active ? 'active' : ''; ?>">
-                        <?php echo esc_html($s->name); ?>
-                    </a>
-                <?php endforeach;
-            endif;
-            ?>
+            <!-- Emergency Contact Badge -->
+            <div style="display: flex; gap: 14px; align-items: center;">
+                <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 77, 36, 0.15); border: 1px solid #ff4d24; color: #ffffff; padding: 10px 18px; font-family: 'Chakra Petch', sans-serif; font-size: 0.85rem; font-weight: 700; text-decoration: none; text-transform: uppercase;">
+                    <i class="fa fa-phone-volume" style="color: #ff4d24;"></i>
+                    <span>CỨU HỘ 24/7: <strong style="color: #ff4d24;"><?php echo esc_html($rescue_phone); ?></strong></span>
+                </a>
+            </div>
         </div>
     </div>
 </section>
 
-<main id="primary" class="site-main category-hub-main" style="padding: 60px 0 90px; background: #0b0d12; min-height: 60vh;">
-    <div class="container">
+<main id="primary" class="site-main" style="padding: 60px 0 90px; background: #fbfbfb;">
+    <div class="container" style="max-width: 1360px; margin: 0 auto; padding: 0 20px;">
 
-        <!-- Grid of Services under this category -->
-        <div class="category-services-grid">
-            <?php
-            if (have_posts()) :
-                $i = 1;
-                while (have_posts()) : the_post();
-                    $price    = get_post_meta(get_the_ID(), '_service_price', true) ?: (get_post_meta(get_the_ID(), '_garage_price_from', true) ?: 'Liên hệ báo giá');
-                    $badge    = get_post_meta(get_the_ID(), '_garage_badge', true) ?: 'TIÊU CHUẨN XƯỞNG';
-                    $duration = get_post_meta(get_the_ID(), '_service_duration', true) ?: '45 - 90 phút';
-                    $warranty = get_post_meta(get_the_ID(), '_service_warranty', true) ?: '12 - 24 tháng';
-                    
-                    $img_pool = array('port-1.jpg', 'port-2.jpg', 'port-3.jpg', 'port-4.jpg', 'pricing-1.jpg', 'pricing-2.jpg', 'pricing-3.jpg');
-                    $picked   = $img_pool[get_the_ID() % count($img_pool)];
-                    $thumb    = has_post_thumbnail() ? get_the_post_thumbnail_url(get_the_ID(), 'garage-service-thumb') : $theme_uri . '/assets/images/shiftup/' . $picked;
+        <div class="service-detail-layout" style="display: grid; grid-template-columns: 2fr 1.15fr; gap: 48px; align-items: flex-start;">
+
+            <!-- Left: Detailed Prestige Automobile Content Adapted for Ôtô Hải Hà -->
+            <article class="service-detail-main" style="background: #ffffff; padding: 40px; border: 1px solid #ebebeb; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
+
+                <!-- Key Service Metrics Bar -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; padding: 22px; background: #0f1115; border-radius: 4px; margin-bottom: 32px; border-left: 4px solid #ff4d24;">
+                    <div>
+                        <small style="color: #999999; font-size: 0.72rem; text-transform: uppercase; font-family: 'Chakra Petch', sans-serif; font-weight: 700; letter-spacing: 0.5px;"><?php _e('Chi phí tham khảo:', 'hieugara-motors'); ?></small>
+                        <div style="font-family: 'Chakra Petch', sans-serif; font-size: 1.05rem; font-weight: 800; color: #ff4d24; margin-top: 4px;"><?php echo esc_html($price); ?></div>
+                    </div>
+                    <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 16px;">
+                        <small style="color: #999999; font-size: 0.72rem; text-transform: uppercase; font-family: 'Chakra Petch', sans-serif; font-weight: 700; letter-spacing: 0.5px;"><?php _e('Thời gian thi công:', 'hieugara-motors'); ?></small>
+                        <div style="font-family: 'Chakra Petch', sans-serif; font-size: 1.05rem; font-weight: 700; color: #ffffff; margin-top: 4px;"><?php echo esc_html($duration); ?></div>
+                    </div>
+                    <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 16px;">
+                        <small style="color: #999999; font-size: 0.72rem; text-transform: uppercase; font-family: 'Chakra Petch', sans-serif; font-weight: 700; letter-spacing: 0.5px;"><?php _e('Chế độ bảo hành:', 'hieugara-motors'); ?></small>
+                        <div style="font-family: 'Chakra Petch', sans-serif; font-size: 1.05rem; font-weight: 700; color: #22c55e; margin-top: 4px;"><?php echo esc_html($warranty); ?></div>
+                    </div>
+                </div>
+
+                <!-- Main Hero Image -->
+                <div style="margin-bottom: 32px; overflow: hidden; background: #000; position: relative; border-radius: 4px;">
+                    <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($page_title); ?>" style="width: 100%; height: auto; max-height: 480px; object-fit: cover; display: block;">
+                </div>
+
+                <!-- Full Prestige Article Body -->
+                <div class="entry-content" style="line-height: 1.85; color: #334155; font-size: 1.02rem;">
+                    <?php
+                    if (!empty($prestige_data['html'])) {
+                        echo $prestige_data['html'];
+                    }
                     ?>
-                    <article class="cat-service-card">
-                        <div class="cat-card-media">
-                            <a href="<?php the_permalink(); ?>">
-                                <img src="<?php echo esc_url($thumb); ?>" alt="<?php the_title_attribute(); ?>" loading="lazy">
-                            </a>
-                            <span class="cat-tech-badge"><?php echo esc_html($badge); ?></span>
-                        </div>
+                </div>
 
-                        <div class="cat-card-body">
-                            <h2 class="cat-service-title">
-                                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                                    <span class="orange-bar">|</span> <?php the_title(); ?>
-                                </a>
-                            </h2>
-
-                            <p class="cat-service-excerpt">
-                                <?php echo wp_trim_words(get_the_excerpt() ?: get_the_content(), 18); ?>
-                            </p>
-
-                            <div class="cat-card-meta">
-                                <span class="meta-item"><i class="fa-regular fa-clock text-orange"></i> <?php echo esc_html($duration); ?></span>
-                                <span class="meta-item"><i class="fa-solid fa-shield-halved text-orange"></i> <?php echo esc_html($warranty); ?></span>
-                            </div>
-
-                            <div class="cat-card-footer">
-                                <div class="cat-price-wrap">
-                                    <span class="price-lbl"><?php _e('Chi phí từ:', 'hieugara-motors'); ?></span>
-                                    <span class="price-val text-orange"><?php echo esc_html($price); ?></span>
-                                </div>
-                                <div class="cat-action-btns">
-                                    <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode(get_the_title()))); ?>" class="cat-book-btn">
-                                        <span class="btn-orange-bar">|</span>
-                                        <span>+ <?php _e('ĐẶT LỊCH', 'hieugara-motors'); ?></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                <?php
-                endwhile;
-                
-                // Pagination
-                the_posts_pagination(array(
-                    'prev_text' => '&larr; ' . __('Trước', 'hieugara-motors'),
-                    'next_text' => __('Tiếp theo', 'hieugara-motors') . ' &rarr;',
-                ));
-            else :
-                ?>
-                <div class="no-services-notice text-center" style="grid-column: 1 / -1; padding: 60px 20px; color: #94a3b8;">
-                    <p><?php _e('Hiện chưa có dịch vụ nào trong nhóm này. Vui lòng liên hệ hotline để được kỹ sư trưởng tư vấn trực tiếp.', 'hieugara-motors'); ?></p>
-                    <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="shiftup-rect-btn btn-dark-view" style="margin-top: 15px;">
-                        <span>GỌI HOTLINE: <?php echo esc_html($rescue_phone); ?></span>
+                <!-- Workshop Guarantee Box -->
+                <div style="margin-top: 36px; padding: 24px; background: #f8fafc; border: 1px dashed #cbd5e1; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+                    <div>
+                        <strong style="font-family: 'Chakra Petch', sans-serif; font-size: 1rem; color: #0f172a; display: block; margin-bottom: 4px;"><?php _e('CẦN TƯ VẤN KỸ THUẬT CHUYÊN SÂU?', 'hieugara-motors'); ?></strong>
+                        <span style="color: #64748b; font-size: 0.9rem;"><?php _e('Đội ngũ cố vấn dịch vụ Ôtô Hải Hà hỗ trợ trực tiếp 24/7 không qua trung gian.', 'hieugara-motors'); ?></span>
+                    </div>
+                    <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="shiftup-rect-btn btn-orange-solid" style="background: #ff4d24; color: #fff; padding: 12px 24px; text-decoration: none; font-family: 'Chakra Petch', sans-serif; font-weight: 700; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px;">
+                        <i class="fa fa-phone"></i> <?php echo esc_html($rescue_phone); ?>
                     </a>
                 </div>
-            <?php endif; ?>
-        </div>
+            </article>
 
-        <!-- Category Hub Bottom Fast Booking Strip -->
-        <div class="category-hub-cta-banner">
-            <div class="cta-banner-content">
-                <span class="cta-eyebrow"><?php _e('CAM KẾT CHẤT LƯỢNG HẢI HÀ ÔTÔ SERVICE', 'hieugara-motors'); ?></span>
-                <h3 class="cta-heading"><?php _e('BÁO ĐÚNG GIÁ • BẮT ĐÚNG BỆNH • BẢO HÀNH ĐIỆN TỬ 24 THÁNG', 'hieugara-motors'); ?></h3>
-                <p class="cta-desc"><?php _e('Đặt lịch trực tuyến ngay để được ưu tiên khoang kỹ thuật và nhận ưu đãi giảm 10% công bảo dưỡng.', 'hieugara-motors'); ?></p>
-            </div>
-            <div class="cta-banner-actions">
-                <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>" class="hero-cta-btn btn-booking">
-                    <span class="btn-orange-strip"></span>
-                    <span>ĐẶT LỊCH HẸN TRỰC TUYẾN</span>
-                </a>
-                <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="hero-cta-btn btn-rescue">
-                    <span class="btn-pulse-dot"></span>
-                    <span>CỨU HỘ: <?php echo esc_html($rescue_phone); ?></span>
-                </a>
-            </div>
+            <!-- Right: Sticky Booking Form -->
+            <aside class="service-sidebar" style="position: sticky; top: 120px;">
+                <div style="background: #ffffff; border: 2px solid #000000; padding: 32px; box-shadow: 0 12px 30px rgba(0,0,0,0.08);">
+                    <div style="border-bottom: 2px solid #ff4d24; padding-bottom: 16px; margin-bottom: 24px;">
+                        <span style="font-family: 'Chakra Petch', sans-serif; font-size: 0.75rem; font-weight: 800; color: #ff4d24; text-transform: uppercase; letter-spacing: 1.5px;"><?php _e('ÔTÔ HẢI HÀ SERVICE', 'hieugara-motors'); ?></span>
+                        <h3 style="font-family: 'Chakra Petch', sans-serif; font-size: 1.35rem; font-weight: 800; color: #000000; text-transform: uppercase; margin: 6px 0 0;"><?php _e('ĐẶT HẸN DỊCH VỤ', 'hieugara-motors'); ?></h3>
+                    </div>
+
+                    <form class="hieugara-ajax-form">
+                        <input type="hidden" name="service_type" value="<?php echo esc_attr($page_title); ?>">
+
+                        <div style="margin-bottom: 16px;">
+                            <label style="display: block; font-family: 'Chakra Petch', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; color: #222;"><?php _e('Họ và tên (*)', 'hieugara-motors'); ?></label>
+                            <input type="text" name="customer_name" required placeholder="VD: Nguyễn Văn A" style="width: 100%; padding: 12px 14px; border: 1px solid #ccc; font-size: 0.95rem; font-family: inherit;">
+                        </div>
+
+                        <div style="margin-bottom: 16px;">
+                            <label style="display: block; font-family: 'Chakra Petch', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; color: #222;"><?php _e('Số điện thoại (*)', 'hieugara-motors'); ?></label>
+                            <input type="tel" name="customer_phone" required placeholder="09xx xxx xxx" style="width: 100%; padding: 12px 14px; border: 1px solid #ccc; font-size: 0.95rem; font-family: inherit;">
+                        </div>
+
+                        <div style="margin-bottom: 16px;">
+                            <label style="display: block; font-family: 'Chakra Petch', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; color: #222;"><?php _e('Dòng xe / Đời xe', 'hieugara-motors'); ?></label>
+                            <input type="text" name="car_model" placeholder="VD: Lexus RX350, Mercedes C200..." style="width: 100%; padding: 12px 14px; border: 1px solid #ccc; font-size: 0.95rem; font-family: inherit;">
+                        </div>
+
+                        <div style="margin-bottom: 24px;">
+                            <label style="display: block; font-family: 'Chakra Petch', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; color: #222;"><?php _e('Xưởng tiếp nhận', 'hieugara-motors'); ?></label>
+                            <select name="branch_location" style="width: 100%; padding: 12px 14px; border: 1px solid #ccc; font-size: 0.95rem; font-family: inherit; background: #fff;">
+                                <option value="Trụ sở chính Ôtô Hải Hà">Trụ sở chính: Ôtô Hải Hà (Hải Dương)</option>
+                                <option value="Tiếp nhận sửa chữa lưu động">Tiếp nhận sửa chữa lưu động tận nơi</option>
+                                <option value="Cứu hộ giao thông 24/7">Cứu hộ kéo xe về xưởng 24/7 (Hotline: <?php echo esc_html($rescue_phone); ?>)</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="shiftup-rect-btn btn-orange-solid" style="width: 100%; padding: 15px; background: #ff4d24; color: #fff; border: none; font-family: 'Chakra Petch', sans-serif; font-size: 0.95rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+                            <span class="btn-orange-bar" style="color: #fff;">|</span> + <?php _e('XÁC NHẬN TIẾP NHẬN XE', 'hieugara-motors'); ?>
+                        </button>
+                        <div class="form-response-msg" style="display:none; margin-top: 12px; font-size: 0.9rem; padding: 10px; text-align: center;"></div>
+                    </form>
+
+                    <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #eee; font-size: 0.82rem; color: #666; line-height: 1.6;">
+                        <p style="margin-bottom: 6px;"><i class="fa fa-check" style="color: #ff4d24;"></i> Kiểm tra tổng quát miễn phí 45 hạng mục.</p>
+                        <p style="margin-bottom: 6px;"><i class="fa fa-check" style="color: #ff4d24;"></i> Báo giá trước minh bạch, khách duyệt mới làm.</p>
+                        <p style="margin-bottom: 0;"><i class="fa fa-check" style="color: #ff4d24;"></i> Bảo hành điện tử tra cứu theo biển số.</p>
+                    </div>
+                </div>
+            </aside>
+
         </div>
 
     </div>
@@ -161,4 +160,3 @@ $theme_uri     = get_template_directory_uri();
 
 <?php
 get_footer();
-

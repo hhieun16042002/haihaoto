@@ -36,6 +36,11 @@ if (!is_admin() && !defined('DOING_CRON')) {
 }
 
 // Global Theme Contact & Option Helpers
+add_action('init', function() {
+    if (get_option('blogname') !== 'Ôtô Hải Hà Service') {
+        update_option('blogname', 'Ôtô Hải Hà Service');
+    }
+});
 function hieugara_rescue_phone() {
     return get_option('hieugara_rescue_phone', '0911 211 996');
 }
@@ -158,6 +163,7 @@ require_once HIEUGARA_THEME_DIR . '/inc/sample-services.php';
 require_once HIEUGARA_THEME_DIR . '/inc/theme-settings.php';
 require_once HIEUGARA_THEME_DIR . '/inc/admin-customizer.php';
 require_once HIEUGARA_THEME_DIR . '/inc/seo-architecture.php';
+require_once HIEUGARA_THEME_DIR . '/inc/prestige-service-content.php';
 
 // 4. Helper Functions
 function hieugara_get_service_features($post_id) {

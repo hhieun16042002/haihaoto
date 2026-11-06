@@ -120,9 +120,9 @@ $pre_plate   = isset($_GET['plate']) ? sanitize_text_field($_GET['plate']) : '';
                                 <h3 class="pane-title"><i class="fa fa-warehouse"></i> <?php _e('Bước 2: Chọn Chi Nhánh Xưởng & Khung Giờ', 'hieugara-motors'); ?></h3>
 
                                 <div class="form-field" style="margin-bottom: 20px;">
-                                    <label class="form-label"><?php _e('Chọn cơ sở xưởng Hải Hà ÔTô tiếp nhận (*)', 'hieugara-motors'); ?></label>
+                                    <label class="form-label"><?php _e('Chọn cơ sở xưởng Ôtô Hải Hà tiếp nhận (*)', 'hieugara-motors'); ?></label>
                                     <select name="branch_location" class="form-control" style="font-weight: 600;">
-                                        <option value="Trụ sở chính Gara Ô tô Hải Hà">Trụ sở chính: Gara Ô tô Hải Hà (Hải Dương &amp; Toàn quốc)</option>
+                                        <option value="Trụ sở chính Ôtô Hải Hà">Trụ sở chính: Ôtô Hải Hà (Hải Dương &amp; Toàn quốc)</option>
                                         <option value="Dịch vụ cứu hộ kéo xe 24/7">Dịch vụ cứu hộ &amp; kéo xe 24/7 (Hotline: 0911 211 996)</option>
                                         <option value="Tiếp nhận sửa chữa lưu động">Tiếp nhận sửa chữa lưu động tại nhà / cơ quan</option>
                                     </select>
@@ -199,7 +199,7 @@ $pre_plate   = isset($_GET['plate']) ? sanitize_text_field($_GET['plate']) : '';
                     <div class="trust-sidebar-card">
                         <div class="trust-card-head">
                             <i class="fa fa-award" style="color: var(--brand-red); font-size: 1.5rem;"></i>
-                            <h4><?php _e('Cam Kết Chất Lượng Hải Hà ÔTô Service', 'hieugara-motors'); ?></h4>
+                            <h4><?php _e('Cam Kết Chất Lượng Ôtô Hải Hà Service', 'hieugara-motors'); ?></h4>
                         </div>
                         <ul class="trust-list">
                             <li>

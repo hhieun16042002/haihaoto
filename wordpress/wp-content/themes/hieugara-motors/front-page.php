@@ -1,6 +1,6 @@
 <?php
 /**
- * Hải Hà ÔTô Service - ShiftUp Flagship Front Page
+ * Ôtô Hải Hà Service - ShiftUp Flagship Front Page
  * Exact 1:1 Architectural Clone from ShiftUp Car Workshop (Qode Interactive)
  * Minimalist White & Obsidian High-Contrast, Motorsport Typography (Chakra Petch & Be Vietnam Pro)
  *
@@ -358,6 +358,148 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
             </div>
 
         </div>
+    </section>
+
+    <!-- =========================================================================
+         MỤC 4C: GALLERY - HÌNH ẢNH ÔTÔ HẢI HÀ (PRESTIGE AUTOMOBILE STYLE)
+         ========================================================================= -->
+    <section class="shiftup-gallery-section" id="hinh-anh-oto-hai-ha">
+        <div class="container">
+            <div class="gallery-sec-head text-center">
+                <h5 class="gallery-eyebrow">GALLERY</h5>
+                <h2 class="gallery-heading-main">
+                    <strong>HÌNH ẢNH <span class="text-orange">ÔTÔ HẢI HÀ</span></strong>
+                </h2>
+                <div class="gallery-heading-divider"></div>
+            </div>
+
+            <?php
+            $gallery_uri = $theme_uri . '/assets/images/gallery';
+            $gallery_items = array(
+                array(
+                    'img'   => $gallery_uri . '/haiha-gallery-1.jpg',
+                    'title' => 'Đội ngũ kỹ thuật viên Ôtô Hải Hà kiểm tra & sửa chữa khoang máy'
+                ),
+                array(
+                    'img'   => $gallery_uri . '/haiha-gallery-2.jpg',
+                    'title' => 'Khu vực đồng sơn & hệ thống Phòng Sơn Cao Cấp 1 - 2 - 3'
+                ),
+                array(
+                    'img'   => $gallery_uri . '/haiha-gallery-6.jpg',
+                    'title' => 'Xe sang Mercedes-Maybach tại Phòng Sơn Sấy Cao Cấp Ôtô Hải Hà'
+                ),
+                array(
+                    'img'   => $gallery_uri . '/haiha-gallery-7.jpg',
+                    'title' => 'Hệ thống cầu nâng & Căn chỉnh độ chụm 3D Hunter cho dòng xe sang'
+                ),
+                array(
+                    'img'   => $gallery_uri . '/haiha-gallery-4.jpg',
+                    'title' => 'Không gian xưởng dịch vụ sửa chữa & bảo dưỡng rộng rãi hiện đại'
+                ),
+                array(
+                    'img'   => $gallery_uri . '/haiha-gallery-5.jpg',
+                    'title' => 'Phòng sơn sấy tiêu chuẩn Châu Âu thi công sơn xe Porsche Panamera'
+                ),
+                array(
+                    'img'   => $gallery_uri . '/haiha-gallery-8.jpg',
+                    'title' => 'Hệ thống sấy hồng ngoại trong phòng sơn khép kín tại Ôtô Hải Hà'
+                ),
+                array(
+                    'img'   => $gallery_uri . '/haiha-gallery-9.jpg',
+                    'title' => 'Căn chỉnh thước lái & góc đặt bánh xe bằng máy Hunter USA'
+                ),
+                array(
+                    'img'   => $gallery_uri . '/haiha-gallery-11.jpg',
+                    'title' => 'Kiểm tra & cân chỉnh độ chụm 3D chính xác từng milimet'
+                ),
+                array(
+                    'img'   => $gallery_uri . '/haiha-gallery-10.jpg',
+                    'title' => 'Hệ thống bệ kiểm tra gầm và căn chỉnh độ chụm công nghệ cao'
+                ),
+                array(
+                    'img'   => $gallery_uri . '/haiha-gallery-3.jpg',
+                    'title' => 'Dịch vụ cứu hộ giao thông sàn trượt 24/7 Ôtô Hải Hà'
+                ),
+            );
+            ?>
+
+            <div class="prestige-gallery-grid">
+                <?php foreach ($gallery_items as $idx => $g) : ?>
+                    <div class="prestige-gallery-col">
+                        <a href="<?php echo esc_url($g['img']); ?>" class="prestige-gallery-box" data-gallery-idx="<?php echo $idx; ?>" title="<?php echo esc_attr($g['title']); ?>">
+                            <div class="prestige-gallery-img-wrap">
+                                <img src="<?php echo esc_url($g['img']); ?>" alt="<?php echo esc_attr($g['title']); ?>" loading="lazy" decoding="async">
+                                <div class="prestige-gallery-overlay">
+                                    <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                                    <span class="gallery-caption-text"><?php echo esc_html($g['title']); ?></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+        <!-- Lightbox Modal for Gallery -->
+        <div class="haiha-gallery-lightbox" id="haihaGalleryLightbox" aria-hidden="true">
+            <button type="button" class="lightbox-close-btn" id="haihaLightboxClose" aria-label="Đóng ảnh">&times;</button>
+            <button type="button" class="lightbox-nav-btn lightbox-prev" id="haihaLightboxPrev" aria-label="Ảnh trước"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="lightbox-Stage">
+                <img src="" alt="" id="haihaLightboxImg">
+                <div class="lightbox-caption" id="haihaLightboxCaption"></div>
+            </div>
+            <button type="button" class="lightbox-nav-btn lightbox-next" id="haihaLightboxNext" aria-label="Ảnh tiếp theo"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var boxes = Array.prototype.slice.call(document.querySelectorAll('.prestige-gallery-box'));
+            var lightbox = document.getElementById('haihaGalleryLightbox');
+            var lbImg = document.getElementById('haihaLightboxImg');
+            var lbCap = document.getElementById('haihaLightboxCaption');
+            var btnClose = document.getElementById('haihaLightboxClose');
+            var btnPrev = document.getElementById('haihaLightboxPrev');
+            var btnNext = document.getElementById('haihaLightboxNext');
+            var currentIdx = 0;
+
+            if (!boxes.length || !lightbox) return;
+
+            function showImage(idx) {
+                currentIdx = (idx + boxes.length) % boxes.length;
+                var target = boxes[currentIdx];
+                lbImg.src = target.getAttribute('href');
+                lbCap.textContent = target.getAttribute('title') || '';
+                lightbox.classList.add('is-open');
+                lightbox.setAttribute('aria-hidden', 'false');
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('is-open');
+                lightbox.setAttribute('aria-hidden', 'true');
+                lbImg.src = '';
+            }
+
+            boxes.forEach(function(box, i) {
+                box.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showImage(i);
+                });
+            });
+
+            btnClose.addEventListener('click', closeLightbox);
+            btnPrev.addEventListener('click', function(e) { e.stopPropagation(); showImage(currentIdx - 1); });
+            btnNext.addEventListener('click', function(e) { e.stopPropagation(); showImage(currentIdx + 1); });
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) closeLightbox();
+            });
+            document.addEventListener('keydown', function(e) {
+                if (!lightbox.classList.contains('is-open')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') showImage(currentIdx - 1);
+                if (e.key === 'ArrowRight') showImage(currentIdx + 1);
+            });
+        });
+        </script>
     </section>
 
     <!-- =========================================================================

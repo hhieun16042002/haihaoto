@@ -13,7 +13,7 @@ $workshops = [
         'id'        => 'gara-hai-ha',
         'city'      => 'hai-duong',
         'city_name' => 'Hải Dương (Trụ Sở Chính)',
-        'name'      => 'Gara Ô Tô Hải Hà (Trung Tâm Dịch Vụ Chính)',
+        'name'      => 'Ôtô Hải Hà (Trung Tâm Dịch Vụ Chính)',
         'address'   => 'Trung tâm chẩn đoán, sửa chữa máy gầm, điều hòa & phòng sơn sấy hấp ô tô Hải Hà',
         'phone'     => '0911.211.996',
         'hotline'   => '02203 892 207',
@@ -120,7 +120,7 @@ $workshops = [
                 <span>/</span>
                 <span class="current"><?php _e('Hệ thống garage gần bạn', 'hieugara-motors'); ?></span>
             </div>
-            <h1 class="portal-page-title"><?php _e('Hệ Thống Xưởng Dịch Vụ Ô Tô Hải Hà ÔTô', 'hieugara-motors'); ?></h1>
+            <h1 class="portal-page-title"><?php _e('Hệ Thống Xưởng Dịch Vụ Ô Tô Ôtô Hải Hà', 'hieugara-motors'); ?></h1>
             <p class="portal-page-subtitle">
                 <?php _e('Mạng lưới cơ sở xưởng dịch vụ phủ rộng tại Hà Nội, TP. Hồ Chí Minh và Đà Nẵng với trang thiết bị đồng bộ, đáp ứng tiêu chuẩn khắt khe nhất của các hãng xe.', 'hieugara-motors'); ?>
             </p>

@@ -1,6 +1,6 @@
 <?php
 /**
- * The header for Hải Hà ÔTô Service
+ * The header for Ôtô Hải Hà Service
  * Exact Navigation matching User's Reference (otohathanh.com style without Tuyển dụng & Đào tạo)
  *
  * @package HieuGara_Motors
@@ -36,10 +36,10 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
         <!-- Logo -->
         <a href="<?php echo esc_url(home_url('/')); ?>" class="brand-link">
             <div class="brand-logo-wrap">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/haiha-logo.png?v=4.6.0'); ?>" alt="Hải Hà ÔTô Service" class="brand-logo-img" width="54" height="54">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/haiha-logo.png?v=4.6.0'); ?>" alt="Ôtô Hải Hà Service" class="brand-logo-img" width="54" height="54">
             </div>
             <div class="brand-text-wrap">
-                <div class="brand-title">HẢI HÀ <span class="text-orange">ÔTÔ</span></div>
+                <div class="brand-title">ÔTÔ <span class="text-orange">HẢI HÀ</span></div>
                 <div class="brand-subtitle"><?php _e('CAR SERVICE & WORKSHOP', 'hieugara-motors'); ?></div>
             </div>
         </a>
@@ -91,9 +91,9 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
     <!-- Mobile Drawer Top Bar -->
     <div class="mobile-drawer-header">
         <div class="drawer-brand">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/haiha-logo.png?v=4.6.0'); ?>" alt="Hải Hà ÔTô" width="40" height="40">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/haiha-logo.png?v=4.6.0'); ?>" alt="Ôtô Hải Hà" width="40" height="40">
             <div class="drawer-brand-text">
-                <span class="drawer-name">HẢI HÀ <strong class="text-orange">ÔTÔ</strong></span>
+                <span class="drawer-name">ÔTÔ <strong class="text-orange">HẢI HÀ</strong></span>
                 <small class="drawer-sub">TRUNG TÂM BẢO DƯỠNG &amp; SỬA CHỮA</small>
             </div>
         </div>
@@ -130,7 +130,7 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                 </a>
                 <ul class="nav-dropdown-menu">
                     <li><a href="<?php echo esc_url(home_url('/ve-chung-toi/')); ?>">Về Chúng Tôi</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/ve-chung-toi/#bao-chi')); ?>">Báo Chí Nói Về Hải Hà ÔTô</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/ve-chung-toi/#bao-chi')); ?>">Báo Chí Nói Về Ôtô Hải Hà</a></li>
                     <li><a href="<?php echo esc_url(home_url('/ve-chung-toi/#su-kien')); ?>">Sự Kiện Hải Hà</a></li>
                     <li><a href="<?php echo esc_url(home_url('/garage-gan-ban/')); ?>">Hệ Thống Chi Nhánh Toàn Quốc</a></li>
                     <li><a href="<?php echo esc_url(home_url('/ve-chung-toi/#tieu-chuan')); ?>">Tiêu Chuẩn &amp; Chứng Nhận Dịch Vụ</a></li>

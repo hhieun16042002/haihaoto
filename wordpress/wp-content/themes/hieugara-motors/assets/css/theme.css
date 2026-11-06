@@ -7357,7 +7357,7 @@ html, body {
 
 
 /* ==========================================================================
-   MEGA MENU DỊCH VỤ - TONE TRẮNG SANG TRỌNG (HẢI HÀ ÔTÔ LUXURY LIGHT STYLE)
+   MEGA MENU DỊCH VỤ - TONE TRẮNG SANG TRỌNG (ÔTÔ HẢI HÀ LUXURY LIGHT STYLE)
    ========================================================================== */
 .has-mega {
     position: static !important;
@@ -8049,5 +8049,257 @@ html, body {
     }
     .acc-nav-btn.acc-next {
         right: -4px;
+    }
+}
+
+/* ==========================================================================
+   GALLERY - HÌNH ẢNH ÔTÔ HẢI HÀ (PRESTIGE AUTOMOBILE STYLE)
+   ========================================================================== */
+.shiftup-gallery-section {
+    padding: 72px 0 84px;
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    position: relative;
+}
+
+.gallery-sec-head {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.gallery-eyebrow {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #ff4d24;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin: 0 0 6px;
+}
+
+.gallery-heading-main {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.35rem);
+    font-weight: 800;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+.gallery-heading-divider {
+    width: 64px;
+    height: 3px;
+    background: #ff4d24;
+    margin: 14px auto 0;
+    border-radius: 2px;
+}
+
+.prestige-gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+}
+
+.prestige-gallery-col {
+    width: calc(25% - 14px);
+}
+
+.prestige-gallery-box {
+    display: block;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #0f172a;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+    text-decoration: none;
+}
+
+.prestige-gallery-img-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+}
+
+.prestige-gallery-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.prestige-gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.82) 0%, rgba(15, 23, 42, 0.15) 55%, rgba(15, 23, 42, 0.05) 100%);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 18px;
+    transition: opacity 0.3s ease;
+}
+
+.prestige-gallery-box:hover .prestige-gallery-img-wrap img {
+    transform: scale(1.08);
+}
+
+.prestige-gallery-box:hover .prestige-gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-zoom-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.85);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: rgba(255, 77, 36, 0.92);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    box-shadow: 0 6px 18px rgba(255, 77, 36, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.prestige-gallery-box:hover .gallery-zoom-icon {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.gallery-caption-text {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.4;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Lightbox Modal */
+.haiha-gallery-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 11, 18, 0.92);
+    backdrop-filter: blur(6px);
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    padding: 24px;
+}
+
+.haiha-gallery-lightbox.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.haiha-gallery-lightbox .lightbox-Stage {
+    max-width: 90vw;
+    max-height: 86vh;
+    text-align: center;
+}
+
+.haiha-gallery-lightbox #haihaLightboxImg {
+    max-width: 100%;
+    max-height: 78vh;
+    border-radius: 6px;
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.6);
+    object-fit: contain;
+}
+
+.haiha-gallery-lightbox .lightbox-caption {
+    margin-top: 14px;
+    color: #f8fafc;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.98rem;
+    font-weight: 600;
+}
+
+.lightbox-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 26px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+}
+
+.lightbox-close-btn:hover {
+    background: #ff4d24;
+    border-color: #ff4d24;
+}
+
+.lightbox-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 1.15rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+}
+
+.lightbox-nav-btn:hover {
+    background: #ff4d24;
+    border-color: #ff4d24;
+}
+
+.lightbox-prev {
+    left: 24px;
+}
+
+.lightbox-next {
+    right: 24px;
+}
+
+@media (max-width: 991px) {
+    .prestige-gallery-col {
+        width: calc(33.333% - 12px);
+    }
+}
+
+@media (max-width: 640px) {
+    .shiftup-gallery-section {
+        padding: 50px 0 60px;
+    }
+    .prestige-gallery-grid {
+        gap: 12px;
+    }
+    .prestige-gallery-col {
+        width: calc(50% - 6px);
+    }
+    .lightbox-prev {
+        left: 10px;
+    }
+    .lightbox-next {
+        right: 10px;
     }
 }

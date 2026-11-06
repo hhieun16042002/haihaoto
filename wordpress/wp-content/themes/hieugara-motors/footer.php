@@ -1,6 +1,6 @@
 <?php
 /**
- * Hải Hà ÔTô - ShiftUp Luxury Workshop Footer
+ * Ôtô Hải Hà - ShiftUp Luxury Workshop Footer
  * Matching ShiftUp Car Workshop Design System
  *
  * @package HieuGara_Motors
@@ -35,22 +35,22 @@ $hotline_clean = preg_replace('/[^0-9]/', '', $hotline_phone);
                 <div class="footer-col col-brand">
                     <div class="footer-brand-wrap">
                         <div class="footer-brand-logo">
-                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/haiha-logo.png?v=4.6.0'); ?>" alt="Gara Ô tô Hải Hà" width="50" height="50">
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/haiha-logo.png?v=4.6.0'); ?>" alt="Ôtô Hải Hà" width="50" height="50">
                         </div>
                         <div class="footer-brand-heading">
-                            <span class="brand-name">GARA Ô TÔ <span class="brand-tag">HẢI HÀ</span></span>
+                            <span class="brand-name">ÔTÔ <span class="brand-tag">HẢI HÀ</span></span>
                             <span class="brand-tagline">TRUNG TÂM BẢO DƯỠNG &amp; SỬA CHỮA Ô TÔ CHUYÊN NGHIỆP</span>
                         </div>
                     </div>
 
                     <p class="footer-brand-desc">
-                        <strong>Hải Hà Ô Tô: 31 năm giữ trọn chữ Tâm với nghề (1995 - <?php echo date('Y'); ?>).</strong> Khởi nguồn từ cái tâm người thợ của nhà sáng lập Nguyễn Hải Hà, ngày nay Hải Hà tự hào sở hữu đội ngũ 80 nhân sự chuyên nghiệp, phục vụ tận tâm trên từng chiếc xe của bạn.
+                        <strong>Ôtô Hải Hà: 31 năm giữ trọn chữ Tâm với nghề (1995 - <?php echo date('Y'); ?>).</strong> Khởi nguồn từ cái tâm người thợ của nhà sáng lập Nguyễn Hải Hà, ngày nay Hải Hà tự hào sở hữu đội ngũ 80 nhân sự chuyên nghiệp, phục vụ tận tâm trên từng chiếc xe của bạn.
                     </p>
 
                     <div class="footer-social-strip" style="margin-bottom: 20px;">
                         <a href="https://www.facebook.com/profile.php?id=100069673756551" target="_blank" rel="noopener" class="footer-fb-btn" style="display: inline-flex; align-items: center; gap: 10px; background: #1877f2; color: #ffffff; padding: 8px 16px; border-radius: 4px; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; text-decoration: none; transition: transform 0.2s, background 0.2s;">
                             <i class="fa-brands fa-facebook-f" style="font-size: 1.05rem;"></i>
-                            <span>Fanpage Hải Hà Ô Tô</span>
+                            <span>Fanpage Ôtô Hải Hà</span>
                             <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem; opacity: 0.8;"></i>
                         </a>
                     </div>
@@ -180,7 +180,7 @@ $hotline_clean = preg_replace('/[^0-9]/', '', $hotline_phone);
                         </li>
                         <li>
                             <a href="<?php echo esc_url(home_url('/garage-gan-ban/')); ?>">
-                                <span>Tìm Đường Đến Gara Hải Hà</span>
+                                <span>Tìm Đường Đến Ôtô Hải Hà</span>
                             </a>
                         </li>
                     </ul>
@@ -203,14 +203,14 @@ $hotline_clean = preg_replace('/[^0-9]/', '', $hotline_phone);
                                 allowfullscreen="" 
                                 loading="lazy" 
                                 referrerpolicy="strict-origin-when-cross-origin"
-                                title="Bản đồ chỉ đường Gara Ô tô Hải Hà">
+                                title="Bản đồ chỉ đường Ôtô Hải Hà">
                             </iframe>
                         </div>
 
                         <div class="map-card-info">
                             <div class="map-badge-wrap">
                                 <span class="map-live-dot"></span>
-                                <strong class="map-loc-title">GARA Ô TÔ HẢI HÀ</strong>
+                                <strong class="map-loc-title">ÔTÔ HẢI HÀ</strong>
                             </div>
                             <p class="map-loc-desc">
                                 Xưởng dịch vụ chẩn đoán kỹ thuật, sửa chữa máy gầm, điều hòa &amp; phòng sơn sấy hấp.
@@ -236,7 +236,7 @@ $hotline_clean = preg_replace('/[^0-9]/', '', $hotline_phone);
     <div class="footer-bottom-bar">
         <div class="container footer-bottom-inner">
             <div class="bottom-copyright">
-                <span class="copy-text">© <?php echo date('Y'); ?> <strong>Gara Ô tô Hải Hà</strong>. Trung tâm bảo dưỡng, sửa chữa &amp; đồng sơn ô tô chuyên nghiệp.</span>
+                <span class="copy-text">© <?php echo date('Y'); ?> <strong>Ôtô Hải Hà</strong>. Trung tâm bảo dưỡng, sửa chữa &amp; đồng sơn ô tô chuyên nghiệp.</span>
             </div>
 
             <div class="bottom-extra-links">
