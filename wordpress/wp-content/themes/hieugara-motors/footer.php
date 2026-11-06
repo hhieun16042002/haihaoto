@@ -26,35 +26,6 @@ $hotline_clean = preg_replace('/[^0-9]/', '', $hotline_phone);
      ========================================================================= -->
 <footer class="shiftup-main-footer" id="shiftupFooter">
 
-    <!-- Pre-Footer Emergency & Action Banner -->
-    <div class="footer-prebar">
-        <div class="container footer-prebar-inner">
-            <div class="prebar-left">
-                <div class="prebar-beacon">
-                    <span class="beacon-pulse"></span>
-                    <span class="beacon-core"></span>
-                </div>
-                <div class="prebar-text">
-                    <span class="prebar-badge">CỨU HỘ 24/7</span>
-                    <span class="prebar-title">TIẾP NHẬN CỨU HỘ GIAO THÔNG, KÉO XE &amp; XỬ LÝ SỰ CỐ TOÀN QUỐC</span>
-                </div>
-            </div>
-            <div class="prebar-right">
-                <a href="tel:<?php echo esc_attr($rescue_clean); ?>" class="prebar-phone-pill" title="Gọi Cứu Hộ 24/7: <?php echo esc_attr($rescue_phone); ?>">
-                    <i class="fa-solid fa-truck-pickup"></i>
-                    <span>CỨU HỘ: <?php echo esc_html($rescue_phone); ?></span>
-                </a>
-                <a href="tel:<?php echo esc_attr($hotline_clean); ?>" class="prebar-phone-pill pill-hotline" title="Hotline Gara: <?php echo esc_attr($hotline_phone); ?>">
-                    <i class="fa-solid fa-phone-volume"></i>
-                    <span>HOTLINE: <?php echo esc_html($hotline_phone); ?></span>
-                </a>
-                <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>" class="shiftup-skew-btn btn-orange-solid prebar-book-btn">
-                    <span class="btn-text">+ ĐẶT LỊCH HẸN</span>
-                </a>
-            </div>
-        </div>
-    </div>
-
     <!-- Main Footer 4 Columns -->
     <div class="footer-main-body">
         <div class="container">

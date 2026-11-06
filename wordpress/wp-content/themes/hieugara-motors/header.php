@@ -67,17 +67,6 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                 </div>
             </a>
 
-            <!-- B. SỐ ĐIỆN THOẠI HOTLINE KỸ THUẬT NỔI BẬT -->
-            <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $hotline_phone)); ?>" class="brand-hotline-box" title="<?php esc_attr_e('Tổng đài tư vấn kỹ thuật & báo giá', 'hieugara-motors'); ?>">
-                <div class="hotline-icon-circle">
-                    <i class="fa-solid fa-phone-volume"></i>
-                </div>
-                <div class="hotline-text">
-                    <small><?php _e('TỔNG ĐÀI KỸ THUẬT', 'hieugara-motors'); ?></small>
-                    <strong class="hotline-phone-display"><?php echo esc_html($hotline_phone); ?></strong>
-                </div>
-            </a>
-
             <!-- C. ĐẶT LỊCH HẸN CTA -->
             <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>" class="brand-btn-book">
                 <span class="btn-plus">+</span>
