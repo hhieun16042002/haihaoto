@@ -569,35 +569,40 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
             <?php
             $pano_banners = array(
                 array(
-                    'title' => __('ĐỒNG SƠN SẤY HẤP', 'hieugara-motors'),
-                    'desc'  => __('Quy trình sơn sấy khép kín công nghệ Châu Âu, bảo hành màu sơn 24 tháng theo biển số.', 'hieugara-motors'),
-                    'img'   => $shiftup_img . '/banner-1.jpg',
-                    'link'  => home_url('/bang-gia/#du-toan-son-xe')
+                    'title'      => __('ĐỒNG SƠN SẤY HẤP', 'hieugara-motors'),
+                    'desc'       => __('Quy trình sơn sấy khép kín công nghệ Châu Âu, bảo hành màu sơn 24 tháng theo biển số.', 'hieugara-motors'),
+                    'img'        => $shiftup_img . '/banner-1.jpg',
+                    'img_mobile' => get_template_directory_uri() . '/assets/images/slider/slide-son-xe.jpg',
+                    'link'       => home_url('/bang-gia/#du-toan-son-xe')
                 ),
                 array(
-                    'title' => __('BẢO DƯỠNG ĐỊNH KỲ', 'hieugara-motors'),
-                    'desc'  => __('Quy trình kiểm tra 45 hạng mục toàn diện, quét lỗi điện tử ECU và thay dầu máy chính hãng.', 'hieugara-motors'),
-                    'img'   => $shiftup_img . '/banner-2.jpg',
-                    'link'  => home_url('/dat-lich/?service=' . urlencode('Bảo Dưỡng Định Kỳ'))
+                    'title'      => __('BẢO DƯỠNG ĐỊNH KỲ', 'hieugara-motors'),
+                    'desc'       => __('Quy trình kiểm tra 45 hạng mục toàn diện, quét lỗi điện tử ECU và thay dầu máy chính hãng.', 'hieugara-motors'),
+                    'img'        => $shiftup_img . '/banner-2.jpg',
+                    'img_mobile' => get_template_directory_uri() . '/assets/images/slider/slide-bao-duong.jpg',
+                    'link'       => home_url('/dat-lich/?service=' . urlencode('Bảo Dưỡng Định Kỳ'))
                 ),
                 array(
-                    'title' => __('CHẨN ĐOÁN MÁY GẦM', 'hieugara-motors'),
-                    'desc'  => __('Xử lý dứt điểm tiếng kêu gầm, căn chỉnh góc đặt bánh xe 3D Hunter triệt tiêu hoàn toàn nhao lái.', 'hieugara-motors'),
-                    'img'   => $shiftup_img . '/banner-3.jpg',
-                    'link'  => home_url('/dat-lich/?service=' . urlencode('Chẩn Đoán Máy Gầm'))
+                    'title'      => __('CHẨN ĐOÁN MÁY GẦM', 'hieugara-motors'),
+                    'desc'       => __('Xử lý dứt điểm tiếng kêu gầm, căn chỉnh góc đặt bánh xe 3D Hunter triệt tiêu hoàn toàn nhao lái.', 'hieugara-motors'),
+                    'img'        => $shiftup_img . '/banner-3.jpg',
+                    'img_mobile' => get_template_directory_uri() . '/assets/images/shiftup/tech-about.jpg',
+                    'link'       => home_url('/dat-lich/?service=' . urlencode('Chẩn Đoán Máy Gầm'))
                 ),
                 array(
-                    'title' => __('CHĂM SÓC XE DETAILING', 'hieugara-motors'),
-                    'desc'  => __('Phủ bóng Ceramic Pro 9H kháng hóa chất, dán phim cách nhiệt 3M Crystalline và dán PPF cao cấp.', 'hieugara-motors'),
-                    'img'   => $shiftup_img . '/banner-4.jpg',
-                    'link'  => home_url('/dat-lich/?service=' . urlencode('Detailing & Dán phim cách nhiệt'))
+                    'title'      => __('CHĂM SÓC XE DETAILING', 'hieugara-motors'),
+                    'desc'       => __('Phủ bóng Ceramic Pro 9H kháng hóa chất, dán phim cách nhiệt 3M Crystalline và dán PPF cao cấp.', 'hieugara-motors'),
+                    'img'        => $shiftup_img . '/banner-4.jpg',
+                    'img_mobile' => get_template_directory_uri() . '/assets/images/slider/slide-detailing.jpg',
+                    'link'       => home_url('/dat-lich/?service=' . urlencode('Detailing & Dán phim cách nhiệt'))
                 )
             );
 
             foreach ($pano_banners as $p) :
             ?>
                 <div class="pano-banner-col">
-                    <div class="pano-bg-img" style="background-image: url('<?php echo esc_url($p['img']); ?>');"></div>
+                    <div class="pano-bg-img pano-bg-desktop" style="background-image: url('<?php echo esc_url($p['img']); ?>');"></div>
+                    <div class="pano-bg-img pano-bg-mobile" style="background-image: url('<?php echo esc_url($p['img_mobile']); ?>');"></div>
                     <div class="pano-base-overlay"></div>
                     <div class="pano-blur-overlay"></div>
                     <a href="<?php echo esc_url($p['link']); ?>" class="pano-full-link" aria-label="<?php echo esc_attr($p['title']); ?>"></a>
