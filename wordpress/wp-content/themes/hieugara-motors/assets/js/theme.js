@@ -145,10 +145,13 @@
 
             $('.lexus-dash-item').on('click', function(e) {
                 e.preventDefault();
-                var targetIdx = parseInt($(this).attr('data-to'), 10);
-                clearInterval(lexusSliderTimer);
-                showLexusSlide(targetIdx);
-                startLexusSlider();
+                var rawIdx = $(this).attr('data-slide-index') !== undefined ? $(this).attr('data-slide-index') : $(this).attr('data-to');
+                var targetIdx = parseInt(rawIdx, 10);
+                if (!isNaN(targetIdx)) {
+                    clearInterval(lexusSliderTimer);
+                    showLexusSlide(targetIdx);
+                    startLexusSlider();
+                }
             });
 
             // Pause on hover
@@ -272,15 +275,51 @@
         // Trigger Hero Slider Entrance on Load
         setTimeout(function() {
             $('#shiftupHero').addClass('hero-appeared');
-        }, 80);
+            $('#lexusHeroSlider').addClass('hero-entered is-inview');
+        }, 60);
 
         // ==========================================================================
         // 2D. FULL-PAGE BIDIRECTIONAL SCROLL ANIMATION SUITE (ShiftUp Interactive)
         // Re-triggers animations seamlessly in BOTH directions (scroll down & scroll up)
         // ==========================================================================
+        function animateMilestoneCounters(sectionEl) {
+            var counters = sectionEl.querySelectorAll('.milestone-stat-card .stat-number');
+            counters.forEach(function(counter) {
+                if (!counter.dataset.targetVal) {
+                    counter.dataset.targetVal = counter.textContent.trim();
+                }
+                var rawTarget = counter.dataset.targetVal;
+                var hasDot = rawTarget.indexOf('.') !== -1;
+                var numericTarget = parseInt(rawTarget.replace(/[^0-9]/g, ''), 10);
+                if (isNaN(numericTarget) || numericTarget <= 0) return;
+
+                var startTime = null;
+                var duration = 1350;
+
+                function step(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    var progress = Math.min((timestamp - startTime) / duration, 1);
+                    // EaseOutExpo curve
+                    var eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+                    var currentVal = Math.round(numericTarget * eased);
+                    if (hasDot) {
+                        counter.textContent = currentVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+                    } else {
+                        counter.textContent = currentVal.toString();
+                    }
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    } else {
+                        counter.textContent = rawTarget;
+                    }
+                }
+                window.requestAnimationFrame(step);
+            });
+        }
+
         var animatedSections = document.querySelectorAll(
-            '.shiftup-tuning-shop-section, .shiftup-technicians-section, ' +
-            '.shiftup-all-about-cars-section, .shiftup-panoramic-banners, ' +
+            '.lexus-banner-slider, .shiftup-tuning-shop-section, .shiftup-technicians-section, ' +
+            '.shiftup-all-about-cars-section, .shiftup-panoramic-banners, .shiftup-gallery-section, ' +
             '.shiftup-flanked-diagnostics, .shiftup-accessories-section, .shiftup-checkup-offers-section, ' +
             '.shiftup-brand-marquee-section, .shiftup-workshops-booking-section, ' +
             '.shiftup-workshops-section, .shiftup-main-footer'
@@ -292,17 +331,27 @@
                 entries.forEach(function(entry) {
                     var target = entry.target;
                     if (entry.isIntersecting) {
+                        var wasInView = target.classList.contains('is-inview');
                         target.classList.add('is-inview');
+                        if (target.classList.contains('lexus-banner-slider')) {
+                            target.classList.add('hero-entered');
+                        }
                         if (target.classList.contains('shiftup-technicians-section')) {
                             target.classList.add('is-appeared');
+                            if (!wasInView) {
+                                animateMilestoneCounters(target);
+                            }
                         }
                     } else {
                         // Crucial: Remove classes when leaving viewport so scrolling BACK UP re-triggers the animations!
                         var rect = target.getBoundingClientRect();
                         var winH = window.innerHeight || document.documentElement.clientHeight;
                         // Reset if element is substantially off-screen (above or below)
-                        if (rect.bottom < -60 || rect.top > winH + 60) {
+                        if (rect.bottom < -40 || rect.top > winH + 40) {
                             target.classList.remove('is-inview');
+                            if (target.classList.contains('lexus-banner-slider')) {
+                                target.classList.remove('hero-entered');
+                            }
                             if (target.classList.contains('shiftup-technicians-section')) {
                                 target.classList.remove('is-appeared');
                             }
@@ -310,13 +359,16 @@
                     }
                 });
             }, {
-                threshold: [0, 0.12, 0.25],
-                rootMargin: '10px 0px -40px 0px'
+                threshold: [0, 0.08, 0.2],
+                rootMargin: '20px 0px -30px 0px'
             });
 
             animatedSections.forEach(function(section) {
                 bidirectionalObserver.observe(section);
             });
+        } else {
+            // Fallback for older browsers without IntersectionObserver
+            $(animatedSections).addClass('is-inview hero-entered is-appeared');
         }
 
         // Secondary fallback and scroll velocity tracking

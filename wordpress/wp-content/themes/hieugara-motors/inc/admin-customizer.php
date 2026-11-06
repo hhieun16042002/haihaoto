@@ -126,12 +126,13 @@ add_action('admin_notices', 'hieugara_admin_customizer_notices');
 function hieugara_reorder_admin_menu($menu_order) {
     return array(
         'index.php',                                    // Bảng điều khiển Hải Hà
+        'hieugara-media-hub',                           // Thư viện ảnh Gara theo nhóm
         'garage-os-bookings',                           // Lịch hẹn khách hàng
         'edit.php?post_type=garage_service',            // Dịch vụ & Bảng giá
         'hieugara-theme-settings',                      // Cài đặt giao diện & Hotline
         'garage-os-warranties',                         // Sổ bảo hành điện tử
         'garage-os-orders',                             // Quản lý đơn sửa chữa
-        'upload.php',                                   // Thư viện ảnh / Media
+        'upload.php',                                   // Kho file Media gốc
         'edit.php?post_type=page',                      // Quản lý các trang
         'edit.php',                                     // Tin tức & Blog
         'users.php',                                    // Người dùng & Thợ
@@ -172,8 +173,11 @@ function hieugara_clean_admin_menu() {
                 case 'garage-os-orders':
                     $menu[$key][0] = '📋 Đơn Sửa Chữa';
                     break;
-                case 'upload.php':
+                case 'hieugara-media-hub':
                     $menu[$key][0] = '🖼️ Thư Viện Ảnh Gara';
+                    break;
+                case 'upload.php':
+                    $menu[$key][0] = '📁 Kho File Media';
                     break;
                 case 'edit.php?post_type=page':
                     $menu[$key][0] = '📄 Quản Lý Trang Web';
@@ -320,6 +324,11 @@ function hieugara_render_dashboard_hub_widget() {
                 <span class="sc-icon dashicons dashicons-shield"></span>
                 <strong>Tra Cứu Sổ Bảo Hành</strong>
                 <small>Kiểm tra lịch sử bảo hành theo biển số xe</small>
+            </a>
+            <a href="<?php echo admin_url('admin.php?page=hieugara-media-hub'); ?>" class="shortcut-box">
+                <span class="sc-icon dashicons dashicons-format-gallery"></span>
+                <strong>Thư Viện Ảnh Gara</strong>
+                <small>Logo, Ảnh Trang Chủ, Gallery & 6 Mảng Dịch Vụ</small>
             </a>
             <a href="<?php echo admin_url('admin.php?page=hieugara-theme-settings#contact'); ?>" class="shortcut-box">
                 <span class="sc-icon dashicons dashicons-admin-settings"></span>

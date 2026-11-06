@@ -3510,10 +3510,6 @@ html, body {
 }
 
 /* --- Section 5: 4 Panoramic Banners --- */
-.pano-banner-col {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-}
 
 /* --- Section 6: Diagnostics Flanked Columns & Center Laser Scanner --- */
 .flanked-side-col:first-child .flanked-diag-item {
@@ -7648,6 +7644,7 @@ html, body {
     }
 }
 
+/* ==========================================================================
    BIDIRECTIONAL SCROLL REVEAL ENTRANCE ANIMATIONS (SMOOTH DOWN & UP)
    ========================================================================== */
 
@@ -8302,4 +8299,282 @@ html, body {
     .lightbox-next {
         right: 10px;
     }
+}
+
+/* ==========================================================================
+   FULL HOMEPAGE ENTRANCE ANIMATION SUITE (60FPS LUXURY MOTION)
+   Covers Hero Slider, Milestone Stats, 4 Panoramic Columns, Gallery,
+   Accessories Slider, Brand Marquee, Footer & Floating Action Dock
+   ========================================================================== */
+
+/* 0. Header & Topbar Initial Entrance */
+@keyframes headerSlideDownIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-22px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.shiftup-topbar {
+    animation: headerSlideDownIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.shiftup-header {
+    animation: headerSlideDownIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
+}
+
+/* 1. Hero Banner Slider (#lexusHeroSlider) Entrance & Slide Transitions */
+.lexus-banner-slider .lexus-slide .lexus-slide-bg {
+    transform: scale(1.12);
+    transition: transform 6.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+}
+.lexus-banner-slider.is-inview .lexus-slide.active .lexus-slide-bg,
+.lexus-banner-slider .lexus-slide.active .lexus-slide-bg {
+    transform: scale(1);
+}
+
+.lexus-banner-slider .lexus-slide .lexus-eyebrow {
+    opacity: 0;
+    transform: translateX(-38px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.12s,
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.12s;
+}
+.lexus-banner-slider .lexus-slide .lexus-slide-title {
+    opacity: 0;
+    transform: translateY(42px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.22s,
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.22s;
+}
+.lexus-banner-slider .lexus-slide .lexus-slide-desc {
+    opacity: 0;
+    transform: translateY(34px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.34s,
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.34s;
+}
+.lexus-banner-slider .lexus-slide .lexus-slide-actions {
+    opacity: 0;
+    transform: translateY(28px) scale(0.95);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.46s,
+                transform 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.46s;
+}
+
+.lexus-banner-slider.hero-entered .lexus-slide.active .lexus-eyebrow,
+.lexus-banner-slider.hero-entered .lexus-slide.active .lexus-slide-title,
+.lexus-banner-slider.hero-entered .lexus-slide.active .lexus-slide-desc,
+.lexus-banner-slider.hero-entered .lexus-slide.active .lexus-slide-actions {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}
+
+.lexus-banner-slider .lexus-dash-item {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.lexus-banner-slider.hero-entered .lexus-dash-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+.lexus-banner-slider.hero-entered .lexus-dash-item:nth-child(1) { transition-delay: 0.25s; }
+.lexus-banner-slider.hero-entered .lexus-dash-item:nth-child(2) { transition-delay: 0.35s; }
+.lexus-banner-slider.hero-entered .lexus-dash-item:nth-child(3) { transition-delay: 0.45s; }
+.lexus-banner-slider.hero-entered .lexus-dash-item:nth-child(4) { transition-delay: 0.55s; }
+
+/* 2. Milestone Stat Cards (31+, 80+, 28+, 35.000+) */
+.shiftup-technicians-section .milestone-stat-card {
+    opacity: 0;
+    transform: translateY(52px) scale(0.93);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+    will-change: transform, opacity;
+}
+.shiftup-technicians-section.is-inview .milestone-stat-card {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(1) { transition-delay: 0.06s; }
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(2) { transition-delay: 0.18s; }
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(3) { transition-delay: 0.30s; }
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(4) { transition-delay: 0.42s; }
+
+.shiftup-technicians-section .milestone-stat-card .stat-divider {
+    width: 0;
+    transition: width 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.35s;
+}
+.shiftup-technicians-section.is-inview .milestone-stat-card .stat-divider {
+    width: 38px;
+}
+
+/* 3. 4 Panoramic Workshop Columns (Sửa chữa, Bảo dưỡng, Đồng sơn, Chăm sóc xe) */
+.shiftup-panoramic-banners .pano-banner-col {
+    opacity: 0;
+    transform: translateY(64px) scale(0.96);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+.shiftup-panoramic-banners.is-inview .pano-banner-col {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(1) { transition-delay: 0.05s; }
+.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(2) { transition-delay: 0.17s; }
+.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(3) { transition-delay: 0.29s; }
+.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(4) { transition-delay: 0.41s; }
+
+.shiftup-panoramic-banners .pano-content-wrap {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(1) .pano-content-wrap { opacity: 1; transform: translateY(0); transition-delay: 0.22s; }
+.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(2) .pano-content-wrap { opacity: 1; transform: translateY(0); transition-delay: 0.34s; }
+.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(3) .pano-content-wrap { opacity: 1; transform: translateY(0); transition-delay: 0.46s; }
+.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(4) .pano-content-wrap { opacity: 1; transform: translateY(0); transition-delay: 0.58s; }
+
+/* 4. Gallery – Hình Ảnh Ôtô Hải Hà (#hinh-anh-oto-hai-ha) */
+.shiftup-gallery-section .gallery-eyebrow {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.shiftup-gallery-section .gallery-heading-main {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.08s,
+                transform 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.08s;
+}
+.shiftup-gallery-section .gallery-heading-divider {
+    width: 0;
+    opacity: 0;
+    transition: width 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.2s,
+                opacity 0.5s ease 0.2s;
+}
+.shiftup-gallery-section.is-inview .gallery-eyebrow,
+.shiftup-gallery-section.is-inview .gallery-heading-main {
+    opacity: 1;
+    transform: translateY(0);
+}
+.shiftup-gallery-section.is-inview .gallery-heading-divider {
+    width: 64px;
+    opacity: 1;
+}
+
+.shiftup-gallery-section .prestige-gallery-col {
+    opacity: 0;
+    transform: translateY(48px) scale(0.91);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+.shiftup-gallery-section.is-inview .prestige-gallery-col {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+.shiftup-gallery-section.is-inview .prestige-gallery-col:nth-child(1)  { transition-delay: 0.05s; }
+.shiftup-gallery-section.is-inview .prestige-gallery-col:nth-child(2)  { transition-delay: 0.11s; }
+.shiftup-gallery-section.is-inview .prestige-gallery-col:nth-child(3)  { transition-delay: 0.17s; }
+.shiftup-gallery-section.is-inview .prestige-gallery-col:nth-child(4)  { transition-delay: 0.23s; }
+.shiftup-gallery-section.is-inview .prestige-gallery-col:nth-child(5)  { transition-delay: 0.29s; }
+.shiftup-gallery-section.is-inview .prestige-gallery-col:nth-child(6)  { transition-delay: 0.35s; }
+.shiftup-gallery-section.is-inview .prestige-gallery-col:nth-child(7)  { transition-delay: 0.41s; }
+.shiftup-gallery-section.is-inview .prestige-gallery-col:nth-child(8)  { transition-delay: 0.47s; }
+.shiftup-gallery-section.is-inview .prestige-gallery-col:nth-child(9)  { transition-delay: 0.53s; }
+.shiftup-gallery-section.is-inview .prestige-gallery-col:nth-child(10) { transition-delay: 0.59s; }
+.shiftup-gallery-section.is-inview .prestige-gallery-col:nth-child(11) { transition-delay: 0.65s; }
+.shiftup-gallery-section.is-inview .prestige-gallery-col:nth-child(12) { transition-delay: 0.71s; }
+
+/* 5. Phụ Kiện Ôtô Chính Hãng (#phu-kien-chinh-hang) */
+.shiftup-accessories-section .accessory-sec-head {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.shiftup-accessories-section.is-inview .accessory-sec-head {
+    opacity: 1;
+    transform: translateY(0);
+}
+.shiftup-accessories-section .tuning-shop-divider {
+    width: 0;
+    transition: width 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.18s;
+}
+.shiftup-accessories-section.is-inview .tuning-shop-divider {
+    width: 64px;
+}
+
+.shiftup-accessories-section .accessory-slider-wrap {
+    opacity: 0;
+    transform: translateY(46px) scale(0.96);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.14s,
+                transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.14s;
+}
+.shiftup-accessories-section.is-inview .accessory-slider-wrap {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* 6. Các Dòng Xe Phục Vụ – Brand Marquee (#dong-xe-phuc-vu) */
+.shiftup-brand-marquee-section .marquee-head {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.shiftup-brand-marquee-section.is-inview .marquee-head {
+    opacity: 1;
+    transform: translateY(0);
+}
+.shiftup-brand-marquee-section .marquee-strip-wrap {
+    opacity: 0;
+    transform: translateY(44px) scale(0.96);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s,
+                transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+}
+.shiftup-brand-marquee-section.is-inview .marquee-strip-wrap {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* 7. Footer 4 Columns & Floating Action Dock */
+.shiftup-main-footer.anim-ready .footer-col {
+    opacity: 0;
+    transform: translateY(42px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.shiftup-main-footer.anim-ready.is-inview .footer-col {
+    opacity: 1;
+    transform: translateY(0);
+}
+.shiftup-main-footer.anim-ready.is-inview .footer-col:nth-child(1) { transition-delay: 0.05s; }
+.shiftup-main-footer.anim-ready.is-inview .footer-col:nth-child(2) { transition-delay: 0.15s; }
+.shiftup-main-footer.anim-ready.is-inview .footer-col:nth-child(3) { transition-delay: 0.25s; }
+.shiftup-main-footer.anim-ready.is-inview .footer-col:nth-child(4) { transition-delay: 0.35s; }
+
+@keyframes dockFloatInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(60px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+.shiftup-floating-dock .float-dock-pill:nth-child(1) {
+    animation: dockFloatInRight 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+}
+.shiftup-floating-dock .float-dock-pill:nth-child(2) {
+    animation: dockFloatInRight 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
 }

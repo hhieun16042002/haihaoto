@@ -428,6 +428,16 @@ function hieugara_get_prestige_service_data($slug) {
         ),
     );
 
-    return isset($data[$key]) ? $data[$key] : $data['bao-duong-o-to'];
+    $res = isset($data[$key]) ? $data[$key] : $data['bao-duong-o-to'];
+    if (function_exists('hieugara_get_service_image')) {
+        $custom_img = hieugara_get_service_image($slug, '');
+        if (empty($custom_img)) {
+            $custom_img = hieugara_get_service_image($key, '');
+        }
+        if (!empty($custom_img)) {
+            $res['img'] = $custom_img;
+        }
+    }
+    return $res;
 }
 

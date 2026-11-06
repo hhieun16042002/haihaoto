@@ -51,8 +51,94 @@ function hieugara_register_theme_settings() {
 
     // Brand Logos Marquee Data (Continuous Ticker)
     register_setting('hieugara_settings_group', 'hieugara_brand_logos');
+
+    // Gallery Images Data (Hình Ảnh Ôtô Hải Hà)
+    register_setting('hieugara_settings_group', 'hieugara_gallery_items');
 }
 add_action('admin_init', 'hieugara_register_theme_settings');
+
+// 3A. Helper to Get Default Gallery Items (Hình Ảnh Ôtô Hải Hà)
+function hieugara_get_default_gallery_items() {
+    $gallery_uri = get_template_directory_uri() . '/assets/images/gallery';
+    return array(
+        1 => array(
+            'enable' => '1',
+            'img'    => $gallery_uri . '/haiha-gallery-1.jpg',
+            'title'  => 'Đội ngũ kỹ thuật viên Ôtô Hải Hà kiểm tra & sửa chữa khoang máy',
+        ),
+        2 => array(
+            'enable' => '1',
+            'img'    => $gallery_uri . '/haiha-gallery-2.jpg',
+            'title'  => 'Khu vực đồng sơn & hệ thống Phòng Sơn Cao Cấp 1 - 2 - 3',
+        ),
+        3 => array(
+            'enable' => '1',
+            'img'    => $gallery_uri . '/haiha-gallery-6.jpg',
+            'title'  => 'Xe sang Mercedes-Maybach tại Phòng Sơn Sấy Cao Cấp Ôtô Hải Hà',
+        ),
+        4 => array(
+            'enable' => '1',
+            'img'    => $gallery_uri . '/haiha-gallery-7.jpg',
+            'title'  => 'Hệ thống cầu nâng & Căn chỉnh độ chụm 3D Hunter cho dòng xe sang',
+        ),
+        5 => array(
+            'enable' => '1',
+            'img'    => $gallery_uri . '/haiha-gallery-4.jpg',
+            'title'  => 'Không gian xưởng dịch vụ sửa chữa & bảo dưỡng rộng rãi hiện đại',
+        ),
+        6 => array(
+            'enable' => '1',
+            'img'    => $gallery_uri . '/haiha-gallery-5.jpg',
+            'title'  => 'Phòng sơn sấy tiêu chuẩn Châu Âu thi công sơn xe Porsche Panamera',
+        ),
+        7 => array(
+            'enable' => '1',
+            'img'    => $gallery_uri . '/haiha-gallery-8.jpg',
+            'title'  => 'Hệ thống sấy hồng ngoại trong phòng sơn khép kín tại Ôtô Hải Hà',
+        ),
+        8 => array(
+            'enable' => '1',
+            'img'    => $gallery_uri . '/haiha-gallery-9.jpg',
+            'title'  => 'Căn chỉnh thước lái & góc đặt bánh xe bằng máy Hunter USA',
+        ),
+        9 => array(
+            'enable' => '1',
+            'img'    => $gallery_uri . '/haiha-gallery-11.jpg',
+            'title'  => 'Kiểm tra & cân chỉnh độ chụm 3D chính xác từng milimet',
+        ),
+        10 => array(
+            'enable' => '1',
+            'img'    => $gallery_uri . '/haiha-gallery-10.jpg',
+            'title'  => 'Hệ thống bệ kiểm tra gầm và căn chỉnh độ chụm công nghệ cao',
+        ),
+        11 => array(
+            'enable' => '1',
+            'img'    => $gallery_uri . '/haiha-gallery-3.jpg',
+            'title'  => 'Dịch vụ cứu hộ giao thông sàn trượt 24/7 Ôtô Hải Hà',
+        ),
+    );
+}
+
+function hieugara_get_gallery_items() {
+    $saved    = get_option('hieugara_gallery_items');
+    $defaults = hieugara_get_default_gallery_items();
+
+    if ($saved === false || !is_array($saved)) {
+        return $defaults;
+    }
+
+    $items = array();
+    foreach ($saved as $k => $item) {
+        if (!empty($item['img']) || !empty($item['title'])) {
+            $items[$k] = array(
+                'enable' => isset($item['enable']) ? '1' : '0',
+                'img'    => esc_url_raw($item['img']),
+                'title'  => sanitize_text_field($item['title']),
+            );
+        }
+    }
+    return $items;
+}
 
 // 3B. Helper to Get Default Brand Logos (12 Luxury Car Brands & Auto Components)
 function hieugara_get_default_brand_logos() {
@@ -288,6 +374,7 @@ function hieugara_render_theme_settings_page() {
 
     $slides = hieugara_get_slides();
     $brands = hieugara_get_brand_logos();
+    $gallery_items = hieugara_get_gallery_items();
     ?>
     <div class="wrap hieugara-admin-wrap">
         <h1 class="hieugara-admin-title">
@@ -688,6 +775,88 @@ function hieugara_render_theme_settings_page() {
                 </div>
             </div>
 
+            <!-- TAB 6: QUẢN LÝ GALLERY - HÌNH ẢNH ÔTÔ HẢI HÀ (THÊM, SỬA, XÓA) -->
+            <div class="hieugara-card" id="hieugara-gallery-card">
+                <div class="card-header" style="display: flex; align-items: center; justify-content: space-between; background: #0f172a; color: #ffffff; border-bottom: 2px solid #ff4d24;">
+                    <h2 style="color: #ffffff; display: flex; align-items: center; gap: 8px; margin: 0; font-size: 1rem;">
+                        <span class="dashicons dashicons-format-gallery" style="color: #ff4d24;"></span>
+                        6. Quản Lý Mục "GALLERY – HÌNH ẢNH ÔTÔ HẢI HÀ" (Thêm, Sửa, Xóa Ảnh Trang Chủ)
+                    </h2>
+                    <span style="font-size: 0.75rem; background: #ff4d24; color: #ffffff; padding: 3px 12px; border-radius: 9999px; font-weight: 800; letter-spacing: 0.5px;">
+                        GALLERY TRANG CHỦ
+                    </span>
+                </div>
+                <div class="card-body" style="padding: 24px;">
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #ff4d24; padding: 14px 18px; border-radius: 4px; margin-bottom: 20px;">
+                        <p style="margin: 0; font-size: 0.88rem; color: #334155; line-height: 1.5;">
+                            Quản lý toàn bộ hình ảnh hiển thị trong mục <strong>GALLERY – HÌNH ẢNH ÔTÔ HẢI HÀ</strong> nằm phía trên mục Phụ kiện ngoài trang chủ. Bạn có thể <strong>Thêm ảnh mới (tải lên từ máy tính/Thư viện Media), sửa chú thích ảnh, bật/tắt hiển thị hoặc xóa</strong> bất kỳ ảnh nào.
+                        </p>
+                    </div>
+
+                    <table class="widefat striped" id="gallery-items-table" style="border: 1px solid #cbd5e1; border-radius: 4px; overflow: hidden; margin-bottom: 18px;">
+                        <thead>
+                            <tr style="background: #f1f5f9;">
+                                <th style="width: 50px; text-align: center; font-weight: 700;">STT</th>
+                                <th style="width: 140px; text-align: center; font-weight: 700;">Ảnh Xem Trước</th>
+                                <th style="font-weight: 700;">Mô Tả / Chú Thích Ảnh (Hiển thị khi rê chuột &amp; phóng to)</th>
+                                <th style="font-weight: 700;">Đường Dẫn Ảnh (URL hoặc Chọn từ Thư Viện Media)</th>
+                                <th style="width: 70px; text-align: center; font-weight: 700;">Hiển thị</th>
+                                <th style="width: 60px; text-align: center; font-weight: 700;">Xóa</th>
+                            </tr>
+                        </thead>
+                        <tbody id="gallery-items-tbody">
+                            <?php
+                            $g_num = 0;
+                            foreach ($gallery_items as $g_key => $g_item) :
+                                $g_num++;
+                                $g_en    = !empty($g_item['enable']) ? '1' : '0';
+                                $g_img   = !empty($g_item['img']) ? $g_item['img'] : '';
+                                $g_title = !empty($g_item['title']) ? $g_item['title'] : '';
+                            ?>
+                            <tr class="gallery-row" data-index="<?php echo esc_attr($g_key); ?>">
+                                <td style="text-align: center; vertical-align: middle; font-weight: 800; color: #64748b;">
+                                    <span class="gallery-row-num"><?php echo $g_num; ?></span>
+                                </td>
+                                <td style="text-align: center; vertical-align: middle;">
+                                    <img src="<?php echo esc_url($g_img); ?>" alt="" class="gallery-img-preview" style="width: 110px; height: 68px; object-fit: cover; border-radius: 6px; border: 1px solid #cbd5e1; display: inline-block; background: #0f172a;">
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    <input type="text" name="hieugara_gallery_items[<?php echo esc_attr($g_key); ?>][title]" value="<?php echo esc_attr($g_title); ?>" class="regular-text" style="width: 100%; font-weight: 600;" placeholder="Nhập mô tả hình ảnh...">
+                                </td>
+                                <td style="vertical-align: middle;">
+                                    <div style="display: flex; gap: 6px; align-items: center;">
+                                        <input type="text" name="hieugara_gallery_items[<?php echo esc_attr($g_key); ?>][img]" value="<?php echo esc_attr($g_img); ?>" class="regular-text gallery-img-field" style="width: 100%; font-size: 0.82rem;" placeholder="https://... hoặc bấm nút chọn ảnh">
+                                        <button type="button" class="button button-secondary gallery-upload-media-btn" title="Chọn hoặc tải ảnh lên từ Thư viện">
+                                            <span class="dashicons dashicons-upload" style="margin-top: 4px;"></span> Chọn ảnh
+                                        </button>
+                                    </div>
+                                </td>
+                                <td style="text-align: center; vertical-align: middle;">
+                                    <input type="checkbox" name="hieugara_gallery_items[<?php echo esc_attr($g_key); ?>][enable]" value="1" <?php checked('1', $g_en); ?>>
+                                </td>
+                                <td style="text-align: center; vertical-align: middle;">
+                                    <button type="button" class="button button-link-delete gallery-remove-row-btn" style="color: #dc2626; cursor: pointer;" title="Xóa hình ảnh này">
+                                        <span class="dashicons dashicons-trash" style="font-size: 18px;"></span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 14px;">
+                        <button type="button" class="button button-primary button-hero" id="btn-add-gallery-item" style="display: inline-flex; align-items: center; gap: 6px; background: #ff4d24; border-color: #ff4d24; font-size: 0.88rem;">
+                            <span class="dashicons dashicons-plus-alt"></span>
+                            <span><?php _e('THÊM HÌNH ẢNH MỚI VÀO GALLERY', 'hieugara-motors'); ?></span>
+                        </button>
+
+                        <span style="font-size: 0.82rem; color: #64748b; font-style: italic;">
+                            <?php _e('* Sau khi thêm, sửa hoặc xóa ảnh, bấm "LƯU TẤT CẢ CÀI ĐẶT" bên dưới để cập nhật ra trang chủ.', 'hieugara-motors'); ?>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
             <!-- Submit Button -->
             <div class="hieugara-submit-bar">
                 <?php submit_button(__('LƯU TẤT CẢ CÀI ĐẶT', 'hieugara-motors'), 'primary large', 'submit', false); ?>
@@ -822,6 +991,86 @@ function hieugara_render_theme_settings_page() {
             $('#brand-logos-tbody').append(newRow);
             $('html, body').animate({
                 scrollTop: $('#brand-logos-tbody tr:last-child').offset().top - 120
+            }, 300);
+        });
+
+        // 7. Gallery Image Media Uploader
+        $(document).on('click', '.gallery-upload-media-btn', function(e) {
+            e.preventDefault();
+            var $btn = $(this);
+            var $row = $btn.closest('tr');
+            var $input = $row.find('.gallery-img-field');
+            var $previewImg = $row.find('.gallery-img-preview');
+
+            var galleryUploader = wp.media({
+                title: 'Chọn Hình Ảnh Gallery Ôtô Hải Hà',
+                button: { text: 'Sử dụng hình ảnh này' },
+                multiple: false
+            }).on('select', function() {
+                var attachment = galleryUploader.state().get('selection').first().toJSON();
+                $input.val(attachment.url);
+                $previewImg.attr('src', attachment.url);
+            }).open();
+        });
+
+        // 8. Live Update Gallery Preview on Input Change
+        $(document).on('input change', '.gallery-img-field', function() {
+            var val = $(this).val();
+            $(this).closest('tr').find('.gallery-img-preview').attr('src', val);
+        });
+
+        // 9. Delete Gallery Row
+        $(document).on('click', '.gallery-remove-row-btn', function(e) {
+            e.preventDefault();
+            if (confirm('Bạn có chắc chắn muốn xóa hình ảnh này khỏi Gallery trang chủ không?')) {
+                $(this).closest('tr').fadeOut(250, function() {
+                    $(this).remove();
+                    $('#gallery-items-tbody tr').each(function(idx) {
+                        $(this).find('.gallery-row-num').text(idx + 1);
+                    });
+                });
+            }
+        });
+
+        // 10. Add New Gallery Row
+        $('#btn-add-gallery-item').on('click', function(e) {
+            e.preventDefault();
+            var newId = 'gal_' + Date.now();
+            var nextNum = $('#gallery-items-tbody tr').length + 1;
+
+            var newGalRow = `
+            <tr class="gallery-row" data-index="${newId}">
+                <td style="text-align: center; vertical-align: middle; font-weight: 800; color: #64748b;">
+                    <span class="gallery-row-num">${nextNum}</span>
+                </td>
+                <td style="text-align: center; vertical-align: middle;">
+                    <img src="" alt="" class="gallery-img-preview" style="width: 110px; height: 68px; object-fit: cover; border-radius: 6px; border: 1px solid #cbd5e1; display: inline-block; background: #0f172a;">
+                </td>
+                <td style="vertical-align: middle;">
+                    <input type="text" name="hieugara_gallery_items[${newId}][title]" value="Hình ảnh xưởng dịch vụ Ôtô Hải Hà" class="regular-text" style="width: 100%; font-weight: 600;" placeholder="Nhập mô tả hình ảnh...">
+                </td>
+                <td style="vertical-align: middle;">
+                    <div style="display: flex; gap: 6px; align-items: center;">
+                        <input type="text" name="hieugara_gallery_items[${newId}][img]" value="" class="regular-text gallery-img-field" style="width: 100%; font-size: 0.82rem;" placeholder="https://... hoặc bấm nút chọn ảnh">
+                        <button type="button" class="button button-secondary gallery-upload-media-btn" title="Chọn hoặc tải ảnh lên từ Thư viện">
+                            <span class="dashicons dashicons-upload" style="margin-top: 4px;"></span> Chọn ảnh
+                        </button>
+                    </div>
+                </td>
+                <td style="text-align: center; vertical-align: middle;">
+                    <input type="checkbox" name="hieugara_gallery_items[${newId}][enable]" value="1" checked>
+                </td>
+                <td style="text-align: center; vertical-align: middle;">
+                    <button type="button" class="button button-link-delete gallery-remove-row-btn" style="color: #dc2626; cursor: pointer;" title="Xóa hình ảnh này">
+                        <span class="dashicons dashicons-trash" style="font-size: 18px;"></span>
+                    </button>
+                </td>
+            </tr>
+            `;
+
+            $('#gallery-items-tbody').append(newGalRow);
+            $('html, body').animate({
+                scrollTop: $('#gallery-items-tbody tr:last-child').offset().top - 120
             }, 300);
         });
     });

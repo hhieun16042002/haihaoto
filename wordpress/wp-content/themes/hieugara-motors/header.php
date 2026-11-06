@@ -10,8 +10,9 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <link rel="icon" type="image/png" href="<?php echo esc_url(get_template_directory_uri() . '/assets/images/haiha-logo.png?v=4.6.0'); ?>">
-    <link rel="apple-touch-icon" href="<?php echo esc_url(get_template_directory_uri() . '/assets/images/haiha-logo.png?v=4.6.0'); ?>">
+    <?php $site_logo_url = function_exists('hieugara_get_site_logo') ? hieugara_get_site_logo() : get_template_directory_uri() . '/assets/images/haiha-logo.png?v=4.6.0'; ?>
+    <link rel="icon" type="image/png" href="<?php echo esc_url($site_logo_url); ?>">
+    <link rel="apple-touch-icon" href="<?php echo esc_url($site_logo_url); ?>">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <?php wp_head(); ?>
 </head>
@@ -36,7 +37,7 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
         <!-- Logo -->
         <a href="<?php echo esc_url(home_url('/')); ?>" class="brand-link">
             <div class="brand-logo-wrap">
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/haiha-logo.png?v=4.6.0'); ?>" alt="Ôtô Hải Hà Service" class="brand-logo-img" width="54" height="54">
+                <img src="<?php echo esc_url($site_logo_url); ?>" alt="Ôtô Hải Hà Service" class="brand-logo-img" width="54" height="54">
             </div>
             <div class="brand-text-wrap">
                 <div class="brand-title">ÔTÔ <span class="text-orange">HẢI HÀ</span></div>
@@ -91,7 +92,7 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
     <!-- Mobile Drawer Top Bar -->
     <div class="mobile-drawer-header">
         <div class="drawer-brand">
-            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/haiha-logo.png?v=4.6.0'); ?>" alt="Ôtô Hải Hà" width="40" height="40">
+            <img src="<?php echo esc_url($site_logo_url); ?>" alt="Ôtô Hải Hà" width="40" height="40">
             <div class="drawer-brand-text">
                 <span class="drawer-name">ÔTÔ <strong class="text-orange">HẢI HÀ</strong></span>
                 <small class="drawer-sub">TRUNG TÂM BẢO DƯỠNG &amp; SỬA CHỮA</small>

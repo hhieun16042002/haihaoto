@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('HIEUGARA_THEME_VERSION', '5.2.0');
+define('HIEUGARA_THEME_VERSION', '5.3.0');
 define('HIEUGARA_THEME_DIR', get_template_directory());
 define('HIEUGARA_THEME_URI', get_template_directory_uri());
 
@@ -164,6 +164,7 @@ require_once HIEUGARA_THEME_DIR . '/inc/theme-settings.php';
 require_once HIEUGARA_THEME_DIR . '/inc/admin-customizer.php';
 require_once HIEUGARA_THEME_DIR . '/inc/seo-architecture.php';
 require_once HIEUGARA_THEME_DIR . '/inc/prestige-service-content.php';
+require_once HIEUGARA_THEME_DIR . '/inc/media-hub.php';
 
 // 4. Helper Functions
 function hieugara_get_service_features($post_id) {

@@ -167,37 +167,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
         <div class="pano-banners-grid">
 
             <?php
-            $pano_banners = array(
-                array(
-                    'title'      => __('SỬA CHỮA Ô TÔ', 'hieugara-motors'),
-                    'desc'       => __('Sửa chữa động cơ, hệ thống điện, máy gầm, hệ thống lái, hệ thống chiếu sáng…', 'hieugara-motors'),
-                    'img'        => $shiftup_img . '/banner-1.jpg',
-                    'img_mobile' => get_template_directory_uri() . '/assets/images/shiftup/tech-about.jpg',
-                    'link'       => home_url('/dich-vu/sua-chua-o-to/')
-                ),
-                array(
-                    'title'      => __('BẢO DƯỠNG ĐỊNH KỲ', 'hieugara-motors'),
-                    'desc'       => __('Thay nhớt, kiểm tra tổng quát, vệ sinh lọc gió, kim phun…', 'hieugara-motors'),
-                    'img'        => $shiftup_img . '/banner-2.jpg',
-                    'img_mobile' => $shiftup_img . '/slide-2.jpg',
-                    'link'       => home_url('/dich-vu/bao-duong-o-to/')
-                ),
-                array(
-                    'title'      => __('THÂN VỎ ĐỒNG SƠN', 'hieugara-motors'),
-                    'desc'       => __('Phục hồi hình dạng, sơn dặm, sơn toàn bộ xe với chất lượng bảo hành trọn đời', 'hieugara-motors'),
-                    'img'        => $shiftup_img . '/banner-3.jpg',
-                    'img_mobile' => get_template_directory_uri() . '/assets/images/slider/slide-son-xe.jpg',
-                    'link'       => home_url('/dich-vu/dong-son-o-to/')
-                ),
-                array(
-                    'title'      => __('CHĂM SÓC XE', 'hieugara-motors'),
-                    'desc'       => __('Vệ sinh nội thất, rửa xe chăm sóc ngoại thất, dán phim cách nhiệt, dán decal đổi màu xe...', 'hieugara-motors'),
-                    'img'        => $shiftup_img . '/banner-4.jpg',
-                    'img_mobile' => get_template_directory_uri() . '/assets/images/slider/slide-detailing.jpg',
-                    'link'       => home_url('/dich-vu/cham-soc-nang-cap-o-to/')
-                )
-            );
-
+            $pano_banners = function_exists('hieugara_get_pano_banners') ? hieugara_get_pano_banners() : array();
             foreach ($pano_banners as $p) :
             ?>
                 <div class="pano-banner-col">
@@ -232,136 +202,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
     </section>
 
     <!-- =========================================================================
-         MỤC 4B: PHỤ KIỆN ÔTÔ CHÍNH HÃNG (HÀ THÀNH GARAGE STYLE)
-         ========================================================================= -->
-    <section class="shiftup-accessories-section index-accessory" id="phu-kien-chinh-hang">
-        <div class="container">
-            
-            <div class="accessory-sec-head text-center">
-                <h2 class="accessory-heading-main">
-                    <span>PHỤ KIỆN ÔTÔ</span> <span class="text-orange">CHÍNH HÃNG</span>
-                </h2>
-                <div class="tuning-shop-divider"></div>
-            </div>
-
-            <?php
-            $acc_img_uri = $theme_uri . '/assets/images/accessories';
-            $accessories = array(
-                array(
-                    'title'     => 'Màn hình Zestech Z500 Chính Hãng',
-                    'img'       => $acc_img_uri . '/zestech-z500.jpg',
-                    'price'     => '8.500.000',
-                    'old_price' => '9.500.000',
-                    'badge'     => 'BÁN CHẠY',
-                    'link'      => home_url('/bang-gia/#phu-kien')
-                ),
-                array(
-                    'title'     => 'Màn Hình Android Elliview U4 Basic [3GB/32GB]',
-                    'img'       => $acc_img_uri . '/elliview-u4.jpg',
-                    'price'     => '6.800.000',
-                    'old_price' => '7.800.000',
-                    'badge'     => 'CHÍNH HÃNG',
-                    'link'      => home_url('/bang-gia/#phu-kien')
-                ),
-                array(
-                    'title'     => 'Màn Hình Android Elliview S4 Basic [3GB/32GB + Camera 360]',
-                    'img'       => $acc_img_uri . '/elliview-s4.jpg',
-                    'price'     => '12.800.000',
-                    'old_price' => '14.500.000',
-                    'badge'     => 'TẶNG CAM 360',
-                    'link'      => home_url('/bang-gia/#phu-kien')
-                ),
-                array(
-                    'title'     => 'Cam hành trình VIETMAP C61 Pro Ghi Hình 4K',
-                    'img'       => $acc_img_uri . '/vietmap-c61-pro.jpg',
-                    'price'     => '3.190.000',
-                    'old_price' => '3.600.000',
-                    'badge'     => 'VIETMAP',
-                    'link'      => home_url('/bang-gia/#phu-kien')
-                ),
-                array(
-                    'title'     => 'Cảm biến áp suất lốp "Zin" ELLISAFE i5 cho Mercedes-Benz',
-                    'img'       => $acc_img_uri . '/ellisafe-i5.jpg',
-                    'price'     => '4.500.000',
-                    'old_price' => '5.200.000',
-                    'badge'     => 'THEO XE MERCEDES',
-                    'link'      => home_url('/bang-gia/#phu-kien')
-                ),
-                array(
-                    'title'     => 'Camera hành trình Vietmap C65 Cảnh Báo Giao Thông',
-                    'img'       => $acc_img_uri . '/vietmap-c65.jpg',
-                    'price'     => '4.290.000',
-                    'old_price' => '4.790.000',
-                    'badge'     => 'VIETMAP',
-                    'link'      => home_url('/bang-gia/#phu-kien')
-                ),
-                array(
-                    'title'     => 'Cảm Biến Áp Suất Lốp Ellisafe J3 Cho Màn Hình DVD Nguyên Bản',
-                    'img'       => $acc_img_uri . '/ellisafe-j3.jpg',
-                    'price'     => '2.800.000',
-                    'old_price' => '3.200.000',
-                    'badge'     => 'CẮM ZIN 100%',
-                    'link'      => home_url('/bang-gia/#phu-kien')
-                ),
-                array(
-                    'title'     => 'Camera Hành Trình Trước & Sau Vietmap C62S',
-                    'img'       => $acc_img_uri . '/vietmap-c62s.jpg',
-                    'price'     => '3.590.000',
-                    'old_price' => '3.990.000',
-                    'badge'     => 'GHI HÌNH KÉP',
-                    'link'      => home_url('/bang-gia/#phu-kien')
-                ),
-            );
-            ?>
-
-            <div class="accessory-slider-wrap">
-                <button class="acc-nav-btn acc-prev" id="allCarsPrevBtn" aria-label="Trước">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-
-                <div class="swiper all-about-swiper" id="allCarsTrack">
-                    <div class="swiper-wrapper">
-                        <?php foreach ($accessories as $acc) : ?>
-                            <div class="swiper-slide">
-                                <article class="accessory-item">
-                                    <a href="<?php echo esc_url($acc['link']); ?>" title="<?php echo esc_attr($acc['title']); ?>" class="accessory-img-box">
-                                        <?php if (!empty($acc['badge'])) : ?>
-                                            <span class="accessory-badge"><?php echo esc_html($acc['badge']); ?></span>
-                                        <?php endif; ?>
-                                        <img src="<?php echo esc_url($acc['img']); ?>" alt="<?php echo esc_attr($acc['title']); ?>" loading="lazy">
-                                    </a>
-                                    <h3 class="accessory-title">
-                                        <a href="<?php echo esc_url($acc['link']); ?>" title="<?php echo esc_attr($acc['title']); ?>">
-                                            <?php echo esc_html($acc['title']); ?>
-                                        </a>
-                                    </h3>
-                                    <div class="accessory-price">
-                                        <span class="price-current"><?php echo esc_html($acc['price']); ?> <sup>đ</sup></span>
-                                        <?php if (!empty($acc['old_price'])) : ?>
-                                            <span class="price-old"><?php echo esc_html($acc['old_price']); ?> <sup>đ</sup></span>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="accessory-action">
-                                        <a href="<?php echo esc_url($acc['link']); ?>" title="<?php echo esc_attr($acc['title']); ?>" class="btn-accessory-detail">
-                                            Chi tiết
-                                        </a>
-                                    </div>
-                                </article>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-
-                <button class="acc-nav-btn acc-next" id="allCarsNextBtn" aria-label="Tiếp theo">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- =========================================================================
-         MỤC 4C: GALLERY - HÌNH ẢNH ÔTÔ HẢI HÀ (PRESTIGE AUTOMOBILE STYLE)
+         MỤC 4B: GALLERY - HÌNH ẢNH ÔTÔ HẢI HÀ (PRESTIGE AUTOMOBILE STYLE)
          ========================================================================= -->
     <section class="shiftup-gallery-section" id="hinh-anh-oto-hai-ha">
         <div class="container">
@@ -374,53 +215,15 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
             </div>
 
             <?php
-            $gallery_uri = $theme_uri . '/assets/images/gallery';
-            $gallery_items = array(
-                array(
-                    'img'   => $gallery_uri . '/haiha-gallery-1.jpg',
-                    'title' => 'Đội ngũ kỹ thuật viên Ôtô Hải Hà kiểm tra & sửa chữa khoang máy'
-                ),
-                array(
-                    'img'   => $gallery_uri . '/haiha-gallery-2.jpg',
-                    'title' => 'Khu vực đồng sơn & hệ thống Phòng Sơn Cao Cấp 1 - 2 - 3'
-                ),
-                array(
-                    'img'   => $gallery_uri . '/haiha-gallery-6.jpg',
-                    'title' => 'Xe sang Mercedes-Maybach tại Phòng Sơn Sấy Cao Cấp Ôtô Hải Hà'
-                ),
-                array(
-                    'img'   => $gallery_uri . '/haiha-gallery-7.jpg',
-                    'title' => 'Hệ thống cầu nâng & Căn chỉnh độ chụm 3D Hunter cho dòng xe sang'
-                ),
-                array(
-                    'img'   => $gallery_uri . '/haiha-gallery-4.jpg',
-                    'title' => 'Không gian xưởng dịch vụ sửa chữa & bảo dưỡng rộng rãi hiện đại'
-                ),
-                array(
-                    'img'   => $gallery_uri . '/haiha-gallery-5.jpg',
-                    'title' => 'Phòng sơn sấy tiêu chuẩn Châu Âu thi công sơn xe Porsche Panamera'
-                ),
-                array(
-                    'img'   => $gallery_uri . '/haiha-gallery-8.jpg',
-                    'title' => 'Hệ thống sấy hồng ngoại trong phòng sơn khép kín tại Ôtô Hải Hà'
-                ),
-                array(
-                    'img'   => $gallery_uri . '/haiha-gallery-9.jpg',
-                    'title' => 'Căn chỉnh thước lái & góc đặt bánh xe bằng máy Hunter USA'
-                ),
-                array(
-                    'img'   => $gallery_uri . '/haiha-gallery-11.jpg',
-                    'title' => 'Kiểm tra & cân chỉnh độ chụm 3D chính xác từng milimet'
-                ),
-                array(
-                    'img'   => $gallery_uri . '/haiha-gallery-10.jpg',
-                    'title' => 'Hệ thống bệ kiểm tra gầm và căn chỉnh độ chụm công nghệ cao'
-                ),
-                array(
-                    'img'   => $gallery_uri . '/haiha-gallery-3.jpg',
-                    'title' => 'Dịch vụ cứu hộ giao thông sàn trượt 24/7 Ôtô Hải Hà'
-                ),
-            );
+            $raw_gallery = function_exists('hieugara_get_gallery_items') ? hieugara_get_gallery_items() : array();
+            $gallery_items = array();
+            if (!empty($raw_gallery)) {
+                foreach ($raw_gallery as $g_item) {
+                    if (!empty($g_item['enable']) && !empty($g_item['img'])) {
+                        $gallery_items[] = $g_item;
+                    }
+                }
+            }
             ?>
 
             <div class="prestige-gallery-grid">
@@ -500,6 +303,75 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
             });
         });
         </script>
+    </section>
+
+    <!-- =========================================================================
+         MỤC 4C: PHỤ KIỆN ÔTÔ CHÍNH HÃNG (HÀ THÀNH GARAGE STYLE)
+         ========================================================================= -->
+    <section class="shiftup-accessories-section index-accessory" id="phu-kien-chinh-hang">
+        <div class="container">
+            
+            <div class="accessory-sec-head text-center">
+                <h2 class="accessory-heading-main">
+                    <span>PHỤ KIỆN ÔTÔ</span> <span class="text-orange">CHÍNH HÃNG</span>
+                </h2>
+                <div class="tuning-shop-divider"></div>
+            </div>
+
+            <?php
+            $raw_accessories = function_exists('hieugara_get_accessories_items') ? hieugara_get_accessories_items() : array();
+            $accessories = array();
+            foreach ($raw_accessories as $a_it) {
+                if (!empty($a_it['enable'])) {
+                    $accessories[] = $a_it;
+                }
+            }
+            ?>
+
+            <div class="accessory-slider-wrap">
+                <button class="acc-nav-btn acc-prev" id="allCarsPrevBtn" aria-label="Trước">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div class="swiper all-about-swiper" id="allCarsTrack">
+                    <div class="swiper-wrapper">
+                        <?php foreach ($accessories as $acc) : ?>
+                            <div class="swiper-slide">
+                                <article class="accessory-item">
+                                    <a href="<?php echo esc_url($acc['link']); ?>" title="<?php echo esc_attr($acc['title']); ?>" class="accessory-img-box">
+                                        <?php if (!empty($acc['badge'])) : ?>
+                                            <span class="accessory-badge"><?php echo esc_html($acc['badge']); ?></span>
+                                        <?php endif; ?>
+                                        <img src="<?php echo esc_url($acc['img']); ?>" alt="<?php echo esc_attr($acc['title']); ?>" loading="lazy">
+                                    </a>
+                                    <h3 class="accessory-title">
+                                        <a href="<?php echo esc_url($acc['link']); ?>" title="<?php echo esc_attr($acc['title']); ?>">
+                                            <?php echo esc_html($acc['title']); ?>
+                                        </a>
+                                    </h3>
+                                    <div class="accessory-price">
+                                        <span class="price-current"><?php echo esc_html($acc['price']); ?> <sup>đ</sup></span>
+                                        <?php if (!empty($acc['old_price'])) : ?>
+                                            <span class="price-old"><?php echo esc_html($acc['old_price']); ?> <sup>đ</sup></span>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="accessory-action">
+                                        <a href="<?php echo esc_url($acc['link']); ?>" title="<?php echo esc_attr($acc['title']); ?>" class="btn-accessory-detail">
+                                            Chi tiết
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+
+                <button class="acc-nav-btn acc-next" id="allCarsNextBtn" aria-label="Tiếp theo">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+
+        </div>
     </section>
 
     <!-- =========================================================================
