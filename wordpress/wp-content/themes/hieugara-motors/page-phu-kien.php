@@ -126,7 +126,7 @@ $initial_cat = isset($_GET['cat']) ? sanitize_key($_GET['cat']) : 'all';
                 <?php foreach ($accessories as $item) : 
                     $cat = $item['cat'] ?? 'noi-that';
                     $title = $item['title'];
-                    $img = $item['img'];
+                    $img = function_exists('hieugara_normalize_local_media_urls') ? hieugara_normalize_local_media_urls($item['img']) : $item['img'];
                     $price = $item['price'];
                     $old_price = !empty($item['old_price']) ? $item['old_price'] : '';
                     $badge = !empty($item['badge']) ? $item['badge'] : 'CHÍNH HÃNG';

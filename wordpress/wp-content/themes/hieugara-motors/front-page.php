@@ -361,7 +361,10 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                                         <?php if (!empty($acc['badge'])) : ?>
                                             <span class="accessory-badge"><?php echo esc_html($acc['badge']); ?></span>
                                         <?php endif; ?>
-                                        <img src="<?php echo esc_url($acc['img']); ?>" alt="<?php echo esc_attr($acc['title']); ?>" loading="lazy">
+                                        <?php 
+                                            $acc_img = function_exists('hieugara_normalize_local_media_urls') ? hieugara_normalize_local_media_urls($acc['img']) : $acc['img'];
+                                        ?>
+                                        <img src="<?php echo esc_url($acc_img); ?>" alt="<?php echo esc_attr($acc['title']); ?>" loading="lazy">
                                     </a>
                                     <h3 class="accessory-title">
                                         <a href="<?php echo esc_url($acc['link']); ?>" title="<?php echo esc_attr($acc['title']); ?>">

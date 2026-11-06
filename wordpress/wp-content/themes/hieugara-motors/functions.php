@@ -235,6 +235,30 @@ function hieugara_init_accessories_system() {
 }
 add_action('init', 'hieugara_init_accessories_system', 20);
 
+// 5d. Universal Dynamic Image URL Translation (Localhost + Tunnel + Public Domain)
+function hieugara_normalize_local_media_urls($content) {
+    if (empty($content) || !is_string($content)) {
+        return $content;
+    }
+    $current_host = $_SERVER['HTTP_X_FORWARDED_HOST'] ?? ($_SERVER['HTTP_HOST'] ?? 'localhost:8080');
+    $is_https = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ||
+                (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https');
+    $current_origin = ($is_https ? 'https' : 'http') . '://' . $current_host;
+
+    $patterns = array(
+        'http://localhost:8080',
+        'http://127.0.0.1:8080',
+        'https://localhost:8080',
+    );
+    $content = str_replace($patterns, $current_origin, $content);
+    $content = preg_replace('/https?:\/\/[a-z0-9\-]+\.trycloudflare\.com/i', $current_origin, $content);
+
+    return $content;
+}
+add_filter('the_content', 'hieugara_normalize_local_media_urls', 99);
+add_filter('post_thumbnail_html', 'hieugara_normalize_local_media_urls', 99);
+add_filter('wp_get_attachment_url', 'hieugara_normalize_local_media_urls', 99);
+
 // 6. SEO Search Optimization: Include Services, Accessories, Posts & Pages in Frontend Search
 function hieugara_seo_search_query($query) {
     if (!is_admin() && $query->is_main_query() && $query->is_search()) {

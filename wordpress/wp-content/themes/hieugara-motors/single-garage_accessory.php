@@ -27,6 +27,9 @@ while (have_posts()) : the_post();
     if (!$thumb) {
         $thumb = get_post_meta($post_id, '_accessory_img', true) ?: get_template_directory_uri() . '/assets/images/shiftup/center-car.jpg';
     }
+    if (function_exists('hieugara_normalize_local_media_urls')) {
+        $thumb = hieugara_normalize_local_media_urls($thumb);
+    }
 
     $cat_terms = get_the_terms($post_id, 'accessory_category');
     $cat_name  = (!empty($cat_terms) && !is_wp_error($cat_terms)) ? $cat_terms[0]->name : 'Phụ Kiện Ô Tô';
@@ -63,8 +66,25 @@ while (have_posts()) : the_post();
                         <?php if (!empty($badge)) : ?>
                             <span class="acc-badge-pill"><?php echo esc_html($badge); ?></span>
                         <?php endif; ?>
-                        <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($title); ?>" class="acc-featured-img">
+                        <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($title); ?>" class="acc-featured-img" id="accMainFeaturedImg">
                     </div>
+
+                    <!-- Interactive Thumbnails -->
+                    <?php 
+                    $gallery = get_post_meta($post_id, '_accessory_gallery', true);
+                    if (!empty($gallery) && is_array($gallery) && count($gallery) > 1) :
+                        if (function_exists('hieugara_normalize_local_media_urls')) {
+                            $gallery = array_map('hieugara_normalize_local_media_urls', $gallery);
+                        }
+                    ?>
+                    <div class="acc-gallery-thumbs" id="accGalleryThumbs">
+                        <?php foreach ($gallery as $g_idx => $g_img) : ?>
+                            <button type="button" class="acc-thumb-btn <?php echo $g_idx === 0 ? 'active' : ''; ?>" data-src="<?php echo esc_url($g_img); ?>" aria-label="Xem ảnh <?php echo $g_idx + 1; ?>">
+                                <img src="<?php echo esc_url($g_img); ?>" alt="Ảnh thumbnail <?php echo $g_idx + 1; ?>">
+                            </button>
+                        <?php endforeach; ?>
+                    </div>
+                    <?php endif; ?>
 
                     <!-- Trust Bar Under Image -->
                     <div class="acc-trust-strip">
@@ -296,6 +316,31 @@ while (have_posts()) : the_post();
 
 </main>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var thumbBtns = document.querySelectorAll('#accGalleryThumbs .acc-thumb-btn');
+    var mainImg = document.getElementById('accMainFeaturedImg');
+    if (thumbBtns.length && mainImg) {
+        thumbBtns.forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                thumbBtns.forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                var newSrc = btn.getAttribute('data-src');
+                if (newSrc) {
+                    mainImg.style.opacity = '0.5';
+                    mainImg.src = newSrc;
+                    mainImg.onload = function() {
+                        mainImg.style.opacity = '1';
+                    };
+                }
+            });
+        });
+    }
+});
+</script>
+
 <?php
 endwhile;
 get_footer();
+
