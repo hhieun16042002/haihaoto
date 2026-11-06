@@ -21,7 +21,8 @@ if (!defined('ABSPATH')) {
  * Get Site Logo URL (Header, Mobile Drawer, Footer, Favicon)
  */
 function hieugara_get_site_logo() {
-    $default = get_template_directory_uri() . '/assets/images/haiha-logo.png?v=4.6.0';
+    $version = defined('HIEUGARA_THEME_VERSION') ? HIEUGARA_THEME_VERSION : '5.7.4';
+    $default = get_template_directory_uri() . '/assets/images/haiha-logo.png?v=' . $version;
     $saved   = get_option('hieugara_site_logo', '');
     return !empty($saved) ? $saved : $default;
 }

@@ -35,7 +35,7 @@ $hotline_clean = preg_replace('/[^0-9]/', '', $hotline_phone);
                 <div class="footer-col col-brand">
                     <div class="footer-brand-wrap">
                         <div class="footer-brand-logo">
-                            <?php $footer_logo_url = function_exists('hieugara_get_site_logo') ? hieugara_get_site_logo() : get_template_directory_uri() . '/assets/images/haiha-logo.png?v=4.6.0'; ?>
+                            <?php $footer_logo_url = function_exists('hieugara_get_site_logo') ? hieugara_get_site_logo() : get_template_directory_uri() . '/assets/images/haiha-logo.png?v=' . HIEUGARA_THEME_VERSION; ?>
                             <img src="<?php echo esc_url($footer_logo_url); ?>" alt="Ôtô Hải Hà" width="54" height="54">
                         </div>
                         <div class="footer-brand-heading">

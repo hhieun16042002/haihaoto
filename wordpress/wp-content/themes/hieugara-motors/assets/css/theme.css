@@ -1146,7 +1146,8 @@ html, body {
     display: block !important;
     position: absolute !important;
     inset: 0 !important;
-    background: linear-gradient(90deg, rgba(20, 20, 20, 0.88) 0%, rgba(20, 20, 20, 0.55) 45%, rgba(20, 20, 20, 0.12) 80%, rgba(20, 20, 20, 0.30) 100%), linear-gradient(to top, rgba(20, 20, 20, 0.88) 0%, transparent 35%) !important;
+    background: radial-gradient(ellipse at center, rgba(20, 20, 20, 0.55) 0%, rgba(20, 20, 20, 0.78) 70%, rgba(20, 20, 20, 0.92) 100%),
+                linear-gradient(to top, rgba(20, 20, 20, 0.90) 0%, transparent 35%) !important;
     z-index: 2;
     pointer-events: none;
 }
@@ -1155,22 +1156,30 @@ html, body {
     position: relative !important;
     height: 100% !important;
     display: flex !important;
-    align-items: flex-end !important;
-    max-width: 1360px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    max-width: 1100px !important;
     margin: 0 auto !important;
-    padding: 0 75px 105px !important;
+    padding: 0 40px 48px !important;
     background: transparent !important;
     z-index: 3;
 }
 
 .lexus-slide-content {
-    max-width: 700px;
+    max-width: 860px;
     color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .lexus-eyebrow {
     display: inline-flex !important;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.82rem;
@@ -1178,7 +1187,7 @@ html, body {
     letter-spacing: 2.5px;
     color: #C5A880;
     text-transform: uppercase;
-    margin-bottom: 14px;
+    margin: 0 auto 14px auto;
     opacity: 0;
     transform: translateY(15px);
 }
@@ -1196,13 +1205,14 @@ html, body {
 
 .lexus-slide-title {
     font-family: 'Chakra Petch', sans-serif;
-    font-size: clamp(2.2rem, 4.2vw, 3.6rem);
+    font-size: clamp(2.3rem, 4.2vw, 3.8rem);
     font-weight: 700;
     line-height: 1.15;
     color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin: 0 0 16px 0;
+    text-align: center;
+    margin: 0 auto 16px auto;
     text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
     opacity: 0;
     transform: translateY(22px);
@@ -1214,12 +1224,13 @@ html, body {
 
 .lexus-slide-desc {
     font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 1.02rem;
+    font-size: 1.05rem;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.65;
     color: rgba(255, 255, 255, 0.92);
-    margin: 0 0 26px 0;
-    max-width: 640px;
+    text-align: center;
+    margin: 0 auto 26px auto;
+    max-width: 720px;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
     opacity: 0;
     transform: translateY(22px);
@@ -1232,8 +1243,10 @@ html, body {
 .lexus-slide-actions {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 16px;
     flex-wrap: wrap;
+    margin: 0 auto;
     opacity: 0;
     transform: translateY(22px);
 }
@@ -3122,7 +3135,8 @@ html, body {
     }
     .drawer-brand img {
         border-radius: 50%;
-        background: #222222;
+        background: transparent;
+        object-fit: contain;
     }
     .drawer-name {
         font-family: 'Chakra Petch', sans-serif;
@@ -3361,10 +3375,10 @@ html, body {
         padding-bottom: 72px !important;
     }
 
-    /* Ductri226 Full-Bleed Cinematic Hero Slider for Mobile */
+    /* Lexus Full-Bleed Cinematic Hero Slider for Mobile */
     .lexus-banner-slider {
-        height: 480px !important;
-        min-height: 440px !important;
+        height: 520px !important;
+        min-height: 480px !important;
         max-height: none !important;
         background: #141414;
     }
@@ -3380,85 +3394,105 @@ html, body {
         display: block !important;
         position: absolute !important;
         inset: 0 !important;
-        background: linear-gradient(180deg, rgba(20, 20, 20, 0.25) 0%, rgba(20, 20, 20, 0.65) 45%, rgba(20, 20, 20, 0.92) 100%) !important;
+        background: linear-gradient(180deg, rgba(20, 20, 20, 0.2) 0%, rgba(20, 20, 20, 0.45) 35%, rgba(20, 20, 20, 0.88) 75%, #141414 100%) !important;
         z-index: 2;
     }
     .lexus-slide-container {
         position: relative !important;
         height: 100% !important;
         display: flex !important;
-        align-items: flex-end !important;
+        flex-direction: column !important;
+        justify-content: flex-end !important;
+        align-items: flex-start !important;
+        text-align: left !important;
         width: 100% !important;
         max-width: 100% !important;
         background: transparent !important;
-        padding: 0 16px 56px !important;
+        padding: 0 20px 60px !important;
         z-index: 3;
+    }
+    .lexus-slide-content {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
     }
     .lexus-eyebrow {
         display: inline-flex !important;
-        align-items: center;
-        gap: 6px;
-        font-family: 'Chakra Petch', sans-serif;
-        font-size: 0.72rem;
-        font-weight: 600;
-        letter-spacing: 2px;
-        color: #C5A880;
-        text-transform: uppercase;
-        margin-bottom: 8px;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 8px !important;
+        font-family: 'Chakra Petch', sans-serif !important;
+        font-size: 0.72rem !important;
+        font-weight: 600 !important;
+        letter-spacing: 2px !important;
+        color: #C5A880 !important;
+        text-transform: uppercase !important;
+        margin: 0 0 8px 0 !important;
     }
     .lexus-gold-bar {
-        width: 16px;
-        height: 2px;
-        background: #C5A880;
-        display: inline-block;
+        width: 18px !important;
+        height: 2px !important;
+        background: #C5A880 !important;
+        display: inline-block !important;
     }
     .lexus-slide-title {
-        font-family: 'Chakra Petch', sans-serif;
-        font-size: 1.55rem;
-        font-weight: 700;
-        letter-spacing: 1.5px;
-        line-height: 1.2;
-        margin-bottom: 8px;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
-        color: #ffffff;
+        font-family: 'Chakra Petch', sans-serif !important;
+        font-size: 1.65rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 1.5px !important;
+        line-height: 1.2 !important;
+        text-align: left !important;
+        margin: 0 0 8px 0 !important;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9) !important;
+        color: #ffffff !important;
     }
     .lexus-slide-desc {
-        font-family: 'Be Vietnam Pro', sans-serif;
-        font-size: 0.85rem;
-        font-weight: 400;
-        line-height: 1.45;
-        color: rgba(255, 255, 255, 0.92);
-        margin-bottom: 14px;
-        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+        font-family: 'Be Vietnam Pro', sans-serif !important;
+        font-size: 0.85rem !important;
+        font-weight: 400 !important;
+        line-height: 1.45 !important;
+        color: rgba(255, 255, 255, 0.90) !important;
+        text-align: left !important;
+        margin: 0 0 16px 0 !important;
+        max-width: 100% !important;
+        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8) !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
     }
     .lexus-slide-actions {
         display: flex !important;
         opacity: 1 !important;
         visibility: visible !important;
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin: 0 !important;
     }
     .lexus-outline-btn {
-        width: auto;
+        width: auto !important;
         display: inline-flex !important;
-        justify-content: center;
-        text-align: center;
-        padding: 10px 24px;
-        font-family: 'Chakra Petch', sans-serif;
-        font-size: 0.8rem;
-        font-weight: 700;
-        letter-spacing: 1.5px;
-        border: 1.5px solid #C5A880 !important;
-        background: rgba(197, 168, 128, 0.15) !important;
-        color: #C5A880 !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        padding: 10px 24px !important;
+        font-family: 'Chakra Petch', sans-serif !important;
+        font-size: 0.82rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 1.5px !important;
+        text-transform: uppercase !important;
+        border: 1px solid #C5A880 !important;
+        background: #C5A880 !important;
+        color: #141414 !important;
+        border-radius: 4px !important;
     }
     .lexus-outline-btn span {
-        color: #C5A880 !important;
+        color: #141414 !important;
     }
     .lexus-nav-arrow {
         display: none;
@@ -9513,13 +9547,13 @@ html, body {
     }
 
     .navbar-brand-img {
-        width: 42px;
-        height: 42px;
+        width: 44px;
+        height: 44px;
         border-radius: 50%;
         object-fit: contain;
-        background: #ffffff;
-        padding: 2px;
-        border: 1.5px solid #C5A880;
+        background: transparent;
+        padding: 0;
+        border: none;
         flex-shrink: 0;
     }
 

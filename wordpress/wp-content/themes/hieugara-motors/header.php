@@ -10,7 +10,7 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <?php $site_logo_url = function_exists('hieugara_get_site_logo') ? hieugara_get_site_logo() : get_template_directory_uri() . '/assets/images/haiha-logo.png?v=4.6.0'; ?>
+    <?php $site_logo_url = function_exists('hieugara_get_site_logo') ? hieugara_get_site_logo() : get_template_directory_uri() . '/assets/images/haiha-logo.png?v=' . HIEUGARA_THEME_VERSION; ?>
     <link rel="icon" type="image/png" href="<?php echo esc_url($site_logo_url); ?>">
     <link rel="apple-touch-icon" href="<?php echo esc_url($site_logo_url); ?>">
     <link rel="profile" href="https://gmpg.org/xfn/11">
@@ -396,7 +396,7 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
         </ul>
         <?php endif; ?>
 
-        <!-- Right: Cứu Hộ 24/7 + Đặt Lịch + Tìm Kiếm Chuẩn SEO ở Cuối Cùng -->
+        <!-- Right: Cứu Hộ 24/7 + Tìm Kiếm Chuẩn SEO ở Cuối Cùng -->
         <div class="navbar-inline-actions">
             <!-- 1. Cứu hộ 24/7 (Khẩn cấp #D92D20) -->
             <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="navbar-rescue-btn" title="Gọi cứu hộ ô tô 24/7 khẩn cấp: <?php echo esc_attr($rescue_phone); ?>">
@@ -408,13 +408,7 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                 </span>
             </a>
 
-            <!-- 2. Đặt lịch hẹn (Màu nhấn #F5A300, chữ đen #141414) -->
-            <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>" class="navbar-book-btn" title="Đặt lịch bảo dưỡng &amp; sửa chữa trực tuyến">
-                <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
-                <span><?php _e('ĐẶT LỊCH', 'hieugara-motors'); ?></span>
-            </a>
-
-            <!-- 3. Tìm kiếm chuẩn SEO ở cuối cùng -->
+            <!-- 2. Tìm kiếm chuẩn SEO ở cuối cùng -->
             <?php if ($menu_search === '1' || $menu_search === true || $menu_search === 'yes') : ?>
             <div class="seo-search-wrap">
                 <form class="menu-search-pill" role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>" aria-label="Tìm kiếm dịch vụ và phụ tùng ô tô">
