@@ -342,22 +342,24 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
             </li>
 
             <!-- 4. PHỤ KIỆN ⌵ -->
-            <li class="nav-item has-dropdown">
-                <a href="<?php echo esc_url(home_url('/bang-gia/#phu-tung')); ?>" class="nav-link" title="PHỤ KIỆN">
+            <li class="nav-item has-dropdown <?php echo is_page('phu-kien') ? 'active' : ''; ?>">
+                <a href="<?php echo esc_url(home_url('/phu-kien/')); ?>" class="nav-link" title="PHỤ KIỆN Ô TÔ CHÍNH HÃNG">
                     <span><?php _e('PHỤ KIỆN', 'hieugara-motors'); ?></span>
                     <i class="fa-solid fa-chevron-down nav-caret"></i>
                 </a>
                 <ul class="nav-dropdown-menu nav-dropdown-grid-2col">
-                    <li><a href="<?php echo esc_url(home_url('/bang-gia/#phu-kien')); ?>">Màn Hình Android Ô Tô</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/bang-gia/#phu-kien')); ?>">Camera Hành Trình Trước &amp; Sau</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/bang-gia/#phu-kien')); ?>">Phim Cách Nhiệt Ô Tô Chính Hãng</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/bang-gia/#phu-kien')); ?>">Cảm Biến Áp Suất Lốp (TPMS)</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/bang-gia/#phu-kien')); ?>">Dán PPF Bảo Vệ Sơn Xe</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/bang-gia/#phu-kien')); ?>">Cửa Hít Tự Động Ô Tô</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/bang-gia/#phu-kien')); ?>">Cốp Điện Ô Tô Thông Minh</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/bang-gia/#phu-kien')); ?>">Độ Đèn Tăng Sáng Bi-LED/Laser</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/bang-gia/#phu-kien')); ?>">Bọc Vô Lăng &amp; Thảm Lót Sàn 6D</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/bang-gia/#dau-nhot')); ?>">Dầu Nhớt &amp; Phụ Gia Cao Cấp</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/phu-kien/')); ?>"><strong class="text-gold">★ Xem Tất Cả Phụ Kiện (16+)</strong></a></li>
+                    <li><a href="<?php echo esc_url(home_url('/phu-kien/?cat=man-hinh')); ?>">Màn Hình Android Zestech &amp; Elliview</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/phu-kien/?cat=man-hinh')); ?>">Camera Hành Trình 70mai 4K Omni</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/phu-kien/?cat=bom-lop')); ?>">Cảm Biến Áp Suất Lốp TPMS Steelmate</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/phu-kien/?cat=bom-lop')); ?>">Máy Bơm Lốp Tự Ngắt Michelin</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/phu-kien/?cat=cuu-ho')); ?>">Bộ Kích Nổ Ắc Quy Stanley 12V</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/phu-kien/?cat=cuu-ho')); ?>">Máy Hút Bụi Cầm Tay Bosch HEPA</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/phu-kien/?cat=noi-that')); ?>">Tẩu Sạc 65W &amp; Giá Đỡ Baseus</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/phu-kien/?cat=noi-that')); ?>">Máy Lọc Không Khí Ô Tô Philips</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/phu-kien/?cat=noi-that')); ?>">Bạt Phủ Cách Nhiệt &amp; Gối Tựa Lưng</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/phu-kien/?cat=noi-that')); ?>">Bọc Vô Lăng Da &amp; Nước Hoa Xe</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/phu-kien/?cat=cuu-ho')); ?>">Búa Thoát Hiểm SOS &amp; Dung Dịch 3M</a></li>
                 </ul>
             </li>
 

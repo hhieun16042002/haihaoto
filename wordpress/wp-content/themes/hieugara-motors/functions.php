@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('HIEUGARA_THEME_VERSION', '5.7.6');
+define('HIEUGARA_THEME_VERSION', '5.7.7');
 define('HIEUGARA_THEME_DIR', get_template_directory());
 define('HIEUGARA_THEME_URI', get_template_directory_uri());
 
@@ -199,6 +199,27 @@ function hieugara_purge_page_cache() {
 }
 add_action('save_post', 'hieugara_purge_page_cache');
 add_action('after_switch_theme', 'hieugara_purge_page_cache');
+add_action('updated_option', 'hieugara_purge_page_cache');
+
+// 5b. Auto-create 'phu-kien' page if not exists
+function hieugara_ensure_phu_kien_page() {
+    if (!get_option('hieugara_phu_kien_page_init_v2')) {
+        $existing = get_page_by_path('phu-kien');
+        if (!$existing) {
+            wp_insert_post(array(
+                'post_title'     => 'Phụ Kiện Ô Tô Chính Hãng',
+                'post_name'      => 'phu-kien',
+                'post_status'    => 'publish',
+                'post_type'      => 'page',
+                'page_template'  => 'page-phu-kien.php',
+                'comment_status' => 'closed',
+            ));
+        }
+        update_option('hieugara_phu_kien_page_init_v2', 1);
+        hieugara_purge_page_cache();
+    }
+}
+add_action('init', 'hieugara_ensure_phu_kien_page');
 
 // 6. SEO Search Optimization: Include Services, Posts & Pages in Frontend Search
 function hieugara_seo_search_query($query) {

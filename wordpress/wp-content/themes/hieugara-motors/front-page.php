@@ -327,6 +327,9 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                     <span>PHỤ KIỆN ÔTÔ</span> <span class="text-black">CHÍNH HÃNG</span>
                 </h2>
                 <div class="tuning-shop-divider"></div>
+                <p class="accessory-sec-sub">
+                    100% Phụ kiện chính hãng META.vn &bull; Zestech &bull; Michelin &bull; Steelmate &bull; Bosch &bull; Philips &bull; Hỗ trợ lắp đặt tại xưởng Hải Hà
+                </p>
             </div>
 
             <?php
@@ -370,8 +373,11 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                                         <?php endif; ?>
                                     </div>
                                     <div class="accessory-action">
-                                        <a href="<?php echo esc_url($acc['link']); ?>" title="<?php echo esc_attr($acc['title']); ?>" class="btn-accessory-detail">
+                                        <a href="<?php echo esc_url($acc['link']); ?>" title="<?php echo esc_attr($acc['title']); ?>" class="btn-accessory-detail" target="_blank" rel="noopener">
                                             Chi tiết
+                                        </a>
+                                        <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode('Lắp đặt ' . $acc['title']))); ?>" class="btn-accessory-install" title="Đặt lịch lắp đặt phụ kiện này">
+                                            Lắp đặt
                                         </a>
                                     </div>
                                 </article>
@@ -383,6 +389,14 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                 <button class="acc-nav-btn acc-next" id="allCarsNextBtn" aria-label="Tiếp theo">
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
+            </div>
+
+            <!-- CTA View All Accessories Button -->
+            <div class="accessory-bottom-cta text-center">
+                <a href="<?php echo esc_url(home_url('/phu-kien/')); ?>" class="btn-accessory-view-all">
+                    <span>XEM TOÀN BỘ 16+ PHỤ KIỆN CHÍNH HÃNG</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
             </div>
 
         </div>

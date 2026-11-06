@@ -50,7 +50,15 @@ if (!is_dir($cache_dir)) {
 
 $cache_key  = md5($req_path);
 $cache_file = $cache_dir . '/' . $cache_key . '.html';
-$cache_ttl  = 86400; // 24 hours
+$cache_ttl  = 3600; // 1 hour
+
+// Bypass cache if ?nocache=1 or ?purge=1
+if (isset($_GET['nocache']) || isset($_GET['purge'])) {
+    if (file_exists($cache_file)) {
+        @unlink($cache_file);
+    }
+    return;
+}
 
 // 6. Serve Cache HIT with Dynamic Origin Translation (Instant < 10ms response)
 if (file_exists($cache_file) && (time() - filemtime($cache_file) < $cache_ttl)) {
