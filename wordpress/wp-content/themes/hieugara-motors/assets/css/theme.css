@@ -8386,31 +8386,122 @@ html, body {
 .lexus-banner-slider.hero-entered .lexus-dash-item:nth-child(3) { transition-delay: 0.45s; }
 .lexus-banner-slider.hero-entered .lexus-dash-item:nth-child(4) { transition-delay: 0.55s; }
 
-/* 2. Milestone Stat Cards (31+, 80+, 28+, 35.000+) */
+/* 2. Milestone Stat Cards (31+, 80+, 28+, 35.000+) - Full 3D Cascade & Interactive Glow */
+.shiftup-technicians-section {
+    perspective: 1100px;
+}
+
 .shiftup-technicians-section .milestone-stat-card {
+    position: relative;
+    overflow: hidden;
     opacity: 0;
-    transform: translateY(52px) scale(0.93);
-    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-                box-shadow 0.3s ease,
-                border-color 0.3s ease;
+    transform: translateY(72px) scale(0.86) rotateX(16deg);
+    transform-origin: center bottom;
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
     will-change: transform, opacity;
 }
+
+/* Glossy diagonal light sheen on entrance & hover */
+.shiftup-technicians-section .milestone-stat-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 65%;
+    height: 100%;
+    background: linear-gradient(
+        115deg,
+        transparent 0%,
+        rgba(255, 77, 36, 0.08) 45%,
+        rgba(255, 255, 255, 0.65) 50%,
+        rgba(255, 77, 36, 0.08) 55%,
+        transparent 100%
+    );
+    transform: skewX(-20deg);
+    transition: left 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+}
+
 .shiftup-technicians-section.is-inview .milestone-stat-card {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0) scale(1) rotateX(0deg);
 }
-.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(1) { transition-delay: 0.06s; }
+
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(1) { transition-delay: 0.05s; }
 .shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(2) { transition-delay: 0.18s; }
-.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(3) { transition-delay: 0.30s; }
-.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(4) { transition-delay: 0.42s; }
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(3) { transition-delay: 0.31s; }
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(4) { transition-delay: 0.44s; }
+
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(1)::after { left: 140%; transition-delay: 0.35s; }
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(2)::after { left: 140%; transition-delay: 0.48s; }
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(3)::after { left: 140%; transition-delay: 0.61s; }
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(4)::after { left: 140%; transition-delay: 0.74s; }
+
+/* Inner elements cascade inside each Milestone Card */
+.shiftup-technicians-section .milestone-stat-card .stat-number-wrap {
+    opacity: 0;
+    transform: translateY(22px) scale(0.88);
+    transform-origin: left center;
+    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(1) .stat-number-wrap { opacity: 1; transform: translateY(0) scale(1); transition-delay: 0.14s; }
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(2) .stat-number-wrap { opacity: 1; transform: translateY(0) scale(1); transition-delay: 0.27s; }
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(3) .stat-number-wrap { opacity: 1; transform: translateY(0) scale(1); transition-delay: 0.40s; }
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(4) .stat-number-wrap { opacity: 1; transform: translateY(0) scale(1); transition-delay: 0.53s; }
+
+@keyframes statPlusBouncePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.18); text-shadow: 0 0 12px rgba(255, 77, 36, 0.45); }
+}
+.shiftup-technicians-section.is-inview .milestone-stat-card .stat-plus {
+    display: inline-block;
+    animation: statPlusBouncePulse 2.2s ease-in-out infinite;
+}
 
 .shiftup-technicians-section .milestone-stat-card .stat-divider {
     width: 0;
-    transition: width 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.35s;
+    height: 3px;
+    background: linear-gradient(90deg, #ff4d24 0%, #ff8552 100%);
+    transition: width 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.32s;
 }
 .shiftup-technicians-section.is-inview .milestone-stat-card .stat-divider {
-    width: 38px;
+    width: 46px;
+}
+
+.shiftup-technicians-section .milestone-stat-card .stat-title,
+.shiftup-technicians-section .milestone-stat-card .stat-desc {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(1) .stat-title { opacity: 1; transform: translateY(0); transition-delay: 0.22s; }
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(1) .stat-desc  { opacity: 1; transform: translateY(0); transition-delay: 0.30s; }
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(2) .stat-title { opacity: 1; transform: translateY(0); transition-delay: 0.35s; }
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(2) .stat-desc  { opacity: 1; transform: translateY(0); transition-delay: 0.43s; }
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(3) .stat-title { opacity: 1; transform: translateY(0); transition-delay: 0.48s; }
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(3) .stat-desc  { opacity: 1; transform: translateY(0); transition-delay: 0.56s; }
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(4) .stat-title { opacity: 1; transform: translateY(0); transition-delay: 0.61s; }
+.shiftup-technicians-section.is-inview .milestone-stat-card:nth-child(4) .stat-desc  { opacity: 1; transform: translateY(0); transition-delay: 0.69s; }
+
+/* Hover Effect on Milestone Cards */
+.shiftup-technicians-section.is-inview .milestone-stat-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: #ff4d24;
+    box-shadow: 0 20px 42px rgba(255, 77, 36, 0.16), 0 6px 16px rgba(15, 23, 42, 0.06);
+    transition-delay: 0s !important;
+}
+.shiftup-technicians-section.is-inview .milestone-stat-card:hover .stat-number {
+    color: #ff4d24;
+    transition: color 0.25s ease;
+}
+.shiftup-technicians-section.is-inview .milestone-stat-card:hover .stat-divider {
+    width: 78px;
+    transition-delay: 0s;
 }
 
 /* 3. 4 Panoramic Workshop Columns (Sửa chữa, Bảo dưỡng, Đồng sơn, Chăm sóc xe) */
@@ -8577,4 +8668,284 @@ html, body {
 }
 .shiftup-floating-dock .float-dock-pill:nth-child(2) {
     animation: dockFloatInRight 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
+}
+
+/* ==========================================================================
+   VỀ ÔTÔ HẢI HÀ & SỨ MỆNH (LIGHT LUXURY & SIGNATURE ORANGE SPLIT SECTION)
+   ========================================================================== */
+.kobac-about-mission-section {
+    position: relative;
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 50%, #f8fafc 100%);
+    color: #334155;
+    padding: 85px 0 95px;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.kobac-bg-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(rgba(15, 23, 42, 0.05) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 12% 35%, rgba(255, 77, 36, 0.05) 0%, transparent 45%);
+    background-size: 28px 28px, 100% 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.kobac-about-mission-section > .container {
+    position: relative;
+    z-index: 2;
+}
+
+.kobac-split-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+}
+
+.kobac-row-about {
+    margin-bottom: 85px;
+}
+
+.kobac-heading {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: clamp(2.1rem, 3.6vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.25;
+    color: #0f172a;
+    margin: 0 0 22px 0;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.kobac-heading::after {
+    content: '';
+    display: block;
+    width: 68px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff4d24 0%, #ff7a59 100%);
+    border-radius: 2px;
+    margin-top: 12px;
+}
+
+.kobac-prose p {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 1rem;
+    line-height: 1.78;
+    color: #475569;
+    margin: 0 0 18px 0;
+}
+
+.kobac-prose p:last-child {
+    margin-bottom: 0;
+}
+
+.kobac-prose strong {
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.kobac-prose em {
+    color: #ea580c;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.kobac-btn-wrap {
+    margin-top: 28px;
+}
+
+.kobac-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ff4d24;
+    color: #ffffff !important;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.96rem;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    padding: 14px 34px;
+    border-radius: 6px;
+    box-shadow: 0 10px 24px rgba(255, 77, 36, 0.25);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                background 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.kobac-cta-btn:hover {
+    background: #0f172a;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.22);
+}
+
+/* Media Frames & 3 Real Photos Layout */
+.kobac-single-media-wrap,
+.kobac-dual-media-wrap {
+    position: relative;
+}
+
+.kobac-decor-grid {
+    position: absolute;
+    top: -22px;
+    right: -22px;
+    width: 170px;
+    height: 240px;
+    background-image: radial-gradient(rgba(255, 77, 36, 0.35) 2.2px, transparent 2.2px);
+    background-size: 16px 16px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.kobac-decor-grid.kobac-decor-left {
+    right: auto;
+    left: -22px;
+    top: -22px;
+}
+
+.kobac-photo-card {
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.14);
+    border: 4px solid #ffffff;
+    outline: 1px solid #e2e8f0;
+    background: #0f172a;
+}
+
+.kobac-photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.kobac-photo-card:hover img {
+    transform: scale(1.05);
+}
+
+.kobac-photo-main-1 {
+    aspect-ratio: 4 / 3.1;
+}
+
+/* Dual Images in Row 2 (Workshop Image 2 + Infrared Paint Booth Image 3) */
+.kobac-dual-media-wrap {
+    padding-bottom: 58px;
+    padding-right: 36px;
+}
+
+.kobac-photo-main-2 {
+    aspect-ratio: 4 / 3;
+    width: 88%;
+}
+
+.kobac-photo-floating-3 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 58%;
+    aspect-ratio: 16 / 10.5;
+    z-index: 3;
+    border: 4px solid #ffffff;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+}
+
+.kobac-floating-badge {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    background: rgba(15, 23, 42, 0.88);
+    backdrop-filter: blur(4px);
+    color: #ffffff;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.76rem;
+    font-weight: 700;
+    padding: 5px 11px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.kobac-floating-badge i {
+    color: #ff4d24;
+}
+
+/* Entrance Animations (fadeInLeft & fadeInRight like KOBAC CARS) */
+.kobac-about-mission-section .kobac-anim-left {
+    opacity: 0;
+    transform: translateX(-56px);
+    transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform, opacity;
+}
+
+.kobac-about-mission-section .kobac-anim-right {
+    opacity: 0;
+    transform: translateX(56px);
+    transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.14s,
+                transform 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.14s;
+    will-change: transform, opacity;
+}
+
+.kobac-about-mission-section.is-inview .kobac-row-about .kobac-anim-left,
+.kobac-about-mission-section.is-inview .kobac-row-about .kobac-anim-right {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.kobac-about-mission-section.is-inview .kobac-row-mission .kobac-anim-left {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.22s;
+}
+
+.kobac-about-mission-section.is-inview .kobac-row-mission .kobac-anim-right {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.34s;
+}
+
+@media (max-width: 991px) {
+    .kobac-about-mission-section {
+        padding: 60px 0 70px;
+    }
+    .kobac-split-row {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+    .kobac-row-about {
+        margin-bottom: 56px;
+    }
+    .kobac-row-mission .kobac-col-media {
+        order: 2;
+    }
+    .kobac-row-mission .kobac-col-text {
+        order: 1;
+    }
+}
+
+@media (max-width: 576px) {
+    .kobac-dual-media-wrap {
+        padding-bottom: 0;
+        padding-right: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .kobac-photo-main-2,
+    .kobac-photo-floating-3 {
+        position: relative;
+        width: 100%;
+    }
 }

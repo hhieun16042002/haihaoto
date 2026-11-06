@@ -202,107 +202,79 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
     </section>
 
     <!-- =========================================================================
-         MỤC 4B: GALLERY - HÌNH ẢNH ÔTÔ HẢI HÀ (PRESTIGE AUTOMOBILE STYLE)
+         MỤC 4B: VỀ ÔTÔ HẢI HÀ & SỨ MỆNH (KOBAC CARS STYLE - 3 ẢNH THỰC TẾ)
          ========================================================================= -->
-    <section class="shiftup-gallery-section" id="hinh-anh-oto-hai-ha">
+    <?php
+    $kobac_imgs = function_exists('hieugara_get_about_kobac_images') ? hieugara_get_about_kobac_images() : array(
+        'img_1' => $theme_uri . '/assets/images/about/haiha-about-facade.jpg',
+        'img_2' => $theme_uri . '/assets/images/about/haiha-about-workshop.jpg',
+        'img_3' => $theme_uri . '/assets/images/about/haiha-about-paintbooth.jpg',
+    );
+    ?>
+    <section class="kobac-about-mission-section" id="ve-oto-hai-ha">
+        <div class="kobac-bg-pattern" aria-hidden="true"></div>
         <div class="container">
-            <div class="gallery-sec-head text-center">
-                <h5 class="gallery-eyebrow">GALLERY</h5>
-                <h2 class="gallery-heading-main">
-                    <strong>HÌNH ẢNH <span class="text-orange">ÔTÔ HẢI HÀ</span></strong>
-                </h2>
-                <div class="gallery-heading-divider"></div>
-            </div>
 
-            <?php
-            $raw_gallery = function_exists('hieugara_get_gallery_items') ? hieugara_get_gallery_items() : array();
-            $gallery_items = array();
-            if (!empty($raw_gallery)) {
-                foreach ($raw_gallery as $g_item) {
-                    if (!empty($g_item['enable']) && !empty($g_item['img'])) {
-                        $gallery_items[] = $g_item;
-                    }
-                }
-            }
-            ?>
-
-            <div class="prestige-gallery-grid">
-                <?php foreach ($gallery_items as $idx => $g) : ?>
-                    <div class="prestige-gallery-col">
-                        <a href="<?php echo esc_url($g['img']); ?>" class="prestige-gallery-box" data-gallery-idx="<?php echo $idx; ?>" title="<?php echo esc_attr($g['title']); ?>">
-                            <div class="prestige-gallery-img-wrap">
-                                <img src="<?php echo esc_url($g['img']); ?>" alt="<?php echo esc_attr($g['title']); ?>" loading="lazy" decoding="async">
-                                <div class="prestige-gallery-overlay">
-                                    <span class="gallery-zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
-                                    <span class="gallery-caption-text"><?php echo esc_html($g['title']); ?></span>
-                                </div>
-                            </div>
+            <!-- ROW 1: VỀ ÔTÔ HẢI HÀ (Text Left - Image 1 Right) -->
+            <div class="kobac-split-row kobac-row-about">
+                <div class="kobac-col kobac-col-text kobac-anim-left">
+                    <h2 class="kobac-heading">VỀ <span class="text-orange">ÔTÔ HẢI HÀ</span></h2>
+                    <div class="kobac-prose">
+                        <p>Chúng tôi hiểu rằng, mỗi chiếc xe là một phần quan trọng của cuộc sống, mang theo những hành trình, kỷ niệm và sự an toàn của cả gia đình. Chính vì lý do đó, <strong>Ôtô Hải Hà</strong> đã dành hơn 31 năm (từ năm 1995) để không ngừng đổi mới và hoàn thiện nghệ thuật chăm sóc, bảo dưỡng và sửa chữa xe hơi, đặt sự chính xác và chữ Tâm người thợ làm kim chỉ nam.</p>
+                        <p>Chúng tôi tiên phong đầu tư hệ thống trang thiết bị chẩn đoán hiện đại, chuẩn hóa quy trình bảo dưỡng và đồng sơn công nghệ cao nhằm tối ưu tốc độ và chất lượng dịch vụ mà vẫn giữ vững chuẩn mực khắt khe nhất. Với quy mô xưởng 2.500m², 28 khoang cầu nâng chuyên dụng và đội ngũ hơn 80 kỹ thuật viên lành nghề, <strong>Ôtô Hải Hà</strong> đã trở thành trung tâm bảo dưỡng – sửa chữa ô tô uy tín hàng đầu, khẳng định vị thế vững chắc trong lòng hàng chục nghìn chủ xe.</p>
+                        <p>Lý do <strong>Ôtô Hải Hà</strong> tồn tại và phát triển bền vững suốt hơn 3 thập kỷ thật đơn giản: mang lại sự an tâm tuyệt đối cho chủ xe thông qua một dịch vụ minh bạch, không chỉ đạt chuẩn mà còn vượt qua mong đợi.</p>
+                    </div>
+                    <div class="kobac-btn-wrap">
+                        <a href="<?php echo esc_url(home_url('/ve-chung-toi/')); ?>" class="kobac-cta-btn">
+                            <span>Về chúng tôi</span>
                         </a>
                     </div>
-                <?php endforeach; ?>
+                </div>
+
+                <div class="kobac-col kobac-col-media kobac-anim-right">
+                    <div class="kobac-single-media-wrap">
+                        <div class="kobac-decor-grid" aria-hidden="true"></div>
+                        <figure class="kobac-photo-card kobac-photo-main-1">
+                            <img src="<?php echo esc_url($kobac_imgs['img_1']); ?>" alt="Mặt tiền Trung tâm Bảo dưỡng &amp; Sửa chữa Ôtô Hải Hà" loading="lazy" decoding="async">
+                        </figure>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <!-- Lightbox Modal for Gallery -->
-        <div class="haiha-gallery-lightbox" id="haihaGalleryLightbox" aria-hidden="true">
-            <button type="button" class="lightbox-close-btn" id="haihaLightboxClose" aria-label="Đóng ảnh">&times;</button>
-            <button type="button" class="lightbox-nav-btn lightbox-prev" id="haihaLightboxPrev" aria-label="Ảnh trước"><i class="fa-solid fa-chevron-left"></i></button>
-            <div class="lightbox-Stage">
-                <img src="" alt="" id="haihaLightboxImg">
-                <div class="lightbox-caption" id="haihaLightboxCaption"></div>
+            <!-- ROW 2: SỨ MỆNH (Images 2 & 3 Left - Text Right) -->
+            <div class="kobac-split-row kobac-row-mission">
+                <div class="kobac-col kobac-col-media kobac-anim-left">
+                    <div class="kobac-dual-media-wrap">
+                        <div class="kobac-decor-grid kobac-decor-left" aria-hidden="true"></div>
+                        <figure class="kobac-photo-card kobac-photo-main-2">
+                            <img src="<?php echo esc_url($kobac_imgs['img_2']); ?>" alt="Toàn cảnh khu vực xưởng dịch vụ quy mô 2.500m² tại Ôtô Hải Hà" loading="lazy" decoding="async">
+                        </figure>
+                        <figure class="kobac-photo-card kobac-photo-floating-3">
+                            <img src="<?php echo esc_url($kobac_imgs['img_3']); ?>" alt="Phòng sơn sấy hồng ngoại tiêu chuẩn Châu Âu tại Ôtô Hải Hà" loading="lazy" decoding="async">
+                            <figcaption class="kobac-floating-badge">
+                                <i class="fa-solid fa-fire-flame-curved"></i> Phòng Sơn Sấy Hồng Ngoại Châu Âu
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="kobac-col kobac-col-text kobac-anim-right">
+                    <h2 class="kobac-heading">SỨ MỆNH</h2>
+                    <div class="kobac-prose">
+                        <p>Chúng tôi nhận thấy rằng tại thị trường Việt Nam, chủ xe thường phải đối mặt với nỗi lo về sự minh bạch trong báo giá, nguồn gốc phụ tùng không rõ ràng và chất lượng dịch vụ thiếu nhất quán. Đây là những rào cản lớn đối với sự an tâm khi sở hữu và bảo dưỡng xe.</p>
+                        <p>Tại <strong>Ôtô Hải Hà</strong>, chúng tôi tin tưởng tuyệt đối vào triết lý: <em>“Giấc mơ và uy tín được vẽ bằng trái tim người thợ thì nhất định sẽ chạm tới niềm tin trọn vẹn của khách hàng.”</em></p>
+                        <p>Sứ mệnh của <strong>Ôtô Hải Hà</strong> là biến niềm tin này thành hành động thực tiễn trên từng chiếc xe xuất xưởng. Chúng tôi cam kết mang đến sự chăm sóc, bảo dưỡng, sửa chữa máy gầm và đồng sơn đạt chuẩn mực cao nhất, không chỉ dựa trên quy trình kỹ thuật nghiêm ngặt mà còn dựa trên sự chính trực và tận tâm tuyệt đối.</p>
+                        <p>Chúng tôi không chỉ bảo dưỡng và sửa chữa xe; chúng tôi kiến tạo những hành trình bình an, nâng cao tuổi thọ và giá trị bền vững cho tài sản quý giá này. Mục tiêu cuối cùng là mang lại sự an tâm tuyệt đối cho chủ xe thông qua một dịch vụ không chỉ đạt chuẩn mà còn vượt qua mong đợi.</p>
+                    </div>
+                    <div class="kobac-btn-wrap">
+                        <a href="<?php echo esc_url(home_url('/ve-chung-toi/')); ?>" class="kobac-cta-btn">
+                            <span>Về chúng tôi</span>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <button type="button" class="lightbox-nav-btn lightbox-next" id="haihaLightboxNext" aria-label="Ảnh tiếp theo"><i class="fa-solid fa-chevron-right"></i></button>
+
         </div>
-
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var boxes = Array.prototype.slice.call(document.querySelectorAll('.prestige-gallery-box'));
-            var lightbox = document.getElementById('haihaGalleryLightbox');
-            var lbImg = document.getElementById('haihaLightboxImg');
-            var lbCap = document.getElementById('haihaLightboxCaption');
-            var btnClose = document.getElementById('haihaLightboxClose');
-            var btnPrev = document.getElementById('haihaLightboxPrev');
-            var btnNext = document.getElementById('haihaLightboxNext');
-            var currentIdx = 0;
-
-            if (!boxes.length || !lightbox) return;
-
-            function showImage(idx) {
-                currentIdx = (idx + boxes.length) % boxes.length;
-                var target = boxes[currentIdx];
-                lbImg.src = target.getAttribute('href');
-                lbCap.textContent = target.getAttribute('title') || '';
-                lightbox.classList.add('is-open');
-                lightbox.setAttribute('aria-hidden', 'false');
-            }
-
-            function closeLightbox() {
-                lightbox.classList.remove('is-open');
-                lightbox.setAttribute('aria-hidden', 'true');
-                lbImg.src = '';
-            }
-
-            boxes.forEach(function(box, i) {
-                box.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    showImage(i);
-                });
-            });
-
-            btnClose.addEventListener('click', closeLightbox);
-            btnPrev.addEventListener('click', function(e) { e.stopPropagation(); showImage(currentIdx - 1); });
-            btnNext.addEventListener('click', function(e) { e.stopPropagation(); showImage(currentIdx + 1); });
-            lightbox.addEventListener('click', function(e) {
-                if (e.target === lightbox) closeLightbox();
-            });
-            document.addEventListener('keydown', function(e) {
-                if (!lightbox.classList.contains('is-open')) return;
-                if (e.key === 'Escape') closeLightbox();
-                if (e.key === 'ArrowLeft') showImage(currentIdx - 1);
-                if (e.key === 'ArrowRight') showImage(currentIdx + 1);
-            });
-        });
-        </script>
     </section>
 
     <!-- =========================================================================

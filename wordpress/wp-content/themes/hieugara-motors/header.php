@@ -41,7 +41,6 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
             </div>
             <div class="brand-text-wrap">
                 <div class="brand-title">ÔTÔ <span class="text-orange">HẢI HÀ</span></div>
-                <div class="brand-subtitle"><?php _e('CAR SERVICE & WORKSHOP', 'hieugara-motors'); ?></div>
             </div>
         </a>
 

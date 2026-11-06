@@ -27,6 +27,27 @@ function hieugara_get_site_logo() {
 }
 
 /**
+ * Get 3 Images for "Về ÔTÔ HẢI HÀ & SỨ MỆNH" (KOBAC CARS Style Section on Homepage)
+ */
+function hieugara_get_about_kobac_images() {
+    $about_uri = get_template_directory_uri() . '/assets/images/about';
+    $defaults  = array(
+        'img_1' => $about_uri . '/haiha-about-facade.jpg',
+        'img_2' => $about_uri . '/haiha-about-workshop.jpg',
+        'img_3' => $about_uri . '/haiha-about-paintbooth.jpg',
+    );
+    $saved = get_option('hieugara_about_kobac_images', array());
+    if (empty($saved) || !is_array($saved)) {
+        return $defaults;
+    }
+    return array(
+        'img_1' => !empty($saved['img_1']) ? $saved['img_1'] : $defaults['img_1'],
+        'img_2' => !empty($saved['img_2']) ? $saved['img_2'] : $defaults['img_2'],
+        'img_3' => !empty($saved['img_3']) ? $saved['img_3'] : $defaults['img_3'],
+    );
+}
+
+/**
  * Get 4 Panoramic Banners on Homepage
  */
 function hieugara_get_default_pano_banners() {
@@ -494,7 +515,17 @@ function hieugara_handle_media_hub_save() {
         update_option('hieugara_pano_banners', $clean_pano);
     }
 
-    // 4. Save Gallery Items
+    // 4. Save 3 Images of "Về ÔTÔ HẢI HÀ & SỨ MỆNH"
+    if (isset($_POST['hieugara_about_kobac_images']) && is_array($_POST['hieugara_about_kobac_images'])) {
+        $raw_ab = $_POST['hieugara_about_kobac_images'];
+        update_option('hieugara_about_kobac_images', array(
+            'img_1' => esc_url_raw($raw_ab['img_1'] ?? ''),
+            'img_2' => esc_url_raw($raw_ab['img_2'] ?? ''),
+            'img_3' => esc_url_raw($raw_ab['img_3'] ?? ''),
+        ));
+    }
+
+    // 4B. Save Gallery Items (if posted)
     if (isset($_POST['hieugara_gallery_items']) && is_array($_POST['hieugara_gallery_items'])) {
         $clean_gal = array();
         foreach ($_POST['hieugara_gallery_items'] as $k => $g) {
@@ -507,8 +538,6 @@ function hieugara_handle_media_hub_save() {
             }
         }
         update_option('hieugara_gallery_items', $clean_gal);
-    } else {
-        update_option('hieugara_gallery_items', array());
     }
 
     // 5. Save Accessories Items
@@ -672,41 +701,38 @@ function hieugara_render_media_hub_page() {
             </div>
 
             <!-- =========================================================================
-                 TAB 2: ẢNH TRANG CHỦ (SLIDER, 4 BANNER, GALLERY, PHỤ KIỆN)
+                 TAB 2: ẢNH TRANG CHỦ (VỀ ÔTÔ HẢI HÀ, SLIDER, 4 BANNER, PHỤ KIỆN)
                  ========================================================================= -->
+            <?php $kobac_imgs = hieugara_get_about_kobac_images(); ?>
             <div class="haiha-tab-pane <?php echo $active_tab === 'tab-home' ? 'is-active' : ''; ?>" id="tab-home">
 
-                <!-- 2.1: GALLERY HÌNH ẢNH ÔTÔ HẢI HÀ -->
+                <!-- 2.1: 3 ẢNH KHỐI "VỀ ÔTÔ HẢI HÀ & SỨ MỆNH" -->
                 <div class="haiha-folder-box">
                     <div class="haiha-folder-head">
-                        <h2><span class="dashicons dashicons-format-gallery" style="color: #ff4d24;"></span> Mục 2.1: Gallery – Hình Ảnh Ôtô Hải Hà (Thêm, Sửa, Xóa Ảnh Thực Tế Xưởng)</h2>
-                        <button type="button" class="button button-primary" id="hub-add-gallery-btn" style="background: #ff4d24; border-color: #ff4d24; font-weight: 700;">
-                            + Thêm Ảnh Mới Vào Gallery
-                        </button>
+                        <h2><span class="dashicons dashicons-awards" style="color: #ff4d24;"></span> Mục 2.1: 3 Ảnh Khối "Về Ôtô Hải Hà &amp; Sứ Mệnh" Trên Trang Chủ</h2>
+                        <span class="haiha-subcat-pill">Trang Chủ &rarr; Về Ôtô Hải Hà</span>
                     </div>
                     <div class="haiha-folder-body">
-                        <div class="haiha-cards-grid" id="hub-gallery-grid">
-                            <?php foreach ($gallery_items as $g_key => $g_item) : ?>
-                                <div class="haiha-img-card hub-gallery-card">
+                        <div class="haiha-cards-grid">
+                            <?php
+                            $about_labels = array(
+                                'img_1' => 'Ảnh 1: Mặt Tiền Trung Tâm Ôtô Hải Hà (Cột Phải - Về Ôtô Hải Hà)',
+                                'img_2' => 'Ảnh 2: Toàn Cảnh Khu Xưởng Dịch Vụ (Cột Trái - Sứ Mệnh)',
+                                'img_3' => 'Ảnh 3: Phòng Sơn Sấy Hồng Ngoại (Ảnh Phụ Nổi - Sứ Mệnh)',
+                            );
+                            foreach ($about_labels as $ab_key => $ab_label) :
+                                $ab_url = $kobac_imgs[$ab_key] ?? '';
+                            ?>
+                                <div class="haiha-img-card">
                                     <div class="haiha-img-thumb">
-                                        <img src="<?php echo esc_url($g_item['img']); ?>" id="prev-gal-<?php echo esc_attr($g_key); ?>" alt="">
+                                        <img src="<?php echo esc_url($ab_url); ?>" id="prev-kobac-<?php echo esc_attr($ab_key); ?>" alt="">
                                     </div>
                                     <div>
-                                        <label>Mô tả / Chú thích ảnh:</label>
-                                        <input type="text" name="hieugara_gallery_items[<?php echo esc_attr($g_key); ?>][title]" value="<?php echo esc_attr($g_item['title']); ?>">
-                                    </div>
-                                    <div>
-                                        <label>Đường dẫn ảnh:</label>
+                                        <label><?php echo esc_html($ab_label); ?>:</label>
                                         <div style="display: flex; gap: 6px;">
-                                            <input type="text" name="hieugara_gallery_items[<?php echo esc_attr($g_key); ?>][img]" id="inp-gal-<?php echo esc_attr($g_key); ?>" value="<?php echo esc_attr($g_item['img']); ?>">
-                                            <button type="button" class="button hub-pick-img-btn" data-input="#inp-gal-<?php echo esc_attr($g_key); ?>" data-preview="#prev-gal-<?php echo esc_attr($g_key); ?>">Đổi ảnh</button>
+                                            <input type="text" name="hieugara_about_kobac_images[<?php echo esc_attr($ab_key); ?>]" id="inp-kobac-<?php echo esc_attr($ab_key); ?>" value="<?php echo esc_attr($ab_url); ?>">
+                                            <button type="button" class="button hub-pick-img-btn" data-input="#inp-kobac-<?php echo esc_attr($ab_key); ?>" data-preview="#prev-kobac-<?php echo esc_attr($ab_key); ?>">Đổi ảnh</button>
                                         </div>
-                                    </div>
-                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 6px; border-top: 1px solid #f1f5f9;">
-                                        <label style="margin: 0; display: inline-flex; align-items: center; gap: 6px; cursor: pointer;">
-                                            <input type="checkbox" name="hieugara_gallery_items[<?php echo esc_attr($g_key); ?>][enable]" value="1" <?php checked('1', $g_item['enable'] ?? '1'); ?>> Hiển thị
-                                        </label>
-                                        <button type="button" class="button-link hub-remove-card-btn" style="color: #dc2626; font-weight: 600; text-decoration: none;">🗑️ Xóa ảnh</button>
                                     </div>
                                 </div>
                             <?php endforeach; ?>

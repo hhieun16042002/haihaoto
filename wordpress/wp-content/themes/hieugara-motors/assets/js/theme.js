@@ -284,7 +284,7 @@
         // ==========================================================================
         function animateMilestoneCounters(sectionEl) {
             var counters = sectionEl.querySelectorAll('.milestone-stat-card .stat-number');
-            counters.forEach(function(counter) {
+            counters.forEach(function(counter, idx) {
                 if (!counter.dataset.targetVal) {
                     counter.dataset.targetVal = counter.textContent.trim();
                 }
@@ -293,33 +293,61 @@
                 var numericTarget = parseInt(rawTarget.replace(/[^0-9]/g, ''), 10);
                 if (isNaN(numericTarget) || numericTarget <= 0) return;
 
+                counter.textContent = '0';
                 var startTime = null;
-                var duration = 1350;
+                var duration = 1450;
+                var delayMs = idx * 120;
 
-                function step(timestamp) {
-                    if (!startTime) startTime = timestamp;
-                    var progress = Math.min((timestamp - startTime) / duration, 1);
-                    // EaseOutExpo curve
-                    var eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-                    var currentVal = Math.round(numericTarget * eased);
-                    if (hasDot) {
-                        counter.textContent = currentVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-                    } else {
-                        counter.textContent = currentVal.toString();
+                setTimeout(function() {
+                    function step(timestamp) {
+                        if (!startTime) startTime = timestamp;
+                        var progress = Math.min((timestamp - startTime) / duration, 1);
+                        // EaseOutExpo curve
+                        var eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+                        var currentVal = Math.round(numericTarget * eased);
+                        if (hasDot) {
+                            counter.textContent = currentVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+                        } else {
+                            counter.textContent = currentVal.toString();
+                        }
+                        if (progress < 1) {
+                            window.requestAnimationFrame(step);
+                        } else {
+                            counter.textContent = rawTarget;
+                        }
                     }
-                    if (progress < 1) {
-                        window.requestAnimationFrame(step);
-                    } else {
-                        counter.textContent = rawTarget;
-                    }
-                }
-                window.requestAnimationFrame(step);
+                    window.requestAnimationFrame(step);
+                }, delayMs);
             });
         }
 
+        var techSectionEl = document.querySelector('.shiftup-technicians-section');
+        function checkMilestoneStatsViewport() {
+            if (!techSectionEl) return;
+            var rect = techSectionEl.getBoundingClientRect();
+            var winH = window.innerHeight || document.documentElement.clientHeight;
+            var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+            // Section is comfortably inside the user's active reading area
+            var isVisibleNow = (rect.top <= winH * 0.80) && (rect.bottom >= 110);
+            // Reset if user scrolled back to the top hero or scrolled completely past it
+            var shouldReset = (rect.top > winH * 0.86) || (rect.bottom < 70) || (scrollY < 30 && rect.top > winH * 0.58);
+
+            if (shouldReset) {
+                if (techSectionEl.classList.contains('is-inview')) {
+                    techSectionEl.classList.remove('is-inview', 'is-appeared');
+                }
+            } else if (isVisibleNow) {
+                if (!techSectionEl.classList.contains('is-inview')) {
+                    techSectionEl.classList.add('is-inview', 'is-appeared');
+                    animateMilestoneCounters(techSectionEl);
+                }
+            }
+        }
+
         var animatedSections = document.querySelectorAll(
-            '.lexus-banner-slider, .shiftup-tuning-shop-section, .shiftup-technicians-section, ' +
-            '.shiftup-all-about-cars-section, .shiftup-panoramic-banners, .shiftup-gallery-section, ' +
+            '.lexus-banner-slider, .shiftup-tuning-shop-section, ' +
+            '.shiftup-all-about-cars-section, .shiftup-panoramic-banners, .kobac-about-mission-section, .shiftup-gallery-section, ' +
             '.shiftup-flanked-diagnostics, .shiftup-accessories-section, .shiftup-checkup-offers-section, ' +
             '.shiftup-brand-marquee-section, .shiftup-workshops-booking-section, ' +
             '.shiftup-workshops-section, .shiftup-main-footer'
@@ -331,16 +359,9 @@
                 entries.forEach(function(entry) {
                     var target = entry.target;
                     if (entry.isIntersecting) {
-                        var wasInView = target.classList.contains('is-inview');
                         target.classList.add('is-inview');
                         if (target.classList.contains('lexus-banner-slider')) {
                             target.classList.add('hero-entered');
-                        }
-                        if (target.classList.contains('shiftup-technicians-section')) {
-                            target.classList.add('is-appeared');
-                            if (!wasInView) {
-                                animateMilestoneCounters(target);
-                            }
                         }
                     } else {
                         // Crucial: Remove classes when leaving viewport so scrolling BACK UP re-triggers the animations!
@@ -351,9 +372,6 @@
                             target.classList.remove('is-inview');
                             if (target.classList.contains('lexus-banner-slider')) {
                                 target.classList.remove('hero-entered');
-                            }
-                            if (target.classList.contains('shiftup-technicians-section')) {
-                                target.classList.remove('is-appeared');
                             }
                         }
                     }
@@ -370,6 +388,10 @@
             // Fallback for older browsers without IntersectionObserver
             $(animatedSections).addClass('is-inview hero-entered is-appeared');
         }
+
+        // Run Milestone check on load & scroll
+        setTimeout(checkMilestoneStatsViewport, 180);
+        $(window).on('scroll.milestoneCheck resize.milestoneCheck', checkMilestoneStatsViewport);
 
         // Secondary fallback and scroll velocity tracking
         var lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
