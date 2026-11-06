@@ -342,11 +342,7 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                         </div>
 
                     </div>
-                    
-                    <div class="mega-footer-bar">
-                        <span>Hải Hà Ô Tô &bull; 31 năm giữ trọn chữ Tâm với nghề (1995 - <?php echo date('Y'); ?>) &bull; 80 nhân sự tận tâm</span>
-                        <a href="<?php echo esc_url(home_url('/bang-gia/')); ?>" class="mega-footer-link">Xem bảng giá toàn bộ 6 nhóm dịch vụ niêm yết &rarr;</a>
-                    </div>
+
                 </div>
             </li>
 

@@ -7244,7 +7244,7 @@ html, body {
 
 
 /* ==========================================================================
-   DUCTRI226 MEGA MENU SYSTEM (EXACT REPLICATION FOR HẢI HÀ ÔTÔ)
+   MEGA MENU DỊCH VỤ - TONE TRẮNG SANG TRỌNG (HẢI HÀ ÔTÔ LUXURY LIGHT STYLE)
    ========================================================================== */
 .has-mega {
     position: static !important;
@@ -7254,7 +7254,7 @@ html, body {
     position: absolute;
     top: 100%;
     left: 50%;
-    transform: translateX(-50%) translateY(12px);
+    transform: translateX(-50%) translateY(10px);
     width: min(1240px, calc(100vw - 32px));
     padding-top: 8px;
     display: none;
@@ -7289,16 +7289,15 @@ html, body {
 }
 
 .mega-inner {
-    background: #14171d;
-    border: 1px solid rgba(255, 87, 34, 0.32);
+    background: #ffffff;
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    border-top: 3px solid #ff4d24;
     border-radius: 12px;
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 4px 20px rgba(0, 0, 0, 0.4);
-    padding: 16px;
+    box-shadow: 0 20px 48px rgba(15, 23, 42, 0.12), 0 4px 16px rgba(15, 23, 42, 0.05);
+    padding: 14px;
     display: grid;
     grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 10px;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
 }
 
 .mega-group {
@@ -7311,9 +7310,9 @@ html, body {
     align-items: center;
     padding: 11px 12px;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    color: #ffffff !important;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #0f172a !important;
     text-decoration: none !important;
     font-size: 0.8rem;
     font-weight: 700;
@@ -7325,19 +7324,19 @@ html, body {
 }
 
 .mega-cat span {
-    color: #ffffff !important;
+    color: #0f172a !important;
     min-width: 0;
     word-break: break-word;
     transition: color 180ms ease;
 }
 
 .mega-parent {
-    border-color: rgba(255, 87, 34, 0.28);
+    border-color: #cbd5e1;
 }
 
 .mega-arrow {
     font-size: 1.1rem;
-    color: #ff5722;
+    color: #ff4d24;
     transition: transform 180ms ease, color 180ms ease;
     margin-left: 4px;
     line-height: 1;
@@ -7346,20 +7345,20 @@ html, body {
 .mega-cat:hover,
 .mega-group:hover .mega-cat,
 .mega-group.is-open .mega-cat {
-    background: rgba(255, 87, 34, 0.16);
-    border-color: rgba(255, 87, 34, 0.55);
+    background: #fff7ed;
+    border-color: #ff4d24;
     transform: translateY(-1px);
-    box-shadow: 0 4px 14px rgba(255, 87, 34, 0.18);
+    box-shadow: 0 4px 14px rgba(255, 77, 36, 0.14);
 }
 
 .mega-cat:hover span,
 .mega-group:hover .mega-cat span {
-    color: #ff7a45 !important;
+    color: #ea580c !important;
 }
 
 .mega-group:hover .mega-arrow {
     transform: translateX(3px);
-    color: #ff7a45;
+    color: #ea580c;
 }
 
 /* Submenu dropdown directly underneath category card */
@@ -7370,12 +7369,12 @@ html, body {
     width: max-content;
     min-width: 250px;
     max-width: 320px;
-    background: #191c23;
-    border: 1px solid rgba(255, 87, 34, 0.32);
+    background: #ffffff;
+    border: 1px solid rgba(255, 77, 36, 0.35);
     border-radius: 8px;
     padding: 6px;
     display: none;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65), 0 2px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.16), 0 2px 8px rgba(15, 23, 42, 0.08);
     z-index: 50;
     animation: megaSubIn 160ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -7424,8 +7423,9 @@ html, body {
     gap: 10px;
     padding: 8px 12px;
     border-radius: 6px;
-    background: rgba(255, 255, 255, 0.03);
-    color: #cbd5e1 !important;
+    background: #f8fafc;
+    border: 1px solid #f1f5f9;
+    color: #334155 !important;
     text-decoration: none !important;
     font-size: 0.78rem;
     font-weight: 500;
@@ -7433,15 +7433,15 @@ html, body {
 }
 
 .mega-subcat span {
-    color: #cbd5e1;
+    color: #334155;
     transition: color 160ms ease;
     line-height: 1.3;
 }
 
 .mega-subcat small {
-    color: #94a3b8;
+    color: #64748b;
     font-size: 0.68rem;
-    background: rgba(255, 255, 255, 0.07);
+    background: #e2e8f0;
     padding: 2px 6px;
     border-radius: 4px;
     white-space: nowrap;
@@ -7449,46 +7449,20 @@ html, body {
 }
 
 .mega-subcat:hover {
-    background: rgba(255, 87, 34, 0.22);
-    color: #ffffff !important;
+    background: #ffedd5;
+    border-color: #fed7aa;
+    color: #c2410c !important;
     transform: translateX(3px);
 }
 
 .mega-subcat:hover span {
-    color: #ffffff !important;
+    color: #c2410c !important;
     font-weight: 600;
 }
 
 .mega-subcat:hover small {
-    background: #ff5722;
+    background: #ff4d24;
     color: #ffffff;
-}
-
-.mega-footer-bar {
-    margin-top: 14px;
-    padding-top: 12px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.78rem;
-    color: #94a3b8;
-}
-
-.mega-footer-link {
-    color: #ff7a45 !important;
-    font-weight: 600;
-    text-decoration: none !important;
-    transition: all 180ms ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.mega-footer-link:hover {
-    color: #ff9466 !important;
-    text-decoration: underline !important;
-    transform: translateX(3px);
 }
 
 /* Tablet & Compact Desktop Responsive */
@@ -7530,7 +7504,16 @@ html, body {
         grid-template-columns: 1fr !important;
         gap: 8px !important;
         padding: 8px !important;
-        background: #11141a !important;
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+    }
+    .mega-cat {
+        background: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        color: #0f172a !important;
+    }
+    .mega-cat span {
+        color: #0f172a !important;
     }
     .mega-sub {
         position: static !important;
@@ -7540,19 +7523,18 @@ html, body {
         margin-top: 6px !important;
         display: none !important;
         box-shadow: none !important;
+        background: #ffffff !important;
+        border: 1px solid #fed7aa !important;
+    }
+    .mega-subcat {
+        background: #f8fafc !important;
+        color: #334155 !important;
     }
     .mega-group.is-open .mega-sub {
         display: grid !important;
     }
-    .mega-footer-bar {
-        flex-direction: column;
-        gap: 8px;
-        text-align: center;
-    }
 }
 
-
-/* ==========================================================================
    BIDIRECTIONAL SCROLL REVEAL ENTRANCE ANIMATIONS (SMOOTH DOWN & UP)
    ========================================================================== */
 
