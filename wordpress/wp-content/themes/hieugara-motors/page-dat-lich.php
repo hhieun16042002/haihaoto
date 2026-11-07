@@ -12,6 +12,7 @@ get_header();
 $pre_service = isset($_GET['service']) ? sanitize_text_field($_GET['service']) : '';
 $pre_branch  = isset($_GET['branch']) ? sanitize_text_field($_GET['branch']) : '';
 $pre_plate   = isset($_GET['plate']) ? sanitize_text_field($_GET['plate']) : '';
+$pre_model   = isset($_GET['model']) ? sanitize_text_field($_GET['model']) : '';
 ?>
 
 <main id="primary" class="site-main page-booking-portal">
@@ -79,8 +80,18 @@ $pre_plate   = isset($_GET['plate']) ? sanitize_text_field($_GET['plate']) : '';
                                             ['key' => 'Khám xe & Cứu hộ bảo hiểm', 'title' => 'Cứu hộ & Bảo hiểm', 'desc' => 'Bồi thường bảo hiểm thân vỏ, cứu hộ xe 24/7', 'icon' => 'fa-shield-halved'],
                                         ];
 
+                                        if ($pre_service === 'vinfast' || strpos(strtolower($pre_model), 'vinfast') !== false) {
+                                            array_unshift($service_options, [
+                                                'key'   => 'Dịch vụ xe VinFast chính hãng',
+                                                'title' => 'Dịch vụ xe VinFast',
+                                                'desc'  => 'Bảo dưỡng xe điện, xe xăng, phụ tùng chính hãng VinFast',
+                                                'icon'  => 'fa-bolt-lightning'
+                                            ]);
+                                        }
+
                                         foreach ($service_options as $index => $opt) :
-                                            $checked = ($pre_service === $opt['key'] || ($index === 0 && empty($pre_service))) ? 'checked' : '';
+                                            $is_vf_opt = ($opt['key'] === 'Dịch vụ xe VinFast chính hãng');
+                                            $checked = ($is_vf_opt || $pre_service === $opt['key'] || ($index === 0 && empty($pre_service))) ? 'checked' : '';
                                         ?>
                                             <label class="service-radio-card <?php echo $checked ? 'is-selected' : ''; ?>">
                                                 <input type="radio" name="service_type" value="<?php echo esc_attr($opt['key']); ?>" <?php echo $checked; ?>>
@@ -103,7 +114,7 @@ $pre_plate   = isset($_GET['plate']) ? sanitize_text_field($_GET['plate']) : '';
                                     </div>
                                     <div class="form-field">
                                         <label class="form-label"><?php _e('Hãng xe & Dòng xe (*)', 'hieugara-motors'); ?></label>
-                                        <input type="text" name="car_model" class="form-control" placeholder="VD: Mazda CX-5 (2022)" required>
+                                        <input type="text" name="car_model" class="form-control" value="<?php echo esc_attr($pre_model); ?>" placeholder="VD: Mazda CX-5 (2022) hoặc VinFast VF 5" required>
                                     </div>
                                 </div>
 

@@ -194,7 +194,6 @@ function hieugara_clean_admin_menu() {
     remove_menu_page('garage-os-warranties');         // Đóng mục Sổ Bảo Hành theo yêu cầu
     remove_menu_page('hieugara-accessories-crud');    // Xóa triệt để menu phụ kiện thứ 2 bị trùng
     remove_submenu_page('garage-os-bookings', 'garage-os-kanban');
-    remove_submenu_page('garage-os-bookings', 'garage-os-warranties');
 
     // Count pending bookings for notification badge
     $table_bookings = $wpdb->prefix . 'garage_bookings';
@@ -215,6 +214,10 @@ function hieugara_clean_admin_menu() {
                 case 'garage-os-bookings':
                     $menu[$key][0] = 'Lịch Hẹn Khách Hàng' . $booking_badge;
                     $menu[$key][6] = 'dashicons-calendar-alt';
+                    break;
+                case 'garage-os-warranties':
+                    $menu[$key][0] = 'Sổ Bảo Hành Điện Tử';
+                    $menu[$key][6] = 'dashicons-shield';
                     break;
                 case 'garage-os-orders':
                     $menu[$key][0] = 'Đơn Sửa Chữa';
@@ -316,14 +319,6 @@ function hieugara_admin_botble_sidebar_script() {
                 $('#adminmenu').prepend(brandHtml);
             }
 
-            // Inject exactly ONE clean chevron arrow into items with submenus (Botble style)
-            $('#adminmenu > li.wp-has-submenu > a.menu-top').each(function() {
-                var $link = $(this);
-                if (!$link.find('.botble-menu-chevron').length) {
-                    $link.append('<span class="botble-menu-chevron dashicons dashicons-arrow-down-alt2"></span>');
-                }
-            });
-
             // Click Handler for Top Collapse / Expand Sidebar Toggle
             $(document).on('click', '#botble-sidebar-toggle', function(e) {
                 e.preventDefault();
@@ -348,20 +343,17 @@ function hieugara_admin_botble_sidebar_script() {
 
                 if ($sub.length) {
                     e.preventDefault();
-                    e.stopImmediatePropagation();
 
-                    var isCurrentlyOpen = $parentLi.hasClass('is-open') || 
-                        ($parentLi.hasClass('botble-open')) ||
-                        (($parentLi.hasClass('wp-menu-open') || $parentLi.hasClass('wp-has-current-submenu')) && !$parentLi.hasClass('is-closed') && !$parentLi.hasClass('botble-closed'));
+                    var isOpen = ($parentLi.hasClass('botble-open') || $parentLi.hasClass('wp-menu-open') || $parentLi.hasClass('wp-has-current-submenu')) && !$parentLi.hasClass('botble-closed');
 
-                    if (isCurrentlyOpen) {
+                    if (isOpen) {
                         // Đóng vào
-                        $parentLi.removeClass('is-open botble-open wp-menu-open').addClass('is-closed botble-closed');
-                        $sub.stop(true, true).slideUp(180);
+                        $parentLi.removeClass('botble-open wp-menu-open').addClass('botble-closed');
+                        $sub.slideUp(160);
                     } else {
                         // Sổ ra độc lập (KHÔNG tự động đóng các menu khác)
-                        $parentLi.removeClass('is-closed botble-closed').addClass('is-open botble-open');
-                        $sub.stop(true, true).slideDown(180);
+                        $parentLi.removeClass('botble-closed').addClass('botble-open');
+                        $sub.slideDown(160);
                     }
                 }
             });

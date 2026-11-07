@@ -4916,24 +4916,24 @@ html, body {
     /* Authentic Lexus Vietnam 3-Column Mobile Bottom Action Bar (Floating Rounded Island) */
     .shiftup-floating-dock {
         position: fixed !important;
-        bottom: calc(12px + env(safe-area-inset-bottom, 0px)) !important;
+        bottom: calc(10px + env(safe-area-inset-bottom, 0px)) !important;
         left: 12px !important;
         right: 12px !important;
         width: auto !important;
-        max-width: 480px !important;
+        max-width: calc(100vw - 24px) !important;
         margin: 0 auto !important;
-        background: rgba(18, 18, 22, 0.96) !important;
-        backdrop-filter: blur(20px) !important;
-        -webkit-backdrop-filter: blur(20px) !important;
-        border: 1.5px solid rgba(197, 168, 128, 0.55) !important;
-        border-radius: 26px !important;
+        background: rgba(18, 18, 20, 0.94) !important;
+        backdrop-filter: blur(16px) !important;
+        -webkit-backdrop-filter: blur(16px) !important;
+        border: 1px solid rgba(197, 168, 128, 0.45) !important;
+        border-radius: 24px !important;
         padding: 6px 8px !important;
         display: grid !important;
-        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        grid-template-columns: repeat(3, 1fr) !important;
         gap: 6px !important;
         align-items: center !important;
         z-index: 99990 !important;
-        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
         height: auto !important;
     }
     .float-dock-pill {
@@ -4943,17 +4943,13 @@ html, body {
         justify-content: center !important;
         gap: 3px !important;
         padding: 7px 4px !important;
-        border-radius: 18px !important;
+        border-radius: 16px !important;
         background: rgba(255, 255, 255, 0.05) !important;
-        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        border: 1px solid rgba(255, 255, 255, 0.06) !important;
         color: #ffffff !important;
         text-decoration: none !important;
         min-height: 52px !important;
         height: auto !important;
-        width: 100% !important;
-        max-width: none !important;
-        min-width: 0 !important;
-        overflow: visible !important;
         box-shadow: none !important;
         transform: none !important;
         box-sizing: border-box !important;
@@ -10330,26 +10326,25 @@ html, body {
 .shiftup-main-footer .chip-zalo {
     display: flex !important;
     align-items: center !important;
-    gap: 6px !important;
-    padding: 8px 8px !important;
+    gap: 8px !important;
+    padding: 8px 10px !important;
     min-width: 0 !important;
     overflow: hidden !important;
     border-radius: 8px !important;
-    box-sizing: border-box !important;
 }
 
 .shiftup-main-footer .chip-direct-phone strong,
 .shiftup-main-footer .chip-zalo strong {
-    font-size: clamp(0.74rem, 2.6vw, 0.88rem) !important;
+    font-size: 0.92rem !important;
     font-weight: 700 !important;
-    letter-spacing: -0.2px !important;
+    letter-spacing: 0.1px !important;
     line-height: 1.2 !important;
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 480px) {
     .shiftup-main-footer .footer-contact-chips {
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
         gap: 6px !important;
@@ -10368,7 +10363,7 @@ html, body {
     }
     .shiftup-main-footer .chip-direct-phone strong,
     .shiftup-main-footer .chip-zalo strong {
-        font-size: 0.74rem !important;
+        font-size: 0.75rem !important;
         letter-spacing: -0.3px !important;
         white-space: nowrap !important;
         overflow: hidden !important;
@@ -12646,3 +12641,1009 @@ html, body {
         width: 100%;
     }
 }
+
+/* ==========================================================================
+   VINFAST OFFICIAL SERVICE PARTNERSHIP STYLES (HOMEPAGE & DEDICATED PORTAL)
+   Brand Rules: Charcoal #141414, Accent Warm Yellow #FFB81C, Secondary #5F6368
+   Buttons with Yellow BG: ALWAYS dark text #141414
+   ========================================================================== */
+
+/* 1. HOMEPAGE VINFAST SECTION (RIGHT AFTER HERO) */
+.hp-vinfast-hero-partner {
+    background-color: #141414;
+    color: #ffffff;
+    padding: 70px 0;
+    border-bottom: 2px solid #262626;
+    position: relative;
+    overflow: hidden;
+}
+
+.hp-vf-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.hp-vf-eyebrow {
+    display: inline-block;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #FFB81C;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    background: rgba(255, 184, 28, 0.1);
+    padding: 4px 12px;
+    border-radius: 4px;
+    border-left: 3px solid #FFB81C;
+}
+
+.hp-vf-heading {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.25;
+    color: #ffffff;
+    margin: 0 0 18px;
+}
+
+.hp-vf-paragraph {
+    font-family: 'Be Vietnam Pro', -apple-system, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #d4d4d8;
+    margin-bottom: 22px;
+}
+
+.hp-vf-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hp-vf-checklist li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.hp-vf-checklist li i {
+    color: #FFB81C;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+}
+
+.hp-vf-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.hp-vf-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #FFB81C !important;
+    color: #141414 !important; /* Yellow background MUST use dark text */
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    padding: 13px 26px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 16px rgba(255, 184, 28, 0.35);
+}
+
+.hp-vf-btn-primary:hover {
+    background-color: #e5a415 !important;
+    color: #141414 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 184, 28, 0.5);
+}
+
+.hp-vf-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: #ffffff !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.hp-vf-btn-outline:hover {
+    border-color: #FFB81C;
+    color: #FFB81C !important;
+    background: rgba(255, 184, 28, 0.08);
+}
+
+.hp-vf-photo-wrap {
+    position: relative;
+}
+
+.hp-vf-frame {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+.hp-vf-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 16 / 11;
+}
+
+.hp-vf-badge {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(20, 20, 20, 0.95) 0%, rgba(20, 20, 20, 0.75) 60%, transparent 100%);
+    padding: 24px 18px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.hp-vf-badge-sub {
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    color: #FFB81C;
+    font-weight: 700;
+}
+
+.hp-vf-badge-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+/* 2. BRAND MARQUEE PARTNER SPOTLIGHT (HOMEPAGE) */
+.marquee-vinfast-partner-spotlight {
+    margin-bottom: 26px;
+}
+
+.vf-spotlight-inner {
+    background: #141414;
+    border: 1.5px solid rgba(255, 184, 28, 0.4);
+    border-radius: 12px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.vf-spotlight-badge {
+    background: #FFB81C;
+    color: #141414;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 6px 12px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.vf-spotlight-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+}
+
+.vf-spotlight-logo {
+    width: 38px;
+    height: 30px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.vf-spotlight-titles strong {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.05rem;
+    color: #ffffff;
+    display: block;
+    line-height: 1.2;
+}
+
+.vf-spotlight-titles small {
+    font-size: 0.82rem;
+    color: #a1a1aa;
+    display: block;
+}
+
+.vf-spotlight-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: 1px solid rgba(255, 184, 28, 0.5);
+    color: #FFB81C !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.vf-spotlight-btn:hover {
+    background: #FFB81C;
+    color: #141414 !important;
+}
+
+/* 3. DEDICATED PAGE /dich-vu/xe-vinfast/ */
+.vinfast-service-portal {
+    background-color: #FFFFFF;
+    color: #141414;
+}
+
+.vinfast-breadcrumb-bar {
+    background: #F5F5F5;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.vinfast-breadcrumb-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+}
+
+.vinfast-breadcrumb-list a {
+    color: #5F6368;
+    text-decoration: none;
+}
+
+.vinfast-breadcrumb-list a:hover {
+    color: #141414;
+}
+
+.vinfast-breadcrumb-list .sep {
+    color: #9ca3af;
+}
+
+.vinfast-breadcrumb-list .current {
+    color: #141414;
+    font-weight: 600;
+}
+
+/* HERO SECTION (PAGE) */
+.vinfast-hero-section {
+    background-color: #141414;
+    color: #ffffff;
+    padding: 64px 0 72px;
+    border-bottom: 3px solid #FFB81C;
+}
+
+.vinfast-hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 44px;
+    align-items: center;
+}
+
+.vinfast-partner-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 184, 28, 0.12);
+    border: 1px solid rgba(255, 184, 28, 0.35);
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #FFB81C;
+    letter-spacing: 0.8px;
+}
+
+.vinfast-pill-logo {
+    width: 22px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.vinfast-hero-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: clamp(1.9rem, 3.5vw, 2.75rem);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.25;
+    margin: 0 0 18px;
+}
+
+.vinfast-hero-lead {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #d4d4d8;
+    margin-bottom: 26px;
+}
+
+.vinfast-hero-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.vf-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    padding: 13px 26px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.vf-btn-primary {
+    background-color: #FFB81C !important;
+    color: #141414 !important; /* Yellow BG uses dark text */
+    border: none;
+    box-shadow: 0 4px 16px rgba(255, 184, 28, 0.35);
+}
+
+.vf-btn-primary:hover {
+    background-color: #e5a415 !important;
+    color: #141414 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 184, 28, 0.5);
+}
+
+.vf-btn-outline {
+    background: transparent;
+    color: #ffffff !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+}
+
+.vf-btn-outline:hover {
+    border-color: #FFB81C;
+    color: #FFB81C !important;
+    background: rgba(255, 184, 28, 0.08);
+}
+
+.vf-btn-block {
+    width: 100%;
+    justify-content: center;
+}
+
+.vf-btn-sm {
+    padding: 9px 18px;
+    font-size: 0.85rem;
+}
+
+.vf-media-frame {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+}
+
+.vf-sign-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16 / 11;
+    object-fit: cover;
+}
+
+.vf-media-badge {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(20, 20, 20, 0.95) 0%, rgba(20, 20, 20, 0.75) 60%, transparent 100%);
+    padding: 24px 18px 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.vf-badge-sub {
+    font-size: 0.72rem;
+    color: #FFB81C;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+.vf-badge-brand {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+/* SECTION HEADERS */
+.vf-section-header {
+    margin-bottom: 40px;
+}
+
+.vf-section-sub {
+    display: inline-block;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #141414;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: #F5F5F5;
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border-left: 3px solid #FFB81C;
+}
+
+.vf-section-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+    font-weight: 800;
+    color: #141414;
+    margin: 0 0 10px;
+}
+
+.vf-section-desc {
+    font-size: 0.95rem;
+    color: #5F6368;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+/* SECTION 2: VỀ HỢP TÁC */
+.vinfast-about-partnership-section {
+    padding: 70px 0;
+    background: #FFFFFF;
+}
+
+.vf-partnership-box {
+    max-width: 920px;
+    margin: 0 auto;
+    background: #F5F5F5;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 36px 32px;
+}
+
+.vf-partnership-paragraph {
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: #141414;
+    margin-bottom: 16px;
+}
+
+.vf-partnership-pills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.vf-trust-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #FFFFFF;
+    border: 1px solid #d4d4d8;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #141414;
+}
+
+.vf-trust-chip i {
+    color: #FFB81C;
+}
+
+/* SECTION 3: CÁC DÒNG XE PHỤC VỤ */
+.vinfast-models-section {
+    padding: 70px 0;
+    background: #F5F5F5;
+}
+
+.vf-models-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.vf-model-card {
+    background: #FFFFFF;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 24px 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.vf-model-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    border-color: #FFB81C;
+}
+
+.vf-model-icon-wrap {
+    width: 44px;
+    height: 44px;
+    background: #141414;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+.vf-v-mark {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: #FFB81C;
+}
+
+.vf-model-name {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #141414;
+    margin: 0 0 8px;
+}
+
+.vf-model-desc {
+    font-size: 0.88rem;
+    color: #5F6368;
+    line-height: 1.5;
+    margin-bottom: 18px;
+    flex: 1;
+}
+
+.vf-model-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #141414;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.86rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.vf-model-link:hover {
+    color: #e5a415;
+}
+
+/* SECTION 4: DỊCH VỤ XE VINFAST */
+.vinfast-services-section {
+    padding: 70px 0;
+    background: #FFFFFF;
+}
+
+.vf-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.vf-service-card {
+    background: #F5F5F5;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 28px 22px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.vf-service-card:hover {
+    transform: translateY(-3px);
+    border-color: #FFB81C;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.vf-srv-icon {
+    width: 48px;
+    height: 48px;
+    background: #141414;
+    color: #FFB81C;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+}
+
+.vf-srv-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #141414;
+    margin: 0 0 10px;
+}
+
+.vf-srv-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #5F6368;
+    margin: 0;
+}
+
+/* SECTION 5: VÌ SAO CHỌN Ô TÔ HẢI HÀ */
+.vinfast-why-choose-section {
+    padding: 70px 0;
+    background: #141414;
+    color: #ffffff;
+}
+
+.vinfast-why-choose-section .vf-section-sub {
+    background: rgba(255, 184, 28, 0.12);
+    color: #FFB81C;
+    border-left-color: #FFB81C;
+}
+
+.vinfast-why-choose-section .vf-section-title {
+    color: #ffffff;
+}
+
+.vf-why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.vf-why-card {
+    background: #1f1f1f;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 28px 20px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.vf-why-card:hover {
+    transform: translateY(-4px);
+    border-color: #FFB81C;
+}
+
+.vf-why-num {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #FFB81C;
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.vf-why-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 10px;
+}
+
+.vf-why-desc {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: #d4d4d8;
+    margin: 0;
+}
+
+/* SECTION 6: FAQ ACCORDION */
+.vinfast-faq-section {
+    padding: 70px 0;
+    background: #F5F5F5;
+}
+
+.vf-faq-accordion {
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.vf-faq-item {
+    background: #FFFFFF;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+}
+
+.vf-faq-item:focus-within {
+    border-color: #FFB81C;
+}
+
+.vf-faq-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #141414;
+    gap: 16px;
+    outline: none;
+    transition: background 0.2s ease;
+}
+
+.vf-faq-trigger:hover,
+.vf-faq-trigger:focus-visible {
+    background: #fafafa;
+    color: #141414;
+}
+
+.vf-faq-trigger:focus-visible {
+    outline: 2px solid #FFB81C;
+}
+
+.vf-faq-icon {
+    font-size: 0.88rem;
+    color: #5F6368;
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+}
+
+.vf-faq-trigger[aria-expanded="true"] .vf-faq-icon {
+    transform: rotate(180deg);
+    color: #141414;
+}
+
+.vf-faq-body {
+    padding: 0 22px 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.vf-faq-answer {
+    padding-top: 14px;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #5F6368;
+}
+
+.vf-placeholder-note {
+    font-style: italic;
+    color: #8c8c8c;
+    margin: 0;
+}
+
+/* SECTION 7: BOOKING & MAP */
+.vinfast-booking-map-section {
+    padding: 70px 0;
+    background: #FFFFFF;
+}
+
+.vf-booking-map-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+}
+
+.vf-booking-card,
+.vf-map-card {
+    background: #F5F5F5;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 32px 28px;
+}
+
+.vf-booking-card-head,
+.vf-map-head {
+    margin-bottom: 22px;
+}
+
+.vf-badge-gold {
+    display: inline-block;
+    background: #FFB81C;
+    color: #141414;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.vf-badge-outline {
+    display: inline-block;
+    background: #FFFFFF;
+    color: #141414;
+    border: 1px solid #d4d4d8;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.vf-booking-card-head h3,
+.vf-map-head h3 {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #141414;
+    margin: 0 0 6px;
+}
+
+.vf-booking-card-head p,
+.vf-map-head p {
+    font-size: 0.9rem;
+    color: #5F6368;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.vf-map-address a {
+    color: #141414;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.vf-map-address a:hover {
+    color: #FFB81C;
+}
+
+.vf-booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.vf-form-field label {
+    display: block;
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: #141414;
+    margin-bottom: 6px;
+}
+
+.vf-form-field .form-control {
+    width: 100%;
+    padding: 10px 14px;
+    background: #FFFFFF;
+    border: 1px solid #d4d4d8;
+    border-radius: 6px;
+    font-size: 0.92rem;
+    color: #141414;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+.vf-form-field .form-control:focus {
+    border-color: #FFB81C;
+    outline: none;
+}
+
+.vf-form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.vf-map-frame-wrap {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 16px;
+}
+
+.vf-map-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* RESPONSIVE BREAKPOINTS (375px, 768px, 1440px) */
+@media (max-width: 991px) {
+    .hp-vf-grid,
+    .vinfast-hero-grid,
+    .vf-booking-map-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    .vf-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .vf-why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .vf-spotlight-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+    .vf-spotlight-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .hp-vinfast-hero-partner {
+        padding: 44px 0;
+    }
+    .hp-vf-heading,
+    .vinfast-hero-title {
+        font-size: 1.5rem;
+    }
+    .hp-vf-actions,
+    .vinfast-hero-cta-row {
+        flex-direction: column;
+        width: 100%;
+    }
+    .hp-vf-btn-primary,
+    .hp-vf-btn-outline,
+    .vf-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .vf-services-grid,
+    .vf-why-grid,
+    .vf-form-row-2 {
+        grid-template-columns: 1fr;
+    }
+    .vf-booking-card,
+    .vf-map-card,
+    .vf-partnership-box {
+        padding: 24px 16px;
+    }
+}
+
+@media (max-width: 375px) {
+    .hp-vf-heading,
+    .vinfast-hero-title {
+        font-size: 1.35rem;
+    }
+    .vf-section-title {
+        font-size: 1.4rem;
+    }
+}
+

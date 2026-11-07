@@ -291,5 +291,49 @@ function hieugara_seo_search_query($query) {
 }
 add_action('pre_get_posts', 'hieugara_seo_search_query');
 
+// 7. Route /dich-vu/xe-vinfast/ directly to page-vinfast.php
+function hieugara_route_vinfast_service_page() {
+    $request_uri = trim(parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
+    if ($request_uri === 'dich-vu/xe-vinfast') {
+        global $wp_query;
+        $wp_query->is_page = true;
+        $wp_query->is_singular = true;
+        $wp_query->is_404 = false;
+        status_header(200);
+        include get_template_directory() . '/page-vinfast.php';
+        exit;
+    }
+}
+add_action('template_redirect', 'hieugara_route_vinfast_service_page', 1);
+
+// SEO Document Title for VinFast Service Page
+function hieugara_vinfast_seo_title($title) {
+    $request_uri = trim(parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
+    if ($request_uri === 'dich-vu/xe-vinfast') {
+        return 'Trung tâm tiếp nhận bảo dưỡng & sửa chữa VinFast tại Hải Phòng | Ô Tô Hải Hà';
+    }
+    return $title;
+}
+add_filter('pre_get_document_title', 'hieugara_vinfast_seo_title', 999);
+
+// SEO Meta Description & Open Graph for VinFast Service Page
+function hieugara_vinfast_seo_meta_tags() {
+    $request_uri = trim(parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
+    if ($request_uri === 'dich-vu/xe-vinfast') {
+        $canonical = home_url('/dich-vu/xe-vinfast/');
+        $desc = 'Ô Tô Hải Hà – Trung tâm tiếp nhận bảo dưỡng & sửa chữa hợp tác với VinFast tại Hải Phòng. Phụ tùng chính hãng, bảo dưỡng, sửa chữa, đồng sơn xe VinFast. Đặt lịch ngay.';
+        $img = get_template_directory_uri() . '/assets/images/about/haiha-about-workshop.jpg';
+        echo '<meta name="description" content="' . esc_attr($desc) . '">' . "\n";
+        echo '<link rel="canonical" href="' . esc_url($canonical) . '">' . "\n";
+        echo '<meta property="og:title" content="Trung tâm tiếp nhận bảo dưỡng & sửa chữa VinFast tại Hải Phòng | Ô Tô Hải Hà">' . "\n";
+        echo '<meta property="og:description" content="' . esc_attr($desc) . '">' . "\n";
+        echo '<meta property="og:url" content="' . esc_url($canonical) . '">' . "\n";
+        echo '<meta property="og:type" content="article">' . "\n";
+        echo '<meta property="og:image" content="' . esc_url($img) . '">' . "\n";
+    }
+}
+add_action('wp_head', 'hieugara_vinfast_seo_meta_tags', 1);
+
+
 
 

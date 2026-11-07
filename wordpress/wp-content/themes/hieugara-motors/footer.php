@@ -82,6 +82,13 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                         DỊCH VỤ TRỌNG TÂM
                     </h4>
                     <ul class="footer-links-list footer-services-2col-mobile">
+                        <!-- 1. Dịch Vụ Xe VinFast (First Item) -->
+                        <li>
+                            <a href="<?php echo esc_url(home_url('/dich-vu/xe-vinfast/')); ?>" class="highlight-link vf-footer-link" style="color: #FFB81C !important; font-weight: 700;">
+                                <span>Dịch vụ xe VinFast</span>
+                                <span class="badge-mini" style="background:#FFB81C;color:#141414;font-weight:800;">HÃNG</span>
+                            </a>
+                        </li>
                         <?php
                         $footer_cats = get_terms(array(
                             'taxonomy'   => 'service_category',

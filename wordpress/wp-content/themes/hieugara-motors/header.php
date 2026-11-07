@@ -152,6 +152,25 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                 </a>
                 <div class="mega-menu" role="region" aria-label="Menu dịch vụ ô tô">
                     <div class="mega-inner">
+                        <!-- 1. Dịch Vụ Xe VinFast (First Item) -->
+                        <div class="mega-group mega-group-vinfast">
+                            <a class="mega-cat mega-parent mega-parent-vinfast" href="<?php echo esc_url(home_url('/dich-vu/xe-vinfast/')); ?>" style="background: rgba(255, 184, 28, 0.08); border-left: 3px solid #FFB81C;">
+                                <span class="vf-menu-badge" style="background:#FFB81C;color:#141414;font-size:10px;font-weight:800;padding:2px 6px;border-radius:4px;margin-right:6px;">VINFAST</span>
+                                <span style="font-weight:700;color:#ffffff;"><?php _e('Dịch vụ xe VinFast', 'hieugara-motors'); ?></span>
+                                <span class="mega-arrow">›</span>
+                            </a>
+                            <div class="mega-sub">
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/xe-vinfast/')); ?>">
+                                    <strong style="color:#FFB81C;">⚡ Đối tác dịch vụ chính thức VinFast</strong>
+                                    <small>Bảo dưỡng, sửa chữa, đồng sơn, phụ tùng</small>
+                                </a>
+                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dat-lich/?model=Xe%20VinFast&service=vinfast')); ?>">
+                                    <span>Đặt lịch xe VinFast ưu tiên</span>
+                                    <small>Tiếp nhận khoang riêng</small>
+                                </a>
+                            </div>
+                        </div>
+
                         <?php
                         $dynamic_cats = get_terms(array(
                             'taxonomy'   => 'service_category',

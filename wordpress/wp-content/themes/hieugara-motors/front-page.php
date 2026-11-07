@@ -121,6 +121,59 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
     </section>
 
     <!-- =========================================================================
+         MỤC MỚI: ĐỐI TÁC DỊCH VỤ CHÍNH THỨC VINFAST (NGAY SAU HERO)
+         ========================================================================= -->
+    <section class="hp-vinfast-hero-partner" id="vinfast-partnership">
+        <div class="container">
+            <div class="hp-vf-grid">
+                <!-- Text Left (on desktop) / Top (on mobile) -->
+                <div class="hp-vf-content">
+                    <span class="hp-vf-eyebrow">TRUNG TÂM TIẾP NHẬN BẢO DƯỠNG &amp; SỬA CHỮA HỢP TÁC VỚI VINFAST TẠI HẢI PHÒNG</span>
+                    <h2 class="hp-vf-heading">Ô Tô Hải Hà – Đối tác dịch vụ chính thức của VinFast</h2>
+                    <p class="hp-vf-paragraph">
+                        Từ tháng 08/2026, Ô Tô Hải Hà chính thức trở thành Trung tâm tiếp nhận bảo dưỡng &amp; sửa chữa hợp tác với VinFast tại Hải Phòng, cung cấp phụ tùng chính hãng và dịch vụ sửa chữa, bảo dưỡng, đồng sơn cho xe VinFast. Đội ngũ của chúng tôi kết hợp 31 năm kinh nghiệm sửa chữa với kỹ thuật viên xe điện được đào tạo bài bản, phục vụ mọi dòng xe xăng, dầu, điện và hybrid.
+                    </p>
+                    <ul class="hp-vf-checklist">
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Phụ tùng chính hãng VinFast</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Kỹ thuật viên xe điện</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Bảo dưỡng, sửa chữa, đồng sơn</span>
+                        </li>
+                    </ul>
+                    <div class="hp-vf-actions">
+                        <a href="<?php echo esc_url(home_url('/dat-lich/?model=Xe%20VinFast&service=vinfast')); ?>" class="hp-vf-btn-primary">
+                            <i class="fa-regular fa-calendar-check"></i>
+                            <span>Đặt lịch xe VinFast</span>
+                        </a>
+                        <a href="<?php echo esc_url(home_url('/dich-vu/xe-vinfast/')); ?>" class="hp-vf-btn-outline">
+                            <span>Xem dịch vụ xe VinFast</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Photo Right (on desktop) / Stacked below text (on mobile) -->
+                <div class="hp-vf-photo-wrap">
+                    <div class="hp-vf-frame">
+                        <img src="<?php echo esc_url($theme_uri . '/assets/images/about/haiha-about-workshop.jpg'); ?>" alt="Biển VinFast Service tại gara Ô Tô Hải Hà" width="600" height="400" loading="lazy" class="hp-vf-img">
+                        <div class="hp-vf-badge">
+                            <span class="hp-vf-badge-sub">ĐỐI TÁC DỊCH VỤ CHÍNH THỨC</span>
+                            <strong class="hp-vf-badge-title">VINFAST SERVICE</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
          MỤC 2: CÁC CON SỐ NỔI BẬT
          ========================================================================= -->
     <section class="shiftup-technicians-section" id="cau-chuyen-31-nam">
@@ -503,13 +556,34 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
     </section>
 
     <!-- =========================================================================
-         MỤC 5: CÁC DÒNG XE PHỤC VỤ (BRAND MARQUEE)
+         MỤC 5: ĐỐI TÁC & CÁC DÒNG XE PHỤC VỤ (BRAND MARQUEE)
          ========================================================================= -->
     <section class="shiftup-brand-marquee-section" id="dong-xe-phuc-vu">
         <div class="container">
             <div class="marquee-head text-center">
-                <span class="marquee-sub"><?php _e('CÁC DÒNG XE PHỤC VỤ TẠI XƯỞNG', 'hieugara-motors'); ?></span>
-                <h3 class="marquee-title"><?php _e('TIẾP NHẬN BẢO DƯỠNG &amp; SỬA CHỮA MỌI THƯƠNG HIỆU XE', 'hieugara-motors'); ?></h3>
+                <span class="marquee-sub"><?php _e('ĐỐI TÁC &amp; THƯƠNG HIỆU ĐỒNG HÀNH', 'hieugara-motors'); ?></span>
+                <h3 class="marquee-title"><?php _e('CÁC DÒNG XE CHÚNG TÔI PHỤC VỤ', 'hieugara-motors'); ?></h3>
+            </div>
+
+            <!-- VinFast Official Service Partner Highlighted Separation -->
+            <div class="marquee-vinfast-partner-spotlight">
+                <div class="vf-spotlight-inner">
+                    <div class="vf-spotlight-badge">
+                        <i class="fa-solid fa-award"></i>
+                        <span>ĐỐI TÁC DỊCH VỤ CHÍNH THỨC</span>
+                    </div>
+                    <div class="vf-spotlight-brand">
+                        <img src="<?php echo esc_url($theme_uri . '/assets/images/brands/vinfast.svg?v=' . HIEUGARA_THEME_VERSION); ?>" alt="VinFast" class="vf-spotlight-logo" width="38" height="30">
+                        <div class="vf-spotlight-titles">
+                            <strong>VINFAST VIỆT NAM</strong>
+                            <small>Trung tâm tiếp nhận bảo dưỡng &amp; sửa chữa hợp tác tại Hải Phòng</small>
+                        </div>
+                    </div>
+                    <a href="<?php echo esc_url(home_url('/dich-vu/xe-vinfast/')); ?>" class="vf-spotlight-btn">
+                        <span>Chi tiết dịch vụ xe VinFast</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
         </div>
 
