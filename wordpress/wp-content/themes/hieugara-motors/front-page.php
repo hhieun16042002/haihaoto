@@ -20,8 +20,8 @@ $theme_uri     = get_template_directory_uri();
 $shiftup_img   = $theme_uri . '/assets/images/shiftup';
 $slider_img    = $theme_uri . '/assets/images/slider';
 $rescue_phone  = get_option('hieugara_rescue_phone', '0911 211 996');
-$tech_phone    = get_option('hieugara_tech_phone', '0915 041 989');
-$hotline_phone = get_option('hieugara_hotline_phone', '02203 892 207');
+$tech_phone    = get_option('hieugara_tech_phone', '0911 211 996');
+$hotline_phone = get_option('hieugara_hotline_phone', '0911 211 996');
 $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh/'));
 ?>
 

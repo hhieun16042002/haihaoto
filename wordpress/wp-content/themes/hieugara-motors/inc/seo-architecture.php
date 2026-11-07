@@ -189,7 +189,7 @@ class HieuGara_SEO_Architecture {
      */
     public static function output_json_ld_schema() {
         $rescue_phone  = get_option('hieugara_rescue_phone', '0911 211 996');
-        $hotline_phone = get_option('hieugara_hotline_phone', '02203 892 207');
+        $hotline_phone = get_option('hieugara_hotline_phone', '0911 211 996');
         $theme_uri     = get_template_directory_uri();
         $logo_url      = $theme_uri . '/assets/images/haiha-logo.png';
 

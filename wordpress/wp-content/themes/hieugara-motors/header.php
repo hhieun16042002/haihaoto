@@ -25,8 +25,9 @@
 <?php
 // Retrieve Theme Options (managed via Admin > Cài Đặt Giao Diện)
 $rescue_phone  = get_option('hieugara_rescue_phone', '0911 211 996');
-$tech_phone    = get_option('hieugara_tech_phone', '0915 041 989');
-$hotline_phone = get_option('hieugara_hotline_phone', '02203 892 207');
+$tech_phone    = get_option('hieugara_tech_phone', '0911 211 996');
+$hotline_phone = get_option('hieugara_hotline_phone', '0911 211 996');
+$topbar_email  = get_option('hieugara_topbar_email', 'thanhotohaiha@gmail.com');
 $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh/'));
 $menu_search   = get_option('hieugara_menu_search_enable', '1');
 ?>
@@ -315,7 +316,7 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
         </a>
         <div class="drawer-meta-info">
             <span><i class="fa-solid fa-phone text-orange"></i> Hotline: <?php echo esc_html($hotline_phone); ?></span>
-            <span><i class="fa-solid fa-envelope text-orange"></i> garaotohaiha@gmail.com</span>
+            <span><i class="fa-solid fa-envelope text-orange"></i> <?php echo esc_html($topbar_email); ?></span>
         </div>
     </div>
 </nav>

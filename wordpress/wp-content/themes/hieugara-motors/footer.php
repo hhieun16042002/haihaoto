@@ -11,10 +11,10 @@ if (!defined('ABSPATH')) {
 }
 
 $rescue_phone  = get_option('hieugara_rescue_phone', '0911 211 996');
-$tech_phone    = get_option('hieugara_tech_phone', '0915 041 989');
-$hotline_phone = get_option('hieugara_hotline_phone', '02203 892 207');
-$topbar_email  = get_option('hieugara_topbar_email', 'garaotohaiha@gmail.com');
-$topbar_hours  = get_option('hieugara_topbar_hours', '07:30 - 18:30 (T2 - CN)');
+$tech_phone    = get_option('hieugara_tech_phone', '0911 211 996');
+$hotline_phone = get_option('hieugara_hotline_phone', '0911 211 996');
+$topbar_email  = get_option('hieugara_topbar_email', 'thanhotohaiha@gmail.com');
+$topbar_hours  = get_option('hieugara_topbar_hours', '08:00 - 18:00 (T2 - CN)');
 $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh/'));
 $rescue_clean  = preg_replace('/[^0-9]/', '', $rescue_phone);
 $tech_clean    = preg_replace('/[^0-9]/', '', $tech_phone);
@@ -44,33 +44,22 @@ $hotline_clean = preg_replace('/[^0-9]/', '', $hotline_phone);
                         </div>
                     </div>
 
-                    <p class="footer-brand-desc">
-                        <strong>Ôtô Hải Hà (1995 - <?php echo date('Y'); ?>):</strong> Khởi nguồn từ năm 1995 bởi nhà sáng lập ông Nguyễn Hải Hà — 31 năm kinh nghiệm bảo dưỡng, sửa chữa máy gầm, điện điều hòa và đồng sơn công nghệ cao.
-                    </p>
-
                     <div class="footer-contact-chips">
-                        <a href="tel:<?php echo esc_attr($hotline_clean); ?>" class="contact-chip">
-                            <i class="fa-solid fa-phone"></i>
-                            <div>
-                                <small>TỔNG ĐÀI XƯỞNG</small>
-                                <strong><?php echo esc_html($hotline_phone); ?></strong>
-                            </div>
-                        </a>
                         <a href="tel:<?php echo esc_attr($rescue_clean); ?>" class="contact-chip chip-rescue">
-                            <i class="fa-solid fa-truck-pickup"></i>
+                            <i class="fa-solid fa-phone-volume"></i>
                             <div>
-                                <small>CỨU HỘ 24/7</small>
+                                <small>HOTLINE &amp; CỨU HỘ 24/7</small>
                                 <strong><?php echo esc_html($rescue_phone); ?></strong>
                             </div>
                         </a>
-                        <a href="tel:<?php echo esc_attr($tech_clean); ?>" class="contact-chip">
-                            <i class="fa-solid fa-wrench"></i>
+                        <a href="https://zalo.me/<?php echo esc_attr($rescue_clean); ?>" target="_blank" rel="noopener" class="contact-chip">
+                            <i class="fa-solid fa-comment-dots" style="color: #0088ff;"></i>
                             <div>
-                                <small>KỸ THUẬT &amp; ĐẶT LỊCH</small>
-                                <strong><?php echo esc_html($tech_phone); ?></strong>
+                                <small>ZALO TƯ VẤN &amp; HỖ TRỢ</small>
+                                <strong><?php echo esc_html($rescue_phone); ?></strong>
                             </div>
                         </a>
-                        <div class="contact-chip">
+                        <div class="contact-chip" style="grid-column: 1 / -1;">
                             <i class="fa-solid fa-clock"></i>
                             <div>
                                 <small>GIỜ LÀM VIỆC</small>
@@ -130,17 +119,6 @@ $hotline_clean = preg_replace('/[^0-9]/', '', $hotline_phone);
                             </a>
                         </li>
                     </ul>
-
-                    <div class="footer-quick-actions">
-                        <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>" class="footer-action-link">
-                            <i class="fa-regular fa-calendar-check"></i>
-                            <span>Đặt lịch hẹn trực tuyến</span>
-                        </a>
-                        <a href="<?php echo esc_url($warranty_url); ?>" class="footer-action-link">
-                            <i class="fa-solid fa-shield-halved"></i>
-                            <span>Tra cứu bảo hành điện tử</span>
-                        </a>
-                    </div>
                 </div>
 
                 <!-- Column 3: Google Maps & Direct Navigation -->

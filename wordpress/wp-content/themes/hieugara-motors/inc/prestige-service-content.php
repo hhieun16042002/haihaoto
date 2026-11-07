@@ -11,14 +11,13 @@ if (!defined('ABSPATH')) {
 
 function hieugara_get_prestige_footer_box() {
     $rescue_phone  = get_option('hieugara_rescue_phone', '0911 211 996');
-    $hotline_phone = get_option('hieugara_hotline_phone', '02203 892 207');
     return '
     <div style="margin-top: 32px; padding: 24px 28px; background: #fff8f6; border-left: 4px solid #1d4ed8; border-radius: 4px;">
         <h4 style="font-family: \'Chakra Petch\', sans-serif; font-size: 1.05rem; font-weight: 800; color: #0c1e3a; margin: 0 0 10px; text-transform: uppercase;">
             TRUNG TÂM BẢO DƯỠNG VÀ SỬA CHỮA Ô TÔ CAO CẤP ÔTÔ HẢI HÀ
         </h4>
         <p style="margin: 0 0 6px; color: #334155; font-size: 0.95rem;"><strong>Địa chỉ:</strong> Km 53+300 Quốc lộ 5 (Chiều Hà Nội – Hải Phòng), Phường Cẩm Thượng, TP. Hải Dương</p>
-        <p style="margin: 0 0 6px; color: #334155; font-size: 0.95rem;"><strong>Hotline Cứu Hộ &amp; Tư Vấn 24/7:</strong> <a href="tel:' . esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)) . '" style="color: #1d4ed8; font-weight: 700; text-decoration: none;">' . esc_html($rescue_phone) . '</a> – <a href="tel:' . esc_attr(preg_replace('/[^0-9]/', '', $hotline_phone)) . '" style="color: #0c1e3a; font-weight: 700; text-decoration: none;">' . esc_html($hotline_phone) . '</a></p>
+        <p style="margin: 0 0 6px; color: #334155; font-size: 0.95rem;"><strong>Hotline Cứu Hộ &amp; Tư Vấn 24/7:</strong> <a href="tel:' . esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)) . '" style="color: #1d4ed8; font-weight: 700; text-decoration: none;">' . esc_html($rescue_phone) . '</a></p>
     </div>';
 }
 

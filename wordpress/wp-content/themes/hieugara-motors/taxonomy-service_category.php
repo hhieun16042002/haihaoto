@@ -20,7 +20,7 @@ $page_title    = $term_name;
 $badge         = !empty($prestige_data['badge']) ? $prestige_data['badge'] : __('TIÊU CHUẨN KỸ THUẬT ÔTÔ HẢI HÀ', 'hieugara-motors');
 
 $rescue_phone  = get_option('hieugara_rescue_phone', '0911 211 996');
-$hotline_phone = get_option('hieugara_hotline_phone', '02203 892 207');
+$hotline_phone = get_option('hieugara_hotline_phone', '0911 211 996');
 
 // Query child services in this category from database
 $child_services = array();

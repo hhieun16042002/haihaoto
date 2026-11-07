@@ -234,8 +234,8 @@ $pre_plate   = isset($_GET['plate']) ? sanitize_text_field($_GET['plate']) : '';
 
                         <div class="sidebar-hotline-box">
                             <span class="hotline-tag">CẦN HỖ TRỢ ĐẶT LỊCH NHANH?</span>
-                            <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', get_option('hieugara_hotline_phone', '02203892207'))); ?>" class="hotline-link">
-                                <i class="fa fa-phone"></i> <?php echo esc_html(get_option('hieugara_hotline_phone', '02203 892 207')); ?>
+                            <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', get_option('hieugara_hotline_phone', '0911211996'))); ?>" class="hotline-link">
+                                <i class="fa fa-phone"></i> <?php echo esc_html(get_option('hieugara_hotline_phone', '0911 211 996')); ?>
                             </a>
                             <small>Hotline cứu hộ 24/7: <strong><?php echo esc_html(get_option('hieugara_rescue_phone', '0911 211 996')); ?></strong></small>
                         </div>

@@ -51,10 +51,10 @@ function hieugara_rescue_phone() {
     return get_option('hieugara_rescue_phone', '0911 211 996');
 }
 function hieugara_hotline_phone() {
-    return get_option('hieugara_hotline_phone', '02203 892 207');
+    return get_option('hieugara_hotline_phone', '0911 211 996');
 }
 function hieugara_tech_phone() {
-    return get_option('hieugara_tech_phone', '0915 041 989');
+    return get_option('hieugara_tech_phone', '0911 211 996');
 }
 function hieugara_warranty_url() {
     return get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh/'));

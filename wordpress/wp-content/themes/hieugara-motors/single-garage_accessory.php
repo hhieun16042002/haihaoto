@@ -10,7 +10,7 @@
 get_header();
 
 $rescue_phone  = function_exists('hieugara_get_rescue_phone') ? hieugara_get_rescue_phone() : '0911 211 996';
-$hotline_phone = function_exists('hieugara_get_hotline_phone') ? hieugara_get_hotline_phone() : '02 203 892 207';
+$hotline_phone = function_exists('hieugara_get_hotline_phone') ? hieugara_get_hotline_phone() : '0911 211 996';
 
 while (have_posts()) : the_post();
     $post_id    = get_the_ID();
@@ -206,7 +206,7 @@ while (have_posts()) : the_post();
                                 <span>GỌI TƯ VẤN: <strong><?php echo esc_html($rescue_phone); ?></strong></span>
                             </a>
 
-                            <a href="https://zalo.me/0915041989" target="_blank" rel="noopener" class="btn-acc-zalo" title="Chat Zalo với kỹ thuật viên">
+                            <a href="https://zalo.me/0911211996" target="_blank" rel="noopener" class="btn-acc-zalo" title="Chat Zalo với kỹ thuật viên">
                                 <i class="fa-solid fa-comment-dots mr-2"></i>
                                 <span>CHAT ZALO KỸ THUẬT VIÊN</span>
                             </a>

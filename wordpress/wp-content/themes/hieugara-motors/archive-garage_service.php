@@ -9,7 +9,7 @@
 get_header();
 
 $rescue_phone  = get_option('hieugara_rescue_phone', '0911 211 996');
-$hotline_phone = get_option('hieugara_hotline_phone', '02203 892 207');
+$hotline_phone = get_option('hieugara_hotline_phone', '0911 211 996');
 
 // Query all parent categories dynamically from database
 $categories = get_terms(array(

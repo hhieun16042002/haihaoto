@@ -9,7 +9,7 @@
 get_header();
 
 $rescue_phone  = function_exists('hieugara_get_rescue_phone') ? hieugara_get_rescue_phone() : '0911 211 996';
-$hotline_phone = function_exists('hieugara_get_hotline_phone') ? hieugara_get_hotline_phone() : '02 203 892 207';
+$hotline_phone = function_exists('hieugara_get_hotline_phone') ? hieugara_get_hotline_phone() : '0911 211 996';
 
 // Get categories & grouped accessories
 $categories = function_exists('hieugara_get_accessories_categories') ? hieugara_get_accessories_categories() : array();
@@ -228,7 +228,7 @@ $initial_cat = isset($_GET['cat']) ? sanitize_key($_GET['cat']) : 'all';
                         <i class="fa-solid fa-phone-volume"></i>
                         <span>Hotline: <strong><?php echo esc_html($rescue_phone); ?></strong></span>
                     </a>
-                    <a href="https://zalo.me/0915041989" target="_blank" rel="noopener" class="btn-consult-zalo">
+                    <a href="https://zalo.me/0911211996" target="_blank" rel="noopener" class="btn-consult-zalo">
                         <i class="fa-solid fa-comment-dots"></i>
                         <span>Zalo Kỹ Thuật Viên</span>
                     </a>

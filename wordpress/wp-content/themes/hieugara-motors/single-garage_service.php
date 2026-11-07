@@ -40,7 +40,7 @@ while (have_posts()) : the_post();
         $thumb = get_template_directory_uri() . '/assets/images/shiftup/slide-2.jpg';
     }
 
-    $hotline_phone = get_option('hieugara_hotline_phone', '02203 892 207');
+    $hotline_phone = get_option('hieugara_hotline_phone', '0911 211 996');
     $rescue_phone  = get_option('hieugara_rescue_phone', '0911 211 996');
     $features_raw  = get_post_meta($post_id, '_garage_features', true);
     ?>
