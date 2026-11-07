@@ -20,7 +20,7 @@ $page_title    = $term_name;
 $badge         = !empty($prestige_data['badge']) ? $prestige_data['badge'] : __('TIÊU CHUẨN KỸ THUẬT ÔTÔ HẢI HÀ', 'hieugara-motors');
 
 $rescue_phone  = get_option('hieugara_rescue_phone', '0911 211 996');
-$hotline_phone = get_option('hieugara_hotline_phone', '0911 211 996');
+$hotline_phone = get_option('hieugara_hotline_phone', '02203 892 207');
 
 // Query child services in this category from database
 $child_services = array();
@@ -52,19 +52,23 @@ $other_cats = get_terms(array(
 ?>
 
 <!-- Category Hero Header Banner -->
-<section class="service-single-header" style="background: #0f1115; padding: 50px 0 40px; border-bottom: 3px solid #F5A300; position: relative;">
+<section class="service-single-header" style="background: #141414; padding: 45px 0 35px; border-bottom: 3px solid #C5A880; position: relative;">
     <div class="container" style="max-width: 1360px; margin: 0 auto; padding: 0 20px;">
-        <?php if (class_exists('HieuGara_SEO_Architecture')) : ?>
-            <?php HieuGara_SEO_Architecture::render_breadcrumbs(); ?>
-        <?php endif; ?>
+        <div class="portal-breadcrumb" style="display: flex; gap: 8px; align-items: center; font-size: 0.85rem; color: #94a3b8; margin-bottom: 14px; font-family: 'Chakra Petch', sans-serif; text-transform: uppercase;">
+            <a href="<?php echo esc_url(home_url('/')); ?>" style="color: #cbd5e1; text-decoration: none;"><?php _e('Trang chủ', 'hieugara-motors'); ?></a>
+            <span style="color: #64748b;">/</span>
+            <a href="<?php echo esc_url(home_url('/dich-vu/')); ?>" style="color: #cbd5e1; text-decoration: none;"><?php _e('Dịch Vụ', 'hieugara-motors'); ?></a>
+            <span style="color: #64748b;">/</span>
+            <span class="current" style="color: #C5A880; font-weight: 700;"><?php echo esc_html($page_title); ?></span>
+        </div>
 
         <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
             <div style="max-width: 900px;">
-                <div style="display: inline-block; background: #F5A300; color: #ffffff; font-family: 'Chakra Petch', sans-serif; font-size: 0.75rem; font-weight: 800; padding: 4px 12px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px;">
+                <div style="display: inline-block; background: #C5A880; color: #141414; font-family: 'Chakra Petch', sans-serif; font-size: 0.72rem; font-weight: 800; padding: 4px 12px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; border-radius: 2px;">
                     <?php echo esc_html($badge); ?>
                 </div>
                 <h1 style="font-family: 'Chakra Petch', sans-serif; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; color: #ffffff; margin: 0 0 10px; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.3;">
-                    <span style="color: #F5A300;">|</span> <?php echo esc_html($page_title); ?>
+                    <span style="color: #C5A880;">|</span> <?php echo esc_html($page_title); ?>
                 </h1>
                 <?php if (!empty($term_desc)) : ?>
                     <p style="color: #cbd5e1; font-size: 1rem; line-height: 1.6; margin: 0; max-width: 820px;">
@@ -75,9 +79,9 @@ $other_cats = get_terms(array(
 
             <!-- Emergency Contact Badge -->
             <div style="display: flex; gap: 14px; align-items: center;">
-                <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(245, 163, 0, 0.15); border: 1px solid #F5A300; color: #ffffff; padding: 10px 18px; font-family: 'Chakra Petch', sans-serif; font-size: 0.85rem; font-weight: 700; text-decoration: none; text-transform: uppercase;">
-                    <i class="fa fa-phone-volume" style="color: #F5A300;"></i>
-                    <span>CỨU HỘ 24/7: <strong style="color: #F5A300;"><?php echo esc_html($rescue_phone); ?></strong></span>
+                <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" style="display: inline-flex; align-items: center; gap: 8px; background: #D92D20; border: 1px solid rgba(255,255,255,0.25); color: #ffffff; padding: 10px 18px; font-family: 'Chakra Petch', sans-serif; font-size: 0.85rem; font-weight: 700; text-decoration: none; text-transform: uppercase; border-radius: 4px;">
+                    <i class="fa fa-phone-volume"></i>
+                    <span>CỨU HỘ 24/7: <strong style="color: #ffffff;"><?php echo esc_html($rescue_phone); ?></strong></span>
                 </a>
             </div>
         </div>
@@ -96,7 +100,7 @@ $other_cats = get_terms(array(
                 <div style="margin-bottom: 40px;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px;">
                         <h2 style="font-family: 'Chakra Petch', sans-serif; font-size: 1.35rem; font-weight: 800; color: #0f172a; margin: 0; text-transform: uppercase;">
-                            <i class="fa fa-wrench" style="color: #F5A300; margin-right: 8px;"></i>
+                            <i class="fa fa-wrench" style="color: #C5A880; margin-right: 8px;"></i>
                             <?php _e('CÁC GÓI DỊCH VỤ TRỌNG TÂM', 'hieugara-motors'); ?>
                             <span style="font-size: 0.85rem; color: #64748b; font-weight: 600; margin-left: 6px;">(<?php echo count($child_services); ?>)</span>
                         </h2>
@@ -124,7 +128,7 @@ $other_cats = get_terms(array(
                                             <img src="<?php echo esc_url($s_thumb); ?>" alt="<?php echo esc_attr($srv->post_title); ?>" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                                         </a>
                                         <?php if (!empty($s_badge)) : ?>
-                                            <span style="position: absolute; top: 10px; left: 10px; background: #0f1115; color: #F5A300; font-family: 'Chakra Petch', sans-serif; font-size: 0.65rem; font-weight: 800; padding: 3px 8px; border-radius: 2px; text-transform: uppercase; border-left: 3px solid #F5A300;">
+                                            <span style="position: absolute; top: 10px; left: 10px; background: #0f1115; color: #C5A880; font-family: 'Chakra Petch', sans-serif; font-size: 0.65rem; font-weight: 800; padding: 3px 8px; border-radius: 2px; text-transform: uppercase; border-left: 3px solid #C5A880;">
                                                 <?php echo esc_html($s_badge); ?>
                                             </span>
                                         <?php endif; ?>
@@ -156,7 +160,7 @@ $other_cats = get_terms(array(
                                             <a href="<?php echo esc_url($s_link); ?>" style="flex: 1; text-align: center; padding: 9px 12px; background: #0f172a; color: #ffffff; text-decoration: none; font-family: 'Chakra Petch', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; border-radius: 3px;">
                                                 <?php _e('Chi tiết', 'hieugara-motors'); ?> &rarr;
                                             </a>
-                                            <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode($srv->post_title))); ?>" style="padding: 9px 12px; background: #F5A300; color: #ffffff; text-decoration: none; font-family: 'Chakra Petch', sans-serif; font-size: 0.8rem; font-weight: 700; border-radius: 3px;" title="Đặt lịch hẹn">
+                                            <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode($srv->post_title))); ?>" style="padding: 9px 12px; background: #C5A880; color: #ffffff; text-decoration: none; font-family: 'Chakra Petch', sans-serif; font-size: 0.8rem; font-weight: 700; border-radius: 3px;" title="Đặt lịch hẹn">
                                                 <i class="fa fa-calendar-check"></i>
                                             </a>
                                         </div>
@@ -174,8 +178,8 @@ $other_cats = get_terms(array(
                 <!-- Editorial Content (if exists) -->
                 <?php if (!empty($prestige_data['html'])) : ?>
                     <article style="background: #ffffff; padding: 36px; border: 1px solid #ebebeb; box-shadow: 0 4px 20px rgba(0,0,0,0.04); margin-bottom: 30px;">
-                        <h2 style="font-family: 'Chakra Petch', sans-serif; font-size: 1.3rem; font-weight: 800; color: #0f172a; margin: 0 0 20px; text-transform: uppercase; border-bottom: 2px solid #F5A300; padding-bottom: 10px;">
-                            <span style="color: #F5A300;">|</span> <?php _e('THÔNG TIN CHUYÊN MÔN & QUY CHUẨN KỸ THUẬT', 'hieugara-motors'); ?>
+                        <h2 style="font-family: 'Chakra Petch', sans-serif; font-size: 1.3rem; font-weight: 800; color: #0f172a; margin: 0 0 20px; text-transform: uppercase; border-bottom: 2px solid #C5A880; padding-bottom: 10px;">
+                            <span style="color: #C5A880;">|</span> <?php _e('THÔNG TIN CHUYÊN MÔN & QUY CHUẨN KỸ THUẬT', 'hieugara-motors'); ?>
                         </h2>
                         <div class="entry-content" style="line-height: 1.85; color: #334155; font-size: 1rem;">
                             <?php echo $prestige_data['html']; ?>
@@ -189,7 +193,7 @@ $other_cats = get_terms(array(
                         <strong style="font-family: 'Chakra Petch', sans-serif; font-size: 1rem; color: #141414; display: block; margin-bottom: 4px;"><?php _e('CẦN TƯ VẤN KỸ THUẬT TRỰC TIẾP?', 'hieugara-motors'); ?></strong>
                         <span style="color: #5F6368; font-size: 0.9rem;"><?php _e('Đội ngũ kỹ thuật viên trưởng Ôtô Hải Hà hỗ trợ giải đáp trực tiếp 24/7.', 'hieugara-motors'); ?></span>
                     </div>
-                    <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="shiftup-rect-btn btn-orange-solid" style="background: #F5A300; color: #fff; padding: 12px 24px; text-decoration: none; font-family: 'Chakra Petch', sans-serif; font-weight: 700; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px;">
+                    <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="shiftup-rect-btn btn-orange-solid" style="background: #C5A880; color: #fff; padding: 12px 24px; text-decoration: none; font-family: 'Chakra Petch', sans-serif; font-weight: 700; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px;">
                         <i class="fa fa-phone"></i> <?php echo esc_html($rescue_phone); ?>
                     </a>
                 </div>
@@ -199,8 +203,8 @@ $other_cats = get_terms(array(
             <!-- Right: Sticky Booking Form & Other Categories -->
             <aside class="service-sidebar" style="position: sticky; top: 120px;">
                 <div style="background: #ffffff; border: 2px solid #141414; padding: 32px; box-shadow: 0 12px 30px rgba(0,0,0,0.08); margin-bottom: 30px;">
-                    <div style="border-bottom: 2px solid #F5A300; padding-bottom: 16px; margin-bottom: 24px;">
-                        <span style="font-family: 'Chakra Petch', sans-serif; font-size: 0.75rem; font-weight: 800; color: #F5A300; text-transform: uppercase; letter-spacing: 1.5px;"><?php _e('ÔTÔ HẢI HÀ SERVICE', 'hieugara-motors'); ?></span>
+                    <div style="border-bottom: 2px solid #C5A880; padding-bottom: 16px; margin-bottom: 24px;">
+                        <span style="font-family: 'Chakra Petch', sans-serif; font-size: 0.75rem; font-weight: 800; color: #C5A880; text-transform: uppercase; letter-spacing: 1.5px;"><?php _e('ÔTÔ HẢI HÀ SERVICE', 'hieugara-motors'); ?></span>
                         <h3 style="font-family: 'Chakra Petch', sans-serif; font-size: 1.35rem; font-weight: 800; color: #141414; text-transform: uppercase; margin: 6px 0 0;"><?php _e('ĐẶT HẸN DỊCH VỤ', 'hieugara-motors'); ?></h3>
                     </div>
 
@@ -231,23 +235,23 @@ $other_cats = get_terms(array(
                             </select>
                         </div>
 
-                        <button type="submit" class="shiftup-rect-btn btn-orange-solid" style="width: 100%; padding: 15px; background: #F5A300; color: #fff; border: none; font-family: 'Chakra Petch', sans-serif; font-size: 0.95rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+                        <button type="submit" class="shiftup-rect-btn btn-orange-solid" style="width: 100%; padding: 15px; background: #C5A880; color: #fff; border: none; font-family: 'Chakra Petch', sans-serif; font-size: 0.95rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
                             <span class="btn-orange-bar" style="color: #fff;">|</span> + <?php _e('XÁC NHẬN TIẾP NHẬN XE', 'hieugara-motors'); ?>
                         </button>
                         <div class="form-response-msg" style="display:none; margin-top: 12px; font-size: 0.9rem; padding: 10px; text-align: center;"></div>
                     </form>
 
                     <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #eee; font-size: 0.82rem; color: #666; line-height: 1.6;">
-                        <p style="margin-bottom: 6px;"><i class="fa fa-check" style="color: #F5A300;"></i> Kiểm tra tổng quát miễn phí 45 hạng mục.</p>
-                        <p style="margin-bottom: 6px;"><i class="fa fa-check" style="color: #F5A300;"></i> Báo giá trước minh bạch, khách duyệt mới làm.</p>
-                        <p style="margin-bottom: 0;"><i class="fa fa-check" style="color: #F5A300;"></i> Bảo hành điện tử tra cứu theo biển số.</p>
+                        <p style="margin-bottom: 6px;"><i class="fa fa-check" style="color: #C5A880;"></i> Kiểm tra tổng quát miễn phí 45 hạng mục.</p>
+                        <p style="margin-bottom: 6px;"><i class="fa fa-check" style="color: #C5A880;"></i> Báo giá trước minh bạch, khách duyệt mới làm.</p>
+                        <p style="margin-bottom: 0;"><i class="fa fa-check" style="color: #C5A880;"></i> Bảo hành điện tử tra cứu theo biển số.</p>
                     </div>
                 </div>
 
                 <!-- Other Categories Widget -->
                 <?php if (!empty($other_cats) && !is_wp_error($other_cats)) : ?>
                     <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 24px; border-radius: 4px;">
-                        <h4 style="font-family: 'Chakra Petch', sans-serif; font-size: 1rem; font-weight: 800; color: #0f172a; margin: 0 0 16px; text-transform: uppercase; border-bottom: 2px solid #F5A300; padding-bottom: 8px;">
+                        <h4 style="font-family: 'Chakra Petch', sans-serif; font-size: 1rem; font-weight: 800; color: #0f172a; margin: 0 0 16px; text-transform: uppercase; border-bottom: 2px solid #C5A880; padding-bottom: 8px;">
                             <?php _e('DANH MỤC DỊCH VỤ KHÁC', 'hieugara-motors'); ?>
                         </h4>
                         <ul style="list-style: none; padding: 0; margin: 0;">
@@ -255,7 +259,7 @@ $other_cats = get_terms(array(
                                 <li style="margin-bottom: 8px;">
                                     <a href="<?php echo esc_url(home_url('/dich-vu/' . $oc->slug . '/')); ?>" style="display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: #f8fafc; color: #334155; text-decoration: none; font-family: 'Chakra Petch', sans-serif; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; border-radius: 3px; transition: all 0.2s ease;">
                                         <span><?php echo esc_html($oc->name); ?></span>
-                                        <span style="color: #F5A300;">&rsaquo;</span>
+                                        <span style="color: #C5A880;">&rsaquo;</span>
                                     </a>
                                 </li>
                             <?php endforeach; ?>

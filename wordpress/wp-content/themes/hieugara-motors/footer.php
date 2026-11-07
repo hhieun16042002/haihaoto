@@ -80,37 +80,33 @@ $hotline_clean = preg_replace('/[^0-9]/', '', $hotline_phone);
                         DỊCH VỤ TRỌNG TÂM
                     </h4>
                     <ul class="footer-links-list footer-services-2col-mobile">
-                        <li>
-                            <a href="<?php echo esc_url(home_url('/dich-vu/bao-duong-o-to/')); ?>">
-                                <span>01. Bảo Dưỡng Ô Tô Định Kỳ</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo esc_url(home_url('/dich-vu/sua-chua-o-to/')); ?>">
-                                <span>02. Sửa Chữa Máy, Gầm &amp; Hộp Số</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo esc_url(home_url('/dich-vu/dien-o-to-dieu-hoa/')); ?>">
-                                <span>03. Điện, Chẩn Đoán ECU &amp; Điều Hòa</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo esc_url(home_url('/dich-vu/dong-son-o-to/')); ?>">
-                                <span>04. Đồng Sơn Phòng Sấy &amp; Thân Vỏ</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo esc_url(home_url('/dich-vu/cham-soc-nang-cap-o-to/')); ?>">
-                                <span>05. Chăm Sóc Detailing &amp; Phụ Kiện</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo esc_url(home_url('/dich-vu/cuu-ho-ho-tro-o-to/')); ?>" class="highlight-link">
-                                <span>06. Cứu Hộ Giao Thông 24/7</span>
-                                <span class="badge-mini">24/7</span>
-                            </a>
-                        </li>
+                        <?php
+                        $footer_cats = get_terms(array(
+                            'taxonomy'   => 'service_category',
+                            'parent'     => 0,
+                            'hide_empty' => false,
+                            'orderby'    => 'name',
+                            'order'      => 'ASC',
+                        ));
+                        if (!empty($footer_cats) && !is_wp_error($footer_cats)) :
+                            $f_i = 1;
+                            foreach ($footer_cats as $f_cat) :
+                                $f_link = home_url('/dich-vu/' . $f_cat->slug . '/');
+                                $is_rescue = strpos($f_cat->slug, 'cuu-ho') !== false;
+                        ?>
+                            <li>
+                                <a href="<?php echo esc_url($f_link); ?>" class="<?php echo $is_rescue ? 'highlight-link' : ''; ?>">
+                                    <span><?php printf('%02d. %s', $f_i, esc_html($f_cat->name)); ?></span>
+                                    <?php if ($is_rescue) : ?>
+                                        <span class="badge-mini">24/7</span>
+                                    <?php endif; ?>
+                                </a>
+                            </li>
+                        <?php 
+                                $f_i++;
+                            endforeach;
+                        endif;
+                        ?>
                     </ul>
                 </div>
 
