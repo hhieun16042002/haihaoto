@@ -244,7 +244,7 @@ while (have_posts()) : the_post();
                         <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #eee; font-size: 0.82rem; color: #64748b; line-height: 1.6;">
                             <p style="margin-bottom: 6px;"><i class="fa fa-check" style="color: #C5A880;"></i> Khám xe &amp; tư vấn miễn phí.</p>
                             <p style="margin-bottom: 6px;"><i class="fa fa-check" style="color: #C5A880;"></i> Báo giá trước minh bạch, khách duyệt mới làm.</p>
-                            <p style="margin-bottom: 0;"><i class="fa fa-check" style="color: #C5A880;"></i> Bảo hành điện tử tra cứu theo biển số.</p>
+                            <p style="margin-bottom: 0;"><i class="fa fa-check" style="color: #C5A880;"></i> Bảo hành dài hạn minh bạch bằng hóa đơn &amp; tem kiểm định.</p>
                         </div>
                     </div>
 

@@ -115,8 +115,8 @@ get_header();
                 </div>
                 <div class="commit-card">
                     <div class="commit-num">03</div>
-                    <h4>Bảo Hành Điện Tử Theo Biển Số</h4>
-                    <p>Sổ bảo hành được lưu trữ trực tuyến, tra cứu 24/7 không cần giữ giấy tờ. Bảo hành đồng sơn lên đến 24 tháng.</p>
+                    <h4>Bảo Hành Dài Hạn Minh Bạch</h4>
+                    <p>Cam kết chất lượng bằng văn bản và phiếu bảo hành chính thức. Chế độ bảo hành đồng sơn lên đến 24 tháng và bảo hành phụ tùng chính hãng.</p>
                 </div>
                 <div class="commit-card">
                     <div class="commit-num">04</div>

@@ -252,16 +252,15 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
             </li>
 
             <!-- 6. LIÊN HỆ ⌵ -->
-            <li class="nav-item has-dropdown <?php echo is_page('dat-lich') || is_page('tra-cuu-bao-hanh') ? 'active' : ''; ?>">
+            <li class="nav-item has-dropdown <?php echo is_page('dat-lich') ? 'active' : ''; ?>">
                 <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>" class="nav-link" title="LIÊN HỆ">
                     <span><?php _e('LIÊN HỆ', 'hieugara-motors'); ?></span>
                     <i class="fa-solid fa-chevron-down nav-caret"></i>
                 </a>
                 <ul class="nav-dropdown-menu">
                     <li><a href="<?php echo esc_url(home_url('/dat-lich/')); ?>">Đặt Lịch Hẹn Với Chúng Tôi</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/tra-cuu-bao-hanh/')); ?>">Tra Cứu Bảo Hành Điện Tử</a></li>
                     <li><a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>">Hotline Cứu Hộ 24/7: <?php echo esc_html($rescue_phone); ?></a></li>
-                    <li><a href="<?php echo esc_url(home_url('/garage-gan-ban/')); ?>">Hệ Thống Chi Nhánh Toàn Quốc</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/garage-gan-ban/')); ?>">Hệ Thống Garage Hải Hà</a></li>
                     <li><a href="<?php echo esc_url(home_url('/ve-chung-toi/#hop-tac')); ?>">Hợp Tác Đối Tác &amp; Bảo Hiểm</a></li>
                 </ul>
             </li>

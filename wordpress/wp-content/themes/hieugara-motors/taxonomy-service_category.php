@@ -244,7 +244,7 @@ $other_cats = get_terms(array(
                     <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #eee; font-size: 0.82rem; color: #666; line-height: 1.6;">
                         <p style="margin-bottom: 6px;"><i class="fa fa-check" style="color: #C5A880;"></i> Kiểm tra tổng quát miễn phí 45 hạng mục.</p>
                         <p style="margin-bottom: 6px;"><i class="fa fa-check" style="color: #C5A880;"></i> Báo giá trước minh bạch, khách duyệt mới làm.</p>
-                        <p style="margin-bottom: 0;"><i class="fa fa-check" style="color: #C5A880;"></i> Bảo hành điện tử tra cứu theo biển số.</p>
+                        <p style="margin-bottom: 0;"><i class="fa fa-check" style="color: #C5A880;"></i> Bảo hành dài hạn minh bạch bằng hóa đơn &amp; tem kiểm định.</p>
                     </div>
                 </div>
 

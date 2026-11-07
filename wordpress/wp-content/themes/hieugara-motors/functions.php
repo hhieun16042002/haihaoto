@@ -41,6 +41,39 @@ if (!is_admin() && !defined('DOING_CRON')) {
     add_filter('pre_site_transient_update_themes', '__return_null');
 }
 
+// Block REST API User Enumeration (/wp-json/wp/v2/users) for unauthenticated visitors
+add_filter('rest_endpoints', function($endpoints) {
+    if (isset($endpoints['/wp/v2/users'])) {
+        $endpoints['/wp/v2/users'][0]['permission_callback'] = function() {
+            return current_user_can('list_users');
+        };
+    }
+    if (isset($endpoints['/wp/v2/users/(?P<id>[\d]+)'])) {
+        $endpoints['/wp/v2/users/(?P<id>[\d]+)'][0]['permission_callback'] = function() {
+            return current_user_can('list_users');
+        };
+    }
+    return $endpoints;
+});
+
+// Block author enumeration via /?author=1 and author archives
+add_action('init', function() {
+    if (!is_admin() && isset($_GET['author'])) {
+        wp_safe_redirect(home_url(), 301);
+        exit;
+    }
+});
+add_action('template_redirect', function() {
+    if (is_author() && !is_admin()) {
+        wp_safe_redirect(home_url(), 301);
+        exit;
+    }
+    if (is_page('tra-cuu-bao-hanh')) {
+        wp_safe_redirect(home_url(), 301);
+        exit;
+    }
+});
+
 // Global Theme Contact & Option Helpers
 add_action('init', function() {
     if (get_option('blogname') !== 'Ôtô Hải Hà Service') {

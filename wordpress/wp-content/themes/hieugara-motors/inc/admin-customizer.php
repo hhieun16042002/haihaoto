@@ -156,8 +156,7 @@ function hieugara_reorder_admin_menu($menu_order) {
         // Group 2: Hoạt động xưởng
         'botble-sep-workshop',
         'garage-os-bookings',                           // Lịch Hẹn Khách Hàng
-        'garage-os-warranties',                         // Sổ Bảo Hành Điện Tử
-        'garage-os-orders',                             // Đơn Sửa Chữa
+        'garage-os-orders',                             // Đơn Sửa Chữa (RO)
 
         // Group 3: Dịch vụ, Phụ kiện & Thương hiệu (Botble Multi-Menu Architecture)
         'botble-sep-catalog',
@@ -192,8 +191,10 @@ function hieugara_clean_admin_menu() {
     // Remove clutter menus & disable legacy duplicates
     remove_menu_page('edit-comments.php');            // No blog comments needed for garage
     remove_menu_page('garage-os-kanban');             // Đóng mục Kanban không dùng
+    remove_menu_page('garage-os-warranties');         // Đóng mục Sổ Bảo Hành theo yêu cầu
     remove_menu_page('hieugara-accessories-crud');    // Xóa triệt để menu phụ kiện thứ 2 bị trùng
     remove_submenu_page('garage-os-bookings', 'garage-os-kanban');
+    remove_submenu_page('garage-os-bookings', 'garage-os-warranties');
 
     // Count pending bookings for notification badge
     $table_bookings = $wpdb->prefix . 'garage_bookings';
@@ -214,10 +215,6 @@ function hieugara_clean_admin_menu() {
                 case 'garage-os-bookings':
                     $menu[$key][0] = 'Lịch Hẹn Khách Hàng' . $booking_badge;
                     $menu[$key][6] = 'dashicons-calendar-alt';
-                    break;
-                case 'garage-os-warranties':
-                    $menu[$key][0] = 'Sổ Bảo Hành Điện Tử';
-                    $menu[$key][6] = 'dashicons-shield';
                     break;
                 case 'garage-os-orders':
                     $menu[$key][0] = 'Đơn Sửa Chữa';
@@ -319,6 +316,14 @@ function hieugara_admin_botble_sidebar_script() {
                 $('#adminmenu').prepend(brandHtml);
             }
 
+            // Inject exactly ONE clean chevron arrow into items with submenus (Botble style)
+            $('#adminmenu > li.wp-has-submenu > a.menu-top').each(function() {
+                var $link = $(this);
+                if (!$link.find('.botble-menu-chevron').length) {
+                    $link.append('<span class="botble-menu-chevron dashicons dashicons-arrow-down-alt2"></span>');
+                }
+            });
+
             // Click Handler for Top Collapse / Expand Sidebar Toggle
             $(document).on('click', '#botble-sidebar-toggle', function(e) {
                 e.preventDefault();
@@ -343,17 +348,20 @@ function hieugara_admin_botble_sidebar_script() {
 
                 if ($sub.length) {
                     e.preventDefault();
+                    e.stopImmediatePropagation();
 
-                    var isOpen = ($parentLi.hasClass('botble-open') || $parentLi.hasClass('wp-menu-open') || $parentLi.hasClass('wp-has-current-submenu')) && !$parentLi.hasClass('botble-closed');
+                    var isCurrentlyOpen = $parentLi.hasClass('is-open') || 
+                        ($parentLi.hasClass('botble-open')) ||
+                        (($parentLi.hasClass('wp-menu-open') || $parentLi.hasClass('wp-has-current-submenu')) && !$parentLi.hasClass('is-closed') && !$parentLi.hasClass('botble-closed'));
 
-                    if (isOpen) {
+                    if (isCurrentlyOpen) {
                         // Đóng vào
-                        $parentLi.removeClass('botble-open wp-menu-open').addClass('botble-closed');
-                        $sub.slideUp(160);
+                        $parentLi.removeClass('is-open botble-open wp-menu-open').addClass('is-closed botble-closed');
+                        $sub.stop(true, true).slideUp(180);
                     } else {
                         // Sổ ra độc lập (KHÔNG tự động đóng các menu khác)
-                        $parentLi.removeClass('botble-closed').addClass('botble-open');
-                        $sub.slideDown(160);
+                        $parentLi.removeClass('is-closed botble-closed').addClass('is-open botble-open');
+                        $sub.stop(true, true).slideDown(180);
                     }
                 }
             });
@@ -401,11 +409,11 @@ function hieugara_render_dashboard_hub_widget() {
         $pending_bookings = (int) $wpdb->get_var("SELECT COUNT(*) FROM $table_bookings WHERE status = 'pending'");
     }
 
-    // Total warranties count
-    $table_warranties = $wpdb->prefix . 'garage_warranties';
-    $total_warranties = 0;
-    if ($wpdb->get_var("SHOW TABLES LIKE '$table_warranties'") === $table_warranties) {
-        $total_warranties = (int) $wpdb->get_var("SELECT COUNT(*) FROM $table_warranties");
+    // Total accessories count
+    $total_accessories = 0;
+    $acc_count = wp_count_posts('garage_accessory');
+    if (!empty($acc_count->publish)) {
+        $total_accessories = (int) $acc_count->publish;
     }
 
     // Contact options
@@ -454,12 +462,12 @@ function hieugara_render_dashboard_hub_widget() {
                 </div>
             </a>
 
-            <a href="<?php echo admin_url('admin.php?page=garage-os-warranties'); ?>" class="hub-kpi-card kpi-green">
-                <div class="kpi-icon"><span class="dashicons dashicons-shield"></span></div>
+            <a href="<?php echo admin_url('edit.php?post_type=garage_accessory'); ?>" class="hub-kpi-card kpi-green">
+                <div class="kpi-icon"><span class="dashicons dashicons-admin-appearance"></span></div>
                 <div class="kpi-info">
-                    <span class="kpi-label">Sổ Bảo Hành Điện Tử</span>
-                    <strong class="kpi-num"><?php echo esc_html($total_warranties); ?></strong>
-                    <span class="kpi-sub">Tra cứu theo biển số</span>
+                    <span class="kpi-label">Phụ Kiện Ô Tô</span>
+                    <strong class="kpi-num"><?php echo esc_html($total_accessories); ?></strong>
+                    <span class="kpi-sub">Sản phẩm trên web</span>
                 </div>
             </a>
 
@@ -496,10 +504,10 @@ function hieugara_render_dashboard_hub_widget() {
                 <strong>Đổi Banner & Slider</strong>
                 <small>Thay đổi hình ảnh khuyến mãi đầu trang</small>
             </a>
-            <a href="<?php echo admin_url('admin.php?page=garage-os-warranties'); ?>" class="shortcut-box">
-                <span class="sc-icon dashicons dashicons-shield"></span>
-                <strong>Tra Cứu Sổ Bảo Hành</strong>
-                <small>Kiểm tra lịch sử bảo hành theo biển số xe</small>
+            <a href="<?php echo admin_url('admin.php?page=hieugara-brand-manager'); ?>" class="shortcut-box">
+                <span class="sc-icon dashicons dashicons-awards"></span>
+                <strong>Quản Lý Thương Hiệu</strong>
+                <small>Logo hãng xe chạy &amp; Đối tác VinFast</small>
             </a>
             <a href="<?php echo admin_url('admin.php?page=hieugara-media-hub'); ?>" class="shortcut-box">
                 <span class="sc-icon dashicons dashicons-format-gallery"></span>

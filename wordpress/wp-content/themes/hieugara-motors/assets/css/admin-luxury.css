@@ -311,11 +311,29 @@ body.wp-admin {
 }
 
 /* Completely Hide Native WordPress Right-Pointing Arrow Triangles & Reset Core Borders */
-#adminmenu .wp-menu-arrow,
-#adminmenu div.wp-menu-arrow,
-#adminmenu div.wp-menu-arrow div,
-#adminmenu li a.menu-top div.wp-menu-arrow,
-#adminmenu li a div.wp-menu-arrow {
+html body #adminmenu a.wp-has-current-submenu:after,
+html body #adminmenu > li.current > a.current:after,
+html body ul#adminmenu a.wp-has-current-submenu:after,
+html body ul#adminmenu > li.current > a.current:after,
+html body ul#adminmenu li a:after,
+html body ul#adminmenu li a:before,
+html body #adminmenu li a:after,
+html body #adminmenu li a:before,
+html body #adminmenu li.current a:after,
+html body #adminmenu li.current a:before,
+html body #adminmenu li.wp-has-current-submenu a:after,
+html body #adminmenu li.wp-has-current-submenu a:before,
+html body #adminmenu li.wp-has-current-submenu > a.menu-top:after,
+html body #adminmenu li.wp-has-current-submenu > a.menu-top:before,
+html body #adminmenu > li.current > a.menu-top:after,
+html body #adminmenu > li.current > a.menu-top:before,
+html body #adminmenu > li a.wp-has-current-submenu:after,
+html body #adminmenu > li a.wp-has-current-submenu:before,
+html body #adminmenu .wp-menu-arrow,
+html body #adminmenu div.wp-menu-arrow,
+html body #adminmenu div.wp-menu-arrow div,
+html body #adminmenu li a.menu-top div.wp-menu-arrow,
+html body #adminmenu li a div.wp-menu-arrow {
     display: none !important;
     visibility: hidden !important;
     width: 0 !important;
@@ -323,59 +341,51 @@ body.wp-admin {
     opacity: 0 !important;
     pointer-events: none !important;
     border: none !important;
-}
-
-/* Eradicate WordPress Core Pseudo-Element Border Triangles */
-#adminmenu li a:after,
-#adminmenu li a:before,
-#adminmenu li.current a:after,
-#adminmenu li.current a:before,
-#adminmenu li.wp-has-current-submenu a:after,
-#adminmenu li.wp-has-current-submenu a:before,
-#adminmenu li.wp-has-current-submenu > a.menu-top:after,
-#adminmenu li.wp-has-current-submenu > a.menu-top:before,
-#adminmenu > li.current > a.menu-top:after,
-#adminmenu > li.current > a.menu-top:before,
-#adminmenu > li a.wp-has-current-submenu:after,
-#adminmenu > li a.wp-has-current-submenu:before {
-    border: none !important;
     border-width: 0 !important;
     border-color: transparent !important;
     border-right-color: transparent !important;
     border-left-color: transparent !important;
     box-shadow: none !important;
+    content: none !important;
 }
 
-/* Chevron indicator for items with submenus (Sổ ra / Đóng vào) */
+/* Explicit Botble Chevron indicator (Injected into link) */
 body:not(.folded) #adminmenu li.wp-has-submenu > a.menu-top::after {
-    content: '\f347' !important; /* dashicons-arrow-down-alt2 */
-    font-family: dashicons !important;
-    font-size: 11px !important;
-    line-height: 1 !important;
-    color: #64748b !important;
+    display: none !important;
+    content: none !important;
+}
+
+.botble-menu-chevron {
     margin-left: auto !important;
-    padding-left: 6px !important;
-    padding-right: 2px !important;
+    font-size: 13px !important;
+    width: 14px !important;
+    height: 14px !important;
+    line-height: 14px !important;
+    color: #64748b !important;
     transition: transform 0.22s ease, color 0.18s ease !important;
     flex-shrink: 0 !important;
-    display: inline-block !important;
-    position: static !important;
-    width: auto !important;
-    height: auto !important;
-    border: none !important;
-    background: transparent !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
-body:not(.folded) #adminmenu li.wp-has-submenu.botble-open > a.menu-top::after,
-body:not(.folded) #adminmenu li.wp-has-submenu.wp-menu-open:not(.botble-closed) > a.menu-top::after,
-body:not(.folded) #adminmenu li.wp-has-submenu.wp-has-current-submenu:not(.botble-closed) > a.menu-top::after {
+li.wp-has-submenu.is-open > a.menu-top .botble-menu-chevron,
+li.wp-has-submenu.botble-open > a.menu-top .botble-menu-chevron,
+li.wp-has-submenu.wp-menu-open:not(.is-closed):not(.botble-closed) > a.menu-top .botble-menu-chevron,
+li.wp-has-submenu.wp-has-current-submenu:not(.is-closed):not(.botble-closed) > a.menu-top .botble-menu-chevron {
     transform: rotate(180deg) !important;
     color: #cbd5e1 !important;
 }
 
-body:not(.folded) #adminmenu li.wp-has-submenu.botble-closed > a.menu-top::after {
+li.wp-has-submenu.is-closed > a.menu-top .botble-menu-chevron,
+li.wp-has-submenu.botble-closed > a.menu-top .botble-menu-chevron {
     transform: rotate(0deg) !important;
     color: #64748b !important;
+}
+
+li.current > a.menu-top .botble-menu-chevron,
+li.wp-has-current-submenu > a.menu-top .botble-menu-chevron {
+    color: #ffffff !important;
 }
 
 /* Active State (Botble Blue Glow) */
@@ -422,13 +432,15 @@ body:not(.folded) #adminmenu .wp-submenu {
 }
 
 body:not(.folded) #adminmenu li.wp-has-submenu.botble-open > .wp-submenu,
-body:not(.folded) #adminmenu li.wp-has-submenu.wp-menu-open:not(.botble-closed) > .wp-submenu,
-body:not(.folded) #adminmenu li.wp-has-submenu.wp-has-current-submenu:not(.botble-closed) > .wp-submenu {
-    display: block !important;
+body:not(.folded) #adminmenu li.wp-has-submenu.is-open > .wp-submenu,
+body:not(.folded) #adminmenu li.wp-has-submenu.wp-menu-open:not(.botble-closed):not(.is-closed) > .wp-submenu,
+body:not(.folded) #adminmenu li.wp-has-submenu.wp-has-current-submenu:not(.botble-closed):not(.is-closed) > .wp-submenu {
+    display: block;
 }
 
-body:not(.folded) #adminmenu li.wp-has-submenu.botble-closed > .wp-submenu {
-    display: none !important;
+body:not(.folded) #adminmenu li.wp-has-submenu.botble-closed > .wp-submenu,
+body:not(.folded) #adminmenu li.wp-has-submenu.is-closed > .wp-submenu {
+    display: none;
 }
 
 body:not(.folded) #adminmenu .wp-submenu-head {

@@ -54,7 +54,7 @@ function hieugara_handle_booking_submission() {
             'license_plate'     => isset($_POST['license_plate']) ? sanitize_text_field($_POST['license_plate']) : 'CHƯA ĐK',
             'car_model'         => $car ?: 'Chưa xác định',
             'service_requested' => $service ?: 'Bảo dưỡng định kỳ',
-            'branch'            => $branch ?: 'Chi nhánh Cầu Giấy',
+            'branch'            => $branch ?: 'Gara Ôtô Hải Hà - Km 53 QL5 Hải Dương',
             'booking_date'      => !empty($date) ? $date : current_time('Y-m-d'),
             'booking_time'      => '08:30',
             'notes'             => $note,

@@ -33,16 +33,6 @@ class AdminMenu {
             [__CLASS__, 'render_bookings']
         );
 
-        // Submenu: Warranties (Sổ Bảo Hành)
-        add_submenu_page(
-            'garage-os-bookings',
-            'Sổ Bảo Hành Điện Tử',
-            'Sổ Bảo Hành',
-            'manage_options',
-            'garage-os-warranties',
-            [__CLASS__, 'render_warranties']
-        );
-
         // Submenu: Work Orders (RO)
         add_submenu_page(
             'garage-os-bookings',

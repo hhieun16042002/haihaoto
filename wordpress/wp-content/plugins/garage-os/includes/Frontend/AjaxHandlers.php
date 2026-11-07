@@ -52,7 +52,7 @@ class AjaxHandlers {
 
         if (empty($orders) && empty($warranties)) {
             wp_send_json_error([
-                'message' => 'Không tìm thấy hồ sơ kỹ thuật cho biển số xe "' . esc_html($plate) . '". Quý khách vui lòng kiểm tra lại biển số hoặc liên hệ hotline 0123 456 789 để được hỗ trợ tra cứu trực tiếp.'
+                'message' => 'Không tìm thấy hồ sơ kỹ thuật cho biển số xe "' . esc_html($plate) . '". Quý khách vui lòng kiểm tra lại biển số hoặc liên hệ hotline 0911 211 996 để được hỗ trợ tra cứu trực tiếp.'
             ]);
         }
 
@@ -63,6 +63,19 @@ class AjaxHandlers {
         $car_model = $first_order ? $first_order->car_model : 'Xe ô tô tiêu chuẩn';
         $owner_name = $first_order ? $first_order->customer_name : ($first_war ? $first_war->customer_name : '');
         $display_plate = $first_order ? $first_order->license_plate : ($first_war ? $first_war->license_plate : $plate);
+
+        // Mask customer name for privacy & PDPA compliance (e.g. "Nguyễn V*** H***")
+        $masked_owner = $owner_name;
+        if (!empty($owner_name)) {
+            $words = explode(' ', trim($owner_name));
+            if (count($words) > 1) {
+                $last_word = array_pop($words);
+                $first_word = array_shift($words);
+                $masked_owner = $first_word . ' *** ' . mb_substr($last_word, 0, 1) . '***';
+            } else {
+                $masked_owner = mb_substr($owner_name, 0, 1) . '***';
+            }
+        }
 
         // Format orders history
         $history = [];
@@ -103,7 +116,7 @@ class AjaxHandlers {
             'vehicle' => [
                 'license_plate' => $display_plate,
                 'car_model'     => $car_model,
-                'owner_name'    => $owner_name,
+                'owner_name'    => $masked_owner,
                 'total_visits'  => count($orders),
                 'active_warranties_count' => count(array_filter($war_list, function($w) { return $w['is_active']; })),
             ],

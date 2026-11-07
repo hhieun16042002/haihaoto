@@ -14,15 +14,14 @@ if (!defined('ABSPATH')) {
  * 1. Register Admin Menus for Accessories CRUD
  */
 function hieugara_register_accessories_admin_menu() {
-    // Top-level Admin Menu
-    add_menu_page(
-        'Quản Lý Phụ Kiện Ôtô',
-        '🛍️ Phụ Kiện Ôtô',
+    // Register as a Submenu under "Phụ Kiện Ô Tô" post type (avoid duplicate top-level menu)
+    add_submenu_page(
+        'edit.php?post_type=garage_accessory',
+        '⚡ Quản Lý Nhanh / Slider (META.vn)',
+        '⚡ Quản Lý Nhanh',
         'manage_options',
         'hieugara-accessories-crud',
-        'hieugara_render_accessories_crud_page',
-        'dashicons-cart',
-        36
+        'hieugara_render_accessories_crud_page'
     );
 
     // Submenu under Cài Đặt Giao Diện
@@ -35,7 +34,7 @@ function hieugara_register_accessories_admin_menu() {
         'hieugara_render_accessories_crud_page'
     );
 }
-add_action('admin_menu', 'hieugara_register_accessories_admin_menu', 11);
+add_action('admin_menu', 'hieugara_register_accessories_admin_menu', 20);
 
 /**
  * 2. Enqueue Media & Styles for Accessories Admin

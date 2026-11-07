@@ -219,8 +219,8 @@ $pre_plate   = isset($_GET['plate']) ? sanitize_text_field($_GET['plate']) : '';
                             <li>
                                 <i class="fa fa-circle-check"></i>
                                 <div>
-                                    <strong>Bảo hành điện tử theo biển số:</strong>
-                                    <p>Chứng thư bảo hành 12 - 24 tháng được lưu trữ trực tuyến, tra cứu mọi lúc mọi nơi.</p>
+                                    <strong>Chính sách bảo hành rõ ràng:</strong>
+                                    <p>Cam kết bảo hành dịch vụ và phụ tùng thay thế từ 12 - 24 tháng bằng phiếu bảo hành và hóa đơn chính thức.</p>
                                 </div>
                             </li>
                             <li>
