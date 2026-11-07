@@ -47,9 +47,11 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
     ?>
     <section class="lexus-banner-slider" id="lexusHeroSlider">
         <div class="lexus-slides-container">
-            <?php foreach ($active_slides as $i => $s) : ?>
+            <?php foreach ($active_slides as $i => $s) : 
+                $slide_img_url = function_exists('hieugara_normalize_local_media_urls') ? hieugara_normalize_local_media_urls($s['image']) : $s['image'];
+            ?>
             <div class="lexus-slide <?php echo $i === 0 ? 'active' : ''; ?>" data-index="<?php echo $i; ?>">
-                <div class="lexus-slide-bg" style="background-image: url('<?php echo esc_url(add_query_arg('v', HIEUGARA_THEME_VERSION, $s['image'])); ?>');"></div>
+                <div class="lexus-slide-bg" style="background-image: url('<?php echo esc_url(add_query_arg('v', HIEUGARA_THEME_VERSION, $slide_img_url)); ?>');"></div>
                 <div class="lexus-slide-overlay"></div>
                 <div class="container lexus-slide-container">
                     <div class="lexus-slide-content">
@@ -76,9 +78,14 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                         </p>
                         <?php endif; ?>
 
-                        <?php if (!empty($s['btn_text'])) : ?>
+                        <?php if (!empty($s['btn_text'])) : 
+                            $slide_btn_url = !empty($s['btn_url']) ? $s['btn_url'] : home_url('/bang-gia/');
+                            if (function_exists('hieugara_normalize_local_media_urls')) {
+                                $slide_btn_url = hieugara_normalize_local_media_urls($slide_btn_url);
+                            }
+                        ?>
                         <div class="lexus-slide-actions">
-                            <a href="<?php echo esc_url(!empty($s['btn_url']) ? $s['btn_url'] : home_url('/bang-gia/')); ?>" class="lexus-outline-btn">
+                            <a href="<?php echo esc_url($slide_btn_url); ?>" class="lexus-outline-btn">
                                 <span><?php echo esc_html($s['btn_text']); ?></span>
                             </a>
                         </div>

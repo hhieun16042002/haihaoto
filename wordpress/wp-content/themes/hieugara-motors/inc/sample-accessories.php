@@ -84,6 +84,7 @@ function hieugara_get_accessories_categories() {
     $terms = get_terms(array(
         'taxonomy'   => 'accessory_category',
         'hide_empty' => false,
+        'parent'     => 0,
         'orderby'    => 'term_order',
         'order'      => 'ASC',
     ));
@@ -110,6 +111,27 @@ function hieugara_get_accessories_categories() {
                 $desc = $cat_data['desc'];
             }
 
+            // Get child categories
+            $children_terms = get_terms(array(
+                'taxonomy'   => 'accessory_category',
+                'hide_empty' => false,
+                'parent'     => $t->term_id,
+                'orderby'    => 'term_order',
+                'order'      => 'ASC',
+            ));
+            $children = array();
+            if (!empty($children_terms) && !is_wp_error($children_terms)) {
+                foreach ($children_terms as $ct) {
+                    $children[] = array(
+                        'id'      => $ct->slug,
+                        'slug'    => $ct->slug,
+                        'term_id' => $ct->term_id,
+                        'name'    => $ct->name,
+                        'count'   => $ct->count,
+                    );
+                }
+            }
+
             $categories[$slug] = array(
                 'id'         => $slug,
                 'term_id'    => $t->term_id,
@@ -119,6 +141,7 @@ function hieugara_get_accessories_categories() {
                 'index_num'  => sprintf('%02d', $idx++),
                 'eyebrow'    => $eyebrow,
                 'desc'       => $desc,
+                'children'   => $children,
             );
         }
         return $categories;
@@ -681,8 +704,28 @@ function hieugara_get_native_accessories() {
         $result = array();
         foreach ($posts as $p) {
             $cat_terms = get_the_terms($p->ID, 'accessory_category');
-            $cat_slug = (!empty($cat_terms) && !is_wp_error($cat_terms)) ? $cat_terms[0]->slug : 'tien-ich-o-to';
-            $cat_name = (!empty($cat_terms) && !is_wp_error($cat_terms)) ? $cat_terms[0]->name : 'Tiện ích';
+            $parent_cat_slug = '';
+            $parent_cat_name = '';
+            $child_cat_slug  = '';
+            $child_cat_name  = '';
+            $term_slugs      = array();
+
+            if (!empty($cat_terms) && !is_wp_error($cat_terms)) {
+                foreach ($cat_terms as $ct) {
+                    $term_slugs[] = $ct->slug;
+                    if ($ct->parent == 0) {
+                        $parent_cat_slug = $ct->slug;
+                        $parent_cat_name = $ct->name;
+                    } else {
+                        $child_cat_slug = $ct->slug;
+                        $child_cat_name = $ct->name;
+                    }
+                }
+            }
+            if (!$parent_cat_slug && !empty($cat_terms) && !is_wp_error($cat_terms)) {
+                $parent_cat_slug = $cat_terms[0]->slug;
+                $parent_cat_name = $cat_terms[0]->name;
+            }
 
             $thumb = get_the_post_thumbnail_url($p->ID, 'full');
             if (!$thumb) {
@@ -690,19 +733,22 @@ function hieugara_get_native_accessories() {
             }
 
             $result[] = array(
-                'id'        => $p->ID,
-                'slug'      => $p->post_name,
-                'title'     => $p->post_title,
-                'link'      => get_permalink($p->ID),
-                'img'       => $thumb ?: get_template_directory_uri() . '/assets/images/shiftup/center-car.jpg',
-                'price'     => get_post_meta($p->ID, '_accessory_price', true) ?: 'Liên hệ',
-                'old_price' => get_post_meta($p->ID, '_accessory_old_price', true) ?: '',
-                'badge'     => get_post_meta($p->ID, '_accessory_badge', true) ?: 'CHÍNH HÃNG',
-                'brand'     => get_post_meta($p->ID, '_accessory_brand', true) ?: 'Chính Hãng',
-                'warranty'  => get_post_meta($p->ID, '_accessory_warranty', true) ?: '12 tháng',
-                'excerpt'   => $p->post_excerpt,
-                'cat'       => $cat_slug,
-                'cat_name'  => $cat_name,
+                'id'         => $p->ID,
+                'slug'       => $p->post_name,
+                'title'      => $p->post_title,
+                'link'       => get_permalink($p->ID),
+                'img'        => $thumb ?: get_template_directory_uri() . '/assets/images/shiftup/center-car.jpg',
+                'price'      => get_post_meta($p->ID, '_accessory_price', true) ?: 'Liên hệ',
+                'old_price'  => get_post_meta($p->ID, '_accessory_old_price', true) ?: '',
+                'badge'      => get_post_meta($p->ID, '_accessory_badge', true) ?: 'CHÍNH HÃNG',
+                'brand'      => get_post_meta($p->ID, '_accessory_brand', true) ?: 'Chính Hãng',
+                'warranty'   => get_post_meta($p->ID, '_accessory_warranty', true) ?: '12 tháng',
+                'excerpt'    => $p->post_excerpt,
+                'cat'        => $parent_cat_slug ?: 'tien-ich-o-to',
+                'cat_name'   => $parent_cat_name ?: 'Tiện ích',
+                'child_cat'  => $child_cat_slug,
+                'child_name' => $child_cat_name,
+                'term_slugs' => $term_slugs,
             );
         }
         return $result;

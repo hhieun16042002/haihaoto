@@ -42,37 +42,24 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
 
                     <div class="footer-contact-block">
                         <h4 class="footer-col-title footer-contact-title">
-                            <span class="title-square"></span>
                             LIÊN HỆ
                         </h4>
                         <div class="footer-contact-chips footer-contact-3phones">
-                            <a href="tel:0911211996" class="contact-chip chip-phone-item">
-                                <i class="fa-solid fa-phone-volume"></i>
-                                <div>
-                                    <small>HOTLINE &amp; CỨU HỘ 24/7</small>
-                                    <strong>0911 211 996</strong>
-                                </div>
-                            </a>
-                            <a href="tel:0915041989" class="contact-chip chip-phone-item">
-                                <i class="fa-solid fa-wrench"></i>
-                                <div>
-                                    <small>KỸ THUẬT &amp; ĐẶT LỊCH</small>
-                                    <strong>0915 041 989</strong>
-                                </div>
-                            </a>
-                            <a href="tel:02203892207" class="contact-chip chip-phone-item">
+                            <a href="tel:0911211996" class="contact-chip chip-direct-phone" title="Gọi 0911 211 996">
                                 <i class="fa-solid fa-phone"></i>
-                                <div>
-                                    <small>TỔNG ĐÀI XƯỞNG</small>
-                                    <strong>02203 892 207</strong>
-                                </div>
+                                <strong>0911 211 996</strong>
                             </a>
-                            <a href="https://zalo.me/0911211996" target="_blank" rel="noopener" class="contact-chip chip-zalo">
+                            <a href="tel:0915041989" class="contact-chip chip-direct-phone" title="Gọi 0915 041 989">
+                                <i class="fa-solid fa-phone"></i>
+                                <strong>0915 041 989</strong>
+                            </a>
+                            <a href="tel:02203892207" class="contact-chip chip-direct-phone" title="Gọi 02203 892 207">
+                                <i class="fa-solid fa-phone"></i>
+                                <strong>02203 892 207</strong>
+                            </a>
+                            <a href="https://zalo.me/0911211996" target="_blank" rel="noopener" class="contact-chip chip-zalo" title="Zalo 0911 211 996">
                                 <i class="fa-solid fa-comment-dots" style="color: #0068FF !important;"></i>
-                                <div>
-                                    <small>ZALO TƯ VẤN &amp; HỖ TRỢ</small>
-                                    <strong>0911 211 996</strong>
-                                </div>
+                                <strong>Zalo 0911 211 996</strong>
                             </a>
                         </div>
                     </div>
@@ -92,7 +79,6 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                 <!-- Column 2: 6 Core Service Pillars & Quick Links -->
                 <div class="footer-col col-services">
                     <h4 class="footer-col-title">
-                        <span class="title-square"></span>
                         DỊCH VỤ TRỌNG TÂM
                     </h4>
                     <ul class="footer-links-list footer-services-2col-mobile">
@@ -127,7 +113,6 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                 <!-- Column 3: Google Maps & Direct Navigation -->
                 <div class="footer-col col-map">
                     <h4 class="footer-col-title">
-                        <span class="title-square"></span>
                         BẢN ĐỒ CHỈ ĐƯỜNG
                     </h4>
                     <div class="footer-map-card">

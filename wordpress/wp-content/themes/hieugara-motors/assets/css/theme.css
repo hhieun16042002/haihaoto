@@ -10300,8 +10300,23 @@ html, body {
 }
 
 .shiftup-main-footer .title-square {
-    background: #141414 !important;
-    box-shadow: none !important;
+    display: none !important;
+}
+
+.shiftup-main-footer .chip-direct-phone,
+.shiftup-main-footer .chip-zalo {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 10px 14px !important;
+}
+
+.shiftup-main-footer .chip-direct-phone strong,
+.shiftup-main-footer .chip-zalo strong {
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.3px !important;
+    line-height: 1.2 !important;
 }
 
 .shiftup-main-footer .footer-links-list li a,
@@ -11041,8 +11056,60 @@ html, body {
 .phukien-cat-desc {
     font-size: 0.92rem;
     color: #475569;
-    margin: 0 0 20px 0;
+    margin: 0 0 16px 0;
     line-height: 1.6;
+}
+
+/* Sub-categories Pills */
+.phukien-subcats-pills {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 22px;
+    padding: 10px 14px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+}
+.phukien-subcats-pills .subcat-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-right: 4px;
+    display: inline-flex;
+    align-items: center;
+}
+.subcat-pill {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #334155;
+    border-radius: 20px;
+    padding: 5px 13px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+}
+.subcat-pill:hover {
+    border-color: #C5A880;
+    color: #141414;
+    background: #faf6f0;
+}
+.subcat-pill.active {
+    background: #141414;
+    color: #ffffff;
+    border-color: #141414;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+.child-tag {
+    color: #b45309;
+    font-weight: 700;
+    margin-left: 4px;
 }
 
 .brand-tag {

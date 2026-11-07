@@ -136,6 +136,26 @@ $initial_cat = isset($_GET['cat']) ? sanitize_key($_GET['cat']) : 'all';
                         <!-- Section Description -->
                         <p class="phukien-cat-desc"><?php echo esc_html($meta['desc']); ?></p>
 
+                        <!-- Sub-categories pills if available -->
+                        <?php if (!empty($meta['children'])) : ?>
+                            <div class="phukien-subcats-pills" data-parent-cat="<?php echo esc_attr($cat_key); ?>">
+                                <span class="subcat-label"><i class="fa-solid fa-layer-group text-gold mr-1"></i> Nhóm phụ kiện:</span>
+                                <button type="button" class="subcat-pill active" data-subcat="all">Tất cả (<?php echo count($items); ?>)</button>
+                                <?php foreach ($meta['children'] as $child) : 
+                                    $child_count = 0;
+                                    foreach ($items as $it) {
+                                        if (!empty($it['child_cat']) && $it['child_cat'] === $child['slug']) {
+                                            $child_count++;
+                                        }
+                                    }
+                                ?>
+                                    <button type="button" class="subcat-pill" data-subcat="<?php echo esc_attr($child['slug']); ?>">
+                                        <?php echo esc_html($child['name']); ?> <?php echo $child_count > 0 ? '(' . $child_count . ')' : ''; ?>
+                                    </button>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php endif; ?>
+
                         <!-- Products Grid for this category -->
                         <div class="phukien-products-grid">
                             <?php foreach ($items as $item) : 
@@ -146,8 +166,10 @@ $initial_cat = isset($_GET['cat']) ? sanitize_key($_GET['cat']) : 'all';
                                 $badge = !empty($item['badge']) ? $item['badge'] : 'CHÍNH HÃNG';
                                 $link = !empty($item['link']) ? $item['link'] : home_url('/phu-kien-oto/' . ($item['slug'] ?? '') . '/');
                                 $brand = !empty($item['brand']) ? $item['brand'] : 'Chính Hãng';
+                                $child_cat = !empty($item['child_cat']) ? $item['child_cat'] : '';
+                                $child_name = !empty($item['child_name']) ? $item['child_name'] : '';
                             ?>
-                                <article class="phukien-card" data-category="<?php echo esc_attr($cat_key); ?>" data-title="<?php echo esc_attr(mb_strtolower($title . ' ' . $brand, 'UTF-8')); ?>">
+                                <article class="phukien-card" data-category="<?php echo esc_attr($cat_key); ?>" data-child="<?php echo esc_attr($child_cat); ?>" data-title="<?php echo esc_attr(mb_strtolower($title . ' ' . $brand, 'UTF-8')); ?>">
                                     <!-- Badge -->
                                     <?php if (!empty($badge)) : ?>
                                         <span class="phukien-card-badge"><?php echo esc_html($badge); ?></span>
@@ -162,7 +184,9 @@ $initial_cat = isset($_GET['cat']) ? sanitize_key($_GET['cat']) : 'all';
                                     <div class="phukien-card-body">
                                         <div class="phukien-card-cat-label">
                                             <span><?php echo esc_html($meta['short_name']); ?></span>
-                                            <?php if (!empty($brand)) : ?>
+                                            <?php if (!empty($child_name)) : ?>
+                                                <span class="child-tag">&bull; <?php echo esc_html($child_name); ?></span>
+                                            <?php elseif (!empty($brand)) : ?>
                                                 <span class="brand-tag">&bull; <?php echo esc_html($brand); ?></span>
                                             <?php endif; ?>
                                         </div>
@@ -265,12 +289,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
+            var activeSubcat = sec.getAttribute('data-active-subcat') || 'all';
             var visibleInSec = 0;
             cards.forEach(function(card) {
                 var title = card.getAttribute('data-title') || '';
+                var cardChild = card.getAttribute('data-child') || '';
                 var matchSearch = (!searchLower || title.indexOf(searchLower) !== -1);
+                var matchSubcat = (activeSubcat === 'all' || cardChild === activeSubcat);
 
-                if (matchSearch) {
+                if (matchSearch && matchSubcat) {
                     card.style.display = '';
                     visibleInSec++;
                     totalVisibleCards++;
@@ -279,7 +306,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            // If searching and this section has 0 matching cards, hide whole section
+            // If searching or filtering subcats and this section has 0 matching cards, hide whole section if searching
             if (visibleInSec === 0 && searchLower) {
                 sec.style.display = 'none';
             } else {
@@ -287,7 +314,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 var countBadge = sec.querySelector('.phukien-cat-count-badge');
                 if (countBadge) {
                     var orig = countBadge.getAttribute('data-count-orig');
-                    countBadge.textContent = searchLower ? (visibleInSec + ' kết quả') : (orig + ' sản phẩm');
+                    countBadge.textContent = (searchLower || activeSubcat !== 'all') ? (visibleInSec + ' sản phẩm') : (orig + ' sản phẩm');
                 }
             }
         });
@@ -296,6 +323,23 @@ document.addEventListener('DOMContentLoaded', function() {
             emptyState.style.display = (totalVisibleCards === 0) ? 'block' : 'none';
         }
     }
+
+    // Subcategory pill clicks inside sections
+    var subcatPills = document.querySelectorAll('.subcat-pill');
+    subcatPills.forEach(function(pill) {
+        pill.addEventListener('click', function() {
+            var sec = this.closest('.phukien-cat-section');
+            if (!sec) return;
+            var subcat = this.getAttribute('data-subcat');
+            sec.setAttribute('data-active-subcat', subcat);
+
+            var parentPills = sec.querySelectorAll('.subcat-pill');
+            parentPills.forEach(function(p) { p.classList.remove('active'); });
+            this.classList.add('active');
+
+            filterCatalog();
+        });
+    });
 
     // Tab Clicks
     tabs.forEach(function(btn) {

@@ -343,6 +343,12 @@ function hieugara_get_slides() {
 
     $slides = array();
     foreach ($defaults as $i => $default) {
+        $slide_img = !empty($saved[$i]['image']) ? $saved[$i]['image'] : $default['image'];
+        $slide_btn = !empty($saved[$i]['btn_url']) ? $saved[$i]['btn_url'] : $default['btn_url'];
+        if (function_exists('hieugara_normalize_local_media_urls')) {
+            $slide_img = hieugara_normalize_local_media_urls($slide_img);
+            $slide_btn = hieugara_normalize_local_media_urls($slide_btn);
+        }
         $slides[$i] = array(
             'enable'   => isset($saved[$i]['enable']) ? $saved[$i]['enable'] : $default['enable'],
             'eyebrow'  => !empty($saved[$i]['eyebrow']) ? $saved[$i]['eyebrow'] : $default['eyebrow'],
@@ -350,8 +356,8 @@ function hieugara_get_slides() {
             'nav_tab'  => !empty($saved[$i]['nav_tab']) ? $saved[$i]['nav_tab'] : $default['nav_tab'],
             'desc'     => !empty($saved[$i]['desc']) ? $saved[$i]['desc'] : $default['desc'],
             'btn_text' => !empty($saved[$i]['btn_text']) ? $saved[$i]['btn_text'] : $default['btn_text'],
-            'btn_url'  => !empty($saved[$i]['btn_url']) ? $saved[$i]['btn_url'] : $default['btn_url'],
-            'image'    => !empty($saved[$i]['image']) ? $saved[$i]['image'] : $default['image'],
+            'btn_url'  => $slide_btn,
+            'image'    => $slide_img,
         );
     }
     return $slides;
