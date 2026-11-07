@@ -133,10 +133,11 @@ $workshops = [
 
             <!-- Filter Tabs by City -->
             <div class="city-filter-bar">
-                <span class="filter-label"><i class="fa fa-filter"></i> Lọc theo khu vực:</span>
+                <span class="filter-label"><i class="fa-solid fa-filter"></i> Lọc theo khu vực:</span>
                 <div class="filter-btn-group">
                     <button type="button" class="city-filter-btn active" data-city="all">Tất Cả (<?php echo count($workshops); ?>)</button>
-                    <button type="button" class="city-filter-btn" data-city="hanoi">Hà Nội (4)</button>
+                    <button type="button" class="city-filter-btn" data-city="hai-duong">Hải Dương (1)</button>
+                    <button type="button" class="city-filter-btn" data-city="hanoi">Hà Nội (3)</button>
                     <button type="button" class="city-filter-btn" data-city="hcm">TP. Hồ Chí Minh (2)</button>
                     <button type="button" class="city-filter-btn" data-city="danang">Đà Nẵng (1)</button>
                 </div>
@@ -157,14 +158,14 @@ $workshops = [
                         </div>
 
                         <div class="ws-address-row">
-                            <i class="fa fa-location-dot" style="color: var(--brand-red);"></i>
+                            <i class="fa-solid fa-location-dot" style="color: #D92D20;"></i>
                             <span><?php echo esc_html($ws['address']); ?></span>
                         </div>
 
                         <div class="ws-specs-row">
-                            <div class="spec-pill"><i class="fa fa-warehouse"></i> <?php echo esc_html($ws['bays']); ?></div>
-                            <div class="spec-pill"><i class="fa fa-paint-roller"></i> <?php echo esc_html($ws['paint']); ?></div>
-                            <div class="spec-pill"><i class="fa fa-clock"></i> <?php echo esc_html($ws['hours']); ?></div>
+                            <div class="spec-pill"><i class="fa-solid fa-warehouse"></i> <?php echo esc_html($ws['bays']); ?></div>
+                            <div class="spec-pill"><i class="fa-solid fa-paint-roller"></i> <?php echo esc_html($ws['paint']); ?></div>
+                            <div class="spec-pill"><i class="fa-regular fa-clock"></i> <?php echo esc_html($ws['hours']); ?></div>
                         </div>
 
                         <div class="ws-services-chips">
@@ -178,10 +179,10 @@ $workshops = [
 
                         <div class="ws-actions-row">
                             <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $ws['phone'])); ?>" class="btn-carpla btn-carpla-outline">
-                                <i class="fa fa-phone"></i> Gọi xưởng: <?php echo esc_html($ws['phone']); ?>
+                                <i class="fa-solid fa-phone"></i> Gọi xưởng: <?php echo esc_html($ws['phone']); ?>
                             </a>
                             <a href="<?php echo esc_url(home_url('/dat-lich/?branch=' . urlencode($ws['name']))); ?>" class="btn-carpla btn-carpla-primary">
-                                <i class="fa fa-calendar-check"></i> Đặt lịch tại xưởng này
+                                <i class="fa-regular fa-calendar-check"></i> Đặt lịch tại xưởng này
                             </a>
                         </div>
                     </article>

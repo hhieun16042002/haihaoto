@@ -93,6 +93,9 @@ $sub2_srv = !empty($featured_services[2]) ? $featured_services[2] : null;
     $hero_id        = $hero_srv->ID;
     $hero_permalink = get_permalink($hero_id);
     $hero_thumb     = has_post_thumbnail($hero_id) ? get_the_post_thumbnail_url($hero_id, 'large') : (get_post_meta($hero_id, '_garage_custom_image', true) ?: get_template_directory_uri() . '/assets/images/slider/slide-bao-duong.jpg');
+    if (function_exists('hieugara_normalize_local_media_urls')) {
+        $hero_thumb = hieugara_normalize_local_media_urls($hero_thumb);
+    }
     $hero_price     = get_post_meta($hero_id, '_garage_price_from', true) ?: 'Khảo sát miễn phí';
     $hero_badge     = get_post_meta($hero_id, '_garage_badge', true) ?: 'TIÊU ĐIỂM DỊCH VỤ';
     $hero_cats      = get_the_terms($hero_id, 'service_category');
@@ -155,6 +158,9 @@ $sub2_srv = !empty($featured_services[2]) ? $featured_services[2] : null;
                     $sub_id        = $sub_s->ID;
                     $sub_permalink = get_permalink($sub_id);
                     $sub_thumb     = has_post_thumbnail($sub_id) ? get_the_post_thumbnail_url($sub_id, 'medium') : (get_post_meta($sub_id, '_garage_custom_image', true) ?: get_template_directory_uri() . '/assets/images/gallery/haiha-gallery-3.jpg');
+                    if (function_exists('hieugara_normalize_local_media_urls')) {
+                        $sub_thumb = hieugara_normalize_local_media_urls($sub_thumb);
+                    }
                     $sub_price     = get_post_meta($sub_id, '_garage_price_from', true) ?: 'Liên hệ';
                     $sub_cats      = get_the_terms($sub_id, 'service_category');
                     $sub_cat_name  = (!empty($sub_cats) && !is_wp_error($sub_cats)) ? $sub_cats[0]->name : 'Dịch vụ';
@@ -255,6 +261,9 @@ $sub2_srv = !empty($featured_services[2]) ? $featured_services[2] : null;
                                 } else {
                                     $custom_img = get_post_meta($srv_id, '_garage_custom_image', true);
                                     $thumb = !empty($custom_img) ? $custom_img : get_template_directory_uri() . '/assets/images/gallery/haiha-gallery-1.jpg';
+                                }
+                                if (function_exists('hieugara_normalize_local_media_urls')) {
+                                    $thumb = hieugara_normalize_local_media_urls($thumb);
                                 }
                             ?>
                                 <article class="service-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.25s ease, box-shadow 0.25s ease; position: relative;">

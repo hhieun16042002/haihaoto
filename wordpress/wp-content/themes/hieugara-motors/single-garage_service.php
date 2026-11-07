@@ -36,6 +36,9 @@ while (have_posts()) : the_post();
     } else {
         $thumb = get_template_directory_uri() . '/assets/images/slider/slide-bao-duong.jpg';
     }
+    if (function_exists('hieugara_normalize_local_media_urls')) {
+        $thumb = hieugara_normalize_local_media_urls($thumb);
+    }
 
     $hotline_phone = get_option('hieugara_hotline_phone', '0911 211 996');
     $rescue_phone  = get_option('hieugara_rescue_phone', '0911 211 996');

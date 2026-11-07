@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('HIEUGARA_THEME_VERSION', '5.7.8');
+define('HIEUGARA_THEME_VERSION', '5.7.9');
 define('HIEUGARA_THEME_DIR', get_template_directory());
 define('HIEUGARA_THEME_URI', get_template_directory_uri());
 
@@ -68,8 +68,9 @@ add_action('template_redirect', function() {
         wp_safe_redirect(home_url(), 301);
         exit;
     }
-    if (is_page('tra-cuu-bao-hanh')) {
-        wp_safe_redirect(home_url(), 301);
+    $req = trim(parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
+    if ($req === 'tra-cuu-bao-hanh') {
+        wp_safe_redirect(home_url('/dich-vu/'), 301);
         exit;
     }
 });

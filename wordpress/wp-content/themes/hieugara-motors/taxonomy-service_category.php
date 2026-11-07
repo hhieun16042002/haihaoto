@@ -121,6 +121,9 @@ $other_cats = get_terms(array(
                                     $s_c_img = get_post_meta($s_id, '_garage_custom_image', true);
                                     $s_thumb = !empty($s_c_img) ? $s_c_img : get_template_directory_uri() . '/assets/images/shiftup/slide-2.jpg';
                                 }
+                                if (function_exists('hieugara_normalize_local_media_urls')) {
+                                    $s_thumb = hieugara_normalize_local_media_urls($s_thumb);
+                                }
                             ?>
                                 <article style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 16px rgba(0,0,0,0.03); transition: transform 0.2s ease, box-shadow 0.2s ease;">
                                     <div style="position: relative; height: 180px; overflow: hidden; background: #000;">

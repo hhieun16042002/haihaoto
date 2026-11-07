@@ -254,18 +254,18 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
 
             <!-- 5. BLOG ⌵ -->
             <li class="nav-item has-dropdown">
-                <a href="<?php echo esc_url(home_url('/#danh-gia-chuyen-sau')); ?>" class="nav-link" title="BLOG">
+                <a href="<?php echo esc_url(home_url('/dich-vu/')); ?>" class="nav-link" title="BLOG KỸ THUẬT">
                     <span><?php _e('BLOG', 'hieugara-motors'); ?></span>
                     <i class="fa-solid fa-chevron-down nav-caret"></i>
                 </a>
                 <ul class="nav-dropdown-menu">
-                    <li><a href="<?php echo esc_url(home_url('/#danh-gia-chuyen-sau')); ?>">Chuyên Mục Bảo Dưỡng &amp; Sửa Chữa</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/#danh-gia-chuyen-sau')); ?>">Chuyên Mục Sơn Ô Tô</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/#danh-gia-chuyen-sau')); ?>">Chuyên Mục Chăm Sóc &amp; Làm Đẹp</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/#danh-gia-chuyen-sau')); ?>">Tin Tức Công Nghệ Ô Tô Mới</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/#danh-gia-chuyen-sau')); ?>">Kiến Thức &amp; Trải Nghiệm Xe</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/#danh-gia-chuyen-sau')); ?>">Kinh Nghiệm Lái Xe An Toàn</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/#danh-gia-chuyen-sau')); ?>">Tin Tức An Toàn Giao Thông</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/dich-vu/bao-duong-sua-chua-o-to/')); ?>"><strong style="color: #FFB81C;">★</strong> Chuyên Mục Bảo Dưỡng &amp; Sửa Chữa</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/dich-vu/son-phuc-hoi-than-vo/')); ?>">Chuyên Mục Sơn Ô Tô</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/dich-vu/cham-soc-lam-dep-o-to/')); ?>">Chuyên Mục Chăm Sóc &amp; Làm Đẹp</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/dich-vu/cuu-ho-o-to/')); ?>">Chuyên Mục Cứu Hộ Ô Tô 24/7</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/dich-vu/xe-vinfast/')); ?>"><strong style="color: #FFB81C;">⚡</strong> Dịch Vụ Xe VinFast Chính Hãng</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/?s=kỹ+thuật+ô+tô')); ?>">Tin Tức Công Nghệ Ô Tô Mới</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/?s=kinh+nghiệm+lái+xe')); ?>">Kinh Nghiệm &amp; Cẩm Nang Lái Xe</a></li>
                     <li><a href="<?php echo esc_url(home_url('/bang-gia/')); ?>">Bảng Giá Dịch Vụ Niêm Yết</a></li>
                 </ul>
             </li>

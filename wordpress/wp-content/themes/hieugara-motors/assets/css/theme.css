@@ -13654,3 +13654,335 @@ html, body {
     }
 }
 
+
+
+/* =========================================================================
+   PAGE: HỆ THỐNG GARAGE GẦN BẠN (/garage-gan-ban/)
+   ========================================================================= */
+.page-network-portal {
+    background-color: #f8fafc;
+    min-height: 80vh;
+}
+
+.network-listing-section {
+    padding: 40px 0 80px;
+    background: #f8fafc !important;
+}
+
+.city-filter-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    background: #ffffff;
+    padding: 18px 24px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    margin-bottom: 32px;
+}
+
+.city-filter-bar .filter-label {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: #141414;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.city-filter-bar .filter-label i {
+    color: #FFB81C;
+}
+
+.filter-btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.city-filter-btn {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 700;
+    font-size: 0.88rem;
+    letter-spacing: 0.3px;
+    background: #ffffff;
+    color: #141414;
+    border: 1.5px solid #e5e7eb;
+    padding: 9px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.city-filter-btn:hover {
+    border-color: #FFB81C;
+    background: #fffdf5;
+    color: #141414;
+}
+
+.city-filter-btn.active {
+    background: #FFB81C;
+    border-color: #FFB81C;
+    color: #141414 !important;
+    box-shadow: 0 3px 12px rgba(255, 184, 28, 0.35);
+}
+
+.network-workshops-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
+}
+
+.workshop-full-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 26px 28px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.workshop-full-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #FFB81C;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.workshop-full-card:hover {
+    border-color: #FFB81C;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.workshop-full-card:hover::before {
+    opacity: 1;
+}
+
+.ws-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.ws-city-tag {
+    display: inline-block;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 700;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #141414;
+    background: #fef3c7;
+    border: 1px solid #fde68a;
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.ws-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: #141414;
+    line-height: 1.35;
+    margin: 0;
+}
+
+.ws-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #059669;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    padding: 5px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #10b981;
+    display: inline-block;
+    box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
+}
+
+.ws-address-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.92rem;
+    color: #5F6368;
+    line-height: 1.55;
+}
+
+.ws-address-row i {
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.ws-specs-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.spec-pill {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #334155;
+    padding: 6px 12px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.spec-pill i {
+    color: #FFB81C;
+    font-size: 0.85rem;
+}
+
+.ws-services-chips {
+    margin-top: 4px;
+}
+
+.ws-services-chips strong {
+    display: block;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #141414;
+    margin-bottom: 8px;
+}
+
+.chips-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.service-chip {
+    font-size: 0.78rem;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    padding: 4px 10px;
+    border-radius: 4px;
+    line-height: 1.4;
+}
+
+.ws-actions-row {
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid #f1f5f9;
+    display: flex;
+    gap: 12px;
+}
+
+.workshop-full-card .btn-carpla {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 12px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex: 1;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.workshop-full-card .btn-carpla-outline {
+    background: #ffffff !important;
+    border: 1.5px solid #141414 !important;
+    color: #141414 !important;
+    box-shadow: none !important;
+}
+
+.workshop-full-card .btn-carpla-outline:hover {
+    background: #141414 !important;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+.workshop-full-card .btn-carpla-primary {
+    background: #FFB81C !important;
+    border: 1.5px solid #FFB81C !important;
+    color: #141414 !important;
+    box-shadow: 0 4px 14px rgba(255, 184, 28, 0.3) !important;
+}
+
+.workshop-full-card .btn-carpla-primary:hover {
+    background: #e5a415 !important;
+    border-color: #e5a415 !important;
+    color: #141414 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(255, 184, 28, 0.45) !important;
+}
+
+@media (max-width: 991px) {
+    .network-workshops-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .city-filter-bar {
+        padding: 14px 16px;
+    }
+    .filter-btn-group {
+        width: 100%;
+    }
+    .city-filter-btn {
+        flex: 1 1 calc(50% - 6px);
+        text-align: center;
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+    .workshop-full-card {
+        padding: 20px 18px;
+    }
+    .ws-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .ws-actions-row {
+        flex-direction: column;
+    }
+    .workshop-full-card .btn-carpla {
+        width: 100%;
+    }
+}
