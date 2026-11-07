@@ -88,9 +88,9 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                     <ul class="footer-links-list footer-services-2col-mobile">
                         <!-- 1. Dịch Vụ Xe VinFast (First Item) -->
                         <li>
-                            <a href="<?php echo esc_url(home_url('/dich-vu/xe-vinfast/')); ?>" class="highlight-link vf-footer-link" style="color: #FFB81C !important; font-weight: 700;">
+                            <a href="<?php echo esc_url(home_url('/dich-vu/xe-vinfast/')); ?>" class="highlight-link vf-footer-link" style="color: #D4B996 !important; font-weight: 700;">
                                 <span>Dịch vụ xe VinFast</span>
-                                <span class="badge-mini" style="background:#FFB81C;color:#141414;font-weight:800;">HÃNG</span>
+                                <span class="badge-mini" style="background:#D4B996;color:#141414;font-weight:800;">HÃNG</span>
                             </a>
                         </li>
                         <?php
@@ -194,7 +194,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
      LEXUS VIETNAM 3-COLUMN BOTTOM BAR (MOBILE) & FLOATING DOCK (DESKTOP)
      ========================================================================= -->
 <div class="shiftup-floating-dock lexus-bottom-action-bar" id="shiftupFloatingDock">
-    <!-- 1. Hotline Tư Vấn (Thay thế Đặt Lịch) -->
+    <!-- 1. Hotline Tư Vấn -->
     <a href="tel:02203892207" class="float-dock-pill dock-book" title="Hotline tư vấn dịch vụ Ô Tô Hải Hà">
         <i class="fa-solid fa-phone-volume dock-fa-icon"></i>
         <span class="dock-text dock-text-desktop">HOTLINE: 02203 892 207</span>

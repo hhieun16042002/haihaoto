@@ -61,7 +61,7 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
         "name": "Ô Tô Hải Hà"
       },
       "areaServed": ["Hải Dương", "Miền Bắc"],
-      "description": "Ô Tô Hải Hà – đối tác dịch vụ VinFast tại KM3+500 Nguyễn Lương Bằng. Phụ tùng chính hãng, bảo dưỡng, sửa chữa, đồng sơn xe VinFast. Đặt lịch ngay.",
+      "description": "Ô Tô Hải Hà – đối tác dịch vụ VinFast tại KM3+500 Nguyễn Lương Bằng. Phụ tùng chính hãng, bảo dưỡng, sửa chữa, đồng sơn xe VinFast. Hotline: 02203 892 207.",
       "url": "<?php echo esc_url($current_url); ?>"
     },
     {
@@ -204,9 +204,9 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
                     <div class="vf-model-badge">VINFAST</div>
                     <h3 class="vf-model-name"><?php echo esc_html($m['code']); ?></h3>
                     <p class="vf-model-desc"><?php echo esc_html($m['desc']); ?></p>
-                    <a href="<?php echo esc_url(home_url('/dat-lich/?model=' . urlencode('VinFast ' . $m['code']))); ?>" class="vf-model-link">
-                        <span>Đặt lịch xe này</span>
-                        <i class="fa-solid fa-arrow-right"></i>
+                    <a href="tel:02203892207" class="vf-model-link">
+                        <span>Tư vấn kỹ thuật xe này</span>
+                        <i class="fa-solid fa-phone"></i>
                     </a>
                 </div>
                 <?php endforeach; ?>

@@ -310,7 +310,7 @@ function hieugara_get_default_slides() {
             'nav_tab'  => 'CHĂM SÓC & LÀM ĐẸP',
             'desc'     => 'Phủ bóng Ceramic Pro 9H bảo vệ sơn xe toàn diện, dán phim cách nhiệt 3M Crystalline chính hãng, dán PPF tự phục hồi vết xước và dọn nội thất khử khuẩn Ozone chuyên sâu.',
             'btn_text' => 'TÌM HIỂU THÊM',
-            'btn_url'  => home_url('/dat-lich/?service=' . urlencode('Detailing & Dán phim cách nhiệt')),
+            'btn_url'  => home_url('/bang-gia/'),
             'image'    => $slider_img . '/slide-detailing.jpg',
         ),
         3 => array(
@@ -352,6 +352,9 @@ function hieugara_get_slides() {
         if (function_exists('hieugara_normalize_local_media_urls')) {
             $slide_img = hieugara_normalize_local_media_urls($slide_img);
             $slide_btn = hieugara_normalize_local_media_urls($slide_btn);
+        }
+        if (strpos($slide_btn, '/dat-lich/') !== false) {
+            $slide_btn = home_url('/bang-gia/');
         }
         $slides[$i] = array(
             'enable'   => isset($saved[$i]['enable']) ? $saved[$i]['enable'] : $default['enable'],

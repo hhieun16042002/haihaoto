@@ -84,7 +84,7 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
 <!-- Backdrop Overlay for Mobile Navigation Drawer -->
 <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
 
-<!-- 3. Unified Mega Menu Bar (Logo + Menu + Cứu Hộ 24/7 + Đặt Lịch + Tìm Kiếm SEO on 1 Row) -->
+<!-- 3. Unified Mega Menu Bar (Logo + Menu + Cứu Hộ 24/7 + Hotline Tư Vấn + Tìm Kiếm SEO on 1 Row) -->
 <nav class="custom-navbar-strip" id="mainStickyNavbar" aria-label="Điều hướng chính">
     <!-- Mobile Drawer Top Bar -->
     <div class="mobile-drawer-header">
