@@ -1,133 +1,193 @@
 <?php
 /**
  * Archive Template for Garage Services (/dich-vu/)
- * Content structured after Prestige Automobile Services, adapted for Ôtô Hải Hà
- * keeping the existing HieuGara Motors layout.
+ * 100% Dynamic - Synchronized with WordPress Admin Categories & Services
  *
  * @package HieuGara_Motors
  */
 
 get_header();
 
-$theme_uri    = get_template_directory_uri();
-$gallery_img  = $theme_uri . '/assets/images/gallery';
-$rescue_phone = get_option('hieugara_rescue_phone', '0911 211 996');
+$rescue_phone  = get_option('hieugara_rescue_phone', '0911 211 996');
+$hotline_phone = get_option('hieugara_hotline_phone', '02203 892 207');
 
-$prestige_services = array(
-    array(
-        'title' => 'BẢO DƯỠNG Ô TÔ',
-        'badge' => 'TIÊU CHUẨN HÃNG',
-        'desc'  => 'Việc bảo dưỡng – bảo trì xe định kỳ không chỉ mang lại sự an toàn mà còn kéo dài tuổi thọ và hiệu suất hoạt động của xe. Tại Ôtô Hải Hà, chúng tôi thực hiện việc bảo trì và bảo dưỡng với quy trình chuyên nghiệp, sử dụng phụ tùng chính hãng theo đúng tiêu chuẩn từ nhà sản xuất, giúp phòng ngừa hỏng hóc, kéo dài tuổi thọ và giữ vững giá trị xe.',
-        'img'   => function_exists('hieugara_get_service_image') ? hieugara_get_service_image('bao-duong-o-to', $gallery_img . '/haiha-gallery-4.jpg') : $gallery_img . '/haiha-gallery-4.jpg',
-        'link'  => home_url('/dich-vu/bao-duong-o-to/')
-    ),
-    array(
-        'title' => 'SỬA CHỮA XE TOÀN DIỆN',
-        'badge' => 'CHẨN ĐOÁN CHUYÊN SÂU',
-        'desc'  => 'Từ những vấn đề phức tạp nhất của động cơ, hộp số, hệ thống điện đến các sửa chữa thông thường ở các bộ phận như gầm bệ, phanh… Đội ngũ kỹ thuật viên giàu kinh nghiệm của Ôtô Hải Hà cùng cơ sở vật chất hiện đại sẽ luôn “bắt đúng bệnh, sửa đúng chỗ”, giúp phục hồi hiệu suất và mang lại sự an tâm tuyệt đối cho bạn.',
-        'img'   => function_exists('hieugara_get_service_image') ? hieugara_get_service_image('sua-chua-o-to', $gallery_img . '/haiha-gallery-1.jpg') : $gallery_img . '/haiha-gallery-1.jpg',
-        'link'  => home_url('/dich-vu/sua-chua-o-to/')
-    ),
-    array(
-        'title' => 'SỬA CHỮA THÂN VỎ – ĐỒNG SƠN',
-        'badge' => 'PHÒNG SƠN TIÊU CHUẨN',
-        'desc'  => 'Phục hồi vẻ đẹp nguyên bản và đẳng cấp cho chiếc xe của bạn. Với đội ngũ tay nghề cao, thiết bị hiện đại, công nghệ pha màu sơn vi tính và phòng sơn tiêu chuẩn, chúng tôi cam kết xử lý mọi vết trầy xước, móp méo, trả lại diện mạo hoàn hảo, không một tì vết.',
-        'img'   => function_exists('hieugara_get_service_image') ? hieugara_get_service_image('dong-son-o-to', $gallery_img . '/haiha-gallery-2.jpg') : $gallery_img . '/haiha-gallery-2.jpg',
-        'link'  => home_url('/dich-vu/dong-son-o-to/')
-    ),
-    array(
-        'title' => 'SỬA CHỮA XE BẢO HIỂM',
-        'badge' => 'ĐỐI TÁC BẢO HIỂM',
-        'desc'  => 'Giảm bớt gánh nặng thủ tục khi xe gặp sự cố. Ôtô Hải Hà là đối tác của nhiều công ty bảo hiểm lớn, hỗ trợ bạn toàn bộ quy trình từ tư vấn, giám định đến hoàn thiện hồ sơ, đảm bảo trải nghiệm dịch vụ liền mạch, nhanh chóng và minh bạch giúp đem lại sự yên tâm và hài lòng tuyệt đối cho khách hàng.',
-        'img'   => function_exists('hieugara_get_service_image') ? hieugara_get_service_image('bao-hiem-va-bao-hanh-o-to', $gallery_img . '/haiha-gallery-6.jpg') : $gallery_img . '/haiha-gallery-6.jpg',
-        'link'  => home_url('/dich-vu/bao-hiem-va-bao-hanh-o-to/')
-    ),
-    array(
-        'title' => 'NÂNG CẤP NỘI – NGOẠI THẤT',
-        'badge' => 'PHỤ KIỆN CHÍNH HÃNG',
-        'desc'  => 'Thể hiện cá tính và nâng tầm trải nghiệm. Tại Ôtô Hải Hà, chúng tôi cung cấp các giải pháp nâng cấp đa dạng như dán phim PPF, độ body kit, màn hình Android, camera 360, hệ thống âm thanh, bọc ghế da cao cấp… Biến chiếc xe của bạn trở nên độc đáo, tiện nghi và cá nhân hóa hơn bao giờ hết.',
-        'img'   => function_exists('hieugara_get_service_image') ? hieugara_get_service_image('phu-kien-va-nang-cap-o-to', $gallery_img . '/haiha-gallery-7.jpg') : $gallery_img . '/haiha-gallery-7.jpg',
-        'link'  => home_url('/dich-vu/phu-kien-va-nang-cap-o-to/')
-    ),
-    array(
-        'title' => 'CHĂM SÓC NỘI – NGOẠI THẤT',
-        'badge' => 'AUTO DETAILING',
-        'desc'  => 'Mang lại vẻ sạch bóng và bền đẹp với thời gian. Tại Ôtô Hải Hà có đầy đủ các dịch vụ chăm sóc chi tiết như: đánh bóng, hiệu chỉnh bề mặt sơn, phủ ceramic, vệ sinh khoang máy, dọn nội thất, khử mùi diệt khuẩn… giúp bảo vệ và giữ cho không gian chiếc xe luôn trong trạng thái như mới.',
-        'img'   => function_exists('hieugara_get_service_image') ? hieugara_get_service_image('cham-soc-nang-cap-o-to', $gallery_img . '/haiha-gallery-5.jpg') : $gallery_img . '/haiha-gallery-5.jpg',
-        'link'  => home_url('/dich-vu/cham-soc-nang-cap-o-to/')
-    ),
-    array(
-        'title' => 'CỨU HỘ XE 24/7',
-        'badge' => 'HỖ TRỢ KHẨN CẤP 24/7',
-        'desc'  => 'An tâm trên mọi hành trình! Ôtô Hải Hà cung cấp dịch vụ cứu hộ 24/7 để đưa xe của bạn về trung tâm chúng tôi an toàn khi gặp sự cố. Chỉ cần gọi hotline: ' . $rescue_phone . '. Chúng tôi sẽ có mặt hỗ trợ bạn ngay lập tức!',
-        'img'   => function_exists('hieugara_get_service_image') ? hieugara_get_service_image('cuu-ho-giao-thong-o-to', $gallery_img . '/haiha-gallery-3.jpg') : $gallery_img . '/haiha-gallery-3.jpg',
-        'link'  => home_url('/dich-vu/cuu-ho-giao-thong-o-to/')
-    ),
-    array(
-        'title' => 'HỖ TRỢ ĐĂNG KIỂM XE',
-        'badge' => 'NHANH CHÓNG & THUẬN LỢI',
-        'desc'  => 'Tiết kiệm tối đa thời gian và công sức của bạn. Chúng tôi sẽ kiểm tra, chuẩn bị và khắc phục tất cả các hạng mục cần thiết để xe đáp ứng tiêu chuẩn đăng kiểm, đồng thời hỗ trợ bạn thực hiện thủ tục, đảm bảo toàn bộ quá trình diễn ra thuận lợi và nhanh chóng.',
-        'img'   => function_exists('hieugara_get_service_image') ? hieugara_get_service_image('dich-vu-dang-kiem-o-to', $gallery_img . '/haiha-gallery-9.jpg') : $gallery_img . '/haiha-gallery-9.jpg',
-        'link'  => home_url('/dich-vu/dich-vu-dang-kiem-o-to/')
-    ),
-);
+// Query all parent categories dynamically from database
+$categories = get_terms(array(
+    'taxonomy'   => 'service_category',
+    'parent'     => 0,
+    'hide_empty' => false,
+    'orderby'    => 'name',
+    'order'      => 'ASC',
+));
 ?>
 
 <!-- Portal Hero Banner -->
-<section class="portal-hero-header">
-    <div class="container">
-        <div class="portal-breadcrumb">
-            <a href="<?php echo esc_url(home_url('/')); ?>"><?php _e('Trang chủ', 'hieugara-motors'); ?></a>
-            <span>/</span>
-            <span class="current"><?php _e('Dịch vụ', 'hieugara-motors'); ?></span>
+<section class="portal-hero-header" style="background: #0f1115; padding: 50px 0 45px; border-bottom: 3px solid #F5A300; position: relative;">
+    <div class="container" style="max-width: 1360px; margin: 0 auto; padding: 0 20px;">
+        <div class="portal-breadcrumb" style="display: flex; gap: 8px; align-items: center; font-size: 0.85rem; color: #94a3b8; margin-bottom: 15px; font-family: 'Chakra Petch', sans-serif; text-transform: uppercase;">
+            <a href="<?php echo esc_url(home_url('/')); ?>" style="color: #cbd5e1; text-decoration: none;"><?php _e('Trang chủ', 'hieugara-motors'); ?></a>
+            <span style="color: #64748b;">/</span>
+            <span class="current" style="color: #F5A300; font-weight: 700;"><?php _e('Dịch vụ', 'hieugara-motors'); ?></span>
         </div>
-        <h1 class="portal-page-title"><?php _e('DỊCH VỤ TẠI ÔTÔ HẢI HÀ', 'hieugara-motors'); ?></h1>
-        <p class="portal-page-subtitle" style="max-width: 920px; margin-bottom: 12px;">
-            <strong>Ôtô Hải Hà</strong> là trung tâm bảo dưỡng và sửa chữa ô tô cao cấp tọa lạc tại Km 53+300 Quốc lộ 5 (Chiều Hà Nội – Hải Phòng), Phường Cẩm Thượng, TP. Hải Dương. Chúng tôi cam kết cung cấp những dịch vụ tốt nhất để duy trì và nâng cao hiệu suất tối đa của mỗi chiếc xe.
-        </p>
-        <p class="portal-page-subtitle" style="max-width: 920px;">
-            Với đội ngũ kỹ thuật viên giàu kinh nghiệm từng làm việc trong các hãng xe danh tiếng, hạ tầng trang thiết bị hiện đại được đầu tư bài bản, phụ tùng và linh kiện chính hãng cùng chi phí tiết kiệm tối ưu nhất cho khách hàng. Đến với <strong>Ôtô Hải Hà</strong>, mọi vấn đề về xe luôn xử lý nhanh chóng, quy trình chuyên nghiệp và tận tâm.
-        </p>
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
+            <div style="max-width: 900px;">
+                <div style="display: inline-block; background: #F5A300; color: #ffffff; font-family: 'Chakra Petch', sans-serif; font-size: 0.75rem; font-weight: 800; padding: 4px 12px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px;">
+                    <?php _e('TRUNG TÂM BẢO DƯỠNG & SỬA CHỮA Ô TÔ CAO CẤP', 'hieugara-motors'); ?>
+                </div>
+                <h1 style="font-family: 'Chakra Petch', sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; color: #ffffff; margin: 0 0 14px; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.25;">
+                    <span style="color: #F5A300;">|</span> <?php _e('HỆ THỐNG DỊCH VỤ ÔTÔ HẢI HÀ', 'hieugara-motors'); ?>
+                </h1>
+                <p style="color: #cbd5e1; font-size: 1rem; line-height: 1.6; margin: 0; max-width: 860px;">
+                    Cung cấp đầy đủ các giải pháp chăm sóc, bảo dưỡng định kỳ, chẩn đoán điện tử chuyên sâu và phục hồi thân vỏ công nghệ cao theo quy chuẩn quốc tế tại Hải Dương.
+                </p>
+            </div>
+            <div style="display: flex; gap: 12px; align-items: center;">
+                <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(245, 163, 0, 0.15); border: 1px solid #F5A300; color: #ffffff; padding: 10px 18px; font-family: 'Chakra Petch', sans-serif; font-size: 0.85rem; font-weight: 700; text-decoration: none; text-transform: uppercase;">
+                    <i class="fa fa-phone-volume" style="color: #F5A300;"></i>
+                    <span>CỨU HỘ 24/7: <strong style="color: #F5A300;"><?php echo esc_html($rescue_phone); ?></strong></span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Category Quick Jump Bar -->
+        <?php if (!empty($categories) && !is_wp_error($categories)) : ?>
+            <div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+                <?php foreach ($categories as $q_cat) : ?>
+                    <a href="#cat-<?php echo esc_attr($q_cat->slug); ?>" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); color: #e2e8f0; font-family: 'Chakra Petch', sans-serif; font-size: 0.82rem; font-weight: 700; padding: 7px 14px; text-decoration: none; text-transform: uppercase; transition: all 0.2s ease;">
+                        <?php echo esc_html($q_cat->name); ?>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
     </div>
 </section>
 
-<main id="primary" class="site-main" style="padding: 60px 0 90px; background: #F5F5F5; min-height: 70vh;">
-    <div class="container">
+<!-- Dynamic Category Sections -->
+<main id="primary" class="site-main" style="padding: 60px 0 90px; background: #F8FAFC;">
+    <div class="container" style="max-width: 1360px; margin: 0 auto; padding: 0 20px;">
 
-        <div class="services-grid">
-            <?php foreach ($prestige_services as $srv) : ?>
-                <article class="service-card">
-                    <?php if (!empty($srv['badge'])) : ?>
-                        <span class="service-badge"><?php echo esc_html($srv['badge']); ?></span>
-                    <?php endif; ?>
-
-                    <div class="service-media">
-                        <a href="<?php echo esc_url($srv['link']); ?>">
-                            <img src="<?php echo esc_url($srv['img']); ?>" alt="<?php echo esc_attr($srv['title']); ?>" loading="lazy">
+        <?php if (!empty($categories) && !is_wp_error($categories)) : ?>
+            <?php foreach ($categories as $cat) : 
+                $services = get_posts(array(
+                    'post_type'      => 'garage_service',
+                    'posts_per_page' => -1,
+                    'post_status'    => 'publish',
+                    'orderby'        => 'menu_order title',
+                    'order'          => 'ASC',
+                    'tax_query'      => array(
+                        array(
+                            'taxonomy'         => 'service_category',
+                            'field'            => 'term_id',
+                            'terms'            => $cat->term_id,
+                            'include_children' => true,
+                        ),
+                    ),
+                ));
+                $cat_link = home_url('/dich-vu/' . $cat->slug . '/');
+            ?>
+                <section id="cat-<?php echo esc_attr($cat->slug); ?>" style="margin-bottom: 70px; scroll-margin-top: 100px;">
+                    
+                    <!-- Section Header -->
+                    <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 14px;">
+                        <div>
+                            <h2 style="font-family: 'Chakra Petch', sans-serif; font-size: 1.6rem; font-weight: 800; color: #0f172a; margin: 0 0 6px; text-transform: uppercase;">
+                                <span style="color: #F5A300;">|</span> <?php echo esc_html($cat->name); ?>
+                                <span style="font-size: 0.85rem; color: #64748b; font-weight: 600; margin-left: 8px;">(<?php echo count($services); ?> dịch vụ)</span>
+                            </h2>
+                            <?php if (!empty($cat->description)) : ?>
+                                <p style="margin: 0; color: #64748b; font-size: 0.95rem; max-width: 850px; line-height: 1.6;">
+                                    <?php echo esc_html($cat->description); ?>
+                                </p>
+                            <?php endif; ?>
+                        </div>
+                        <a href="<?php echo esc_url($cat_link); ?>" style="display: inline-flex; align-items: center; gap: 6px; color: #F5A300; font-family: 'Chakra Petch', sans-serif; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; text-decoration: none;">
+                            <span><?php _e('Xem chi tiết danh mục', 'hieugara-motors'); ?></span>
+                            <span>&rarr;</span>
                         </a>
                     </div>
 
-                    <div class="service-body" style="display: flex; flex-direction: column; flex: 1;">
-                        <h2 class="service-title">
-                            <a href="<?php echo esc_url($srv['link']); ?>"><?php echo esc_html($srv['title']); ?></a>
-                        </h2>
+                    <!-- Services Grid -->
+                    <?php if (!empty($services)) : ?>
+                        <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
+                            <?php foreach ($services as $srv) : 
+                                $srv_id    = $srv->ID;
+                                $price     = get_post_meta($srv_id, '_garage_price_from', true) ?: (get_post_meta($srv_id, '_service_price', true) ?: 'Liên hệ');
+                                $duration  = get_post_meta($srv_id, '_garage_duration', true) ?: (get_post_meta($srv_id, '_service_duration', true) ?: '');
+                                $warranty  = get_post_meta($srv_id, '_garage_warranty', true) ?: (get_post_meta($srv_id, '_service_warranty', true) ?: '');
+                                $badge     = get_post_meta($srv_id, '_garage_badge', true) ?: 'TIÊU CHUẨN ÔTÔ HẢI HÀ';
+                                $permalink = get_permalink($srv_id);
 
-                        <p style="font-size: 0.9rem; color: #5F6368; line-height: 1.65; margin-bottom: 22px; flex: 1;">
-                            <?php echo esc_html($srv['desc']); ?>
-                        </p>
+                                if (has_post_thumbnail($srv_id)) {
+                                    $thumb = get_the_post_thumbnail_url($srv_id, 'medium_large');
+                                } else {
+                                    $custom_img = get_post_meta($srv_id, '_garage_custom_image', true);
+                                    $thumb = !empty($custom_img) ? $custom_img : get_template_directory_uri() . '/assets/images/shiftup/slide-2.jpg';
+                                }
+                            ?>
+                                <article class="service-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s ease, box-shadow 0.2s ease; position: relative;">
+                                    <?php if (!empty($badge)) : ?>
+                                        <span style="position: absolute; top: 12px; left: 12px; z-index: 2; background: #0f1115; color: #F5A300; font-family: 'Chakra Petch', sans-serif; font-size: 0.68rem; font-weight: 800; padding: 4px 10px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.5px; border-left: 3px solid #F5A300;">
+                                            <?php echo esc_html($badge); ?>
+                                        </span>
+                                    <?php endif; ?>
 
-                        <div class="service-card-footer" style="margin-top: auto;">
-                            <a href="<?php echo esc_url($srv['link']); ?>" class="btn-gara btn-gara-outline-red">
-                                <?php _e('Xem thêm', 'hieugara-motors'); ?> &rarr;
-                            </a>
-                            <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode($srv['title']))); ?>" class="btn-gara btn-gara-red">
-                                <i class="fa fa-calendar-check"></i> <?php _e('YÊU CẦU HỖ TRỢ', 'hieugara-motors'); ?>
-                            </a>
+                                    <div class="service-media" style="position: relative; height: 200px; overflow: hidden; background: #000;">
+                                        <a href="<?php echo esc_url($permalink); ?>">
+                                            <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($srv->post_title); ?>" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+                                        </a>
+                                    </div>
+
+                                    <div class="service-body" style="padding: 22px; display: flex; flex-direction: column; flex: 1;">
+                                        <h3 style="font-family: 'Chakra Petch', sans-serif; font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 10px; text-transform: uppercase; line-height: 1.35;">
+                                            <a href="<?php echo esc_url($permalink); ?>" style="color: inherit; text-decoration: none;">
+                                                <?php echo esc_html($srv->post_title); ?>
+                                            </a>
+                                        </h3>
+
+                                        <!-- Meta Pills -->
+                                        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; font-size: 0.8rem; font-family: 'Chakra Petch', sans-serif;">
+                                            <span style="background: #fff7ed; color: #c2410c; padding: 3px 8px; border-radius: 3px; font-weight: 700;">
+                                                <i class="fa fa-tag" style="margin-right: 4px;"></i> <?php echo esc_html($price); ?>
+                                            </span>
+                                            <?php if (!empty($duration)) : ?>
+                                                <span style="background: #f1f5f9; color: #475569; padding: 3px 8px; border-radius: 3px; font-weight: 600;">
+                                                    <i class="fa fa-clock" style="margin-right: 4px;"></i> <?php echo esc_html($duration); ?>
+                                                </span>
+                                            <?php endif; ?>
+                                        </div>
+
+                                        <p style="font-size: 0.9rem; color: #64748b; line-height: 1.6; margin: 0 0 18px; flex: 1;">
+                                            <?php echo wp_trim_words(get_the_excerpt($srv_id) ?: strip_tags($srv->post_content), 18, '...'); ?>
+                                        </p>
+
+                                        <div class="service-card-footer" style="margin-top: auto; padding-top: 14px; border-top: 1px solid #f1f5f9; display: flex; gap: 10px; align-items: center;">
+                                            <a href="<?php echo esc_url($permalink); ?>" style="flex: 1; text-align: center; padding: 10px 14px; background: #0f172a; color: #ffffff; text-decoration: none; font-family: 'Chakra Petch', sans-serif; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; border-radius: 3px;">
+                                                <?php _e('Chi tiết', 'hieugara-motors'); ?> &rarr;
+                                            </a>
+                                            <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode($srv->post_title))); ?>" style="padding: 10px 14px; background: #F5A300; color: #ffffff; text-decoration: none; font-family: 'Chakra Petch', sans-serif; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; border-radius: 3px;" title="Đặt lịch hẹn cho dịch vụ này">
+                                                <i class="fa fa-calendar-check"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </article>
+                            <?php endforeach; ?>
                         </div>
-                    </div>
-                </article>
+                    <?php else : ?>
+                        <div style="background: #fff; border: 1px dashed #cbd5e1; padding: 24px; text-align: center; color: #94a3b8; font-size: 0.95rem;">
+                            <?php _e('Chưa có dịch vụ nào trong danh mục này. Bạn có thể thêm dịch vụ con trong trang quản trị WP-Admin.', 'hieugara-motors'); ?>
+                        </div>
+                    <?php endif; ?>
+
+                </section>
             <?php endforeach; ?>
-        </div>
+        <?php else : ?>
+            <div style="background: #fff; padding: 40px; text-align: center; border: 1px solid #e2e8f0; border-radius: 4px;">
+                <p style="color: #64748b; font-size: 1.1rem; margin-bottom: 16px;"><?php _e('Chưa có danh mục dịch vụ nào được cấu hình.', 'hieugara-motors'); ?></p>
+                <a href="<?php echo esc_url(admin_url('edit-tags.php?taxonomy=service_category&post_type=garage_service')); ?>" class="shiftup-rect-btn btn-orange-solid">
+                    <?php _e('Thêm danh mục trong Admin', 'hieugara-motors'); ?>
+                </a>
+            </div>
+        <?php endif; ?>
 
     </div>
 </main>

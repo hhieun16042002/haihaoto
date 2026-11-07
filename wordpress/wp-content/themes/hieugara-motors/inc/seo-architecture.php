@@ -48,6 +48,11 @@ class HieuGara_SEO_Architecture {
         // Rewrite rules
         add_action('init', array(__CLASS__, 'register_rewrite_rules'), 20);
 
+        // Auto-flush rewrite rules when service categories change in Admin
+        add_action('created_service_category', array(__CLASS__, 'flush_rules_on_change'));
+        add_action('edited_service_category', array(__CLASS__, 'flush_rules_on_change'));
+        add_action('delete_service_category', array(__CLASS__, 'flush_rules_on_change'));
+
         // Template redirect for 301s
         add_action('template_redirect', array(__CLASS__, 'handle_301_redirects'));
 
@@ -58,22 +63,41 @@ class HieuGara_SEO_Architecture {
         add_action('wp_head', array(__CLASS__, 'output_json_ld_schema'), 5);
     }
 
+    public static function flush_rules_on_change() {
+        flush_rewrite_rules(false);
+    }
+
+    public static function get_all_category_slugs() {
+        $terms = get_terms(array(
+            'taxonomy'   => 'service_category',
+            'hide_empty' => false,
+            'fields'     => 'id=>slug',
+        ));
+        if (!empty($terms) && !is_wp_error($terms)) {
+            return array_unique(array_merge(array_keys(self::$category_slugs), array_values($terms)));
+        }
+        return array_keys(self::$category_slugs);
+    }
+
     public static function register_rewrite_rules() {
-        $slug_pattern = implode('|', array_keys(self::$category_slugs));
+        $slugs = self::get_all_category_slugs();
+        $slug_pattern = implode('|', array_map('preg_quote', $slugs));
 
-        // 1. Category Hub URL: /dich-vu/[category-slug]/
-        add_rewrite_rule(
-            '^dich-vu/(' . $slug_pattern . ')/?$',
-            'index.php?service_category=$matches[1]',
-            'top'
-        );
+        if (!empty($slug_pattern)) {
+            // 1. Category Hub URL: /dich-vu/[category-slug]/
+            add_rewrite_rule(
+                '^dich-vu/(' . $slug_pattern . ')/?$',
+                'index.php?service_category=$matches[1]',
+                'top'
+            );
 
-        // 2. Pagination for Category Hub: /dich-vu/[category-slug]/page/2/
-        add_rewrite_rule(
-            '^dich-vu/(' . $slug_pattern . ')/page/([0-9]{1,})/?$',
-            'index.php?service_category=$matches[1]&paged=$matches[2]',
-            'top'
-        );
+            // 2. Pagination for Category Hub: /dich-vu/[category-slug]/page/2/
+            add_rewrite_rule(
+                '^dich-vu/(' . $slug_pattern . ')/page/([0-9]{1,})/?$',
+                'index.php?service_category=$matches[1]&paged=$matches[2]',
+                'top'
+            );
+        }
     }
 
     public static function add_query_vars($vars) {
