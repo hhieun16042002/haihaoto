@@ -310,6 +310,18 @@ function hieugara_send_security_headers() {
 }
 add_action('send_headers', 'hieugara_send_security_headers');
 
+// 5f. Prevent Canonical Port 8080 Redirects on Cloudflare Tunnels
+function hieugara_fix_tunnel_canonical_redirect($redirect_url, $requested_url) {
+    if (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'trycloudflare.com') !== false) {
+        // Prevent redirecting to port 8080 over external tunnel HTTPS
+        if (strpos($redirect_url, ':8080') !== false) {
+            return false;
+        }
+    }
+    return $redirect_url;
+}
+add_filter('redirect_canonical', 'hieugara_fix_tunnel_canonical_redirect', 10, 2);
+
 // 6. SEO Search Optimization: Include Services, Accessories, Posts & Pages in Frontend Search
 function hieugara_seo_search_query($query) {
     if (!is_admin() && $query->is_main_query() && $query->is_search()) {

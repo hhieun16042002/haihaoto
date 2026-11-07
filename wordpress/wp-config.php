@@ -133,15 +133,6 @@ if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strpos($_SERVER['HTTP_X_FORWARD
 define( 'WP_CACHE', true );
 define( 'DISABLE_WP_CRON', true );
 
-/* That's all, stop editing! Happy publishing. */
-
-/** Absolute path to the WordPress directory. */
-if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', __DIR__ . '/' );
-}
-
-/** Sets up WordPress vars and included files. */
-
 // Dynamic Home & Siteurl with strict host validation
 $safe_host = 'localhost:8080';
 $target_host = isset($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '');
@@ -151,12 +142,16 @@ if (!empty($target_host) && preg_match('/^[a-zA-Z0-9.\-]+(?::[0-9]+)?$/', $targe
     if (
         $host_domain === 'localhost' ||
         $host_domain === '127.0.0.1' ||
-        substr($host_domain, -16) === 'trycloudflare.com' ||
-        substr($host_domain, -14) === 'ngrok-free.app' ||
+        str_ends_with($host_domain, 'trycloudflare.com') ||
+        str_ends_with($host_domain, 'ngrok-free.app') ||
         $host_domain === 'otohaiha.vn' ||
-        substr($host_domain, -11) === '.otohaiha.vn'
+        str_ends_with($host_domain, '.otohaiha.vn')
     ) {
-        $safe_host = $target_host;
+        if (str_ends_with($host_domain, 'trycloudflare.com') || str_ends_with($host_domain, 'ngrok-free.app')) {
+            $safe_host = $host_domain;
+        } else {
+            $safe_host = $target_host;
+        }
     }
 }
 
@@ -169,4 +164,12 @@ if (!defined('WP_SITEURL')) {
     define('WP_SITEURL', $http_scheme . '://' . $safe_host);
 }
 
+/* That's all, stop editing! Happy publishing. */
+
+/** Absolute path to the WordPress directory. */
+if ( ! defined( 'ABSPATH' ) ) {
+	define( 'ABSPATH', __DIR__ . '/' );
+}
+
+/** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
