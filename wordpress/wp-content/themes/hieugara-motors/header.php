@@ -236,7 +236,6 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                     <i class="fa-solid fa-chevron-down nav-caret"></i>
                 </a>
                 <ul class="nav-dropdown-menu">
-                    <li><a href="<?php echo esc_url(home_url('/phu-kien/')); ?>"><?php _e('Xem Tất Cả Phụ Kiện Chính Hãng', 'hieugara-motors'); ?></a></li>
                     <?php 
                     $nav_acc_cats = function_exists('hieugara_get_accessories_categories') ? hieugara_get_accessories_categories() : array();
                     foreach ($nav_acc_cats as $c_slug => $c_data) :
