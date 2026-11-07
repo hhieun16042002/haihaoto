@@ -272,31 +272,51 @@ function hieugara_normalize_local_media_urls($content) {
         if (
             $host_domain === 'localhost' ||
             $host_domain === '127.0.0.1' ||
-            substr($host_domain, -16) === 'trycloudflare.com' ||
-            substr($host_domain, -14) === 'ngrok-free.app' ||
+            str_ends_with($host_domain, 'trycloudflare.com') ||
+            str_ends_with($host_domain, 'ngrok-free.app') ||
             $host_domain === 'otohaiha.vn' ||
-            substr($host_domain, -11) === '.otohaiha.vn'
+            str_ends_with($host_domain, '.otohaiha.vn')
         ) {
-            $current_host = $raw_host;
+            if (str_ends_with($host_domain, 'trycloudflare.com') || str_ends_with($host_domain, 'ngrok-free.app')) {
+                $current_host = $host_domain;
+            } else {
+                $current_host = $raw_host;
+            }
         }
     }
     $is_https = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ||
-                (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https');
+                (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false) ||
+                str_ends_with($current_host, 'trycloudflare.com') ||
+                str_ends_with($current_host, 'ngrok-free.app');
     $current_origin = ($is_https ? 'https' : 'http') . '://' . $current_host;
 
     $patterns = array(
         'http://localhost:8080',
         'http://127.0.0.1:8080',
         'https://localhost:8080',
+        'https://127.0.0.1:8080',
+        'http://localhost',
+        'https://localhost',
     );
     $content = str_replace($patterns, $current_origin, $content);
-    $content = preg_replace('/https?:\/\/[a-z0-9\-]+\.trycloudflare\.com/i', $current_origin, $content);
+    $content = preg_replace('/https?:\/\/[a-z0-9\-]+\.trycloudflare\.com(?::[0-9]+)?/i', $current_origin, $content);
 
     return $content;
 }
 add_filter('the_content', 'hieugara_normalize_local_media_urls', 99);
 add_filter('post_thumbnail_html', 'hieugara_normalize_local_media_urls', 99);
 add_filter('wp_get_attachment_url', 'hieugara_normalize_local_media_urls', 99);
+add_filter('wp_calculate_image_srcset', function($sources) {
+    if (is_array($sources)) {
+        foreach ($sources as &$src) {
+            if (isset($src['url'])) {
+                $src['url'] = hieugara_normalize_local_media_urls($src['url']);
+            }
+        }
+    }
+    return $sources;
+}, 99);
+add_filter('widget_text', 'hieugara_normalize_local_media_urls', 99);
 
 // 5e. Security Headers & X-Powered-By removal
 function hieugara_send_security_headers() {
@@ -322,22 +342,7 @@ function hieugara_fix_tunnel_canonical_redirect($redirect_url, $requested_url) {
 }
 add_filter('redirect_canonical', 'hieugara_fix_tunnel_canonical_redirect', 10, 2);
 
-// 5g. Dynamic Host Replacer: ensure media attachments and post content images never break across domains/tunnels
-function hieugara_dynamic_upload_url($content) {
-    if (empty($content) || !is_string($content)) {
-        return $content;
-    }
-    if (strpos($content, 'localhost:8080') !== false) {
-        $scheme = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false) ? 'https://' : 'http://';
-        $host   = !empty($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : 'localhost:8080';
-        $content = str_replace(array('http://localhost:8080', 'https://localhost:8080'), $scheme . $host, $content);
-    }
-    return $content;
-}
-add_filter('wp_get_attachment_url', 'hieugara_dynamic_upload_url', 99);
-add_filter('the_content', 'hieugara_dynamic_upload_url', 99);
-add_filter('post_thumbnail_html', 'hieugara_dynamic_upload_url', 99);
-add_filter('widget_text', 'hieugara_dynamic_upload_url', 99);
+
 
 // 6. SEO Search Optimization: Include Services, Accessories, Posts & Pages in Frontend Search
 function hieugara_seo_search_query($query) {

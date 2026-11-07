@@ -63,12 +63,16 @@ if (preg_match('/^[a-zA-Z0-9.\-]+(?::[0-9]+)?$/', $raw_host)) {
     if (
         $host_part === 'localhost' ||
         $host_part === '127.0.0.1' ||
-        substr($host_part, -16) === 'trycloudflare.com' ||
-        substr($host_part, -14) === 'ngrok-free.app' ||
+        str_ends_with($host_part, 'trycloudflare.com') ||
+        str_ends_with($host_part, 'ngrok-free.app') ||
         $host_part === 'otohaiha.vn' ||
-        substr($host_part, -11) === '.otohaiha.vn'
+        str_ends_with($host_part, '.otohaiha.vn')
     ) {
-        $current_host = $raw_host;
+        if (str_ends_with($host_part, 'trycloudflare.com') || str_ends_with($host_part, 'ngrok-free.app')) {
+            $current_host = $host_part;
+        } else {
+            $current_host = $raw_host;
+        }
     }
 }
 
