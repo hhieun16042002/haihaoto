@@ -199,7 +199,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
         </span>
         <i class="fa-regular fa-calendar-check dock-fa-icon"></i>
         <span class="dock-text dock-text-desktop">ĐẶT LỊCH HẸN</span>
-        <span class="dock-text dock-text-mobile">Đặt lịch bảo dưỡng<br>của bạn</span>
+        <span class="dock-text dock-text-mobile">Đặt Lịch</span>
     </a>
 
     <!-- 2. So sánh bảng giá / Cứu hộ 24/7 (Lexus Dual Arrows Icon) -->
@@ -216,7 +216,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
         </span>
         <i class="fa-solid fa-truck-pickup dock-fa-icon"></i>
         <span class="dock-text dock-text-desktop">CỨU HỘ: <?php echo esc_html($rescue_phone); ?></span>
-        <span class="dock-text dock-text-mobile">Cứu hộ &amp; Hỗ trợ<br>24/7: <?php echo esc_html($rescue_phone); ?></span>
+        <span class="dock-text dock-text-mobile">Cứu Hộ 24/7</span>
     </a>
 
     <!-- 3. Chat tư vấn kỹ thuật Zalo (Lexus Square Chat Icon) -->
@@ -230,7 +230,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
         </span>
         <i class="fa-solid fa-comment-dots dock-fa-icon"></i>
         <span class="dock-text dock-text-desktop">ZALO KỸ THUẬT</span>
-        <span class="dock-text dock-text-mobile">Chat</span>
+        <span class="dock-text dock-text-mobile">Chat Zalo</span>
     </a>
 </div>
 

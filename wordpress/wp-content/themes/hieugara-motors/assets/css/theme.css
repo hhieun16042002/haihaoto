@@ -4913,44 +4913,51 @@ html, body {
     .bottom-back-to-top {
         display: none;
     }
-    /* Authentic Lexus Vietnam 3-Column Mobile Bottom Action Bar */
+    /* Authentic Lexus Vietnam 3-Column Mobile Bottom Action Bar (Floating Rounded Island) */
     .shiftup-floating-dock {
         position: fixed !important;
-        bottom: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        width: 100vw !important;
-        max-width: 100% !important;
-        height: 72px !important;
-        background: #141414 !important;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-        border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-        border-radius: 0 !important;
-        margin: 0 !important;
-        padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px)) !important;
+        bottom: calc(10px + env(safe-area-inset-bottom, 0px)) !important;
+        left: 12px !important;
+        right: 12px !important;
+        width: auto !important;
+        max-width: calc(100vw - 24px) !important;
+        margin: 0 auto !important;
+        background: rgba(18, 18, 20, 0.94) !important;
+        backdrop-filter: blur(16px) !important;
+        -webkit-backdrop-filter: blur(16px) !important;
+        border: 1px solid rgba(197, 168, 128, 0.45) !important;
+        border-radius: 24px !important;
+        padding: 6px 8px !important;
         display: grid !important;
         grid-template-columns: repeat(3, 1fr) !important;
-        align-items: start !important;
+        gap: 6px !important;
+        align-items: center !important;
         z-index: 99990 !important;
-        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.45) !important;
-        gap: 4px !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+        height: auto !important;
     }
     .float-dock-pill {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        justify-content: flex-start !important;
-        gap: 5px !important;
-        padding: 4px 4px !important;
-        border-radius: 0 !important;
-        background: transparent !important;
-        border: none !important;
+        justify-content: center !important;
+        gap: 3px !important;
+        padding: 7px 4px !important;
+        border-radius: 16px !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 1px solid rgba(255, 255, 255, 0.06) !important;
         color: #ffffff !important;
         text-decoration: none !important;
-        min-height: 60px !important;
+        min-height: 52px !important;
+        height: auto !important;
         box-shadow: none !important;
         transform: none !important;
+        box-sizing: border-box !important;
+        transition: all 0.2s ease !important;
+    }
+    .float-dock-pill:active {
+        transform: scale(0.96) !important;
+        background: rgba(255, 255, 255, 0.12) !important;
     }
     .float-dock-pill .dock-fa-icon,
     .float-dock-pill .dock-pulse-beacon,
@@ -4961,33 +4968,40 @@ html, body {
         display: inline-flex !important;
         align-items: center !important;
         justify-content: center !important;
-        height: 26px !important;
+        height: 22px !important;
         color: #ffffff !important;
     }
     .float-dock-pill .dock-text-mobile {
         display: block !important;
         font-family: 'Be Vietnam Pro', -apple-system, sans-serif !important;
-        font-size: 0.68rem !important;
-        font-weight: 400 !important;
-        letter-spacing: 0.1px !important;
-        line-height: 1.28 !important;
+        font-size: 0.72rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.2px !important;
+        line-height: 1.2 !important;
         text-transform: none !important;
-        color: rgba(255, 255, 255, 0.92) !important;
-        text-align: center !important;
-        white-space: normal !important;
-    }
-    .float-dock-pill.dock-rescue {
         color: #ffffff !important;
-        background: transparent !important;
-    }
-    .float-dock-pill.dock-hotline {
-        color: #f59e0b !important;
-    }
-    .float-dock-pill.dock-zalo {
-        color: #C5A880 !important;
+        text-align: center !important;
+        white-space: nowrap !important;
     }
     .float-dock-pill.dock-book {
-        color: #10b981 !important;
+        border-color: rgba(197, 168, 128, 0.3) !important;
+    }
+    .float-dock-pill.dock-book .lexus-dock-svg {
+        color: #C5A880 !important;
+    }
+    .float-dock-pill.dock-rescue {
+        background: rgba(217, 45, 32, 0.25) !important;
+        border-color: rgba(217, 45, 32, 0.5) !important;
+    }
+    .float-dock-pill.dock-rescue .lexus-dock-svg {
+        color: #ff6b6b !important;
+    }
+    .float-dock-pill.dock-zalo {
+        background: rgba(0, 104, 255, 0.22) !important;
+        border-color: rgba(0, 104, 255, 0.45) !important;
+    }
+    .float-dock-pill.dock-zalo .lexus-dock-svg {
+        color: #60a5fa !important;
     }
     .dock-pulse-beacon {
         display: none !important;
@@ -10303,20 +10317,88 @@ html, body {
     display: none !important;
 }
 
+.shiftup-main-footer .footer-contact-chips {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+}
+
 .shiftup-main-footer .chip-direct-phone,
 .shiftup-main-footer .chip-zalo {
     display: flex !important;
     align-items: center !important;
-    gap: 10px !important;
-    padding: 10px 14px !important;
+    gap: 8px !important;
+    padding: 8px 10px !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    border-radius: 8px !important;
 }
 
 .shiftup-main-footer .chip-direct-phone strong,
 .shiftup-main-footer .chip-zalo strong {
-    font-size: 1rem !important;
+    font-size: 0.92rem !important;
     font-weight: 700 !important;
-    letter-spacing: 0.3px !important;
+    letter-spacing: 0.1px !important;
     line-height: 1.2 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+@media (max-width: 480px) {
+    .shiftup-main-footer .footer-contact-chips {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 6px !important;
+    }
+    .shiftup-main-footer .chip-direct-phone,
+    .shiftup-main-footer .chip-zalo {
+        padding: 7px 6px !important;
+        gap: 5px !important;
+        border-radius: 8px !important;
+    }
+    .shiftup-main-footer .contact-chip i {
+        width: 26px !important;
+        height: 26px !important;
+        font-size: 0.72rem !important;
+        flex-shrink: 0 !important;
+    }
+    .shiftup-main-footer .chip-direct-phone strong,
+    .shiftup-main-footer .chip-zalo strong {
+        font-size: 0.75rem !important;
+        letter-spacing: -0.3px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+}
+
+/* ==========================================================================
+   HOMEPAGE HERO BANNER: SINGLE-LINE TITLES & EYEBROW ON DESKTOP
+   ========================================================================== */
+@media (min-width: 992px) {
+    .lexus-slide-container {
+        max-width: 1320px !important;
+        width: 100% !important;
+    }
+    .lexus-slide-content {
+        max-width: 1260px !important;
+        width: 100% !important;
+    }
+    .lexus-slide-title {
+        white-space: nowrap !important;
+        font-size: clamp(1.8rem, 2.9vw, 3.2rem) !important;
+        letter-spacing: 1.5px !important;
+        line-height: 1.2 !important;
+    }
+    .lexus-eyebrow {
+        white-space: nowrap !important;
+        font-size: 0.95rem !important;
+    }
+    .lexus-slide-desc {
+        max-width: 920px !important;
+    }
+    .lexus-pagination-bar .dash-label {
+        white-space: nowrap !important;
+    }
 }
 
 .shiftup-main-footer .footer-links-list li a,
