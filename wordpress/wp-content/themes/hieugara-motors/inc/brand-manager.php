@@ -206,8 +206,8 @@ if (!function_exists('hieugara_get_default_comprehensive_partner')) {
             'perk_3_desc'        => 'Linh kiện thay thế, phụ kiện chính hãng, dầu phanh xe điện, dung dịch làm mát pin cao áp có nguồn gốc truy xuất rõ ràng.',
             'perk_4_title'       => 'Cứu Hộ Kéo Xe Sàn Trượt 24/7 Toàn Miền Bắc',
             'perk_4_desc'        => 'Đội cứu hộ cơ động 24/7 kích pin, hỗ trợ xử lý sự cố trên cao tốc Hà Nội - Hải Phòng, Quốc Lộ 5 và toàn tỉnh Hải Dương.',
-            'cta_booking_text'   => 'Đặt Lịch Dịch Vụ VinFast',
-            'cta_booking_url'    => '#shiftup-booking-anchor',
+            'cta_booking_text'   => 'Gọi Tư Vấn VinFast',
+            'cta_booking_url'    => 'tel:02203892207',
             'cta_hotline_text'   => 'Hotline Kỹ Thuật: 0911 211 996',
             'cta_hotline_tel'    => '0911211996',
             'cta_accessory_text' => 'Xem Phụ Kiện Xe VinFast',
@@ -745,7 +745,7 @@ function hieugara_render_comprehensive_partner_page() {
 
                 <div style="padding: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
                     <div>
-                        <label style="display: block; font-weight: 700; color: #0f172a; margin-bottom: 6px;">Nút 1: Đặt Lịch Bảo Dưỡng:</label>
+                        <label style="display: block; font-weight: 700; color: #0f172a; margin-bottom: 6px;">Nút 1: Hotline / Tư Vấn Kỹ Thuật:</label>
                         <input type="text" name="cta_booking_text" value="<?php echo esc_attr($p['cta_booking_text']); ?>" style="width: 100%; margin-bottom: 6px;" placeholder="Tên nút...">
                         <input type="text" name="cta_booking_url" value="<?php echo esc_attr($p['cta_booking_url']); ?>" style="width: 100%; font-size: 0.85rem;" placeholder="Link (#shiftup-booking-anchor)">
                     </div>

@@ -199,7 +199,7 @@ function hieugara_render_about_menu_crud_page() {
         <div style="background: linear-gradient(135deg, #141414 0%, #1f2937 100%); color: #fff; padding: 28px 32px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
                 <div>
-                    <span style="background: #FFB81C; color: #141414; font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">Quản Lý Menu Header</span>
+                    <span style="background: #D4B996; color: #141414; font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">Quản Lý Menu Header</span>
                     <h1 style="color: #fff; font-size: 24px; font-weight: 800; margin: 8px 0 6px;">📋 Danh Mục "GIỚI THIỆU" (CRUD Trực Quan)</h1>
                     <p style="color: #9CA3AF; margin: 0; font-size: 14px;">Tự do Thêm mới, Chỉnh sửa, Bật/Tắt, Sắp xếp thứ tự hoặc Xóa các mục trong menu xổ xuống "GIỚI THIỆU" của website.</p>
                 </div>

@@ -2,7 +2,7 @@
 /**
  * Ôtô Hải Hà Service - ShiftUp Flagship Front Page
  * Exact 1:1 Architectural Clone from ShiftUp Car Workshop (Qode Interactive)
- * Minimalist White & Obsidian High-Contrast, Motorsport Typography (Chakra Petch & Be Vietnam Pro)
+ * Minimalist White & Obsidian High-Contrast, Unified Be Vietnam Pro Typography
  *
  * Reordered 6 Primary Homepage Sections:
  * 1. Hero, lợi ích chính và nút liên hệ
@@ -148,12 +148,12 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                         </li>
                     </ul>
                     <div class="hp-vf-actions">
-                        <a href="<?php echo esc_url(home_url('/dat-lich/?model=Xe%20VinFast&service=vinfast')); ?>" class="hp-vf-btn-primary">
-                            <i class="fa-regular fa-calendar-check"></i>
-                            <span>Đặt lịch xe VinFast</span>
+                        <a href="tel:02203892207" class="hp-vf-btn-primary">
+                            <i class="fa-solid fa-phone-volume"></i>
+                            <span>Tư vấn kỹ thuật: 02203 892 207</span>
                         </a>
                         <a href="<?php echo esc_url(home_url('/dich-vu/xe-vinfast/')); ?>" class="hp-vf-btn-outline">
-                            <span>Xem dịch vụ xe VinFast</span>
+                            <span>Chi tiết dịch vụ xe VinFast</span>
                             <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
@@ -162,7 +162,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                 <!-- Photo Right (on desktop) / Stacked below text (on mobile) -->
                 <div class="hp-vf-photo-wrap">
                     <div class="hp-vf-frame">
-                        <img src="<?php echo esc_url($theme_uri . '/assets/images/about/haiha-about-workshop.jpg'); ?>" alt="Biển VinFast Service tại gara Ô Tô Hải Hà" width="600" height="400" loading="lazy" class="hp-vf-img">
+                        <img src="<?php echo esc_url($theme_uri . '/assets/images/about/bien-vinfast-service-haiha.jpg'); ?>" alt="Biển VinFast Service tại gara Ô Tô Hải Hà" width="600" height="400" loading="lazy" class="hp-vf-img">
                         <div class="hp-vf-badge">
                             <span class="hp-vf-badge-sub">ĐỐI TÁC DỊCH VỤ CHÍNH THỨC</span>
                             <strong class="hp-vf-badge-title">VINFAST SERVICE</strong>
@@ -460,9 +460,6 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                                 <div class="hp-blog-footer">
                                     <a href="<?php echo esc_url(get_permalink($pid)); ?>" class="hp-blog-readmore">
                                         <?php _e('Đọc chi tiết', 'hieugara-motors'); ?> <i class="fa-solid fa-arrow-right-long"></i>
-                                    </a>
-                                    <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode(get_the_title($pid)))); ?>" class="hp-blog-book-btn">
-                                        <i class="fa-solid fa-calendar-plus"></i> <?php _e('Đặt lịch', 'hieugara-motors'); ?>
                                     </a>
                                 </div>
                             </div>

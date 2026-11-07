@@ -196,9 +196,9 @@ while (have_posts()) : the_post();
 
                         <!-- Primary CTA Buttons -->
                         <div class="acc-cta-stack">
-                            <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode('Lắp đặt phụ kiện: ' . $title))); ?>" class="btn-acc-primary-book" title="Đặt lịch lắp đặt phụ kiện này">
-                                <i class="fa-regular fa-calendar-check mr-2"></i>
-                                <span>ĐẶT LỊCH LẮP ĐẶT TẠI XƯỞNG</span>
+                            <a href="tel:02203892207" class="btn-acc-primary-book" title="Tư vấn lắp đặt phụ kiện này" style="background: #D4B996; color: #141414;">
+                                <i class="fa-solid fa-phone-volume mr-2"></i>
+                                <span>TƯ VẤN LẮP ĐẶT: 02203 892 207</span>
                             </a>
                             
                             <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="btn-acc-call" title="Gọi hotline tư vấn nhanh">

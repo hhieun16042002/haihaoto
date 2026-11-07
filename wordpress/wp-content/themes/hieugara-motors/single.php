@@ -110,16 +110,16 @@ while (have_posts()) : the_post();
                 <!-- Garage CTA Box -->
                 <div class="article-cta-box" style="margin-top: 40px; background: linear-gradient(135deg, #141414 0%, #1f2937 100%); border-radius: 14px; padding: 30px 32px; color: #FFFFFF; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;">
                     <div style="flex: 1 1 320px;">
-                        <span style="background: #FEF3C7; color: #92400E; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">Tư Vấn Miễn Phí</span>
+                        <span style="background: #F5EBE1; color: #7A5C34; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">Tư Vấn Kỹ Thuật Miễn Phí</span>
                         <h3 style="font-size: 1.3rem; font-weight: 800; color: #FFFFFF; margin: 10px 0 8px;">Cần tư vấn kỹ thuật hoặc bảo dưỡng xe?</h3>
                         <p style="color: #D1D5DB; font-size: 0.92rem; margin: 0; line-height: 1.5;">Kỹ thuật viên Ô Tô Hải Hà sẵn sàng kiểm tra, tư vấn chuẩn đoán và báo giá chi tiết minh bạch.</p>
                     </div>
                     <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                        <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode(get_the_title()))); ?>" style="background: #FFB81C; color: #141414; font-weight: 700; padding: 12px 22px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
-                            <i class="fa-solid fa-calendar-check"></i> Đặt Lịch Ngay
+                        <a href="tel:<?php echo esc_attr($hotline_clean); ?>" style="background: #D4B996; color: #141414; font-weight: 700; padding: 12px 22px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                            <i class="fa-solid fa-phone-volume"></i> Gọi Hotline: <?php echo esc_html($hotline_phone); ?>
                         </a>
-                        <a href="tel:<?php echo esc_attr($hotline_clean); ?>" style="background: transparent; color: #FFFFFF; border: 1.5px solid rgba(255,255,255,0.4); font-weight: 600; padding: 12px 18px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
-                            <i class="fa-solid fa-phone"></i> Gọi <?php echo esc_html($hotline_phone); ?>
+                        <a href="https://zalo.me/<?php echo esc_attr($hotline_clean); ?>" target="_blank" rel="noopener" style="background: transparent; color: #FFFFFF; border: 1.5px solid rgba(255,255,255,0.4); font-weight: 600; padding: 12px 18px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                            <i class="fa-solid fa-comment-dots"></i> Chat Zalo Tư Vấn
                         </a>
                     </div>
                 </div>
@@ -129,16 +129,16 @@ while (have_posts()) : the_post();
             <!-- Sidebar Column -->
             <aside class="single-post-sidebar" style="display: flex; flex-direction: column; gap: 24px;">
 
-                <!-- Booking Widget -->
+                <!-- Consultation Widget -->
                 <div class="sidebar-widget" style="background: #FFFFFF; border-radius: 14px; padding: 24px; border: 1px solid #E5E7EB; box-shadow: 0 4px 16px rgba(0,0,0,0.02);">
                     <h3 style="font-size: 1.1rem; font-weight: 800; color: #141414; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
-                        <i class="fa-solid fa-calendar-days" style="color: #D97706;"></i> Đặt Hẹn Xưởng Hải Hà
+                        <i class="fa-solid fa-wrench" style="color: #7A5C34;"></i> Tư Vấn Xưởng Hải Hà
                     </h3>
                     <p style="font-size: 0.875rem; color: #6B7280; line-height: 1.5; margin-bottom: 16px;">
-                        Đặt lịch trước để được tiếp nhận nhanh chóng, không phải chờ đợi.
+                        Liên hệ trực tiếp với chuyên gia kỹ thuật Ô Tô Hải Hà để được tư vấn và tiếp nhận nhanh chóng.
                     </p>
-                    <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>" style="display: block; text-align: center; background: #FFB81C; color: #141414; font-weight: 700; padding: 11px 16px; border-radius: 8px; text-decoration: none; transition: background 0.2s;">
-                        <i class="fa-solid fa-calendar-plus"></i> Đặt Lịch Dịch Vụ
+                    <a href="tel:<?php echo esc_attr($hotline_clean); ?>" style="display: block; text-align: center; background: #D4B996; color: #141414; font-weight: 700; padding: 11px 16px; border-radius: 8px; text-decoration: none; transition: background 0.2s;">
+                        <i class="fa-solid fa-phone"></i> Gọi Tư Vấn: <?php echo esc_html($hotline_phone); ?>
                     </a>
                 </div>
 

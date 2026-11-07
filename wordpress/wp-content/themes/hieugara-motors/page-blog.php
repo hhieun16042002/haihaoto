@@ -97,9 +97,6 @@ $blog_query = new WP_Query(array(
                                 <a href="<?php the_permalink(); ?>" class="hp-blog-readmore">
                                     <?php _e('Đọc chi tiết', 'hieugara-motors'); ?> <i class="fa-solid fa-arrow-right-long"></i>
                                 </a>
-                                <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode(get_the_title()))); ?>" class="hp-blog-book-btn">
-                                    <i class="fa-solid fa-calendar-plus"></i> <?php _e('Đặt lịch', 'hieugara-motors'); ?>
-                                </a>
                             </div>
                         </div>
                     </article>
@@ -138,3 +135,4 @@ $blog_query = new WP_Query(array(
 
 <?php
 get_footer();
+

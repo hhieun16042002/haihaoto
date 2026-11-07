@@ -181,8 +181,8 @@ $workshops = [
                             <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $ws['phone'])); ?>" class="btn-carpla btn-carpla-outline">
                                 <i class="fa-solid fa-phone"></i> Gọi xưởng: <?php echo esc_html($ws['phone']); ?>
                             </a>
-                            <a href="<?php echo esc_url(home_url('/dat-lich/?branch=' . urlencode($ws['name']))); ?>" class="btn-carpla btn-carpla-primary">
-                                <i class="fa-regular fa-calendar-check"></i> Đặt lịch tại xưởng này
+                            <a href="<?php echo esc_url($ws['map_link']); ?>" target="_blank" rel="noopener" class="btn-carpla btn-carpla-primary" style="background: #D4B996; color: #141414;">
+                                <i class="fa-solid fa-diamond-turn-right"></i> Chỉ đường Google Maps
                             </a>
                         </div>
                     </article>

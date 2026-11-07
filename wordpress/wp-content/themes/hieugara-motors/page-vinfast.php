@@ -13,7 +13,7 @@ $rescue_phone  = get_option('hieugara_rescue_phone', '0911 211 996');
 $hotline_phone = '02203 892 207';
 $hotline_clean = '02203892207';
 $vinfast_logo  = $theme_uri . '/assets/images/brands/vinfast.svg';
-$sign_photo    = $theme_uri . '/assets/images/about/haiha-about-workshop.jpg';
+$sign_photo    = $theme_uri . '/assets/images/about/bien-vinfast-service-haiha.jpg';
 $facade_photo  = $theme_uri . '/assets/images/about/haiha-about-facade.jpg';
 $current_url   = home_url('/dich-vu/xe-vinfast/');
 ?>
@@ -119,13 +119,13 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
                         Từ tháng 08/2026, Ô Tô Hải Hà chính thức hợp tác với VinFast, cung cấp phụ tùng chính hãng và dịch vụ sửa chữa, bảo dưỡng, đồng sơn cho xe VinFast. Đội ngũ kỹ thuật viên được đào tạo bài bản, phục vụ tận tâm mọi dòng xe VinFast.
                     </p>
                     <div class="vinfast-hero-cta-row">
-                        <a href="<?php echo esc_url(home_url('/dat-lich/?model=Xe%20VinFast&service=vinfast')); ?>" class="vf-btn vf-btn-primary">
-                            <i class="fa-regular fa-calendar-check"></i>
-                            <span>Đặt lịch ngay</span>
+                        <a href="tel:<?php echo esc_attr($hotline_clean); ?>" class="vf-btn vf-btn-primary">
+                            <i class="fa-solid fa-phone-volume"></i>
+                            <span>Tư vấn kỹ thuật: <?php echo esc_html($hotline_phone); ?></span>
                         </a>
-                        <a href="tel:<?php echo esc_attr($hotline_clean); ?>" class="vf-btn vf-btn-outline">
-                            <i class="fa-solid fa-phone"></i>
-                            <span>Gọi <?php echo esc_html($hotline_phone); ?></span>
+                        <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="vf-btn vf-btn-outline">
+                            <i class="fa-solid fa-truck-pickup"></i>
+                            <span>Cứu hộ 24/7: <?php echo esc_html($rescue_phone); ?></span>
                         </a>
                     </div>
                 </div>
@@ -373,66 +373,43 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
         </div>
     </section>
 
-    <!-- SECTION 7: BOOKING & MAP -->
-    <section class="vinfast-booking-map-section" id="dat-lich">
+    <!-- SECTION 7: CONTACT & MAP -->
+    <section class="vinfast-booking-map-section" id="tiep-nhan">
         <div class="container">
             <div class="vf-section-header text-center">
-                <span class="vf-section-sub">ĐẶT LỊCH DỄ DÀNG</span>
-                <h2 class="vf-section-title">Đặt lịch &amp; Chỉ đường đến gara</h2>
+                <span class="vf-section-sub">TIẾP NHẬN TRỰC TIẾP</span>
+                <h2 class="vf-section-title">Tư vấn kỹ thuật &amp; Chỉ đường đến xưởng</h2>
             </div>
 
             <div class="vf-booking-map-grid">
-                <!-- Left: Booking Card -->
-                <div class="vf-booking-card">
+                <!-- Left: Contact & Support Card -->
+                <div class="vf-booking-card" style="display: flex; flex-direction: column; justify-content: space-between;">
                     <div class="vf-booking-card-head">
-                        <span class="vf-badge-gold">TIẾP NHẬN NHANH</span>
-                        <h3>Đặt lịch xe VinFast trực tuyến</h3>
-                        <p>Điền thông tin biển số và dòng xe, xưởng sẽ chuẩn bị sẵn khoang kỹ thuật cho xe của bạn.</p>
+                        <span class="vf-badge-gold">TIẾP NHẬN ƯU TIÊN</span>
+                        <h3>Trung Tâm Dịch Vụ Xe VinFast Hải Hà</h3>
+                        <p>Xưởng chuẩn bị sẵn khoang kỹ thuật chuyên biệt cho xe điện và xe xăng VinFast. Quý khách vui lòng liên hệ hotline để được phục vụ nhanh nhất.</p>
                     </div>
-                    <form id="vinfastQuickBookingForm" class="vf-booking-form hieugara-ajax-form">
-                        <?php wp_nonce_field('hieugara_ajax_nonce', 'security'); ?>
-                        <input type="hidden" name="service_type" value="Dịch vụ bảo dưỡng xe VinFast">
 
-                        <div class="vf-form-field">
-                            <label>Họ và tên của bạn (*)</label>
-                            <input type="text" name="customer_name" class="form-control" placeholder="VD: Nguyễn Văn An" required>
-                        </div>
+                    <div style="display: flex; flex-direction: column; gap: 14px; margin: 20px 0;">
+                        <a href="tel:<?php echo esc_attr($hotline_clean); ?>" class="vf-btn vf-btn-primary" style="justify-content: center; padding: 16px; font-size: 1.05rem;">
+                            <i class="fa-solid fa-phone-volume"></i>
+                            <span>Hotline Kỹ Thuật: <?php echo esc_html($hotline_phone); ?></span>
+                        </a>
+                        <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="vf-btn" style="justify-content: center; padding: 14px; background: #D92D20; color: #FFFFFF; font-weight: 700;">
+                            <i class="fa-solid fa-truck-pickup"></i>
+                            <span>Cứu Hộ Pin &amp; Kéo Xe 24/7: <?php echo esc_html($rescue_phone); ?></span>
+                        </a>
+                        <a href="https://zalo.me/<?php echo esc_attr($hotline_clean); ?>" target="_blank" rel="noopener" class="vf-btn vf-btn-outline" style="justify-content: center; padding: 14px;">
+                            <i class="fa-solid fa-comment-dots"></i>
+                            <span>Nhắn Tin Kỹ Thuật Viên Qua Zalo</span>
+                        </a>
+                    </div>
 
-                        <div class="vf-form-field">
-                            <label>Số điện thoại liên hệ (*)</label>
-                            <input type="tel" name="customer_phone" class="form-control" placeholder="VD: 0911 211 996" required>
-                        </div>
-
-                        <div class="vf-form-row-2">
-                            <div class="vf-form-field">
-                                <label>Biển số xe (*)</label>
-                                <input type="text" name="license_plate" class="form-control" placeholder="VD: 34A-123.45" style="text-transform:uppercase;font-weight:700;" required>
-                            </div>
-                            <div class="vf-form-field">
-                                <label>Dòng xe VinFast (*)</label>
-                                <select name="car_model" class="form-control" required>
-                                    <option value="VinFast VF 3">VinFast VF 3</option>
-                                    <option value="VinFast VF 5" selected>VinFast VF 5</option>
-                                    <option value="VinFast VF 6">VinFast VF 6</option>
-                                    <option value="VinFast VF 7">VinFast VF 7</option>
-                                    <option value="VinFast VF 8">VinFast VF 8</option>
-                                    <option value="VinFast VF 9">VinFast VF 9</option>
-                                    <option value="VinFast Limo Green">VinFast Limo Green</option>
-                                    <option value="VinFast Xăng / Khác">VinFast Fadil / Lux / Khác</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="vf-form-field">
-                            <label>Ghi chú yêu cầu kiểm tra</label>
-                            <textarea name="booking_notes" class="form-control" rows="3" placeholder="VD: Bảo dưỡng cấp 20.000km, kiểm tra phanh và cập nhật phần mềm..."></textarea>
-                        </div>
-
-                        <button type="submit" class="vf-btn vf-btn-primary vf-btn-block">
-                            <i class="fa-regular fa-paper-plane"></i>
-                            <span>Gửi yêu cầu đặt lịch xe VinFast</span>
-                        </button>
-                    </form>
+                    <div style="background: rgba(212, 185, 150, 0.15); border-left: 3px solid #D4B996; padding: 12px 16px; border-radius: 6px;">
+                        <small style="color: #4b5563; line-height: 1.5; display: block;">
+                            <strong style="color: #141414;">Cam kết dịch vụ:</strong> 100% phụ tùng xe VinFast chính hãng, kỹ thuật viên có chứng chỉ xe điện, bảo hành điện tử minh bạch.
+                        </small>
+                    </div>
                 </div>
 
                 <!-- Right: Map Card -->

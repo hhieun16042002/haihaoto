@@ -13,6 +13,10 @@ if (!defined('ABSPATH')) {
 $phone_rescue  = '0911 211 996';
 $phone_tech    = '0915 041 989';
 $phone_landline= '02203 892 207';
+$rescue_phone  = $phone_rescue;
+$rescue_clean  = preg_replace('/[^0-9]/', '', $rescue_phone);
+$tech_phone    = $phone_tech;
+$tech_clean    = preg_replace('/[^0-9]/', '', $tech_phone);
 $topbar_email  = get_option('hieugara_topbar_email', 'thanhotohaiha@gmail.com');
 $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh/'));
 ?>
@@ -172,7 +176,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                 <span class="sep">•</span>
                 <a href="<?php echo esc_url(home_url('/bang-gia/')); ?>">Bảng Giá</a>
                 <span class="sep">•</span>
-                <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>">Liên Hệ</a>
+                <a href="<?php echo esc_url(home_url('/ve-chung-toi/#lien-he')); ?>">Liên Hệ</a>
             </div>
 
             <div class="bottom-back-to-top">
@@ -190,23 +194,11 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
      LEXUS VIETNAM 3-COLUMN BOTTOM BAR (MOBILE) & FLOATING DOCK (DESKTOP)
      ========================================================================= -->
 <div class="shiftup-floating-dock lexus-bottom-action-bar" id="shiftupFloatingDock">
-    <!-- 1. Đặt lịch bảo dưỡng của bạn (Lexus Car + Sliders Icon) -->
-    <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>" class="float-dock-pill dock-book" title="Đặt lịch bảo dưỡng &amp; sửa chữa">
-        <span class="lexus-dock-svg" aria-hidden="true">
-            <svg width="28" height="26" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 11.5L7.8 6.5C8.3 5.6 9.2 5 10.2 5H21.8C22.8 5 23.7 5.6 24.2 6.5L27 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M3.5 11.5H28.5C29.3 11.5 30 12.2 30 13V16C30 16.6 29.5 17 29 17H26.5M3.5 11.5C2.7 11.5 2 12.2 2 13V16C2 16.6 2.5 17 3 17H5.5M10.5 17H21.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <circle cx="8" cy="17" r="2.5" stroke="currentColor" stroke-width="1.5"/>
-                <circle cx="24" cy="17" r="2.5" stroke="currentColor" stroke-width="1.5"/>
-                <line x1="4" y1="22.5" x2="28" y2="22.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-                <circle cx="12" cy="22.5" r="1.6" fill="#1c1d21" stroke="currentColor" stroke-width="1.4"/>
-                <line x1="4" y1="26" x2="28" y2="26" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-                <circle cx="21" cy="26" r="1.6" fill="#1c1d21" stroke="currentColor" stroke-width="1.4"/>
-            </svg>
-        </span>
-        <i class="fa-regular fa-calendar-check dock-fa-icon"></i>
-        <span class="dock-text dock-text-desktop">ĐẶT LỊCH HẸN</span>
-        <span class="dock-text dock-text-mobile">Đặt Lịch</span>
+    <!-- 1. Hotline Tư Vấn (Thay thế Đặt Lịch) -->
+    <a href="tel:02203892207" class="float-dock-pill dock-book" title="Hotline tư vấn dịch vụ Ô Tô Hải Hà">
+        <i class="fa-solid fa-phone-volume dock-fa-icon"></i>
+        <span class="dock-text dock-text-desktop">HOTLINE: 02203 892 207</span>
+        <span class="dock-text dock-text-mobile">Tư Vấn</span>
     </a>
 
     <!-- 2. So sánh bảng giá / Cứu hộ 24/7 (Lexus Dual Arrows Icon) -->

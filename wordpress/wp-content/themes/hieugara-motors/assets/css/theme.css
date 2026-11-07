@@ -89,7 +89,7 @@
 /* thai */
 
 @font-face  {
-  font-family: 'Chakra Petch';
+  font-family: 'Be Vietnam Pro';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -99,7 +99,7 @@
 /* vietnamese */
 
 @font-face  {
-  font-family: 'Chakra Petch';
+  font-family: 'Be Vietnam Pro';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -109,7 +109,7 @@
 /* latin-ext */
 
 @font-face  {
-  font-family: 'Chakra Petch';
+  font-family: 'Be Vietnam Pro';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -119,7 +119,7 @@
 /* latin */
 
 @font-face  {
-  font-family: 'Chakra Petch';
+  font-family: 'Be Vietnam Pro';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -129,7 +129,7 @@
 /* thai */
 
 @font-face  {
-  font-family: 'Chakra Petch';
+  font-family: 'Be Vietnam Pro';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -139,7 +139,7 @@
 /* vietnamese */
 
 @font-face  {
-  font-family: 'Chakra Petch';
+  font-family: 'Be Vietnam Pro';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -149,7 +149,7 @@
 /* latin-ext */
 
 @font-face  {
-  font-family: 'Chakra Petch';
+  font-family: 'Be Vietnam Pro';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -159,7 +159,7 @@
 /* latin */
 
 @font-face  {
-  font-family: 'Chakra Petch';
+  font-family: 'Be Vietnam Pro';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -171,7 +171,7 @@
 
 /* ==========================================================================
    AUTHENTIC SHIFTUP CAR WORKSHOP DESIGN SYSTEM (Qode Interactive 1:1 Replica)
-   Strict White & Obsidian Contrast, Zero-Radius Crisp Layout, Chakra Petch & Be Vietnam Pro
+   Strict White & Obsidian Contrast, Zero-Radius Crisp Layout, 100% Be Vietnam Pro Unified
    ========================================================================== */
 
 /* Universal Overflow & Box Model Protection */
@@ -184,10 +184,18 @@ html, body {
     max-width: 100vw !important;
     margin: 0;
     padding: 0;
-    font-family: 'Be Vietnam Pro', -apple-system, sans-serif;
+    font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
     color: #222226;
     background: #ffffff;
     -webkit-font-smoothing: antialiased;
+}
+
+/* Universal Typography Lock: 100% Be Vietnam Pro Across Entire Theme */
+body, button, input, select, textarea,
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+p, span, a, li, th, td, label, blockquote, figcaption {
+    font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
 }
 
 /* ==========================================================================
@@ -284,7 +292,7 @@ html, body {
 .hero-num-btn,
 .orange-bar,
 .btn-orange-bar {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 .orange-bar,
@@ -389,11 +397,11 @@ html, body {
     color: #141414;
     letter-spacing: 0.5px;
     line-height: 1.1;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 .brand-subtitle {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.65rem;
     font-weight: 700;
     color: #5F6368;
@@ -423,7 +431,7 @@ html, body {
 }
 
 .brand-feature-item .feature-lbl {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.65rem;
     font-weight: 700;
     color: #888888;
@@ -505,7 +513,7 @@ html, body {
 }
 
 .rescue-card-badge .badge-text {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.65rem;
     font-weight: 800;
     color: #C5A880;
@@ -522,7 +530,7 @@ html, body {
 }
 
 .rescue-card-phone {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.15rem;
     font-weight: 800;
     color: #C5A880;
@@ -568,7 +576,7 @@ html, body {
 
 .hotline-text small {
     display: block;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.62rem;
     font-weight: 700;
     color: #666666;
@@ -577,7 +585,7 @@ html, body {
 }
 
 .hotline-phone-display {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.15rem;
     font-weight: 800;
     color: #141414;
@@ -601,7 +609,7 @@ html, body {
 .brand-btn-book {
     background: #141414;
     color: #ffffff;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.82rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -760,43 +768,57 @@ html, body {
     color: #C5A880;
 }
 
-/* ShiftUp Glassmorphism Nav Dropdown Menu */
+/* Ductri226 Dark Luxury Nav Dropdown Menu (#16181b + #F3D8B4) */
 .nav-dropdown-menu {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 6px);
     left: 0;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid #e2e8f0;
-    border-top: 3px solid #C5A880;
-    box-shadow: 0 18px 42px rgba(20, 20, 20, 0.12), 0 4px 12px rgba(20, 20, 20, 0.05);
-    min-width: 280px;
+    background: #16181b;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(201, 163, 129, 0.28);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), 0 4px 16px rgba(0, 0, 0, 0.3);
+    min-width: 250px;
     list-style: none;
     margin: 0;
-    padding: 10px 0;
-    border-radius: 0 0 10px 10px;
+    padding: 8px;
+    border-radius: 10px;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(14px) scale(0.98);
+    transform: translateY(8px);
     transform-origin: top center;
-    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
+    transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s;
     pointer-events: none;
     z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
-.custom-nav-menu > .nav-item:hover .nav-dropdown-menu {
+/* Invisible hover bridge so cursor never drops hover between nav-item and dropdown */
+.nav-dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: transparent;
+}
+
+.custom-nav-menu > .nav-item:hover .nav-dropdown-menu,
+.custom-nav-menu > .nav-item:focus-within .nav-dropdown-menu {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
     pointer-events: auto;
 }
 
 .nav-dropdown-grid-2col {
     display: grid;
-    grid-template-columns: repeat(2, 255px);
+    grid-template-columns: repeat(2, 240px);
     gap: 4px;
-    min-width: 525px;
+    min-width: 496px;
 }
 
 .nav-dropdown-menu > li {
@@ -804,58 +826,35 @@ html, body {
     padding: 0;
 }
 
-/* ShiftUp Signature Sub-Item Hover with Orange Square Indicator */
+/* Ductri226 Sub-Item Styling (No Icons, Clean Gold Hover) */
 .nav-dropdown-menu > li > a {
     position: relative;
-    overflow: hidden;
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 11px 20px 11px 18px;
+    justify-content: space-between;
+    padding: 10px 14px;
+    border-radius: 7px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid transparent;
     font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: #1e293b;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9) !important;
     text-decoration: none;
-    transition: padding-left 0.28s cubic-bezier(0.16, 1, 0.3, 1), color 0.22s ease, background 0.22s ease;
+    white-space: nowrap;
+    transition: all 0.18s ease;
 }
 
-.nav-dropdown-menu > li > a::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -14px;
-    width: 6px;
-    height: 6px;
-    background: #C5A880;
-    transform: translateY(-50%);
-    opacity: 0;
-    transition: left 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.22s ease;
-    border-radius: 1px;
-}
-
+.nav-dropdown-menu > li > a::before,
 .nav-dropdown-menu > li > a i {
-    font-size: 12px;
-    color: #888888;
-    width: 16px;
-    flex-shrink: 0;
-    transition: color 0.22s ease, transform 0.22s ease;
+    display: none !important;
 }
 
 .nav-dropdown-menu > li > a:hover {
-    padding-left: 32px;
-    color: #C5A880;
-    background: rgba(197, 168, 128, 0.05);
-}
-
-.nav-dropdown-menu > li > a:hover::before {
-    left: 16px;
-    opacity: 1;
-}
-
-.nav-dropdown-menu > li > a:hover i {
-    color: #C5A880;
-    transform: scale(1.12);
+    background: rgba(201, 163, 129, 0.18);
+    border-color: rgba(201, 163, 129, 0.42);
+    color: #F3D8B4 !important;
+    transform: translateX(2px);
 }
 
 /* Mega Dropdown for Dịch vụ (ShiftUp Luxury Glassmorphism) */
@@ -914,7 +913,7 @@ html, body {
 }
 
 .mega-dropdown-col .mega-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.88rem;
     font-weight: 800;
     color: #141414;
@@ -954,7 +953,7 @@ html, body {
     position: relative;
     overflow: hidden;
     padding: 7px 0 7px 0;
-    font-family: 'Chakra Petch', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-size: 13px;
     font-weight: 500;
     color: #444444;
@@ -1181,7 +1180,7 @@ html, body {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.82rem;
     font-weight: 600;
     letter-spacing: 2.5px;
@@ -1204,7 +1203,7 @@ html, body {
 }
 
 .lexus-slide-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: clamp(2.3rem, 4.2vw, 3.8rem);
     font-weight: 700;
     line-height: 1.15;
@@ -1277,7 +1276,7 @@ html, body {
     background: rgba(197, 168, 128, 0.12);
     color: #C5A880 !important;
     padding: 13px 36px;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.88rem;
     font-weight: 700;
     letter-spacing: 2px;
@@ -1380,7 +1379,7 @@ html, body {
     display: flex;
     align-items: baseline;
     gap: 8px;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.76rem;
     font-weight: 600;
     color: #ffffff;
@@ -1448,7 +1447,7 @@ html, body {
 }
 
 .tuning-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: clamp(2.2rem, 3.2vw, 2.8rem);
     font-weight: 800;
     line-height: 1.12;
@@ -1470,7 +1469,7 @@ html, body {
 }
 
 .feature-item-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.95rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -1632,7 +1631,7 @@ html, body {
 }
 
 .technicians-dark-card .card-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: clamp(1.8rem, 2.6vw, 2.3rem);
     font-weight: 800;
     text-transform: uppercase;
@@ -1662,7 +1661,7 @@ html, body {
     color: #ffffff;
     border: 1px solid #3a3a40;
     padding: 14px 28px;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.85rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -1713,7 +1712,7 @@ html, body {
 }
 
 .all-about-sub-label {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.78rem;
     font-weight: 700;
     color: #C5A880;
@@ -1722,7 +1721,7 @@ html, body {
 }
 
 .all-about-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 2.2rem;
     font-weight: 800;
     color: #141414;
@@ -1844,7 +1843,7 @@ html, body {
 .view-detail-badge {
     background: #C5A880;
     color: #ffffff;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 1px;
@@ -1866,7 +1865,7 @@ html, body {
     background: rgba(10, 10, 10, 0.82);
     backdrop-filter: blur(4px);
     color: #ffffff;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.8px;
@@ -1878,7 +1877,7 @@ html, body {
 }
 
 .card-item-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.98rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -1911,7 +1910,7 @@ html, body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.82rem;
     font-weight: 700;
     color: #C5A880;
@@ -2100,7 +2099,7 @@ html, body {
 }
 
 .pano-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.35rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -2302,7 +2301,7 @@ html, body {
 }
 
 .diag-item-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.05rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -2375,7 +2374,7 @@ html, body {
 }
 
 .checkup-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 2.6rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -2445,7 +2444,7 @@ html, body {
 }
 
 .card-cat-label {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.78rem;
     font-weight: 800;
     color: #5F6368;
@@ -2470,7 +2469,7 @@ html, body {
 }
 
 .card-price-row .price-val {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 2.2rem;
     font-weight: 800;
     color: #141414;
@@ -2505,7 +2504,7 @@ html, body {
 .checkup-btn {
     background: #141414;
     color: #ffffff;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.85rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -2558,7 +2557,7 @@ html, body {
 }
 
 .marquee-sub-label {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.8rem;
     font-weight: 700;
     color: #C5A880;
@@ -2569,7 +2568,7 @@ html, body {
 }
 
 .marquee-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: clamp(2rem, 3vw, 2.6rem);
     font-weight: 800;
     text-transform: uppercase;
@@ -2719,7 +2718,7 @@ html, body {
 }
 
 .workshops-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 2.2rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -2729,7 +2728,7 @@ html, body {
 }
 
 .workshops-all-link {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-weight: 700;
     color: #C5A880;
     text-decoration: none;
@@ -2759,7 +2758,7 @@ html, body {
 }
 
 .ws-city-tag {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.75rem;
     font-weight: 800;
     color: #C5A880;
@@ -2768,7 +2767,7 @@ html, body {
 }
 
 .ws-clean-card .ws-name {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.25rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -2803,7 +2802,7 @@ html, body {
     flex: 1;
     background: #141414;
     color: #ffffff;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.8rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -3139,7 +3138,7 @@ html, body {
         object-fit: contain;
     }
     .drawer-name {
-        font-family: 'Chakra Petch', sans-serif;
+        font-family: 'Be Vietnam Pro', sans-serif;
         font-size: 1rem;
         font-weight: 800;
         color: #ffffff;
@@ -3290,7 +3289,7 @@ html, body {
     }
     .mega-title {
         color: #C5A880;
-        font-family: 'Chakra Petch', sans-serif;
+        font-family: 'Be Vietnam Pro', sans-serif;
         font-size: 0.82rem;
         font-weight: 800;
         text-transform: uppercase;
@@ -3329,7 +3328,7 @@ html, body {
         background: linear-gradient(135deg, #C5A880 0%, #d98e00 100%);
         color: #ffffff;
         text-decoration: none;
-        font-family: 'Chakra Petch', sans-serif;
+        font-family: 'Be Vietnam Pro', sans-serif;
         font-size: 0.88rem;
         font-weight: 700;
         padding: 12px 14px;
@@ -3345,7 +3344,7 @@ html, body {
         border: 1px solid #2e2e2e;
         color: #ffffff;
         text-decoration: none;
-        font-family: 'Chakra Petch', sans-serif;
+        font-family: 'Be Vietnam Pro', sans-serif;
         font-size: 0.85rem;
         font-weight: 700;
         padding: 11px 14px;
@@ -3427,7 +3426,7 @@ html, body {
         align-items: center !important;
         justify-content: flex-start !important;
         gap: 8px !important;
-        font-family: 'Chakra Petch', sans-serif !important;
+        font-family: 'Be Vietnam Pro', sans-serif !important;
         font-size: 0.72rem !important;
         font-weight: 600 !important;
         letter-spacing: 2px !important;
@@ -3442,7 +3441,7 @@ html, body {
         display: inline-block !important;
     }
     .lexus-slide-title {
-        font-family: 'Chakra Petch', sans-serif !important;
+        font-family: 'Be Vietnam Pro', sans-serif !important;
         font-size: 1.65rem !important;
         font-weight: 700 !important;
         letter-spacing: 1.5px !important;
@@ -3484,7 +3483,7 @@ html, body {
         justify-content: center !important;
         gap: 8px !important;
         padding: 11px 28px !important;
-        font-family: 'Chakra Petch', sans-serif !important;
+        font-family: 'Be Vietnam Pro', sans-serif !important;
         font-size: 0.82rem !important;
         font-weight: 600 !important;
         letter-spacing: 2px !important;
@@ -3917,7 +3916,7 @@ html, body {
     display: inline-block;
     background: #C5A880;
     color: #ffffff;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.72rem;
     font-weight: 800;
     letter-spacing: 1.2px;
@@ -3928,7 +3927,7 @@ html, body {
 
 .prebar-title {
     color: #141414;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-weight: 700;
     font-size: 0.95rem;
     letter-spacing: 0.8px;
@@ -3948,7 +3947,7 @@ html, body {
     background: #F5F5F5;
     border: 1px solid #e0e0e0;
     color: #C5A880;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.05rem;
     font-weight: 800;
     letter-spacing: 0.8px;
@@ -4023,7 +4022,7 @@ html, body {
 
 .footer-brand-heading .brand-name {
     display: block;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.4rem;
     font-weight: 800;
     color: #141414;
@@ -4122,7 +4121,7 @@ html, body {
 
 .contact-chip strong {
     display: block;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.94rem;
     font-weight: 800;
     color: #141414;
@@ -4218,7 +4217,7 @@ html, body {
 
 /* Columns Title */
 .footer-col-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.05rem;
     font-weight: 800;
     color: #141414;
@@ -4308,7 +4307,7 @@ html, body {
 .badge-mini {
     background: #C5A880;
     color: #ffffff;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.62rem;
     font-weight: 800;
     padding: 2px 6px;
@@ -4418,7 +4417,7 @@ html, body {
 }
 
 .map-loc-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.94rem;
     font-weight: 800;
     color: #141414;
@@ -4511,7 +4510,7 @@ html, body {
     background: #ffffff;
     border: 1px solid #cbd5e1;
     color: #141414;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.8px;
@@ -4569,7 +4568,7 @@ html, body {
     max-width: 48px;
     padding: 0;
     border-radius: 28px;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.82rem;
     font-weight: 800;
     letter-spacing: 0.6px;
@@ -5088,7 +5087,7 @@ html, body {
 }
 
 .card-badge {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.68rem;
     font-weight: 800;
     color: #C5A880;
@@ -5099,7 +5098,7 @@ html, body {
 }
 
 .card-service-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.05rem;
     font-weight: 700;
     line-height: 1.4;
@@ -5129,7 +5128,7 @@ html, body {
 
 .meta-item small {
     display: block;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.65rem;
     font-weight: 800;
     color: #5F6368;
@@ -5138,7 +5137,7 @@ html, body {
 }
 
 .meta-item strong.price-val {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.95rem;
     color: #C5A880;
     font-weight: 800;
@@ -5205,7 +5204,7 @@ html, body {
 }
 
 .btn-book-service {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.78rem;
     font-weight: 800;
     letter-spacing: 0.5px;
@@ -5278,7 +5277,7 @@ html, body {
 }
 
 .portal-breadcrumb {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -5311,7 +5310,7 @@ html, body {
 }
 
 .portal-page-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: clamp(2rem, 4vw, 2.85rem);
     font-weight: 800;
     color: #ffffff;
@@ -5359,7 +5358,7 @@ html, body {
     border: 1px solid rgba(197, 168, 128, 0.3);
     padding: 6px 14px;
     border-radius: 4px;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.8rem;
     font-weight: 800;
     letter-spacing: 1.5px;
@@ -5402,7 +5401,7 @@ html, body {
 
 .story-floating-badge strong {
     display: block;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.95rem;
     font-weight: 800;
     letter-spacing: 1px;
@@ -5440,7 +5439,7 @@ html, body {
 
 .about-highlights-row .hl-item strong {
     display: block;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 2.2rem;
     font-weight: 800;
     color: #141414;
@@ -5476,7 +5475,7 @@ html, body {
     color: #C5A880;
     border: 1px solid rgba(197, 168, 128, 0.4);
     padding: 5px 16px;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.8rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -5485,7 +5484,7 @@ html, body {
 }
 
 .commitments-section .section-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: clamp(1.8rem, 3.5vw, 2.5rem);
     font-weight: 800;
     color: #ffffff;
@@ -5523,7 +5522,7 @@ html, body {
 }
 
 .commit-card .commit-num {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 2.2rem;
     font-weight: 800;
     color: rgba(197, 168, 128, 0.35);
@@ -5532,7 +5531,7 @@ html, body {
 }
 
 .commit-card h4 {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.02rem;
     font-weight: 800;
     color: #ffffff;
@@ -5550,7 +5549,7 @@ html, body {
 
 .btn-carpla,
 .btn-carpla-primary {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.92rem;
     font-weight: 800;
     letter-spacing: 0.8px;
@@ -5626,7 +5625,7 @@ html, body {
     z-index: 2;
     background: #C5A880;
     color: #ffffff;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.72rem;
     font-weight: 800;
     padding: 4px 10px;
@@ -5644,7 +5643,7 @@ html, body {
 }
 
 .service-body .service-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.25rem;
     font-weight: 800;
     color: #141414;
@@ -5664,7 +5663,7 @@ html, body {
 }
 
 .service-body .service-price {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.12rem;
     font-weight: 800;
     color: #C5A880;
@@ -5707,7 +5706,7 @@ html, body {
 
 .btn-gara {
     padding: 10px 14px;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.78rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -5800,7 +5799,7 @@ html, body {
     border: 1px solid rgba(197, 168, 128, 0.3);
     padding: 5px 16px;
     border-radius: 20px;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.82rem;
     font-weight: 800;
     letter-spacing: 1.2px;
@@ -5809,7 +5808,7 @@ html, body {
 }
 
 .price-tables-section .section-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: clamp(1.9rem, 3.5vw, 2.5rem);
     font-weight: 800;
     color: #141414;
@@ -5869,7 +5868,7 @@ html, body {
     transform: translateX(-50%);
     background: #C5A880;
     color: #ffffff;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.72rem;
     font-weight: 800;
     letter-spacing: 1px;
@@ -5885,7 +5884,7 @@ html, body {
     align-self: flex-start;
     background: #F5F5F5;
     color: #5F6368;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 1px;
@@ -5900,7 +5899,7 @@ html, body {
 }
 
 .tier-name {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.25rem;
     font-weight: 800;
     color: #141414;
@@ -5909,7 +5908,7 @@ html, body {
 }
 
 .tier-price {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.85rem;
     font-weight: 800;
     color: #C5A880;
@@ -5959,7 +5958,7 @@ html, body {
     padding: 12px 18px;
     font-size: 0.88rem;
     font-weight: 800;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.8px;
     border-radius: 4px;
@@ -6043,7 +6042,7 @@ html, body {
     display: inline-block;
     background: #F5F5F5;
     color: #5F6368;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.7rem;
     font-weight: 800;
     letter-spacing: 0.8px;
@@ -6053,7 +6052,7 @@ html, body {
 }
 
 .service-12-card .card-service-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.15rem;
     font-weight: 800;
     line-height: 1.35;
@@ -6092,7 +6091,7 @@ html, body {
 
 .service-12-card .meta-item .price-val {
     color: #C5A880;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.95rem;
     font-weight: 800;
 }
@@ -6136,7 +6135,7 @@ html, body {
 }
 
 .service-12-card .btn-detail-link {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.82rem;
     font-weight: 700;
     color: #5F6368;
@@ -6154,7 +6153,7 @@ html, body {
 .service-12-card .btn-book-service {
     background: #141414;
     color: #ffffff !important;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.8rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -6192,7 +6191,7 @@ html, body {
     color: #C5A880;
     border: 1px solid rgba(197, 168, 128, 0.4);
     padding: 5px 16px;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.82rem;
     font-weight: 800;
     letter-spacing: 1.2px;
@@ -6201,7 +6200,7 @@ html, body {
 }
 
 .section-paint-estimator .section-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: clamp(1.9rem, 3.5vw, 2.6rem);
     font-weight: 800;
     color: #ffffff;
@@ -6240,7 +6239,7 @@ html, body {
     align-items: center;
     gap: 8px;
     color: #C5A880;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.84rem;
     font-weight: 800;
     letter-spacing: 1px;
@@ -6314,7 +6313,7 @@ html, body {
 
 .paint-part-btn .part-name {
     display: block;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.94rem;
     font-weight: 700;
     color: #ffffff;
@@ -6331,7 +6330,7 @@ html, body {
 }
 
 .paint-part-btn .part-price {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.95rem;
     font-weight: 800;
     color: #C5A880;
@@ -6366,7 +6365,7 @@ html, body {
     align-items: center;
     gap: 6px;
     color: #C5A880;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 1px;
@@ -6375,7 +6374,7 @@ html, body {
 }
 
 .paint-summary-card .summary-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.35rem;
     font-weight: 800;
     color: #ffffff;
@@ -6420,7 +6419,7 @@ html, body {
 
 .summary-meta-box .meta-value {
     color: #ffffff;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-weight: 700;
 }
 
@@ -6436,7 +6435,7 @@ html, body {
 }
 
 .summary-total-row .total-lbl {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.82rem;
     font-weight: 800;
     letter-spacing: 0.8px;
@@ -6444,7 +6443,7 @@ html, body {
 }
 
 .summary-total-row .total-val {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.45rem;
     font-weight: 800;
     color: #C5A880;
@@ -6538,7 +6537,7 @@ html, body {
     align-items: center;
     gap: 12px;
     padding: 16px 28px;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.95rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -6651,7 +6650,7 @@ html, body {
 }
 
 .stat-number {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 2.8rem;
     font-weight: 800;
     line-height: 1;
@@ -6660,7 +6659,7 @@ html, body {
 }
 
 .stat-plus {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 2rem;
     font-weight: 700;
     color: #141414;
@@ -6686,7 +6685,7 @@ html, body {
 }
 
 .stat-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     color: #141414;
@@ -6717,7 +6716,7 @@ html, body {
 }
 
 .section-sub-tag {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -6728,7 +6727,7 @@ html, body {
 }
 
 .section-title-white {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 2.2rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -6782,7 +6781,7 @@ html, body {
     gap: 6px;
     background: rgba(34, 197, 94, 0.12);
     color: #16a34a;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.75rem;
     font-weight: 700;
     padding: 4px 10px;
@@ -6798,7 +6797,7 @@ html, body {
 }
 
 .ws-type-tag {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.75rem;
     color: #C5A880;
     font-weight: 700;
@@ -6806,7 +6805,7 @@ html, body {
 }
 
 .ws-main-name {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.55rem;
     font-weight: 800;
     color: #141414;
@@ -6843,7 +6842,7 @@ html, body {
 }
 
 .hotline-lbl {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.72rem;
     font-weight: 700;
     color: #5F6368;
@@ -6851,7 +6850,7 @@ html, body {
 }
 
 .hotline-num {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.15rem;
     font-weight: 800;
     color: #C5A880;
@@ -6885,7 +6884,7 @@ html, body {
     align-items: center;
     gap: 8px;
     padding: 12px 20px;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -6970,7 +6969,7 @@ html, body {
 }
 
 .booking-card-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.35rem;
     font-weight: 800;
     color: #141414;
@@ -7000,7 +6999,7 @@ html, body {
 }
 
 .home-fast-booking-form .form-label {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.82rem;
     font-weight: 700;
     color: #1e293b;
@@ -7059,7 +7058,7 @@ html, body {
     border: none;
     border-radius: 6px;
     padding: 16px 24px;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -7202,7 +7201,7 @@ html, body {
 }
 
 .story-tag {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.8rem;
     font-weight: 700;
     color: #C5A880;
@@ -7213,7 +7212,7 @@ html, body {
 }
 
 .story-founder-name {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.95rem;
     font-weight: 800;
     color: #ffffff;
@@ -7275,7 +7274,7 @@ html, body {
 }
 
 .sig-author {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.25rem;
     font-weight: 800;
     color: #ffffff;
@@ -7324,7 +7323,7 @@ html, body {
 }
 
 .station-code {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.75rem;
     font-weight: 700;
     color: #C5A880;
@@ -7334,7 +7333,7 @@ html, body {
 .station-badge {
     background: rgba(255, 255, 255, 0.06);
     color: #cbd5e1;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.72rem;
     font-weight: 700;
     padding: 3px 8px;
@@ -7343,7 +7342,7 @@ html, body {
 }
 
 .station-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.25rem;
     font-weight: 800;
     color: #ffffff;
@@ -7398,7 +7397,7 @@ html, body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.98rem;
     font-weight: 800;
     color: #141414;
@@ -7539,7 +7538,7 @@ html, body {
     list-style: none;
     margin: 0;
     padding: 0;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.82rem;
     text-transform: uppercase;
 }
@@ -7571,7 +7570,7 @@ html, body {
     background: rgba(197, 168, 128, 0.15);
     border: 1px solid #C5A880;
     color: #ffffff;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.72rem;
     font-weight: 800;
     letter-spacing: 1.2px;
@@ -7592,7 +7591,7 @@ html, body {
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.15);
     color: #cbd5e1;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.82rem;
     font-weight: 700;
     text-decoration: none;
@@ -7664,7 +7663,7 @@ html, body {
     left: 12px;
     background: #C5A880;
     color: #ffffff;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.7rem;
     font-weight: 800;
     padding: 4px 8px;
@@ -7681,7 +7680,7 @@ html, body {
 
 .cat-service-title {
     margin: 0 0 10px 0;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.15rem;
     font-weight: 800;
 }
@@ -7730,7 +7729,7 @@ html, body {
 }
 
 .price-val {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.1rem;
     font-weight: 800;
 }
@@ -7742,7 +7741,7 @@ html, body {
     background: #C5A880;
     color: #ffffff;
     padding: 8px 14px;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.82rem;
     font-weight: 700;
     text-decoration: none;
@@ -7768,7 +7767,7 @@ html, body {
 }
 
 .cta-eyebrow {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.8rem;
     font-weight: 700;
     color: #C5A880;
@@ -7776,7 +7775,7 @@ html, body {
 }
 
 .cta-heading {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.45rem;
     font-weight: 800;
     color: #ffffff;
@@ -8313,7 +8312,7 @@ html, body {
 }
 
 .accessory-heading-main {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 2.15rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -8340,7 +8339,7 @@ html, body {
 }
 
 .acc-pill-btn {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.82rem;
     font-weight: 700;
     letter-spacing: 0.3px;
@@ -8453,7 +8452,7 @@ html, body {
     z-index: 2;
     background: #C5A880;
     color: #141414;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.68rem;
     font-weight: 800;
     letter-spacing: 0.5px;
@@ -8497,7 +8496,7 @@ html, body {
 }
 
 .accessory-price .price-current {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.18rem;
     font-weight: 800;
     color: #C5A880;
@@ -8521,7 +8520,7 @@ html, body {
     padding: 9px 28px;
     background: #C5A880;
     color: #141414 !important;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.85rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -8677,7 +8676,7 @@ html, body {
 }
 
 .gallery-eyebrow {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.9rem;
     font-weight: 800;
     color: #C5A880;
@@ -8687,7 +8686,7 @@ html, body {
 }
 
 .gallery-heading-main {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: clamp(1.8rem, 3vw, 2.35rem);
     font-weight: 800;
     color: #141414;
@@ -9340,7 +9339,7 @@ html, body {
     background: #F5F5F5;
     border: 1px solid #e0e0e0;
     color: #d98e00;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.76rem;
     font-weight: 800;
     letter-spacing: 1px;
@@ -9351,7 +9350,7 @@ html, body {
 }
 
 .kobac-heading {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: clamp(2.1rem, 3.6vw, 2.75rem);
     font-weight: 800;
     line-height: 1.25;
@@ -9422,7 +9421,7 @@ html, body {
     gap: 10px;
     background: #C5A880;
     color: #ffffff !important;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.96rem;
     font-weight: 700;
     letter-spacing: 0.6px;
@@ -9524,7 +9523,7 @@ html, body {
     background: rgba(20, 20, 20, 0.88);
     backdrop-filter: blur(4px);
     color: #ffffff;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.76rem;
     font-weight: 700;
     padding: 5px 11px;
@@ -9649,7 +9648,7 @@ html, body {
         bottom: 0;
         background: linear-gradient(to top, rgba(20, 20, 20, 0.92) 0%, rgba(20, 20, 20, 0.65) 70%, transparent 100%);
         color: #ffffff;
-        font-family: 'Chakra Petch', sans-serif;
+        font-family: 'Be Vietnam Pro', sans-serif;
         font-size: 0.68rem;
         font-weight: 700;
         padding: 18px 8px 7px;
@@ -9758,12 +9757,29 @@ html, body {
     }
 }
 
-/* 2. Unified Desktop Mega Menu Bar (#141414 + #C5A880) */
+/* 2. Unified Desktop Navbar Bar (Ductri226 Frosted Obsidian + Scroll Transition) */
 .custom-navbar-strip {
-    background: #141414 !important;
+    background: rgba(15, 17, 20, 0.94) !important;
+    backdrop-filter: blur(14px) saturate(1.2) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(1.2) !important;
     border-top: none !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.28) !important;
+    border-bottom: 1px solid rgba(201, 163, 129, 0.16) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+    transition: background 280ms cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 280ms cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 280ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.custom-navbar-strip.is-sticky,
+.custom-navbar-strip.is-scrolled {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    background: rgba(10, 12, 15, 0.98) !important;
+    border-bottom: 1px solid rgba(201, 163, 129, 0.36) !important;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45) !important;
 }
 
 @media (min-width: 992px) {
@@ -9775,6 +9791,12 @@ html, body {
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
+        transition: height 280ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .custom-navbar-strip.is-sticky .custom-navbar-inner,
+    .custom-navbar-strip.is-scrolled .custom-navbar-inner {
+        height: 58px !important;
     }
 
     /* Left: Inline Logo on Mega Menu */
@@ -9797,6 +9819,13 @@ html, body {
         padding: 0;
         border: none;
         flex-shrink: 0;
+        transition: width 280ms cubic-bezier(0.16, 1, 0.3, 1), height 280ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .custom-navbar-strip.is-sticky .navbar-brand-img,
+    .custom-navbar-strip.is-scrolled .navbar-brand-img {
+        width: 38px;
+        height: 38px;
     }
 
     .navbar-brand-text {
@@ -9806,7 +9835,7 @@ html, body {
     }
 
     .navbar-brand-name {
-        font-family: 'Chakra Petch', sans-serif;
+        font-family: 'Be Vietnam Pro', sans-serif;
         font-size: 1.12rem;
         font-weight: 800;
         color: #ffffff;
@@ -9832,39 +9861,71 @@ html, body {
     .custom-nav-menu {
         flex: 1 1 auto !important;
         justify-content: center !important;
-        gap: 2px !important;
+        gap: 6px !important;
     }
 
     .custom-nav-menu > .nav-item {
         height: 68px !important;
         flex: 0 1 auto !important;
+        transition: height 280ms cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
 
-    .custom-nav-menu > .nav-item > .nav-link {
-        font-size: 0.84rem !important;
-        font-weight: 700 !important;
-        padding: 12px 11px !important;
-        color: #ffffff !important;
-        letter-spacing: 0.3px !important;
-    }
-
-    .custom-nav-menu > .nav-item.active > .nav-link,
-    .custom-nav-menu > .nav-item:hover > .nav-link {
-        color: #C5A880 !important;
+    .custom-navbar-strip.is-sticky .custom-nav-menu > .nav-item,
+    .custom-navbar-strip.is-scrolled .custom-nav-menu > .nav-item {
+        height: 58px !important;
     }
 
     .custom-nav-menu > .nav-item::before {
-        background: #C5A880 !important;
-        height: 3px !important;
+        display: none !important;
+    }
+
+    .custom-nav-menu > .nav-item > .nav-link {
+        position: relative !important;
+        font-size: 0.85rem !important;
+        font-weight: 700 !important;
+        padding: 10px 12px !important;
+        color: rgba(255, 255, 255, 0.92) !important;
+        letter-spacing: 0.03em !important;
+        outline: none !important;
+        box-shadow: none !important;
+        transition: color 220ms ease !important;
+    }
+
+    .custom-nav-menu > .nav-item > .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 10px;
+        right: 10px;
+        bottom: 4px;
+        height: 2px;
+        background: linear-gradient(90deg, #9E7A4A, #d4af37);
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
+        border-radius: 2px;
+    }
+
+    .custom-nav-menu > .nav-item.active > .nav-link,
+    .custom-nav-menu > .nav-item:hover > .nav-link,
+    .custom-nav-menu > .nav-item:focus-within > .nav-link {
+        color: #F3D8B4 !important;
+    }
+
+    .custom-nav-menu > .nav-item.active > .nav-link::after,
+    .custom-nav-menu > .nav-item:hover > .nav-link::after,
+    .custom-nav-menu > .nav-item:focus-within > .nav-link::after {
+        transform: scaleX(1);
     }
 
     .custom-nav-menu .nav-caret {
-        color: rgba(255, 255, 255, 0.65) !important;
+        color: rgba(255, 255, 255, 0.55) !important;
+        transition: transform 220ms ease, color 200ms ease !important;
     }
 
     .custom-nav-menu > .nav-item:hover .nav-caret,
     .custom-nav-menu > .nav-item.active .nav-caret {
-        color: #C5A880 !important;
+        transform: rotate(180deg) !important;
+        color: #F3D8B4 !important;
     }
 
     /* Right: Inline Rescue 24/7 + Book Appointment + SEO Search at the End */
@@ -9918,7 +9979,7 @@ html, body {
     }
 
     .navbar-rescue-btn .rescue-btn-text small {
-        font-family: 'Chakra Petch', sans-serif;
+        font-family: 'Be Vietnam Pro', sans-serif;
         font-size: 0.56rem;
         font-weight: 800;
         letter-spacing: 0.6px;
@@ -9926,7 +9987,7 @@ html, body {
     }
 
     .navbar-rescue-btn .rescue-btn-text strong {
-        font-family: 'Chakra Petch', sans-serif;
+        font-family: 'Be Vietnam Pro', sans-serif;
         font-size: 0.82rem;
         font-weight: 800;
         color: #ffffff;
@@ -9940,7 +10001,7 @@ html, body {
         gap: 6px;
         background: #C5A880 !important;
         color: #141414 !important;
-        font-family: 'Chakra Petch', sans-serif;
+        font-family: 'Be Vietnam Pro', sans-serif;
         font-size: 0.78rem;
         font-weight: 800;
         letter-spacing: 0.5px;
@@ -10048,7 +10109,7 @@ html, body {
 }
 
 .seo-suggest-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.72rem;
     font-weight: 800;
     text-transform: uppercase;
@@ -10503,7 +10564,7 @@ html, body {
 }
 
 .seo-search-hero .portal-hero-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: clamp(1.75rem, 3vw, 2.5rem);
     font-weight: 800;
     color: #ffffff;
@@ -10544,7 +10605,7 @@ html, body {
     color: #141414;
     border: none;
     padding: 0 24px;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-weight: 800;
     font-size: 0.9rem;
     cursor: pointer;
@@ -10632,7 +10693,7 @@ html, body {
     display: inline-block;
     background: #141414;
     color: #C5A880;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.7rem;
     font-weight: 800;
     padding: 4px 10px;
@@ -10654,7 +10715,7 @@ html, body {
 }
 
 .seo-result-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.18rem;
     font-weight: 800;
     margin: 0 0 10px;
@@ -10683,7 +10744,7 @@ html, body {
 }
 
 .seo-result-link {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.84rem;
     font-weight: 800;
     color: #141414;
@@ -10696,7 +10757,7 @@ html, body {
 .seo-result-book {
     background: #C5A880;
     color: #141414;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.78rem;
     font-weight: 800;
     padding: 6px 12px;
@@ -10728,7 +10789,7 @@ html, body {
 }
 
 .seo-empty-results h2 {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     color: #141414;
     margin: 0 0 10px;
 }
@@ -10773,7 +10834,7 @@ html, body {
 .seo-btn-amber {
     background: #C5A880;
     color: #141414;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-weight: 800;
     padding: 12px 24px;
     border-radius: 8px;
@@ -10783,7 +10844,7 @@ html, body {
 .seo-btn-rescue {
     background: #D92D20;
     color: #ffffff;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-weight: 800;
     padding: 12px 24px;
     border-radius: 8px;
@@ -10867,7 +10928,7 @@ html, body {
     letter-spacing: 0.8px;
     text-transform: uppercase;
     margin-bottom: 16px;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 .phukien-eyebrow .eyebrow-dot {
@@ -10878,7 +10939,7 @@ html, body {
 }
 
 .phukien-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 2.6rem;
     font-weight: 900;
     color: #ffffff;
@@ -11062,7 +11123,7 @@ html, body {
 }
 
 .phukien-cat-index {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 2rem;
     font-weight: 800;
     line-height: 1;
@@ -11071,7 +11132,7 @@ html, body {
 }
 
 .phukien-cat-eyebrow {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.8px;
@@ -11088,7 +11149,7 @@ html, body {
 }
 
 .phukien-cat-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.35rem;
     font-weight: 800;
     color: #141414;
@@ -11106,7 +11167,7 @@ html, body {
 .phukien-cat-count-badge {
     background: #141414;
     color: #C5A880;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.78rem;
     font-weight: 700;
     padding: 5px 12px;
@@ -11116,7 +11177,7 @@ html, body {
 }
 
 .phukien-back-to-top {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.75rem;
     font-weight: 600;
     color: #64748b;
@@ -11238,7 +11299,7 @@ html, body {
     padding: 4px 9px;
     border-radius: 4px;
     text-transform: uppercase;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
@@ -11278,7 +11339,7 @@ html, body {
     color: #64748b;
     text-transform: uppercase;
     margin-bottom: 6px;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 .phukien-card-title {
@@ -11311,7 +11372,7 @@ html, body {
 }
 
 .phukien-card-pricing .price-current {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.25rem;
     font-weight: 800;
     color: #141414;
@@ -11352,7 +11413,7 @@ html, body {
     color: #ffffff;
     font-size: 0.82rem;
     font-weight: 700;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     letter-spacing: 0.4px;
     text-transform: uppercase;
     text-align: center;
@@ -11372,7 +11433,7 @@ html, body {
     color: #1e293b;
     font-size: 0.82rem;
     font-weight: 700;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     letter-spacing: 0.4px;
     text-transform: uppercase;
     text-align: center;
@@ -11412,9 +11473,9 @@ html, body {
 }
 
 .btn-pk-call:hover {
-    background: #d97706;
+    background: #7A5C34;
     color: #ffffff;
-    border-color: #d97706;
+    border-color: #7A5C34;
 }
 
 /* Empty State */
@@ -11433,7 +11494,7 @@ html, body {
 }
 
 .phukien-empty-state h3 {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.25rem;
     color: #1e293b;
     margin-bottom: 8px;
@@ -11449,7 +11510,7 @@ html, body {
     background: #C5A880;
     color: #141414;
     font-weight: 700;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     border: none;
     padding: 10px 22px;
     border-radius: 6px;
@@ -11490,12 +11551,12 @@ html, body {
     padding: 4px 12px;
     border-radius: 4px;
     text-transform: uppercase;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     margin-bottom: 12px;
 }
 
 .consult-content h2 {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.65rem;
     font-weight: 800;
     color: #ffffff;
@@ -11528,7 +11589,7 @@ html, body {
     font-size: 0.95rem;
     font-weight: 700;
     text-decoration: none;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     transition: all 0.2s;
 }
 
@@ -11719,7 +11780,7 @@ html, body {
     right: 18px;
     background: #C5A880;
     color: #141414;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-weight: 800;
     font-size: 0.8rem;
     letter-spacing: 0.6px;
@@ -11782,7 +11843,7 @@ html, body {
 }
 
 .specs-heading, .content-heading {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.25rem;
     font-weight: 800;
     color: #141414;
@@ -11827,7 +11888,7 @@ html, body {
 }
 
 .acc-prose-body h3 {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.15rem;
     font-weight: 700;
     color: #0f172a;
@@ -11854,7 +11915,7 @@ html, body {
 }
 
 .acc-workshop-guarantee h3 {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.15rem;
     font-weight: 800;
     color: #ffffff;
@@ -11903,12 +11964,12 @@ html, body {
     letter-spacing: 0.8px;
     color: #C5A880;
     text-transform: uppercase;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     margin-bottom: 8px;
 }
 
 .acc-buy-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.35rem;
     font-weight: 800;
     color: #141414;
@@ -11945,7 +12006,7 @@ html, body {
 }
 
 .acc-price-main .current-num {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.9rem;
     font-weight: 900;
     color: #141414;
@@ -11971,7 +12032,7 @@ html, body {
 }
 
 .discount-pill {
-    background: #fef3c7;
+    background: #F5EBE1;
     color: #b45309;
     font-size: 0.72rem;
     font-weight: 700;
@@ -11996,7 +12057,7 @@ html, body {
 .btn-acc-primary-book {
     background: #141414;
     color: #ffffff;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.92rem;
     font-weight: 800;
     letter-spacing: 0.5px;
@@ -12020,7 +12081,7 @@ html, body {
 .btn-acc-call {
     background: #dc2626;
     color: #ffffff;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -12042,7 +12103,7 @@ html, body {
 .btn-acc-zalo {
     background: #0284c7;
     color: #ffffff;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -12074,7 +12135,7 @@ html, body {
     letter-spacing: 0.5px;
     color: #1e293b;
     margin: 0 0 8px;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 .acc-perks-box ul {
@@ -12121,11 +12182,11 @@ html, body {
     padding: 4px 12px;
     border-radius: 999px;
     text-transform: uppercase;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 .related-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.8rem;
     font-weight: 800;
     color: #141414;
@@ -12175,7 +12236,7 @@ html, body {
    OTOHATHANH-STYLE CHILD SERVICE CONTENT & PRICING TABLES
    ========================================================================== */
 .entry-content h2 {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.4rem;
     font-weight: 800;
     color: #141414;
@@ -12197,7 +12258,7 @@ html, body {
     flex-shrink: 0;
 }
 .entry-content h3 {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.18rem;
     font-weight: 700;
     color: #141414;
@@ -12221,7 +12282,7 @@ html, body {
 .table-service-quote th {
     background: #141414;
     color: #ffffff;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -12265,7 +12326,7 @@ html, body {
     height: 32px;
     background: #141414;
     color: #C5A880;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-weight: 800;
     font-size: 0.9rem;
     display: flex;
@@ -12297,7 +12358,7 @@ html, body {
 }
 .service-emergency-box .emergency-title {
     color: #D92D20;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1rem;
     font-weight: 800;
     letter-spacing: 1px;
@@ -12305,7 +12366,7 @@ html, body {
     text-transform: uppercase;
 }
 .service-emergency-box .emergency-number {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 2.2rem;
     font-weight: 900;
     color: #ffffff;
@@ -12378,7 +12439,7 @@ html, body {
     text-transform: uppercase;
 }
 .vip-sparkle {
-    color: #fbbf24;
+    color: #D4B996;
     font-size: 1rem;
 }
 .vip-partner-auth-badge {
@@ -12449,7 +12510,7 @@ html, body {
 }
 .vip-stat-value {
     display: block;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.5rem;
     font-weight: 900;
     line-height: 1.1;
@@ -12458,7 +12519,7 @@ html, body {
 .text-gradient-blue { color: #60a5fa !important; }
 .text-gradient-red { color: #f43f5e !important; }
 .text-gradient-green { color: #34d399 !important; }
-.text-gradient-gold { color: #fbbf24 !important; }
+.text-gradient-gold { color: #D4B996 !important; }
 
 .vip-stat-label {
     font-size: 0.72rem;
@@ -12468,7 +12529,7 @@ html, body {
     display: block;
 }
 .vip-partner-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.85rem;
     font-weight: 800;
     color: #ffffff;
@@ -12644,7 +12705,7 @@ html, body {
 
 /* ==========================================================================
    VINFAST OFFICIAL SERVICE PARTNERSHIP STYLES (HOMEPAGE & DEDICATED PORTAL)
-   Brand Rules: Charcoal #141414, Accent Warm Yellow #FFB81C, Secondary #5F6368
+   Brand Rules: Charcoal #141414, Accent Warm Beige #D4B996, Secondary #5F6368
    Buttons with Yellow BG: ALWAYS dark text #141414
    ========================================================================== */
 
@@ -12652,7 +12713,7 @@ html, body {
 .hp-vinfast-hero-partner {
     background-color: #FFFFFF;
     background-image: 
-        radial-gradient(circle at 10% 20%, rgba(255, 184, 28, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 10% 20%, rgba(212, 185, 150, 0.06) 0%, transparent 40%),
         linear-gradient(180deg, #FFFFFF 0%, #F9FAFB 100%);
     color: #141414;
     padding: 70px 0;
@@ -12671,21 +12732,21 @@ html, body {
 
 .hp-vf-eyebrow {
     display: inline-block;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.82rem;
     font-weight: 800;
-    color: #92400e;
+    color: #7A5C34;
     letter-spacing: 1.2px;
     text-transform: uppercase;
     margin-bottom: 14px;
-    background: #fef3c7;
+    background: #F5EBE1;
     padding: 5px 14px;
     border-radius: 4px;
-    border-left: 3px solid #FFB81C;
+    border-left: 3px solid #D4B996;
 }
 
 .hp-vf-heading {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: clamp(1.75rem, 3.2vw, 2.45rem);
     font-weight: 800;
     line-height: 1.28;
@@ -12720,7 +12781,7 @@ html, body {
 }
 
 .hp-vf-checklist li i {
-    color: #d97706;
+    color: #7A5C34;
     font-size: 1.1rem;
     flex-shrink: 0;
 }
@@ -12736,9 +12797,9 @@ html, body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background-color: #FFB81C !important;
+    background-color: #D4B996 !important;
     color: #141414 !important; /* Yellow background MUST use dark text */
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.95rem;
     font-weight: 800;
     letter-spacing: 0.3px;
@@ -12746,14 +12807,14 @@ html, body {
     border-radius: 6px;
     text-decoration: none;
     transition: all 0.2s ease;
-    box-shadow: 0 4px 16px rgba(255, 184, 28, 0.35);
+    box-shadow: 0 4px 16px rgba(212, 185, 150, 0.35);
 }
 
 .hp-vf-btn-primary:hover {
-    background-color: #e5a415 !important;
+    background-color: #C2A47E !important;
     color: #141414 !important;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 184, 28, 0.5);
+    box-shadow: 0 6px 20px rgba(212, 185, 150, 0.5);
 }
 
 .hp-vf-btn-outline {
@@ -12763,7 +12824,7 @@ html, body {
     background: #ffffff;
     color: #141414 !important;
     border: 1.5px solid #141414;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.95rem;
     font-weight: 700;
     padding: 12px 24px;
@@ -12813,12 +12874,12 @@ html, body {
 .hp-vf-badge-sub {
     font-size: 0.72rem;
     letter-spacing: 1px;
-    color: #FFB81C;
+    color: #D4B996;
     font-weight: 700;
 }
 
 .hp-vf-badge-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.15rem;
     font-weight: 800;
     color: #ffffff;
@@ -12833,7 +12894,7 @@ html, body {
 .vf-spotlight-inner {
     background: #FFFFFF;
     border: 1.5px solid #E5E7EB;
-    border-left: 4px solid #FFB81C;
+    border-left: 4px solid #D4B996;
     border-radius: 12px;
     padding: 16px 24px;
     display: flex;
@@ -12845,13 +12906,13 @@ html, body {
 
 .vf-spotlight-inner:hover {
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
-    border-color: #FFB81C;
+    border-color: #D4B996;
 }
 
 .vf-spotlight-badge {
-    background: #FFB81C;
+    background: #D4B996;
     color: #141414;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.75rem;
     font-weight: 800;
     padding: 6px 14px;
@@ -12880,7 +12941,7 @@ html, body {
 }
 
 .vf-spotlight-titles strong {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.05rem;
     font-weight: 800;
     color: #141414;
@@ -12903,7 +12964,7 @@ html, body {
     color: #FFFFFF !important;
     padding: 9px 18px;
     border-radius: 6px;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.86rem;
     font-weight: 700;
     text-decoration: none;
@@ -12913,8 +12974,8 @@ html, body {
 }
 
 .vf-spotlight-btn:hover {
-    background: #FFB81C;
-    border-color: #FFB81C;
+    background: #D4B996;
+    border-color: #D4B996;
     color: #141414 !important;
 }
 
@@ -12963,7 +13024,7 @@ html, body {
     background-color: #141414;
     color: #ffffff;
     padding: 64px 0 72px;
-    border-bottom: 3px solid #FFB81C;
+    border-bottom: 3px solid #D4B996;
 }
 
 .vinfast-hero-grid {
@@ -12977,15 +13038,15 @@ html, body {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: rgba(255, 184, 28, 0.12);
-    border: 1px solid rgba(255, 184, 28, 0.35);
+    background: rgba(212, 185, 150, 0.12);
+    border: 1px solid rgba(212, 185, 150, 0.35);
     padding: 6px 14px;
     border-radius: 999px;
     margin-bottom: 16px;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.8rem;
     font-weight: 700;
-    color: #FFB81C;
+    color: #D4B996;
     letter-spacing: 0.8px;
 }
 
@@ -12996,7 +13057,7 @@ html, body {
 }
 
 .vinfast-hero-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: clamp(1.9rem, 3.5vw, 2.75rem);
     font-weight: 800;
     color: #ffffff;
@@ -13022,7 +13083,7 @@ html, body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.95rem;
     font-weight: 700;
     letter-spacing: 0.3px;
@@ -13033,17 +13094,17 @@ html, body {
 }
 
 .vf-btn-primary {
-    background-color: #FFB81C !important;
+    background-color: #D4B996 !important;
     color: #141414 !important; /* Yellow BG uses dark text */
     border: none;
-    box-shadow: 0 4px 16px rgba(255, 184, 28, 0.35);
+    box-shadow: 0 4px 16px rgba(212, 185, 150, 0.35);
 }
 
 .vf-btn-primary:hover {
-    background-color: #e5a415 !important;
+    background-color: #C2A47E !important;
     color: #141414 !important;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 184, 28, 0.5);
+    box-shadow: 0 6px 20px rgba(212, 185, 150, 0.5);
 }
 
 .vf-btn-outline {
@@ -13053,9 +13114,9 @@ html, body {
 }
 
 .vf-btn-outline:hover {
-    border-color: #FFB81C;
-    color: #FFB81C !important;
-    background: rgba(255, 184, 28, 0.08);
+    border-color: #D4B996;
+    color: #D4B996 !important;
+    background: rgba(212, 185, 150, 0.08);
 }
 
 .vf-btn-block {
@@ -13097,13 +13158,13 @@ html, body {
 
 .vf-badge-sub {
     font-size: 0.72rem;
-    color: #FFB81C;
+    color: #D4B996;
     font-weight: 700;
     letter-spacing: 0.8px;
 }
 
 .vf-badge-brand {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.15rem;
     font-weight: 800;
     color: #ffffff;
@@ -13116,7 +13177,7 @@ html, body {
 
 .vf-section-sub {
     display: inline-block;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.8rem;
     font-weight: 700;
     color: #141414;
@@ -13126,11 +13187,11 @@ html, body {
     padding: 4px 12px;
     border-radius: 4px;
     margin-bottom: 10px;
-    border-left: 3px solid #FFB81C;
+    border-left: 3px solid #D4B996;
 }
 
 .vf-section-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: clamp(1.6rem, 2.8vw, 2.2rem);
     font-weight: 800;
     color: #141414;
@@ -13189,7 +13250,7 @@ html, body {
 }
 
 .vf-trust-chip i {
-    color: #FFB81C;
+    color: #D4B996;
 }
 
 /* SECTION 3: CÁC DÒNG XE PHỤC VỤ */
@@ -13217,25 +13278,25 @@ html, body {
 .vf-model-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-    border-color: #FFB81C;
+    border-color: #D4B996;
 }
 
 .vf-model-badge {
     display: inline-block;
     align-self: flex-start;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.7rem;
     font-weight: 800;
     letter-spacing: 1.5px;
     color: #141414;
-    background: #FFB81C;
+    background: #D4B996;
     padding: 3px 8px;
     border-radius: 3px;
     margin-bottom: 12px;
 }
 
 .vf-model-name {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.3rem;
     font-weight: 800;
     color: #141414;
@@ -13255,7 +13316,7 @@ html, body {
     align-items: center;
     gap: 6px;
     color: #141414;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.86rem;
     font-weight: 700;
     text-decoration: none;
@@ -13263,7 +13324,7 @@ html, body {
 }
 
 .vf-model-link:hover {
-    color: #e5a415;
+    color: #C2A47E;
 }
 
 /* SECTION 4: DỊCH VỤ XE VINFAST */
@@ -13288,7 +13349,7 @@ html, body {
 
 .vf-service-card:hover {
     transform: translateY(-3px);
-    border-color: #FFB81C;
+    border-color: #D4B996;
     background: #ffffff;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
@@ -13297,7 +13358,7 @@ html, body {
     width: 48px;
     height: 48px;
     background: #141414;
-    color: #FFB81C;
+    color: #D4B996;
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -13307,7 +13368,7 @@ html, body {
 }
 
 .vf-srv-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.15rem;
     font-weight: 800;
     color: #141414;
@@ -13329,9 +13390,9 @@ html, body {
 }
 
 .vinfast-why-choose-section .vf-section-sub {
-    background: rgba(255, 184, 28, 0.12);
-    color: #FFB81C;
-    border-left-color: #FFB81C;
+    background: rgba(212, 185, 150, 0.12);
+    color: #D4B996;
+    border-left-color: #D4B996;
 }
 
 .vinfast-why-choose-section .vf-section-title {
@@ -13354,20 +13415,20 @@ html, body {
 
 .vf-why-card:hover {
     transform: translateY(-4px);
-    border-color: #FFB81C;
+    border-color: #D4B996;
 }
 
 .vf-why-num {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 2rem;
     font-weight: 900;
-    color: #FFB81C;
+    color: #D4B996;
     line-height: 1;
     margin-bottom: 12px;
 }
 
 .vf-why-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.15rem;
     font-weight: 700;
     color: #ffffff;
@@ -13404,7 +13465,7 @@ html, body {
 }
 
 .vf-faq-item:focus-within {
-    border-color: #FFB81C;
+    border-color: #D4B996;
 }
 
 .vf-faq-trigger {
@@ -13417,7 +13478,7 @@ html, body {
     border: none;
     cursor: pointer;
     text-align: left;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.05rem;
     font-weight: 700;
     color: #141414;
@@ -13433,7 +13494,7 @@ html, body {
 }
 
 .vf-faq-trigger:focus-visible {
-    outline: 2px solid #FFB81C;
+    outline: 2px solid #D4B996;
 }
 
 .vf-faq-icon {
@@ -13493,9 +13554,9 @@ html, body {
 
 .vf-badge-gold {
     display: inline-block;
-    background: #FFB81C;
+    background: #D4B996;
     color: #141414;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.72rem;
     font-weight: 800;
     padding: 3px 8px;
@@ -13508,7 +13569,7 @@ html, body {
     background: #FFFFFF;
     color: #141414;
     border: 1px solid #d4d4d8;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.72rem;
     font-weight: 700;
     padding: 3px 8px;
@@ -13518,7 +13579,7 @@ html, body {
 
 .vf-booking-card-head h3,
 .vf-map-head h3 {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.35rem;
     font-weight: 800;
     color: #141414;
@@ -13540,7 +13601,7 @@ html, body {
 }
 
 .vf-map-address a:hover {
-    color: #FFB81C;
+    color: #D4B996;
 }
 
 .vf-booking-form {
@@ -13570,7 +13631,7 @@ html, body {
 }
 
 .vf-form-field .form-control:focus {
-    border-color: #FFB81C;
+    border-color: #D4B996;
     outline: none;
 }
 
@@ -13687,7 +13748,7 @@ html, body {
 }
 
 .city-filter-bar .filter-label {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-weight: 700;
     font-size: 0.92rem;
     color: #141414;
@@ -13699,7 +13760,7 @@ html, body {
 }
 
 .city-filter-bar .filter-label i {
-    color: #FFB81C;
+    color: #D4B996;
 }
 
 .filter-btn-group {
@@ -13709,7 +13770,7 @@ html, body {
 }
 
 .city-filter-btn {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-weight: 700;
     font-size: 0.88rem;
     letter-spacing: 0.3px;
@@ -13723,16 +13784,16 @@ html, body {
 }
 
 .city-filter-btn:hover {
-    border-color: #FFB81C;
+    border-color: #D4B996;
     background: #fffdf5;
     color: #141414;
 }
 
 .city-filter-btn.active {
-    background: #FFB81C;
-    border-color: #FFB81C;
+    background: #D4B996;
+    border-color: #D4B996;
     color: #141414 !important;
-    box-shadow: 0 3px 12px rgba(255, 184, 28, 0.35);
+    box-shadow: 0 3px 12px rgba(212, 185, 150, 0.35);
 }
 
 .network-workshops-grid {
@@ -13762,13 +13823,13 @@ html, body {
     left: 0;
     width: 4px;
     height: 100%;
-    background: #FFB81C;
+    background: #D4B996;
     opacity: 0;
     transition: opacity 0.2s ease;
 }
 
 .workshop-full-card:hover {
-    border-color: #FFB81C;
+    border-color: #D4B996;
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
     transform: translateY(-2px);
 }
@@ -13786,13 +13847,13 @@ html, body {
 
 .ws-city-tag {
     display: inline-block;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-weight: 700;
     font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.8px;
     color: #141414;
-    background: #fef3c7;
+    background: #F5EBE1;
     border: 1px solid #fde68a;
     padding: 3px 10px;
     border-radius: 4px;
@@ -13800,7 +13861,7 @@ html, body {
 }
 
 .ws-title {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-weight: 800;
     font-size: 1.25rem;
     color: #141414;
@@ -13812,7 +13873,7 @@ html, body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.76rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -13854,7 +13915,7 @@ html, body {
 }
 
 .spec-pill {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.8rem;
     font-weight: 600;
     background: #f8fafc;
@@ -13868,7 +13929,7 @@ html, body {
 }
 
 .spec-pill i {
-    color: #FFB81C;
+    color: #D4B996;
     font-size: 0.85rem;
 }
 
@@ -13878,7 +13939,7 @@ html, body {
 
 .ws-services-chips strong {
     display: block;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.82rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -13912,7 +13973,7 @@ html, body {
 }
 
 .workshop-full-card .btn-carpla {
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.88rem;
     font-weight: 800;
     letter-spacing: 0.5px;
@@ -13943,18 +14004,18 @@ html, body {
 }
 
 .workshop-full-card .btn-carpla-primary {
-    background: #FFB81C !important;
-    border: 1.5px solid #FFB81C !important;
+    background: #D4B996 !important;
+    border: 1.5px solid #D4B996 !important;
     color: #141414 !important;
-    box-shadow: 0 4px 14px rgba(255, 184, 28, 0.3) !important;
+    box-shadow: 0 4px 14px rgba(212, 185, 150, 0.3) !important;
 }
 
 .workshop-full-card .btn-carpla-primary:hover {
-    background: #e5a415 !important;
-    border-color: #e5a415 !important;
+    background: #C2A47E !important;
+    border-color: #C2A47E !important;
     color: #141414 !important;
     transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(255, 184, 28, 0.45) !important;
+    box-shadow: 0 6px 18px rgba(212, 185, 150, 0.45) !important;
 }
 
 @media (max-width: 991px) {
@@ -14011,8 +14072,8 @@ html, body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: #FEF3C7;
-    color: #92400E;
+    background: #F5EBE1;
+    color: #7A5C34;
     font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -14032,7 +14093,7 @@ html, body {
 }
 
 .blog-heading-main span:first-child {
-    color: #D97706;
+    color: #7A5C34;
 }
 
 .blog-sec-sub {
@@ -14100,7 +14161,7 @@ html, body {
     top: 14px;
     left: 14px;
     background: rgba(20, 20, 20, 0.85);
-    color: #FFB81C;
+    color: #D4B996;
     font-size: 0.75rem;
     font-weight: 700;
     padding: 5px 12px;
@@ -14126,7 +14187,7 @@ html, body {
 }
 
 .hp-blog-meta i {
-    color: #D97706;
+    color: #7A5C34;
     margin-right: 4px;
 }
 
@@ -14145,7 +14206,7 @@ html, body {
 }
 
 .hp-blog-title a:hover {
-    color: #D97706;
+    color: #7A5C34;
 }
 
 .hp-blog-excerpt {
@@ -14177,12 +14238,12 @@ html, body {
 }
 
 .hp-blog-readmore:hover {
-    color: #D97706;
+    color: #7A5C34;
     gap: 10px;
 }
 
 .hp-blog-book-btn {
-    background: #FFB81C;
+    background: #D4B996;
     color: #141414;
     font-weight: 700;
     font-size: 0.8rem;
@@ -14196,7 +14257,7 @@ html, body {
 }
 
 .hp-blog-book-btn:hover {
-    background: #e5a415;
+    background: #C2A47E;
     color: #141414;
 }
 

@@ -51,8 +51,8 @@ get_header();
                         <li><i class="fa fa-check"></i> Kiểm tra áp suất lốp & siết lực ốc bánh xe</li>
                         <li><i class="fa fa-check"></i> Kiểm tra hệ thống đèn tín hiệu & ắc quy</li>
                     </ul>
-                    <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode('Bảo dưỡng cấp nhỏ 5.000km'))); ?>" class="btn-carpla btn-carpla-outline tier-btn">
-                        Đặt Lịch Cấp 5.000km
+                    <a href="tel:02203892207" class="btn-carpla btn-carpla-outline tier-btn">
+                        <i class="fa-solid fa-phone"></i> Tư Vấn Cấp 5.000km
                     </a>
                 </div>
 
@@ -70,8 +70,8 @@ get_header();
                         <li><i class="fa fa-check"></i> Đảo lốp định kỳ chống mòn lệch</li>
                         <li><i class="fa fa-check"></i> Quét chẩn đoán lỗi ECU toàn xe bằng máy đọc lỗi</li>
                     </ul>
-                    <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode('Bảo dưỡng cấp trung bình 10.000km'))); ?>" class="btn-carpla btn-carpla-primary tier-btn">
-                        Đặt Lịch Cấp 10.000km
+                    <a href="tel:02203892207" class="btn-carpla btn-carpla-primary tier-btn" style="background: #D4B996; color: #141414;">
+                        <i class="fa-solid fa-phone"></i> Tư Vấn Cấp 10.000km
                     </a>
                 </div>
 
@@ -88,8 +88,8 @@ get_header();
                         <li><i class="fa fa-check"></i> Cân bằng động 4 bánh xe</li>
                         <li><i class="fa fa-check"></i> Kiểm tra rô-tuyn, cao su giảm chấn, giảm xóc</li>
                     </ul>
-                    <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode('Bảo dưỡng cấp trung bình lớn 20.000km'))); ?>" class="btn-carpla btn-carpla-outline tier-btn">
-                        Đặt Lịch Cấp 20.000km
+                    <a href="tel:02203892207" class="btn-carpla btn-carpla-outline tier-btn">
+                        <i class="fa-solid fa-phone"></i> Tư Vấn Cấp 20.000km
                     </a>
                 </div>
 
@@ -106,8 +106,8 @@ get_header();
                         <li><i class="fa fa-check"></i> Thay bu-gi đánh lửa & kiểm tra dây curoa</li>
                         <li><i class="fa fa-check"></i> Nội soi bảo dưỡng giàn lạnh điều hòa ô tô</li>
                     </ul>
-                    <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode('Bảo dưỡng cấp lớn 40.000km'))); ?>" class="btn-carpla btn-carpla-outline tier-btn">
-                        Đặt Lịch Cấp 40.000km
+                    <a href="tel:02203892207" class="btn-carpla btn-carpla-outline tier-btn">
+                        <i class="fa-solid fa-phone"></i> Tư Vấn Cấp 40.000km
                     </a>
                 </div>
             </div>
@@ -118,10 +118,10 @@ get_header();
     <section class="section-12-services" id="danh-muc-dich-vu">
         <div class="container">
             <div class="section-header" style="text-align: center; margin-bottom: 40px;">
-                <div class="section-pill" style="display: inline-block; background: rgba(245, 163, 0, 0.1); color: #F5A300; border: 1px solid rgba(245, 163, 0, 0.3); padding: 4px 14px; border-radius: 20px; font-weight: 700; font-size: 0.8rem; margin-bottom: 12px; font-family: 'Chakra Petch', sans-serif;">
+                <div class="section-pill" style="display: inline-block; background: rgba(245, 163, 0, 0.1); color: #F5A300; border: 1px solid rgba(245, 163, 0, 0.3); padding: 4px 14px; border-radius: 20px; font-weight: 700; font-size: 0.8rem; margin-bottom: 12px; font-family: 'Be Vietnam Pro', sans-serif;">
                     HỆ THỐNG 6 NHÓM DỊCH VỤ Ô TÔ TOÀN DIỆN
                 </div>
-                <h2 class="section-title" style="font-size: 2rem; font-weight: 800; color: #141414; margin-bottom: 10px; font-family: 'Chakra Petch', sans-serif;">
+                <h2 class="section-title" style="font-size: 2rem; font-weight: 800; color: #141414; margin-bottom: 10px; font-family: 'Be Vietnam Pro', sans-serif;">
                     Danh Mục Dịch Vụ Kỹ Thuật Ô Tô Chuyên Nghiệp
                 </h2>
                 <p class="section-desc" style="color: #5F6368; max-width: 760px; margin: 0 auto; font-size: 0.95rem;">
@@ -231,8 +231,8 @@ get_header();
                             <a href="<?php the_permalink(); ?>" class="btn-detail-link">
                                 <span>Xem quy trình &amp; dấu hiệu</span> &rarr;
                             </a>
-                            <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode(get_the_title()))); ?>" class="btn-book-service">
-                                <i class="fa fa-calendar-check"></i> Đặt lịch ngay
+                            <a href="tel:02203892207" class="btn-book-service" style="background: #D4B996; color: #141414;">
+                                <i class="fa-solid fa-phone"></i> Tư vấn ngay
                             </a>
                         </div>
                     </div>
@@ -366,8 +366,8 @@ get_header();
                     </div>
 
                     <div style="margin-top: 20px;">
-                        <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode('Đồng sơn sấy hấp công nghệ cao'))); ?>" class="btn-carpla btn-carpla-primary btn-summary-book">
-                            <i class="fa fa-calendar-check"></i> <?php _e('ĐẶT HẸN PHÒNG SƠN NGAY', 'hieugara-motors'); ?>
+                        <a href="tel:02203892207" class="btn-carpla btn-carpla-primary btn-summary-book" style="background: #D4B996; color: #141414;">
+                            <i class="fa-solid fa-phone-volume"></i> <?php _e('GỌI BÁO GIÁ ĐỒNG SƠN', 'hieugara-motors'); ?>
                         </a>
                     </div>
                 </div>

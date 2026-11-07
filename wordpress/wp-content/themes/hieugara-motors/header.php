@@ -143,9 +143,6 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                     ?>
                         <li>
                             <a href="<?php echo esc_url($a_item['link']); ?>" target="<?php echo esc_attr($a_item['target'] ?? '_self'); ?>">
-                                <?php if (!empty($a_item['icon'])) : ?>
-                                    <i class="<?php echo esc_attr($a_item['icon']); ?>" style="color: #FFB81C; margin-right: 6px; width: 16px; text-align: center;"></i>
-                                <?php endif; ?>
                                 <?php echo esc_html($a_item['title']); ?>
                             </a>
                         </li>
@@ -153,91 +150,40 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                 </ul>
             </li>
 
-            <!-- 3. DỊCH VỤ ⌲ (DUCTRI226 MEGA MENU STYLE) -->
-            <li class="nav-item has-dropdown has-mega <?php echo is_post_type_archive('garage_service') || is_singular('garage_service') || is_tax('service_category') || is_page('bang-gia') ? 'active' : ''; ?>">
+            <!-- 3. DỊCH VỤ ⌵ (Đồng bộ sổ dọc chuẩn ductri226.vn) -->
+            <li class="nav-item has-dropdown <?php echo is_post_type_archive('garage_service') || is_singular('garage_service') || is_tax('service_category') || is_page('bang-gia') ? 'active' : ''; ?>">
                 <a href="<?php echo esc_url(home_url('/dich-vu/')); ?>" class="nav-link" title="HỆ THỐNG DỊCH VỤ Ô TÔ HẢI HÀ" aria-haspopup="true" aria-expanded="false">
                     <span><?php _e('DỊCH VỤ', 'hieugara-motors'); ?></span>
                     <i class="fa-solid fa-chevron-down nav-caret" aria-hidden="true"></i>
                 </a>
-                <div class="mega-menu" role="region" aria-label="Menu dịch vụ ô tô">
-                    <div class="mega-inner">
-                        <!-- 1. Dịch Vụ Xe VinFast (First Item) -->
-                        <div class="mega-group mega-group-vinfast">
-                            <a class="mega-cat mega-parent mega-parent-vinfast" href="<?php echo esc_url(home_url('/dich-vu/xe-vinfast/')); ?>" style="background: rgba(255, 184, 28, 0.08); border-left: 3px solid #FFB81C;">
-                                <span class="vf-menu-badge" style="background:#FFB81C;color:#141414;font-size:10px;font-weight:800;padding:2px 6px;border-radius:4px;margin-right:6px;">VINFAST</span>
-                                <span style="font-weight:700;color:#ffffff;"><?php _e('Dịch vụ xe VinFast', 'hieugara-motors'); ?></span>
-                                <span class="mega-arrow">›</span>
-                            </a>
-                            <div class="mega-sub">
-                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dich-vu/xe-vinfast/')); ?>">
-                                    <strong style="color:#FFB81C;">⚡ Đối tác dịch vụ chính thức VinFast</strong>
-                                    <small>Bảo dưỡng, sửa chữa, đồng sơn, phụ tùng</small>
+                <ul class="nav-dropdown-menu">
+                    <li>
+                        <a href="<?php echo esc_url(home_url('/dich-vu/xe-vinfast/')); ?>">
+                            <?php _e('Dịch Vụ Xe VinFast', 'hieugara-motors'); ?>
+                        </a>
+                    </li>
+                    <?php
+                    $dynamic_cats = get_terms(array(
+                        'taxonomy'   => 'service_category',
+                        'parent'     => 0,
+                        'hide_empty' => false,
+                        'orderby'    => 'name',
+                        'order'      => 'ASC',
+                    ));
+
+                    if (!empty($dynamic_cats) && !is_wp_error($dynamic_cats)) :
+                        foreach ($dynamic_cats as $d_cat) :
+                    ?>
+                            <li>
+                                <a href="<?php echo esc_url(home_url('/dich-vu/' . $d_cat->slug . '/')); ?>">
+                                    <?php echo esc_html(wp_specialchars_decode($d_cat->name, ENT_QUOTES)); ?>
                                 </a>
-                                <a class="mega-subcat" href="<?php echo esc_url(home_url('/dat-lich/?model=Xe%20VinFast&service=vinfast')); ?>">
-                                    <span>Đặt lịch xe VinFast ưu tiên</span>
-                                    <small>Tiếp nhận khoang riêng</small>
-                                </a>
-                            </div>
-                        </div>
-
-                        <?php
-                        $dynamic_cats = get_terms(array(
-                            'taxonomy'   => 'service_category',
-                            'parent'     => 0,
-                            'hide_empty' => false,
-                            'orderby'    => 'name',
-                            'order'      => 'ASC',
-                        ));
-
-                        if (!empty($dynamic_cats) && !is_wp_error($dynamic_cats)) :
-                            foreach ($dynamic_cats as $d_cat) :
-                                $cat_services = get_posts(array(
-                                    'post_type'      => 'garage_service',
-                                    'posts_per_page' => 8,
-                                    'post_status'    => 'publish',
-                                    'orderby'        => 'menu_order title',
-                                    'order'          => 'ASC',
-                                    'tax_query'      => array(
-                                        array(
-                                            'taxonomy'         => 'service_category',
-                                            'field'            => 'term_id',
-                                            'terms'            => $d_cat->term_id,
-                                            'include_children' => true,
-                                        ),
-                                    ),
-                                ));
-                                ?>
-                                <div class="mega-group">
-                                    <a class="mega-cat mega-parent" href="<?php echo esc_url(home_url('/dich-vu/' . $d_cat->slug . '/')); ?>">
-                                        <span><?php echo esc_html($d_cat->name); ?></span>
-                                        <span class="mega-arrow">›</span>
-                                    </a>
-                                    <div class="mega-sub">
-                                        <?php if (!empty($cat_services)) : ?>
-                                            <?php foreach ($cat_services as $c_post) : 
-                                                $dur = get_post_meta($c_post->ID, '_garage_duration', true) ?: get_post_meta($c_post->ID, '_service_duration', true);
-                                                if (empty($dur)) {
-                                                    $dur = get_post_meta($c_post->ID, '_garage_price_from', true) ?: get_post_meta($c_post->ID, '_service_price', true);
-                                                }
-                                            ?>
-                                                <a class="mega-subcat" href="<?php echo esc_url(get_permalink($c_post->ID)); ?>">
-                                                    <span><?php echo esc_html($c_post->post_title); ?></span>
-                                                    <?php if (!empty($dur)) : ?>
-                                                        <small><?php echo esc_html($dur); ?></small>
-                                                    <?php endif; ?>
-                                                </a>
-                                            <?php endforeach; ?>
-                                        <?php else : ?>
-                                            <span style="font-size: 0.8rem; color: #94a3b8; padding: 6px 12px; display: block;"><?php _e('Đang cập nhật...', 'hieugara-motors'); ?></span>
-                                        <?php endif; ?>
-                                    </div>
-                                </div>
-                            <?php endforeach;
-                        endif;
-                        ?>
-                    </div>
-
-                </div>
+                            </li>
+                    <?php
+                        endforeach;
+                    endif;
+                    ?>
+                </ul>
             </li>
 
             <!-- 4. PHỤ KIỆN ⌵ -->
@@ -246,15 +192,15 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                     <span><?php _e('PHỤ KIỆN', 'hieugara-motors'); ?></span>
                     <i class="fa-solid fa-chevron-down nav-caret"></i>
                 </a>
-                <ul class="nav-dropdown-menu nav-dropdown-grid-2col">
-                    <li style="grid-column: 1 / -1;"><a href="<?php echo esc_url(home_url('/phu-kien/')); ?>"><strong class="text-gold">★ Xem Tất Cả Phụ Kiện Chính Hãng</strong></a></li>
+                <ul class="nav-dropdown-menu">
+                    <li><a href="<?php echo esc_url(home_url('/phu-kien/')); ?>"><?php _e('Xem Tất Cả Phụ Kiện Chính Hãng', 'hieugara-motors'); ?></a></li>
                     <?php 
                     $nav_acc_cats = function_exists('hieugara_get_accessories_categories') ? hieugara_get_accessories_categories() : array();
                     foreach ($nav_acc_cats as $c_slug => $c_data) :
                     ?>
                         <li>
                             <a href="<?php echo esc_url(home_url('/phu-kien/#cat-' . $c_slug)); ?>">
-                                <i class="<?php echo esc_attr($c_data['icon']); ?> mr-1 text-gold"></i> <?php echo esc_html($c_data['short_name']); ?>
+                                <?php echo esc_html($c_data['short_name']); ?>
                             </a>
                         </li>
                     <?php endforeach; ?>
@@ -268,7 +214,7 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                     <i class="fa-solid fa-chevron-down nav-caret"></i>
                 </a>
                 <ul class="nav-dropdown-menu">
-                    <li><a href="<?php echo esc_url(home_url('/category/he-thong-va-trang-thiet-bi/')); ?>"><strong style="color: #FFB81C;">⚡</strong> <?php _e('Hệ Thống &amp; Trang Thiết Bị', 'hieugara-motors'); ?></a></li>
+                    <li><a href="<?php echo esc_url(home_url('/category/he-thong-va-trang-thiet-bi/')); ?>"><?php _e('Hệ Thống &amp; Trang Thiết Bị', 'hieugara-motors'); ?></a></li>
                     <li><a href="<?php echo esc_url(home_url('/category/cam-nang-bao-duong/')); ?>"><?php _e('Cẩm Nang Bảo Dưỡng Định Kỳ', 'hieugara-motors'); ?></a></li>
                     <li><a href="<?php echo esc_url(home_url('/category/kien-thuc-ky-thuat/')); ?>"><?php _e('Kiến Thức &amp; Kỹ Thuật Ô Tô', 'hieugara-motors'); ?></a></li>
                     <li><a href="<?php echo esc_url(home_url('/category/kinh-nghiem-lai-xe/')); ?>"><?php _e('Kinh Nghiệm Lái Xe An Toàn', 'hieugara-motors'); ?></a></li>
@@ -277,15 +223,15 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
             </li>
 
             <!-- 6. LIÊN HỆ ⌵ -->
-            <li class="nav-item has-dropdown <?php echo is_page('dat-lich') ? 'active' : ''; ?>">
-                <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>" class="nav-link" title="LIÊN HỆ">
+            <li class="nav-item has-dropdown">
+                <a href="<?php echo esc_url(home_url('/ve-chung-toi/#lien-he')); ?>" class="nav-link" title="LIÊN HỆ">
                     <span><?php _e('LIÊN HỆ', 'hieugara-motors'); ?></span>
                     <i class="fa-solid fa-chevron-down nav-caret"></i>
                 </a>
                 <ul class="nav-dropdown-menu">
-                    <li><a href="<?php echo esc_url(home_url('/dat-lich/')); ?>">Đặt Lịch Hẹn Với Chúng Tôi</a></li>
-                    <li><a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>">Hotline Cứu Hộ 24/7: <?php echo esc_html($rescue_phone); ?></a></li>
-                    <li><a href="<?php echo esc_url(home_url('/garage-gan-ban/')); ?>">Hệ Thống Garage Hải Hà</a></li>
+                    <li><a href="tel:02203892207">Hotline Tư Vấn: 02203 892 207</a></li>
+                    <li><a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>">Cứu Hộ 24/7: <?php echo esc_html($rescue_phone); ?></a></li>
+                    <li><a href="<?php echo esc_url(home_url('/ve-chung-toi/')); ?>">Gara Ô Tô Hải Hà</a></li>
                     <li><a href="<?php echo esc_url(home_url('/ve-chung-toi/#hop-tac')); ?>">Hợp Tác Đối Tác &amp; Bảo Hiểm</a></li>
                 </ul>
             </li>
@@ -336,9 +282,9 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
             <i class="fa-solid fa-truck-pickup"></i>
             <span>CỨU HỘ 24/7: <strong><?php echo esc_html($rescue_phone); ?></strong></span>
         </a>
-        <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>" class="drawer-btn-book">
-            <i class="fa-regular fa-calendar-check"></i>
-            <span>ĐẶT LỊCH HẸN TRỰC TUYẾN</span>
+        <a href="tel:02203892207" class="drawer-btn-book" style="background: #D4B996; color: #141414;">
+            <i class="fa-solid fa-phone"></i>
+            <span>TỔNG ĐÀI TƯ VẤN: 02203 892 207</span>
         </a>
         <div class="drawer-meta-info">
             <span><i class="fa-solid fa-phone text-orange"></i> Hotline: <?php echo esc_html($hotline_phone); ?></span>

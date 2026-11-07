@@ -123,9 +123,6 @@ $rescue_clean  = preg_replace('/[^0-9]/', '', $rescue_phone);
                                         <span>Xem chi tiết</span>
                                         <i class="fa-solid fa-arrow-right"></i>
                                     </a>
-                                    <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>" class="seo-result-book">
-                                        Đặt lịch ngay
-                                    </a>
                                 </div>
                             </div>
                         </article>
@@ -155,7 +152,7 @@ $rescue_clean  = preg_replace('/[^0-9]/', '', $rescue_phone);
                         <a href="<?php echo esc_url(home_url('/dich-vu/cuu-ho-ho-tro-o-to/')); ?>">06. Cứu hộ giao thông 24/7</a>
                     </div>
                     <div class="seo-empty-actions">
-                        <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>" class="seo-btn-amber">ĐẶT LỊCH HẸN TRỰC TUYẾN</a>
+                        <a href="tel:02203892207" class="seo-btn-amber" style="background: #D4B996; color: #141414;">GỌI TƯ VẤN: 02203 892 207</a>
                         <a href="tel:<?php echo esc_attr($rescue_clean); ?>" class="seo-btn-rescue">CỨU HỘ 24/7: <?php echo esc_html($rescue_phone); ?></a>
                     </div>
                 </div>

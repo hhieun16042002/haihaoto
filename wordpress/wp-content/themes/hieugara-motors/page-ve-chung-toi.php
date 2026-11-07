@@ -55,9 +55,9 @@ get_header();
                             <i class="fa-brands fa-facebook" style="font-size: 1.3rem;"></i>
                             <span>Theo dõi Fanpage Ôtô Hải Hà trên Facebook &rarr;</span>
                         </a>
-                        <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>" style="display: inline-flex; align-items: center; gap: 8px; background: #F5A300; color: #ffffff; padding: 12px 22px; border-radius: 6px; font-size: 0.95rem; font-weight: 700; text-decoration: none;">
-                            <i class="fa-solid fa-calendar-check"></i>
-                            <span>Đặt lịch tiếp nhận xe</span>
+                        <a href="tel:02203892207" style="display: inline-flex; align-items: center; gap: 8px; background: #D4B996; color: #141414; padding: 12px 22px; border-radius: 6px; font-size: 0.95rem; font-weight: 700; text-decoration: none;">
+                            <i class="fa-solid fa-phone-volume"></i>
+                            <span>Tư vấn: 02203 892 207</span>
                         </a>
                     </div>
 
@@ -131,8 +131,8 @@ get_header();
             </div>
 
             <div style="text-align: center; margin-top: 48px;">
-                <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>" class="btn-carpla btn-carpla-primary" style="padding: 14px 36px; font-weight: 800;">
-                    <i class="fa fa-calendar-check"></i> <?php _e('ĐẶT LỊCH TRẢI NGHIỆM DỊCH VỤ NGAY', 'hieugara-motors'); ?>
+                <a href="tel:02203892207" class="btn-carpla btn-carpla-primary" style="padding: 14px 36px; font-weight: 800; background: #D4B996; color: #141414;">
+                    <i class="fa-solid fa-phone-volume"></i> <?php _e('GỌI TƯ VẤN DỊCH VỤ: 02203 892 207', 'hieugara-motors'); ?>
                 </a>
             </div>
         </div>

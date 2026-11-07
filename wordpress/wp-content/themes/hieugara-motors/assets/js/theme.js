@@ -26,19 +26,20 @@
         });
 
         // ==========================================================================
-        // 1. Sticky Navigation Bar & Mobile Drawer
+        // 1. Sticky Navigation Bar & Mobile Drawer (Ductri226 Scroll Elevate)
         // ==========================================================================
         var $mainNav = $('#mainStickyNavbar');
-        var navOffsetTop = $mainNav.length ? $mainNav.offset().top : 100;
 
-        $(window).on('scroll', function() {
+        function handleNavScroll() {
             var scrollPos = $(window).scrollTop();
-            if (scrollPos > 120) {
-                $mainNav.addClass('is-sticky');
+            if (scrollPos > 24) {
+                $mainNav.addClass('is-sticky is-scrolled');
             } else {
-                $mainNav.removeClass('is-sticky');
+                $mainNav.removeClass('is-sticky is-scrolled');
             }
-        });
+        }
+        $(window).on('scroll', handleNavScroll);
+        handleNavScroll();
 
         // Mobile Navigation Toggle & Drawer Controller
         function toggleMobileNav(open) {
@@ -578,7 +579,7 @@
                     if (response.success) {
                         $msgBox.html(
                             '<div style="color: #15803d; background: #ecfdf5; border: 2px solid #10b981; padding: 20px; border-radius: 12px; margin-top: 20px; text-align: center;">' +
-                            '<h4 style="font-size: 1.125rem; font-weight: 800; color: #15803d; margin-bottom: 6px;">🎉 ĐẶT LỊCH HẸN THÀNH CÔNG!</h4>' +
+                            '<h4 style="font-size: 1.125rem; font-weight: 800; color: #15803d; margin-bottom: 6px;">🎉 TIẾP NHẬN YÊU CẦU THÀNH CÔNG!</h4>' +
                             '<p style="margin: 0; font-size: 0.875rem; color: #334155;">' + response.data.message + '</p>' +
                             '</div>'
                         ).fadeIn();

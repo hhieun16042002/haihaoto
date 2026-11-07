@@ -54,7 +54,7 @@ $other_cats = get_terms(array(
 <!-- Category Hero Header Banner -->
 <section class="service-single-header" style="background: #141414; padding: 45px 0 35px; border-bottom: 3px solid #C5A880; position: relative;">
     <div class="container" style="max-width: 1360px; margin: 0 auto; padding: 0 20px;">
-        <div class="portal-breadcrumb" style="display: flex; gap: 8px; align-items: center; font-size: 0.85rem; color: #94a3b8; margin-bottom: 14px; font-family: 'Chakra Petch', sans-serif; text-transform: uppercase;">
+        <div class="portal-breadcrumb" style="display: flex; gap: 8px; align-items: center; font-size: 0.85rem; color: #94a3b8; margin-bottom: 14px; font-family: 'Be Vietnam Pro', sans-serif; text-transform: uppercase;">
             <a href="<?php echo esc_url(home_url('/')); ?>" style="color: #cbd5e1; text-decoration: none;"><?php _e('Trang chủ', 'hieugara-motors'); ?></a>
             <span style="color: #64748b;">/</span>
             <a href="<?php echo esc_url(home_url('/dich-vu/')); ?>" style="color: #cbd5e1; text-decoration: none;"><?php _e('Dịch Vụ', 'hieugara-motors'); ?></a>
@@ -64,10 +64,10 @@ $other_cats = get_terms(array(
 
         <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
             <div style="max-width: 900px;">
-                <div style="display: inline-block; background: #C5A880; color: #141414; font-family: 'Chakra Petch', sans-serif; font-size: 0.72rem; font-weight: 800; padding: 4px 12px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; border-radius: 2px;">
+                <div style="display: inline-block; background: #C5A880; color: #141414; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.72rem; font-weight: 800; padding: 4px 12px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; border-radius: 2px;">
                     <?php echo esc_html($badge); ?>
                 </div>
-                <h1 style="font-family: 'Chakra Petch', sans-serif; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; color: #ffffff; margin: 0 0 10px; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.3;">
+                <h1 style="font-family: 'Be Vietnam Pro', sans-serif; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; color: #ffffff; margin: 0 0 10px; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.3;">
                     <span style="color: #C5A880;">|</span> <?php echo esc_html($page_title); ?>
                 </h1>
                 <?php if (!empty($term_desc)) : ?>
@@ -79,7 +79,7 @@ $other_cats = get_terms(array(
 
             <!-- Emergency Contact Badge -->
             <div style="display: flex; gap: 14px; align-items: center;">
-                <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" style="display: inline-flex; align-items: center; gap: 8px; background: #D92D20; border: 1px solid rgba(255,255,255,0.25); color: #ffffff; padding: 10px 18px; font-family: 'Chakra Petch', sans-serif; font-size: 0.85rem; font-weight: 700; text-decoration: none; text-transform: uppercase; border-radius: 4px;">
+                <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" style="display: inline-flex; align-items: center; gap: 8px; background: #D92D20; border: 1px solid rgba(255,255,255,0.25); color: #ffffff; padding: 10px 18px; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.85rem; font-weight: 700; text-decoration: none; text-transform: uppercase; border-radius: 4px;">
                     <i class="fa fa-phone-volume"></i>
                     <span>CỨU HỘ 24/7: <strong style="color: #ffffff;"><?php echo esc_html($rescue_phone); ?></strong></span>
                 </a>
@@ -99,7 +99,7 @@ $other_cats = get_terms(array(
                 <!-- Child Services Section -->
                 <div style="margin-bottom: 40px;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px;">
-                        <h2 style="font-family: 'Chakra Petch', sans-serif; font-size: 1.35rem; font-weight: 800; color: #0f172a; margin: 0; text-transform: uppercase;">
+                        <h2 style="font-family: 'Be Vietnam Pro', sans-serif; font-size: 1.35rem; font-weight: 800; color: #0f172a; margin: 0; text-transform: uppercase;">
                             <i class="fa fa-wrench" style="color: #C5A880; margin-right: 8px;"></i>
                             <?php _e('CÁC GÓI DỊCH VỤ TRỌNG TÂM', 'hieugara-motors'); ?>
                             <span style="font-size: 0.85rem; color: #64748b; font-weight: 600; margin-left: 6px;">(<?php echo count($child_services); ?>)</span>
@@ -131,20 +131,20 @@ $other_cats = get_terms(array(
                                             <img src="<?php echo esc_url($s_thumb); ?>" alt="<?php echo esc_attr($srv->post_title); ?>" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                                         </a>
                                         <?php if (!empty($s_badge)) : ?>
-                                            <span style="position: absolute; top: 10px; left: 10px; background: #0f1115; color: #C5A880; font-family: 'Chakra Petch', sans-serif; font-size: 0.65rem; font-weight: 800; padding: 3px 8px; border-radius: 2px; text-transform: uppercase; border-left: 3px solid #C5A880;">
+                                            <span style="position: absolute; top: 10px; left: 10px; background: #0f1115; color: #C5A880; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.65rem; font-weight: 800; padding: 3px 8px; border-radius: 2px; text-transform: uppercase; border-left: 3px solid #C5A880;">
                                                 <?php echo esc_html($s_badge); ?>
                                             </span>
                                         <?php endif; ?>
                                     </div>
 
                                     <div style="padding: 20px; display: flex; flex-direction: column; flex: 1;">
-                                        <h3 style="font-family: 'Chakra Petch', sans-serif; font-size: 1.1rem; font-weight: 800; color: #0f172a; margin: 0 0 10px; text-transform: uppercase; line-height: 1.35;">
+                                        <h3 style="font-family: 'Be Vietnam Pro', sans-serif; font-size: 1.1rem; font-weight: 800; color: #0f172a; margin: 0 0 10px; text-transform: uppercase; line-height: 1.35;">
                                             <a href="<?php echo esc_url($s_link); ?>" style="color: inherit; text-decoration: none;">
                                                 <?php echo esc_html($srv->post_title); ?>
                                             </a>
                                         </h3>
 
-                                        <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; font-size: 0.78rem; font-family: 'Chakra Petch', sans-serif;">
+                                        <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; font-size: 0.78rem; font-family: 'Be Vietnam Pro', sans-serif;">
                                             <span style="background: #fff7ed; color: #c2410c; padding: 2px 8px; border-radius: 3px; font-weight: 700;">
                                                 <i class="fa fa-tag" style="margin-right: 3px;"></i> <?php echo esc_html($s_price); ?>
                                             </span>
@@ -160,11 +160,11 @@ $other_cats = get_terms(array(
                                         </p>
 
                                         <div style="margin-top: auto; padding-top: 12px; border-top: 1px solid #f1f5f9; display: flex; gap: 8px;">
-                                            <a href="<?php echo esc_url($s_link); ?>" style="flex: 1; text-align: center; padding: 9px 12px; background: #0f172a; color: #ffffff; text-decoration: none; font-family: 'Chakra Petch', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; border-radius: 3px;">
+                                            <a href="<?php echo esc_url($s_link); ?>" style="flex: 1; text-align: center; padding: 9px 12px; background: #0f172a; color: #ffffff; text-decoration: none; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; border-radius: 3px;">
                                                 <?php _e('Chi tiết', 'hieugara-motors'); ?> &rarr;
                                             </a>
-                                            <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode($srv->post_title))); ?>" style="padding: 9px 12px; background: #C5A880; color: #ffffff; text-decoration: none; font-family: 'Chakra Petch', sans-serif; font-size: 0.8rem; font-weight: 700; border-radius: 3px;" title="Đặt lịch hẹn">
-                                                <i class="fa fa-calendar-check"></i>
+                                            <a href="tel:02203892207" style="padding: 9px 12px; background: #D4B996; color: #141414; text-decoration: none; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.8rem; font-weight: 700; border-radius: 3px;" title="Gọi tư vấn">
+                                                <i class="fa fa-phone"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -181,7 +181,7 @@ $other_cats = get_terms(array(
                 <!-- Editorial Content (if exists) -->
                 <?php if (!empty($prestige_data['html'])) : ?>
                     <article style="background: #ffffff; padding: 36px; border: 1px solid #ebebeb; box-shadow: 0 4px 20px rgba(0,0,0,0.04); margin-bottom: 30px;">
-                        <h2 style="font-family: 'Chakra Petch', sans-serif; font-size: 1.3rem; font-weight: 800; color: #0f172a; margin: 0 0 20px; text-transform: uppercase; border-bottom: 2px solid #C5A880; padding-bottom: 10px;">
+                        <h2 style="font-family: 'Be Vietnam Pro', sans-serif; font-size: 1.3rem; font-weight: 800; color: #0f172a; margin: 0 0 20px; text-transform: uppercase; border-bottom: 2px solid #C5A880; padding-bottom: 10px;">
                             <span style="color: #C5A880;">|</span> <?php _e('THÔNG TIN CHUYÊN MÔN & QUY CHUẨN KỸ THUẬT', 'hieugara-motors'); ?>
                         </h2>
                         <div class="entry-content" style="line-height: 1.85; color: #334155; font-size: 1rem;">
@@ -193,10 +193,10 @@ $other_cats = get_terms(array(
                 <!-- Workshop Guarantee Box -->
                 <div style="padding: 24px; background: #ffffff; border: 1px dashed #cbd5e1; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
                     <div>
-                        <strong style="font-family: 'Chakra Petch', sans-serif; font-size: 1rem; color: #141414; display: block; margin-bottom: 4px;"><?php _e('CẦN TƯ VẤN KỸ THUẬT TRỰC TIẾP?', 'hieugara-motors'); ?></strong>
+                        <strong style="font-family: 'Be Vietnam Pro', sans-serif; font-size: 1rem; color: #141414; display: block; margin-bottom: 4px;"><?php _e('CẦN TƯ VẤN KỸ THUẬT TRỰC TIẾP?', 'hieugara-motors'); ?></strong>
                         <span style="color: #5F6368; font-size: 0.9rem;"><?php _e('Đội ngũ kỹ thuật viên trưởng Ôtô Hải Hà hỗ trợ giải đáp trực tiếp 24/7.', 'hieugara-motors'); ?></span>
                     </div>
-                    <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="shiftup-rect-btn btn-orange-solid" style="background: #C5A880; color: #fff; padding: 12px 24px; text-decoration: none; font-family: 'Chakra Petch', sans-serif; font-weight: 700; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px;">
+                    <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="shiftup-rect-btn btn-orange-solid" style="background: #C5A880; color: #fff; padding: 12px 24px; text-decoration: none; font-family: 'Be Vietnam Pro', sans-serif; font-weight: 700; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px;">
                         <i class="fa fa-phone"></i> <?php echo esc_html($rescue_phone); ?>
                     </a>
                 </div>
@@ -206,31 +206,31 @@ $other_cats = get_terms(array(
             <!-- Right: Sticky Booking Form & Other Categories -->
             <aside class="service-sidebar" style="position: sticky; top: 120px;">
                 <div style="background: #ffffff; border: 2px solid #141414; padding: 32px; box-shadow: 0 12px 30px rgba(0,0,0,0.08); margin-bottom: 30px;">
-                    <div style="border-bottom: 2px solid #C5A880; padding-bottom: 16px; margin-bottom: 24px;">
-                        <span style="font-family: 'Chakra Petch', sans-serif; font-size: 0.75rem; font-weight: 800; color: #C5A880; text-transform: uppercase; letter-spacing: 1.5px;"><?php _e('ÔTÔ HẢI HÀ SERVICE', 'hieugara-motors'); ?></span>
-                        <h3 style="font-family: 'Chakra Petch', sans-serif; font-size: 1.35rem; font-weight: 800; color: #141414; text-transform: uppercase; margin: 6px 0 0;"><?php _e('ĐẶT HẸN DỊCH VỤ', 'hieugara-motors'); ?></h3>
+                    <div style="border-bottom: 2px solid #D4B996; padding-bottom: 16px; margin-bottom: 24px;">
+                        <span style="font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.75rem; font-weight: 800; color: #D4B996; text-transform: uppercase; letter-spacing: 1.5px;"><?php _e('ÔTÔ HẢI HÀ SERVICE', 'hieugara-motors'); ?></span>
+                        <h3 style="font-family: 'Be Vietnam Pro', sans-serif; font-size: 1.35rem; font-weight: 800; color: #141414; text-transform: uppercase; margin: 6px 0 0;"><?php _e('TƯ VẤN & BÁO GIÁ DỊCH VỤ', 'hieugara-motors'); ?></h3>
                     </div>
 
                     <form class="hieugara-ajax-form">
                         <input type="hidden" name="service_type" value="<?php echo esc_attr($page_title); ?>">
 
                         <div style="margin-bottom: 16px;">
-                            <label style="display: block; font-family: 'Chakra Petch', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; color: #222;"><?php _e('Họ và tên (*)', 'hieugara-motors'); ?></label>
+                            <label style="display: block; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; color: #222;"><?php _e('Họ và tên (*)', 'hieugara-motors'); ?></label>
                             <input type="text" name="customer_name" required placeholder="VD: Nguyễn Văn A" style="width: 100%; padding: 12px 14px; border: 1px solid #ccc; font-size: 0.95rem; font-family: inherit;">
                         </div>
 
                         <div style="margin-bottom: 16px;">
-                            <label style="display: block; font-family: 'Chakra Petch', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; color: #222;"><?php _e('Số điện thoại (*)', 'hieugara-motors'); ?></label>
+                            <label style="display: block; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; color: #222;"><?php _e('Số điện thoại (*)', 'hieugara-motors'); ?></label>
                             <input type="tel" name="customer_phone" required placeholder="09xx xxx xxx" style="width: 100%; padding: 12px 14px; border: 1px solid #ccc; font-size: 0.95rem; font-family: inherit;">
                         </div>
 
                         <div style="margin-bottom: 16px;">
-                            <label style="display: block; font-family: 'Chakra Petch', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; color: #222;"><?php _e('Dòng xe / Đời xe', 'hieugara-motors'); ?></label>
+                            <label style="display: block; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; color: #222;"><?php _e('Dòng xe / Đời xe', 'hieugara-motors'); ?></label>
                             <input type="text" name="car_model" placeholder="VD: Lexus RX350, Mercedes C200..." style="width: 100%; padding: 12px 14px; border: 1px solid #ccc; font-size: 0.95rem; font-family: inherit;">
                         </div>
 
                         <div style="margin-bottom: 24px;">
-                            <label style="display: block; font-family: 'Chakra Petch', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; color: #222;"><?php _e('Xưởng tiếp nhận', 'hieugara-motors'); ?></label>
+                            <label style="display: block; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; color: #222;"><?php _e('Xưởng tiếp nhận', 'hieugara-motors'); ?></label>
                             <select name="branch_location" style="width: 100%; padding: 12px 14px; border: 1px solid #ccc; font-size: 0.95rem; font-family: inherit; background: #fff;">
                                 <option value="Trụ sở chính Ôtô Hải Hà">Trụ sở chính: Ôtô Hải Hà (Hải Dương)</option>
                                 <option value="Tiếp nhận sửa chữa lưu động">Tiếp nhận sửa chữa lưu động tận nơi</option>
@@ -238,8 +238,8 @@ $other_cats = get_terms(array(
                             </select>
                         </div>
 
-                        <button type="submit" class="shiftup-rect-btn btn-orange-solid" style="width: 100%; padding: 15px; background: #C5A880; color: #fff; border: none; font-family: 'Chakra Petch', sans-serif; font-size: 0.95rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
-                            <span class="btn-orange-bar" style="color: #fff;">|</span> + <?php _e('XÁC NHẬN TIẾP NHẬN XE', 'hieugara-motors'); ?>
+                        <button type="submit" class="shiftup-rect-btn btn-orange-solid" style="width: 100%; padding: 15px; background: #D4B996; color: #141414; border: none; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.95rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
+                            <span class="btn-orange-bar" style="color: #141414;">|</span> + <?php _e('GỬI YÊU CẦU TƯ VẤN & BÁO GIÁ', 'hieugara-motors'); ?>
                         </button>
                         <div class="form-response-msg" style="display:none; margin-top: 12px; font-size: 0.9rem; padding: 10px; text-align: center;"></div>
                     </form>
@@ -254,13 +254,13 @@ $other_cats = get_terms(array(
                 <!-- Other Categories Widget -->
                 <?php if (!empty($other_cats) && !is_wp_error($other_cats)) : ?>
                     <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 24px; border-radius: 4px;">
-                        <h4 style="font-family: 'Chakra Petch', sans-serif; font-size: 1rem; font-weight: 800; color: #0f172a; margin: 0 0 16px; text-transform: uppercase; border-bottom: 2px solid #C5A880; padding-bottom: 8px;">
+                        <h4 style="font-family: 'Be Vietnam Pro', sans-serif; font-size: 1rem; font-weight: 800; color: #0f172a; margin: 0 0 16px; text-transform: uppercase; border-bottom: 2px solid #C5A880; padding-bottom: 8px;">
                             <?php _e('DANH MỤC DỊCH VỤ KHÁC', 'hieugara-motors'); ?>
                         </h4>
                         <ul style="list-style: none; padding: 0; margin: 0;">
                             <?php foreach ($other_cats as $oc) : ?>
                                 <li style="margin-bottom: 8px;">
-                                    <a href="<?php echo esc_url(home_url('/dich-vu/' . $oc->slug . '/')); ?>" style="display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: #f8fafc; color: #334155; text-decoration: none; font-family: 'Chakra Petch', sans-serif; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; border-radius: 3px; transition: all 0.2s ease;">
+                                    <a href="<?php echo esc_url(home_url('/dich-vu/' . $oc->slug . '/')); ?>" style="display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: #f8fafc; color: #334155; text-decoration: none; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; border-radius: 3px; transition: all 0.2s ease;">
                                         <span><?php echo esc_html($oc->name); ?></span>
                                         <span style="color: #C5A880;">&rsaquo;</span>
                                     </a>

@@ -214,8 +214,8 @@ $initial_cat = isset($_GET['cat']) ? sanitize_key($_GET['cat']) : 'all';
                                             <a href="<?php echo esc_url($link); ?>" class="btn-pk-detail" title="Xem thông số kỹ thuật &amp; mô tả">
                                                 Chi Tiết
                                             </a>
-                                            <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode('Lắp đặt phụ kiện: ' . $title))); ?>" class="btn-pk-book" title="Đặt lịch lắp đặt phụ kiện này">
-                                                <i class="fa-regular fa-calendar-check mr-1"></i> Đặt Lịch
+                                            <a href="tel:02203892207" class="btn-pk-book" title="Gọi tư vấn phụ kiện này" style="background: #D4B996; color: #141414;">
+                                                <i class="fa-solid fa-phone mr-1"></i> Tư Vấn
                                             </a>
                                         </div>
                                     </div>

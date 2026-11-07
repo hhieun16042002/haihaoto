@@ -94,9 +94,6 @@ $page_desc  = is_category() ? category_description() : __('Tổng hợp kiến t
                                 <a href="<?php the_permalink(); ?>" class="hp-blog-readmore">
                                     <?php _e('Đọc chi tiết', 'hieugara-motors'); ?> <i class="fa-solid fa-arrow-right-long"></i>
                                 </a>
-                                <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode(get_the_title()))); ?>" class="hp-blog-book-btn">
-                                    <i class="fa-solid fa-calendar-plus"></i> <?php _e('Đặt lịch', 'hieugara-motors'); ?>
-                                </a>
                             </div>
                         </div>
                     </article>
@@ -109,7 +106,7 @@ $page_desc  = is_category() ? category_description() : __('Tổng hợp kiến t
 
         <?php else : ?>
             <div class="text-center" style="background: #FFFFFF; border-radius: 16px; padding: 60px 24px; border: 1px solid #E5E7EB; max-width: 640px; margin: 0 auto;">
-                <div style="width: 72px; height: 72px; background: #FEF3C7; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2rem; color: #D97706;">
+                <div style="width: 72px; height: 72px; background: #F5EBE1; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2rem; color: #7A5C34;">
                     <i class="fa-regular fa-folder-open"></i>
                 </div>
                 <h2 style="font-size: 1.4rem; color: #141414; font-weight: 700; margin-bottom: 10px;">
@@ -119,11 +116,11 @@ $page_desc  = is_category() ? category_description() : __('Tổng hợp kiến t
                     <?php _e('Kỹ thuật viên Ô Tô Hải Hà đang chuẩn bị nội dung chuyên môn cho chuyên mục này. Quý khách vui lòng tham khảo các bài viết khác hoặc liên hệ hotline để được tư vấn trực tiếp.', 'hieugara-motors'); ?>
                 </p>
                 <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
-                    <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="btn-gara" style="background: #FFB81C; color: #141414; font-weight: 700; padding: 10px 24px; border-radius: 8px; text-decoration: none;">
+                    <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="btn-gara" style="background: #D4B996; color: #141414; font-weight: 700; padding: 10px 24px; border-radius: 8px; text-decoration: none;">
                         <?php _e('Xem Tất Cả Bài Viết', 'hieugara-motors'); ?>
                     </a>
-                    <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>" class="btn-gara" style="background: #141414; color: #FFFFFF; font-weight: 700; padding: 10px 24px; border-radius: 8px; text-decoration: none;">
-                        <?php _e('Đặt Lịch Tư Vấn', 'hieugara-motors'); ?>
+                    <a href="tel:02203892207" class="btn-gara" style="background: #141414; color: #FFFFFF; font-weight: 700; padding: 10px 24px; border-radius: 8px; text-decoration: none;">
+                        <i class="fa-solid fa-phone"></i> <?php _e('Gọi Tư Vấn Kỹ Thuật', 'hieugara-motors'); ?>
                     </a>
                 </div>
             </div>
