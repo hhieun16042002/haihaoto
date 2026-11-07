@@ -75,37 +75,163 @@ body.wp-admin {
 }
 
 /* ==========================================================================
-   3. ADMIN SIDEBAR (MENU)
+   3. ADMIN SIDEBAR (MENU) - BOTBLE ENTERPRISE STYLE
    ========================================================================== */
 #adminmenuback,
 #adminmenuwrap,
 #adminmenu {
-    background-color: #0b0f19 !important;
+    background-color: #0f172a !important;
 }
 
+/* Botble Workspace Brand Card at Top */
+.botble-brand-card {
+    padding: 14px 12px 10px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    margin-bottom: 6px !important;
+    cursor: default !important;
+    pointer-events: none !important;
+}
+
+.botble-brand-inner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 7px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.botble-brand-badge {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    flex-shrink: 0;
+}
+
+.botble-brand-badge .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+}
+
+.botble-brand-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.botble-brand-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+}
+
+.botble-brand-tag {
+    font-size: 9.5px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+}
+
+/* Botble Section Group Headings */
+#adminmenu li.botble-section-item {
+    height: auto !important;
+    margin: 14px 0 4px 0 !important;
+    padding: 0 14px !important;
+    background: transparent !important;
+    border: none !important;
+    pointer-events: none !important;
+}
+
+#adminmenu li.botble-section-item:first-of-type {
+    margin-top: 4px !important;
+}
+
+#adminmenu li.botble-section-item .botble-section-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#adminmenu li.botble-section-item .botble-section-label span {
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    color: #64748b !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    white-space: nowrap !important;
+}
+
+#adminmenu li.botble-section-item .botble-section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* Botble Modern Rounded Menu Items */
 #adminmenu li.menu-top {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    border: none !important;
+    margin: 2px 8px !important;
+    border-radius: 7px !important;
+    transition: all 0.15s ease !important;
 }
 
 #adminmenu a.menu-top {
-    font-weight: 600;
-    font-size: 13.5px;
-    padding: 10px 12px;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    padding: 7px 10px !important;
     color: #94a3b8 !important;
-    transition: all 0.15s ease-in-out;
+    border-radius: 7px !important;
+    display: flex !important;
+    align-items: center !important;
+    line-height: 1.4 !important;
+    transition: all 0.15s ease !important;
 }
 
 #adminmenu a.menu-top:hover,
 #adminmenu li.menu-top:hover > a.menu-top {
     color: #ffffff !important;
-    background-color: #1e293b !important;
+    background-color: rgba(255, 255, 255, 0.07) !important;
 }
 
+#adminmenu li.menu-top div.wp-menu-image {
+    width: 20px !important;
+    height: 20px !important;
+    margin-right: 8px !important;
+    float: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+#adminmenu li.menu-top div.wp-menu-image:before {
+    font-size: 16px !important;
+    padding: 0 !important;
+    color: #94a3b8 !important;
+    transition: color 0.15s ease !important;
+}
+
+#adminmenu li.menu-top:hover div.wp-menu-image:before {
+    color: #ffffff !important;
+}
+
+/* Active State (Botble Blue Glow) */
 #adminmenu li.current > a.menu-top,
 #adminmenu li.wp-has-current-submenu > a.menu-top {
-    background: #1d4ed8 !important;
+    background: #2563eb !important;
     color: #ffffff !important;
-    font-weight: 700;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35) !important;
 }
 
 #adminmenu li.current div.wp-menu-image:before,
@@ -113,22 +239,59 @@ body.wp-admin {
     color: #ffffff !important;
 }
 
+/* Counter Badge (Pending Bookings) */
+#adminmenu .update-plugins {
+    background: #ef4444 !important;
+    color: #ffffff !important;
+    font-size: 10.5px !important;
+    font-weight: 700 !important;
+    border-radius: 999px !important;
+    padding: 2px 7px !important;
+    line-height: 1 !important;
+    margin-left: auto !important;
+    box-shadow: 0 2px 6px rgba(239, 68, 68, 0.4) !important;
+}
+
+/* Submenu Flyout (Clean Dark Floating Card) */
 #adminmenu .wp-submenu {
-    background-color: #080c14 !important;
-    border-left: 3px solid #1d4ed8;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    background-color: #0b1120 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5) !important;
+    padding: 6px !important;
+}
+
+#adminmenu .wp-submenu-head {
+    display: none !important;
+}
+
+#adminmenu .wp-submenu li {
+    margin: 1px 0 !important;
 }
 
 #adminmenu .wp-submenu a {
     color: #94a3b8 !important;
-    padding: 8px 16px;
-    font-size: 13px;
+    padding: 6px 12px !important;
+    font-size: 12.5px !important;
+    border-radius: 6px !important;
+    transition: all 0.15s ease !important;
 }
 
 #adminmenu .wp-submenu a:hover,
 #adminmenu .wp-submenu li.current a {
-    color: #1d4ed8 !important;
-    background-color: rgba(29, 78, 216, 0.08) !important;
+    color: #ffffff !important;
+    background-color: rgba(37, 99, 235, 0.15) !important;
+    font-weight: 500 !important;
+}
+
+#adminmenu .wp-submenu li.current a {
+    color: #60a5fa !important;
+}
+
+/* Folded State (Collapsed Menu) */
+body.folded #adminmenu .botble-brand-card,
+body.folded #adminmenu li.botble-section-item {
+    display: none !important;
 }
 
 /* ==========================================================================

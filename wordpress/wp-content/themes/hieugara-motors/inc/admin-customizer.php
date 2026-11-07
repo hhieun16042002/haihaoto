@@ -122,71 +122,200 @@ function hieugara_admin_customizer_notices() {
 }
 add_action('admin_notices', 'hieugara_admin_customizer_notices');
 
-// 4. Simplify & Reorder Admin Menu
+// 4. Register Botble-Inspired Section Separators
+function hieugara_register_botble_menu_separators() {
+    global $menu;
+
+    $separators = array(
+        array('title' => 'TỔNG QUAN',             'id' => 'botble-sep-overview'),
+        array('title' => 'HOẠT ĐỘNG XƯỞNG',       'id' => 'botble-sep-workshop'),
+        array('title' => 'DỊCH VỤ & PHỤ KIỆN',    'id' => 'botble-sep-catalog'),
+        array('title' => 'NỘI DUNG WEBSITE',      'id' => 'botble-sep-content'),
+        array('title' => 'CẤU HÌNH & HỆ THỐNG',   'id' => 'botble-sep-system'),
+    );
+
+    foreach ($separators as $sep) {
+        $menu[] = array(
+            $sep['title'],
+            'read',
+            $sep['id'],
+            '',
+            'wp-menu-separator botble-menu-section ' . $sep['id']
+        );
+    }
+}
+add_action('admin_menu', 'hieugara_register_botble_menu_separators', 8);
+
+// 5. Simplify & Reorder Admin Menu (Botble Clean Architecture)
 function hieugara_reorder_admin_menu($menu_order) {
     return array(
-        'index.php',                                    // Bảng điều khiển Hải Hà
-        'hieugara-media-hub',                           // Thư viện ảnh Gara theo nhóm
-        'garage-os-bookings',                           // Lịch hẹn khách hàng
-        'edit.php?post_type=garage_service',            // Dịch vụ & Bảng giá
-        'hieugara-theme-settings',                      // Cài đặt giao diện & Hotline
-        'garage-os-warranties',                         // Sổ bảo hành điện tử
-        'garage-os-orders',                             // Quản lý đơn sửa chữa
-        'upload.php',                                   // Kho file Media gốc
-        'edit.php?post_type=page',                      // Quản lý các trang
-        'edit.php',                                     // Tin tức & Blog
-        'users.php',                                    // Người dùng & Thợ
-        'options-general.php',                          // Cài đặt chung WordPress
+        // Group 1: Tổng quan
+        'botble-sep-overview',
+        'index.php',                                    // Bảng Điều Khiển
+
+        // Group 2: Hoạt động xưởng
+        'botble-sep-workshop',
+        'garage-os-bookings',                           // Lịch Hẹn Khách Hàng
+        'garage-os-warranties',                         // Sổ Bảo Hành Điện Tử
+        'garage-os-orders',                             // Đơn Sửa Chữa
+
+        // Group 3: Dịch vụ & Phụ kiện (Sắp xếp cạnh nhau, có đầy đủ Danh mục & CRUD)
+        'botble-sep-catalog',
+        'edit.php?post_type=garage_service',            // Dịch Vụ Kỹ Thuật (Danh mục + Thêm mới + Sửa)
+        'edit.php?post_type=garage_accessory',          // Phụ Kiện Ô Tô (Danh mục + Thêm mới + Sửa)
+
+        // Group 4: Nội dung website
+        'botble-sep-content',
+        'edit.php?post_type=page',                      // Quản Lý Trang Web
+        'edit.php',                                     // Tin Tức & Bài Viết
+        'hieugara-media-hub',                           // Thư Viện Ảnh Gara
+        'upload.php',                                   // Kho Tệp Tin Media
+
+        // Group 5: Cấu hình hệ thống
+        'botble-sep-system',
+        'hieugara-theme-settings',                      // Cài Đặt Hotline & Web
+        'users.php',                                    // Tài Khoản & Thợ
+        'options-general.php',                          // Cài Đặt Hệ Thống
+        'themes.php',                                   // Giao Diện
+        'plugins.php',                                  // Gói Mở Rộng
+        'tools.php',                                    // Công Cụ
     );
 }
 add_filter('custom_menu_order', '__return_true');
 add_filter('menu_order', 'hieugara_reorder_admin_menu');
 
-// 5. Clean up Menu Items & Rename for Garage Owner Clarity
+// 6. Clean up Menu Items & Rename to Crisp Botble Enterprise Style (No double emojis!)
 function hieugara_clean_admin_menu() {
-    global $menu, $submenu;
+    global $menu, $submenu, $wpdb;
 
-    // Remove clutter menus & disable Kanban
-    remove_menu_page('edit-comments.php'); // No blog comments needed for garage
-    remove_menu_page('garage-os-kanban');  // Đóng hoàn toàn mục Tiến độ Khoang xe Kanban
+    // Remove clutter menus & disable legacy duplicates
+    remove_menu_page('edit-comments.php');            // No blog comments needed for garage
+    remove_menu_page('garage-os-kanban');             // Đóng mục Kanban không dùng
+    remove_menu_page('hieugara-accessories-crud');    // Xóa triệt để menu phụ kiện thứ 2 bị trùng
     remove_submenu_page('garage-os-bookings', 'garage-os-kanban');
 
-    // Rename default menu items to friendly garage terms
+    // Count pending bookings for notification badge
+    $table_bookings = $wpdb->prefix . 'garage_bookings';
+    $pending_count = 0;
+    if ($wpdb->get_var("SHOW TABLES LIKE '$table_bookings'") === $table_bookings) {
+        $pending_count = (int) $wpdb->get_var("SELECT COUNT(*) FROM $table_bookings WHERE status = 'pending'");
+    }
+    $booking_badge = $pending_count > 0 ? ' <span class="update-plugins count-' . $pending_count . '"><span class="plugin-count">' . $pending_count . '</span></span>' : '';
+
+    // Rename default menu items to crisp, professional enterprise terms
     foreach ($menu as $key => $value) {
         if (isset($value[2])) {
             switch ($value[2]) {
                 case 'index.php':
-                    $menu[$key][0] = '🚗 Trung Tâm Hải Hà';
-                    break;
-                case 'edit.php?post_type=garage_service':
-                    $menu[$key][0] = '🔧 Dịch Vụ & Giá Niêm Yết';
-                    break;
-                case 'hieugara-theme-settings':
-                    $menu[$key][0] = '⚙️ Cài Đặt Hotline & Web';
+                    $menu[$key][0] = 'Bảng Điều Khiển';
+                    $menu[$key][6] = 'dashicons-dashboard';
                     break;
                 case 'garage-os-bookings':
-                    $menu[$key][0] = '📅 Lịch Hẹn Khách Hàng';
+                    $menu[$key][0] = 'Lịch Hẹn Khách Hàng' . $booking_badge;
+                    $menu[$key][6] = 'dashicons-calendar-alt';
                     break;
                 case 'garage-os-warranties':
-                    $menu[$key][0] = '🛡️ Sổ Bảo Hành';
+                    $menu[$key][0] = 'Sổ Bảo Hành Điện Tử';
+                    $menu[$key][6] = 'dashicons-shield';
                     break;
                 case 'garage-os-orders':
-                    $menu[$key][0] = '📋 Đơn Sửa Chữa';
+                    $menu[$key][0] = 'Đơn Sửa Chữa';
+                    $menu[$key][6] = 'dashicons-clipboard';
                     break;
-                case 'hieugara-media-hub':
-                    $menu[$key][0] = '🖼️ Thư Viện Ảnh Gara';
+                case 'edit.php?post_type=garage_service':
+                    $menu[$key][0] = 'Dịch Vụ Kỹ Thuật';
+                    $menu[$key][6] = 'dashicons-hammer';
                     break;
-                case 'upload.php':
-                    $menu[$key][0] = '📁 Kho File Media';
+                case 'edit.php?post_type=garage_accessory':
+                    $menu[$key][0] = 'Phụ Kiện Ô Tô';
+                    $menu[$key][6] = 'dashicons-car';
                     break;
                 case 'edit.php?post_type=page':
-                    $menu[$key][0] = '📄 Quản Lý Trang Web';
+                    $menu[$key][0] = 'Quản Lý Trang Web';
+                    $menu[$key][6] = 'dashicons-admin-page';
+                    break;
+                case 'edit.php':
+                    $menu[$key][0] = 'Tin Tức & Bài Viết';
+                    $menu[$key][6] = 'dashicons-edit';
+                    break;
+                case 'hieugara-media-hub':
+                    $menu[$key][0] = 'Thư Viện Ảnh Gara';
+                    $menu[$key][6] = 'dashicons-images-alt2';
+                    break;
+                case 'upload.php':
+                    $menu[$key][0] = 'Kho File Media';
+                    $menu[$key][6] = 'dashicons-admin-media';
+                    break;
+                case 'hieugara-theme-settings':
+                    $menu[$key][0] = 'Cài Đặt Hotline & Web';
+                    $menu[$key][6] = 'dashicons-admin-generic';
+                    break;
+                case 'users.php':
+                    $menu[$key][0] = 'Tài Khoản & Thợ';
+                    $menu[$key][6] = 'dashicons-admin-users';
+                    break;
+                case 'options-general.php':
+                    $menu[$key][0] = 'Cài Đặt Hệ Thống';
+                    $menu[$key][6] = 'dashicons-admin-settings';
+                    break;
+                case 'themes.php':
+                    $menu[$key][0] = 'Giao Diện';
+                    $menu[$key][6] = 'dashicons-admin-appearance';
+                    break;
+                case 'plugins.php':
+                    $menu[$key][0] = 'Gói Mở Rộng';
+                    $menu[$key][6] = 'dashicons-admin-plugins';
+                    break;
+                case 'tools.php':
+                    $menu[$key][0] = 'Công Cụ';
+                    $menu[$key][6] = 'dashicons-admin-tools';
                     break;
             }
         }
     }
 }
 add_action('admin_menu', 'hieugara_clean_admin_menu', 999);
+
+// 7. Inject Botble Section Headers & Top Brand Card
+function hieugara_admin_botble_sidebar_script() {
+    ?>
+    <script type="text/javascript">
+    (function($) {
+        $(document).ready(function() {
+            var titles = {
+                'botble-sep-overview': 'TỔNG QUAN',
+                'botble-sep-workshop': 'HOẠT ĐỘNG XƯỞNG',
+                'botble-sep-catalog':  'DỊCH VỤ & PHỤ KIỆN',
+                'botble-sep-content':  'NỘI DUNG WEBSITE',
+                'botble-sep-system':   'HỆ THỐNG & CẤU HÌNH'
+            };
+
+            $.each(titles, function(cls, label) {
+                var $el = $('#adminmenu li.' + cls);
+                if ($el.length) {
+                    $el.addClass('botble-section-item').html('<div class="botble-section-label"><span>' + label + '</span></div>');
+                }
+            });
+
+            // Prepend Botble-style Workspace Brand Header if not exists
+            if (!$('#adminmenu .botble-brand-card').length) {
+                var brandHtml = '<li class="botble-brand-card">' +
+                    '<div class="botble-brand-inner">' +
+                        '<div class="botble-brand-badge"><span class="dashicons dashicons-car"></span></div>' +
+                        '<div class="botble-brand-info">' +
+                            '<strong class="botble-brand-title">ÔTÔ HẢI HÀ</strong>' +
+                            '<span class="botble-brand-tag">WORKSHOP CMS</span>' +
+                        '</div>' +
+                    '</div>' +
+                '</li>';
+                $('#adminmenu').prepend(brandHtml);
+            }
+        });
+    })(jQuery);
+    </script>
+    <?php
+}
+add_action('admin_footer', 'hieugara_admin_botble_sidebar_script');
 
 // 6. Replace Default Dashboard with Ôtô Hải Hà Command Center
 function hieugara_customize_dashboard_widgets() {

@@ -162,18 +162,7 @@ require_once HIEUGARA_THEME_DIR . '/inc/admin-customizer.php';
 require_once HIEUGARA_THEME_DIR . '/inc/seo-architecture.php';
 require_once HIEUGARA_THEME_DIR . '/inc/prestige-service-content.php';
 require_once HIEUGARA_THEME_DIR . '/inc/media-hub.php';
-require_once HIEUGARA_THEME_DIR . '/inc/accessories-crud.php';
 require_once HIEUGARA_THEME_DIR . '/inc/sample-accessories.php';
-
-// Auto-seed comprehensive META.vn accessories catalog if not yet initialized
-add_action('init', function() {
-    $saved = get_option('hieugara_accessories_items');
-    if ($saved === false || !is_array($saved) || count($saved) < 8) {
-        if (function_exists('hieugara_get_default_accessories_items')) {
-            update_option('hieugara_accessories_items', hieugara_get_default_accessories_items());
-        }
-    }
-}, 20);
 
 // 4. Helper Functions
 function hieugara_get_service_features($post_id) {
