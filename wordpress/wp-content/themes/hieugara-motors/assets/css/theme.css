@@ -1959,21 +1959,21 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     width: 100%;
-    min-height: 520px;
+    min-height: 620px;
 }
 
 .pano-banner-col {
     position: relative;
-    height: 520px;
+    height: clamp(560px, 44vw, 660px);
     overflow: hidden;
-    border: none !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.16) !important;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
 
 .pano-banner-col:last-child {
-    border: none !important;
+    border-right: none !important;
 }
 
 /* Background image with smooth zoom on hover */
@@ -1982,7 +1982,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     position: absolute;
     inset: 0;
     background-size: cover;
-    background-position: center;
+    background-position: center 54%;
     transform: scale(1);
     transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 0;
@@ -2044,7 +2044,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 .pano-base-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.45) 55%, rgba(0, 0, 0, 0.15) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.24) 45%, rgba(0, 0, 0, 0.06) 100%);
     z-index: 1;
     transition: opacity 0.3s ease;
 }
@@ -2142,6 +2142,12 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     font-size: 0.95rem;
     line-height: 1.6;
     margin: 0 0 8px;
+    min-height: 3.2em;
+    max-height: 3.2em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .pano-text-ghost {
@@ -8213,18 +8219,13 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 
 /* 3. Section 6: Panoramic Banners */
 .shiftup-panoramic-banners .pano-banner-col {
-    opacity: 0;
-    transform: translateY(35px);
-    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 1;
+    transform: translateY(0);
 }
 .shiftup-panoramic-banners.is-inview .pano-banner-col {
     opacity: 1;
     transform: translateY(0);
 }
-.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(1) { transition-delay: 0.06s; }
-.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(2) { transition-delay: 0.16s; }
-.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(3) { transition-delay: 0.26s; }
-.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(4) { transition-delay: 0.36s; }
 
 /* 4. Section 7: Diagnostics Technology Stations */
 .shiftup-flanked-diagnostics .flanked-head {
@@ -9123,31 +9124,18 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 
 /* 3. 4 Panoramic Workshop Columns (Sửa chữa, Bảo dưỡng, Đồng sơn, Chăm sóc xe) */
 .shiftup-panoramic-banners .pano-banner-col {
-    opacity: 0;
-    transform: translateY(64px) scale(0.96);
-    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: transform, opacity;
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 .shiftup-panoramic-banners.is-inview .pano-banner-col {
     opacity: 1;
     transform: translateY(0) scale(1);
 }
-.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(1) { transition-delay: 0.05s; }
-.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(2) { transition-delay: 0.17s; }
-.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(3) { transition-delay: 0.29s; }
-.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(4) { transition-delay: 0.41s; }
 
 .shiftup-panoramic-banners .pano-content-wrap {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 1;
+    transform: translateY(0);
 }
-.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(1) .pano-content-wrap { opacity: 1; transform: translateY(0); transition-delay: 0.22s; }
-.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(2) .pano-content-wrap { opacity: 1; transform: translateY(0); transition-delay: 0.34s; }
-.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(3) .pano-content-wrap { opacity: 1; transform: translateY(0); transition-delay: 0.46s; }
-.shiftup-panoramic-banners.is-inview .pano-banner-col:nth-child(4) .pano-content-wrap { opacity: 1; transform: translateY(0); transition-delay: 0.58s; }
 
 /* 4. Gallery – Hình Ảnh Ôtô Hải Hà (#hinh-anh-oto-hai-ha) */
 .shiftup-gallery-section .gallery-eyebrow {
