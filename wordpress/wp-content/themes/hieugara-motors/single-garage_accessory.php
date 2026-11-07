@@ -92,7 +92,7 @@ while (have_posts()) : the_post();
                             <i class="fa-solid fa-shield-halved text-gold"></i>
                             <div>
                                 <strong>100% Chính Hãng</strong>
-                                <small>Đền 200% nếu phát hiện giả</small>
+                                <small>Hoàn tiền 100% nếu phát hiện giả</small>
                             </div>
                         </div>
                         <div class="trust-cell">

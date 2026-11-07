@@ -16,7 +16,7 @@ function hieugara_get_prestige_footer_box() {
         <h4 style="font-family: \'Be Vietnam Pro\', sans-serif; font-size: 1.05rem; font-weight: 800; color: #0c1e3a; margin: 0 0 10px; text-transform: uppercase;">
             TRUNG TÂM BẢO DƯỠNG VÀ SỬA CHỮA Ô TÔ CAO CẤP ÔTÔ HẢI HÀ
         </h4>
-        <p style="margin: 0 0 6px; color: #334155; font-size: 0.95rem;"><strong>Địa chỉ:</strong> Km 53+300 Quốc lộ 5 (Chiều Hà Nội – Hải Phòng), Phường Cẩm Thượng, TP. Hải Dương</p>
+        <p style="margin: 0 0 6px; color: #334155; font-size: 0.95rem;"><strong>Địa chỉ:</strong> Km3+500 Đường Nguyễn Lương Bằng, Phường Bình Hàn, TP. Hải Dương</p>
         <p style="margin: 0 0 6px; color: #334155; font-size: 0.95rem;"><strong>Hotline Cứu Hộ &amp; Tư Vấn 24/7:</strong> <a href="tel:' . esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)) . '" style="color: #1d4ed8; font-weight: 700; text-decoration: none;">' . esc_html($rescue_phone) . '</a></p>
     </div>';
 }
@@ -92,7 +92,7 @@ function hieugara_get_prestige_service_data($slug) {
             'price'    => 'Theo cấp bảo dưỡng (5.000km - 40.000km+)',
             'html'     => '
                 <p>Giống như cơ thể con người cần được thăm khám sức khỏe, xe của bạn cũng cần được “chăm sóc” đúng lịch trình để duy trì phong độ đỉnh cao. Bảo dưỡng ô tô không chỉ giúp động cơ vận hành mượt mà, tiết kiệm nhiên liệu mà còn là biện pháp ngăn chặn sớm những hỏng hóc nghiêm trọng, giúp bạn tiết kiệm tối đa chi phí sửa chữa sau này.</p>
-                <p>Là trung tâm dịch vụ ô tô cao cấp hàng đầu tại khu vực Hải Dương (Km 53+300 Quốc lộ 5, Phường Cẩm Thượng, TP. Hải Dương), <strong>Ôtô Hải Hà</strong> mang đến quy trình bảo dưỡng định kỳ chuẩn hãng. Chúng tôi cung cấp các gói bảo dưỡng linh hoạt theo số kilomet (5.000km, 10.000km, 20.000km, 40.000km…) hoặc theo thời gian sử dụng, đáp ứng hoàn hảo tiêu chuẩn khắt khe của các dòng xe từ phổ thông đến cao cấp.</p>
+                <p>Là trung tâm dịch vụ ô tô uy tín hàng đầu tại khu vực Hải Dương (Km3+500 Đường Nguyễn Lương Bằng, Phường Bình Hàn, TP. Hải Dương), <strong>Ôtô Hải Hà</strong> mang đến quy trình bảo dưỡng định kỳ chuẩn hãng. Chúng tôi cung cấp các gói bảo dưỡng linh hoạt theo số kilomet (5.000km, 10.000km, 20.000km, 40.000km…) hoặc theo thời gian sử dụng, đáp ứng hoàn hảo tiêu chuẩn khắt khe của các dòng xe từ phổ thông đến cao cấp.</p>
 
                 <h3 style="font-family: \'Be Vietnam Pro\', sans-serif; font-size: 1.3rem; font-weight: 800; color: #0c1e3a; margin: 28px 0 14px; text-transform: uppercase;">
                     <span style="color: #1d4ed8;">|</span> Chi Tiết Các Hạng Mục Bảo Dưỡng Cốt Lõi Tại Ôtô Hải Hà
@@ -132,7 +132,7 @@ function hieugara_get_prestige_service_data($slug) {
             'price'    => 'Kiểm tra chẩn đoán & Báo giá minh bạch',
             'html'     => '
                 <p>Chiếc xe hơi không chỉ là phương tiện di chuyển mà còn là tài sản và người bạn đồng hành bảo vệ sự an toàn cho cả gia đình bạn trên mọi hành trình. Sau một thời gian dài vận hành hoặc do tác động của điều kiện thời tiết, đường sá khắc nghiệt, xế cưng của bạn khó tránh khỏi những hao mòn và hỏng hóc kỹ thuật.</p>
-                <p>Hiểu được tầm quan trọng của việc duy trì hiệu suất vận hành hoàn hảo, <strong>Ôtô Hải Hà</strong> mang đến giải pháp sửa chữa ô tô toàn diện và chuyên sâu. Tọa lạc tại Km 53+300 Quốc lộ 5, Phường Cẩm Thượng, TP. Hải Dương, chúng tôi tự hào là điểm đến tin cậy của cộng đồng yêu xe, đặc biệt là các dòng xe phổ thông và xe cao cấp, nhờ đội ngũ chuyên gia giàu kinh nghiệm và hệ thống trang thiết bị chẩn đoán hiện đại bậc nhất.</p>
+                <p>Hiểu được tầm quan trọng của việc duy trì hiệu suất vận hành hoàn hảo, <strong>Ôtô Hải Hà</strong> mang đến giải pháp sửa chữa ô tô toàn diện và chuyên sâu. Tọa lạc tại Km3+500 Đường Nguyễn Lương Bằng, Phường Bình Hàn, TP. Hải Dương, chúng tôi tự hào là điểm đến tin cậy của cộng đồng yêu xe, đặc biệt là các dòng xe phổ thông và xe cao cấp, nhờ đội ngũ chuyên gia giàu kinh nghiệm và hệ thống trang thiết bị chẩn đoán hiện đại bậc nhất.</p>
 
                 <h3 style="font-family: \'Be Vietnam Pro\', sans-serif; font-size: 1.3rem; font-weight: 800; color: #0c1e3a; margin: 28px 0 14px; text-transform: uppercase;">
                     <span style="color: #1d4ed8;">|</span> Các Hạng Mục Sửa Chữa Trọng Tâm Tại Ôtô Hải Hà
@@ -263,7 +263,7 @@ function hieugara_get_prestige_service_data($slug) {
             'price'    => 'Theo cấu hình phụ kiện chính hãng',
             'html'     => '
                 <p>Một chiếc xe nguyên bản từ nhà sản xuất đôi khi chưa thể đáp ứng trọn vẹn gu thẩm mỹ cá nhân hay những đòi hỏi khắt khe về tiện nghi, an toàn và cảm giác lái của chủ nhân. Nâng cấp và độ xe ô tô chính là nghệ thuật biến phương tiện di chuyển hàng ngày trở thành một tác phẩm mang đậm dấu ấn cá nhân, đồng thời tối ưu hóa trải nghiệm trên mọi cung đường.</p>
-                <p>Tọa lạc tại Km 53+300 Quốc lộ 5, Phường Cẩm Thượng, TP. Hải Dương, <strong>Ôtô Hải Hà</strong> là địa chỉ uy tín hàng đầu chuyên cung cấp các giải pháp nâng cấp và độ xe ô tô từ cơ bản đến chuyên sâu. Chúng tôi kết hợp hoàn hảo giữa thiết bị công nghệ chính hãng, tư duy thẩm mỹ hiện đại và kỹ thuật thi công chuẩn mực để mang lại diện mạo mới hoàn hảo cùng những tính năng vượt trội cho xế cưng của bạn.</p>
+                <p>Tọa lạc tại Km3+500 Đường Nguyễn Lương Bằng, Phường Bình Hàn, TP. Hải Dương, <strong>Ôtô Hải Hà</strong> là địa chỉ uy tín hàng đầu chuyên cung cấp các giải pháp nâng cấp và độ xe ô tô từ cơ bản đến chuyên sâu. Chúng tôi kết hợp hoàn hảo giữa thiết bị công nghệ chính hãng, tư duy thẩm mỹ hiện đại và kỹ thuật thi công chuẩn mực để mang lại diện mạo mới hoàn hảo cùng những tính năng vượt trội cho xế cưng của bạn.</p>
 
                 <h3 style="font-family: \'Be Vietnam Pro\', sans-serif; font-size: 1.3rem; font-weight: 800; color: #0c1e3a; margin: 28px 0 14px; text-transform: uppercase;">
                     <span style="color: #1d4ed8;">|</span> Các Hạng Mục Nâng Cấp và Độ Xe Tại Ôtô Hải Hà

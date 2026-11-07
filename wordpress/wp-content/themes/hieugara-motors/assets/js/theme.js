@@ -620,7 +620,7 @@
                 error: function() {
                     $msgBox.html(
                         '<div style="color: #b91c1c; background: #fff1f2; border: 1px solid #fecdd3; padding: 14px; border-radius: 8px; margin-top: 15px;">' +
-                        'Hệ thống đang bận. Quý khách vui lòng gọi Hotline <strong>0123 456 789</strong> để được tiếp nhận ngay!' +
+                        'Hệ thống đang bận. Quý khách vui lòng gọi Hotline <strong>0911 211 996</strong> để được tiếp nhận ngay!' +
                         '</div>'
                     ).fadeIn();
                 },

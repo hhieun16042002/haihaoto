@@ -106,7 +106,7 @@ get_header();
                 <div class="commit-card">
                     <div class="commit-num">01</div>
                     <h4>100% Phụ Tùng Chính Hãng</h4>
-                    <p>Mọi linh kiện, dầu nhớt và phụ tùng thay thế đều có tem kiểm định, hóa đơn xuất xứ rõ ràng. Đền gấp 10 lần nếu phát hiện hàng giả.</p>
+                    <p>Mọi linh kiện, dầu nhớt và phụ tùng thay thế đều có tem kiểm định, hóa đơn xuất xứ rõ ràng. Hoàn tiền 100% nếu phát hiện hàng giả, hàng nhái.</p>
                 </div>
                 <div class="commit-card">
                     <div class="commit-num">02</div>

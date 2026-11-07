@@ -382,8 +382,8 @@ function hieugara_render_theme_settings_page() {
     $topbar_email  = get_option('hieugara_topbar_email', 'service@haiha-auto.vn');
     $topbar_hours  = get_option('hieugara_topbar_hours', '08:00 - 18:00 (T2 - CN)');
     $topbar_system = get_option('hieugara_topbar_system', 'Hệ thống xưởng dịch vụ toàn quốc');
-    $rescue_phone  = get_option('hieugara_rescue_phone', '0123.456.789');
-    $hotline_phone = get_option('hieugara_hotline_phone', '0123 456 789');
+    $rescue_phone  = get_option('hieugara_rescue_phone', '0911 211 996');
+    $hotline_phone = get_option('hieugara_hotline_phone', '02203 892 207');
     $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh/'));
     $menu_search   = get_option('hieugara_menu_search_enable', '1');
 
