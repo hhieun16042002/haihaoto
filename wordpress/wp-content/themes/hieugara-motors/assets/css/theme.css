@@ -669,14 +669,16 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     box-shadow: 0 6px 20px rgba(20, 20, 20, 0.18);
 }
 
-.custom-navbar-strip.is-sticky {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 10px 28px rgba(20, 20, 20, 0.28);
-    border-top: none;
+@media (min-width: 992px) {
+    .custom-navbar-strip.is-sticky {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 10px 28px rgba(20, 20, 20, 0.28);
+        border-top: none;
+    }
 }
 
 .custom-navbar-inner {
@@ -4953,6 +4955,8 @@ p, span, a, li, th, td, label, blockquote, figcaption {
         border: 1px solid rgba(255, 255, 255, 0.06) !important;
         color: #ffffff !important;
         text-decoration: none !important;
+        width: 100% !important;
+        max-width: none !important;
         min-height: 52px !important;
         height: auto !important;
         box-shadow: none !important;
@@ -9706,15 +9710,23 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 @media (max-width: 991px) {
     .mobile-only-brand-header {
         display: block !important;
-        background: #141414 !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+        background: rgba(15, 17, 20, 0.94) !important;
+        backdrop-filter: blur(14px) !important;
+        -webkit-backdrop-filter: blur(14px) !important;
+        border-bottom: 1px solid rgba(201, 163, 129, 0.16) !important;
         padding: 9px 0 !important;
+        transition: background 250ms ease, border-color 250ms ease, box-shadow 250ms ease !important;
+    }
+    .mobile-only-brand-header.is-scrolled {
+        background: rgba(10, 12, 15, 0.98) !important;
+        border-bottom: 1px solid rgba(201, 163, 129, 0.36) !important;
+        box-shadow: 0 6px 22px rgba(0, 0, 0, 0.45) !important;
     }
     .mobile-only-brand-header .brand-title {
         color: #ffffff !important;
     }
     .mobile-only-brand-header .brand-title .text-orange {
-        color: #ffffff !important;
+        color: #C5A880 !important;
     }
     .mobile-quick-call {
         background: #D92D20 !important;
@@ -9746,31 +9758,58 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 }
 
 /* 2. Unified Desktop Navbar Bar (Ductri226 Frosted Obsidian + Scroll Transition) */
-.custom-navbar-strip {
-    background: rgba(15, 17, 20, 0.94) !important;
-    backdrop-filter: blur(14px) saturate(1.2) !important;
-    -webkit-backdrop-filter: blur(14px) saturate(1.2) !important;
-    border-top: none !important;
-    border-bottom: 1px solid rgba(201, 163, 129, 0.16) !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
-    transition: background 280ms cubic-bezier(0.16, 1, 0.3, 1),
-                border-color 280ms cubic-bezier(0.16, 1, 0.3, 1),
-                box-shadow 280ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+.custom-nav-menu > .nav-item::before {
+    display: none !important;
 }
 
-.custom-navbar-strip.is-sticky,
-.custom-navbar-strip.is-scrolled {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    z-index: 1000 !important;
-    background: rgba(10, 12, 15, 0.98) !important;
-    border-bottom: 1px solid rgba(201, 163, 129, 0.36) !important;
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45) !important;
+.drawer-name .text-orange,
+.drawer-name strong {
+    color: #C5A880 !important;
+}
+
+@media (max-width: 991px) {
+    .custom-navbar-strip,
+    .custom-navbar-strip.is-sticky,
+    .custom-navbar-strip.is-scrolled {
+        left: auto !important;
+        right: -340px !important;
+        width: 320px !important;
+        max-width: 86vw !important;
+    }
+
+    .custom-navbar-strip.mobile-nav-open,
+    .custom-navbar-strip.is-sticky.mobile-nav-open,
+    .custom-navbar-strip.is-scrolled.mobile-nav-open {
+        left: auto !important;
+        right: 0 !important;
+    }
 }
 
 @media (min-width: 992px) {
+    .custom-navbar-strip {
+        background: rgba(15, 17, 20, 0.94) !important;
+        backdrop-filter: blur(14px) saturate(1.2) !important;
+        -webkit-backdrop-filter: blur(14px) saturate(1.2) !important;
+        border-top: none !important;
+        border-bottom: 1px solid rgba(201, 163, 129, 0.16) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+        transition: background 280ms cubic-bezier(0.16, 1, 0.3, 1),
+                    border-color 280ms cubic-bezier(0.16, 1, 0.3, 1),
+                    box-shadow 280ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .custom-navbar-strip.is-sticky,
+    .custom-navbar-strip.is-scrolled {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        z-index: 1000 !important;
+        background: rgba(10, 12, 15, 0.98) !important;
+        border-bottom: 1px solid rgba(201, 163, 129, 0.36) !important;
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45) !important;
+    }
+
     .custom-navbar-inner {
         height: 68px !important;
         max-width: 1420px !important;

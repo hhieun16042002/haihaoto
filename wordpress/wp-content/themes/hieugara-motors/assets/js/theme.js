@@ -29,16 +29,26 @@
         // 1. Sticky Navigation Bar & Mobile Drawer (Ductri226 Scroll Elevate)
         // ==========================================================================
         var $mainNav = $('#mainStickyNavbar');
+        var $mobileHeader = $('.mobile-only-brand-header');
 
         function handleNavScroll() {
             var scrollPos = $(window).scrollTop();
-            if (scrollPos > 24) {
-                $mainNav.addClass('is-sticky is-scrolled');
+            if ($(window).width() >= 992) {
+                if (scrollPos > 24) {
+                    $mainNav.addClass('is-sticky is-scrolled');
+                } else {
+                    $mainNav.removeClass('is-sticky is-scrolled');
+                }
             } else {
                 $mainNav.removeClass('is-sticky is-scrolled');
+                if (scrollPos > 24) {
+                    $mobileHeader.addClass('is-scrolled');
+                } else {
+                    $mobileHeader.removeClass('is-scrolled');
+                }
             }
         }
-        $(window).on('scroll', handleNavScroll);
+        $(window).on('scroll resize', handleNavScroll);
         handleNavScroll();
 
         // Mobile Navigation Toggle & Drawer Controller
