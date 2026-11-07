@@ -160,7 +160,7 @@ if (!function_exists('hieugara_get_brand_logos')) {
                     'id'     => isset($item['id']) ? (int) $item['id'] : (int) $k,
                     'enable' => !empty($item['enable']) ? '1' : '0',
                     'name'   => sanitize_text_field($item['name']),
-                    'logo'   => esc_url_raw($item['logo']),
+                    'logo'   => function_exists('hieugara_normalize_local_media_urls') ? hieugara_normalize_local_media_urls($item['logo']) : esc_url_raw($item['logo']),
                     'grad1'  => !empty($item['grad1']) ? sanitize_hex_color($item['grad1']) : '#0c1e3a',
                     'grad2'  => !empty($item['grad2']) ? sanitize_hex_color($item['grad2']) : '#334155',
                     'url'    => !empty($item['url']) ? esc_url_raw($item['url']) : '#',
