@@ -129,18 +129,27 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                 </a>
             </li>
 
-            <!-- 2. GIỚI THIỆU ⌵ -->
+            <!-- 2. GIỚI THIỆU ⌵ (100% Dynamic CRUD from WP Admin) -->
             <li class="nav-item has-dropdown <?php echo is_page('ve-chung-toi') || is_page('garage-gan-ban') ? 'active' : ''; ?>">
                 <a href="<?php echo esc_url(home_url('/ve-chung-toi/')); ?>" class="nav-link" title="GIỚI THIỆU">
                     <span><?php _e('GIỚI THIỆU', 'hieugara-motors'); ?></span>
                     <i class="fa-solid fa-chevron-down nav-caret"></i>
                 </a>
                 <ul class="nav-dropdown-menu">
-                    <li><a href="<?php echo esc_url(home_url('/ve-chung-toi/')); ?>">Về Chúng Tôi</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/ve-chung-toi/#bao-chi')); ?>">Báo Chí Nói Về Ôtô Hải Hà</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/ve-chung-toi/#su-kien')); ?>">Sự Kiện Hải Hà</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/garage-gan-ban/')); ?>">Hệ Thống Chi Nhánh Toàn Quốc</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/ve-chung-toi/#tieu-chuan')); ?>">Tiêu Chuẩn &amp; Chứng Nhận Dịch Vụ</a></li>
+                    <?php
+                    $about_nav_items = function_exists('hieugara_get_about_menu_items') ? hieugara_get_about_menu_items() : array();
+                    foreach ($about_nav_items as $a_item) :
+                        if (empty($a_item['enable'])) continue;
+                    ?>
+                        <li>
+                            <a href="<?php echo esc_url($a_item['link']); ?>" target="<?php echo esc_attr($a_item['target'] ?? '_self'); ?>">
+                                <?php if (!empty($a_item['icon'])) : ?>
+                                    <i class="<?php echo esc_attr($a_item['icon']); ?>" style="color: #FFB81C; margin-right: 6px; width: 16px; text-align: center;"></i>
+                                <?php endif; ?>
+                                <?php echo esc_html($a_item['title']); ?>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
                 </ul>
             </li>
 

@@ -198,6 +198,7 @@ require_once HIEUGARA_THEME_DIR . '/inc/seo-architecture.php';
 require_once HIEUGARA_THEME_DIR . '/inc/prestige-service-content.php';
 require_once HIEUGARA_THEME_DIR . '/inc/media-hub.php';
 require_once HIEUGARA_THEME_DIR . '/inc/sample-accessories.php';
+require_once HIEUGARA_THEME_DIR . '/inc/about-menu-crud.php';
 
 // 4. Helper Functions
 function hieugara_get_service_features($post_id) {
