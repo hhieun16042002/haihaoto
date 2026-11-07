@@ -113,7 +113,14 @@ $table_prefix = getenv_docker('WORDPRESS_TABLE_PREFIX', 'wp_');
  *
  * @link https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/
  */
-define( 'WP_DEBUG', !!getenv_docker('WORDPRESS_DEBUG', '') );
+define( 'WP_DEBUG', false );
+define( 'WP_DEBUG_DISPLAY', false );
+define( 'WP_DEBUG_LOG', false );
+@ini_set( 'display_errors', '0' );
+
+if ( ! defined( 'DISALLOW_FILE_EDIT' ) ) {
+	define( 'DISALLOW_FILE_EDIT', true );
+}
 
 /* Add any custom values between this line and the "stop editing" line. */
 
@@ -121,11 +128,6 @@ define( 'WP_DEBUG', !!getenv_docker('WORDPRESS_DEBUG', '') );
 // see also https://wordpress.org/support/article/administration-over-ssl/#using-a-reverse-proxy
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false) {
 	$_SERVER['HTTPS'] = 'on';
-}
-// (we include this by default because reverse proxying is extremely common in container environments)
-
-if ($configExtra = getenv_docker('WORDPRESS_CONFIG_EXTRA', '')) {
-	eval($configExtra);
 }
 
 define( 'WP_CACHE', true );
@@ -140,15 +142,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 
-// Dynamic Home & Siteurl so external tunnels or LAN access works seamlessly
-if (isset($_SERVER['HTTP_HOST'])) {
-    $http_scheme = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false) ? 'https' : 'http';
-    if (!defined('WP_HOME')) {
-        define('WP_HOME', $http_scheme . '://' . $_SERVER['HTTP_HOST']);
+// Dynamic Home & Siteurl with strict host validation
+$safe_host = 'localhost:8080';
+$target_host = isset($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '');
+
+if (!empty($target_host) && preg_match('/^[a-zA-Z0-9.\-]+(?::[0-9]+)?$/', $target_host)) {
+    $host_domain = strtolower(explode(':', $target_host)[0]);
+    if (
+        $host_domain === 'localhost' ||
+        $host_domain === '127.0.0.1' ||
+        substr($host_domain, -16) === 'trycloudflare.com' ||
+        substr($host_domain, -14) === 'ngrok-free.app' ||
+        $host_domain === 'otohaiha.vn' ||
+        substr($host_domain, -11) === '.otohaiha.vn'
+    ) {
+        $safe_host = $target_host;
     }
-    if (!defined('WP_SITEURL')) {
-        define('WP_SITEURL', $http_scheme . '://' . $_SERVER['HTTP_HOST']);
-    }
+}
+
+$http_scheme = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false) ? 'https' : 'http';
+
+if (!defined('WP_HOME')) {
+    define('WP_HOME', $http_scheme . '://' . $safe_host);
+}
+if (!defined('WP_SITEURL')) {
+    define('WP_SITEURL', $http_scheme . '://' . $safe_host);
 }
 
 require_once ABSPATH . 'wp-settings.php';

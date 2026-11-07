@@ -238,6 +238,13 @@ $other_cats = get_terms(array(
                             </select>
                         </div>
 
+                        <div style="margin-bottom: 16px; display: flex; align-items: flex-start; gap: 8px; font-size: 0.8rem; color: #475569; line-height: 1.45;">
+                            <input type="checkbox" name="privacy_consent" value="1" required id="privacy_consent_cat" style="margin-top: 3px; accent-color: #8C6D46; cursor: pointer;">
+                            <label for="privacy_consent_cat" style="cursor: pointer;">
+                                Tôi đồng ý cho <strong>Ô Tô Hải Hà</strong> xử lý thông tin liên hệ để tư vấn và báo giá dịch vụ theo <a href="<?php echo esc_url(home_url('/chinh-sach-bao-mat/')); ?>" target="_blank" style="color: #8C6D46; text-decoration: underline; font-weight: 600;">Chính sách bảo vệ dữ liệu cá nhân</a>. *
+                            </label>
+                        </div>
+
                         <button type="submit" class="shiftup-rect-btn btn-orange-solid" style="width: 100%; padding: 15px; background: #D4B996; color: #141414; border: none; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.95rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
                             <span class="btn-orange-bar" style="color: #141414;">|</span> + <?php _e('GỬI YÊU CẦU TƯ VẤN & BÁO GIÁ', 'hieugara-motors'); ?>
                         </button>

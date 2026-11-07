@@ -326,7 +326,7 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
                     </button>
                     <div class="vf-faq-body" id="faq-ans-1" role="region" aria-labelledby="faq-q-1" hidden>
                         <div class="vf-faq-answer">
-                            <p class="vf-placeholder-note">[Chờ Ô Tô Hải Hà bổ sung câu trả lời chính thức]</p>
+                            <p>Xưởng tiếp nhận bảo dưỡng, sửa chữa máy - gầm - điện, chẩn đoán lỗi chuyên sâu và đồng sơn phục hồi cho toàn bộ các dòng xe VinFast chạy xăng (Fadil, Lux A2.0, Lux SA2.0, President) cũng như các dòng ô tô điện VinFast (VF e34, VF 3, VF 5 Plus, VF 6, VF 7, VF 8, VF 9) theo quy chuẩn dịch vụ đối tác VinFast.</p>
                         </div>
                     </div>
                 </div>
@@ -339,7 +339,7 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
                     </button>
                     <div class="vf-faq-body" id="faq-ans-2" role="region" aria-labelledby="faq-q-2" hidden>
                         <div class="vf-faq-answer">
-                            <p class="vf-placeholder-note">[Chờ Ô Tô Hải Hà bổ sung câu trả lời chính thức]</p>
+                            <p>100% phụ tùng thay thế định kỳ và sửa chữa xe VinFast tại Ô Tô Hải Hà đều là phụ tùng chính hãng được cung ứng theo hợp tác đối tác dịch vụ VinFast. Mọi phụ tùng và vật tư đều có tem kiểm định, hoá đơn chứng từ minh bạch và bảo hành theo đúng tiêu chuẩn nhà sản xuất.</p>
                         </div>
                     </div>
                 </div>
@@ -352,7 +352,7 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
                     </button>
                     <div class="vf-faq-body" id="faq-ans-3" role="region" aria-labelledby="faq-q-3" hidden>
                         <div class="vf-faq-answer">
-                            <p class="vf-placeholder-note">[Chờ Ô Tô Hải Hà bổ sung câu trả lời chính thức]</p>
+                            <p>Hoàn toàn không. Là đối tác dịch vụ chính thức của VinFast, toàn bộ quy trình bảo dưỡng và thay thế vật tư tại Ô Tô Hải Hà được thực hiện theo đúng tài liệu hướng dẫn kỹ thuật chuẩn hãng, lưu trữ lịch sử dịch vụ đầy đủ và bảo toàn quyền lợi bảo hành chính hãng của xe.</p>
                         </div>
                     </div>
                 </div>
@@ -365,7 +365,7 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
                     </button>
                     <div class="vf-faq-body" id="faq-ans-4" role="region" aria-labelledby="faq-q-4" hidden>
                         <div class="vf-faq-answer">
-                            <p class="vf-placeholder-note">[Chờ Ô Tô Hải Hà bổ sung câu trả lời chính thức]</p>
+                            <p>Ô Tô Hải Hà trang bị xe cứu hộ sàn trượt chuyên dụng, hỗ trợ kích điện và vận chuyển an toàn tuyệt đối cho các dòng xe điện VinFast gặp sự cố trên đường hoặc hết pin khẩn cấp tại Hải Dương và khu vực lân cận, phục vụ 24/7 qua Hotline <strong>0911 211 996</strong>.</p>
                         </div>
                     </div>
                 </div>
@@ -434,6 +434,7 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
                             referrerpolicy="strict-origin-when-cross-origin"
                             title="Bản đồ vị trí gara Ô Tô Hải Hà">
                         </iframe>
+                        <p style="font-size: 0.78rem; color: #64748b; margin-top: 8px; line-height: 1.4;">* Bản đồ chỉ đường được nhúng từ Google Maps. Khi tương tác với bản đồ, dữ liệu kết nối (địa chỉ IP) có thể được truyền tới máy chủ của Google theo Chính sách bảo vệ dữ liệu cá nhân.</p>
                     </div>
                     <div class="vf-map-actions">
                         <a href="https://maps.google.com/?cid=962452285112173913" target="_blank" rel="noopener" class="vf-btn vf-btn-outline vf-btn-sm">

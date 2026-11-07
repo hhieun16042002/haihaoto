@@ -211,12 +211,18 @@ $initial_cat = isset($_GET['cat']) ? sanitize_key($_GET['cat']) : 'all';
 
                                         <!-- Actions -->
                                         <div class="phukien-card-actions">
-                                            <a href="<?php echo esc_url($link); ?>" class="btn-pk-detail" title="Xem thông số kỹ thuật &amp; mô tả">
-                                                Chi Tiết
-                                            </a>
-                                            <a href="tel:02203892207" class="btn-pk-book" title="Gọi tư vấn phụ kiện này" style="background: #D4B996; color: #141414;">
-                                                <i class="fa-solid fa-phone mr-1"></i> Tư Vấn
-                                            </a>
+                                            <?php if (strpos($link, 'tel:') === 0) : ?>
+                                                <a href="tel:0911211996" class="btn-pk-book" title="Gọi tư vấn phụ kiện này" style="width: 100%; text-align: center; background: #D4B996; color: #141414; padding: 10px 14px; border-radius: 6px; font-weight: 700; text-decoration: none;">
+                                                    <i class="fa-solid fa-phone mr-1"></i> Gọi Tư Vấn Báo Giá
+                                                </a>
+                                            <?php else : ?>
+                                                <a href="<?php echo esc_url($link); ?>" class="btn-pk-detail" title="Xem thông số kỹ thuật &amp; mô tả">
+                                                    Chi Tiết
+                                                </a>
+                                                <a href="tel:0911211996" class="btn-pk-book" title="Gọi tư vấn phụ kiện này" style="background: #D4B996; color: #141414;">
+                                                    <i class="fa-solid fa-phone mr-1"></i> Tư Vấn
+                                                </a>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                 </article>

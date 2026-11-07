@@ -187,7 +187,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                     </div>
                     <div class="stat-divider"></div>
                     <h4 class="stat-title">NĂM UY TÍN (1995 - 2026)</h4>
-                    <p class="stat-desc">Garage gia truyền lâu đời nhất, khẳng định chất lượng qua 3 thập kỷ phục vụ tận tâm.</p>
+                    <p class="stat-desc">Garage uy tín lâu năm hàng đầu tại Hải Dương, khẳng định chất lượng qua hơn 3 thập kỷ phục vụ tận tâm.</p>
                 </div>
 
                 <div class="milestone-stat-card">

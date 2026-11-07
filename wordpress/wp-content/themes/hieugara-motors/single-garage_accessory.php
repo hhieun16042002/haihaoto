@@ -224,7 +224,7 @@ while (have_posts()) : the_post();
 
                         <!-- Garage Contact Strip -->
                         <div class="acc-garage-contact">
-                            <div><i class="fa-solid fa-location-dot text-gold mr-1"></i> Xưởng: Km 53+300 Quốc Lộ 5, TP. Hải Dương</div>
+                            <div><i class="fa-solid fa-location-dot text-gold mr-1"></i> Xưởng: Km3+500 Đường Nguyễn Lương Bằng, TP. Hải Dương</div>
                             <div><i class="fa-solid fa-clock text-gold mr-1"></i> Làm việc: 7h30 - 18h30 (Tất cả các ngày trong tuần)</div>
                         </div>
 

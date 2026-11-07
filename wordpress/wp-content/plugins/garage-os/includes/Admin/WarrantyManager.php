@@ -8,6 +8,9 @@ if (!defined('ABSPATH')) {
 class WarrantyManager {
 
     public static function render() {
+        if (!current_user_can('manage_options')) {
+            wp_die(__('Bạn không có quyền truy cập trang quản lý này.', 'garage-os'));
+        }
         global $wpdb;
         $table_warranties = $wpdb->prefix . 'garage_warranties';
 

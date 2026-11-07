@@ -260,12 +260,26 @@ function hieugara_init_accessories_system() {
 }
 add_action('init', 'hieugara_init_accessories_system', 20);
 
-// 5d. Universal Dynamic Image URL Translation (Localhost + Tunnel + Public Domain)
+// 5d. Universal Dynamic Image URL Translation (Localhost + Tunnel + Public Domain) with strict host validation
 function hieugara_normalize_local_media_urls($content) {
     if (empty($content) || !is_string($content)) {
         return $content;
     }
-    $current_host = $_SERVER['HTTP_X_FORWARDED_HOST'] ?? ($_SERVER['HTTP_HOST'] ?? 'localhost:8080');
+    $raw_host = $_SERVER['HTTP_X_FORWARDED_HOST'] ?? ($_SERVER['HTTP_HOST'] ?? 'localhost:8080');
+    $current_host = 'localhost:8080';
+    if (preg_match('/^[a-zA-Z0-9.\-]+(?::[0-9]+)?$/', $raw_host)) {
+        $host_domain = strtolower(explode(':', $raw_host)[0]);
+        if (
+            $host_domain === 'localhost' ||
+            $host_domain === '127.0.0.1' ||
+            substr($host_domain, -16) === 'trycloudflare.com' ||
+            substr($host_domain, -14) === 'ngrok-free.app' ||
+            $host_domain === 'otohaiha.vn' ||
+            substr($host_domain, -11) === '.otohaiha.vn'
+        ) {
+            $current_host = $raw_host;
+        }
+    }
     $is_https = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ||
                 (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https');
     $current_origin = ($is_https ? 'https' : 'http') . '://' . $current_host;
@@ -283,6 +297,18 @@ function hieugara_normalize_local_media_urls($content) {
 add_filter('the_content', 'hieugara_normalize_local_media_urls', 99);
 add_filter('post_thumbnail_html', 'hieugara_normalize_local_media_urls', 99);
 add_filter('wp_get_attachment_url', 'hieugara_normalize_local_media_urls', 99);
+
+// 5e. Security Headers & X-Powered-By removal
+function hieugara_send_security_headers() {
+    if (!headers_sent()) {
+        @header_remove('X-Powered-By');
+        header('X-Content-Type-Options: nosniff');
+        header('X-Frame-Options: SAMEORIGIN');
+        header('Referrer-Policy: strict-origin-when-cross-origin');
+        header('Permissions-Policy: geolocation=(self), microphone=(), camera=()');
+    }
+}
+add_action('send_headers', 'hieugara_send_security_headers');
 
 // 6. SEO Search Optimization: Include Services, Accessories, Posts & Pages in Frontend Search
 function hieugara_seo_search_query($query) {

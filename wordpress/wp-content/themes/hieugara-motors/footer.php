@@ -176,7 +176,16 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                 <span class="sep">•</span>
                 <a href="<?php echo esc_url(home_url('/bang-gia/')); ?>">Bảng Giá</a>
                 <span class="sep">•</span>
+                <a href="<?php echo esc_url(home_url('/chinh-sach-bao-mat/')); ?>" style="color: #D4B996; font-weight: 700;">Chính Sách Bảo Mật &amp; Pháp Lý</a>
+                <span class="sep">•</span>
                 <a href="<?php echo esc_url(home_url('/ve-chung-toi/#lien-he')); ?>">Liên Hệ</a>
+            </div>
+
+            <!-- Legal Entity Compliance Block (Luật TMĐT 122/2025/QH15 & Nghị định 52/2013/NĐ-CP) -->
+            <div style="font-size: 0.78rem; color: #94a3b8; margin: 12px 0 6px; line-height: 1.6; text-align: center;">
+                <strong>Đơn vị chủ quản:</strong> TRUNG TÂM DỊCH VỤ KỸ THUẬT Ô TÔ HẢI HÀ (GARA Ô TÔ HẢI HÀ) &bull; 
+                <strong>Địa chỉ:</strong> Km3+500 Đường Nguyễn Lương Bằng, Phường Bình Hàn, TP. Hải Dương &bull; 
+                <strong>Tổng đài:</strong> 02203 892 207 &bull; <strong>Hotline cứu hộ:</strong> 0911 211 996
             </div>
 
             <div class="bottom-back-to-top">

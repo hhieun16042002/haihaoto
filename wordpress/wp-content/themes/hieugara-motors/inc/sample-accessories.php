@@ -179,7 +179,7 @@ RAM / ROM: 6GB / 128GB
 Chip xử lý: Octa-core UIS7862 8 nhân 1.8GHz
 Tích hợp: Camera 360 toàn cảnh ghi hình 4 góc, Vietmap Live, Kiki AI",
             'content'     => '<h3>Tổng quan sản phẩm Màn hình Android Zestech Z800 Pro+ 360</h3>
-<p><strong>Màn hình Android Zestech Z800 Pro+ 360</strong> là dòng màn hình ô tô thông minh cao cấp nhất hiện nay, tích hợp liền camera 360 độ siêu nét giúp người lái vừa giải trí đa phương tiện đỉnh cao vừa quan sát toàn cảnh an toàn tuyệt đối.</p>
+<p><strong>Màn hình Android Zestech Z800 Pro+ 360</strong> là dòng màn hình ô tô thông minh cao cấp hàng đầu hiện nay, tích hợp liền camera 360 độ siêu nét giúp người lái vừa giải trí đa phương tiện đỉnh cao vừa quan sát toàn cảnh an toàn tối ưu.</p>
 <h3>Ưu điểm vượt trội:</h3>
 <ul>
     <li><strong>Cấu hình cực mạnh:</strong> Chip 8 nhân UIS7862 cùng RAM 6GB và bộ nhớ trong 128GB cho trải nghiệm mượt mà không độ trễ.</li>
@@ -411,17 +411,17 @@ Màn hình: Kính phản chiếu quang học không gây chói mắt ban đêm",
             'cat_name'    => 'Phim và bảo vệ sơn',
             'price'       => '14.800.000',
             'old_price'   => '16.500.000',
-            'badge'       => 'CAO CẤP NHẤT',
+            'badge'       => 'DÒNG CAO CẤP',
             'brand'       => '3M USA',
             'warranty'    => '10 năm điện tử chính hãng 3M',
             'origin'      => 'Nhập khẩu 3M Hoa Kỳ & Thi công tại Hải Hà',
             'img'         => $img_uri . '/bat-phu-oto.jpg',
-            'excerpt'     => 'Đỉnh cao phim cách nhiệt quang học 200 lớp từ 3M Mỹ, cách nhiệt vượt trội, bảo vệ sức khỏe và chống chói lóa tuyệt đối.',
+            'excerpt'     => 'Đỉnh cao phim cách nhiệt quang học 200 lớp từ 3M Mỹ, cách nhiệt vượt trội, bảo vệ sức khỏe và chống chói lóa tối ưu.',
             'specs'       => "Công nghệ: 200 lớp quang học Nano đa lớp không chứa kim loại
 Chống tia hồng ngoại (IR): 97% - 99%
 Chống tia cực tím (UV): 99.9% SPF 1000+
 Không cản sóng: 100% không ảnh hưởng sóng điện thoại, GPS, VETC/ePass",
-            'content'     => '<h3>Chuẩn mực phim cách nhiệt cao cấp nhất thế giới</h3>
+            'content'     => '<h3>Chuẩn mực phim cách nhiệt cao cấp hàng đầu thế giới</h3>
 <p>Phim cách nhiệt <strong>3M Crystalline</strong> ứng dụng công nghệ đa lớp độc quyền với 200 lớp quang học mỏng hơn 1 sợi tóc. Khả năng loại bỏ 97% tia hồng ngoại sinh nhiệt, giữ cho khoang lái luôn mát mẻ và giảm tải tối đa cho hệ thống điều hòa ô tô.</p>
 <p>Thi công trong phòng lạnh đạt chuẩn tại xưởng Ôtô Hải Hà, cấp mã bảo hành điện tử chính hãng 3M toàn cầu 10 năm.</p>',
         ),
@@ -619,7 +619,7 @@ Tiện ích: Khóa kéo bên cửa tài xế lấy đồ tiện lợi không c�
 Tính năng: Cài đặt trước áp suất cần bơm và máy tự ngắt khi đủ cân
 Tốc độ bơm: Bơm đầy lốp rỗng chỉ trong 3 - 4 phút
 Đèn LED: Tích hợp đèn chiếu sáng ban đêm và cổng sạc USB tiện lợi",
-            'content'     => '<h3>Máy bơm lốp điện tử số 1 từ thương hiệu lốp danh tiếng Michelin</h3>
+            'content'     => '<h3>Máy bơm lốp điện tử cao cấp từ thương hiệu lốp danh tiếng Michelin</h3>
 <p><strong>Michelin 12266</strong> là phụ kiện không thể thiếu trong mỗi chuyến đi. Thao tác đơn giản: cắm tẩu sạc 12V trên xe, cài đặt mức cân (Bar/PSI) mong muốn, bấm nút và máy sẽ tự động bơm rồi dừng chính xác khi đủ áp suất.</p>',
         ),
 
@@ -754,7 +754,7 @@ function hieugara_get_native_accessories() {
         return $result;
     }
 
-    // Fallback: seed items formatted with native site links
+    // Fallback: seed items formatted with native site links (link to hotline consultation to prevent 404)
     $defs = hieugara_get_accessories_definitions();
     $fallback = array();
     foreach ($defs as $idx => $d) {
@@ -762,7 +762,7 @@ function hieugara_get_native_accessories() {
             'id'        => $idx + 1,
             'slug'      => $d['slug'],
             'title'     => $d['title'],
-            'link'      => home_url('/phu-kien-oto/' . $d['slug'] . '/'),
+            'link'      => 'tel:0911211996',
             'img'       => $d['img'],
             'price'     => $d['price'],
             'old_price' => $d['old_price'],

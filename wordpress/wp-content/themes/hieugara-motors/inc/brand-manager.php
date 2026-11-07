@@ -560,11 +560,11 @@ function hieugara_render_comprehensive_partner_page() {
                 'perk_4_title'       => sanitize_text_field($_POST['perk_4_title']),
                 'perk_4_desc'        => sanitize_textarea_field($_POST['perk_4_desc']),
                 'cta_booking_text'   => sanitize_text_field($_POST['cta_booking_text']),
-                'cta_booking_url'    => sanitize_text_field($_POST['cta_booking_url']),
+                'cta_booking_url'    => esc_url_raw($_POST['cta_booking_url']),
                 'cta_hotline_text'   => sanitize_text_field($_POST['cta_hotline_text']),
                 'cta_hotline_tel'    => sanitize_text_field($_POST['cta_hotline_tel']),
                 'cta_accessory_text' => sanitize_text_field($_POST['cta_accessory_text']),
-                'cta_accessory_url'  => sanitize_text_field($_POST['cta_accessory_url']),
+                'cta_accessory_url'  => esc_url_raw($_POST['cta_accessory_url']),
             );
 
             update_option('hieugara_comprehensive_partner', $data);

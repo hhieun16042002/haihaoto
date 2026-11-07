@@ -8,6 +8,10 @@ if (!defined('ABSPATH')) {
 class WorkOrderManager {
 
     public static function render() {
+        if (!current_user_can('manage_options')) {
+            wp_die(__('Bạn không có quyền truy cập trang quản lý này.', 'garage-os'));
+        }
+
         $action = isset($_GET['action']) ? sanitize_text_field($_GET['action']) : 'list';
         $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 

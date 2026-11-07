@@ -8,6 +8,9 @@ if (!defined('ABSPATH')) {
 class BookingManager {
 
     public static function render() {
+        if (!current_user_can('manage_options')) {
+            wp_die(__('Bạn không có quyền truy cập trang quản lý này.', 'garage-os'));
+        }
         global $wpdb;
         $table_bookings = $wpdb->prefix . 'garage_bookings';
 

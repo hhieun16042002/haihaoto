@@ -21,8 +21,11 @@ get_header();
             </div>
             <h1 class="portal-page-title"><?php _e('Bảng Giá Niêm Yết & Dự Toán Sơn Gò Ô Tô', 'hieugara-motors'); ?></h1>
             <p class="portal-page-subtitle">
-                <?php _e('Ôtô Hải Hà Service cam kết tính minh bạch 100%: Giá dịch vụ đã bao gồm công thợ kỹ thuật, phụ tùng chính hãng và không phát sinh bất kỳ chi phí ẩn nào.', 'hieugara-motors'); ?>
+                <?php _e('Ôtô Hải Hà Service cam kết tính minh bạch: Báo giá chi tiết phụ tùng và công thợ kỹ thuật trước khi làm. Khách hàng duyệt mới tiến hành thi công, không phát sinh chi phí ẩn.', 'hieugara-motors'); ?>
             </p>
+            <div style="margin-top: 10px; font-size: 0.82rem; color: #D4B996; background: rgba(0,0,0,0.3); padding: 8px 14px; border-radius: 4px; display: inline-block;">
+                <i class="fa-solid fa-circle-info mr-1"></i> Lưu ý: Mức giá trên là giá tham khảo tiêu chuẩn, chưa bao gồm thuế GTGT (VAT) và vật tư phụ tùng đặc thù theo từng dòng xe.
+            </div>
         </div>
     </section>
 

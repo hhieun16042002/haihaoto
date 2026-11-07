@@ -12,6 +12,20 @@ if (!defined('ABSPATH')) {
 function hieugara_handle_booking_submission() {
     check_ajax_referer('hieugara_ajax_nonce', 'security');
 
+    // Rate limiting: Max 5 submissions per 10 minutes per IP
+    $client_ip = isset($_SERVER['REMOTE_ADDR']) ? sanitize_text_field($_SERVER['REMOTE_ADDR']) : 'unknown';
+    $rate_key = 'hieugara_booking_rate_' . md5($client_ip);
+    $attempts = (int) get_transient($rate_key);
+    if ($attempts >= 5) {
+        wp_send_json_error(array('message' => 'Bạn đã gửi yêu cầu quá nhiều lần. Vui lòng liên hệ trực tiếp hotline 0911 211 996.'));
+    }
+    set_transient($rate_key, $attempts + 1, 600);
+
+    $privacy_consent = isset($_POST['privacy_consent']) ? sanitize_text_field($_POST['privacy_consent']) : '';
+    if ($privacy_consent !== '1') {
+        wp_send_json_error(array('message' => 'Vui lòng tích chọn đồng ý cho phép Ô Tô Hải Hà xử lý thông tin theo Chính sách bảo vệ dữ liệu cá nhân.'));
+    }
+
     $name     = isset($_POST['customer_name']) ? sanitize_text_field($_POST['customer_name']) : '';
     $phone    = isset($_POST['customer_phone']) ? sanitize_text_field($_POST['customer_phone']) : '';
     $car      = isset($_POST['car_model']) ? sanitize_text_field($_POST['car_model']) : '';
@@ -25,15 +39,17 @@ function hieugara_handle_booking_submission() {
     }
 
     $lead = array(
-        'id'        => uniqid('hieugara_'),
-        'timestamp' => current_time('mysql'),
-        'name'      => $name,
-        'phone'     => $phone,
-        'car'       => $car,
-        'service'   => $service,
-        'branch'    => $branch,
-        'date'      => $date,
-        'note'      => $note,
+        'id'               => uniqid('hieugara_'),
+        'timestamp'        => current_time('mysql'),
+        'privacy_consent'  => '1',
+        'consent_law'      => 'Luật BVDLCN 91/2025/QH15 & NĐ 356/2025/NĐ-CP',
+        'name'             => $name,
+        'phone'            => $phone,
+        'car'              => $car,
+        'service'          => $service,
+        'branch'           => $branch,
+        'date'             => $date,
+        'note'             => $note,
     );
 
     $all_leads = get_option('hieugara_booking_leads', array());
@@ -54,7 +70,7 @@ function hieugara_handle_booking_submission() {
             'license_plate'     => isset($_POST['license_plate']) ? sanitize_text_field($_POST['license_plate']) : 'CHƯA ĐK',
             'car_model'         => $car ?: 'Chưa xác định',
             'service_requested' => $service ?: 'Bảo dưỡng định kỳ',
-            'branch'            => $branch ?: 'Gara Ôtô Hải Hà - Km 53 QL5 Hải Dương',
+            'branch'            => $branch ?: 'Km3+500 Đường Nguyễn Lương Bằng, TP. Hải Dương',
             'booking_date'      => !empty($date) ? $date : current_time('Y-m-d'),
             'booking_time'      => '08:30',
             'notes'             => $note,

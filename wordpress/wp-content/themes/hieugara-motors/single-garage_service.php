@@ -121,6 +121,7 @@ while (have_posts()) : the_post();
                         <div>
                             <small style="color: #94a3b8; font-size: 0.72rem; text-transform: uppercase; font-family: 'Be Vietnam Pro', sans-serif; font-weight: 700; letter-spacing: 0.5px;"><?php _e('Chi phí khởi điểm:', 'hieugara-motors'); ?></small>
                             <div style="font-family: 'Be Vietnam Pro', sans-serif; font-size: 1.15rem; font-weight: 800; color: #C5A880; margin-top: 4px;"><?php echo esc_html($price); ?></div>
+                            <div style="font-size: 0.72rem; color: #94a3b8; margin-top: 2px;">* Giá tham khảo chưa bao gồm VAT &amp; vật tư</div>
                         </div>
                         <?php if (!empty($duration)) : ?>
                             <div style="border-left: 1px solid rgba(255,255,255,0.12); padding-left: 16px;">
@@ -236,6 +237,13 @@ while (have_posts()) : the_post();
                                     <option value="Tiếp nhận sửa chữa lưu động">Sửa chữa lưu động tận nơi</option>
                                     <option value="Cứu hộ giao thông 24/7">Cứu hộ cẩu kéo 24/7 (Hotline: <?php echo esc_html($rescue_phone); ?>)</option>
                                 </select>
+                            </div>
+
+                            <div style="margin-bottom: 16px; display: flex; align-items: flex-start; gap: 8px; font-size: 0.8rem; color: #475569; line-height: 1.45;">
+                                <input type="checkbox" name="privacy_consent" value="1" required id="privacy_consent_service" style="margin-top: 3px; accent-color: #8C6D46; cursor: pointer;">
+                                <label for="privacy_consent_service" style="cursor: pointer;">
+                                    Tôi đồng ý cho <strong>Ô Tô Hải Hà</strong> xử lý thông tin liên hệ để tư vấn và báo giá dịch vụ theo <a href="<?php echo esc_url(home_url('/chinh-sach-bao-mat/')); ?>" target="_blank" style="color: #8C6D46; text-decoration: underline; font-weight: 600;">Chính sách bảo vệ dữ liệu cá nhân</a>. *
+                                </label>
                             </div>
 
                             <button type="submit" class="shiftup-rect-btn btn-orange-solid" style="width: 100%; padding: 14px; background: #141414; color: #D4B996; border: 1.5px solid #D4B996; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.92rem; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; cursor: pointer; border-radius: 4px; transition: background 0.2s ease;">

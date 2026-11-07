@@ -34,17 +34,19 @@ function hieugara_admin_settings_assets($hook) {
 }
 add_action('admin_enqueue_scripts', 'hieugara_admin_settings_assets');
 
-// 3. Register Settings
+// 3. Register Settings with Sanitization Callbacks
 function hieugara_register_theme_settings() {
+    $str_san = array('sanitize_callback' => 'sanitize_text_field');
+
     // Topbar & Header Options
-    register_setting('hieugara_settings_group', 'hieugara_topbar_enable');
-    register_setting('hieugara_settings_group', 'hieugara_topbar_email');
-    register_setting('hieugara_settings_group', 'hieugara_topbar_hours');
-    register_setting('hieugara_settings_group', 'hieugara_topbar_system');
-    register_setting('hieugara_settings_group', 'hieugara_rescue_phone');
-    register_setting('hieugara_settings_group', 'hieugara_hotline_phone');
-    register_setting('hieugara_settings_group', 'hieugara_warranty_url');
-    register_setting('hieugara_settings_group', 'hieugara_menu_search_enable');
+    register_setting('hieugara_settings_group', 'hieugara_topbar_enable', $str_san);
+    register_setting('hieugara_settings_group', 'hieugara_topbar_email', array('sanitize_callback' => 'sanitize_email'));
+    register_setting('hieugara_settings_group', 'hieugara_topbar_hours', $str_san);
+    register_setting('hieugara_settings_group', 'hieugara_topbar_system', $str_san);
+    register_setting('hieugara_settings_group', 'hieugara_rescue_phone', $str_san);
+    register_setting('hieugara_settings_group', 'hieugara_hotline_phone', $str_san);
+    register_setting('hieugara_settings_group', 'hieugara_warranty_url', array('sanitize_callback' => 'esc_url_raw'));
+    register_setting('hieugara_settings_group', 'hieugara_menu_search_enable', $str_san);
 
     // Banner Slider Data
     register_setting('hieugara_settings_group', 'hieugara_slider_slides');

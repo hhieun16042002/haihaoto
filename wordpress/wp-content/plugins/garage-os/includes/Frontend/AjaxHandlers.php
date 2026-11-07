@@ -24,6 +24,15 @@ class AjaxHandlers {
     public static function lookup_vehicle() {
         check_ajax_referer('garage_os_frontend_nonce', 'nonce');
 
+        // Rate limiting: Max 15 lookups per 5 minutes per IP
+        $client_ip = isset($_SERVER['REMOTE_ADDR']) ? sanitize_text_field($_SERVER['REMOTE_ADDR']) : 'unknown';
+        $rate_key = 'garage_lookup_rate_' . md5($client_ip);
+        $attempts = (int) get_transient($rate_key);
+        if ($attempts >= 15) {
+            wp_send_json_error(['message' => 'Bạn đã tra cứu quá số lần cho phép trong thời gian ngắn. Vui lòng thử lại sau vài phút.']);
+        }
+        set_transient($rate_key, $attempts + 1, 300);
+
         $plate_raw = isset($_POST['license_plate']) ? sanitize_text_field($_POST['license_plate']) : '';
         $plate = strtoupper(trim($plate_raw));
 
@@ -34,19 +43,24 @@ class AjaxHandlers {
         // Clean plate for flexible search (remove dots, dashes, spaces)
         $clean_search = preg_replace('/[^A-Z0-9]/i', '', $plate);
 
+        // Security check: Reject wildcard or too-short plates to prevent database exfiltration
+        if (strlen($clean_search) < 5 || strlen($clean_search) > 12) {
+            wp_send_json_error(['message' => 'Biển số xe không hợp lệ. Vui lòng nhập đầy đủ từ 5 đến 12 ký tự chữ và số (ví dụ: 34A-12345).']);
+        }
+
         global $wpdb;
         $table_orders     = $wpdb->prefix . 'garage_work_orders';
         $table_warranties = $wpdb->prefix . 'garage_warranties';
 
-        // Search orders by plate or like
+        // Search orders by plate or like with strict limit 10
         $orders = $wpdb->get_results($wpdb->prepare(
-            "SELECT * FROM $table_orders WHERE REPLACE(REPLACE(REPLACE(license_plate, '-', ''), '.', ''), ' ', '') LIKE %s ORDER BY reception_date DESC",
+            "SELECT * FROM $table_orders WHERE REPLACE(REPLACE(REPLACE(license_plate, '-', ''), '.', ''), ' ', '') LIKE %s ORDER BY reception_date DESC LIMIT 10",
             '%' . $wpdb->esc_like($clean_search) . '%'
         ));
 
-        // Search warranties
+        // Search warranties with strict limit 10
         $warranties = $wpdb->get_results($wpdb->prepare(
-            "SELECT * FROM $table_warranties WHERE REPLACE(REPLACE(REPLACE(license_plate, '-', ''), '.', ''), ' ', '') LIKE %s ORDER BY end_date DESC",
+            "SELECT * FROM $table_warranties WHERE REPLACE(REPLACE(REPLACE(license_plate, '-', ''), '.', ''), ' ', '') LIKE %s ORDER BY end_date DESC LIMIT 10",
             '%' . $wpdb->esc_like($clean_search) . '%'
         ));
 
@@ -127,6 +141,15 @@ class AjaxHandlers {
 
     public static function submit_booking() {
         check_ajax_referer('garage_os_frontend_nonce', 'nonce');
+
+        // Rate limiting: Max 5 booking submissions per 10 minutes per IP
+        $client_ip = isset($_SERVER['REMOTE_ADDR']) ? sanitize_text_field($_SERVER['REMOTE_ADDR']) : 'unknown';
+        $rate_key = 'garage_booking_rate_' . md5($client_ip);
+        $attempts = (int) get_transient($rate_key);
+        if ($attempts >= 5) {
+            wp_send_json_error(['message' => 'Bạn đã gửi yêu cầu quá nhiều lần. Vui lòng liên hệ trực tiếp hotline 0911 211 996.']);
+        }
+        set_transient($rate_key, $attempts + 1, 600);
 
         $name    = sanitize_text_field($_POST['name'] ?? '');
         $phone   = sanitize_text_field($_POST['phone'] ?? '');

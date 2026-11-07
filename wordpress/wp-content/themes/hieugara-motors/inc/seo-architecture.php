@@ -208,7 +208,7 @@ class HieuGara_SEO_Architecture {
             'foundingDate'     => '1995',
             'address'          => array(
                 '@type'           => 'PostalAddress',
-                'streetAddress'   => 'Km 53+300 Quốc lộ 5, Phường Cẩm Thượng',
+                'streetAddress'   => 'Km3+500 Đường Nguyễn Lương Bằng, Phường Bình Hàn',
                 'addressLocality' => 'Hải Dương',
                 'addressRegion'   => 'Hải Dương',
                 'postalCode'      => '170000',
