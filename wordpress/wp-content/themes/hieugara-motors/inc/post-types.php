@@ -222,11 +222,14 @@ function hieugara_save_accessory_meta($post_id) {
         return;
     }
 
-    $fields = array('_accessory_price', '_accessory_old_price', '_accessory_badge', '_accessory_brand', '_accessory_warranty', '_accessory_origin', '_accessory_img', '_accessory_specs');
+    $fields = array('_accessory_price', '_accessory_old_price', '_accessory_badge', '_accessory_brand', '_accessory_warranty', '_accessory_origin', '_accessory_img');
     foreach ($fields as $f) {
         if (isset($_POST[$f])) {
             update_post_meta($post_id, $f, sanitize_text_field($_POST[$f]));
         }
+    }
+    if (isset($_POST['_accessory_specs'])) {
+        update_post_meta($post_id, '_accessory_specs', sanitize_textarea_field($_POST['_accessory_specs']));
     }
 }
 add_action('save_post_garage_accessory', 'hieugara_save_accessory_meta');

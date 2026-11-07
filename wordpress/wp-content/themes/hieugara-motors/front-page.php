@@ -334,14 +334,14 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                 <!-- Category Pills Navigation -->
                 <div class="accessory-cat-pills">
                     <a href="<?php echo esc_url(home_url('/phu-kien/')); ?>" class="acc-pill-btn active"><i class="fa-solid fa-border-all"></i> Tất Cả</a>
-                    <a href="<?php echo esc_url(home_url('/phu-kien/#cat-camera-man-hinh')); ?>" class="acc-pill-btn"><i class="fa-solid fa-video"></i> Camera &amp; Màn Hình</a>
-                    <a href="<?php echo esc_url(home_url('/phu-kien/#cat-bom-lop-tpms')); ?>" class="acc-pill-btn"><i class="fa-solid fa-gauge-high"></i> Bơm Lốp &amp; TPMS</a>
-                    <a href="<?php echo esc_url(home_url('/phu-kien/#cat-kich-binh-cuu-ho')); ?>" class="acc-pill-btn"><i class="fa-solid fa-bolt"></i> Kích Bình &amp; Cứu Hộ</a>
-                    <a href="<?php echo esc_url(home_url('/phu-kien/#cat-hut-bui-loc-khi')); ?>" class="acc-pill-btn"><i class="fa-solid fa-wind"></i> Hút Bụi &amp; Lọc Khí</a>
-                    <a href="<?php echo esc_url(home_url('/phu-kien/#cat-tau-sac-gia-do')); ?>" class="acc-pill-btn"><i class="fa-solid fa-plug"></i> Tẩu Sạc &amp; Giá Đỡ</a>
-                    <a href="<?php echo esc_url(home_url('/phu-kien/#cat-boc-vo-lang-tham-san')); ?>" class="acc-pill-btn"><i class="fa-solid fa-car-side"></i> Bọc Vô Lăng &amp; Thảm Sàn</a>
-                    <a href="<?php echo esc_url(home_url('/phu-kien/#cat-goi-tua-bat-phu')); ?>" class="acc-pill-btn"><i class="fa-solid fa-shield-halved"></i> Gối Tựa &amp; Bạt Phủ</a>
-                    <a href="<?php echo esc_url(home_url('/phu-kien/#cat-cham-soc-xe-nuoc-hoa')); ?>" class="acc-pill-btn"><i class="fa-solid fa-spray-can-sparkles"></i> Nước Hoa &amp; Chăm Sóc Xe</a>
+                    <?php 
+                    $fp_acc_cats = function_exists('hieugara_get_accessories_categories') ? hieugara_get_accessories_categories() : array();
+                    foreach ($fp_acc_cats as $c_slug => $c_data) :
+                    ?>
+                        <a href="<?php echo esc_url(home_url('/phu-kien/#cat-' . $c_slug)); ?>" class="acc-pill-btn">
+                            <i class="<?php echo esc_attr($c_data['icon']); ?>"></i> <?php echo esc_html($c_data['short_name']); ?>
+                        </a>
+                    <?php endforeach; ?>
                 </div>
             </div>
 

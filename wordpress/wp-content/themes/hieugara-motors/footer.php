@@ -10,15 +10,11 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-$rescue_phone  = get_option('hieugara_rescue_phone', '0911 211 996');
-$tech_phone    = get_option('hieugara_tech_phone', '0911 211 996');
-$hotline_phone = get_option('hieugara_hotline_phone', '0911 211 996');
+$phone_rescue  = '0911 211 996';
+$phone_tech    = '0915 041 989';
+$phone_landline= '02203 892 207';
 $topbar_email  = get_option('hieugara_topbar_email', 'thanhotohaiha@gmail.com');
-$topbar_hours  = get_option('hieugara_topbar_hours', '08:00 - 18:00 (T2 - CN)');
 $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh/'));
-$rescue_clean  = preg_replace('/[^0-9]/', '', $rescue_phone);
-$tech_clean    = preg_replace('/[^0-9]/', '', $tech_phone);
-$hotline_clean = preg_replace('/[^0-9]/', '', $hotline_phone);
 ?>
 
 <!-- =========================================================================
@@ -44,21 +40,41 @@ $hotline_clean = preg_replace('/[^0-9]/', '', $hotline_phone);
                         </div>
                     </div>
 
-                    <div class="footer-contact-chips">
-                        <a href="tel:<?php echo esc_attr($rescue_clean); ?>" class="contact-chip chip-rescue">
-                            <i class="fa-solid fa-phone-volume"></i>
-                            <div>
-                                <small>HOTLINE &amp; CỨU HỘ 24/7</small>
-                                <strong><?php echo esc_html($rescue_phone); ?></strong>
-                            </div>
-                        </a>
-                        <a href="https://zalo.me/<?php echo esc_attr($rescue_clean); ?>" target="_blank" rel="noopener" class="contact-chip chip-zalo">
-                            <i class="fa-solid fa-comment-dots" style="color: #0068FF !important;"></i>
-                            <div>
-                                <small>ZALO TƯ VẤN &amp; HỖ TRỢ</small>
-                                <strong><?php echo esc_html($rescue_phone); ?></strong>
-                            </div>
-                        </a>
+                    <div class="footer-contact-block">
+                        <h4 class="footer-col-title footer-contact-title">
+                            <span class="title-square"></span>
+                            LIÊN HỆ
+                        </h4>
+                        <div class="footer-contact-chips footer-contact-3phones">
+                            <a href="tel:0911211996" class="contact-chip chip-phone-item">
+                                <i class="fa-solid fa-phone-volume"></i>
+                                <div>
+                                    <small>HOTLINE &amp; CỨU HỘ 24/7</small>
+                                    <strong>0911 211 996</strong>
+                                </div>
+                            </a>
+                            <a href="tel:0915041989" class="contact-chip chip-phone-item">
+                                <i class="fa-solid fa-wrench"></i>
+                                <div>
+                                    <small>KỸ THUẬT &amp; ĐẶT LỊCH</small>
+                                    <strong>0915 041 989</strong>
+                                </div>
+                            </a>
+                            <a href="tel:02203892207" class="contact-chip chip-phone-item">
+                                <i class="fa-solid fa-phone"></i>
+                                <div>
+                                    <small>TỔNG ĐÀI XƯỞNG</small>
+                                    <strong>02203 892 207</strong>
+                                </div>
+                            </a>
+                            <a href="https://zalo.me/0911211996" target="_blank" rel="noopener" class="contact-chip chip-zalo">
+                                <i class="fa-solid fa-comment-dots" style="color: #0068FF !important;"></i>
+                                <div>
+                                    <small>ZALO TƯ VẤN &amp; HỖ TRỢ</small>
+                                    <strong>0911 211 996</strong>
+                                </div>
+                            </a>
+                        </div>
                     </div>
 
                     <div class="footer-social-row">
@@ -89,21 +105,19 @@ $hotline_clean = preg_replace('/[^0-9]/', '', $hotline_phone);
                             'order'      => 'ASC',
                         ));
                         if (!empty($footer_cats) && !is_wp_error($footer_cats)) :
-                            $f_i = 1;
                             foreach ($footer_cats as $f_cat) :
                                 $f_link = home_url('/dich-vu/' . $f_cat->slug . '/');
                                 $is_rescue = strpos($f_cat->slug, 'cuu-ho') !== false;
                         ?>
                             <li>
                                 <a href="<?php echo esc_url($f_link); ?>" class="<?php echo $is_rescue ? 'highlight-link' : ''; ?>">
-                                    <span><?php printf('%02d. %s', $f_i, esc_html($f_cat->name)); ?></span>
+                                    <span><?php echo esc_html($f_cat->name); ?></span>
                                     <?php if ($is_rescue) : ?>
                                         <span class="badge-mini">24/7</span>
                                     <?php endif; ?>
                                 </a>
                             </li>
                         <?php 
-                                $f_i++;
                             endforeach;
                         endif;
                         ?>

@@ -220,14 +220,16 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                 </a>
                 <ul class="nav-dropdown-menu nav-dropdown-grid-2col">
                     <li style="grid-column: 1 / -1;"><a href="<?php echo esc_url(home_url('/phu-kien/')); ?>"><strong class="text-gold">★ Xem Tất Cả Phụ Kiện Chính Hãng</strong></a></li>
-                    <li><a href="<?php echo esc_url(home_url('/phu-kien/#cat-camera-man-hinh')); ?>"><i class="fa-solid fa-video mr-1 text-gold"></i> 01. Camera &amp; Màn Hình Android</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/phu-kien/#cat-bom-lop-tpms')); ?>"><i class="fa-solid fa-gauge-high mr-1 text-gold"></i> 02. Bơm Lốp &amp; Cảm Biến TPMS</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/phu-kien/#cat-kich-binh-cuu-ho')); ?>"><i class="fa-solid fa-bolt mr-1 text-gold"></i> 03. Bộ Kích Bình &amp; Cứu Hộ Ô Tô</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/phu-kien/#cat-hut-bui-loc-khi')); ?>"><i class="fa-solid fa-wind mr-1 text-gold"></i> 04. Máy Hút Bụi &amp; Lọc Không Khí</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/phu-kien/#cat-tau-sac-gia-do')); ?>"><i class="fa-solid fa-plug mr-1 text-gold"></i> 05. Tẩu Sạc &amp; Giá Đỡ Điện Thoại</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/phu-kien/#cat-boc-vo-lang-tham-san')); ?>"><i class="fa-solid fa-car-side mr-1 text-gold"></i> 06. Bọc Vô Lăng &amp; Thảm Lót Sàn</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/phu-kien/#cat-goi-tua-bat-phu')); ?>"><i class="fa-solid fa-shield-halved mr-1 text-gold"></i> 07. Gối Tựa Đầu &amp; Bạt Phủ Xe</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/phu-kien/#cat-cham-soc-xe-nuoc-hoa')); ?>"><i class="fa-solid fa-spray-can-sparkles mr-1 text-gold"></i> 08. Nước Hoa &amp; Chăm Sóc Xe</a></li>
+                    <?php 
+                    $nav_acc_cats = function_exists('hieugara_get_accessories_categories') ? hieugara_get_accessories_categories() : array();
+                    foreach ($nav_acc_cats as $c_slug => $c_data) :
+                    ?>
+                        <li>
+                            <a href="<?php echo esc_url(home_url('/phu-kien/#cat-' . $c_slug)); ?>">
+                                <i class="<?php echo esc_attr($c_data['icon']); ?> mr-1 text-gold"></i> <?php echo esc_html($c_data['short_name']); ?>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
                 </ul>
             </li>
 

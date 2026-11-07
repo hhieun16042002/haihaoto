@@ -6,6 +6,7 @@ cloudflared.exe
 # WordPress Caching & Uploads Cache
 wordpress/wp-content/cache/
 wordpress/wp-content/upgrade/
+wordpress/wp-content/uploads/2026/
 
 # System files
 .DS_Store

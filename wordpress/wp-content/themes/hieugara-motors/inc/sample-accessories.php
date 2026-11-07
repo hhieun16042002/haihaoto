@@ -1,7 +1,7 @@
 <?php
 /**
  * Sample Accessories Data & Seeder for Ôtô Hải Hà
- * Genuine Accessories Catalog from META.vn & Ôtô Hải Hà Workshop
+ * Genuine Accessories Catalog Division - Ôtô Hải Hà Workshop
  * Native 'garage_accessory' Post Type - 100% Internal URLs & Full Admin CRUD
  *
  * @package HieuGara_Motors
@@ -12,2208 +12,657 @@ if (!defined('ABSPATH')) {
 }
 
 /**
- * Return 8 Core Accessory Categories with metadata
+ * Return 7 Core Accessory Categories with metadata (Dynamic from DB with fallback)
  */
 function hieugara_get_accessories_categories() {
-    return array(
-        'camera-man-hinh' => array(
-            'id'          => 'camera-man-hinh',
-            'name'        => 'Camera Hành Trình & Màn Hình Android',
-            'short_name'  => 'Camera & Màn Hình',
-            'icon'        => 'fa-solid fa-video',
+    $defaults = array(
+        'man-hinh-va-giai-tri' => array(
+            'id'          => 'man-hinh-va-giai-tri',
+            'name'        => 'Màn hình và giải trí',
+            'short_name'  => 'Màn Hình & Giải Trí',
+            'icon'        => 'fa-solid fa-tv',
             'index_num'   => '01',
-            'eyebrow'     => 'THIẾT BỊ ĐIỆN TỬ Ô TÔ THÔNG MINH',
-            'desc'        => 'Ghi hình 4K siêu nét, dẫn đường thông minh Vietmap Live, cảnh báo tốc độ an toàn và tích hợp camera 360 toàn cảnh sắc nét.'
+            'eyebrow'     => 'CÔNG NGHỆ THÔNG MINH TRÊN XE',
+            'desc'        => 'Màn hình Android sắc nét, Android box biến màn zin thành thông minh, kết nối Apple CarPlay không dây tiện lợi.'
         ),
-        'bom-lop-tpms' => array(
-            'id'          => 'bom-lop-tpms',
-            'name'        => 'Máy Bơm Lốp & Cảm Biến Áp Suất Lốp (TPMS)',
-            'short_name'  => 'Bơm Lốp & TPMS',
-            'icon'        => 'fa-solid fa-gauge-high',
+        'camera-o-to' => array(
+            'id'          => 'camera-o-to',
+            'name'        => 'Camera',
+            'short_name'  => 'Camera Ô Tô',
+            'icon'        => 'fa-solid fa-video',
             'index_num'   => '02',
-            'eyebrow'     => 'AN TOÀN HỆ THỐNG LỐP XE',
-            'desc'        => 'Máy bơm lốp điện tử tự ngắt áp suất và hệ thống cảm biến áp suất lốp van trong/ngoài kết nối màn hình Solar thông minh.'
+            'eyebrow'     => 'QUAN SÁT & GHI HÌNH TOÀN DIỆN',
+            'desc'        => 'Camera hành trình 4K sắc nét, hệ thống camera 360 độ toàn cảnh không góc chết và camera lùi AHD ban đêm chống nước IP68.'
         ),
-        'kich-binh-cuu-ho' => array(
-            'id'          => 'kich-binh-cuu-ho',
-            'name'        => 'Bộ Kích Nổ Bình & Thiết Bị Cứu Hộ Ô Tô',
-            'short_name'  => 'Kích Bình & Cứu Hộ',
-            'icon'        => 'fa-solid fa-bolt',
-            'index_num'   => '03',
-            'eyebrow'     => 'CỨU HỘ & KHẨN CẤP ĐƯỜNG TRƯỜNG',
-            'desc'        => 'Bộ kích nổ ắc quy cầm tay dòng xả cực đại 2000A, dây câu bình chịu tải cao và búa thoát hiểm đa năng 4 trong 1.'
-        ),
-        'hut-bui-loc-khi' => array(
-            'id'          => 'hut-bui-loc-khi',
-            'name'        => 'Máy Hút Bụi & Lọc Không Khí Ô Tô',
-            'short_name'  => 'Hút Bụi & Lọc Khí',
-            'icon'        => 'fa-solid fa-wind',
-            'index_num'   => '04',
-            'eyebrow'     => 'CHĂM SÓC KHÔNG GIAN XE',
-            'desc'        => 'Máy hút bụi mini lốc xoáy màng lọc HEPA kháng khuẩn và máy lọc không khí ô tô diệt khuẩn ion âm khử mùi ẩm mốc.'
-        ),
-        'tau-sac-gia-do' => array(
-            'id'          => 'tau-sac-gia-do',
-            'name'        => 'Tẩu Sạc Nhanh & Giá Đỡ Điện Thoại',
-            'short_name'  => 'Tẩu Sạc & Giá Đỡ',
-            'icon'        => 'fa-solid fa-plug',
-            'index_num'   => '05',
-            'eyebrow'     => 'TIỆN ÍCH CÔNG NGHỆ BÊN TRONG XE',
-            'desc'        => 'Tẩu sạc nhanh công suất cao 65W - 100W PD/QC và giá đỡ điện thoại sạc không dây 15W hít nam châm MagSafe tiện lợi.'
-        ),
-        'boc-vo-lang-tham-san' => array(
-            'id'          => 'boc-vo-lang-tham-san',
-            'name'        => 'Bọc Vô Lăng & Thảm Lót Sàn Ô Tô',
-            'short_name'  => 'Bọc Vô Lăng & Thảm Sàn',
-            'icon'        => 'fa-solid fa-car-side',
-            'index_num'   => '06',
-            'eyebrow'     => 'NỘI THẤT CAO CẤP & BẢO VỆ',
-            'desc'        => 'Bọc vô lăng da PU carbon Sparco thể thao êm tay và thảm lót sàn cao su đúc nguyên khối chống nước không mùi hôi.'
-        ),
-        'goi-tua-bat-phu' => array(
-            'id'          => 'goi-tua-bat-phu',
-            'name'        => 'Gối Tựa Đầu, Tựa Lưng & Bạt Phủ Xe',
-            'short_name'  => 'Gối Tựa & Bạt Phủ',
+        'an-toan-o-to' => array(
+            'id'          => 'an-toan-o-to',
+            'name'        => 'An toàn',
+            'short_name'  => 'Hệ Thống An Toàn',
             'icon'        => 'fa-solid fa-shield-halved',
-            'index_num'   => '07',
-            'eyebrow'     => 'TIỆN NGHI & BẢO VỆ NGOẠI THẤT',
-            'desc'        => 'Gối tựa đầu cao su non công thái học chống mỏi cổ lái xe đường dài và bạt phủ xe 3 lớp tráng bạc cách nhiệt chống xước.'
+            'index_num'   => '03',
+            'eyebrow'     => 'BẢO VỆ CHỦ ĐỘNG & CẢNH BÁO',
+            'desc'        => 'Cảm biến áp suất lốp TPMS năng lượng mặt trời, cảm biến lùi, cảnh báo điểm mù radar và màn hình hiển thị HUD kính lái.'
         ),
-        'cham-soc-xe-nuoc-hoa' => array(
-            'id'          => 'cham-soc-xe-nuoc-hoa',
-            'name'        => 'Nước Hoa Ô Tô & Dung Dịch Chăm Sóc Xe',
-            'short_name'  => 'Nước Hoa & Chăm Sóc Xe',
-            'icon'        => 'fa-solid fa-spray-can-sparkles',
-            'index_num'   => '08',
-            'eyebrow'     => 'DETAILING & NƯỚC HOA CAO CẤP',
-            'desc'        => 'Nước hoa kẹp cửa gió cao cấp Areon Bulgaria, sáp thơm xe hơi và dung dịch vệ sinh dưỡng da nội thất 3M, Focar chuyên dụng.'
-        )
+        'phim-va-bao-ve-son' => array(
+            'id'          => 'phim-va-bao-ve-son',
+            'name'        => 'Phim và bảo vệ sơn',
+            'short_name'  => 'Phim & Bảo Vệ Sơn',
+            'icon'        => 'fa-solid fa-sun',
+            'index_num'   => '04',
+            'eyebrow'     => 'CÁCH NHIỆT & BẢO VỆ NƯỚC SƠN',
+            'desc'        => 'Dán phim cách nhiệt 3M Crystalline chính hãng chống nóng cách nhiệt 99% UV và dán phim bảo vệ sơn PPF TPU tự phục hồi vết xước.'
+        ),
+        'noi-that-o-to' => array(
+            'id'          => 'noi-that-o-to',
+            'name'        => 'Nội thất',
+            'short_name'  => 'Nội Thất Ô Tô',
+            'icon'        => 'fa-solid fa-couch',
+            'index_num'   => '05',
+            'eyebrow'     => 'NÂNG TẦM KHÔNG GIAN XE',
+            'desc'        => 'Bọc ghế da Nappa cao cấp chuẩn form may xưởng Hải Hà, thảm sàn tràn viền TPE, bọc vô lăng thể thao và đèn LED viền nội thất.'
+        ),
+        'ngoai-that-va-den' => array(
+            'id'          => 'ngoai-that-va-den',
+            'name'        => 'Ngoại thất và đèn',
+            'short_name'  => 'Ngoại Thất & Đèn',
+            'icon'        => 'fa-solid fa-lightbulb',
+            'index_num'   => '06',
+            'eyebrow'     => 'ÁNH SÁNG & TIỆN NGHI NGOẠI THẤT',
+            'desc'        => 'Nâng cấp Bi LED siêu sáng, độ cốp điện tự động thông minh kèm cảm biến đá cốp và bạt phủ ô tô cách nhiệt 3 lớp.'
+        ),
+        'tien-ich-o-to' => array(
+            'id'          => 'tien-ich-o-to',
+            'name'        => 'Tiện ích',
+            'short_name'  => 'Tiện Ích Ô Tô',
+            'icon'        => 'fa-solid fa-toolbox',
+            'index_num'   => '07',
+            'eyebrow'     => 'TIỆN NGHI TIÊU CHUẨN MỌI HÀNH TRÌNH',
+            'desc'        => 'Máy bơm lốp điện tử tự ngắt Michelin, tẩu sạc nhanh 65W công suất cao, giá đỡ điện thoại hít MagSafe và máy lọc không khí ô tô.'
+        ),
     );
+
+    $terms = get_terms(array(
+        'taxonomy'   => 'accessory_category',
+        'hide_empty' => false,
+        'orderby'    => 'term_order',
+        'order'      => 'ASC',
+    ));
+
+    if (!empty($terms) && !is_wp_error($terms)) {
+        $categories = array();
+        $idx = 1;
+        foreach ($terms as $t) {
+            $slug = $t->slug;
+            $cat_data = isset($defaults[$slug]) ? $defaults[$slug] : array();
+
+            $icon = get_term_meta($t->term_id, '_accessory_cat_icon', true);
+            if (!$icon) {
+                $icon = !empty($cat_data['icon']) ? $cat_data['icon'] : 'fa-solid fa-car';
+            }
+
+            $eyebrow = get_term_meta($t->term_id, '_accessory_cat_eyebrow', true);
+            if (!$eyebrow) {
+                $eyebrow = !empty($cat_data['eyebrow']) ? $cat_data['eyebrow'] : 'PHỤ KIỆN CHÍNH HÃNG HẢI HÀ';
+            }
+
+            $desc = $t->description;
+            if (empty($desc) && !empty($cat_data['desc'])) {
+                $desc = $cat_data['desc'];
+            }
+
+            $categories[$slug] = array(
+                'id'         => $slug,
+                'term_id'    => $t->term_id,
+                'name'       => $t->name,
+                'short_name' => $t->name,
+                'icon'       => $icon,
+                'index_num'  => sprintf('%02d', $idx++),
+                'eyebrow'    => $eyebrow,
+                'desc'       => $desc,
+            );
+        }
+        return $categories;
+    }
+
+    return $defaults;
 }
 
 /**
- * Returns complete definition of the 59 genuine accessories
+ * Returns complete definition of the 23 curated genuine accessories
  */
 function hieugara_get_accessories_definitions() {
     $img_uri = get_template_directory_uri() . '/assets/images/accessories';
-    $upload_dir = wp_upload_dir();
-    $acc_upload_url = $upload_dir['baseurl'] . '/accessories';
 
     return array(
+        // -------------------------------------------------------------
+        // 1. Màn hình và giải trí (man-hinh-va-giai-tri)
+        // -------------------------------------------------------------
         array(
-            'slug'        => 'camera-hanh-trinh-70mai-m310-plus-3k',
-            'title'       => 'Camera hành trình 70mai M310 Plus 3K',
-            'category'    => 'camera-man-hinh',
-            'cat_name'    => 'Camera Hành Trình & Màn Hình Android',
-            'price'       => '1.500.000',
-            'old_price'   => '1.770.000',
+            'slug'        => 'man-hinh-android-zestech-z800-pro-plus',
+            'title'       => 'Màn hình Android Zestech Z800 Pro+ 360 cao cấp',
+            'category'    => 'man-hinh-va-giai-tri',
+            'cat_name'    => 'Màn hình và giải trí',
+            'price'       => '15.500.000',
+            'old_price'   => '17.000.000',
             'badge'       => 'BÁN CHẠY',
-            'brand'       => '70mai',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/camera-hanh-trinh-70mai-m310-plus-3k.jpg',
-            'local_file'  => 'camera-hanh-trinh-70mai-m310-plus-3k.jpg',
-            'excerpt'     => 'Camera hành trình 70mai M310 Plus 3K ghi hình chất lượng 3K sắc nét, với công nghệ Super Night Vision và góc quay rộng 139° cho hình ảnh rõ ràng mọi lúc.',
-            'specs'       => "Thương hiệu: 70mai
-Độ phân giải: 2K / 4K Ultra HD sắc nét
-Góc quay rộng: 140° - 170° quan sát toàn diện
-Tính năng: Ghi hình vòng lặp, cảnh báo tốc độ, ADAS AI thông minh
-Kết nối: Wi-Fi xem và tải video trực tiếp qua điện thoại
-Nguồn điện: 12V - 24V cổng tẩu / cắm giắc zin an toàn",
-            'content'     => '<h3>Tổng quan sản phẩm Camera hành trình 70mai M310 Plus 3K</h3>
-<p><strong>Camera hành trình 70mai M310 Plus 3K</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>70mai</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Camera hành trình 70mai M310 Plus 3K ghi hình chất lượng 3K sắc nét, với công nghệ Super Night Vision và góc quay rộng 139° cho hình ảnh rõ ràng mọi lúc.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
+            'brand'       => 'Zestech',
+            'warranty'    => '24 tháng 1 đổi 1',
+            'origin'      => 'Chính hãng Zestech Việt Nam & Lắp đặt tại Hải Hà',
+            'img'         => $img_uri . '/zestech-z500.jpg',
+            'excerpt'     => 'Màn hình Android Zestech Z800 Pro+ cấu hình khủng RAM 6GB, ROM 128GB tích hợp Camera 360 ghi hình tắt máy, ra lệnh giọng nói tiếng Việt Kiki.',
+            'specs'       => "Màn hình: 9 - 10 inch IPS 2K chống chói
+Hệ điều hành: Android 10.0
+RAM / ROM: 6GB / 128GB
+Chip xử lý: Octa-core UIS7862 8 nhân 1.8GHz
+Tích hợp: Camera 360 toàn cảnh ghi hình 4 góc, Vietmap Live, Kiki AI",
+            'content'     => '<h3>Tổng quan sản phẩm Màn hình Android Zestech Z800 Pro+ 360</h3>
+<p><strong>Màn hình Android Zestech Z800 Pro+ 360</strong> là dòng màn hình ô tô thông minh cao cấp nhất hiện nay, tích hợp liền camera 360 độ siêu nét giúp người lái vừa giải trí đa phương tiện đỉnh cao vừa quan sát toàn cảnh an toàn tuyệt đối.</p>
+<h3>Ưu điểm vượt trội:</h3>
 <ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
+    <li><strong>Cấu hình cực mạnh:</strong> Chip 8 nhân UIS7862 cùng RAM 6GB và bộ nhớ trong 128GB cho trải nghiệm mượt mà không độ trễ.</li>
+    <li><strong>Camera 360 toàn cảnh:</strong> 4 mắt camera Sony ghi hình đồng thời 4 hướng ngay cả khi tắt máy, giám sát đỗ xe thông minh.</li>
+    <li><strong>Dẫn đường thông minh:</strong> Tích hợp Vietmap Live bản quyền cảnh báo tốc độ, camera phạt nguội và mật độ giao thông theo thời gian thực.</li>
+    <li><strong>Ra lệnh giọng nói:</strong> Trợ lý ảo Kiki nghe hiểu giọng nói 3 miền Bắc - Trung - Nam chuẩn xác.</li>
 </ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
+<h3>Chính sách lắp đặt tại Ôtô Hải Hà:</h3>
+<p>Lắp đặt giắc zin 100% không cắt nối dây điện nguyên bản của xe, bảo hành chính hãng 2 năm 1 đổi 1, tặng kèm sim 4G tốc độ cao và thẻ nhớ chuyên dụng.</p>',
         ),
 
         array(
-            'slug'        => 'camera-hanh-trinh-truoc-sau-70mai-a500s-1',
-            'title'       => 'Camera hành trình trước sau 70mai A500S-1',
-            'category'    => 'camera-man-hinh',
-            'cat_name'    => 'Camera Hành Trình & Màn Hình Android',
-            'price'       => '2.470.000',
-            'old_price'   => '2.910.000',
-            'badge'       => 'CAO CẤP',
-            'brand'       => '70mai',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/camera-hanh-trinh-truoc-sau-70mai-a500s-1.jpg',
-            'local_file'  => 'camera-hanh-trinh-truoc-sau-70mai-a500s-1.jpg',
-            'excerpt'     => 'Camera hành trình trước sau 70mai A500S-1 ghi hình sắc nét 2 kênh, tích hợp GPS, giám sát bãi đậu xe 24/7, cảnh báo ADAS và dễ dàng điều khiển qua ứng dụng.',
-            'specs'       => "Thương hiệu: 70mai
-Độ phân giải: 2K / 4K Ultra HD sắc nét
-Góc quay rộng: 140° - 170° quan sát toàn diện
-Tính năng: Ghi hình vòng lặp, cảnh báo tốc độ, ADAS AI thông minh
-Kết nối: Wi-Fi xem và tải video trực tiếp qua điện thoại
-Nguồn điện: 12V - 24V cổng tẩu / cắm giắc zin an toàn",
-            'content'     => '<h3>Tổng quan sản phẩm Camera hành trình trước sau 70mai A500S-1</h3>
-<p><strong>Camera hành trình trước sau 70mai A500S-1</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>70mai</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Camera hành trình trước sau 70mai A500S-1 ghi hình sắc nét 2 kênh, tích hợp GPS, giám sát bãi đậu xe 24/7, cảnh báo ADAS và dễ dàng điều khiển qua ứng dụng.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'camera-hanh-trinh-truoc-70mai-m310-plus-2k',
-            'title'       => 'Camera hành trình trước 70mai M310 Plus 2K',
-            'category'    => 'camera-man-hinh',
-            'cat_name'    => 'Camera Hành Trình & Màn Hình Android',
-            'price'       => '1.050.000',
-            'old_price'   => '1.240.000',
-            'badge'       => 'HOT',
-            'brand'       => '70mai',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/camera-hanh-trinh-truoc-70mai-m310-plus-2k.jpg',
-            'local_file'  => 'camera-hanh-trinh-truoc-70mai-m310-plus-2k.jpg',
-            'excerpt'     => 'Camera hành trình 70mai M310 Plus 2K ghi hình 2K QHD sắc nét, hỗ trợ Super Night Vision, WDR và ghi hình khẩn cấp có bộ đệm, giúp bảo vệ mọi hành trình an toàn hơn.',
-            'specs'       => "Thương hiệu: 70mai
-Độ phân giải: 2K / 4K Ultra HD sắc nét
-Góc quay rộng: 140° - 170° quan sát toàn diện
-Tính năng: Ghi hình vòng lặp, cảnh báo tốc độ, ADAS AI thông minh
-Kết nối: Wi-Fi xem và tải video trực tiếp qua điện thoại
-Nguồn điện: 12V - 24V cổng tẩu / cắm giắc zin an toàn",
-            'content'     => '<h3>Tổng quan sản phẩm Camera hành trình trước 70mai M310 Plus 2K</h3>
-<p><strong>Camera hành trình trước 70mai M310 Plus 2K</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>70mai</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Camera hành trình 70mai M310 Plus 2K ghi hình 2K QHD sắc nét, hỗ trợ Super Night Vision, WDR và ghi hình khẩn cấp có bộ đệm, giúp bảo vệ mọi hành trình an toàn hơn.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'camera-hanh-trinh-dang-guong-70mai-s410-truoc-sau-lui',
-            'title'       => 'Camera hành trình dạng gương 70mai S410 (trước, sau + lùi)',
-            'category'    => 'camera-man-hinh',
-            'cat_name'    => 'Camera Hành Trình & Màn Hình Android',
-            'price'       => '2.790.000',
-            'old_price'   => '3.290.000',
-            'badge'       => 'KHUYÊN DÙNG',
-            'brand'       => '70mai',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/camera-hanh-trinh-dang-guong-70mai-s410-truoc-sau-lui.jpg',
-            'local_file'  => 'camera-hanh-trinh-dang-guong-70mai-s410-truoc-sau-lui.jpg',
-            'excerpt'     => 'Camera hành trình dạng gương 70mai S410 ghi hình toàn diện với camera trước 2.5K, camera sau Full HD 1080P, màn hình cảm ứng 9.35 inch, hỗ trợ lái xe an toàn.',
-            'specs'       => "Thương hiệu: 70mai
-Độ phân giải: 2K / 4K Ultra HD sắc nét
-Góc quay rộng: 140° - 170° quan sát toàn diện
-Tính năng: Ghi hình vòng lặp, cảnh báo tốc độ, ADAS AI thông minh
-Kết nối: Wi-Fi xem và tải video trực tiếp qua điện thoại
-Nguồn điện: 12V - 24V cổng tẩu / cắm giắc zin an toàn",
-            'content'     => '<h3>Tổng quan sản phẩm Camera hành trình dạng gương 70mai S410 (trước, sau + lùi)</h3>
-<p><strong>Camera hành trình dạng gương 70mai S410 (trước, sau + lùi)</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>70mai</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Camera hành trình dạng gương 70mai S410 ghi hình toàn diện với camera trước 2.5K, camera sau Full HD 1080P, màn hình cảm ứng 9.35 inch, hỗ trợ lái xe an toàn.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'camera-hanh-trinh-70mai-a410',
-            'title'       => 'Camera hành trình 70mai A410',
-            'category'    => 'camera-man-hinh',
-            'cat_name'    => 'Camera Hành Trình & Màn Hình Android',
-            'price'       => '1.590.000',
-            'old_price'   => '1.880.000',
-            'badge'       => 'HOT',
-            'brand'       => '70mai',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/camera-hanh-trinh-70mai-a410.jpg',
-            'local_file'  => 'camera-hanh-trinh-70mai-a410.jpg',
-            'excerpt'     => 'Camera hành trình 70Mai A410 mang đến chất lượng ghi hình sắc nét, khả năng ghi hình ban đêm vượt trội và tính năng giám sát thông minh, bảo vệ bạn trong mọi chuyến đi.',
-            'specs'       => "Thương hiệu: 70mai
-Độ phân giải: 2K / 4K Ultra HD sắc nét
-Góc quay rộng: 140° - 170° quan sát toàn diện
-Tính năng: Ghi hình vòng lặp, cảnh báo tốc độ, ADAS AI thông minh
-Kết nối: Wi-Fi xem và tải video trực tiếp qua điện thoại
-Nguồn điện: 12V - 24V cổng tẩu / cắm giắc zin an toàn",
-            'content'     => '<h3>Tổng quan sản phẩm Camera hành trình 70mai A410</h3>
-<p><strong>Camera hành trình 70mai A410</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>70mai</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Camera hành trình 70Mai A410 mang đến chất lượng ghi hình sắc nét, khả năng ghi hình ban đêm vượt trội và tính năng giám sát thông minh, bảo vệ bạn trong mọi chuyến đi.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'camera-hanh-trinh-truoc-sau-70mai-a800se-1',
-            'title'       => 'Camera hành trình trước sau 70mai A800SE-1',
-            'category'    => 'camera-man-hinh',
-            'cat_name'    => 'Camera Hành Trình & Màn Hình Android',
-            'price'       => '3.390.000',
-            'old_price'   => '4.000.000',
-            'badge'       => 'MỚI',
-            'brand'       => '70mai',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/camera-hanh-trinh-truoc-sau-70mai-a800se-1.jpg',
-            'local_file'  => 'camera-hanh-trinh-truoc-sau-70mai-a800se-1.jpg',
-            'excerpt'     => 'Camera hành trình 70mai A800SE-1 ghi hình chuẩn 4K, tích hợp công nghệ HDR và Super Night Vision, mang đến chất lượng hình ảnh sắc nét cả ngày và đêm.',
-            'specs'       => "Thương hiệu: 70mai
-Độ phân giải: 2K / 4K Ultra HD sắc nét
-Góc quay rộng: 140° - 170° quan sát toàn diện
-Tính năng: Ghi hình vòng lặp, cảnh báo tốc độ, ADAS AI thông minh
-Kết nối: Wi-Fi xem và tải video trực tiếp qua điện thoại
-Nguồn điện: 12V - 24V cổng tẩu / cắm giắc zin an toàn",
-            'content'     => '<h3>Tổng quan sản phẩm Camera hành trình trước sau 70mai A800SE-1</h3>
-<p><strong>Camera hành trình trước sau 70mai A800SE-1</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>70mai</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Camera hành trình 70mai A800SE-1 ghi hình chuẩn 4K, tích hợp công nghệ HDR và Super Night Vision, mang đến chất lượng hình ảnh sắc nét cả ngày và đêm.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'camera-hanh-trinh-70mai-a510',
-            'title'       => 'Camera hành trình 70mai A510',
-            'category'    => 'camera-man-hinh',
-            'cat_name'    => 'Camera Hành Trình & Màn Hình Android',
-            'price'       => '2.390.000',
-            'old_price'   => '2.820.000',
-            'badge'       => 'BÁN CHẠY',
-            'brand'       => '70mai',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/camera-hanh-trinh-70mai-a510.jpg',
-            'local_file'  => 'camera-hanh-trinh-70mai-a510.jpg',
-            'excerpt'     => '70mai A510 tích hợp cảm biến Sony STARVIS 2, ghi hình HDR trước với độ phân giải cao, hỗ trợ GPS, ADAS, giám sát đỗ xe 24h và tính năng ghi hình khẩn cấp.',
-            'specs'       => "Thương hiệu: 70mai
-Độ phân giải: 2K / 4K Ultra HD sắc nét
-Góc quay rộng: 140° - 170° quan sát toàn diện
-Tính năng: Ghi hình vòng lặp, cảnh báo tốc độ, ADAS AI thông minh
-Kết nối: Wi-Fi xem và tải video trực tiếp qua điện thoại
-Nguồn điện: 12V - 24V cổng tẩu / cắm giắc zin an toàn",
-            'content'     => '<h3>Tổng quan sản phẩm Camera hành trình 70mai A510</h3>
-<p><strong>Camera hành trình 70mai A510</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>70mai</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. 70mai A510 tích hợp cảm biến Sony STARVIS 2, ghi hình HDR trước với độ phân giải cao, hỗ trợ GPS, ADAS, giám sát đỗ xe 24h và tính năng ghi hình khẩn cấp.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'camera-hanh-trinh-truoc-70mai-4k-a810-lite',
-            'title'       => 'Camera hành trình trước 70mai 4K A810 Lite',
-            'category'    => 'camera-man-hinh',
-            'cat_name'    => 'Camera Hành Trình & Màn Hình Android',
-            'price'       => '2.690.000',
-            'old_price'   => '3.170.000',
+            'slug'        => 'android-box-zestech-dx265-pro',
+            'title'       => 'Android Box Zestech DX265 Pro thông minh',
+            'category'    => 'man-hinh-va-giai-tri',
+            'cat_name'    => 'Màn hình và giải trí',
+            'price'       => '7.500.000',
+            'old_price'   => '8.500.000',
             'badge'       => 'CHÍNH HÃNG',
-            'brand'       => '70mai',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/camera-hanh-trinh-truoc-70mai-4k-a810-lite.jpg',
-            'local_file'  => 'camera-hanh-trinh-truoc-70mai-4k-a810-lite.jpg',
-            'excerpt'     => 'Camera hành trình 70mai 4K A810 Lite ghi hình 4K HDR sắc nét, hỗ trợ ghi đêm, GPS, giám sát đỗ xe 24/7 và Wi-Fi 6, giúp bảo vệ hành trình an toàn, hiệu quả.',
-            'specs'       => "Thương hiệu: 70mai
-Độ phân giải: 2K / 4K Ultra HD sắc nét
-Góc quay rộng: 140° - 170° quan sát toàn diện
-Tính năng: Ghi hình vòng lặp, cảnh báo tốc độ, ADAS AI thông minh
-Kết nối: Wi-Fi xem và tải video trực tiếp qua điện thoại
-Nguồn điện: 12V - 24V cổng tẩu / cắm giắc zin an toàn",
-            'content'     => '<h3>Tổng quan sản phẩm Camera hành trình trước 70mai 4K A810 Lite</h3>
-<p><strong>Camera hành trình trước 70mai 4K A810 Lite</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>70mai</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Camera hành trình 70mai 4K A810 Lite ghi hình 4K HDR sắc nét, hỗ trợ ghi đêm, GPS, giám sát đỗ xe 24/7 và Wi-Fi 6, giúp bảo vệ hành trình an toàn, hiệu quả.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
+            'brand'       => 'Zestech',
+            'warranty'    => '24 tháng 1 đổi 1',
+            'origin'      => 'Chính hãng Zestech & Lắp đặt tại Hải Hà',
+            'img'         => $img_uri . '/elliview-s4.jpg',
+            'excerpt'     => 'Biến màn hình zin theo xe thành màn hình Android thông minh chỉ bằng 1 thao tác cắm cổng USB, giữ nguyên 100% âm thanh và tính năng gốc.',
+            'specs'       => "Kết nối: Cắm giắc Type-C / USB zin theo xe 100%
+RAM / ROM: 4GB / 64GB
+Chip xử lý: Qualcomm Snapdragon 6125 8 nhân
+Bản đồ: Vietmap S2 bản quyền trọn đời, Google Maps
+Hỗ trợ: Giữ nguyên màn hình zin và toàn bộ tính năng gốc của xe",
+            'content'     => '<h3>Biến màn hình zin thành màn Android thông minh chỉ trong 5 giây</h3>
+<p><strong>Android Box Zestech DX265 Pro</strong> là giải pháp hoàn hảo cho chủ xe muốn giữ nguyên màn hình và hệ thống âm thanh nguyên bản nhưng vẫn muốn trải nghiệm các tính năng Android hiện đại: xem Youtube không quảng cáo, dẫn đường Vietmap, ra lệnh giọng nói Kiki.</p>
+<h3>Tính năng nổi bật:</h3>
 <ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
+    <li>Cắm giắc USB/Type-C là nhận ngay, không tháo lắp đục khoét bất kỳ chi tiết nào.</li>
+    <li>Chip Qualcomm Snapdragon vận hành mượt mà, tối ưu nhiệt lượng khi hoạt động liên tục.</li>
+    <li>Hỗ trợ định vị quản lý xe từ xa qua điện thoại thông minh.</li>
+</ul>',
         ),
 
         array(
-            'slug'        => 'may-bom-lop-michelin-m2566',
-            'title'       => 'Máy bơm lốp Michelin M2566',
-            'category'    => 'bom-lop-tpms',
-            'cat_name'    => 'Máy Bơm Lốp & Cảm Biến Áp Suất Lốp (TPMS)',
-            'price'       => '1.170.000',
-            'old_price'   => '1.380.000',
-            'badge'       => 'CAO CẤP',
-            'brand'       => 'Michelin',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/may-bom-lop-michelin-m2566.jpg',
-            'local_file'  => 'may-bom-lop-michelin-m2566.jpg',
-            'excerpt'     => 'Máy bơm lốp Michelin M2566 với công suất mạnh mẽ 168W, màn hình LED kỹ thuật số, tự ngắt khi đủ áp suất và đèn LED hỗ trợ khi sử dụng ban đêm.',
-            'specs'       => "Thương hiệu: Michelin
-Áp suất nén tối đa: 150 PSI / 10.3 Bar
-Chức năng: Cài đặt áp suất điện tử, tự động ngắt khi đủ áp
-Độ chính xác: ± 0.1 Bar tiêu chuẩn quốc tế
-Đèn chiếu sáng: Đèn LED cứu hộ ban đêm tích hợp SOS
-Bảo hành: 12 - 24 tháng chính hãng",
-            'content'     => '<h3>Tổng quan sản phẩm Máy bơm lốp Michelin M2566</h3>
-<p><strong>Máy bơm lốp Michelin M2566</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Michelin</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Máy bơm lốp Michelin M2566 với công suất mạnh mẽ 168W, màn hình LED kỹ thuật số, tự ngắt khi đủ áp suất và đèn LED hỗ trợ khi sử dụng ban đêm.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'may-bom-lop-khong-day-cong-suat-cao-michelin-m2567',
-            'title'       => 'Máy bơm lốp không dây công suất cao Michelin M2567',
-            'category'    => 'bom-lop-tpms',
-            'cat_name'    => 'Máy Bơm Lốp & Cảm Biến Áp Suất Lốp (TPMS)',
-            'price'       => '1.180.000',
-            'old_price'   => '1.390.000',
-            'badge'       => 'KHUYÊN DÙNG',
-            'brand'       => 'Michelin',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/may-bom-lop-khong-day-cong-suat-cao-michelin-m2567.jpg',
-            'local_file'  => 'may-bom-lop-khong-day-cong-suat-cao-michelin-m2567.jpg',
-            'excerpt'     => 'Máy bơm lốp Michelin M2567 nhỏ gọn, không dây, công suất mạnh mẽ, giúp bơm lốp nhanh chóng, an toàn và tiện lợi cho mọi chuyến đi.',
-            'specs'       => "Thương hiệu: Michelin
-Áp suất nén tối đa: 150 PSI / 10.3 Bar
-Chức năng: Cài đặt áp suất điện tử, tự động ngắt khi đủ áp
-Độ chính xác: ± 0.1 Bar tiêu chuẩn quốc tế
-Đèn chiếu sáng: Đèn LED cứu hộ ban đêm tích hợp SOS
-Bảo hành: 12 - 24 tháng chính hãng",
-            'content'     => '<h3>Tổng quan sản phẩm Máy bơm lốp không dây công suất cao Michelin M2567</h3>
-<p><strong>Máy bơm lốp không dây công suất cao Michelin M2567</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Michelin</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Máy bơm lốp Michelin M2567 nhỏ gọn, không dây, công suất mạnh mẽ, giúp bơm lốp nhanh chóng, an toàn và tiện lợi cho mọi chuyến đi.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'than-may-bom-hoi-pin-hukan-gen-2-g2-bhp2120-chua-pin-sac',
-            'title'       => 'Thân máy bơm hơi pin Hukan (GEN 2) G2-BHP2120 (chưa pin, sạc)',
-            'category'    => 'bom-lop-tpms',
-            'cat_name'    => 'Máy Bơm Lốp & Cảm Biến Áp Suất Lốp (TPMS)',
-            'price'       => '720.000',
-            'old_price'   => '850.000',
-            'badge'       => 'HOT',
-            'brand'       => 'Hukan',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/than-may-bom-hoi-pin-hukan-gen-2-g2-bhp2120-chua-pin-sac.jpg',
-            'local_file'  => 'than-may-bom-hoi-pin-hukan-gen-2-g2-bhp2120-chua-pin-sac.jpg',
-            'excerpt'     => 'Máy bơm hơi pin Hukan (GEN 2) G2-BHP2120 mang đến khả năng bơm hơi mạnh mẽ, vận hành linh hoạt với pin 21V và màn hình kỹ thuật số giúp kiểm soát áp suất chính xác.',
-            'specs'       => "Thương hiệu: Hukan
-Áp suất nén tối đa: 150 PSI / 10.3 Bar
-Chức năng: Cài đặt áp suất điện tử, tự động ngắt khi đủ áp
-Độ chính xác: ± 0.1 Bar tiêu chuẩn quốc tế
-Đèn chiếu sáng: Đèn LED cứu hộ ban đêm tích hợp SOS
-Bảo hành: 12 - 24 tháng chính hãng",
-            'content'     => '<h3>Tổng quan sản phẩm Thân máy bơm hơi pin Hukan (GEN 2) G2-BHP2120 (chưa pin, sạc)</h3>
-<p><strong>Thân máy bơm hơi pin Hukan (GEN 2) G2-BHP2120 (chưa pin, sạc)</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Hukan</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Máy bơm hơi pin Hukan (GEN 2) G2-BHP2120 mang đến khả năng bơm hơi mạnh mẽ, vận hành linh hoạt với pin 21V và màn hình kỹ thuật số giúp kiểm soát áp suất chính xác.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'may-bom-hoi-da-nang-dung-dien-12v220v-stanley-sxif3501',
-            'title'       => 'Máy bơm hơi đa năng dùng điện 12V/220V Stanley SXIF3501',
-            'category'    => 'bom-lop-tpms',
-            'cat_name'    => 'Máy Bơm Lốp & Cảm Biến Áp Suất Lốp (TPMS)',
+            'slug'        => 'bo-chuyen-doi-carplay-khong-day-zestech',
+            'title'       => 'Bộ chuyển đổi Apple CarPlay không dây Zestech & Android Auto',
+            'category'    => 'man-hinh-va-giai-tri',
+            'cat_name'    => 'Màn hình và giải trí',
             'price'       => '1.850.000',
-            'old_price'   => '2.180.000',
-            'badge'       => 'MỚI',
-            'brand'       => 'Stanley',
-            'warranty'    => '36 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/may-bom-hoi-da-nang-dung-dien-12v220v-stanley-sxif3501.jpg',
-            'local_file'  => 'may-bom-hoi-da-nang-dung-dien-12v220v-stanley-sxif3501.jpg',
-            'excerpt'     => 'Máy bơm hơi đa năng Stanley SXIF3501 dùng điện 12V/220V, hỗ trợ bơm lốp, thổi khí nhanh, tiện lợi cho gia đình và ô tô.',
-            'specs'       => "Thương hiệu: Stanley
-Áp suất nén tối đa: 150 PSI / 10.3 Bar
-Chức năng: Cài đặt áp suất điện tử, tự động ngắt khi đủ áp
-Độ chính xác: ± 0.1 Bar tiêu chuẩn quốc tế
-Đèn chiếu sáng: Đèn LED cứu hộ ban đêm tích hợp SOS
-Bảo hành: 12 - 24 tháng chính hãng",
-            'content'     => '<h3>Tổng quan sản phẩm Máy bơm hơi đa năng dùng điện 12V/220V Stanley SXIF3501</h3>
-<p><strong>Máy bơm hơi đa năng dùng điện 12V/220V Stanley SXIF3501</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Stanley</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Máy bơm hơi đa năng Stanley SXIF3501 dùng điện 12V/220V, hỗ trợ bơm lốp, thổi khí nhanh, tiện lợi cho gia đình và ô tô.</p>
+            'old_price'   => '2.200.000',
+            'badge'       => 'TIỆN ÍCH',
+            'brand'       => 'Zestech',
+            'warranty'    => '12 tháng 1 đổi 1',
+            'origin'      => 'Phân phối chính hãng Zestech & Lắp đặt tại Hải Hà',
+            'img'         => $img_uri . '/baseus-tau-sac.jpg',
+            'excerpt'     => 'Giải pháp kết nối Apple CarPlay và Android Auto không dây tiện lợi, tạm biệt dây cáp rườm rà, tự động kết nối khi vừa bước lên xe.',
+            'specs'       => "Chuẩn kết nối: Bluetooth 5.0 & Wi-Fi Dual Band 5.8GHz
+Tương thích: iPhone iOS 10+ và Android 11+
+Tốc độ kết nối: Tự động kết nối trong vòng 5 giây khi lên xe
+Độ trễ: Cực thấp dưới 0.1s, âm thanh chuẩn Lossless",
+            'content'     => '<h3>Tạm biệt dây cáp vướng víu trên xe hơi</h3>
+<p><strong>Bộ chuyển đổi CarPlay không dây</strong> giúp bạn tận hưởng trọn vẹn sự tiện lợi: điện thoại vẫn để trong túi quần hoặc túi xách, khi bước lên xe hệ thống sẽ tự động ghép nối và hiển thị giao diện CarPlay lên màn hình trung tâm.</p>
+<p>Tương thích với hầu hết các dòng xe đã có sẵn tính năng Apple CarPlay hoặc Android Auto có dây của Toyota, Hyundai, Kia, Mazda, Ford, Honda, Mercedes-Benz, BMW.</p>',
+        ),
 
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
+        // -------------------------------------------------------------
+        // 2. Camera (camera-o-to)
+        // -------------------------------------------------------------
+        array(
+            'slug'        => 'camera-hanh-trinh-70mai-a810-4k',
+            'title'       => 'Camera hành trình 70mai A810 4K HDR Sony Starvis 2',
+            'category'    => 'camera-o-to',
+            'cat_name'    => 'Camera',
+            'price'       => '4.690.000',
+            'old_price'   => '5.200.000',
+            'badge'       => '4K SẮC NÉT',
+            'brand'       => '70mai (Xiaomi Ecosystem)',
+            'warranty'    => '12 tháng 1 đổi 1',
+            'origin'      => 'Chính hãng 70mai & Lắp đặt tại Hải Hà',
+            'img'         => $img_uri . '/vietmap-c61-pro.jpg',
+            'excerpt'     => 'Dòng camera hành trình 4K flagship với cảm biến Sony Starvis 2 ghi hình ban đêm siêu sáng rõ biển số xe, tích hợp GPS và hỗ trợ ADAS cảnh báo va chạm.',
+            'specs'       => "Độ phân giải: 4K UHD 3840 x 2160P HDR
+Cảm biến hình ảnh: Sony Starvis 2 IMX678 thế hệ mới
+Góc quay: 150 độ F1.8 bắt trọn làn đường
+Tính năng: Cảnh báo ADAS lái xe an toàn, GPS tích hợp, giám sát đỗ xe 24/24",
+            'content'     => '<h3>Flagship camera hành trình 4K đỉnh cao từ 70mai</h3>
+<p><strong>70mai A810 4K HDR</strong> trang bị cảm biến Sony Starvis 2 IMX678 đột phá, cung cấp dải tương phản động rộng gấp đôi thế hệ trước. Ngay cả khi di chuyển qua các cung đường hầm tối hoặc ban đêm có đèn pha chiếu ngược, biển số xe phía trước vẫn hiển thị rõ nét.</p>
 <ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
+    <li>Ghi hình đồng thời 2 kênh trước và sau sắc nét.</li>
+    <li>Tích hợp GPS ghi lại tọa độ và tốc độ di chuyển chính xác trên từng khung hình.</li>
+    <li>Cảnh báo thông minh ADAS: cảnh báo lệch làn, xe phía trước khởi hành, nguy cơ va chạm.</li>
+</ul>',
         ),
 
         array(
-            'slug'        => 'bom-chan-co-dong-ho-2-x-55-x-120-mm-tolsen-65510',
-            'title'       => 'Bơm chân có đồng hồ 2 x Ø55 x 120 mm Tolsen 65510',
-            'category'    => 'bom-lop-tpms',
-            'cat_name'    => 'Máy Bơm Lốp & Cảm Biến Áp Suất Lốp (TPMS)',
-            'price'       => '410.000',
-            'old_price'   => '480.000',
-            'badge'       => 'BÁN CHẠY',
-            'brand'       => 'Tolsen',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/bom-chan-co-dong-ho-2-x-55-x-120-mm-tolsen-65510.jpg',
-            'local_file'  => 'bom-chan-co-dong-ho-2-x-55-x-120-mm-tolsen-65510.jpg',
-            'excerpt'     => 'Bơm chân có đồng hồ Tolsen 65510 có thùng đôi làm từ thép hợp kim sơn chống gỉ, chống oxy hóa, áp suất 80 psi bơm hơi lốp xe đạp, xe máy nhanh.',
-            'specs'       => "Thương hiệu: Tolsen
-Áp suất nén tối đa: 150 PSI / 10.3 Bar
-Chức năng: Cài đặt áp suất điện tử, tự động ngắt khi đủ áp
-Độ chính xác: ± 0.1 Bar tiêu chuẩn quốc tế
-Đèn chiếu sáng: Đèn LED cứu hộ ban đêm tích hợp SOS
-Bảo hành: 12 - 24 tháng chính hãng",
-            'content'     => '<h3>Tổng quan sản phẩm Bơm chân có đồng hồ 2 x Ø55 x 120 mm Tolsen 65510</h3>
-<p><strong>Bơm chân có đồng hồ 2 x Ø55 x 120 mm Tolsen 65510</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Tolsen</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Bơm chân có đồng hồ Tolsen 65510 có thùng đôi làm từ thép hợp kim sơn chống gỉ, chống oxy hóa, áp suất 80 psi bơm hơi lốp xe đạp, xe máy nhanh.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
+            'slug'        => 'he-thong-camera-360-do-safeview-3d-ld900',
+            'title'       => 'Hệ thống Camera 360 độ Safeview 3D LD900 toàn cảnh',
+            'category'    => 'camera-o-to',
+            'cat_name'    => 'Camera',
+            'price'       => '12.500.000',
+            'old_price'   => '14.000.000',
+            'badge'       => 'TOÀN CẢNH 3D',
+            'brand'       => 'Safeview',
+            'warranty'    => '24 tháng chính hãng',
+            'origin'      => 'Chính hãng Safeview & Lắp đặt tại Hải Hà',
+            'img'         => $img_uri . '/vietmap-c62s.jpg',
+            'excerpt'     => 'Loại bỏ hoàn toàn điểm mù quanh xe với 28 góc quan sát 3D sắc nét, tự động kích hoạt khi bật xi-nhan hoặc về số lùi.',
+            'specs'       => "Mắt camera: 4 mắt Sony Starvis chuẩn chống nước IP68
+Góc nhìn: 28 góc nhìn 2D & 3D siêu rộng không góc chết
+Mô phỏng: Mô hình xe 3D chuẩn xác theo từng dòng xe
+Tính năng: Tự động mở camera khi xi nhan, lùi xe, ghi hình hành trình 4 hướng",
+            'content'     => '<h3>Công nghệ quan sát toàn cảnh 360 độ dẫn đầu phân khúc</h3>
+<p><strong>Safeview 3D LD900</strong> sở hữu chip vi xử lý hình ảnh độc quyền với khả năng mô phỏng xe 3D chân thực, hiển thị chính xác vạch đánh lái theo vô lăng giúp lái xe tự tin luồn lách qua ngõ hẹp và lùi chuồng an toàn.</p>
+<p>Tại Hải Hà Workshop, kỹ thuật viên tiến hành căn bạt cân chỉnh tự động theo tiêu chuẩn nhà sản xuất, đảm bảo hình ảnh ghép nối phẳng tuyệt đối không cong vênh.</p>',
         ),
 
         array(
-            'slug'        => 'may-bom-o-to-xe-may-kem-va-lop-xe-khan-cap-12v-michelin-5818',
-            'title'       => 'Máy bơm ô tô, xe máy kèm vá lốp xe khẩn cấp 12V Michelin 5818',
-            'category'    => 'bom-lop-tpms',
-            'cat_name'    => 'Máy Bơm Lốp & Cảm Biến Áp Suất Lốp (TPMS)',
-            'price'       => '1.190.000',
-            'old_price'   => '1.400.000',
+            'slug'        => 'camera-lui-ahd-goc-rong-chong-nuoc',
+            'title'       => 'Camera lùi AHD góc rộng ban đêm Full HD chống nước IP68',
+            'category'    => 'camera-o-to',
+            'cat_name'    => 'Camera',
+            'price'       => '850.000',
+            'old_price'   => '1.100.000',
+            'badge'       => 'TIÊU CHUẨN',
+            'brand'       => 'AHD Japan Tech',
+            'warranty'    => '12 tháng',
+            'origin'      => 'Chính hãng OEM & Lắp đặt tại Hải Hà',
+            'img'         => $img_uri . '/vietmap-c65.jpg',
+            'excerpt'     => 'Camera lùi công nghệ AHD 1080P sắc nét chống lóa ban đêm, góc quay 170 độ căn chỉnh lùi xe an toàn tuyệt đối.',
+            'specs'       => "Độ phân giải: AHD 1080P Full HD
+Góc nhìn: Góc rộng 170 độ chuẩn Fisheye
+Cảm biến: Chip nhạy sáng Starlight ghi hình rõ nét ban đêm
+Chống nước: Chuẩn IP68 ngâm nước không lo mờ đục",
+            'content'     => '<h3>Căn chỉnh lùi xe an toàn tuyệt đối mọi điều kiện thời tiết</h3>
+<p>Trang bị chip cảm biến Starlight nhạy sáng cao giúp hình ảnh lùi ban đêm sáng rõ như ban ngày. Thân vỏ hợp kim kẽm mạ crôm chống gỉ sét, đạt tiêu chuẩn chống nước IP68 kháng mưa bão và xịt rửa xe áp lực cao.</p>',
+        ),
+
+        // -------------------------------------------------------------
+        // 3. An toàn (an-toan-o-to)
+        // -------------------------------------------------------------
+        array(
+            'slug'        => 'cam-bien-ap-suat-lop-tpms-steelmate',
+            'title'       => 'Cảm biến áp suất lốp Steelmate van trong màn hình Solar',
+            'category'    => 'an-toan-o-to',
+            'cat_name'    => 'An toàn',
+            'price'       => '2.450.000',
+            'old_price'   => '2.800.000',
+            'badge'       => 'AN TOÀN HÀNG ĐẦU',
+            'brand'       => 'Steelmate',
+            'warranty'    => '36 tháng đổi mới',
+            'origin'      => 'Chính hãng Steelmate & Lắp đặt tại Hải Hà',
+            'img'         => $img_uri . '/steelmate-tpms.jpg',
+            'excerpt'     => 'Thiết bị an toàn sống còn cho xe ô tô, cảnh báo tức thì bằng âm thanh và đèn khi lốp bị dính đinh hoặc quá nhiệt.',
+            'specs'       => "Loại van: Van trong chống trộm, tuổi thọ pin van 5 năm
+Màn hình: LCD Solar sạc bằng năng lượng mặt trời
+Cảnh báo: Áp suất cao/thấp, rò rỉ hơi nhanh, nhiệt độ lốp bất thường
+Độ chính xác: Sai số ± 0.1 Bar",
+            'content'     => '<h3>Bảo vệ lốp xe và an toàn tính mạng trên mọi nẻo đường</h3>
+<p><strong>Cảm biến áp suất lốp Steelmate TPMS</strong> giám sát liên tục 4 bánh xe theo thời gian thực. Khi lốp bị cán đinh hoặc tụt áp suất đột ngột, màn hình taplo sẽ lập tức phát tiếng chuông cảnh báo to rõ.</p>
+<p>Gói lắp đặt tại Ôtô Hải Hà bao gồm: tháo lốp, vào van trong, cân bằng động bánh xe bằng máy laser chuyên dụng.</p>',
+        ),
+
+        array(
+            'slug'        => 'bo-cam-bien-lui-4-mat-steelmate',
+            'title'       => 'Bộ cảm biến lùi 4 mắt Steelmate cảnh báo âm thanh và khoảng cách',
+            'category'    => 'an-toan-o-to',
+            'cat_name'    => 'An toàn',
+            'price'       => '1.350.000',
+            'old_price'   => '1.650.000',
             'badge'       => 'CHÍNH HÃNG',
-            'brand'       => 'Michelin',
+            'brand'       => 'Steelmate',
+            'warranty'    => '24 tháng',
+            'origin'      => 'Chính hãng Steelmate & Lắp đặt tại Hải Hà',
+            'img'         => $img_uri . '/ellisafe-j3.jpg',
+            'excerpt'     => 'Hỗ trợ người lái phát hiện chướng ngại vật phía sau xe, chống va quẹt va chạm khi lùi chuồng hẹp.',
+            'specs'       => "Mắt cảm biến: 4 mắt sóng siêu âm độ nhạy cao
+Phạm vi quét: 0.3m đến 2.5m
+Cảnh báo: Màn hình LED hiển thị khoảng cách và tiếng bíp theo từng mức
+Lắp đặt: Sơn đồng màu theo màu sơn zin của xe",
+            'content'     => '<h3>Trợ thủ đắc lực chống trầy xước cản sau khi lùi xe</h3>
+<p>Bộ 4 mắt cảm biến siêu âm Steelmate được khoan và gắn tỉ mỉ vào cản sau xe, sơn tĩnh điện đúng màu sơn nguyên bản, mang lại tính thẩm mỹ nguyên bản như xe xuất xưởng từ nhà máy.</p>',
+        ),
+
+        array(
+            'slug'        => 'he-thong-canh-bao-diem-mu-radar-bsm',
+            'title'       => 'Hệ thống cảnh báo điểm mù Radar BSM BSM-01 chính hãng',
+            'category'    => 'an-toan-o-to',
+            'cat_name'    => 'An toàn',
+            'price'       => '6.800.000',
+            'old_price'   => '7.500.000',
+            'badge'       => 'AN TOÀN CAO CẤP',
+            'brand'       => 'BSM Radar Tech',
+            'warranty'    => '24 tháng 1 đổi 1',
+            'origin'      => 'Chính hãng BSM & Lắp đặt tại Hải Hà',
+            'img'         => $img_uri . '/ellisafe-i5.jpg',
+            'excerpt'     => 'Công nghệ radar bước sóng milimet cảnh báo điểm mù trên mặt gương chiếu hậu, phòng ngừa va chạm nguy hiểm khi chuyển làn tốc độ cao.',
+            'specs'       => "Tần số sóng: Radar bước sóng Milimet 24GHz / 77GHz
+Khoảng cách phát hiện: Lên tới 30m trong mọi thời tiết mưa gió sương mù
+Cảnh báo: Đèn LED trên gương chiếu hậu và âm thanh bip cảnh báo
+Tính năng: Cảnh báo chuyển làn (LCA), Cảnh báo phương tiện cắt ngang khi lùi (RCTA)",
+            'content'     => '<h3>Tính năng an toàn chủ động trang bị trên xe hạng sang</h3>
+<p>Điểm mù là nguyên nhân hàng đầu gây ra các vụ va chạm khi chuyển làn trên cao tốc. Hệ thống cảnh báo điểm mù Radar BSM hoạt động bằng sóng radar xuyên thấu qua cản nhựa, không bị ảnh hưởng bởi mưa rào, sương mù hay bụi bẩn.</p>',
+        ),
+
+        array(
+            'slug'        => 'man-hinh-hien-thi-kinh-lai-hud-vietmap-h1n',
+            'title'       => 'Màn hình hiển thị kính lái HUD Vietmap H1N cảnh báo tốc độ',
+            'category'    => 'an-toan-o-to',
+            'cat_name'    => 'An toàn',
+            'price'       => '2.690.000',
+            'old_price'   => '3.000.000',
+            'badge'       => 'CÔNG NGHỆ HUD',
+            'brand'       => 'Vietmap',
             'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/may-bom-o-to-xe-may-kem-va-lop-xe-khan-cap-12v-michelin-5818.jpg',
-            'local_file'  => 'may-bom-o-to-xe-may-kem-va-lop-xe-khan-cap-12v-michelin-5818.jpg',
-            'excerpt'     => 'Máy bơm ô tô, xe máy kèm vá lốp xe khẩn cấp 12V Michelin 5818 sử dụng cho xe: sendan, Suv, bán tải, 4,5 và 7,8 chỗ,  xe 16 chỗ, đi kèm đầu bơm phụ để bơm phao bơi',
-            'specs'       => "Thương hiệu: Michelin
-Áp suất nén tối đa: 150 PSI / 10.3 Bar
-Chức năng: Cài đặt áp suất điện tử, tự động ngắt khi đủ áp
-Độ chính xác: ± 0.1 Bar tiêu chuẩn quốc tế
-Đèn chiếu sáng: Đèn LED cứu hộ ban đêm tích hợp SOS
-Bảo hành: 12 - 24 tháng chính hãng",
-            'content'     => '<h3>Tổng quan sản phẩm Máy bơm ô tô, xe máy kèm vá lốp xe khẩn cấp 12V Michelin 5818</h3>
-<p><strong>Máy bơm ô tô, xe máy kèm vá lốp xe khẩn cấp 12V Michelin 5818</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Michelin</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Máy bơm ô tô, xe máy kèm vá lốp xe khẩn cấp 12V Michelin 5818 sử dụng cho xe: sendan, Suv, bán tải, 4,5 và 7,8 chỗ,  xe 16 chỗ, đi kèm đầu bơm phụ để bơm phao bơi</p>
+            'origin'      => 'Chính hãng Vietmap & Lắp đặt tại Hải Hà',
+            'img'         => $img_uri . '/vietmap-c61-pro.jpg',
+            'excerpt'     => 'Hiển thị thông số tốc độ và cảnh báo biển báo giao thông trực tiếp trên tầm nhìn lái xe, giúp tài xế không cần cúi đầu nhìn đồng hồ taplo.',
+            'specs'       => "Hiển thị: Tốc độ hiện tại, giới hạn tốc độ cung đường, camera phạt nguội
+Dữ liệu giao thông: Cập nhật toàn quốc từ Vietmap Live
+Kết nối: Cổng OBDII và GPS độc lập
+Màn hình: Kính phản chiếu quang học không gây chói mắt ban đêm",
+            'content'     => '<h3>Lái xe đúng luật, an toàn và phong cách như phi công tiêm kích</h3>
+<p><strong>Vietmap H1N</strong> đồng bộ dữ liệu giao thông toàn quốc, phát cảnh báo bằng giọng nói tiếng Việt khi xe vượt quá tốc độ cho phép, sắp tới khu vực có camera phạt nguội hay trạm thu phí.</p>',
+        ),
 
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
+        // -------------------------------------------------------------
+        // 4. Phim và bảo vệ sơn (phim-va-bao-ve-son)
+        // -------------------------------------------------------------
+        array(
+            'slug'        => 'dan-phim-cach-nhiet-3m-crystalline-chinh-hang',
+            'title'       => 'Dán phim cách nhiệt 3M Crystalline chính hãng Mỹ gói toàn xe',
+            'category'    => 'phim-va-bao-ve-son',
+            'cat_name'    => 'Phim và bảo vệ sơn',
+            'price'       => '14.800.000',
+            'old_price'   => '16.500.000',
+            'badge'       => 'CAO CẤP NHẤT',
+            'brand'       => '3M USA',
+            'warranty'    => '10 năm điện tử chính hãng 3M',
+            'origin'      => 'Nhập khẩu 3M Hoa Kỳ & Thi công tại Hải Hà',
+            'img'         => $img_uri . '/bat-phu-oto.jpg',
+            'excerpt'     => 'Đỉnh cao phim cách nhiệt quang học 200 lớp từ 3M Mỹ, cách nhiệt vượt trội, bảo vệ sức khỏe và chống chói lóa tuyệt đối.',
+            'specs'       => "Công nghệ: 200 lớp quang học Nano đa lớp không chứa kim loại
+Chống tia hồng ngoại (IR): 97% - 99%
+Chống tia cực tím (UV): 99.9% SPF 1000+
+Không cản sóng: 100% không ảnh hưởng sóng điện thoại, GPS, VETC/ePass",
+            'content'     => '<h3>Chuẩn mực phim cách nhiệt cao cấp nhất thế giới</h3>
+<p>Phim cách nhiệt <strong>3M Crystalline</strong> ứng dụng công nghệ đa lớp độc quyền với 200 lớp quang học mỏng hơn 1 sợi tóc. Khả năng loại bỏ 97% tia hồng ngoại sinh nhiệt, giữ cho khoang lái luôn mát mẻ và giảm tải tối đa cho hệ thống điều hòa ô tô.</p>
+<p>Thi công trong phòng lạnh đạt chuẩn tại xưởng Ôtô Hải Hà, cấp mã bảo hành điện tử chính hãng 3M toàn cầu 10 năm.</p>',
         ),
 
         array(
-            'slug'        => 'may-bom-lop-banh-xe-o-to-hiroma-dhl-0312',
-            'title'       => 'Máy bơm lốp bánh xe ô tô Hiroma DHL-0312',
-            'category'    => 'bom-lop-tpms',
-            'cat_name'    => 'Máy Bơm Lốp & Cảm Biến Áp Suất Lốp (TPMS)',
-            'price'       => '350.000',
-            'old_price'   => '410.000',
-            'badge'       => 'CAO CẤP',
-            'brand'       => 'Hiroma',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/may-bom-lop-banh-xe-o-to-hiroma-dhl-0312.jpg',
-            'local_file'  => 'may-bom-lop-banh-xe-o-to-hiroma-dhl-0312.jpg',
-            'excerpt'     => 'Máy bơm lốp bánh xe ô tô Hiroma DHL-0312 có công suất 150W, piston thép size lớn nén áp suất cao cho lưu lượng khí bơm đạt 40 lít/phút.',
-            'specs'       => "Thương hiệu: Hiroma
-Áp suất nén tối đa: 150 PSI / 10.3 Bar
-Chức năng: Cài đặt áp suất điện tử, tự động ngắt khi đủ áp
-Độ chính xác: ± 0.1 Bar tiêu chuẩn quốc tế
-Đèn chiếu sáng: Đèn LED cứu hộ ban đêm tích hợp SOS
-Bảo hành: 12 - 24 tháng chính hãng",
-            'content'     => '<h3>Tổng quan sản phẩm Máy bơm lốp bánh xe ô tô Hiroma DHL-0312</h3>
-<p><strong>Máy bơm lốp bánh xe ô tô Hiroma DHL-0312</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Hiroma</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Máy bơm lốp bánh xe ô tô Hiroma DHL-0312 có công suất 150W, piston thép size lớn nén áp suất cao cho lưu lượng khí bơm đạt 40 lít/phút.</p>
+            'slug'        => 'dan-phim-bao-ve-son-ppf-tpu-tu-phuc-hoi',
+            'title'       => 'Dán phim bảo vệ sơn PPF TPU cao cấp tự phục hồi vết xước',
+            'category'    => 'phim-va-bao-ve-son',
+            'cat_name'    => 'Phim và bảo vệ sơn',
+            'price'       => '28.000.000',
+            'old_price'   => '32.000.000',
+            'badge'       => 'BẢO VỆ NƯỚC SƠN',
+            'brand'       => 'TeckWrap / SunTek USA',
+            'warranty'    => '05 năm không ố vàng',
+            'origin'      => 'Chính hãng TPU USA & Thi công tại Hải Hà',
+            'img'         => $img_uri . '/bat-phu-oto.jpg',
+            'excerpt'     => 'Lớp áo giáp vô hình bảo vệ toàn diện nước sơn zin đắt giá khỏi đá văng, xước quẹt và tác động thời tiết khắc nghiệt.',
+            'specs'       => "Chất liệu: 100% TPU (Thermoplastic Polyurethane) đàn hồi cao
+Độ dày: 7.5 - 8.5 Mil
+Khả năng tự phục hồi: Tự lành vết xước răm dưới tác động của nhiệt độ
+Đặc tính: Tăng 30% độ bóng cho sơn xe, chống ố nước mưa axit và phân chim",
+            'content'     => '<h3>Áo giáp tàng hình bảo vệ tối đa giá trị nguyên bản của xe</h3>
+<p>Dán phim PPF (Paint Protection Film) bằng chất liệu nhựa nhiệt dẻo TPU cao cấp. Khi gặp các vết cọ quẹt nhẹ từ cành cây hay đá dăm bắn trên đường, lớp PPF sẽ tự động liền lại dưới ánh nắng mặt trời hoặc nước ấm.</p>',
+        ),
 
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
+        // -------------------------------------------------------------
+        // 5. Nội thất (noi-that-o-to)
+        // -------------------------------------------------------------
+        array(
+            'slug'        => 'boc-ghe-da-nappa-cao-cap-o-to',
+            'title'       => 'Bọc ghế da Nappa cao cấp chuẩn form may xưởng Hải Hà',
+            'category'    => 'noi-that-o-to',
+            'cat_name'    => 'Nội thất',
+            'price'       => '9.500.000',
+            'old_price'   => '11.000.000',
+            'badge'       => 'THỦ CÔNG TINH XẢO',
+            'brand'       => 'Hải Hà Leather Workshop',
+            'warranty'    => '03 năm đường may & mặt da',
+            'origin'      => 'Da Nappa nhập khẩu cao cấp',
+            'img'         => $img_uri . '/goi-tua-dau-oto.jpg',
+            'excerpt'     => 'May và bọc ghế da Nappa chuẩn form ôm khít, đường kim mũi chỉ tỉ mỉ tôn lên vẻ sang trọng đẳng cấp cho khoang lái.',
+            'specs'       => "Chất liệu: Da Nappa tự nhiên siêu mềm mịn, thoáng khí không mùi
+Quy cách may: May bóp chết ôm sát chuẩn phom mút zin từng dòng xe
+Màu sắc: Đa dạng phối màu tùy chọn (Kem, Nâu bò, Đen, Đỏ đô, Cam Hermes)
+Thời gian thi công: 6 - 8 tiếng hoàn thiện tại xưởng",
+            'content'     => '<h3>Nâng tầm nội thất xe hơi thành khoang thương gia hạng nhất</h3>
+<p>Với 31 năm kinh nghiệm chế tác nội thất ô tô tại Hải Dương, xưởng Ôtô Hải Hà cung cấp dịch vụ may bọc ghế da Nappa thủ công tỉ mỉ từng chi tiết. Chất da mềm mịn mát tay, đàn hồi tuyệt hảo và hoàn toàn không để lại mùi hôi khó chịu.</p>',
         ),
 
         array(
-            'slug'        => 'may-bom-hoi-dung-pin-stanley-sxif0101-co-den-led-sac-du-phong',
-            'title'       => 'Máy bơm hơi dùng pin Stanley SXIF0101 (có đèn led, sạc dự phòng)',
-            'category'    => 'bom-lop-tpms',
-            'cat_name'    => 'Máy Bơm Lốp & Cảm Biến Áp Suất Lốp (TPMS)',
-            'price'       => '1.050.000',
-            'old_price'   => '1.240.000',
-            'badge'       => 'KHUYÊN DÙNG',
-            'brand'       => 'Stanley',
-            'warranty'    => '36 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/may-bom-hoi-dung-pin-stanley-sxif0101-co-den-led-sac-du-phong.jpg',
-            'local_file'  => 'may-bom-hoi-dung-pin-stanley-sxif0101-co-den-led-sac-du-phong.jpg',
-            'excerpt'     => 'Máy bơm hơi dùng pin Stanley SXIF0101 có áp suất  150 PSI, pin 6000 mAh, lưu lượng bơm 14.2 lít/phút giúp bơm hơi nhanh.',
-            'specs'       => "Thương hiệu: Stanley
-Áp suất nén tối đa: 150 PSI / 10.3 Bar
-Chức năng: Cài đặt áp suất điện tử, tự động ngắt khi đủ áp
-Độ chính xác: ± 0.1 Bar tiêu chuẩn quốc tế
-Đèn chiếu sáng: Đèn LED cứu hộ ban đêm tích hợp SOS
-Bảo hành: 12 - 24 tháng chính hãng",
-            'content'     => '<h3>Tổng quan sản phẩm Máy bơm hơi dùng pin Stanley SXIF0101 (có đèn led, sạc dự phòng)</h3>
-<p><strong>Máy bơm hơi dùng pin Stanley SXIF0101 (có đèn led, sạc dự phòng)</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Stanley</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Máy bơm hơi dùng pin Stanley SXIF0101 có áp suất  150 PSI, pin 6000 mAh, lưu lượng bơm 14.2 lít/phút giúp bơm hơi nhanh.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
+            'slug'        => 'tham-lot-san-o-to-tpe-tran-vien',
+            'title'       => 'Thảm lót sàn ô tô khuôn đúc tràn viền TPE 5D/6D cao cấp',
+            'category'    => 'noi-that-o-to',
+            'cat_name'    => 'Nội thất',
+            'price'       => '1.850.000',
+            'old_price'   => '2.300.000',
+            'badge'       => 'CHỐNG NƯỚC 100%',
+            'brand'       => 'Macsim / Kardo',
+            'warranty'    => '24 tháng không cong vênh',
+            'origin'      => 'Nhựa nguyên sinh TPE an toàn',
+            'img'         => $img_uri . '/boc-vo-lang.jpg',
+            'excerpt'     => 'Thảm sàn đúc nguyên khối TPE tràn viền chống nước tuyệt đối, không mùi khó chịu kể cả khi phơi nắng nhiệt độ cao.',
+            'specs'       => "Chất liệu: Nhựa TPE nguyên sinh an toàn không mùi độc hại
+Thiết kế: Quét Scan 3D chuẩn xác theo từng sàn xe, tràn viền bậc cửa
+Tính năng: Chống nước 100%, dễ dàng xịt rửa vệ sinh trong 2 phút
+Chống trượt: Khóa chốt an toàn không xô lệch kẹt chân ga",
+            'content'     => '<h3>Giải pháp giữ gìn vệ sinh sàn xe hơi sạch sẽ suốt mùa mưa ẩm</h3>
+<p>Khác biệt hoàn toàn với thảm da lót sàn truyền thống dễ ẩm mốc và bốc mùi hôi sau thời gian sử dụng, thảm sàn đúc TPE nguyên khối chống thấm nước 100%, không sinh mùi độc hại và dễ dàng xịt rửa sạch tinh như mới trong chớp mắt.</p>',
         ),
 
         array(
-            'slug'        => 'ac-quy-dong-nai-n120-12v-120ah',
-            'title'       => 'Ắc quy Đồng Nai N120 (12V - 120Ah)',
-            'category'    => 'kich-binh-cuu-ho',
-            'cat_name'    => 'Bộ Kích Nổ Bình & Thiết Bị Cứu Hộ',
-            'price'       => '2.890.000',
-            'old_price'   => '3.410.000',
-            'badge'       => 'HOT',
-            'brand'       => 'Đồng Nai',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/ac-quy-dong-nai-n120-12v-120ah.jpg',
-            'local_file'  => 'ac-quy-dong-nai-n120-12v-120ah.jpg',
-            'excerpt'     => 'Ắc quy Đồng Nai N120 (12V - 120Ah) có điện thế 12V, dung lượng 120Ah, đảm bảo sự khởi động mạnh mẽ cho động cơ. Thể tích axit 9,7 lít giúp sử dụng trong thời gian dài.',
-            'specs'       => "Thương hiệu: Đồng Nai
-Dòng điện kích cực đại: 1000A - 2000A chuyên dụng xe hơi
-Dung lượng cell pin: Lithium cao cấp chống cháy nổ
-Tương thích động cơ: Động cơ xăng lên tới 6.0L, động cơ dầu tới 4.0L
-Cổng sạc ra: Cổng USB Type-C sạc nhanh cho điện thoại, máy tính bảng
-Tích hợp an toàn: Kẹp thông minh chống ngược cực, chống ngắn mạch",
-            'content'     => '<h3>Tổng quan sản phẩm Ắc quy Đồng Nai N120 (12V - 120Ah)</h3>
-<p><strong>Ắc quy Đồng Nai N120 (12V - 120Ah)</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Đồng Nai</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Ắc quy Đồng Nai N120 (12V - 120Ah) có điện thế 12V, dung lượng 120Ah, đảm bảo sự khởi động mạnh mẽ cho động cơ. Thể tích axit 9,7 lít giúp sử dụng trong thời gian dài.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'ac-quy-dong-nai-n150-mf-12v-150ah',
-            'title'       => 'Ắc quy Đồng Nai N150 MF (12V - 150Ah)',
-            'category'    => 'kich-binh-cuu-ho',
-            'cat_name'    => 'Bộ Kích Nổ Bình & Thiết Bị Cứu Hộ',
-            'price'       => '2.900.000',
-            'old_price'   => '3.420.000',
-            'badge'       => 'MỚI',
-            'brand'       => 'Đồng Nai',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/ac-quy-dong-nai-n150-mf-12v-150ah.jpg',
-            'local_file'  => 'ac-quy-dong-nai-n150-mf-12v-150ah.jpg',
-            'excerpt'     => 'Ắc quy Đồng Nai N150 MF dùng cho ô tô 50 chỗ hoặc ô tô tải 8 tấn , 11 tấn, 14 tấn , 15 tấn, 19 tấn. Đồng Nai N150 MF có vỏ nhựa, dung lượng 150Ah.',
-            'specs'       => "Thương hiệu: Đồng Nai
-Dòng điện kích cực đại: 1000A - 2000A chuyên dụng xe hơi
-Dung lượng cell pin: Lithium cao cấp chống cháy nổ
-Tương thích động cơ: Động cơ xăng lên tới 6.0L, động cơ dầu tới 4.0L
-Cổng sạc ra: Cổng USB Type-C sạc nhanh cho điện thoại, máy tính bảng
-Tích hợp an toàn: Kẹp thông minh chống ngược cực, chống ngắn mạch",
-            'content'     => '<h3>Tổng quan sản phẩm Ắc quy Đồng Nai N150 MF (12V - 150Ah)</h3>
-<p><strong>Ắc quy Đồng Nai N150 MF (12V - 150Ah)</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Đồng Nai</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Ắc quy Đồng Nai N150 MF dùng cho ô tô 50 chỗ hoặc ô tô tải 8 tấn , 11 tấn, 14 tấn , 15 tấn, 19 tấn. Đồng Nai N150 MF có vỏ nhựa, dung lượng 150Ah.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'ac-quy-dong-nai-n85-12v-85ah',
-            'title'       => 'Ắc quy Đồng Nai N85 (12V - 85Ah)',
-            'category'    => 'kich-binh-cuu-ho',
-            'cat_name'    => 'Bộ Kích Nổ Bình & Thiết Bị Cứu Hộ',
-            'price'       => '1.930.000',
-            'old_price'   => '2.280.000',
-            'badge'       => 'BÁN CHẠY',
-            'brand'       => 'Đồng Nai',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/ac-quy-dong-nai-n85-12v-85ah.jpg',
-            'local_file'  => 'ac-quy-dong-nai-n85-12v-85ah.jpg',
-            'excerpt'     => 'Ắc quy Đồng Nai N85 có bình axit là 5.3 lít, vị trí cọc thuận, điện áp 12V, dung lượng pin 85Ah sẽ phù hợp sử dụng cho xe tải nhỏ, xe hơi gia đình, tàu thuyền.',
-            'specs'       => "Thương hiệu: Đồng Nai
-Dòng điện kích cực đại: 1000A - 2000A chuyên dụng xe hơi
-Dung lượng cell pin: Lithium cao cấp chống cháy nổ
-Tương thích động cơ: Động cơ xăng lên tới 6.0L, động cơ dầu tới 4.0L
-Cổng sạc ra: Cổng USB Type-C sạc nhanh cho điện thoại, máy tính bảng
-Tích hợp an toàn: Kẹp thông minh chống ngược cực, chống ngắn mạch",
-            'content'     => '<h3>Tổng quan sản phẩm Ắc quy Đồng Nai N85 (12V - 85Ah)</h3>
-<p><strong>Ắc quy Đồng Nai N85 (12V - 85Ah)</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Đồng Nai</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Ắc quy Đồng Nai N85 có bình axit là 5.3 lít, vị trí cọc thuận, điện áp 12V, dung lượng pin 85Ah sẽ phù hợp sử dụng cho xe tải nhỏ, xe hơi gia đình, tàu thuyền.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'ac-quy-gs-mf-105d31r-12v-90ah',
-            'title'       => 'Ắc quy GS MF 105D31R (12V - 90Ah)',
-            'category'    => 'kich-binh-cuu-ho',
-            'cat_name'    => 'Bộ Kích Nổ Bình & Thiết Bị Cứu Hộ',
-            'price'       => '2.050.000',
-            'old_price'   => '2.420.000',
+            'slug'        => 'boc-vo-lang-sparco-chinh-hang',
+            'title'       => 'Bọc vô lăng da PU Carbon Sparco thể thao êm tay chống trượt',
+            'category'    => 'noi-that-o-to',
+            'cat_name'    => 'Nội thất',
+            'price'       => '550.000',
+            'old_price'   => '680.000',
             'badge'       => 'CHÍNH HÃNG',
-            'brand'       => 'GS',
+            'brand'       => 'Sparco Italy',
             'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/ac-quy-gs-mf-105d31r-12v-90ah.jpg',
-            'local_file'  => 'ac-quy-gs-mf-105d31r-12v-90ah.jpg',
-            'excerpt'     => 'Ắc quy GS MF 105D31R (12V - 90Ah) dùng cho ô tô và nhiều ứng dụng khác. GS 105D31L MF không cần bảo dưỡng, kín khí, vị trí cọc R.',
-            'specs'       => "Thương hiệu: GS
-Dòng điện kích cực đại: 1000A - 2000A chuyên dụng xe hơi
-Dung lượng cell pin: Lithium cao cấp chống cháy nổ
-Tương thích động cơ: Động cơ xăng lên tới 6.0L, động cơ dầu tới 4.0L
-Cổng sạc ra: Cổng USB Type-C sạc nhanh cho điện thoại, máy tính bảng
-Tích hợp an toàn: Kẹp thông minh chống ngược cực, chống ngắn mạch",
-            'content'     => '<h3>Tổng quan sản phẩm Ắc quy GS MF 105D31R (12V - 90Ah)</h3>
-<p><strong>Ắc quy GS MF 105D31R (12V - 90Ah)</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>GS</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Ắc quy GS MF 105D31R (12V - 90Ah) dùng cho ô tô và nhiều ứng dụng khác. GS 105D31L MF không cần bảo dưỡng, kín khí, vị trí cọc R.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
+            'origin'      => 'Chính hãng Sparco & Phân phối tại Hải Hà',
+            'img'         => $img_uri . '/boc-vo-lang.jpg',
+            'excerpt'     => 'Bọc vô lăng chính hãng Sparco phong cách thể thao, cảm giác cầm đầm tay, hỗ trợ điều khiển xe chuẩn xác.',
+            'specs'       => "Chất liệu: Da PU cao cấp phối sợi carbon thể thao
+Kích thước: Chuẩn size 38cm vừa vặn 99% các dòng xe 4 - 7 chỗ
+Cảm giác cầm: Êm ái, ma sát tốt, thấm hút mồ hôi tay cực tốt
+Thiết kế: Logo Sparco thêu nổi bật phong cách xe đua thể thao",
+            'content'     => '<h3>Cảm giác lái thể thao đầm chắc trên từng cung đường</h3>
+<p>Bọc vô lăng Sparco chính hãng Italy mang đến sự tự tin tuyệt đối cho người lái nhờ các đường gân nổi bám chắc lòng bàn tay, hạn chế trơn trượt hiệu quả cho những bác tài hay ra mồ hôi tay.</p>',
         ),
 
         array(
-            'slug'        => 'ac-quy-gs-mf115d33c-12v-100ah',
-            'title'       => 'Ắc quy GS MF115D33C 12V - 100Ah',
-            'category'    => 'kich-binh-cuu-ho',
-            'cat_name'    => 'Bộ Kích Nổ Bình & Thiết Bị Cứu Hộ',
-            'price'       => '2.250.000',
-            'old_price'   => '2.660.000',
-            'badge'       => 'CAO CẤP',
-            'brand'       => 'GS',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/ac-quy-gs-mf115d33c-12v-100ah.jpg',
-            'local_file'  => 'ac-quy-gs-mf115d33c-12v-100ah.jpg',
-            'excerpt'     => 'Ắc quy GS MF115D33C dùng để khởi động xe ô tô, không cần bảo dưỡng, kín khí không cần châm axit, cung cấp năng lượng vượt trội.',
-            'specs'       => "Thương hiệu: GS
-Dòng điện kích cực đại: 1000A - 2000A chuyên dụng xe hơi
-Dung lượng cell pin: Lithium cao cấp chống cháy nổ
-Tương thích động cơ: Động cơ xăng lên tới 6.0L, động cơ dầu tới 4.0L
-Cổng sạc ra: Cổng USB Type-C sạc nhanh cho điện thoại, máy tính bảng
-Tích hợp an toàn: Kẹp thông minh chống ngược cực, chống ngắn mạch",
-            'content'     => '<h3>Tổng quan sản phẩm Ắc quy GS MF115D33C 12V - 100Ah</h3>
-<p><strong>Ắc quy GS MF115D33C 12V - 100Ah</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>GS</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Ắc quy GS MF115D33C dùng để khởi động xe ô tô, không cần bảo dưỡng, kín khí không cần châm axit, cung cấp năng lượng vượt trội.</p>
+            'slug'        => 'bo-den-led-vien-noi-that-ambient-light-64-mau',
+            'title'       => 'Bộ đèn LED viền nội thất Ambient Light 64 màu App Bluetooth',
+            'category'    => 'noi-that-o-to',
+            'cat_name'    => 'Nội thất',
+            'price'       => '3.200.000',
+            'old_price'   => '3.800.000',
+            'badge'       => 'ĐỔI MÀU THÔNG MINH',
+            'brand'       => 'Ultra Ambient LED',
+            'warranty'    => '18 tháng 1 đổi 1',
+            'origin'      => 'Công nghệ LED cao cấp & Lắp đặt tại Hải Hà',
+            'img'         => $img_uri . '/baseus-gia-do.jpg',
+            'excerpt'     => 'Nâng tầm khoang nội thất lung linh như xe sang Mercedes-Benz với dải LED thanh mảnh đổi 64 màu theo nhạc.',
+            'specs'       => "Số vị trí: 18 - 22 chi tiết (Taplo, 4 cánh cửa, hộc để chân, tay nắm cửa)
+Bảng màu: 64 màu RGB tùy biến chuyển sắc mượt mà
+Điều khiển: Qua ứng dụng Smartphone hoặc nút điều khiển trung tâm
+Hiệu ứng: Chớp nháy đồng bộ theo giai điệu bài hát trên xe",
+            'content'     => '<h3>Không gian ánh sáng lung linh rực rỡ bên trong xế yêu</h3>
+<p>Thanh LED quang học siêu mỏng được luồn tinh tế theo các đường chỉ mép taplo và tappi cửa, mang lại không gian nội thất thư giãn và cuốn hút mỗi khi màn đêm buông xuống.</p>',
+        ),
 
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
+        // -------------------------------------------------------------
+        // 6. Ngoại thất và đèn (ngoai-that-va-den)
+        // -------------------------------------------------------------
+        array(
+            'slug'        => 'nang-cap-bi-led-x-light-v20-ultra',
+            'title'       => 'Nâng cấp Bi LED X-Light V20 Ultra siêu sáng gom luồng sáng',
+            'category'    => 'ngoai-that-va-den',
+            'cat_name'    => 'Ngoại thất và đèn',
+            'price'       => '7.800.000',
+            'old_price'   => '9.000.000',
+            'badge'       => 'SIÊU SÁNG',
+            'brand'       => 'X-Light',
+            'warranty'    => '36 tháng đổi mới',
+            'origin'      => 'Chính hãng X-Light Germany Tech & Lắp đặt tại Hải Hà',
+            'img'         => $img_uri . '/elliview-u4.jpg',
+            'excerpt'     => 'Giải pháp tăng sáng toàn diện gấp 5 lần đèn halogen zin, đường cắt cos mịn bám đường và không gây chói xe ngược chiều.',
+            'specs'       => "Công suất: Cos 60W / Pha 70W ánh sáng cực đại
+Nhiệt màu: 5500K trắng ngà tự nhiên bám đường mưa gió
+Tản nhiệt: Quạt tản nhiệt Aluminum Driver rời vận hành êm ái
+Đường cắt: Cos thẳng tắp không gây chói mắt người đối diện",
+            'content'     => '<h3>Thắp sáng mọi cung đường đêm tối và mưa gió sương mù</h3>
+<p>Độ đèn ô tô tại xưởng Hải Hà sử dụng máy hấp nhiệt chuyên dụng, pat sắt định vị chuẩn zin và giắc cắm chống nước, đảm bảo không vào nước và giữ độ bền tuyệt đối cho chóa đèn pha.</p>',
         ),
 
         array(
-            'slug'        => 'ac-quy-dong-nai-n150s-12v-135ah',
-            'title'       => 'Ắc quy Đồng Nai N150S (12V - 135Ah)',
-            'category'    => 'kich-binh-cuu-ho',
-            'cat_name'    => 'Bộ Kích Nổ Bình & Thiết Bị Cứu Hộ',
-            'price'       => '3.180.000',
-            'old_price'   => '3.750.000',
-            'badge'       => 'KHUYÊN DÙNG',
-            'brand'       => 'Đồng Nai',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/ac-quy-dong-nai-n150s-12v-135ah.jpg',
-            'local_file'  => 'ac-quy-dong-nai-n150s-12v-135ah.jpg',
-            'excerpt'     => 'Ắc quy Đồng Nai N150S (12V - 135Ah) có vị trí đặt là R, dung tích bình axit là 13.3 lít. Đồng Nai N150S dùng cho ô tô, dung lượng là 135Ah.',
-            'specs'       => "Thương hiệu: Đồng Nai
-Dòng điện kích cực đại: 1000A - 2000A chuyên dụng xe hơi
-Dung lượng cell pin: Lithium cao cấp chống cháy nổ
-Tương thích động cơ: Động cơ xăng lên tới 6.0L, động cơ dầu tới 4.0L
-Cổng sạc ra: Cổng USB Type-C sạc nhanh cho điện thoại, máy tính bảng
-Tích hợp an toàn: Kẹp thông minh chống ngược cực, chống ngắn mạch",
-            'content'     => '<h3>Tổng quan sản phẩm Ắc quy Đồng Nai N150S (12V - 135Ah)</h3>
-<p><strong>Ắc quy Đồng Nai N150S (12V - 135Ah)</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Đồng Nai</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Ắc quy Đồng Nai N150S (12V - 135Ah) có vị trí đặt là R, dung tích bình axit là 13.3 lít. Đồng Nai N150S dùng cho ô tô, dung lượng là 135Ah.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
+            'slug'        => 'do-cop-dien-tu-dong-perfect-car',
+            'title'       => 'Độ cốp điện tự động thông minh Perfect Car kèm cảm biến đá cốp',
+            'category'    => 'ngoai-that-va-den',
+            'cat_name'    => 'Ngoại thất và đèn',
+            'price'       => '8.800.000',
+            'old_price'   => '9.800.000',
+            'badge'       => 'THÔNG MINH',
+            'brand'       => 'Perfect Car',
+            'warranty'    => '24 tháng 1 đổi 1',
+            'origin'      => 'Chính hãng OEM lắp giắc zin 100%',
+            'img'         => $img_uri . '/bua-thoat-hiem.jpg',
+            'excerpt'     => 'Đóng mở cốp êm ái nhẹ nhàng chỉ bằng 1 nút bấm hoặc thao tác đưa chân tiện lợi khi hai tay đang mang vác đồ đạc.',
+            'specs'       => "Hệ thống: 2 ty điện thủy lực đôi chịu lực siêu êm
+Điều khiển: Nút bấm trên chìa khóa zin, nút bấm cốp và cảm biến đá chân
+Chống kẹt: Tự động đảo chiều khi gặp vật cản an toàn tuyệt đối cho trẻ nhỏ
+Lắp đặt: Cắm giắc zin 100% không cắt trích dây điện của xe",
+            'content'     => '<h3>Tiện ích đẳng cấp mở cốp rảnh tay tiện lợi</h3>
+<p>Bộ cốp điện thế hệ mới với motor hít êm ái, chấm dứt hoàn toàn tình trạng phải dùng sức dằn cốp mạnh gây rung lắc xe. Cảm biến đá cốp nhận diện thông minh hỗ trợ tối đa các bà nội trợ hoặc người hay chở đồ nặng.</p>',
         ),
 
         array(
-            'slug'        => 'ac-quy-gsmf-46b24ls-12v-45ah-coc-trai-lon',
-            'title'       => 'Ắc quy GSMF 46B24L(S) (12V - 45Ah), cọc trái (lớn)',
-            'category'    => 'kich-binh-cuu-ho',
-            'cat_name'    => 'Bộ Kích Nổ Bình & Thiết Bị Cứu Hộ',
-            'price'       => '1.450.000',
-            'old_price'   => '1.710.000',
-            'badge'       => 'HOT',
-            'brand'       => 'GS',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/ac-quy-gsmf-46b24ls-12v-45ah-coc-trai-lon.jpg',
-            'local_file'  => 'ac-quy-gsmf-46b24ls-12v-45ah-coc-trai-lon.jpg',
-            'excerpt'     => 'Ắc quy GSMF 46B24L(S) sản xuất theo công nghệ Nhật Bản tiên tiến, đảm bảo độ bền, hiệu suất cao, kín khí, không cần bảo dưỡng, phù hợp với nhiều dòng xe ô tô phổ biến.',
-            'specs'       => "Thương hiệu: GS
-Dòng điện kích cực đại: 1000A - 2000A chuyên dụng xe hơi
-Dung lượng cell pin: Lithium cao cấp chống cháy nổ
-Tương thích động cơ: Động cơ xăng lên tới 6.0L, động cơ dầu tới 4.0L
-Cổng sạc ra: Cổng USB Type-C sạc nhanh cho điện thoại, máy tính bảng
-Tích hợp an toàn: Kẹp thông minh chống ngược cực, chống ngắn mạch",
-            'content'     => '<h3>Tổng quan sản phẩm Ắc quy GSMF 46B24L(S) (12V - 45Ah), cọc trái (lớn)</h3>
-<p><strong>Ắc quy GSMF 46B24L(S) (12V - 45Ah), cọc trái (lớn)</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>GS</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Ắc quy GSMF 46B24L(S) sản xuất theo công nghệ Nhật Bản tiên tiến, đảm bảo độ bền, hiệu suất cao, kín khí, không cần bảo dưỡng, phù hợp với nhiều dòng xe ô tô phổ biến.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'am-dun-nuoc-inox-kalpen-kk03-3-lit',
-            'title'       => 'Ấm đun nước inox Kalpen KK03 - 3 lít',
-            'category'    => 'hut-bui-loc-khi',
-            'cat_name'    => 'Máy Hút Bụi & Lọc Không Khí Ô Tô',
-            'price'       => '390.000',
-            'old_price'   => '460.000',
-            'badge'       => 'MỚI',
-            'brand'       => 'Kalpen',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/am-dun-nuoc-inox-kalpen-kk03-3-lit.jpg',
-            'local_file'  => 'am-dun-nuoc-inox-kalpen-kk03-3-lit.jpg',
-            'excerpt'     => 'Ấm đun nước inox Kalpen KK03 làm từ inox 304 an toàn cho sức khỏe theo tiêu chuẩn Đức, truyền nhiệt nhanh với 5 lớp đáy.',
-            'specs'       => "Thương hiệu: Kalpen
-Công suất hút: 6.000Pa - 15.000Pa lốc xoáy
-Bộ lọc: Màng lọc HEPA tiêu chuẩn giữ lại 99.9% bụi mịn PM2.5
-Nguồn pin / điện: Pin sạc Lithium không dây tiện dụng
-Thời lượng hoạt động: 25 - 45 phút liên tục
-Độ ồn: < 65dB vận hành êm ái",
-            'content'     => '<h3>Tổng quan sản phẩm Ấm đun nước inox Kalpen KK03 - 3 lít</h3>
-<p><strong>Ấm đun nước inox Kalpen KK03 - 3 lít</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Kalpen</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Ấm đun nước inox Kalpen KK03 làm từ inox 304 an toàn cho sức khỏe theo tiêu chuẩn Đức, truyền nhiệt nhanh với 5 lớp đáy.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'may-pha-tra-bear-sb-pt15k-15-lit',
-            'title'       => 'Máy pha trà Bear SB-PT15K (1.5 lít)',
-            'category'    => 'hut-bui-loc-khi',
-            'cat_name'    => 'Máy Hút Bụi & Lọc Không Khí Ô Tô',
-            'price'       => '790.000',
-            'old_price'   => '930.000',
-            'badge'       => 'BÁN CHẠY',
-            'brand'       => 'Bear',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/may-pha-tra-bear-sb-pt15k-15-lit.jpg',
-            'local_file'  => 'may-pha-tra-bear-sb-pt15k-15-lit.jpg',
-            'excerpt'     => 'Máy pha trà Bear SB-PT15K có chức năng đun nước, nấu đồ ngọt, nấu cháo trắng, canh thuốc, pha trà, nấu súp, giữ ấm và hẹn trước.',
-            'specs'       => "Thương hiệu: Bear
-Công suất hút: 6.000Pa - 15.000Pa lốc xoáy
-Bộ lọc: Màng lọc HEPA tiêu chuẩn giữ lại 99.9% bụi mịn PM2.5
-Nguồn pin / điện: Pin sạc Lithium không dây tiện dụng
-Thời lượng hoạt động: 25 - 45 phút liên tục
-Độ ồn: < 65dB vận hành êm ái",
-            'content'     => '<h3>Tổng quan sản phẩm Máy pha trà Bear SB-PT15K (1.5 lít)</h3>
-<p><strong>Máy pha trà Bear SB-PT15K (1.5 lít)</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Bear</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Máy pha trà Bear SB-PT15K có chức năng đun nước, nấu đồ ngọt, nấu cháo trắng, canh thuốc, pha trà, nấu súp, giữ ấm và hẹn trước.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'am-dun-may-chung-yen-da-nang-bbcooker-bb15-15-lit',
-            'title'       => 'Ấm đun - máy chưng yến đa năng BBcooker BB15 - 1.5 lít',
-            'category'    => 'hut-bui-loc-khi',
-            'cat_name'    => 'Máy Hút Bụi & Lọc Không Khí Ô Tô',
-            'price'       => '990.000',
-            'old_price'   => '1.170.000',
-            'badge'       => 'CHÍNH HÃNG',
-            'brand'       => 'BBcooker',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/am-dun-may-chung-yen-da-nang-bbcooker-bb15-15-lit.jpg',
-            'local_file'  => 'am-dun-may-chung-yen-da-nang-bbcooker-bb15-15-lit.jpg',
-            'excerpt'     => 'BBcooker BB15 là ấm đun đa năng 1.5 lít với thiết kế tinh tế, bảng điều khiển cảm ứng và 11 chế độ nấu, phù hợp cho mọi nhu cầu từ chưng yến, pha trà đến tiệt trùng.',
-            'specs'       => "Thương hiệu: BBcooker
-Công suất hút: 6.000Pa - 15.000Pa lốc xoáy
-Bộ lọc: Màng lọc HEPA tiêu chuẩn giữ lại 99.9% bụi mịn PM2.5
-Nguồn pin / điện: Pin sạc Lithium không dây tiện dụng
-Thời lượng hoạt động: 25 - 45 phút liên tục
-Độ ồn: < 65dB vận hành êm ái",
-            'content'     => '<h3>Tổng quan sản phẩm Ấm đun - máy chưng yến đa năng BBcooker BB15 - 1.5 lít</h3>
-<p><strong>Ấm đun - máy chưng yến đa năng BBcooker BB15 - 1.5 lít</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>BBcooker</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. BBcooker BB15 là ấm đun đa năng 1.5 lít với thiết kế tinh tế, bảng điều khiển cảm ứng và 11 chế độ nấu, phù hợp cho mọi nhu cầu từ chưng yến, pha trà đến tiệt trùng.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'am-dun-nuoc-inox-kalpen-kk02-25-lit',
-            'title'       => 'Ấm đun nước inox Kalpen KK02 2.5 lít',
-            'category'    => 'hut-bui-loc-khi',
-            'cat_name'    => 'Máy Hút Bụi & Lọc Không Khí Ô Tô',
-            'price'       => '590.000',
-            'old_price'   => '700.000',
-            'badge'       => 'CAO CẤP',
-            'brand'       => 'Kalpen',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/am-dun-nuoc-inox-kalpen-kk02-25-lit.jpg',
-            'local_file'  => 'am-dun-nuoc-inox-kalpen-kk02-25-lit.jpg',
-            'excerpt'     => 'Ấm đun nước inox Kalpen KK02 dùng cho bếp từ, làm từ inox 304 chống han gỉ, đáy dày 5 lớp bắt từ tốt, đun nước nhanh sôi.',
-            'specs'       => "Thương hiệu: Kalpen
-Công suất hút: 6.000Pa - 15.000Pa lốc xoáy
-Bộ lọc: Màng lọc HEPA tiêu chuẩn giữ lại 99.9% bụi mịn PM2.5
-Nguồn pin / điện: Pin sạc Lithium không dây tiện dụng
-Thời lượng hoạt động: 25 - 45 phút liên tục
-Độ ồn: < 65dB vận hành êm ái",
-            'content'     => '<h3>Tổng quan sản phẩm Ấm đun nước inox Kalpen KK02 2.5 lít</h3>
-<p><strong>Ấm đun nước inox Kalpen KK02 2.5 lít</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Kalpen</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Ấm đun nước inox Kalpen KK02 dùng cho bếp từ, làm từ inox 304 chống han gỉ, đáy dày 5 lớp bắt từ tốt, đun nước nhanh sôi.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'am-dun-nuoc-hawonkoo-keh-181',
-            'title'       => 'Ấm đun nước Hawonkoo KEH-181',
-            'category'    => 'hut-bui-loc-khi',
-            'cat_name'    => 'Máy Hút Bụi & Lọc Không Khí Ô Tô',
-            'price'       => '359.000',
-            'old_price'   => '420.000',
-            'badge'       => 'KHUYÊN DÙNG',
-            'brand'       => 'Hawonkoo',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/am-dun-nuoc-hawonkoo-keh-181.jpg',
-            'local_file'  => 'am-dun-nuoc-hawonkoo-keh-181.jpg',
-            'excerpt'     => 'Ấm đun nước Hawonkoo KEH-181 thiết kế hiện đại , đun sôi nhanh với công suất 1.500W, chất liệu an toàn và tích hợp nhiều tính năng bảo vệ tiện lợi cho gia đình.',
-            'specs'       => "Thương hiệu: Hawonkoo
-Công suất hút: 6.000Pa - 15.000Pa lốc xoáy
-Bộ lọc: Màng lọc HEPA tiêu chuẩn giữ lại 99.9% bụi mịn PM2.5
-Nguồn pin / điện: Pin sạc Lithium không dây tiện dụng
-Thời lượng hoạt động: 25 - 45 phút liên tục
-Độ ồn: < 65dB vận hành êm ái",
-            'content'     => '<h3>Tổng quan sản phẩm Ấm đun nước Hawonkoo KEH-181</h3>
-<p><strong>Ấm đun nước Hawonkoo KEH-181</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Hawonkoo</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Ấm đun nước Hawonkoo KEH-181 thiết kế hiện đại , đun sôi nhanh với công suất 1.500W, chất liệu an toàn và tích hợp nhiều tính năng bảo vệ tiện lợi cho gia đình.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'am-dun-nuoc-sieu-toc-braun-wk1100wh',
-            'title'       => 'Ấm đun nước siêu tốc Braun WK1100WH',
-            'category'    => 'hut-bui-loc-khi',
-            'cat_name'    => 'Máy Hút Bụi & Lọc Không Khí Ô Tô',
-            'price'       => '790.000',
-            'old_price'   => '930.000',
-            'badge'       => 'HOT',
-            'brand'       => 'Braun',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/am-dun-nuoc-sieu-toc-braun-wk1100wh.jpg',
-            'local_file'  => 'am-dun-nuoc-sieu-toc-braun-wk1100wh.jpg',
-            'excerpt'     => 'Ấm đun nước siêu tốc Braun WK1100WH dung tích 1.7L, công suất 2.200W, đun sôi nhanh, chất liệu an toàn, đế xoay 360° và hệ thống bảo vệ 4 chiều.',
-            'specs'       => "Thương hiệu: Braun
-Công suất hút: 6.000Pa - 15.000Pa lốc xoáy
-Bộ lọc: Màng lọc HEPA tiêu chuẩn giữ lại 99.9% bụi mịn PM2.5
-Nguồn pin / điện: Pin sạc Lithium không dây tiện dụng
-Thời lượng hoạt động: 25 - 45 phút liên tục
-Độ ồn: < 65dB vận hành êm ái",
-            'content'     => '<h3>Tổng quan sản phẩm Ấm đun nước siêu tốc Braun WK1100WH</h3>
-<p><strong>Ấm đun nước siêu tốc Braun WK1100WH</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Braun</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Ấm đun nước siêu tốc Braun WK1100WH dung tích 1.7L, công suất 2.200W, đun sôi nhanh, chất liệu an toàn, đế xoay 360° và hệ thống bảo vệ 4 chiều.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'de-lot-ly-giu-am-thong-minh-di-dong-tiross-ts5100',
-            'title'       => 'Đế lót ly giữ ấm thông minh di động Tiross TS5100',
-            'category'    => 'hut-bui-loc-khi',
-            'cat_name'    => 'Máy Hút Bụi & Lọc Không Khí Ô Tô',
-            'price'       => '430.000',
-            'old_price'   => '510.000',
-            'badge'       => 'MỚI',
-            'brand'       => 'Tiross',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/de-lot-ly-giu-am-thong-minh-di-dong-tiross-ts5100.jpg',
-            'local_file'  => 'de-lot-ly-giu-am-thong-minh-di-dong-tiross-ts5100.jpg',
-            'excerpt'     => 'Đế lót ly giữ ấm thông minh di động Tiross TS5100 giữ ấm đồ uống, có nhiều chế độ và hẹn giờ, thiết kế đẹp mắt.',
-            'specs'       => "Thương hiệu: Tiross
-Công suất hút: 6.000Pa - 15.000Pa lốc xoáy
-Bộ lọc: Màng lọc HEPA tiêu chuẩn giữ lại 99.9% bụi mịn PM2.5
-Nguồn pin / điện: Pin sạc Lithium không dây tiện dụng
-Thời lượng hoạt động: 25 - 45 phút liên tục
-Độ ồn: < 65dB vận hành êm ái",
-            'content'     => '<h3>Tổng quan sản phẩm Đế lót ly giữ ấm thông minh di động Tiross TS5100</h3>
-<p><strong>Đế lót ly giữ ấm thông minh di động Tiross TS5100</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Tiross</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Đế lót ly giữ ấm thông minh di động Tiross TS5100 giữ ấm đồ uống, có nhiều chế độ và hẹn giờ, thiết kế đẹp mắt.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'binh-dung-xa-phong-nhan-tay-sokimi-sm-4108',
-            'title'       => 'Bình đựng xà phòng nhấn tay Sokimi SM-4108',
-            'category'    => 'tau-sac-gia-do',
-            'cat_name'    => 'Tẩu Sạc Nhanh & Giá Đỡ Điện Thoại',
-            'price'       => '310.000',
-            'old_price'   => '370.000',
-            'badge'       => 'BÁN CHẠY',
-            'brand'       => 'Sokimi',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/binh-dung-xa-phong-nhan-tay-sokimi-sm-4108.jpg',
-            'local_file'  => 'binh-dung-xa-phong-nhan-tay-sokimi-sm-4108.jpg',
-            'excerpt'     => 'Bình đựng xà phòng nhấn tay Sokimi SM-4108 lắp đặt treo tường, làm từ inox không gỉ, chỉ 1 lần nhấn sẽ lấy đủ lượng xà phòng để rửa tay.',
-            'specs'       => "Thương hiệu: Sokimi
-Công suất sạc: 30W - 100W sạc nhanh đa giao thức (PD, QC 3.0, PPS)
-Cổng kết nối: USB-A + Type-C kép sạc 2 thiết bị cùng lúc
-Chất liệu: Hợp kim nhôm tản nhiệt cao cấp + ABS chống cháy
-Cơ chế giá đỡ: Hít nam châm MagSafe hoặc khóa tự động trọng lực
-Nguồn vào: 12V - 24V tương thích mọi dòng xe",
-            'content'     => '<h3>Tổng quan sản phẩm Bình đựng xà phòng nhấn tay Sokimi SM-4108</h3>
-<p><strong>Bình đựng xà phòng nhấn tay Sokimi SM-4108</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Sokimi</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Bình đựng xà phòng nhấn tay Sokimi SM-4108 lắp đặt treo tường, làm từ inox không gỉ, chỉ 1 lần nhấn sẽ lấy đủ lượng xà phòng để rửa tay.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'binh-dung-xa-phong-sokimi-sm-4104',
-            'title'       => 'Bình đựng xà phòng Sokimi SM-4104',
-            'category'    => 'tau-sac-gia-do',
-            'cat_name'    => 'Tẩu Sạc Nhanh & Giá Đỡ Điện Thoại',
-            'price'       => '310.000',
-            'old_price'   => '370.000',
-            'badge'       => 'CHÍNH HÃNG',
-            'brand'       => 'Sokimi',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/binh-dung-xa-phong-sokimi-sm-4104.jpg',
-            'local_file'  => 'binh-dung-xa-phong-sokimi-sm-4104.jpg',
-            'excerpt'     => 'Bình đựng xà phòng Sokimi SM-4104 có nút nhấn bền, chỉ một lần nhấn sẽ cho ra lượng xà phòng vừa đủ sử dụng giúp tiết kiệm, tránh lãng phí.',
-            'specs'       => "Thương hiệu: Sokimi
-Công suất sạc: 30W - 100W sạc nhanh đa giao thức (PD, QC 3.0, PPS)
-Cổng kết nối: USB-A + Type-C kép sạc 2 thiết bị cùng lúc
-Chất liệu: Hợp kim nhôm tản nhiệt cao cấp + ABS chống cháy
-Cơ chế giá đỡ: Hít nam châm MagSafe hoặc khóa tự động trọng lực
-Nguồn vào: 12V - 24V tương thích mọi dòng xe",
-            'content'     => '<h3>Tổng quan sản phẩm Bình đựng xà phòng Sokimi SM-4104</h3>
-<p><strong>Bình đựng xà phòng Sokimi SM-4104</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Sokimi</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Bình đựng xà phòng Sokimi SM-4104 có nút nhấn bền, chỉ một lần nhấn sẽ cho ra lượng xà phòng vừa đủ sử dụng giúp tiết kiệm, tránh lãng phí.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'hop-dung-dau-goi-sua-tam-xinda-zyq-138-white',
-            'title'       => 'Hộp đựng dầu gội sữa tắm Xinda ZYQ-138 White',
-            'category'    => 'tau-sac-gia-do',
-            'cat_name'    => 'Tẩu Sạc Nhanh & Giá Đỡ Điện Thoại',
-            'price'       => '159.000',
-            'old_price'   => '190.000',
-            'badge'       => 'CAO CẤP',
-            'brand'       => 'Xinda',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/hop-dung-dau-goi-sua-tam-xinda-zyq-138-white.jpg',
-            'local_file'  => 'hop-dung-dau-goi-sua-tam-xinda-zyq-138-white.jpg',
-            'excerpt'     => 'Hộp đựng dầu gội sữa tắm Xinda ZYQ-138 White có khóa an toàn, chống rò rỉ xà phòng. Được làm bằng chất liệu nhựa ABS kháng khuẩn',
-            'specs'       => "Thương hiệu: Xinda
-Công suất sạc: 30W - 100W sạc nhanh đa giao thức (PD, QC 3.0, PPS)
-Cổng kết nối: USB-A + Type-C kép sạc 2 thiết bị cùng lúc
-Chất liệu: Hợp kim nhôm tản nhiệt cao cấp + ABS chống cháy
-Cơ chế giá đỡ: Hít nam châm MagSafe hoặc khóa tự động trọng lực
-Nguồn vào: 12V - 24V tương thích mọi dòng xe",
-            'content'     => '<h3>Tổng quan sản phẩm Hộp đựng dầu gội sữa tắm Xinda ZYQ-138 White</h3>
-<p><strong>Hộp đựng dầu gội sữa tắm Xinda ZYQ-138 White</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Xinda</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Hộp đựng dầu gội sữa tắm Xinda ZYQ-138 White có khóa an toàn, chống rò rỉ xà phòng. Được làm bằng chất liệu nhựa ABS kháng khuẩn</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'binh-dung-xa-phong-cam-ung-sokimi-sm800',
-            'title'       => 'Bình đựng xà phòng cảm ứng Sokimi SM800',
-            'category'    => 'tau-sac-gia-do',
-            'cat_name'    => 'Tẩu Sạc Nhanh & Giá Đỡ Điện Thoại',
-            'price'       => '530.000',
-            'old_price'   => '630.000',
-            'badge'       => 'KHUYÊN DÙNG',
-            'brand'       => 'Sokimi',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/binh-dung-xa-phong-cam-ung-sokimi-sm800.jpg',
-            'local_file'  => 'binh-dung-xa-phong-cam-ung-sokimi-sm800.jpg',
-            'excerpt'     => 'Bình đựng xà phòng cảm ứng Sokimi SM800 dùng 4 viên pin 2A, dung tích 600ml, lấy xà phòng mà không cần chạm tay trực tiếp vào bình.',
-            'specs'       => "Thương hiệu: Sokimi
-Công suất sạc: 30W - 100W sạc nhanh đa giao thức (PD, QC 3.0, PPS)
-Cổng kết nối: USB-A + Type-C kép sạc 2 thiết bị cùng lúc
-Chất liệu: Hợp kim nhôm tản nhiệt cao cấp + ABS chống cháy
-Cơ chế giá đỡ: Hít nam châm MagSafe hoặc khóa tự động trọng lực
-Nguồn vào: 12V - 24V tương thích mọi dòng xe",
-            'content'     => '<h3>Tổng quan sản phẩm Bình đựng xà phòng cảm ứng Sokimi SM800</h3>
-<p><strong>Bình đựng xà phòng cảm ứng Sokimi SM800</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Sokimi</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Bình đựng xà phòng cảm ứng Sokimi SM800 dùng 4 viên pin 2A, dung tích 600ml, lấy xà phòng mà không cần chạm tay trực tiếp vào bình.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'hop-dung-dau-goi-xa-phong-xinda-zyq100',
-            'title'       => 'Hộp đựng dầu gội xà phòng Xinda ZYQ100',
-            'category'    => 'tau-sac-gia-do',
-            'cat_name'    => 'Tẩu Sạc Nhanh & Giá Đỡ Điện Thoại',
-            'price'       => '500.000',
-            'old_price'   => '590.000',
-            'badge'       => 'HOT',
-            'brand'       => 'Xinda',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/hop-dung-dau-goi-xa-phong-xinda-zyq100.jpg',
-            'local_file'  => 'hop-dung-dau-goi-xa-phong-xinda-zyq100.jpg',
-            'excerpt'     => 'Hộp đựng dầu gội xà phòng Xinda ZYQ100 thiết kế dạng nút nhấn lấy dầu gội và xà phòng rất tiện. Xinda ZYQ100 làm bằng nhựa, dung tích 1 lít.',
-            'specs'       => "Thương hiệu: Xinda
-Công suất sạc: 30W - 100W sạc nhanh đa giao thức (PD, QC 3.0, PPS)
-Cổng kết nối: USB-A + Type-C kép sạc 2 thiết bị cùng lúc
-Chất liệu: Hợp kim nhôm tản nhiệt cao cấp + ABS chống cháy
-Cơ chế giá đỡ: Hít nam châm MagSafe hoặc khóa tự động trọng lực
-Nguồn vào: 12V - 24V tương thích mọi dòng xe",
-            'content'     => '<h3>Tổng quan sản phẩm Hộp đựng dầu gội xà phòng Xinda ZYQ100</h3>
-<p><strong>Hộp đựng dầu gội xà phòng Xinda ZYQ100</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Xinda</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Hộp đựng dầu gội xà phòng Xinda ZYQ100 thiết kế dạng nút nhấn lấy dầu gội và xà phòng rất tiện. Xinda ZYQ100 làm bằng nhựa, dung tích 1 lít.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'hop-dung-xa-phong-doi-mau-trang-zyq-138s-white',
-            'title'       => 'Hộp đựng xà phòng đôi, màu trắng ZYQ-138S White',
-            'category'    => 'tau-sac-gia-do',
-            'cat_name'    => 'Tẩu Sạc Nhanh & Giá Đỡ Điện Thoại',
-            'price'       => '360.000',
-            'old_price'   => '420.000',
-            'badge'       => 'MỚI',
-            'brand'       => 'Xinda',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/hop-dung-xa-phong-doi-mau-trang-zyq-138s-white.jpg',
-            'local_file'  => 'hop-dung-xa-phong-doi-mau-trang-zyq-138s-white.jpg',
-            'excerpt'     => 'Hộp đựng xà phòng đôi, màu trắng ZYQ-138S White thiết kế 2 hộp riêng biệt nhưng chung khung đỡ giúp bạn chứa đồng thời 2 dung dịch khác nhau.',
-            'specs'       => "Thương hiệu: Xinda
-Công suất sạc: 30W - 100W sạc nhanh đa giao thức (PD, QC 3.0, PPS)
-Cổng kết nối: USB-A + Type-C kép sạc 2 thiết bị cùng lúc
-Chất liệu: Hợp kim nhôm tản nhiệt cao cấp + ABS chống cháy
-Cơ chế giá đỡ: Hít nam châm MagSafe hoặc khóa tự động trọng lực
-Nguồn vào: 12V - 24V tương thích mọi dòng xe",
-            'content'     => '<h3>Tổng quan sản phẩm Hộp đựng xà phòng đôi, màu trắng ZYQ-138S White</h3>
-<p><strong>Hộp đựng xà phòng đôi, màu trắng ZYQ-138S White</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Xinda</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Hộp đựng xà phòng đôi, màu trắng ZYQ-138S White thiết kế 2 hộp riêng biệt nhưng chung khung đỡ giúp bạn chứa đồng thời 2 dung dịch khác nhau.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'binh-dung-xa-phong-cam-ung-sokimi-sm600',
-            'title'       => 'Bình đựng xà phòng cảm ứng Sokimi SM600',
-            'category'    => 'tau-sac-gia-do',
-            'cat_name'    => 'Tẩu Sạc Nhanh & Giá Đỡ Điện Thoại',
-            'price'       => '1.090.000',
-            'old_price'   => '1.290.000',
-            'badge'       => 'BÁN CHẠY',
-            'brand'       => 'Sokimi',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/binh-dung-xa-phong-cam-ung-sokimi-sm600.jpg',
-            'local_file'  => 'binh-dung-xa-phong-cam-ung-sokimi-sm600.jpg',
-            'excerpt'     => 'Bình đựng xà phòng cảm ứng Sokimi SM600 thường được sử dụng tại các nhà vệ sinh công cộng, khách sạn, resort, nhà hàng,...',
-            'specs'       => "Thương hiệu: Sokimi
-Công suất sạc: 30W - 100W sạc nhanh đa giao thức (PD, QC 3.0, PPS)
-Cổng kết nối: USB-A + Type-C kép sạc 2 thiết bị cùng lúc
-Chất liệu: Hợp kim nhôm tản nhiệt cao cấp + ABS chống cháy
-Cơ chế giá đỡ: Hít nam châm MagSafe hoặc khóa tự động trọng lực
-Nguồn vào: 12V - 24V tương thích mọi dòng xe",
-            'content'     => '<h3>Tổng quan sản phẩm Bình đựng xà phòng cảm ứng Sokimi SM600</h3>
-<p><strong>Bình đựng xà phòng cảm ứng Sokimi SM600</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Sokimi</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Bình đựng xà phòng cảm ứng Sokimi SM600 thường được sử dụng tại các nhà vệ sinh công cộng, khách sạn, resort, nhà hàng,...</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'tam-tham-che-bang-dieu-khien-o-to',
-            'title'       => 'Tấm thảm che bảng điều khiển ô tô',
-            'category'    => 'boc-vo-lang-tham-san',
-            'cat_name'    => 'Bọc Vô Lăng & Thảm Lót Sàn Ô Tô',
-            'price'       => '230.000',
-            'old_price'   => '270.000',
-            'badge'       => 'CHÍNH HÃNG',
-            'brand'       => 'Trung Quốc',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/tam-tham-che-bang-dieu-khien-o-to.jpg',
-            'local_file'  => 'tam-tham-che-bang-dieu-khien-o-to.jpg',
-            'excerpt'     => 'Tấm thảm che bảng điều khiển ô tô làm từ nhung lông cừu hoặc da vân cacbon. Thảm Taplo ô tô dùng để che bảng điều khiển ô tô.',
-            'specs'       => "Thương hiệu: Trung Quốc
-Chất liệu: Da PU cao cấp kết hợp sợi carbon / cao su đúc nguyên khối
-Kích thước: Chuẩn form xe đường kính 38cm hoặc cắt may theo từng dòng xe
-Đặc tính: Không mùi hôi độc hại, chống trơn trượt mồ hôi tay, dễ lau chùi
-Độ bền: Trên 5 năm sử dụng liên tục",
-            'content'     => '<h3>Tổng quan sản phẩm Tấm thảm che bảng điều khiển ô tô</h3>
-<p><strong>Tấm thảm che bảng điều khiển ô tô</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Trung Quốc</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Tấm thảm che bảng điều khiển ô tô làm từ nhung lông cừu hoặc da vân cacbon. Thảm Taplo ô tô dùng để che bảng điều khiển ô tô.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'lot-cop-o-to-vasic-xe-7-cho',
-            'title'       => 'Lót cốp ô tô Vasic (Xe 7 chỗ)',
-            'category'    => 'boc-vo-lang-tham-san',
-            'cat_name'    => 'Bọc Vô Lăng & Thảm Lót Sàn Ô Tô',
-            'price'       => '470.000',
-            'old_price'   => '550.000',
-            'badge'       => 'CAO CẤP',
-            'brand'       => 'Vasic',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/lot-cop-o-to-vasic-xe-7-cho.jpg',
-            'local_file'  => 'lot-cop-o-to-vasic-xe-7-cho.jpg',
-            'excerpt'     => 'Lót cốp ô tô Vasic (Xe 7 chỗ) có vật liệu được làm từ hạt nhựa PVC cao cấp, không mùi độc hại và ẩm mốc, dễ lắp đặt và vệ sinh',
-            'specs'       => "Thương hiệu: Vasic
-Chất liệu: Da PU cao cấp kết hợp sợi carbon / cao su đúc nguyên khối
-Kích thước: Chuẩn form xe đường kính 38cm hoặc cắt may theo từng dòng xe
-Đặc tính: Không mùi hôi độc hại, chống trơn trượt mồ hôi tay, dễ lau chùi
-Độ bền: Trên 5 năm sử dụng liên tục",
-            'content'     => '<h3>Tổng quan sản phẩm Lót cốp ô tô Vasic (Xe 7 chỗ)</h3>
-<p><strong>Lót cốp ô tô Vasic (Xe 7 chỗ)</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Vasic</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Lót cốp ô tô Vasic (Xe 7 chỗ) có vật liệu được làm từ hạt nhựa PVC cao cấp, không mùi độc hại và ẩm mốc, dễ lắp đặt và vệ sinh</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'tham-lot-san-o-to-vasic-xe-5-cho',
-            'title'       => 'Thảm lót sàn ô tô Vasic (Xe 5 chỗ)',
-            'category'    => 'boc-vo-lang-tham-san',
-            'cat_name'    => 'Bọc Vô Lăng & Thảm Lót Sàn Ô Tô',
-            'price'       => '1.690.000',
-            'old_price'   => '1.990.000',
-            'badge'       => 'KHUYÊN DÙNG',
-            'brand'       => 'Vasic',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/tham-lot-san-o-to-vasic-xe-5-cho.jpg',
-            'local_file'  => 'tham-lot-san-o-to-vasic-xe-5-cho.jpg',
-            'excerpt'     => 'Thảm lót sàn ô tô Vasic (Xe 5 chỗ) chất liệu từ hạt nhựa PVC cao cấp, không mùi độc hại và ẩm mốc, dễ lắp đặt và vệ sinh',
-            'specs'       => "Thương hiệu: Vasic
-Chất liệu: Da PU cao cấp kết hợp sợi carbon / cao su đúc nguyên khối
-Kích thước: Chuẩn form xe đường kính 38cm hoặc cắt may theo từng dòng xe
-Đặc tính: Không mùi hôi độc hại, chống trơn trượt mồ hôi tay, dễ lau chùi
-Độ bền: Trên 5 năm sử dụng liên tục",
-            'content'     => '<h3>Tổng quan sản phẩm Thảm lót sàn ô tô Vasic (Xe 5 chỗ)</h3>
-<p><strong>Thảm lót sàn ô tô Vasic (Xe 5 chỗ)</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Vasic</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Thảm lót sàn ô tô Vasic (Xe 5 chỗ) chất liệu từ hạt nhựa PVC cao cấp, không mùi độc hại và ẩm mốc, dễ lắp đặt và vệ sinh</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'tham-lot-san-o-to-vasic-xe-7-cho',
-            'title'       => 'Thảm lót sàn ô tô Vasic (Xe 7 chỗ)',
-            'category'    => 'boc-vo-lang-tham-san',
-            'cat_name'    => 'Bọc Vô Lăng & Thảm Lót Sàn Ô Tô',
-            'price'       => '2.500.000',
-            'old_price'   => '2.950.000',
-            'badge'       => 'HOT',
-            'brand'       => 'Vasic',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/tham-lot-san-o-to-vasic-xe-7-cho.jpg',
-            'local_file'  => 'tham-lot-san-o-to-vasic-xe-7-cho.jpg',
-            'excerpt'     => 'Thảm lót sàn ô tô Vasic (Xe 7 chỗ) có chất liệu từ hạt nhựa PVC cao cấp, không mùi độc hại và ẩm mốc, dễ lắp đặt và vệ sinh',
-            'specs'       => "Thương hiệu: Vasic
-Chất liệu: Da PU cao cấp kết hợp sợi carbon / cao su đúc nguyên khối
-Kích thước: Chuẩn form xe đường kính 38cm hoặc cắt may theo từng dòng xe
-Đặc tính: Không mùi hôi độc hại, chống trơn trượt mồ hôi tay, dễ lau chùi
-Độ bền: Trên 5 năm sử dụng liên tục",
-            'content'     => '<h3>Tổng quan sản phẩm Thảm lót sàn ô tô Vasic (Xe 7 chỗ)</h3>
-<p><strong>Thảm lót sàn ô tô Vasic (Xe 7 chỗ)</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Vasic</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Thảm lót sàn ô tô Vasic (Xe 7 chỗ) có chất liệu từ hạt nhựa PVC cao cấp, không mùi độc hại và ẩm mốc, dễ lắp đặt và vệ sinh</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'lot-cop-o-to-vasic-xe-5-cho',
-            'title'       => 'Lót cốp ô tô Vasic (Xe 5 chỗ)',
-            'category'    => 'boc-vo-lang-tham-san',
-            'cat_name'    => 'Bọc Vô Lăng & Thảm Lót Sàn Ô Tô',
-            'price'       => '1.120.000',
-            'old_price'   => '1.320.000',
-            'badge'       => 'MỚI',
-            'brand'       => 'Vasic',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/lot-cop-o-to-vasic-xe-5-cho.jpg',
-            'local_file'  => 'lot-cop-o-to-vasic-xe-5-cho.jpg',
-            'excerpt'     => 'Lót cốp ô tô Vasic (Xe 5 chỗ) có vật liệu được làm từ hạt nhựa PVC cao cấp, không mùi độc hại và ẩm mốc, dễ lắp đặt và vệ sinh',
-            'specs'       => "Thương hiệu: Vasic
-Chất liệu: Da PU cao cấp kết hợp sợi carbon / cao su đúc nguyên khối
-Kích thước: Chuẩn form xe đường kính 38cm hoặc cắt may theo từng dòng xe
-Đặc tính: Không mùi hôi độc hại, chống trơn trượt mồ hôi tay, dễ lau chùi
-Độ bền: Trên 5 năm sử dụng liên tục",
-            'content'     => '<h3>Tổng quan sản phẩm Lót cốp ô tô Vasic (Xe 5 chỗ)</h3>
-<p><strong>Lót cốp ô tô Vasic (Xe 5 chỗ)</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Vasic</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Lót cốp ô tô Vasic (Xe 5 chỗ) có vật liệu được làm từ hạt nhựa PVC cao cấp, không mùi độc hại và ẩm mốc, dễ lắp đặt và vệ sinh</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'op-lung-hang-ghe-thu-3-vasic-xe-7-cho',
-            'title'       => 'Ốp lưng hàng ghế thứ 3 Vasic (Xe 7 chỗ)',
-            'category'    => 'boc-vo-lang-tham-san',
-            'cat_name'    => 'Bọc Vô Lăng & Thảm Lót Sàn Ô Tô',
-            'price'       => '650.000',
-            'old_price'   => '770.000',
-            'badge'       => 'BÁN CHẠY',
-            'brand'       => 'Vasic',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/op-lung-hang-ghe-thu-3-vasic-xe-7-cho.jpg',
-            'local_file'  => 'op-lung-hang-ghe-thu-3-vasic-xe-7-cho.jpg',
-            'excerpt'     => 'Ốp lưng hàng ghế thứ 3 Vasic (Xe 7 chỗ) giúp bảo vệ mặt lưng cho hàng ghế sau cùng, bảo vệ ghế không bị trầy xước',
-            'specs'       => "Thương hiệu: Vasic
-Chất liệu: Da PU cao cấp kết hợp sợi carbon / cao su đúc nguyên khối
-Kích thước: Chuẩn form xe đường kính 38cm hoặc cắt may theo từng dòng xe
-Đặc tính: Không mùi hôi độc hại, chống trơn trượt mồ hôi tay, dễ lau chùi
-Độ bền: Trên 5 năm sử dụng liên tục",
-            'content'     => '<h3>Tổng quan sản phẩm Ốp lưng hàng ghế thứ 3 Vasic (Xe 7 chỗ)</h3>
-<p><strong>Ốp lưng hàng ghế thứ 3 Vasic (Xe 7 chỗ)</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Vasic</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Ốp lưng hàng ghế thứ 3 Vasic (Xe 7 chỗ) giúp bảo vệ mặt lưng cho hàng ghế sau cùng, bảo vệ ghế không bị trầy xước</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'boc-vo-lang-the-thao-sparco-spc1111-da-pu-carbon-cao-cap',
-            'title'       => 'Bọc vô lăng thể thao Sparco SPC1111 da PU carbon cao cấp',
-            'category'    => 'boc-vo-lang-tham-san',
-            'cat_name'    => 'Bọc Vô Lăng & Thảm Lót Sàn Ô Tô',
+            'slug'        => 'bat-phu-o-to-3-lop-trang-bac-tran-bong',
+            'title'       => 'Bạt phủ ô tô 3 lớp tráng bạc trần bông chống nóng chống xước',
+            'category'    => 'ngoai-that-va-den',
+            'cat_name'    => 'Ngoại thất và đèn',
             'price'       => '480.000',
             'old_price'   => '650.000',
-            'badge'       => 'CHÍNH HÃNG',
-            'brand'       => 'Sparco Corsa',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/boc-vo-lang-the-thao-sparco-spc1111-da-pu-carbon-cao-cap.jpg',
-            'local_file'  => 'boc-vo-lang-the-thao-sparco-spc1111-da-pu-carbon-cao-cap.jpg',
-            'excerpt'     => 'Bọc vô lăng cao cấp Sparco chất liệu da PU đục lỗ thoáng khí kết hợp vân carbon thể thao, chống trơn trượt mồ hôi tay cực tốt.',
-            'specs'       => "Thương hiệu: Sparco Corsa
-Chất liệu: Da PU cao cấp kết hợp sợi carbon / cao su đúc nguyên khối
-Kích thước: Chuẩn form xe đường kính 38cm hoặc cắt may theo từng dòng xe
-Đặc tính: Không mùi hôi độc hại, chống trơn trượt mồ hôi tay, dễ lau chùi
-Độ bền: Trên 5 năm sử dụng liên tục",
-            'content'     => '<h3>Tổng quan sản phẩm Bọc vô lăng thể thao Sparco SPC1111 da PU carbon cao cấp</h3>
-<p><strong>Bọc vô lăng thể thao Sparco SPC1111 da PU carbon cao cấp</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Sparco Corsa</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Bọc vô lăng cao cấp Sparco chất liệu da PU đục lỗ thoáng khí kết hợp vân carbon thể thao, chống trơn trượt mồ hôi tay cực tốt.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
+            'badge'       => 'CHỐNG NẮNG MƯA',
+            'brand'       => 'Hải Hà Auto Shield',
+            'warranty'    => '06 tháng',
+            'origin'      => 'Sản xuất tiêu chuẩn cao cấp & Phân phối tại Hải Hà',
+            'img'         => $img_uri . '/bat-phu-oto.jpg',
+            'excerpt'     => 'Bạt phủ cách nhiệt tráng nhôm phản quang giảm nhiệt độ khoang xe đến 25 độ C khi đỗ xe ngoài trời nắng gắt.',
+            'specs'       => "Cấu tạo: 3 lớp (Lớp ngoài tráng nhôm phản quang, lớp giữa bông ép cách nhiệt, lớp trong nỉ bông chống xước sơn)
+Kích thước: May đo chuẩn size sedan 4 chỗ, SUV 5 - 7 chỗ
+Tiện ích: Khóa kéo bên cửa tài xế lấy đồ tiện lợi không cần tháo bạt, dải phản quang ban đêm",
+            'content'     => '<h3>Bảo vệ xe toàn diện trước nắng gắt, mưa axit và lá cây rơi</h3>
+<p>Bạt phủ ô tô 3 lớp tráng nhôm phản quang là người bạn đồng hành không thể thiếu cho các bác tài thường xuyên phải đỗ xe ngoài bãi đỗ không có mái che.</p>',
         ),
 
+        // -------------------------------------------------------------
+        // 7. Tiện ích (tien-ich-o-to)
+        // -------------------------------------------------------------
         array(
-            'slug'        => 'o-cam-dien-quang-eco-dq-esk-8eco-8-lo',
-            'title'       => 'Ổ cắm Điện Quang ECO ĐQ ESK 8ECO (8 lỗ)',
-            'category'    => 'goi-tua-bat-phu',
-            'cat_name'    => 'Gối Tựa Đầu, Tựa Lưng & Bạt Phủ Xe',
-            'price'       => '175.000',
-            'old_price'   => '210.000',
-            'badge'       => 'CAO CẤP',
-            'brand'       => 'Điện Quang',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/o-cam-dien-quang-eco-dq-esk-8eco-8-lo.jpg',
-            'local_file'  => 'o-cam-dien-quang-eco-dq-esk-8eco-8-lo.jpg',
-            'excerpt'     => 'Ổ cắm Điện Quang ECO ĐQ ESK 8ECO được làm từ nhựa ABS nguyên chất chịu nhiệt, gồm 4 lỗ 3 chấu và 4 lỗ 2 chấu.',
-            'specs'       => "Thương hiệu: Điện Quang
-Chất liệu: Cao su non nhớ hình Memory Foam / Vải tráng bạc nhôm 3 lớp
-Công năng: Nâng đỡ cột sống cổ và thắt lưng, chống nóng cách nhiệt tia UV 99%
-Tương thích: Thiết kế vừa vặn cho tất cả các dòng xe Sedan, SUV, Crossover",
-            'content'     => '<h3>Tổng quan sản phẩm Ổ cắm Điện Quang ECO ĐQ ESK 8ECO (8 lỗ)</h3>
-<p><strong>Ổ cắm Điện Quang ECO ĐQ ESK 8ECO (8 lỗ)</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Điện Quang</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Ổ cắm Điện Quang ECO ĐQ ESK 8ECO được làm từ nhựa ABS nguyên chất chịu nhiệt, gồm 4 lỗ 3 chấu và 4 lỗ 2 chấu.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'o-cam-dien-quang-eco-dq-esk-6eco-6-lo',
-            'title'       => 'Ổ cắm Điện Quang ECO ĐQ ESK 6ECO (6 lỗ)',
-            'category'    => 'goi-tua-bat-phu',
-            'cat_name'    => 'Gối Tựa Đầu, Tựa Lưng & Bạt Phủ Xe',
-            'price'       => '150.000',
-            'old_price'   => '180.000',
-            'badge'       => 'KHUYÊN DÙNG',
-            'brand'       => 'Điện Quang',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/o-cam-dien-quang-eco-dq-esk-6eco-6-lo.jpg',
-            'local_file'  => 'o-cam-dien-quang-eco-dq-esk-6eco-6-lo.jpg',
-            'excerpt'     => 'Ổ cắm Điện Quang ECO ĐQ ESK 6ECO (6 lỗ) có thiết kế nhỏ gọn, dây dài 5m, 6 lỗ cắm, công nghệ Extra Power, an toàn, và dễ sử dụng.',
-            'specs'       => "Thương hiệu: Điện Quang
-Chất liệu: Cao su non nhớ hình Memory Foam / Vải tráng bạc nhôm 3 lớp
-Công năng: Nâng đỡ cột sống cổ và thắt lưng, chống nóng cách nhiệt tia UV 99%
-Tương thích: Thiết kế vừa vặn cho tất cả các dòng xe Sedan, SUV, Crossover",
-            'content'     => '<h3>Tổng quan sản phẩm Ổ cắm Điện Quang ECO ĐQ ESK 6ECO (6 lỗ)</h3>
-<p><strong>Ổ cắm Điện Quang ECO ĐQ ESK 6ECO (6 lỗ)</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Điện Quang</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Ổ cắm Điện Quang ECO ĐQ ESK 6ECO (6 lỗ) có thiết kế nhỏ gọn, dây dài 5m, 6 lỗ cắm, công nghệ Extra Power, an toàn, và dễ sử dụng.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'o-cam-co-day-panasonic-wchg28352-3m',
-            'title'       => 'Ổ cắm có dây Panasonic WCHG28352 (3m)',
-            'category'    => 'goi-tua-bat-phu',
-            'cat_name'    => 'Gối Tựa Đầu, Tựa Lưng & Bạt Phủ Xe',
-            'price'       => '750.000',
-            'old_price'   => '890.000',
-            'badge'       => 'HOT',
-            'brand'       => 'Panasonic',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/o-cam-co-day-panasonic-wchg28352-3m.jpg',
-            'local_file'  => 'o-cam-co-day-panasonic-wchg28352-3m.jpg',
-            'excerpt'     => 'Ổ cắm có dây Panasonic WCHG28352 với công suất 3.500W, độ bền cao và khả năng chịu nhiệt tốt, mang đến sự thuận tiện và an toàn khi sử dụng.',
-            'specs'       => "Thương hiệu: Panasonic
-Chất liệu: Cao su non nhớ hình Memory Foam / Vải tráng bạc nhôm 3 lớp
-Công năng: Nâng đỡ cột sống cổ và thắt lưng, chống nóng cách nhiệt tia UV 99%
-Tương thích: Thiết kế vừa vặn cho tất cả các dòng xe Sedan, SUV, Crossover",
-            'content'     => '<h3>Tổng quan sản phẩm Ổ cắm có dây Panasonic WCHG28352 (3m)</h3>
-<p><strong>Ổ cắm có dây Panasonic WCHG28352 (3m)</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Panasonic</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Ổ cắm có dây Panasonic WCHG28352 với công suất 3.500W, độ bền cao và khả năng chịu nhiệt tốt, mang đến sự thuận tiện và an toàn khi sử dụng.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'o-cam-dien-quang-dq-esk-sm750sl-5-lo-3-chau',
-            'title'       => 'Ổ cắm Điện Quang ĐQ ESK SM750SL (5 lỗ 3 chấu)',
-            'category'    => 'goi-tua-bat-phu',
-            'cat_name'    => 'Gối Tựa Đầu, Tựa Lưng & Bạt Phủ Xe',
-            'price'       => '268.000',
-            'old_price'   => '320.000',
-            'badge'       => 'MỚI',
-            'brand'       => 'Điện Quang',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/o-cam-dien-quang-dq-esk-sm750sl-5-lo-3-chau.jpg',
-            'local_file'  => 'o-cam-dien-quang-dq-esk-sm750sl-5-lo-3-chau.jpg',
-            'excerpt'     => 'Ổ cắm Điện Quang ĐQ ESK SM750SL gồm 5 lỗ cắm đa năng, công suất 3200W cùng nhiều tính năng an toàn, đáp ứng tốt nhu cầu sử dụng điện trong gia đình và văn phòng.',
-            'specs'       => "Thương hiệu: Điện Quang
-Chất liệu: Cao su non nhớ hình Memory Foam / Vải tráng bạc nhôm 3 lớp
-Công năng: Nâng đỡ cột sống cổ và thắt lưng, chống nóng cách nhiệt tia UV 99%
-Tương thích: Thiết kế vừa vặn cho tất cả các dòng xe Sedan, SUV, Crossover",
-            'content'     => '<h3>Tổng quan sản phẩm Ổ cắm Điện Quang ĐQ ESK SM750SL (5 lỗ 3 chấu)</h3>
-<p><strong>Ổ cắm Điện Quang ĐQ ESK SM750SL (5 lỗ 3 chấu)</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Điện Quang</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Ổ cắm Điện Quang ĐQ ESK SM750SL gồm 5 lỗ cắm đa năng, công suất 3200W cùng nhiều tính năng an toàn, đáp ứng tốt nhu cầu sử dụng điện trong gia đình và văn phòng.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'o-cam-co-day-panasonic-wchg24332w',
-            'title'       => 'Ổ cắm có dây Panasonic WCHG24332W',
-            'category'    => 'goi-tua-bat-phu',
-            'cat_name'    => 'Gối Tựa Đầu, Tựa Lưng & Bạt Phủ Xe',
-            'price'       => '420.000',
-            'old_price'   => '500.000',
+            'slug'        => 'may-bom-lop-o-to-michelin-12266',
+            'title'       => 'Máy bơm lốp ô tô điện tử tự ngắt áp suất Michelin 12266',
+            'category'    => 'tien-ich-o-to',
+            'cat_name'    => 'Tiện ích',
+            'price'       => '1.150.000',
+            'old_price'   => '1.390.000',
             'badge'       => 'BÁN CHẠY',
-            'brand'       => 'Panasonic',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/o-cam-co-day-panasonic-wchg24332w.jpg',
-            'local_file'  => 'o-cam-co-day-panasonic-wchg24332w.jpg',
-            'excerpt'     => 'Ổ cắm có dây Panasonic WCHG24332W có khả năng chịu tải lên tới 2.300W, tự động ngắt khi vượt quá công suất chịu tải.',
-            'specs'       => "Thương hiệu: Panasonic
-Chất liệu: Cao su non nhớ hình Memory Foam / Vải tráng bạc nhôm 3 lớp
-Công năng: Nâng đỡ cột sống cổ và thắt lưng, chống nóng cách nhiệt tia UV 99%
-Tương thích: Thiết kế vừa vặn cho tất cả các dòng xe Sedan, SUV, Crossover",
-            'content'     => '<h3>Tổng quan sản phẩm Ổ cắm có dây Panasonic WCHG24332W</h3>
-<p><strong>Ổ cắm có dây Panasonic WCHG24332W</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Panasonic</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Ổ cắm có dây Panasonic WCHG24332W có khả năng chịu tải lên tới 2.300W, tự động ngắt khi vượt quá công suất chịu tải.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'o-cam-dien-quang-dq-003a-04-6-lo-3-chau',
-            'title'       => 'Ổ cắm Điện Quang ĐQ 003A-04 (6 lỗ 3 chấu)',
-            'category'    => 'goi-tua-bat-phu',
-            'cat_name'    => 'Gối Tựa Đầu, Tựa Lưng & Bạt Phủ Xe',
-            'price'       => '255.000',
-            'old_price'   => '300.000',
-            'badge'       => 'CHÍNH HÃNG',
-            'brand'       => 'Điện Quang',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/o-cam-dien-quang-dq-003a-04-6-lo-3-chau.jpg',
-            'local_file'  => 'o-cam-dien-quang-dq-003a-04-6-lo-3-chau.jpg',
-            'excerpt'     => 'Ổ cắm Điện Quang ĐQ 003A-04 với chất liệu ABS nguyên chất và tính năng tự ngắt điện giúp bảo vệ an toàn cho người sử dụng và thiết bị điện.',
-            'specs'       => "Thương hiệu: Điện Quang
-Chất liệu: Cao su non nhớ hình Memory Foam / Vải tráng bạc nhôm 3 lớp
-Công năng: Nâng đỡ cột sống cổ và thắt lưng, chống nóng cách nhiệt tia UV 99%
-Tương thích: Thiết kế vừa vặn cho tất cả các dòng xe Sedan, SUV, Crossover",
-            'content'     => '<h3>Tổng quan sản phẩm Ổ cắm Điện Quang ĐQ 003A-04 (6 lỗ 3 chấu)</h3>
-<p><strong>Ổ cắm Điện Quang ĐQ 003A-04 (6 lỗ 3 chấu)</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Điện Quang</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Ổ cắm Điện Quang ĐQ 003A-04 với chất liệu ABS nguyên chất và tính năng tự ngắt điện giúp bảo vệ an toàn cho người sử dụng và thiết bị điện.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'o-cam-keo-dai-lioa-qt30-3-15a-kieu-rulo-danh-cho-cong-truong',
-            'title'       => 'Ổ cắm kéo dài LiOA QT30-3-15A kiểu Rulo (Dành cho công trường)',
-            'category'    => 'goi-tua-bat-phu',
-            'cat_name'    => 'Gối Tựa Đầu, Tựa Lưng & Bạt Phủ Xe',
-            'price'       => '1.040.000',
-            'old_price'   => '1.230.000',
-            'badge'       => 'CAO CẤP',
-            'brand'       => 'LiOA',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/o-cam-keo-dai-lioa-qt30-3-15a-kieu-rulo-danh-cho-cong-truong.jpg',
-            'local_file'  => 'o-cam-keo-dai-lioa-qt30-3-15a-kieu-rulo-danh-cho-cong-truong.jpg',
-            'excerpt'     => 'Ổ cắm kéo dài LiOA QT30-3-15A kiểu Rulo có thể dùng được cho các thiết bị điện trong gia đình hay những nơi có nhu cầu sử dụng ổ cắm dây dài. Công suất chịu tải 3.300W',
-            'specs'       => "Thương hiệu: LiOA
-Chất liệu: Cao su non nhớ hình Memory Foam / Vải tráng bạc nhôm 3 lớp
-Công năng: Nâng đỡ cột sống cổ và thắt lưng, chống nóng cách nhiệt tia UV 99%
-Tương thích: Thiết kế vừa vặn cho tất cả các dòng xe Sedan, SUV, Crossover",
-            'content'     => '<h3>Tổng quan sản phẩm Ổ cắm kéo dài LiOA QT30-3-15A kiểu Rulo (Dành cho công trường)</h3>
-<p><strong>Ổ cắm kéo dài LiOA QT30-3-15A kiểu Rulo (Dành cho công trường)</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>LiOA</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Ổ cắm kéo dài LiOA QT30-3-15A kiểu Rulo có thể dùng được cho các thiết bị điện trong gia đình hay những nơi có nhu cầu sử dụng ổ cắm dây dài. Công suất chịu tải 3.300W</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'nuoc-hoa-o-to-cao-cap-etonner-e1701-60ml',
-            'title'       => 'Nước hoa ô tô cao cấp Etonner E1701 - 60ml',
-            'category'    => 'cham-soc-xe-nuoc-hoa',
-            'cat_name'    => 'Nước Hoa & Dung Dịch Chăm Sóc Xe',
-            'price'       => '1.060.000',
-            'old_price'   => '1.250.000',
-            'badge'       => 'KHUYÊN DÙNG',
-            'brand'       => 'Etonner',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/nuoc-hoa-o-to-cao-cap-etonner-e1701-60ml.jpg',
-            'local_file'  => 'nuoc-hoa-o-to-cao-cap-etonner-e1701-60ml.jpg',
-            'excerpt'     => 'Nước hoa ô tô cao cấp Etonner E1701 có 4 mùi hương đặc trưng sẽ đem hương thơm tự nhiên, thoải mái, thư giãn cho người lái xe.',
-            'specs'       => "Thương hiệu: Etonner
-Xuất xứ: Nhập khẩu chính hãng & phân phối META.vn
-Dung tích / Khối lượng: Tiêu chuẩn đóng chai nhà sản xuất
-Công dụng: Vệ sinh, khử mùi, dưỡng bóng và bảo vệ bề mặt nội ngoại thất ô tô
-Độ an toàn: Chứng nhận an toàn sức khỏe người ngồi trên xe",
-            'content'     => '<h3>Tổng quan sản phẩm Nước hoa ô tô cao cấp Etonner E1701 - 60ml</h3>
-<p><strong>Nước hoa ô tô cao cấp Etonner E1701 - 60ml</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Etonner</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Nước hoa ô tô cao cấp Etonner E1701 có 4 mùi hương đặc trưng sẽ đem hương thơm tự nhiên, thoải mái, thư giãn cho người lái xe.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'nuoc-hoa-o-to-cao-cap-etonner-e1801',
-            'title'       => 'Nước hoa ô tô cao cấp Etonner E1801',
-            'category'    => 'cham-soc-xe-nuoc-hoa',
-            'cat_name'    => 'Nước Hoa & Dung Dịch Chăm Sóc Xe',
-            'price'       => '990.000',
-            'old_price'   => '1.170.000',
-            'badge'       => 'HOT',
-            'brand'       => 'Etonner',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/nuoc-hoa-o-to-cao-cap-etonner-e1801.jpg',
-            'local_file'  => 'nuoc-hoa-o-to-cao-cap-etonner-e1801.jpg',
-            'excerpt'     => 'Nước hoa ô tô cao cấp Etonner E1801 mang đến mùi hương quý phái, sang trọng cũng như sở hữu thiết kế thanh lịch, quý phái và phóng khoáng.',
-            'specs'       => "Thương hiệu: Etonner
-Xuất xứ: Nhập khẩu chính hãng & phân phối META.vn
-Dung tích / Khối lượng: Tiêu chuẩn đóng chai nhà sản xuất
-Công dụng: Vệ sinh, khử mùi, dưỡng bóng và bảo vệ bề mặt nội ngoại thất ô tô
-Độ an toàn: Chứng nhận an toàn sức khỏe người ngồi trên xe",
-            'content'     => '<h3>Tổng quan sản phẩm Nước hoa ô tô cao cấp Etonner E1801</h3>
-<p><strong>Nước hoa ô tô cao cấp Etonner E1801</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Etonner</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Nước hoa ô tô cao cấp Etonner E1801 mang đến mùi hương quý phái, sang trọng cũng như sở hữu thiết kế thanh lịch, quý phái và phóng khoáng.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'nuoc-hoa-o-to-cao-cap-dang-xit-etonner-e30',
-            'title'       => 'Nước hoa ô tô cao cấp dạng xịt Etonner E30',
-            'category'    => 'cham-soc-xe-nuoc-hoa',
-            'cat_name'    => 'Nước Hoa & Dung Dịch Chăm Sóc Xe',
-            'price'       => '750.000',
-            'old_price'   => '890.000',
-            'badge'       => 'MỚI',
-            'brand'       => 'Etonner',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/nuoc-hoa-o-to-cao-cap-dang-xit-etonner-e30.jpg',
-            'local_file'  => 'nuoc-hoa-o-to-cao-cap-dang-xit-etonner-e30.jpg',
-            'excerpt'     => 'Nước hoa ô tô cao cấp dạng xịt Etonner E30 có hương thơm không quá nồng, tỏa hương thoang thoảng giúp  khử mùi và làm thơm xe ô tô hiệu quả.',
-            'specs'       => "Thương hiệu: Etonner
-Xuất xứ: Nhập khẩu chính hãng & phân phối META.vn
-Dung tích / Khối lượng: Tiêu chuẩn đóng chai nhà sản xuất
-Công dụng: Vệ sinh, khử mùi, dưỡng bóng và bảo vệ bề mặt nội ngoại thất ô tô
-Độ an toàn: Chứng nhận an toàn sức khỏe người ngồi trên xe",
-            'content'     => '<h3>Tổng quan sản phẩm Nước hoa ô tô cao cấp dạng xịt Etonner E30</h3>
-<p><strong>Nước hoa ô tô cao cấp dạng xịt Etonner E30</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Etonner</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Nước hoa ô tô cao cấp dạng xịt Etonner E30 có hương thơm không quá nồng, tỏa hương thoang thoảng giúp  khử mùi và làm thơm xe ô tô hiệu quả.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'sap-thom-treo-xe-o-to-etonner-f1711',
-            'title'       => 'Sáp thơm treo xe ô tô Etonner F1711',
-            'category'    => 'cham-soc-xe-nuoc-hoa',
-            'cat_name'    => 'Nước Hoa & Dung Dịch Chăm Sóc Xe',
-            'price'       => '1.300.000',
-            'old_price'   => '1.530.000',
-            'badge'       => 'BÁN CHẠY',
-            'brand'       => 'Etonner',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/sap-thom-treo-xe-o-to-etonner-f1711.jpg',
-            'local_file'  => 'sap-thom-treo-xe-o-to-etonner-f1711.jpg',
-            'excerpt'     => 'Sáp thơm treo xe ô tô Etonner F1711 tỏa ra hương thơm dễ chịu, lưu giữ mùi lâu, dây treo bằng da lộn, mùi hương an toàn cho sức khỏe.',
-            'specs'       => "Thương hiệu: Etonner
-Xuất xứ: Nhập khẩu chính hãng & phân phối META.vn
-Dung tích / Khối lượng: Tiêu chuẩn đóng chai nhà sản xuất
-Công dụng: Vệ sinh, khử mùi, dưỡng bóng và bảo vệ bề mặt nội ngoại thất ô tô
-Độ an toàn: Chứng nhận an toàn sức khỏe người ngồi trên xe",
-            'content'     => '<h3>Tổng quan sản phẩm Sáp thơm treo xe ô tô Etonner F1711</h3>
-<p><strong>Sáp thơm treo xe ô tô Etonner F1711</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Etonner</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Sáp thơm treo xe ô tô Etonner F1711 tỏa ra hương thơm dễ chịu, lưu giữ mùi lâu, dây treo bằng da lộn, mùi hương an toàn cho sức khỏe.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'dung-dich-tay-bang-keo-va-nhua-duong-ekokemika-xtar-pro',
-            'title'       => 'Dung dịch tẩy băng keo và nhựa đường Ekokemika XTAR PRO',
-            'category'    => 'cham-soc-xe-nuoc-hoa',
-            'cat_name'    => 'Nước Hoa & Dung Dịch Chăm Sóc Xe',
-            'price'       => '445.000',
-            'old_price'   => '530.000',
-            'badge'       => 'CHÍNH HÃNG',
-            'brand'       => 'Ekokemika',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/dung-dich-tay-bang-keo-va-nhua-duong-ekokemika-xtar-pro.jpg',
-            'local_file'  => 'dung-dich-tay-bang-keo-va-nhua-duong-ekokemika-xtar-pro.jpg',
-            'excerpt'     => 'Dung dịch tẩy băng keo và nhựa đường Ekokemika XTAR PRO sẽ tẩy sạch vết nhựa đường, vết keo, vết bẩn do decal bám trên ô tô nhanh chóng.',
-            'specs'       => "Thương hiệu: Ekokemika
-Xuất xứ: Nhập khẩu chính hãng & phân phối META.vn
-Dung tích / Khối lượng: Tiêu chuẩn đóng chai nhà sản xuất
-Công dụng: Vệ sinh, khử mùi, dưỡng bóng và bảo vệ bề mặt nội ngoại thất ô tô
-Độ an toàn: Chứng nhận an toàn sức khỏe người ngồi trên xe",
-            'content'     => '<h3>Tổng quan sản phẩm Dung dịch tẩy băng keo và nhựa đường Ekokemika XTAR PRO</h3>
-<p><strong>Dung dịch tẩy băng keo và nhựa đường Ekokemika XTAR PRO</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Ekokemika</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Dung dịch tẩy băng keo và nhựa đường Ekokemika XTAR PRO sẽ tẩy sạch vết nhựa đường, vết keo, vết bẩn do decal bám trên ô tô nhanh chóng.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
-        ),
-
-        array(
-            'slug'        => 'dung-dich-ve-sinh-do-da-chuyen-dung-michelin-w32187',
-            'title'       => 'Dung dịch vệ sinh đồ da chuyên dụng Michelin W32187',
-            'category'    => 'cham-soc-xe-nuoc-hoa',
-            'cat_name'    => 'Nước Hoa & Dung Dịch Chăm Sóc Xe',
-            'price'       => '230.000',
-            'old_price'   => '270.000',
-            'badge'       => 'CAO CẤP',
             'brand'       => 'Michelin',
             'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/dung-dich-ve-sinh-do-da-chuyen-dung-michelin-w32187.jpg',
-            'local_file'  => 'dung-dich-ve-sinh-do-da-chuyen-dung-michelin-w32187.jpg',
-            'excerpt'     => 'Dung dịch vệ sinh đồ da chuyên dụng Michelin W32187 dùng để vệ sinh bề mặt da trong nội thất xe hơi, giúp làm sạch mọi vết bẩn, vết ố.',
-            'specs'       => "Thương hiệu: Michelin
-Xuất xứ: Nhập khẩu chính hãng & phân phối META.vn
-Dung tích / Khối lượng: Tiêu chuẩn đóng chai nhà sản xuất
-Công dụng: Vệ sinh, khử mùi, dưỡng bóng và bảo vệ bề mặt nội ngoại thất ô tô
-Độ an toàn: Chứng nhận an toàn sức khỏe người ngồi trên xe",
-            'content'     => '<h3>Tổng quan sản phẩm Dung dịch vệ sinh đồ da chuyên dụng Michelin W32187</h3>
-<p><strong>Dung dịch vệ sinh đồ da chuyên dụng Michelin W32187</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Michelin</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Dung dịch vệ sinh đồ da chuyên dụng Michelin W32187 dùng để vệ sinh bề mặt da trong nội thất xe hơi, giúp làm sạch mọi vết bẩn, vết ố.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
+            'origin'      => 'Chính hãng Michelin France & Phân phối tại Hải Hà',
+            'img'         => $img_uri . '/michelin-bom-lop.jpg',
+            'excerpt'     => 'Dòng máy bơm lốp điện tử bán chạy nhất của Michelin, tự động ngắt khi đủ áp suất, nhỏ gọn để cốp xe.',
+            'specs'       => "Áp suất tối đa: 150 PSI
+Tính năng: Cài đặt trước áp suất cần bơm và máy tự ngắt khi đủ cân
+Tốc độ bơm: Bơm đầy lốp rỗng chỉ trong 3 - 4 phút
+Đèn LED: Tích hợp đèn chiếu sáng ban đêm và cổng sạc USB tiện lợi",
+            'content'     => '<h3>Máy bơm lốp điện tử số 1 từ thương hiệu lốp danh tiếng Michelin</h3>
+<p><strong>Michelin 12266</strong> là phụ kiện không thể thiếu trong mỗi chuyến đi. Thao tác đơn giản: cắm tẩu sạc 12V trên xe, cài đặt mức cân (Bar/PSI) mong muốn, bấm nút và máy sẽ tự động bơm rồi dừng chính xác khi đủ áp suất.</p>',
         ),
 
         array(
-            'slug'        => 'dung-dich-rua-khoang-dong-co-ekokemika-motor',
-            'title'       => 'Dung dịch rửa khoang động cơ Ekokemika MOTOR',
-            'category'    => 'cham-soc-xe-nuoc-hoa',
-            'cat_name'    => 'Nước Hoa & Dung Dịch Chăm Sóc Xe',
-            'price'       => '265.000',
-            'old_price'   => '310.000',
-            'badge'       => 'KHUYÊN DÙNG',
-            'brand'       => 'Ekokemika',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/dung-dich-rua-khoang-dong-co-ekokemika-motor.jpg',
-            'local_file'  => 'dung-dich-rua-khoang-dong-co-ekokemika-motor.jpg',
-            'excerpt'     => 'Dung dịch rửa khoang động cơ Ekokemika MOTOR pha loãng với nước theo tỉ lệ 1:5 đến 1:10 sẽ loại bỏ 95% bụi bẩn, dầu và chất tĩnh điện trong khoang động cơ ô tô.',
-            'specs'       => "Thương hiệu: Ekokemika
-Xuất xứ: Nhập khẩu chính hãng & phân phối META.vn
-Dung tích / Khối lượng: Tiêu chuẩn đóng chai nhà sản xuất
-Công dụng: Vệ sinh, khử mùi, dưỡng bóng và bảo vệ bề mặt nội ngoại thất ô tô
-Độ an toàn: Chứng nhận an toàn sức khỏe người ngồi trên xe",
-            'content'     => '<h3>Tổng quan sản phẩm Dung dịch rửa khoang động cơ Ekokemika MOTOR</h3>
-<p><strong>Dung dịch rửa khoang động cơ Ekokemika MOTOR</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Ekokemika</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Dung dịch rửa khoang động cơ Ekokemika MOTOR pha loãng với nước theo tỉ lệ 1:5 đến 1:10 sẽ loại bỏ 95% bụi bẩn, dầu và chất tĩnh điện trong khoang động cơ ô tô.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
+            'slug'        => 'tau-sac-nhanh-o-to-baseus-65w',
+            'title'       => 'Tẩu sạc nhanh ô tô Baseus 65W PD/QC đa cổng công suất cao',
+            'category'    => 'tien-ich-o-to',
+            'cat_name'    => 'Tiện ích',
+            'price'       => '350.000',
+            'old_price'   => '450.000',
+            'badge'       => 'SẠC NHANH 65W',
+            'brand'       => 'Baseus',
+            'warranty'    => '12 tháng 1 đổi 1',
+            'origin'      => 'Chính hãng Baseus & Phân phối tại Hải Hà',
+            'img'         => $img_uri . '/baseus-tau-sac.jpg',
+            'excerpt'     => 'Tẩu sạc nhanh 65W công suất lớn sạc nhanh đồng thời 2 thiết bị điện thoại và laptop ngay trên xe.',
+            'specs'       => "Công suất tối đa: 65W Max (Hỗ trợ sạc nhanh cho cả Macbook / Laptop)
+Cổng ra: 1 cổng Type-C PD và 1 cổng USB Quick Charge 4.0
+Màn hình: Hiển thị điện áp ắc quy xe theo thời gian thực
+Bảo vệ: Chíp AI kiểm soát nhiệt độ thông minh chống quá tải ngắn mạch",
+            'content'     => '<h3>Nạp đầy năng lượng thần tốc cho mọi thiết bị trên xe</h3>
+<p>Tẩu sạc nhanh Baseus hỗ trợ các chuẩn sạc nhanh phổ biến nhất như PD 3.0, QC 4.0+, SCP, AFC. Màn hình kỹ thuật số LED hiển thị điện áp bình ắc quy giúp bạn luôn nắm bắt được tình trạng nguồn điện của xe.</p>',
         ),
 
         array(
-            'slug'        => 'dung-dich-lam-sach-la-zang-o-kinh-va-gam-xe-perlega',
-            'title'       => 'Dung dịch làm sạch la zăng, ố kính và gầm xe Perlega',
-            'category'    => 'cham-soc-xe-nuoc-hoa',
-            'cat_name'    => 'Nước Hoa & Dung Dịch Chăm Sóc Xe',
-            'price'       => '215.000',
-            'old_price'   => '250.000',
-            'badge'       => 'HOT',
-            'brand'       => 'Ekokemika',
-            'warranty'    => '12 tháng chính hãng',
-            'origin'      => 'Phân phối chính hãng META.vn & Lắp đặt tại Hải Hà',
-            'img'         => $acc_upload_url . '/dung-dich-lam-sach-la-zang-o-kinh-va-gam-xe-perlega.jpg',
-            'local_file'  => 'dung-dich-lam-sach-la-zang-o-kinh-va-gam-xe-perlega.jpg',
-            'excerpt'     => 'Dung dịch làm sạch la zăng, ố kính và gầm xe Perlega sẽ loại bỏ cặn bẩn trên động cơ, gỉ sét từ gầm xe, loại bỏ vết ố vàng đọng lại trên ô tô hiệu quả.',
-            'specs'       => "Thương hiệu: Ekokemika
-Xuất xứ: Nhập khẩu chính hãng & phân phối META.vn
-Dung tích / Khối lượng: Tiêu chuẩn đóng chai nhà sản xuất
-Công dụng: Vệ sinh, khử mùi, dưỡng bóng và bảo vệ bề mặt nội ngoại thất ô tô
-Độ an toàn: Chứng nhận an toàn sức khỏe người ngồi trên xe",
-            'content'     => '<h3>Tổng quan sản phẩm Dung dịch làm sạch la zăng, ố kính và gầm xe Perlega</h3>
-<p><strong>Dung dịch làm sạch la zăng, ố kính và gầm xe Perlega</strong> là dòng phụ kiện xe hơi chính hãng thương hiệu <strong>Ekokemika</strong>, được phân phối trực tiếp bởi <strong>META.vn</strong> và tiếp nhận hỗ trợ kỹ thuật, lắp đặt tại hệ thống xưởng dịch vụ <strong>Ôtô Hải Hà</strong>. Dung dịch làm sạch la zăng, ố kính và gầm xe Perlega sẽ loại bỏ cặn bẩn trên động cơ, gỉ sét từ gầm xe, loại bỏ vết ố vàng đọng lại trên ô tô hiệu quả.</p>
-
-<h3>Đặc điểm nổi bật &amp; Lợi ích sử dụng:</h3>
-<ul>
-    <li><strong>Chất lượng chính hãng 100%:</strong> Sản phẩm có đầy đủ tem phụ, mã vạch bảo hành điện tử chính hãng từ nhà phân phối.</li>
-    <li><strong>Độ hoàn thiện cao cấp:</strong> Thiết kế chuẩn mực, tương thích hoàn hảo với nội thất và hệ thống điện của các dòng xe ô tô hiện đại.</li>
-    <li><strong>An toàn tuyệt đối cho xe:</strong> Không can thiệp cắt nối dây điện nguyên bản, sử dụng giắc cắm zin và cầu chì bảo vệ chuyên dụng.</li>
-    <li><strong>Độ bền bỉ vượt trội:</strong> Vận hành ổn định trong điều kiện khí hậu nhiệt đới nóng ẩm của Việt Nam.</li>
-</ul>
-
-<h3>Cam kết dịch vụ tại xưởng Ôtô Hải Hà</h3>
-<p>Khi mua và sử dụng dịch vụ tại xưởng Ôtô Hải Hà, quý khách hàng nhận được chính sách bảo hành 1 đổi 1 chu đáo, hỗ trợ tư vấn lắp đặt tận tình từ đội ngũ thợ lành nghề với hơn 31 năm kinh nghiệm.</p>',
+            'slug'        => 'gia-do-dien-thoai-o-to-baseus-magsafe',
+            'title'       => 'Giá đỡ điện thoại ô tô Baseus hít nam châm MagSafe xoay 360 độ',
+            'category'    => 'tien-ich-o-to',
+            'cat_name'    => 'Tiện ích',
+            'price'       => '280.000',
+            'old_price'   => '380.000',
+            'badge'       => 'TIỆN LỢI',
+            'brand'       => 'Baseus',
+            'warranty'    => '12 tháng',
+            'origin'      => 'Chính hãng Baseus & Phân phối tại Hải Hà',
+            'img'         => $img_uri . '/baseus-gia-do.jpg',
+            'excerpt'     => 'Giá đỡ điện thoại hít nam châm từ tính chắc chắn, thao tác đặt và nhấc điện thoại chỉ bằng một tay tiện lợi khi lái xe.',
+            'specs'       => "Lực hút nam châm: 16 viên nam châm NdFeB lực hút mạnh mẽ chống rơi kể cả đường gồ ghề
+Gắn kết: Kẹp cửa gió điều hòa hoặc dán taplo chắc chắn
+Khớp xoay: Trục xoay 360 độ điều chỉnh mọi góc nhìn ngang dọc
+Tương thích: Hỗ trợ MagSafe iPhone 12 đến 16 và tặng kèm vòng từ tính cho điện thoại khác",
+            'content'     => '<h3>Thao tác nhấc đặt điện thoại bằng một tay an toàn tuyệt đối</h3>
+<p>Sở hữu lực hút từ tính siêu khỏe với 16 viên nam châm Rubidi chuẩn MagSafe giữ chắc chắn chiếc điện thoại của bạn trên mọi cung đường xóc, không lo rơi rớt hay làm trầy xước viền máy.</p>',
         ),
 
+        array(
+            'slug'        => 'may-loc-khong-khi-o-to-philips-gp5211',
+            'title'       => 'Máy lọc không khí ô tô Philips GP5211 khử mùi diệt khuẩn ion âm',
+            'category'    => 'tien-ich-o-to',
+            'cat_name'    => 'Tiện ích',
+            'price'       => '2.490.000',
+            'old_price'   => '2.890.000',
+            'badge'       => 'DIỆT KHUẨN HEPA',
+            'brand'       => 'Philips Hà Lan',
+            'warranty'    => '12 tháng chính hãng',
+            'origin'      => 'Chính hãng Philips & Phân phối tại Hải Hà',
+            'img'         => $img_uri . '/philips-loc-khong-khi.jpg',
+            'excerpt'     => 'Máy lọc không khí ô tô Philips cao cấp, lọc sạch 99% bụi mịn PM2.5 và mùi xăng xe hôi ẩm cho không khí trong lành tươi mới.',
+            'specs'       => "Màng lọc: SelectFilter Plus lọc bụi mịn PM2.5 trong 13 phút
+Khử mùi: Khử khí độc Formaldehyde, VOCs, mùi thuốc lá, ẩm mốc hiệu quả 99%
+Cảm biến khí: Cảm biến chất lượng không khí hiển thị đèn LED 3 màu
+Độ ồn: Siêu êm dưới 40dB không gây ồn khi nghỉ ngơi",
+            'content'     => '<h3>Bảo vệ lá phổi gia đình khỏi bụi mịn và không khí ô nhiễm</h3>
+<p><strong>Philips GoPure 5211</strong> trang bị công nghệ màng lọc đa tầng SelectFilter Plus độc quyền lọc sạch hạt bụi mịn siêu nhỏ PM2.5 trong vòng chưa đầy 15 phút, loại bỏ mùi da mới độc hại và vi khuẩn gây bệnh trong khoang xe.</p>',
+        ),
     );
-}
-
-/**
- * Seed all accessories into WordPress as native 'garage_accessory' posts
- */
-function hieugara_seed_accessories_posts() {
-    $items = hieugara_get_accessories_definitions();
-    $upload_dir = wp_upload_dir();
-    $acc_folder = $upload_dir['basedir'] . '/accessories';
-
-    foreach ($items as $item) {
-        $existing = get_page_by_path($item['slug'], OBJECT, 'garage_accessory');
-
-        $post_data = array(
-            'post_title'    => $item['title'],
-            'post_name'     => $item['slug'],
-            'post_content'  => trim($item['content']),
-            'post_excerpt'  => trim($item['excerpt']),
-            'post_status'   => 'publish',
-            'post_type'     => 'garage_accessory',
-        );
-
-        if ($existing) {
-            $post_data['ID'] = $existing->ID;
-            $post_id = wp_update_post($post_data);
-        } else {
-            $post_id = wp_insert_post($post_data);
-        }
-
-        if (!is_wp_error($post_id)) {
-            // Assign Taxonomy Category
-            if (!empty($item['category']) && !empty($item['cat_name'])) {
-                $term = term_exists($item['cat_name'], 'accessory_category');
-                if (!$term) {
-                    $term = wp_insert_term($item['cat_name'], 'accessory_category', array('slug' => $item['category']));
-                }
-                if (!is_wp_error($term) && isset($term['term_id'])) {
-                    wp_set_object_terms($post_id, array((int)$term['term_id']), 'accessory_category');
-                }
-            }
-
-            // Save Post Meta
-            update_post_meta($post_id, '_accessory_price', $item['price']);
-            update_post_meta($post_id, '_accessory_old_price', $item['old_price']);
-            update_post_meta($post_id, '_accessory_badge', $item['badge']);
-            update_post_meta($post_id, '_accessory_brand', $item['brand']);
-            update_post_meta($post_id, '_accessory_warranty', $item['warranty']);
-            update_post_meta($post_id, '_accessory_origin', $item['origin']);
-            update_post_meta($post_id, '_accessory_img', $item['img']);
-            update_post_meta($post_id, '_accessory_specs', $item['specs']);
-
-            // Set Featured Image if file exists in uploads/accessories
-            $file_name = !empty($item['local_file']) ? $item['local_file'] : ($item['slug'] . '.jpg');
-            $file_path = $acc_folder . '/' . $file_name;
-            if (file_exists($file_path)) {
-                $attach_id = attachment_url_to_postid($item['img']);
-                if (!$attach_id) {
-                    $wp_filetype = wp_check_filetype($file_path, null);
-                    $attachment = array(
-                        'post_mime_type' => $wp_filetype['type'] ?: 'image/jpeg',
-                        'post_title'     => sanitize_file_name($file_name),
-                        'post_content'   => '',
-                        'post_status'    => 'inherit'
-                    );
-                    $attach_id = wp_insert_attachment($attachment, $file_path, $post_id);
-                    if (!is_wp_error($attach_id)) {
-                        require_once(ABSPATH . 'wp-admin/includes/image.php');
-                        $attach_data = wp_generate_attachment_metadata($attach_id, $file_path);
-                        wp_update_attachment_metadata($attach_id, $attach_data);
-                    }
-                }
-                if ($attach_id && !is_wp_error($attach_id)) {
-                    set_post_thumbnail($post_id, $attach_id);
-                }
-            }
-        }
-    }
 }
 
 /**
@@ -2232,8 +681,8 @@ function hieugara_get_native_accessories() {
         $result = array();
         foreach ($posts as $p) {
             $cat_terms = get_the_terms($p->ID, 'accessory_category');
-            $cat_slug = (!empty($cat_terms) && !is_wp_error($cat_terms)) ? $cat_terms[0]->slug : 'cham-soc-xe-nuoc-hoa';
-            $cat_name = (!empty($cat_terms) && !is_wp_error($cat_terms)) ? $cat_terms[0]->name : 'Phụ Kiện Ô Tô';
+            $cat_slug = (!empty($cat_terms) && !is_wp_error($cat_terms)) ? $cat_terms[0]->slug : 'tien-ich-o-to';
+            $cat_name = (!empty($cat_terms) && !is_wp_error($cat_terms)) ? $cat_terms[0]->name : 'Tiện ích';
 
             $thumb = get_the_post_thumbnail_url($p->ID, 'full');
             if (!$thumb) {
@@ -2244,7 +693,7 @@ function hieugara_get_native_accessories() {
                 'id'        => $p->ID,
                 'slug'      => $p->post_name,
                 'title'     => $p->post_title,
-                'link'      => get_permalink($p->ID), // 100% INTERNAL LINK!
+                'link'      => get_permalink($p->ID),
                 'img'       => $thumb ?: get_template_directory_uri() . '/assets/images/shiftup/center-car.jpg',
                 'price'     => get_post_meta($p->ID, '_accessory_price', true) ?: 'Liên hệ',
                 'old_price' => get_post_meta($p->ID, '_accessory_old_price', true) ?: '',
@@ -2267,7 +716,7 @@ function hieugara_get_native_accessories() {
             'id'        => $idx + 1,
             'slug'      => $d['slug'],
             'title'     => $d['title'],
-            'link'      => home_url('/phu-kien-oto/' . $d['slug'] . '/'), // Internal link
+            'link'      => home_url('/phu-kien-oto/' . $d['slug'] . '/'),
             'img'       => $d['img'],
             'price'     => $d['price'],
             'old_price' => $d['old_price'],
@@ -2299,10 +748,22 @@ function hieugara_get_accessories_grouped_by_category() {
 
     foreach ($all as $item) {
         $cat = $item['cat'];
-        if (!isset($grouped[$cat])) {
-            $cat = 'cham-soc-xe-nuoc-hoa';
+        if (isset($grouped[$cat])) {
+            $grouped[$cat]['items'][] = $item;
+        } else {
+            $grouped[$cat] = array(
+                'meta'  => array(
+                    'id'         => $cat,
+                    'name'       => $item['cat_name'],
+                    'short_name' => $item['cat_name'],
+                    'icon'       => 'fa-solid fa-car',
+                    'index_num'  => sprintf('%02d', count($grouped) + 1),
+                    'eyebrow'    => 'PHỤ KIỆN Ô TÔ HẢI HÀ',
+                    'desc'       => 'Phụ kiện ô tô chính hãng tại Hải Hà Workshop.',
+                ),
+                'items' => array($item)
+            );
         }
-        $grouped[$cat]['items'][] = $item;
     }
 
     return $grouped;

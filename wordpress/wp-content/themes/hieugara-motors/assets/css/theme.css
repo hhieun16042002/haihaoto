@@ -10173,7 +10173,7 @@ html, body {
 .shiftup-main-footer {
     background: #F5F5F5 !important;
     color: #141414 !important;
-    border-top: 3px solid #141414 !important;
+    border-top: 3px solid #C5A880 !important;
 }
 
 .shiftup-main-footer::before {
@@ -10289,6 +10289,12 @@ html, body {
     border-bottom-color: #d4d4d8 !important;
 }
 
+.shiftup-main-footer .footer-contact-title {
+    margin-top: 18px;
+    margin-bottom: 12px;
+    font-size: 0.95rem !important;
+}
+
 .shiftup-main-footer .footer-col-title::after {
     background: #141414 !important;
 }
@@ -10301,11 +10307,13 @@ html, body {
 .shiftup-main-footer .footer-links-list li a,
 .shiftup-main-footer .footer-links-list li a.highlight-link {
     color: #141414 !important;
+    padding-left: 0 !important;
 }
 
 .shiftup-main-footer .footer-links-list li a::before,
 .shiftup-main-footer .footer-links-list li a.highlight-link::before {
-    background: #141414 !important;
+    display: none !important;
+    content: none !important;
 }
 
 .shiftup-main-footer .badge-mini {
