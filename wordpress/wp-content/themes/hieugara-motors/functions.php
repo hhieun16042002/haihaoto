@@ -322,6 +322,23 @@ function hieugara_fix_tunnel_canonical_redirect($redirect_url, $requested_url) {
 }
 add_filter('redirect_canonical', 'hieugara_fix_tunnel_canonical_redirect', 10, 2);
 
+// 5g. Dynamic Host Replacer: ensure media attachments and post content images never break across domains/tunnels
+function hieugara_dynamic_upload_url($content) {
+    if (empty($content) || !is_string($content)) {
+        return $content;
+    }
+    if (strpos($content, 'localhost:8080') !== false) {
+        $scheme = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false) ? 'https://' : 'http://';
+        $host   = !empty($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : 'localhost:8080';
+        $content = str_replace(array('http://localhost:8080', 'https://localhost:8080'), $scheme . $host, $content);
+    }
+    return $content;
+}
+add_filter('wp_get_attachment_url', 'hieugara_dynamic_upload_url', 99);
+add_filter('the_content', 'hieugara_dynamic_upload_url', 99);
+add_filter('post_thumbnail_html', 'hieugara_dynamic_upload_url', 99);
+add_filter('widget_text', 'hieugara_dynamic_upload_url', 99);
+
 // 6. SEO Search Optimization: Include Services, Accessories, Posts & Pages in Frontend Search
 function hieugara_seo_search_query($query) {
     if (!is_admin() && $query->is_main_query() && $query->is_search()) {

@@ -94,14 +94,28 @@ function hieugara_get_pano_banners() {
     if (empty($saved) || !is_array($saved)) {
         return $defaults;
     }
+    
+    // Normalizer helper: convert localhost:8080 or absolute URLs to current home domain
+    $normalize_url = function($url) {
+        if (empty($url) || !is_string($url)) return $url;
+        if (strpos($url, 'localhost:8080') !== false) {
+            $url = preg_replace('#^https?://localhost:8080#', '', $url);
+        }
+        return $url;
+    };
+
     $result = array();
     foreach ($defaults as $k => $def) {
+        $img = !empty($saved[$k]['img']) ? $saved[$k]['img'] : $def['img'];
+        $img_mobile = !empty($saved[$k]['img_mobile']) ? $saved[$k]['img_mobile'] : (!empty($saved[$k]['img']) ? $saved[$k]['img'] : $def['img_mobile']);
+        $link = !empty($saved[$k]['link']) ? $saved[$k]['link'] : $def['link'];
+
         $result[$k] = array(
             'title'      => !empty($saved[$k]['title']) ? $saved[$k]['title'] : $def['title'],
             'desc'       => !empty($saved[$k]['desc']) ? $saved[$k]['desc'] : $def['desc'],
-            'img'        => !empty($saved[$k]['img']) ? $saved[$k]['img'] : $def['img'],
-            'img_mobile' => !empty($saved[$k]['img_mobile']) ? $saved[$k]['img_mobile'] : (!empty($saved[$k]['img']) ? $saved[$k]['img'] : $def['img_mobile']),
-            'link'       => !empty($saved[$k]['link']) ? $saved[$k]['link'] : $def['link'],
+            'img'        => $normalize_url($img),
+            'img_mobile' => $normalize_url($img_mobile),
+            'link'       => $normalize_url($link),
         );
     }
     return $result;
