@@ -517,20 +517,33 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
             <div class="brand-marquee">
                 <div class="brand-marquee-track">
                     <?php
-                    $brands = array(
-                        array('name' => 'Mercedes-Benz', 'logo' => $theme_uri . '/assets/images/brands/mercedes.svg?v=' . HIEUGARA_THEME_VERSION, 'grad' => 'linear-gradient(135deg, rgba(0,40,90,0.06), rgba(0,40,90,0.12))'),
-                        array('name' => 'BMW',           'logo' => $theme_uri . '/assets/images/brands/bmw.svg?v=' . HIEUGARA_THEME_VERSION,      'grad' => 'linear-gradient(135deg, rgba(0,102,177,0.08), rgba(0,102,177,0.15))'),
-                        array('name' => 'Audi',          'logo' => $theme_uri . '/assets/images/brands/audi.svg?v=' . HIEUGARA_THEME_VERSION,     'grad' => 'linear-gradient(135deg, rgba(226,0,26,0.08), rgba(20,20,20,0.12))'),
-                        array('name' => 'Porsche',       'logo' => $theme_uri . '/assets/images/brands/porsche.svg?v=' . HIEUGARA_THEME_VERSION,  'grad' => 'linear-gradient(135deg, rgba(217,45,32,0.08), rgba(245,163,0,0.14))'),
-                        array('name' => 'Lexus',         'logo' => $theme_uri . '/assets/images/brands/lexus.svg?v=' . HIEUGARA_THEME_VERSION,    'grad' => 'linear-gradient(135deg, rgba(0,82,204,0.08), rgba(0,31,92,0.12))'),
-                        array('name' => 'Toyota',        'logo' => $theme_uri . '/assets/images/brands/toyota.svg?v=' . HIEUGARA_THEME_VERSION,   'grad' => 'linear-gradient(135deg, rgba(235,10,30,0.08), rgba(235,10,30,0.14))'),
-                        array('name' => 'Hyundai',       'logo' => $theme_uri . '/assets/images/brands/hyundai.svg?v=' . HIEUGARA_THEME_VERSION,  'grad' => 'linear-gradient(135deg, rgba(0,75,147,0.08), rgba(0,75,147,0.15))'),
-                        array('name' => 'Ford',          'logo' => $theme_uri . '/assets/images/brands/ford.svg?v=' . HIEUGARA_THEME_VERSION,     'grad' => 'linear-gradient(135deg, rgba(0,52,120,0.08), rgba(0,52,120,0.15))'),
-                        array('name' => 'Honda',         'logo' => $theme_uri . '/assets/images/brands/honda.svg?v=' . HIEUGARA_THEME_VERSION,    'grad' => 'linear-gradient(135deg, rgba(228,5,33,0.08), rgba(228,5,33,0.14))'),
-                        array('name' => 'Volkswagen',    'logo' => $theme_uri . '/assets/images/brands/volkswagen.svg?v=' . HIEUGARA_THEME_VERSION, 'grad' => 'linear-gradient(135deg, rgba(0,67,122,0.08), rgba(0,67,122,0.15))'),
-                        array('name' => 'Nissan',        'logo' => $theme_uri . '/assets/images/brands/nissan.svg?v=' . HIEUGARA_THEME_VERSION,   'grad' => 'linear-gradient(135deg, rgba(195,0,47,0.08), rgba(195,0,47,0.14))'),
-                        array('name' => 'Bosch',         'logo' => $theme_uri . '/assets/images/brands/bosch.svg?v=' . HIEUGARA_THEME_VERSION,    'grad' => 'linear-gradient(135deg, rgba(234,0,22,0.08), rgba(0,86,145,0.12))'),
-                    );
+                    $raw_brands = function_exists('hieugara_get_brand_logos') ? hieugara_get_brand_logos() : array();
+                    $brands = array();
+                    if (!empty($raw_brands)) {
+                        foreach ($raw_brands as $rb) {
+                            if (!empty($rb['enable'])) {
+                                $g1 = !empty($rb['grad1']) ? $rb['grad1'] : '#0c1e3a';
+                                $g2 = !empty($rb['grad2']) ? $rb['grad2'] : '#334155';
+                                $brands[] = array(
+                                    'name' => $rb['name'],
+                                    'logo' => $rb['logo'],
+                                    'grad' => 'linear-gradient(135deg, ' . $g1 . ', ' . $g2 . ')',
+                                    'url'  => !empty($rb['url']) ? $rb['url'] : '#',
+                                );
+                            }
+                        }
+                    }
+                    // Fallback if empty
+                    if (empty($brands)) {
+                        $brands = array(
+                            array('name' => 'Mercedes-Benz', 'logo' => $theme_uri . '/assets/images/brands/mercedes.svg?v=' . HIEUGARA_THEME_VERSION, 'grad' => 'linear-gradient(135deg, rgba(0,40,90,0.06), rgba(0,40,90,0.12))'),
+                            array('name' => 'BMW',           'logo' => $theme_uri . '/assets/images/brands/bmw.svg?v=' . HIEUGARA_THEME_VERSION,      'grad' => 'linear-gradient(135deg, rgba(0,102,177,0.08), rgba(0,102,177,0.15))'),
+                            array('name' => 'VinFast',       'logo' => $theme_uri . '/assets/images/brands/vinfast.svg?v=' . HIEUGARA_THEME_VERSION,  'grad' => 'linear-gradient(135deg, #0f172a, #c5161d)'),
+                            array('name' => 'Audi',          'logo' => $theme_uri . '/assets/images/brands/audi.svg?v=' . HIEUGARA_THEME_VERSION,     'grad' => 'linear-gradient(135deg, rgba(226,0,26,0.08), rgba(20,20,20,0.12))'),
+                            array('name' => 'Porsche',       'logo' => $theme_uri . '/assets/images/brands/porsche.svg?v=' . HIEUGARA_THEME_VERSION,  'grad' => 'linear-gradient(135deg, rgba(217,45,32,0.08), rgba(245,163,0,0.14))'),
+                            array('name' => 'Toyota',        'logo' => $theme_uri . '/assets/images/brands/toyota.svg?v=' . HIEUGARA_THEME_VERSION,   'grad' => 'linear-gradient(135deg, rgba(235,10,30,0.08), rgba(235,10,30,0.14))'),
+                        );
+                    }
                     ?>
                     <div class="brand-marquee-group">
                         <?php foreach ($brands as $b) : ?>
@@ -552,6 +565,139 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
             </div>
         </div>
     </section>
+
+    <?php
+    // =========================================================================
+    // MỤC 6: THƯƠNG HIỆU HỢP TÁC TOÀN DIỆN (VIP STRATEGIC PARTNER - VINFAST)
+    // =========================================================================
+    $partner = function_exists('hieugara_get_comprehensive_partner') ? hieugara_get_comprehensive_partner() : null;
+    if ($partner && !empty($partner['enable'])) :
+    ?>
+    <section class="shiftup-vip-partner-section" id="doi-tac-toan-dien">
+        <div class="container">
+            <div class="vip-partner-card">
+                <!-- Ambient luxury glow -->
+                <div class="vip-partner-glow" aria-hidden="true"></div>
+
+                <!-- Top Eyebrow / Badges -->
+                <div class="vip-partner-header-row">
+                    <div class="vip-partner-eyebrow">
+                        <span class="vip-sparkle">★</span>
+                        <span><?php echo esc_html($partner['partner_badge']); ?></span>
+                    </div>
+                    <div class="vip-partner-auth-badge">
+                        <span class="dashicons dashicons-yes-alt"></span>
+                        <span>TIÊU CHUẨN KỸ THUẬT XE ĐIỆN &amp; XĂNG CHÍNH HÃNG</span>
+                    </div>
+                </div>
+
+                <div class="vip-partner-content-grid">
+                    <!-- Left Brand Box -->
+                    <div class="vip-partner-brand-box">
+                        <div class="vip-partner-emblem-wrap">
+                            <img src="<?php echo esc_url($partner['logo_url']); ?>" alt="<?php echo esc_attr($partner['brand_name']); ?>" class="vip-partner-logo-img">
+                            <span class="vip-partner-auth-tag">CHIẾN LƯỢC TOÀN DIỆN</span>
+                        </div>
+
+                        <!-- 4 Stat Badges -->
+                        <div class="vip-partner-stats-grid">
+                            <div class="vip-stat-card">
+                                <strong class="vip-stat-value text-gradient-blue"><?php echo esc_html($partner['stat_1_val']); ?></strong>
+                                <span class="vip-stat-label"><?php echo esc_html($partner['stat_1_lbl']); ?></span>
+                            </div>
+                            <div class="vip-stat-card">
+                                <strong class="vip-stat-value text-gradient-red"><?php echo esc_html($partner['stat_2_val']); ?></strong>
+                                <span class="vip-stat-label"><?php echo esc_html($partner['stat_2_lbl']); ?></span>
+                            </div>
+                            <div class="vip-stat-card">
+                                <strong class="vip-stat-value text-gradient-green"><?php echo esc_html($partner['stat_3_val']); ?></strong>
+                                <span class="vip-stat-label"><?php echo esc_html($partner['stat_3_lbl']); ?></span>
+                            </div>
+                            <div class="vip-stat-card">
+                                <strong class="vip-stat-value text-gradient-gold"><?php echo esc_html($partner['stat_4_val']); ?></strong>
+                                <span class="vip-stat-label"><?php echo esc_html($partner['stat_4_lbl']); ?></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Body & Capabilities -->
+                    <div class="vip-partner-info-box">
+                        <h2 class="vip-partner-title"><?php echo esc_html($partner['headline']); ?></h2>
+                        <p class="vip-partner-desc"><?php echo esc_html($partner['subheadline']); ?></p>
+
+                        <!-- Supported Car Models -->
+                        <?php if (!empty($partner['supported_models'])) : ?>
+                        <div class="vip-supported-models-wrap">
+                            <span class="models-title"><span class="dashicons dashicons-car"></span> Các dòng xe tiếp nhận:</span>
+                            <div class="models-pill-list">
+                                <?php
+                                $models = explode(',', $partner['supported_models']);
+                                foreach ($models as $m) :
+                                    $m = trim($m);
+                                    if ($m) :
+                                ?>
+                                    <span class="model-badge-item"><?php echo esc_html($m); ?></span>
+                                <?php
+                                    endif;
+                                endforeach;
+                                ?>
+                            </div>
+                        </div>
+                        <?php endif; ?>
+
+                        <!-- 4 Core Pillars Grid -->
+                        <div class="vip-partner-pillars-grid">
+                            <div class="vip-pillar-item">
+                                <div class="pillar-icon"><span class="dashicons dashicons-admin-tools"></span></div>
+                                <div class="pillar-text">
+                                    <h5><?php echo esc_html($partner['perk_1_title']); ?></h5>
+                                    <p><?php echo esc_html($partner['perk_1_desc']); ?></p>
+                                </div>
+                            </div>
+                            <div class="vip-pillar-item">
+                                <div class="pillar-icon"><span class="dashicons dashicons-dashboard"></span></div>
+                                <div class="pillar-text">
+                                    <h5><?php echo esc_html($partner['perk_2_title']); ?></h5>
+                                    <p><?php echo esc_html($partner['perk_2_desc']); ?></p>
+                                </div>
+                            </div>
+                            <div class="vip-pillar-item">
+                                <div class="pillar-icon"><span class="dashicons dashicons-shield"></span></div>
+                                <div class="pillar-text">
+                                    <h5><?php echo esc_html($partner['perk_3_title']); ?></h5>
+                                    <p><?php echo esc_html($partner['perk_3_desc']); ?></p>
+                                </div>
+                            </div>
+                            <div class="vip-pillar-item">
+                                <div class="pillar-icon"><span class="dashicons dashicons-sos"></span></div>
+                                <div class="pillar-text">
+                                    <h5><?php echo esc_html($partner['perk_4_title']); ?></h5>
+                                    <p><?php echo esc_html($partner['perk_4_desc']); ?></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Actions -->
+                        <div class="vip-partner-actions-row">
+                            <a href="<?php echo esc_url($partner['cta_booking_url']); ?>" class="vip-cta-btn btn-booking">
+                                <span class="dashicons dashicons-calendar-alt"></span>
+                                <span><?php echo esc_html($partner['cta_booking_text']); ?></span>
+                            </a>
+                            <a href="tel:<?php echo esc_attr($partner['cta_hotline_tel']); ?>" class="vip-cta-btn btn-hotline">
+                                <span class="dashicons dashicons-phone"></span>
+                                <span><?php echo esc_html($partner['cta_hotline_text']); ?></span>
+                            </a>
+                            <a href="<?php echo esc_url($partner['cta_accessory_url']); ?>" class="vip-cta-btn btn-accessory">
+                                <span class="dashicons dashicons-cart"></span>
+                                <span><?php echo esc_html($partner['cta_accessory_text']); ?></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <?php endif; ?>
 
 </main>
 

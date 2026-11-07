@@ -310,37 +310,67 @@ body.wp-admin {
     font-size: 13px !important;
 }
 
-/* Completely Hide Native WordPress Right-Pointing Arrow Triangles */
+/* Completely Hide Native WordPress Right-Pointing Arrow Triangles & Reset Core Borders */
 #adminmenu .wp-menu-arrow,
 #adminmenu div.wp-menu-arrow,
 #adminmenu div.wp-menu-arrow div,
-#adminmenu li a.menu-top div.wp-menu-arrow {
+#adminmenu li a.menu-top div.wp-menu-arrow,
+#adminmenu li a div.wp-menu-arrow {
     display: none !important;
     visibility: hidden !important;
     width: 0 !important;
     height: 0 !important;
     opacity: 0 !important;
     pointer-events: none !important;
+    border: none !important;
+}
+
+/* Eradicate WordPress Core Pseudo-Element Border Triangles */
+#adminmenu li a:after,
+#adminmenu li a:before,
+#adminmenu li.current a:after,
+#adminmenu li.current a:before,
+#adminmenu li.wp-has-current-submenu a:after,
+#adminmenu li.wp-has-current-submenu a:before,
+#adminmenu li.wp-has-current-submenu > a.menu-top:after,
+#adminmenu li.wp-has-current-submenu > a.menu-top:before,
+#adminmenu > li.current > a.menu-top:after,
+#adminmenu > li.current > a.menu-top:before,
+#adminmenu > li a.wp-has-current-submenu:after,
+#adminmenu > li a.wp-has-current-submenu:before {
+    border: none !important;
+    border-width: 0 !important;
+    border-color: transparent !important;
+    border-right-color: transparent !important;
+    border-left-color: transparent !important;
+    box-shadow: none !important;
 }
 
 /* Chevron indicator for items with submenus (Sổ ra / Đóng vào) */
 body:not(.folded) #adminmenu li.wp-has-submenu > a.menu-top::after {
-    content: '\f347'; /* dashicons-arrow-down-alt2 */
-    font-family: dashicons;
-    font-size: 11px;
-    color: #64748b;
-    margin-left: auto;
-    padding-left: 6px;
-    transition: transform 0.22s ease, color 0.18s ease;
-    flex-shrink: 0;
-    display: inline-block;
+    content: '\f347' !important; /* dashicons-arrow-down-alt2 */
+    font-family: dashicons !important;
+    font-size: 11px !important;
+    line-height: 1 !important;
+    color: #64748b !important;
+    margin-left: auto !important;
+    padding-left: 6px !important;
+    padding-right: 2px !important;
+    transition: transform 0.22s ease, color 0.18s ease !important;
+    flex-shrink: 0 !important;
+    display: inline-block !important;
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    border: none !important;
+    background: transparent !important;
 }
 
 body:not(.folded) #adminmenu li.wp-has-submenu.botble-open > a.menu-top::after,
 body:not(.folded) #adminmenu li.wp-has-submenu.wp-menu-open:not(.botble-closed) > a.menu-top::after,
 body:not(.folded) #adminmenu li.wp-has-submenu.wp-has-current-submenu:not(.botble-closed) > a.menu-top::after {
-    transform: rotate(180deg);
-    color: #cbd5e1;
+    transform: rotate(180deg) !important;
+    color: #cbd5e1 !important;
 }
 
 body:not(.folded) #adminmenu li.wp-has-submenu.botble-closed > a.menu-top::after {

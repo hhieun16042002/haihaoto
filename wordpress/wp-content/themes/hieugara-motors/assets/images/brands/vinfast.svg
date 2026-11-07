@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="110" viewBox="0 0 220 110" role="img">
+  <title>VinFast</title>
+  <defs>
+    <linearGradient id="vfChrome" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="35%" stop-color="#e2e8f0"/>
+      <stop offset="70%" stop-color="#94a3b8"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+    <linearGradient id="vfSilverDark" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#64748b"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+    <linearGradient id="vfRed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c5161d"/>
+      <stop offset="100%" stop-color="#e02424"/>
+    </linearGradient>
+    <filter id="vfGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- VinFast Emblem: Iconic Dual-Wing Metallic 'V' -->
+  <g filter="url(#vfGlow)">
+    <!-- Left Wing -->
+    <path d="M 46 22 C 60 22, 85 45, 102 68 C 104 71, 107 75, 110 79 C 104 69, 90 42, 68 28 C 58 22, 49 22, 46 22 Z" fill="url(#vfChrome)"/>
+    <path d="M 50 25 C 64 26, 88 47, 104 69 C 102 64, 92 42, 70 29 C 62 25, 54 24, 50 25 Z" fill="url(#vfSilverDark)" opacity="0.65"/>
+
+    <!-- Right Wing -->
+    <path d="M 174 22 C 160 22, 135 45, 118 68 C 116 71, 113 75, 110 79 C 116 69, 130 42, 152 28 C 162 22, 171 22, 174 22 Z" fill="url(#vfChrome)"/>
+    <path d="M 170 25 C 156 26, 132 47, 116 69 C 118 64, 128 42, 150 29 C 158 25, 166 24, 170 25 Z" fill="url(#vfSilverDark)" opacity="0.65"/>
+
+    <!-- Inner Floating Accent Chevron -->
+    <path d="M 72 37 C 86 48, 102 65, 110 74 C 118 65, 134 48, 148 37 C 138 46, 122 61, 110 70 C 98 61, 82 46, 72 37 Z" fill="url(#vfChrome)"/>
+    <circle cx="110" cy="77" r="2.2" fill="#94a3b8"/>
+  </g>
+
+  <!-- Typography VINFAST -->
+  <text x="110" y="99" text-anchor="middle" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="14.5" letter-spacing="4.5">VINFAST</text>
+</svg>

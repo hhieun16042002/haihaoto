@@ -159,10 +159,11 @@ function hieugara_reorder_admin_menu($menu_order) {
         'garage-os-warranties',                         // Sổ Bảo Hành Điện Tử
         'garage-os-orders',                             // Đơn Sửa Chữa
 
-        // Group 3: Dịch vụ & Phụ kiện (Sắp xếp cạnh nhau, có đầy đủ Danh mục & CRUD)
+        // Group 3: Dịch vụ, Phụ kiện & Thương hiệu (Botble Multi-Menu Architecture)
         'botble-sep-catalog',
         'edit.php?post_type=garage_service',            // Dịch Vụ Kỹ Thuật (Danh mục + Thêm mới + Sửa)
         'edit.php?post_type=garage_accessory',          // Phụ Kiện Ô Tô (Danh mục + Thêm mới + Sửa)
+        'hieugara-brand-manager',                       // Quản Lý Thương Hiệu (2 Submenus: Logo Chạy + Đối Tác Toàn Diện)
 
         // Group 4: Nội dung website
         'botble-sep-content',
@@ -230,6 +231,10 @@ function hieugara_clean_admin_menu() {
                     $menu[$key][0] = 'Phụ Kiện Ô Tô';
                     $menu[$key][6] = 'dashicons-car';
                     break;
+                case 'hieugara-brand-manager':
+                    $menu[$key][0] = 'Quản Lý Thương Hiệu';
+                    $menu[$key][6] = 'dashicons-awards';
+                    break;
                 case 'edit.php?post_type=page':
                     $menu[$key][0] = 'Quản Lý Trang Web';
                     $menu[$key][6] = 'dashicons-admin-page';
@@ -285,7 +290,7 @@ function hieugara_admin_botble_sidebar_script() {
             var titles = {
                 'botble-sep-overview': 'TỔNG QUAN',
                 'botble-sep-workshop': 'HOẠT ĐỘNG XƯỞNG',
-                'botble-sep-catalog':  'DỊCH VỤ & PHỤ KIỆN',
+                'botble-sep-catalog':  'DỊCH VỤ, PHỤ KIỆN & ĐỐI TÁC',
                 'botble-sep-content':  'NỘI DUNG WEBSITE',
                 'botble-sep-system':   'HỆ THỐNG & CẤU HÌNH'
             };

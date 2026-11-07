@@ -140,7 +140,8 @@ function hieugara_get_gallery_items() {
     return $items;
 }
 
-// 3B. Helper to Get Default Brand Logos (12 Luxury Car Brands & Auto Components)
+// 3B. Helper to Get Default Brand Logos (13 Luxury Car Brands & Auto Components)
+if (!function_exists('hieugara_get_default_brand_logos')) {
 function hieugara_get_default_brand_logos() {
     $theme_uri = get_template_directory_uri();
     $brand_dir = $theme_uri . '/assets/images/brands';
@@ -256,8 +257,10 @@ function hieugara_get_default_brand_logos() {
         ),
     );
 }
+}
 
 // 3C. Helper to Get Active Brand Logos
+if (!function_exists('hieugara_get_brand_logos')) {
 function hieugara_get_brand_logos() {
     $saved = get_option('hieugara_brand_logos');
     $defaults = hieugara_get_default_brand_logos();
@@ -281,6 +284,7 @@ function hieugara_get_brand_logos() {
         }
     }
     return !empty($brands) ? $brands : $defaults;
+}
 }
 
 // 4. Helper to Get Default Slides

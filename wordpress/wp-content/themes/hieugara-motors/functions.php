@@ -157,6 +157,7 @@ require_once HIEUGARA_THEME_DIR . '/inc/post-types.php';
 require_once HIEUGARA_THEME_DIR . '/inc/meta-boxes.php';
 require_once HIEUGARA_THEME_DIR . '/inc/ajax-handlers.php';
 require_once HIEUGARA_THEME_DIR . '/inc/sample-services.php';
+require_once HIEUGARA_THEME_DIR . '/inc/brand-manager.php';
 require_once HIEUGARA_THEME_DIR . '/inc/theme-settings.php';
 require_once HIEUGARA_THEME_DIR . '/inc/admin-customizer.php';
 require_once HIEUGARA_THEME_DIR . '/inc/seo-architecture.php';
