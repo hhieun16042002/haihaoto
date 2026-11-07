@@ -297,7 +297,7 @@ function hieugara_admin_botble_sidebar_script() {
                 }
             });
 
-            // Prepend Botble-style Workspace Brand Header if not exists
+            // Prepend Botble-style Workspace Brand Header with Collapse Toggle
             if (!$('#adminmenu .botble-brand-card').length) {
                 var brandHtml = '<li class="botble-brand-card">' +
                     '<div class="botble-brand-inner">' +
@@ -306,10 +306,57 @@ function hieugara_admin_botble_sidebar_script() {
                             '<strong class="botble-brand-title">ÔTÔ HẢI HÀ</strong>' +
                             '<span class="botble-brand-tag">WORKSHOP CMS</span>' +
                         '</div>' +
+                        '<button type="button" id="botble-sidebar-toggle" class="botble-collapse-toggle" title="Thu gọn / Mở rộng menu">' +
+                            '<span class="dashicons dashicons-menu-alt3"></span>' +
+                        '</button>' +
                     '</div>' +
                 '</li>';
                 $('#adminmenu').prepend(brandHtml);
             }
+
+            // Click Handler for Top Collapse / Expand Sidebar Toggle
+            $(document).on('click', '#botble-sidebar-toggle', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var $wpCollapse = $('#collapse-button');
+                if ($wpCollapse.length) {
+                    $wpCollapse.trigger('click');
+                } else {
+                    $('body').toggleClass('folded');
+                }
+            });
+
+            // Accordion Toggle for Menu Items with Submenus (Sổ ra / Đóng vào)
+            $(document).on('click', '#adminmenu > li.wp-has-submenu > a.menu-top', function(e) {
+                // If sidebar is collapsed (folded), let native hover flyout work
+                if ($('body').hasClass('folded')) {
+                    return;
+                }
+
+                var $parentLi = $(this).closest('li.wp-has-submenu');
+                var $sub = $parentLi.find('> .wp-submenu');
+
+                if ($sub.length) {
+                    e.preventDefault();
+
+                    var isOpen = $parentLi.hasClass('botble-open') || $parentLi.hasClass('wp-menu-open');
+
+                    if (isOpen) {
+                        // Đóng vào
+                        $parentLi.removeClass('botble-open wp-menu-open');
+                        $sub.slideUp(180);
+                    } else {
+                        // Sổ ra
+                        $('#adminmenu > li.wp-has-submenu.botble-open')
+                            .not('.wp-has-current-submenu')
+                            .removeClass('botble-open wp-menu-open')
+                            .find('> .wp-submenu').slideUp(180);
+
+                        $parentLi.addClass('botble-open');
+                        $sub.slideDown(180);
+                    }
+                }
+            });
         });
     })(jQuery);
     </script>
