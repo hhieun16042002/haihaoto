@@ -395,3 +395,4 @@ function hieugara_render_about_menu_crud_page() {
     </div>
     <?php
 }
+

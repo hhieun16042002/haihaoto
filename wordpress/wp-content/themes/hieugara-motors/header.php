@@ -262,14 +262,13 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
             </li>
 
             <!-- 5. BLOG ⌵ -->
-            <li class="nav-item has-dropdown <?php echo (is_home() || is_category() || is_singular('post')) ? 'active' : ''; ?>">
+            <li class="nav-item has-dropdown <?php echo (is_page('blog') || is_home() || is_category() || is_singular('post')) ? 'active' : ''; ?>">
                 <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="nav-link" title="BLOG KỸ THUẬT">
                     <span><?php _e('BLOG', 'hieugara-motors'); ?></span>
                     <i class="fa-solid fa-chevron-down nav-caret"></i>
                 </a>
                 <ul class="nav-dropdown-menu">
-                    <li><a href="<?php echo esc_url(home_url('/blog/')); ?>"><strong style="color: #FFB81C;">★</strong> <?php _e('Tất Cả Bài Viết &amp; Cẩm Nang', 'hieugara-motors'); ?></a></li>
-                    <li><a href="<?php echo esc_url(home_url('/category/may-moc-trang-thiet-bi/')); ?>"><strong style="color: #FFB81C;">⚡</strong> <?php _e('Máy Móc &amp; Trang Thiết Bị', 'hieugara-motors'); ?></a></li>
+                    <li><a href="<?php echo esc_url(home_url('/category/he-thong-va-trang-thiet-bi/')); ?>"><strong style="color: #FFB81C;">⚡</strong> <?php _e('Hệ Thống &amp; Trang Thiết Bị', 'hieugara-motors'); ?></a></li>
                     <li><a href="<?php echo esc_url(home_url('/category/cam-nang-bao-duong/')); ?>"><?php _e('Cẩm Nang Bảo Dưỡng Định Kỳ', 'hieugara-motors'); ?></a></li>
                     <li><a href="<?php echo esc_url(home_url('/category/kien-thuc-ky-thuat/')); ?>"><?php _e('Kiến Thức &amp; Kỹ Thuật Ô Tô', 'hieugara-motors'); ?></a></li>
                     <li><a href="<?php echo esc_url(home_url('/category/kinh-nghiem-lai-xe/')); ?>"><?php _e('Kinh Nghiệm Lái Xe An Toàn', 'hieugara-motors'); ?></a></li>
