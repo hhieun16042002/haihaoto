@@ -4540,7 +4540,7 @@ html, body {
     transform: translateY(-2px);
 }
 
-/* 4. ShiftUp Floating Action Dock (Fixed Bottom-Right on Desktop, Lexus 3-Col Bar on Mobile) */
+/* 4. ShiftUp Floating Action Dock (Compact Icon-Only on Desktop, Expand Full on Hover; Lexus 3-Col Bar on Mobile) */
 .shiftup-floating-dock {
     position: fixed;
     bottom: 24px;
@@ -4548,6 +4548,7 @@ html, body {
     z-index: 9999;
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
     gap: 10px;
     pointer-events: auto;
 }
@@ -4558,47 +4559,141 @@ html, body {
 }
 
 .float-dock-pill {
+    position: relative;
     display: inline-flex;
     align-items: center;
-    gap: 9px;
-    padding: 10px 18px;
-    border-radius: 30px;
+    justify-content: flex-start;
+    height: 48px;
+    width: 48px;
+    min-width: 48px;
+    max-width: 48px;
+    padding: 0;
+    border-radius: 28px;
     font-family: 'Chakra Petch', sans-serif;
     font-size: 0.82rem;
     font-weight: 800;
     letter-spacing: 0.6px;
     text-decoration: none;
+    overflow: hidden;
+    white-space: nowrap;
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    box-sizing: border-box;
+    transition: max-width 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+                padding 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background-color 0.25s ease,
+                border-color 0.25s ease;
 }
 
-.dock-rescue {
-    background: linear-gradient(135deg, #C5A880 0%, #d98e00 100%);
+.float-dock-pill .dock-fa-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.18rem;
+    flex-shrink: 0;
+    margin: 0;
+    transition: transform 0.25s ease;
+}
+
+.float-dock-pill .dock-text-desktop {
+    display: inline-block;
+    max-width: 0;
+    opacity: 0;
+    transform: translateX(10px);
+    white-space: nowrap;
+    overflow: hidden;
+    pointer-events: none;
+    transition: max-width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.22s ease,
+                transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                margin 0.3s ease;
+}
+
+/* Hover & Focus State: Expand to show full label */
+.float-dock-pill:hover,
+.float-dock-pill:focus-visible {
+    max-width: 320px;
+    padding-right: 18px;
+    transform: translateY(-2px) !important;
+}
+
+.float-dock-pill:hover .dock-fa-icon,
+.float-dock-pill:focus-visible .dock-fa-icon {
+    transform: scale(1.08);
+}
+
+.float-dock-pill:hover .dock-text-desktop,
+.float-dock-pill:focus-visible .dock-text-desktop {
+    max-width: 260px;
+    opacity: 1;
+    transform: translateX(0);
+    margin-left: 2px;
+    pointer-events: auto;
+}
+
+/* 1. Button Đặt lịch: Obsidian Luxury Dark with Gold Accent */
+.dock-book {
+    background: rgba(20, 20, 20, 0.95);
     color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1.5px solid rgba(197, 168, 128, 0.45);
+}
+
+.dock-book .dock-fa-icon {
+    color: #C5A880;
+}
+
+.dock-book:hover {
+    background: #141414;
+    border-color: #C5A880;
+    color: #C5A880;
+    box-shadow: 0 10px 28px rgba(197, 168, 128, 0.42);
+}
+
+.dock-book:hover .dock-text-desktop {
+    color: #ffffff;
+}
+
+/* 2. Button Cứu hộ 24/7: Emergency Red with SOS Beacon */
+.dock-rescue {
+    background: #D92D20 !important;
+    color: #ffffff !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
+}
+
+.dock-rescue .dock-fa-icon {
+    color: #ffffff;
 }
 
 .dock-rescue:hover {
-    transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 12px 28px rgba(197, 168, 128, 0.55);
-    color: #ffffff;
+    background: #b91c1c !important;
+    border-color: #ffffff !important;
+    box-shadow: 0 10px 28px rgba(217, 45, 32, 0.55);
+    color: #ffffff !important;
 }
 
-.dock-pulse-beacon {
-    position: relative;
-    width: 10px;
-    height: 10px;
+.dock-rescue .dock-pulse-beacon {
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    width: 8px;
+    height: 8px;
     display: inline-block;
     flex-shrink: 0;
+    z-index: 3;
+    pointer-events: none;
 }
 
 .pulse-ring {
     position: absolute;
     inset: -4px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.75);
     animation: beaconPulseAnim 1.6s infinite;
 }
 
@@ -4609,31 +4704,22 @@ html, body {
     background: #ffffff;
 }
 
+/* 3. Button Zalo Kỹ thuật: Official Brand Blue */
 .dock-zalo {
-    background: rgba(0, 104, 255, 0.92);
+    background: #0068FF;
     color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+}
+
+.dock-zalo .dock-fa-icon {
+    color: #ffffff;
 }
 
 .dock-zalo:hover {
-    background: #0068ff;
-    transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 12px 28px rgba(0, 104, 255, 0.5);
+    background: #0056d6;
+    border-color: #ffffff;
+    box-shadow: 0 10px 28px rgba(0, 104, 255, 0.55);
     color: #ffffff;
-}
-
-.dock-book {
-    background: rgba(18, 20, 26, 0.92);
-    color: #ffffff;
-    border: 1px solid rgba(197, 168, 128, 0.45);
-}
-
-.dock-book:hover {
-    background: #1c1c1c;
-    border-color: #C5A880;
-    color: #C5A880;
-    transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 12px 28px rgba(197, 168, 128, 0.35);
 }
 
 /* 5. Full-Page Scroll Animations for Footer (Bidirectional) */
@@ -9172,18 +9258,21 @@ html, body {
 @keyframes dockFloatInRight {
     0% {
         opacity: 0;
-        transform: translateX(60px) scale(0.9);
+        transform: translateX(40px);
     }
     100% {
         opacity: 1;
-        transform: translateX(0) scale(1);
+        transform: translateX(0);
     }
 }
 .shiftup-floating-dock .float-dock-pill:nth-child(1) {
-    animation: dockFloatInRight 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+    animation: dockFloatInRight 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards;
 }
 .shiftup-floating-dock .float-dock-pill:nth-child(2) {
-    animation: dockFloatInRight 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
+    animation: dockFloatInRight 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.42s backwards;
+}
+.shiftup-floating-dock .float-dock-pill:nth-child(3) {
+    animation: dockFloatInRight 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.54s backwards;
 }
 
 /* ==========================================================================
