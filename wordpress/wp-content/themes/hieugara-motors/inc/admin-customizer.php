@@ -339,21 +339,16 @@ function hieugara_admin_botble_sidebar_script() {
                 if ($sub.length) {
                     e.preventDefault();
 
-                    var isOpen = $parentLi.hasClass('botble-open') || $parentLi.hasClass('wp-menu-open');
+                    var isOpen = ($parentLi.hasClass('botble-open') || $parentLi.hasClass('wp-menu-open') || $parentLi.hasClass('wp-has-current-submenu')) && !$parentLi.hasClass('botble-closed');
 
                     if (isOpen) {
                         // Đóng vào
-                        $parentLi.removeClass('botble-open wp-menu-open');
-                        $sub.slideUp(180);
+                        $parentLi.removeClass('botble-open wp-menu-open').addClass('botble-closed');
+                        $sub.slideUp(160);
                     } else {
-                        // Sổ ra
-                        $('#adminmenu > li.wp-has-submenu.botble-open')
-                            .not('.wp-has-current-submenu')
-                            .removeClass('botble-open wp-menu-open')
-                            .find('> .wp-submenu').slideUp(180);
-
-                        $parentLi.addClass('botble-open');
-                        $sub.slideDown(180);
+                        // Sổ ra độc lập (KHÔNG tự động đóng các menu khác)
+                        $parentLi.removeClass('botble-closed').addClass('botble-open');
+                        $sub.slideDown(160);
                     }
                 }
             });

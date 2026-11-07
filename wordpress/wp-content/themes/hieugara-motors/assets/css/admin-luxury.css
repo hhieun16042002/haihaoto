@@ -310,11 +310,24 @@ body.wp-admin {
     font-size: 13px !important;
 }
 
+/* Completely Hide Native WordPress Right-Pointing Arrow Triangles */
+#adminmenu .wp-menu-arrow,
+#adminmenu div.wp-menu-arrow,
+#adminmenu div.wp-menu-arrow div,
+#adminmenu li a.menu-top div.wp-menu-arrow {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
 /* Chevron indicator for items with submenus (Sổ ra / Đóng vào) */
 body:not(.folded) #adminmenu li.wp-has-submenu > a.menu-top::after {
     content: '\f347'; /* dashicons-arrow-down-alt2 */
     font-family: dashicons;
-    font-size: 12px;
+    font-size: 11px;
     color: #64748b;
     margin-left: auto;
     padding-left: 6px;
@@ -324,10 +337,15 @@ body:not(.folded) #adminmenu li.wp-has-submenu > a.menu-top::after {
 }
 
 body:not(.folded) #adminmenu li.wp-has-submenu.botble-open > a.menu-top::after,
-body:not(.folded) #adminmenu li.wp-has-submenu.wp-menu-open > a.menu-top::after,
-body:not(.folded) #adminmenu li.wp-has-submenu.wp-has-current-submenu > a.menu-top::after {
+body:not(.folded) #adminmenu li.wp-has-submenu.wp-menu-open:not(.botble-closed) > a.menu-top::after,
+body:not(.folded) #adminmenu li.wp-has-submenu.wp-has-current-submenu:not(.botble-closed) > a.menu-top::after {
     transform: rotate(180deg);
     color: #cbd5e1;
+}
+
+body:not(.folded) #adminmenu li.wp-has-submenu.botble-closed > a.menu-top::after {
+    transform: rotate(0deg) !important;
+    color: #64748b !important;
 }
 
 /* Active State (Botble Blue Glow) */
@@ -374,9 +392,13 @@ body:not(.folded) #adminmenu .wp-submenu {
 }
 
 body:not(.folded) #adminmenu li.wp-has-submenu.botble-open > .wp-submenu,
-body:not(.folded) #adminmenu li.wp-has-submenu.wp-menu-open > .wp-submenu,
-body:not(.folded) #adminmenu li.wp-has-submenu.wp-has-current-submenu > .wp-submenu {
+body:not(.folded) #adminmenu li.wp-has-submenu.wp-menu-open:not(.botble-closed) > .wp-submenu,
+body:not(.folded) #adminmenu li.wp-has-submenu.wp-has-current-submenu:not(.botble-closed) > .wp-submenu {
     display: block !important;
+}
+
+body:not(.folded) #adminmenu li.wp-has-submenu.botble-closed > .wp-submenu {
+    display: none !important;
 }
 
 body:not(.folded) #adminmenu .wp-submenu-head {
