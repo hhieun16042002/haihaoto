@@ -117,7 +117,7 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                 'container'      => false,
                 'menu_class'     => 'custom-nav-menu',
                 'fallback_cb'    => false,
-                'depth'          => 2,
+                'depth'          => 3,
             ));
             ?>
         <?php else : ?>
@@ -150,17 +150,30 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                 </ul>
             </li>
 
-            <!-- 3. DỊCH VỤ ⌵ (Đồng bộ sổ dọc chuẩn ductri226.vn) -->
+            <!-- 3. DỊCH VỤ ⌵ (Đồng bộ sổ dọc + Danh mục con chuẩn ductri226.vn) -->
             <li class="nav-item has-dropdown <?php echo is_post_type_archive('garage_service') || is_singular('garage_service') || is_tax('service_category') || is_page('bang-gia') ? 'active' : ''; ?>">
                 <a href="<?php echo esc_url(home_url('/dich-vu/')); ?>" class="nav-link" title="HỆ THỐNG DỊCH VỤ Ô TÔ HẢI HÀ" aria-haspopup="true" aria-expanded="false">
                     <span><?php _e('DỊCH VỤ', 'hieugara-motors'); ?></span>
                     <i class="fa-solid fa-chevron-down nav-caret" aria-hidden="true"></i>
                 </a>
                 <ul class="nav-dropdown-menu">
-                    <li>
+                    <li class="has-sub-dropdown">
                         <a href="<?php echo esc_url(home_url('/dich-vu/xe-vinfast/')); ?>">
-                            <?php _e('Dịch Vụ Xe VinFast', 'hieugara-motors'); ?>
+                            <span><?php _e('Dịch Vụ Xe VinFast', 'hieugara-motors'); ?></span>
+                            <i class="fa-solid fa-chevron-right sub-caret" aria-hidden="true"></i>
                         </a>
+                        <ul class="nav-sub-dropdown">
+                            <li>
+                                <a href="<?php echo esc_url(home_url('/dich-vu/xe-vinfast/')); ?>">
+                                    <?php _e('Đối tác dịch vụ chính thức VinFast', 'hieugara-motors'); ?>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<?php echo esc_url(home_url('/dich-vu/xe-vinfast/#tiep-nhan')); ?>">
+                                    <?php _e('Tư vấn kỹ thuật xe VinFast', 'hieugara-motors'); ?>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <?php
                     $dynamic_cats = get_terms(array(
@@ -173,11 +186,41 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
 
                     if (!empty($dynamic_cats) && !is_wp_error($dynamic_cats)) :
                         foreach ($dynamic_cats as $d_cat) :
+                            $cat_services = get_posts(array(
+                                'post_type'      => 'garage_service',
+                                'posts_per_page' => 8,
+                                'post_status'    => 'publish',
+                                'orderby'        => 'menu_order title',
+                                'order'          => 'ASC',
+                                'tax_query'      => array(
+                                    array(
+                                        'taxonomy'         => 'service_category',
+                                        'field'            => 'term_id',
+                                        'terms'            => $d_cat->term_id,
+                                        'include_children' => true,
+                                    ),
+                                ),
+                            ));
+                            $has_children = !empty($cat_services);
                     ?>
-                            <li>
+                            <li class="<?php echo $has_children ? 'has-sub-dropdown' : ''; ?>">
                                 <a href="<?php echo esc_url(home_url('/dich-vu/' . $d_cat->slug . '/')); ?>">
-                                    <?php echo esc_html(wp_specialchars_decode($d_cat->name, ENT_QUOTES)); ?>
+                                    <span><?php echo esc_html(wp_specialchars_decode($d_cat->name, ENT_QUOTES)); ?></span>
+                                    <?php if ($has_children) : ?>
+                                        <i class="fa-solid fa-chevron-right sub-caret" aria-hidden="true"></i>
+                                    <?php endif; ?>
                                 </a>
+                                <?php if ($has_children) : ?>
+                                    <ul class="nav-sub-dropdown">
+                                        <?php foreach ($cat_services as $c_post) : ?>
+                                            <li>
+                                                <a href="<?php echo esc_url(get_permalink($c_post->ID)); ?>">
+                                                    <?php echo esc_html(wp_specialchars_decode($c_post->post_title, ENT_QUOTES)); ?>
+                                                </a>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                <?php endif; ?>
                             </li>
                     <?php
                         endforeach;

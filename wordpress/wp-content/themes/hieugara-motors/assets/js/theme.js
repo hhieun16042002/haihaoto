@@ -89,9 +89,24 @@
                     e.preventDefault();
                     $('.has-dropdown').not($parent).removeClass('open-submenu');
                     $parent.addClass('open-submenu');
-                } else if ($(e.target).closest('.nav-caret').length) {
+                } else if ($(e.target).closest('.nav-caret').length || $(this).attr('href') === '#') {
                     e.preventDefault();
                     $parent.removeClass('open-submenu');
+                }
+            }
+        });
+
+        // Mobile Nested Sub-Dropdown Accordion (Danh mục con trong Dịch Vụ on screens <= 992px)
+        $(document).on('click', '.custom-nav-menu .has-sub-dropdown > a', function(e) {
+            if ($(window).width() <= 992) {
+                var $subParent = $(this).parent('.has-sub-dropdown');
+                if (!$subParent.hasClass('open-sub-dropdown')) {
+                    e.preventDefault();
+                    $subParent.siblings('.has-sub-dropdown').removeClass('open-sub-dropdown');
+                    $subParent.addClass('open-sub-dropdown');
+                } else if ($(e.target).closest('.sub-caret').length) {
+                    e.preventDefault();
+                    $subParent.removeClass('open-sub-dropdown');
                 }
             }
         });
