@@ -377,180 +377,109 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
     </section>
 
     <!-- =========================================================================
-         MỤC 4C: PHỤ KIỆN ÔTÔ CHÍNH HÃNG (HÀ THÀNH GARAGE STYLE)
+         MỤC 4C: BLOG & BÀI VIẾT KỸ THUẬT (Ô TÔ HẢI HÀ)
          ========================================================================= -->
-    <section class="shiftup-accessories-section index-accessory" id="phu-kien-chinh-hang">
+    <section class="shiftup-blog-section index-blog" id="blog-bai-viet">
         <div class="container">
             
-            <div class="accessory-sec-head text-center">
-                <h2 class="accessory-heading-main">
-                    <span>PHỤ KIỆN ÔTÔ</span> <span class="text-black">CHÍNH HÃNG</span>
+            <div class="blog-sec-head text-center">
+                <span class="blog-badge-tag"><i class="fa-solid fa-newspaper"></i> <?php _e('CẨM NANG &amp; KỸ THUẬT Ô TÔ', 'hieugara-motors'); ?></span>
+                <h2 class="blog-heading-main">
+                    <span>BLOG &amp; BÀI VIẾT</span> <span class="text-black">KỸ THUẬT</span>
                 </h2>
                 <div class="tuning-shop-divider"></div>
-                <p class="accessory-sec-sub">
-                    100% Phụ kiện chính hãng META.vn &bull; Zestech &bull; Michelin &bull; Steelmate &bull; Bosch &bull; Philips &bull; Hỗ trợ lắp đặt tại xưởng Hải Hà
+                <p class="blog-sec-sub">
+                    <?php _e('Cẩm nang kỹ thuật, thiết bị xưởng hiện đại và kinh nghiệm chăm sóc xe hơi chuyên sâu từ đội ngũ kỹ thuật Ô Tô Hải Hà', 'hieugara-motors'); ?>
                 </p>
 
                 <!-- Category Pills Navigation -->
-                <div class="accessory-cat-pills">
-                    <a href="<?php echo esc_url(home_url('/phu-kien/')); ?>" class="acc-pill-btn active"><i class="fa-solid fa-border-all"></i> Tất Cả</a>
+                <div class="accessory-cat-pills blog-cat-pills">
+                    <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="acc-pill-btn active"><i class="fa-solid fa-border-all"></i> <?php _e('Tất Cả Bài Viết', 'hieugara-motors'); ?></a>
                     <?php 
-                    $fp_acc_cats = function_exists('hieugara_get_accessories_categories') ? hieugara_get_accessories_categories() : array();
-                    foreach ($fp_acc_cats as $c_slug => $c_data) :
+                    $blog_cats = get_categories(array('hide_empty' => false));
+                    foreach ($blog_cats as $b_cat) :
                     ?>
-                        <a href="<?php echo esc_url(home_url('/phu-kien/#cat-' . $c_slug)); ?>" class="acc-pill-btn">
-                            <i class="<?php echo esc_attr($c_data['icon']); ?>"></i> <?php echo esc_html($c_data['short_name']); ?>
+                        <a href="<?php echo esc_url(get_category_link($b_cat->term_id)); ?>" class="acc-pill-btn">
+                            <i class="fa-solid fa-folder-open"></i> <?php echo esc_html($b_cat->name); ?> (<?php echo esc_html($b_cat->count); ?>)
                         </a>
                     <?php endforeach; ?>
                 </div>
             </div>
 
             <?php
-            $accessories = function_exists('hieugara_get_native_accessories') ? hieugara_get_native_accessories() : array();
-            if (empty($accessories)) {
-                $raw_accessories = function_exists('hieugara_get_accessories_items') ? hieugara_get_accessories_items() : array();
-                foreach ($raw_accessories as $a_it) {
-                    if (!empty($a_it['enable'])) {
-                        $accessories[] = $a_it;
-                    }
-                }
-            }
-            if (empty($accessories) && function_exists('hieugara_get_default_accessories_items')) {
-                $accessories = hieugara_get_default_accessories_items();
-            }
+            $hp_posts = get_posts(array(
+                'post_type'      => 'post',
+                'posts_per_page' => 6,
+                'post_status'    => 'publish',
+                'orderby'        => 'date',
+                'order'          => 'DESC'
+            ));
             ?>
 
-            <div class="accessory-slider-wrap">
-                <button type="button" class="acc-nav-btn acc-prev" id="allCarsPrevBtn" aria-label="Sản phẩm trước">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-
-                <div class="swiper all-about-swiper" id="allCarsTrack">
-                    <div class="swiper-wrapper">
-                        <?php foreach ($accessories as $acc) : ?>
-                            <div class="swiper-slide">
-                                <article class="accessory-item">
-                                    <a href="<?php echo esc_url($acc['link']); ?>" title="<?php echo esc_attr($acc['title']); ?>" class="accessory-img-box">
-                                        <?php if (!empty($acc['badge'])) : ?>
-                                            <span class="accessory-badge"><?php echo esc_html($acc['badge']); ?></span>
-                                        <?php endif; ?>
-                                        <?php 
-                                            $acc_img = function_exists('hieugara_normalize_local_media_urls') ? hieugara_normalize_local_media_urls($acc['img']) : $acc['img'];
-                                        ?>
-                                        <img src="<?php echo esc_url($acc_img); ?>" alt="<?php echo esc_attr($acc['title']); ?>" loading="lazy">
+            <?php if (!empty($hp_posts)) : ?>
+                <div class="hp-blog-grid">
+                    <?php foreach ($hp_posts as $hp_post) : 
+                        $pid = $hp_post->ID;
+                        $custom_thumb = get_post_meta($pid, '_custom_thumbnail_url', true);
+                        if (has_post_thumbnail($pid)) {
+                            $thumb_url = get_the_post_thumbnail_url($pid, 'large');
+                        } elseif (!empty($custom_thumb)) {
+                            $thumb_url = $custom_thumb;
+                        } else {
+                            $thumb_url = get_template_directory_uri() . '/assets/images/gallery/haiha-gallery-3.jpg';
+                        }
+                        if (function_exists('hieugara_normalize_local_media_urls')) {
+                            $thumb_url = hieugara_normalize_local_media_urls($thumb_url);
+                        }
+                        $post_cats = get_the_category($pid);
+                        $cat_name = !empty($post_cats) ? $post_cats[0]->name : 'Kỹ thuật ô tô';
+                        $cat_link = !empty($post_cats) ? get_category_link($post_cats[0]->term_id) : home_url('/blog/');
+                        $post_date = get_the_date('d/m/Y', $pid);
+                    ?>
+                        <article class="hp-blog-card">
+                            <a href="<?php echo esc_url(get_permalink($pid)); ?>" class="hp-blog-thumb" title="<?php echo esc_attr(get_the_title($pid)); ?>">
+                                <img src="<?php echo esc_url($thumb_url); ?>" alt="<?php echo esc_attr(get_the_title($pid)); ?>" loading="lazy">
+                                <span class="hp-blog-card-cat"><i class="fa-solid fa-tag"></i> <?php echo esc_html($cat_name); ?></span>
+                            </a>
+                            <div class="hp-blog-body">
+                                <div class="hp-blog-meta">
+                                    <span><i class="fa-regular fa-calendar-check"></i> <?php echo esc_html($post_date); ?></span>
+                                    <span><i class="fa-solid fa-user-gear"></i> Kỹ Sư Hải Hà</span>
+                                </div>
+                                <h3 class="hp-blog-title">
+                                    <a href="<?php echo esc_url(get_permalink($pid)); ?>" title="<?php echo esc_attr(get_the_title($pid)); ?>">
+                                        <?php echo esc_html(get_the_title($pid)); ?>
                                     </a>
-                                    <h3 class="accessory-title">
-                                        <a href="<?php echo esc_url($acc['link']); ?>" title="<?php echo esc_attr($acc['title']); ?>">
-                                            <?php echo esc_html($acc['title']); ?>
-                                        </a>
-                                    </h3>
-                                    <div class="accessory-price">
-                                        <span class="price-current"><?php echo esc_html($acc['price']); ?> <sup>đ</sup></span>
-                                        <?php if (!empty($acc['old_price'])) : ?>
-                                            <span class="price-old"><?php echo esc_html($acc['old_price']); ?> <sup>đ</sup></span>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="accessory-action">
-                                        <a href="<?php echo esc_url($acc['link']); ?>" title="<?php echo esc_attr($acc['title']); ?>" class="btn-accessory-detail">
-                                            Chi tiết
-                                        </a>
-                                        <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode('Lắp đặt ' . $acc['title']))); ?>" class="btn-accessory-install" title="Đặt lịch lắp đặt phụ kiện này">
-                                            Lắp đặt
-                                        </a>
-                                    </div>
-                                </article>
+                                </h3>
+                                <p class="hp-blog-excerpt">
+                                    <?php 
+                                    $excerpt = get_the_excerpt($pid);
+                                    echo esc_html(wp_trim_words($excerpt, 24, '...'));
+                                    ?>
+                                </p>
+                                <div class="hp-blog-footer">
+                                    <a href="<?php echo esc_url(get_permalink($pid)); ?>" class="hp-blog-readmore">
+                                        <?php _e('Đọc chi tiết', 'hieugara-motors'); ?> <i class="fa-solid fa-arrow-right-long"></i>
+                                    </a>
+                                    <a href="<?php echo esc_url(home_url('/dat-lich/?service=' . urlencode(get_the_title($pid)))); ?>" class="hp-blog-book-btn">
+                                        <i class="fa-solid fa-calendar-plus"></i> <?php _e('Đặt lịch', 'hieugara-motors'); ?>
+                                    </a>
+                                </div>
                             </div>
-                        <?php endforeach; ?>
-                    </div>
+                        </article>
+                    <?php endforeach; ?>
                 </div>
 
-                <button type="button" class="acc-nav-btn acc-next" id="allCarsNextBtn" aria-label="Sản phẩm tiếp theo">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-            </div>
-
-            <script>
-            (function() {
-                var initAttempts = 0;
-                function initAccessorySlider() {
-                    var track = document.getElementById('allCarsTrack');
-                    var prevBtn = document.getElementById('allCarsPrevBtn');
-                    var nextBtn = document.getElementById('allCarsNextBtn');
-                    if (!track) return;
-
-                    if (typeof Swiper !== 'undefined') {
-                        if (track.swiper) {
-                            window.hieuGaraAccessorySwiper = track.swiper;
-                        } else {
-                            window.hieuGaraAccessorySwiper = new Swiper(track, {
-                                slidesPerView: 1,
-                                spaceBetween: 20,
-                                loop: true,
-                                speed: 450,
-                                grabCursor: true,
-                                watchSlidesProgress: true,
-                                touchRatio: 1.2,
-                                autoplay: {
-                                    delay: 4000,
-                                    disableOnInteraction: false,
-                                    pauseOnMouseEnter: true,
-                                },
-                                breakpoints: {
-                                    576: { slidesPerView: 2, spaceBetween: 20 },
-                                    768: { slidesPerView: 3, spaceBetween: 24 },
-                                    1200: { slidesPerView: 4, spaceBetween: 28 }
-                                }
-                            });
-                        }
-                    } else if (initAttempts < 25) {
-                        initAttempts++;
-                        setTimeout(initAccessorySlider, 120);
-                        return;
-                    }
-
-                    function slideToNext() {
-                        var sw = window.hieuGaraAccessorySwiper || (track ? track.swiper : null);
-                        if (sw && typeof sw.slideNext === 'function') {
-                            sw.slideNext(400);
-                        } else if (track) {
-                            track.scrollBy({ left: 320, behavior: 'smooth' });
-                        }
-                    }
-
-                    function slideToPrev() {
-                        var sw = window.hieuGaraAccessorySwiper || (track ? track.swiper : null);
-                        if (sw && typeof sw.slidePrev === 'function') {
-                            sw.slidePrev(400);
-                        } else if (track) {
-                            track.scrollBy({ left: -320, behavior: 'smooth' });
-                        }
-                    }
-
-                    if (nextBtn) {
-                        nextBtn.onclick = function(e) {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            slideToNext();
-                        };
-                    }
-
-                    if (prevBtn) {
-                        prevBtn.onclick = function(e) {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            slideToPrev();
-                        };
-                    }
-                }
-
-                if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', initAccessorySlider);
-                } else {
-                    initAccessorySlider();
-                }
-                window.addEventListener('load', initAccessorySlider);
-            })();
-            </script>
+                <div class="text-center" style="margin-top: 40px;">
+                    <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="btn-gara btn-gara-outline" style="border-color: #141414; color: #141414; font-weight: 700; padding: 12px 32px; border-radius: 8px;">
+                        <i class="fa-solid fa-layer-group"></i> <?php _e('Xem Tất Cả Bài Viết &amp; Cẩm Nang', 'hieugara-motors'); ?>
+                    </a>
+                </div>
+            <?php else : ?>
+                <div class="text-center" style="padding: 40px 20px; background: #fff; border-radius: 12px; border: 1px solid #e5e7eb;">
+                    <p style="color: #6b7280; margin: 0;"><?php _e('Chưa có bài viết mới. Vui lòng quay lại sau.', 'hieugara-motors'); ?></p>
+                </div>
+            <?php endif; ?>
 
         </div>
     </section>

@@ -240,8 +240,8 @@ function hieugara_clean_admin_menu() {
                     $menu[$key][6] = 'dashicons-admin-page';
                     break;
                 case 'edit.php':
-                    $menu[$key][0] = 'Tin Tức & Bài Viết';
-                    $menu[$key][6] = 'dashicons-edit';
+                    $menu[$key][0] = 'Blog & Bài Viết';
+                    $menu[$key][6] = 'dashicons-welcome-write-blog';
                     break;
                 case 'hieugara-media-hub':
                     $menu[$key][0] = 'Thư Viện Ảnh Gara';
@@ -275,6 +275,21 @@ function hieugara_clean_admin_menu() {
                     $menu[$key][0] = 'Công Cụ';
                     $menu[$key][6] = 'dashicons-admin-tools';
                     break;
+            }
+        }
+    }
+
+    // Rename Blog submenus for absolute clarity (CRUD + Categories)
+    if (isset($submenu['edit.php'])) {
+        foreach ($submenu['edit.php'] as $s_k => $s_v) {
+            if ($s_v[2] === 'edit.php') {
+                $submenu['edit.php'][$s_k][0] = 'Tất Cả Bài Viết (CRUD)';
+            } elseif ($s_v[2] === 'post-new.php') {
+                $submenu['edit.php'][$s_k][0] = 'Viết Bài Mới';
+            } elseif (strpos($s_v[2], 'taxonomy=category') !== false) {
+                $submenu['edit.php'][$s_k][0] = 'Chuyên Mục Blog';
+            } elseif (strpos($s_v[2], 'taxonomy=post_tag') !== false) {
+                $submenu['edit.php'][$s_k][0] = 'Thẻ Bài Viết (Tags)';
             }
         }
     }

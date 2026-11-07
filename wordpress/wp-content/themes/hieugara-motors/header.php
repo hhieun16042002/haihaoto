@@ -253,20 +253,18 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
             </li>
 
             <!-- 5. BLOG ⌵ -->
-            <li class="nav-item has-dropdown">
-                <a href="<?php echo esc_url(home_url('/dich-vu/')); ?>" class="nav-link" title="BLOG KỸ THUẬT">
+            <li class="nav-item has-dropdown <?php echo (is_home() || is_category() || is_singular('post')) ? 'active' : ''; ?>">
+                <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="nav-link" title="BLOG KỸ THUẬT">
                     <span><?php _e('BLOG', 'hieugara-motors'); ?></span>
                     <i class="fa-solid fa-chevron-down nav-caret"></i>
                 </a>
                 <ul class="nav-dropdown-menu">
-                    <li><a href="<?php echo esc_url(home_url('/dich-vu/bao-duong-sua-chua-o-to/')); ?>"><strong style="color: #FFB81C;">★</strong> Chuyên Mục Bảo Dưỡng &amp; Sửa Chữa</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/dich-vu/son-phuc-hoi-than-vo/')); ?>">Chuyên Mục Sơn Ô Tô</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/dich-vu/cham-soc-lam-dep-o-to/')); ?>">Chuyên Mục Chăm Sóc &amp; Làm Đẹp</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/dich-vu/cuu-ho-o-to/')); ?>">Chuyên Mục Cứu Hộ Ô Tô 24/7</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/dich-vu/xe-vinfast/')); ?>"><strong style="color: #FFB81C;">⚡</strong> Dịch Vụ Xe VinFast Chính Hãng</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/?s=kỹ+thuật+ô+tô')); ?>">Tin Tức Công Nghệ Ô Tô Mới</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/?s=kinh+nghiệm+lái+xe')); ?>">Kinh Nghiệm &amp; Cẩm Nang Lái Xe</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/bang-gia/')); ?>">Bảng Giá Dịch Vụ Niêm Yết</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/blog/')); ?>"><strong style="color: #FFB81C;">★</strong> <?php _e('Tất Cả Bài Viết &amp; Cẩm Nang', 'hieugara-motors'); ?></a></li>
+                    <li><a href="<?php echo esc_url(home_url('/category/may-moc-trang-thiet-bi/')); ?>"><strong style="color: #FFB81C;">⚡</strong> <?php _e('Máy Móc &amp; Trang Thiết Bị', 'hieugara-motors'); ?></a></li>
+                    <li><a href="<?php echo esc_url(home_url('/category/cam-nang-bao-duong/')); ?>"><?php _e('Cẩm Nang Bảo Dưỡng Định Kỳ', 'hieugara-motors'); ?></a></li>
+                    <li><a href="<?php echo esc_url(home_url('/category/kien-thuc-ky-thuat/')); ?>"><?php _e('Kiến Thức &amp; Kỹ Thuật Ô Tô', 'hieugara-motors'); ?></a></li>
+                    <li><a href="<?php echo esc_url(home_url('/category/kinh-nghiem-lai-xe/')); ?>"><?php _e('Kinh Nghiệm Lái Xe An Toàn', 'hieugara-motors'); ?></a></li>
+                    <li><a href="<?php echo esc_url(home_url('/category/tin-tuc-su-kien/')); ?>"><?php _e('Tin Tức &amp; Hoạt Động Gara', 'hieugara-motors'); ?></a></li>
                 </ul>
             </li>
 
