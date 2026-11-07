@@ -351,10 +351,22 @@ function hieugara_get_slides() {
     foreach ($defaults as $i => $default) {
         $slide_img = !empty($saved[$i]['image']) ? $saved[$i]['image'] : $default['image'];
         $slide_btn = !empty($saved[$i]['btn_url']) ? $saved[$i]['btn_url'] : $default['btn_url'];
-        if (function_exists('hieugara_normalize_local_media_urls')) {
-            $slide_img = hieugara_normalize_local_media_urls($slide_img);
-            $slide_btn = hieugara_normalize_local_media_urls($slide_btn);
+        
+        // Strip hardcoded test/tunnel domains and ensure standard home_url
+        if (strpos($slide_img, 'localhost:8080') !== false || strpos($slide_img, 'trycloudflare.com') !== false) {
+            $slide_img = preg_replace('#^https?://[^/]+#', '', $slide_img);
         }
+        if (strpos($slide_img, '/') === 0) {
+            $slide_img = home_url($slide_img);
+        }
+
+        if (strpos($slide_btn, 'localhost:8080') !== false || strpos($slide_btn, 'trycloudflare.com') !== false) {
+            $slide_btn = preg_replace('#^https?://[^/]+#', '', $slide_btn);
+        }
+        if (strpos($slide_btn, '/') === 0) {
+            $slide_btn = home_url($slide_btn);
+        }
+
         if (strpos($slide_btn, '/dat-lich/') !== false) {
             $slide_btn = home_url('/bang-gia/');
         }

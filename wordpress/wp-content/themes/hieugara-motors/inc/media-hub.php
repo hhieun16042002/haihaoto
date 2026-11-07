@@ -95,11 +95,14 @@ function hieugara_get_pano_banners() {
         return $defaults;
     }
     
-    // Normalizer helper: convert localhost:8080 or absolute URLs to current home domain
+    // Normalizer helper: convert relative or domain-specific URLs to standard canonical full URL
     $normalize_url = function($url) {
         if (empty($url) || !is_string($url)) return $url;
-        if (strpos($url, 'localhost:8080') !== false) {
-            $url = preg_replace('#^https?://localhost:8080#', '', $url);
+        if (strpos($url, 'localhost:8080') !== false || strpos($url, 'trycloudflare.com') !== false) {
+            $url = preg_replace('#^https?://[^/]+#', '', $url);
+        }
+        if (strpos($url, '/') === 0) {
+            return home_url($url);
         }
         return $url;
     };
