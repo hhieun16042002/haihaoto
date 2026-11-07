@@ -203,53 +203,31 @@ $other_cats = get_terms(array(
 
             </div>
 
-            <!-- Right: Sticky Booking Form & Other Categories -->
+            <!-- Right: Direct Support & Other Categories -->
             <aside class="service-sidebar" style="position: sticky; top: 120px;">
-                <div style="background: #ffffff; border: 2px solid #141414; padding: 32px; box-shadow: 0 12px 30px rgba(0,0,0,0.08); margin-bottom: 30px;">
-                    <div style="border-bottom: 2px solid #D4B996; padding-bottom: 16px; margin-bottom: 24px;">
+                <div style="background: #ffffff; border: 2px solid #141414; padding: 32px; box-shadow: 0 12px 30px rgba(0,0,0,0.08); margin-bottom: 30px; border-radius: 8px;">
+                    <div style="border-bottom: 2px solid #D4B996; padding-bottom: 16px; margin-bottom: 20px;">
                         <span style="font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.75rem; font-weight: 800; color: #D4B996; text-transform: uppercase; letter-spacing: 1.5px;"><?php _e('ÔTÔ HẢI HÀ SERVICE', 'hieugara-motors'); ?></span>
                         <h3 style="font-family: 'Be Vietnam Pro', sans-serif; font-size: 1.35rem; font-weight: 800; color: #141414; text-transform: uppercase; margin: 6px 0 0;"><?php _e('TƯ VẤN & BÁO GIÁ DỊCH VỤ', 'hieugara-motors'); ?></h3>
                     </div>
 
-                    <form class="hieugara-ajax-form">
-                        <input type="hidden" name="service_type" value="<?php echo esc_attr($page_title); ?>">
+                    <p style="font-size: 0.9rem; color: #475569; line-height: 1.6; margin-bottom: 20px;">
+                        Quý khách vui lòng liên hệ trực tiếp với Cố vấn dịch vụ Ô Tô Hải Hà qua Hotline hoặc Zalo để được hỗ trợ kiểm tra xe và nhận báo giá ưu đãi nhanh nhất.
+                    </p>
 
-                        <div style="margin-bottom: 16px;">
-                            <label style="display: block; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; color: #222;"><?php _e('Họ và tên (*)', 'hieugara-motors'); ?></label>
-                            <input type="text" name="customer_name" required placeholder="VD: Nguyễn Văn A" style="width: 100%; padding: 12px 14px; border: 1px solid #ccc; font-size: 0.95rem; font-family: inherit;">
-                        </div>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <a href="tel:0911211996" style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 15px; background: #D4B996; color: #141414; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.95rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; border-radius: 4px; box-shadow: 0 4px 12px rgba(212,185,150,0.3);">
+                            <i class="fa-solid fa-phone-volume"></i> Gọi Ngay: 0911 211 996
+                        </a>
 
-                        <div style="margin-bottom: 16px;">
-                            <label style="display: block; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; color: #222;"><?php _e('Số điện thoại (*)', 'hieugara-motors'); ?></label>
-                            <input type="tel" name="customer_phone" required placeholder="09xx xxx xxx" style="width: 100%; padding: 12px 14px; border: 1px solid #ccc; font-size: 0.95rem; font-family: inherit;">
-                        </div>
+                        <a href="tel:02203892207" style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 13px; background: #141414; color: #ffffff; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.9rem; font-weight: 700; text-decoration: none; border-radius: 4px;">
+                            <i class="fa-solid fa-headset"></i> Tổng Đài: 02203 892 207
+                        </a>
 
-                        <div style="margin-bottom: 16px;">
-                            <label style="display: block; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; color: #222;"><?php _e('Dòng xe / Đời xe', 'hieugara-motors'); ?></label>
-                            <input type="text" name="car_model" placeholder="VD: Lexus RX350, Mercedes C200..." style="width: 100%; padding: 12px 14px; border: 1px solid #ccc; font-size: 0.95rem; font-family: inherit;">
-                        </div>
-
-                        <div style="margin-bottom: 24px;">
-                            <label style="display: block; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; color: #222;"><?php _e('Xưởng tiếp nhận', 'hieugara-motors'); ?></label>
-                            <select name="branch_location" style="width: 100%; padding: 12px 14px; border: 1px solid #ccc; font-size: 0.95rem; font-family: inherit; background: #fff;">
-                                <option value="Trụ sở chính Ôtô Hải Hà">Trụ sở chính: Ôtô Hải Hà (Hải Dương)</option>
-                                <option value="Tiếp nhận sửa chữa lưu động">Tiếp nhận sửa chữa lưu động tận nơi</option>
-                                <option value="Cứu hộ giao thông 24/7">Cứu hộ kéo xe về xưởng 24/7 (Hotline: <?php echo esc_html($rescue_phone); ?>)</option>
-                            </select>
-                        </div>
-
-                        <div style="margin-bottom: 16px; display: flex; align-items: flex-start; gap: 8px; font-size: 0.8rem; color: #475569; line-height: 1.45;">
-                            <input type="checkbox" name="privacy_consent" value="1" required id="privacy_consent_cat" style="margin-top: 3px; accent-color: #8C6D46; cursor: pointer;">
-                            <label for="privacy_consent_cat" style="cursor: pointer;">
-                                Tôi đồng ý cho <strong>Ô Tô Hải Hà</strong> xử lý thông tin liên hệ để tư vấn và báo giá dịch vụ theo <a href="<?php echo esc_url(home_url('/chinh-sach-bao-mat/')); ?>" target="_blank" style="color: #8C6D46; text-decoration: underline; font-weight: 600;">Chính sách bảo vệ dữ liệu cá nhân</a>. *
-                            </label>
-                        </div>
-
-                        <button type="submit" class="shiftup-rect-btn btn-orange-solid" style="width: 100%; padding: 15px; background: #D4B996; color: #141414; border: none; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.95rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease;">
-                            <span class="btn-orange-bar" style="color: #141414;">|</span> + <?php _e('GỬI YÊU CẦU TƯ VẤN & BÁO GIÁ', 'hieugara-motors'); ?>
-                        </button>
-                        <div class="form-response-msg" style="display:none; margin-top: 12px; font-size: 0.9rem; padding: 10px; text-align: center;"></div>
-                    </form>
+                        <a href="https://zalo.me/0911211996" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 13px; background: #0068FF; color: #ffffff; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.9rem; font-weight: 700; text-decoration: none; border-radius: 4px;">
+                            <i class="fa-solid fa-comment-dots"></i> Chat Zalo Kỹ Thuật
+                        </a>
+                    </div>
 
                     <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #eee; font-size: 0.82rem; color: #666; line-height: 1.6;">
                         <p style="margin-bottom: 6px;"><i class="fa fa-check" style="color: #C5A880;"></i> Kiểm tra tổng quát miễn phí 45 hạng mục.</p>
