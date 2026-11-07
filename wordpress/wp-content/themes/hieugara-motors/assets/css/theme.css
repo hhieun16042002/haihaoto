@@ -2860,12 +2860,6 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     .all-about-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    .pano-banners-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .pano-banner-col {
-        height: 400px;
-    }
     .flanked-grid {
         grid-template-columns: 1fr;
     }
