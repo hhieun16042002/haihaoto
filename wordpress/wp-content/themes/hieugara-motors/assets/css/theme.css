@@ -13205,22 +13205,18 @@ html, body {
     border-color: #FFB81C;
 }
 
-.vf-model-icon-wrap {
-    width: 44px;
-    height: 44px;
-    background: #141414;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 14px;
-}
-
-.vf-v-mark {
+.vf-model-badge {
+    display: inline-block;
+    align-self: flex-start;
     font-family: 'Chakra Petch', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 900;
-    color: #FFB81C;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #141414;
+    background: #FFB81C;
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-bottom: 12px;
 }
 
 .vf-model-name {

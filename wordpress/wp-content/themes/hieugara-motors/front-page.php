@@ -128,10 +128,10 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
             <div class="hp-vf-grid">
                 <!-- Text Left (on desktop) / Top (on mobile) -->
                 <div class="hp-vf-content">
-                    <span class="hp-vf-eyebrow">TRUNG TÂM TIẾP NHẬN BẢO DƯỠNG &amp; SỬA CHỮA HỢP TÁC VỚI VINFAST TẠI HẢI PHÒNG</span>
+                    <span class="hp-vf-eyebrow">XƯỞNG DỊCH VỤ VINFAST TẠI HẢI DƯƠNG</span>
                     <h2 class="hp-vf-heading">Ô Tô Hải Hà – Đối tác dịch vụ chính thức của VinFast</h2>
                     <p class="hp-vf-paragraph">
-                        Từ tháng 08/2026, Ô Tô Hải Hà chính thức trở thành Trung tâm tiếp nhận bảo dưỡng &amp; sửa chữa hợp tác với VinFast tại Hải Phòng, cung cấp phụ tùng chính hãng và dịch vụ sửa chữa, bảo dưỡng, đồng sơn cho xe VinFast. Đội ngũ của chúng tôi kết hợp 31 năm kinh nghiệm sửa chữa với kỹ thuật viên xe điện được đào tạo bài bản, phục vụ mọi dòng xe xăng, dầu, điện và hybrid.
+                        Từ tháng 08/2026, Ô Tô Hải Hà chính thức hợp tác với VinFast, cung cấp phụ tùng chính hãng và dịch vụ sửa chữa, bảo dưỡng, đồng sơn cho xe VinFast. Đội ngũ của chúng tôi kết hợp 31 năm kinh nghiệm sửa chữa với kỹ thuật viên xe điện được đào tạo bài bản, phục vụ mọi dòng xe xăng, dầu, điện và hybrid.
                     </p>
                     <ul class="hp-vf-checklist">
                         <li>
@@ -576,7 +576,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                         <img src="<?php echo esc_url($theme_uri . '/assets/images/brands/vinfast.svg?v=' . HIEUGARA_THEME_VERSION); ?>" alt="VinFast" class="vf-spotlight-logo" width="38" height="30">
                         <div class="vf-spotlight-titles">
                             <strong>VINFAST VIỆT NAM</strong>
-                            <small>Trung tâm tiếp nhận bảo dưỡng &amp; sửa chữa hợp tác tại Hải Phòng</small>
+                            <small>Xưởng tiếp nhận bảo dưỡng, sửa chữa &amp; phụ tùng chính hãng</small>
                         </div>
                     </div>
                     <a href="<?php echo esc_url(home_url('/dich-vu/xe-vinfast/')); ?>" class="vf-spotlight-btn">

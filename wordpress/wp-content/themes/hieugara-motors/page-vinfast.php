@@ -26,7 +26,7 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
     {
       "@type": "AutoRepair",
       "@id": "<?php echo esc_url(home_url('/#autorepair')); ?>",
-      "name": "Ô Tô Hải Hà – Trung Tâm Tiếp Nhận Bảo Dưỡng & Sửa Chữa Hợp Tác Với VinFast Tại Hải Phòng",
+      "name": "Ô Tô Hải Hà - Xưởng Dịch Vụ VinFast",
       "url": "<?php echo esc_url($current_url); ?>",
       "logo": "<?php echo esc_url($theme_uri . '/assets/images/haiha-logo.png'); ?>",
       "image": "<?php echo esc_url($sign_photo); ?>",
@@ -35,8 +35,8 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "KM3+500 Nguyễn Lương Bằng",
-        "addressLocality": "Hải Phòng",
-        "addressRegion": "Hải Phòng",
+        "addressLocality": "Hải Dương",
+        "addressRegion": "Hải Dương",
         "addressCountry": "VN"
       },
       "geo": {
@@ -60,8 +60,8 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
         "@type": "AutoRepair",
         "name": "Ô Tô Hải Hà"
       },
-      "areaServed": ["Hải Phòng", "Hải Dương", "Miền Bắc"],
-      "description": "Ô Tô Hải Hà – Trung tâm tiếp nhận bảo dưỡng & sửa chữa hợp tác với VinFast tại Hải Phòng. Phụ tùng chính hãng, bảo dưỡng, sửa chữa, đồng sơn xe VinFast. Đặt lịch ngay.",
+      "areaServed": ["Hải Dương", "Miền Bắc"],
+      "description": "Ô Tô Hải Hà – đối tác dịch vụ VinFast tại KM3+500 Nguyễn Lương Bằng. Phụ tùng chính hãng, bảo dưỡng, sửa chữa, đồng sơn xe VinFast. Đặt lịch ngay.",
       "url": "<?php echo esc_url($current_url); ?>"
     },
     {
@@ -112,12 +112,11 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
             <div class="vinfast-hero-grid">
                 <div class="vinfast-hero-text">
                     <div class="vinfast-partner-pill">
-                        <img src="<?php echo esc_url($vinfast_logo); ?>" alt="VinFast" class="vinfast-pill-logo" width="22" height="18">
-                        <span>TRUNG TÂM TIẾP NHẬN BẢO DƯỠNG &amp; SỬA CHỮA HỢP TÁC VỚI VINFAST TẠI HẢI PHÒNG</span>
+                        <span>XƯỞNG DỊCH VỤ VINFAST TẠI HẢI DƯƠNG</span>
                     </div>
-                    <h1 class="vinfast-hero-title">Dịch vụ sửa chữa và bảo dưỡng xe VinFast tại Hải Phòng</h1>
+                    <h1 class="vinfast-hero-title">Dịch vụ sửa chữa và bảo dưỡng xe VinFast tại Hải Dương</h1>
                     <p class="vinfast-hero-lead">
-                        Ô Tô Hải Hà tự hào là Trung tâm tiếp nhận bảo dưỡng &amp; sửa chữa hợp tác với VinFast tại Hải Phòng. Cung cấp 100% phụ tùng chính hãng, quy trình bảo dưỡng chuẩn hãng cùng đội ngũ kỹ thuật viên xe điện và xe xăng được chứng chỉ bài bản.
+                        Từ tháng 08/2026, Ô Tô Hải Hà chính thức hợp tác với VinFast, cung cấp phụ tùng chính hãng và dịch vụ sửa chữa, bảo dưỡng, đồng sơn cho xe VinFast. Đội ngũ kỹ thuật viên được đào tạo bài bản, phục vụ tận tâm mọi dòng xe VinFast.
                     </p>
                     <div class="vinfast-hero-cta-row">
                         <a href="<?php echo esc_url(home_url('/dat-lich/?model=Xe%20VinFast&service=vinfast')); ?>" class="vf-btn vf-btn-primary">
@@ -154,24 +153,24 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
             <div class="vf-partnership-box">
                 <div class="vf-partnership-content">
                     <p class="vf-partnership-paragraph">
-                        Từ tháng <strong>08/2026</strong>, Ô Tô Hải Hà chính thức trở thành <strong>Trung tâm tiếp nhận bảo dưỡng &amp; sửa chữa hợp tác với VinFast tại Hải Phòng</strong> nhằm mang đến cho khách hàng trải nghiệm dịch vụ ô tô tiêu chuẩn cao nhất. Chúng tôi tiếp nhận cung cấp 100% phụ tùng chính hãng, bảo dưỡng định kỳ theo cấp km, sửa chữa chuyên sâu và phục hồi thân vỏ đồng sơn theo tiêu chuẩn khắt khe của hãng.
+                        Từ tháng <strong>08/2026</strong>, Ô Tô Hải Hà chính thức hợp tác với VinFast, cung cấp phụ tùng chính hãng và dịch vụ sửa chữa, bảo dưỡng, đồng sơn cho xe VinFast. Đội ngũ của chúng tôi kết hợp 31 năm kinh nghiệm sửa chữa với kỹ thuật viên xe điện được đào tạo bài bản, phục vụ mọi dòng xe xăng, dầu, điện và hybrid.
                     </p>
                     <p class="vf-partnership-paragraph">
-                        Sự kết hợp giữa <strong>31 năm kinh nghiệm kỹ thuật cơ khí gầm máy</strong> của Ô Tô Hải Hà và đội ngũ chuyên gia xe điện VinFast được đào tạo bài bản tạo nên địa chỉ tin cậy hàng đầu cho mọi chủ sở hữu xe xăng, xe hybrid và xe thuần điện thông minh.
+                        Sự kết hợp giữa <strong>31 năm kinh nghiệm kỹ thuật cơ khí gầm máy</strong> của Ô Tô Hải Hà và quy trình tiêu chuẩn chính hãng mang đến chất lượng dịch vụ an tâm và minh bạch tuyệt đối cho mọi chủ xe VinFast.
                     </p>
                 </div>
                 <div class="vf-partnership-pills-row">
                     <div class="vf-trust-chip">
-                        <i class="fa-solid fa-certificate"></i>
+                        <i class="fa-solid fa-circle-check"></i>
                         <span>Phụ tùng chính hãng VinFast</span>
                     </div>
                     <div class="vf-trust-chip">
-                        <i class="fa-solid fa-bolt"></i>
-                        <span>Kỹ thuật viên xe điện bài bản</span>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Kỹ thuật viên xe điện</span>
                     </div>
                     <div class="vf-trust-chip">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <span>Bảo dưỡng, sửa chữa &amp; đồng sơn</span>
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Bảo dưỡng, sửa chữa, đồng sơn</span>
                     </div>
                 </div>
             </div>
@@ -202,9 +201,7 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
             <div class="vf-models-grid">
                 <?php foreach ($models as $m) : ?>
                 <div class="vf-model-card">
-                    <div class="vf-model-icon-wrap">
-                        <span class="vf-v-mark">V</span>
-                    </div>
+                    <div class="vf-model-badge">VINFAST</div>
                     <h3 class="vf-model-name"><?php echo esc_html($m['code']); ?></h3>
                     <p class="vf-model-desc"><?php echo esc_html($m['desc']); ?></p>
                     <a href="<?php echo esc_url(home_url('/dat-lich/?model=' . urlencode('VinFast ' . $m['code']))); ?>" class="vf-model-link">
@@ -329,7 +326,7 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
                     </button>
                     <div class="vf-faq-body" id="faq-ans-1" role="region" aria-labelledby="faq-q-1" hidden>
                         <div class="vf-faq-answer">
-                            <p class="vf-placeholder-note">[Câu trả lời đang chờ quản trị viên cập nhật chi tiết...]</p>
+                            <p class="vf-placeholder-note">[Chờ Ô Tô Hải Hà bổ sung câu trả lời chính thức]</p>
                         </div>
                     </div>
                 </div>
@@ -342,7 +339,7 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
                     </button>
                     <div class="vf-faq-body" id="faq-ans-2" role="region" aria-labelledby="faq-q-2" hidden>
                         <div class="vf-faq-answer">
-                            <p class="vf-placeholder-note">[Câu trả lời đang chờ quản trị viên cập nhật chi tiết...]</p>
+                            <p class="vf-placeholder-note">[Chờ Ô Tô Hải Hà bổ sung câu trả lời chính thức]</p>
                         </div>
                     </div>
                 </div>
@@ -355,7 +352,7 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
                     </button>
                     <div class="vf-faq-body" id="faq-ans-3" role="region" aria-labelledby="faq-q-3" hidden>
                         <div class="vf-faq-answer">
-                            <p class="vf-placeholder-note">[Câu trả lời đang chờ quản trị viên cập nhật chi tiết...]</p>
+                            <p class="vf-placeholder-note">[Chờ Ô Tô Hải Hà bổ sung câu trả lời chính thức]</p>
                         </div>
                     </div>
                 </div>
@@ -368,7 +365,7 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
                     </button>
                     <div class="vf-faq-body" id="faq-ans-4" role="region" aria-labelledby="faq-q-4" hidden>
                         <div class="vf-faq-answer">
-                            <p class="vf-placeholder-note">[Câu trả lời đang chờ quản trị viên cập nhật chi tiết...]</p>
+                            <p class="vf-placeholder-note">[Chờ Ô Tô Hải Hà bổ sung câu trả lời chính thức]</p>
                         </div>
                     </div>
                 </div>

@@ -310,7 +310,7 @@ add_action('template_redirect', 'hieugara_route_vinfast_service_page', 1);
 function hieugara_vinfast_seo_title($title) {
     $request_uri = trim(parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
     if ($request_uri === 'dich-vu/xe-vinfast') {
-        return 'Trung tâm tiếp nhận bảo dưỡng & sửa chữa VinFast tại Hải Phòng | Ô Tô Hải Hà';
+        return 'Xưởng dịch vụ VinFast tại Hải Dương | Ô Tô Hải Hà';
     }
     return $title;
 }
@@ -321,11 +321,11 @@ function hieugara_vinfast_seo_meta_tags() {
     $request_uri = trim(parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
     if ($request_uri === 'dich-vu/xe-vinfast') {
         $canonical = home_url('/dich-vu/xe-vinfast/');
-        $desc = 'Ô Tô Hải Hà – Trung tâm tiếp nhận bảo dưỡng & sửa chữa hợp tác với VinFast tại Hải Phòng. Phụ tùng chính hãng, bảo dưỡng, sửa chữa, đồng sơn xe VinFast. Đặt lịch ngay.';
+        $desc = 'Ô Tô Hải Hà – đối tác dịch vụ VinFast tại KM3+500 Nguyễn Lương Bằng. Phụ tùng chính hãng, bảo dưỡng, sửa chữa, đồng sơn xe VinFast. Đặt lịch ngay.';
         $img = get_template_directory_uri() . '/assets/images/about/haiha-about-workshop.jpg';
         echo '<meta name="description" content="' . esc_attr($desc) . '">' . "\n";
         echo '<link rel="canonical" href="' . esc_url($canonical) . '">' . "\n";
-        echo '<meta property="og:title" content="Trung tâm tiếp nhận bảo dưỡng & sửa chữa VinFast tại Hải Phòng | Ô Tô Hải Hà">' . "\n";
+        echo '<meta property="og:title" content="Xưởng dịch vụ VinFast tại Hải Dương | Ô Tô Hải Hà">' . "\n";
         echo '<meta property="og:description" content="' . esc_attr($desc) . '">' . "\n";
         echo '<meta property="og:url" content="' . esc_url($canonical) . '">' . "\n";
         echo '<meta property="og:type" content="article">' . "\n";
