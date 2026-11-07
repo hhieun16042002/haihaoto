@@ -119,13 +119,13 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
                         Từ tháng 08/2026, Ô Tô Hải Hà chính thức hợp tác với VinFast, cung cấp phụ tùng chính hãng và dịch vụ sửa chữa, bảo dưỡng, đồng sơn cho xe VinFast. Đội ngũ kỹ thuật viên được đào tạo bài bản, phục vụ tận tâm mọi dòng xe VinFast.
                     </p>
                     <div class="vinfast-hero-cta-row">
-                        <a href="tel:<?php echo esc_attr($hotline_clean); ?>" class="vf-btn vf-btn-primary">
+                        <a href="tel:0911211996" class="vf-btn vf-btn-primary">
                             <i class="fa-solid fa-phone-volume"></i>
-                            <span>Tư vấn kỹ thuật: <?php echo esc_html($hotline_phone); ?></span>
+                            <span>Tư vấn kỹ thuật: 0911 211 996</span>
                         </a>
-                        <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="vf-btn vf-btn-outline">
-                            <i class="fa-solid fa-truck-pickup"></i>
-                            <span>Cứu hộ 24/7: <?php echo esc_html($rescue_phone); ?></span>
+                        <a href="tel:<?php echo esc_attr($hotline_clean); ?>" class="vf-btn vf-btn-outline">
+                            <i class="fa-solid fa-headset"></i>
+                            <span>Tổng đài: <?php echo esc_html($hotline_phone); ?></span>
                         </a>
                     </div>
                 </div>

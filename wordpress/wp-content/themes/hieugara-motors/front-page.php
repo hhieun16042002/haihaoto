@@ -148,9 +148,9 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                         </li>
                     </ul>
                     <div class="hp-vf-actions">
-                        <a href="tel:02203892207" class="hp-vf-btn-primary">
+                        <a href="tel:0911211996" class="hp-vf-btn-primary">
                             <i class="fa-solid fa-phone-volume"></i>
-                            <span>Tư vấn kỹ thuật: 02203 892 207</span>
+                            <span>Tư vấn kỹ thuật: 0911 211 996</span>
                         </a>
                         <a href="<?php echo esc_url(home_url('/dich-vu/xe-vinfast/')); ?>" class="hp-vf-btn-outline">
                             <span>Chi tiết dịch vụ xe VinFast</span>
