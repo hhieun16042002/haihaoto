@@ -24,9 +24,9 @@ add_action('add_meta_boxes', 'hieugara_add_service_meta_boxes');
 function hieugara_render_service_meta_box($post) {
     wp_nonce_field('hieugara_save_service_meta', 'hieugara_service_meta_nonce');
 
-    $price_from = get_post_meta($post->ID, '_garage_price_from', true);
-    $duration   = get_post_meta($post->ID, '_garage_duration', true);
-    $warranty   = get_post_meta($post->ID, '_garage_warranty', true);
+    $price_from = get_post_meta($post->ID, '_garage_price_from', true) ?: get_post_meta($post->ID, '_service_price', true);
+    $duration   = get_post_meta($post->ID, '_garage_duration', true) ?: get_post_meta($post->ID, '_service_duration', true);
+    $warranty   = get_post_meta($post->ID, '_garage_warranty', true) ?: get_post_meta($post->ID, '_service_warranty', true);
     $badge      = get_post_meta($post->ID, '_garage_badge', true);
     $custom_img = get_post_meta($post->ID, '_garage_custom_image', true);
     $features   = get_post_meta($post->ID, '_garage_features', true);
@@ -100,7 +100,17 @@ function hieugara_save_service_meta($post_id) {
 
     foreach ($fields as $post_key => $meta_key) {
         if (isset($_POST[$post_key])) {
-            update_post_meta($post_id, $meta_key, sanitize_text_field($_POST[$post_key]));
+            $val = sanitize_text_field($_POST[$post_key]);
+            update_post_meta($post_id, $meta_key, $val);
+            
+            // Sync with legacy meta keys for complete compatibility
+            if ($post_key === 'garage_price_from') {
+                update_post_meta($post_id, '_service_price', $val);
+            } elseif ($post_key === 'garage_duration') {
+                update_post_meta($post_id, '_service_duration', $val);
+            } elseif ($post_key === 'garage_warranty') {
+                update_post_meta($post_id, '_service_warranty', $val);
+            }
         }
     }
 

@@ -9,18 +9,40 @@
 get_header();
 
 while (have_posts()) : the_post();
-    $post_slug     = get_post_field('post_name', get_the_ID());
+    $post_id       = get_the_ID();
+    $post_slug     = get_post_field('post_name', $post_id);
     $prestige_data = function_exists('hieugara_get_prestige_service_data') ? hieugara_get_prestige_service_data($post_slug) : array();
 
-    $page_title = !empty($prestige_data['title']) ? $prestige_data['title'] : get_the_title();
-    $price      = !empty($prestige_data['price']) ? $prestige_data['price'] : (get_post_meta(get_the_ID(), '_service_price', true) ?: get_post_meta(get_the_ID(), '_garage_price_from', true));
-    $badge      = !empty($prestige_data['badge']) ? $prestige_data['badge'] : (get_post_meta(get_the_ID(), '_garage_badge', true) ?: 'TIÊU CHUẨN ÔTÔ HẢI HÀ');
-    $duration   = !empty($prestige_data['duration']) ? $prestige_data['duration'] : (get_post_meta(get_the_ID(), '_service_duration', true) ?: '45 - 90 phút');
-    $warranty   = !empty($prestige_data['warranty']) ? $prestige_data['warranty'] : (get_post_meta(get_the_ID(), '_service_warranty', true) ?: '12 - 24 tháng');
-    $thumb      = !empty($prestige_data['img']) ? $prestige_data['img'] : get_template_directory_uri() . '/assets/images/shiftup/slide-2.jpg';
+    // Priority 1: Data directly entered by Admin in WordPress
+    $page_title = get_the_title();
+
+    $meta_price = get_post_meta($post_id, '_garage_price_from', true) ?: get_post_meta($post_id, '_service_price', true);
+    $price      = !empty($meta_price) ? $meta_price : (!empty($prestige_data['price']) ? $prestige_data['price'] : 'Khảo sát báo giá miễn phí');
+
+    $meta_badge = get_post_meta($post_id, '_garage_badge', true);
+    $badge      = !empty($meta_badge) ? $meta_badge : (!empty($prestige_data['badge']) ? $prestige_data['badge'] : 'TIÊU CHUẨN ÔTÔ HẢI HÀ');
+
+    $meta_duration = get_post_meta($post_id, '_garage_duration', true) ?: get_post_meta($post_id, '_service_duration', true);
+    $duration      = !empty($meta_duration) ? $meta_duration : (!empty($prestige_data['duration']) ? $prestige_data['duration'] : '45 - 90 phút');
+
+    $meta_warranty = get_post_meta($post_id, '_garage_warranty', true) ?: get_post_meta($post_id, '_service_warranty', true);
+    $warranty      = !empty($meta_warranty) ? $meta_warranty : (!empty($prestige_data['warranty']) ? $prestige_data['warranty'] : '12 - 24 tháng');
+
+    // Thumbnail: Featured image from WP Admin first, then custom image meta, then prestige_data, then fallback
+    $meta_custom_img = get_post_meta($post_id, '_garage_custom_image', true);
+    if (has_post_thumbnail($post_id)) {
+        $thumb = get_the_post_thumbnail_url($post_id, 'large');
+    } elseif (!empty($meta_custom_img)) {
+        $thumb = $meta_custom_img;
+    } elseif (!empty($prestige_data['img'])) {
+        $thumb = $prestige_data['img'];
+    } else {
+        $thumb = get_template_directory_uri() . '/assets/images/shiftup/slide-2.jpg';
+    }
 
     $hotline_phone = get_option('hieugara_hotline_phone', '02203 892 207');
     $rescue_phone  = get_option('hieugara_rescue_phone', '0911 211 996');
+    $features_raw  = get_post_meta($post_id, '_garage_features', true);
     ?>
 
     <!-- Service Header Banner -->
@@ -88,10 +110,30 @@ while (have_posts()) : the_post();
                         <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($page_title); ?>" style="width: 100%; height: auto; max-height: 480px; object-fit: cover; display: block;">
                     </div>
 
+                    <!-- Highlights & Features (if configured by Admin) -->
+                    <?php if (!empty($features_raw)) : 
+                        $feature_lines = array_filter(array_map('trim', explode("\n", $features_raw)));
+                        if (!empty($feature_lines)) : ?>
+                            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #F5A300; padding: 20px 24px; margin-bottom: 30px; border-radius: 4px;">
+                                <h4 style="font-family: 'Chakra Petch', sans-serif; font-size: 1.1rem; font-weight: 800; color: #0f172a; margin: 0 0 14px; text-transform: uppercase;">
+                                    <i class="fa fa-circle-check" style="color: #F5A300; margin-right: 6px;"></i> <?php _e('Cam kết & Hạng mục nổi bật', 'hieugara-motors'); ?>
+                                </h4>
+                                <ul style="margin: 0; padding-left: 20px; color: #334155; line-height: 1.8;">
+                                    <?php foreach ($feature_lines as $f_line) : ?>
+                                        <li style="margin-bottom: 6px;"><?php echo esc_html($f_line); ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                        <?php endif; 
+                    endif; ?>
+
                     <!-- Body Content -->
                     <div class="entry-content" style="line-height: 1.85; color: #334155; font-size: 1.02rem;">
                         <?php
-                        if (!empty($prestige_data['html'])) {
+                        $raw_content = get_the_content();
+                        if (!empty(trim($raw_content))) {
+                            the_content();
+                        } elseif (!empty($prestige_data['html'])) {
                             echo $prestige_data['html'];
                         } else {
                             the_content();
