@@ -10135,6 +10135,22 @@ html, body {
     color: #141414 !important;
 }
 
+.shiftup-main-footer .contact-chip.chip-zalo i {
+    background: #e8f3ff !important;
+    border: 1px solid #b8daff !important;
+    color: #0068FF !important;
+}
+
+.shiftup-main-footer .contact-chip.chip-zalo:hover {
+    border-color: #0068FF !important;
+}
+
+.shiftup-main-footer .contact-chip.chip-zalo:hover i {
+    background: #0068FF !important;
+    color: #ffffff !important;
+    border-color: #0068FF !important;
+}
+
 .shiftup-main-footer .contact-chip small,
 .shiftup-main-footer .contact-chip strong,
 .shiftup-main-footer .contact-chip span,

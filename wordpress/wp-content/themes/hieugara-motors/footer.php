@@ -52,20 +52,13 @@ $hotline_clean = preg_replace('/[^0-9]/', '', $hotline_phone);
                                 <strong><?php echo esc_html($rescue_phone); ?></strong>
                             </div>
                         </a>
-                        <a href="https://zalo.me/<?php echo esc_attr($rescue_clean); ?>" target="_blank" rel="noopener" class="contact-chip">
-                            <i class="fa-solid fa-comment-dots" style="color: #0088ff;"></i>
+                        <a href="https://zalo.me/<?php echo esc_attr($rescue_clean); ?>" target="_blank" rel="noopener" class="contact-chip chip-zalo">
+                            <i class="fa-solid fa-comment-dots" style="color: #0068FF !important;"></i>
                             <div>
                                 <small>ZALO TƯ VẤN &amp; HỖ TRỢ</small>
                                 <strong><?php echo esc_html($rescue_phone); ?></strong>
                             </div>
                         </a>
-                        <div class="contact-chip" style="grid-column: 1 / -1;">
-                            <i class="fa-solid fa-clock"></i>
-                            <div>
-                                <small>GIỜ LÀM VIỆC</small>
-                                <span><?php echo esc_html($topbar_hours); ?></span>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="footer-social-row">
