@@ -2,6 +2,7 @@
 /**
  * Template Name: Về Chúng Tôi (About Hiếu Gara Service)
  * The template for displaying the company about page.
+ * 100% Dynamic & Editable from WordPress Admin (WYSIWYG, Blocks, Custom Photos & Alignments)
  *
  * @package HieuGara_Motors
  */
@@ -17,7 +18,158 @@ $about_staff_count = get_option('hieugara_about_staff_count', '80+');
 $about_parts_rate  = get_option('hieugara_about_parts_rate', '100%');
 ?>
 
+<style>
+/* Rich WYSIWYG Content & WordPress Media Alignment */
+.about-wysiwyg-content {
+    font-size: 1.08rem;
+    line-height: 1.9;
+    color: #334155;
+    font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+.about-wysiwyg-content::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.about-wysiwyg-content p {
+    margin-bottom: 22px;
+    font-size: 1.08rem;
+    line-height: 1.9;
+    color: #334155;
+}
+.about-wysiwyg-content p.lead {
+    font-size: 1.2rem;
+    line-height: 1.85;
+    color: #0f172a;
+    font-weight: 500;
+}
+.about-wysiwyg-content h2 {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: #141414;
+    margin: 40px 0 20px;
+    line-height: 1.35;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid #C5A880;
+    display: inline-block;
+}
+.about-wysiwyg-content h3 {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 32px 0 16px;
+    line-height: 1.4;
+}
+.about-wysiwyg-content h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #334155;
+    margin: 24px 0 12px;
+}
+.about-wysiwyg-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    display: inline-block;
+}
+.about-wysiwyg-content figure {
+    margin: 28px 0;
+}
+.about-wysiwyg-content figcaption {
+    font-size: 0.9rem;
+    color: #64748b;
+    text-align: center;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* WordPress Media Alignment Floats */
+.about-wysiwyg-content .alignleft,
+.about-wysiwyg-content figure.alignleft {
+    float: left;
+    margin: 8px 32px 24px 0;
+    max-width: 50%;
+}
+.about-wysiwyg-content .alignright,
+.about-wysiwyg-content figure.alignright {
+    float: right;
+    margin: 8px 0 24px 32px;
+    max-width: 50%;
+}
+.about-wysiwyg-content .aligncenter,
+.about-wysiwyg-content figure.aligncenter {
+    display: block;
+    margin: 32px auto;
+    text-align: center;
+    clear: both;
+}
+.about-wysiwyg-content .aligncenter img {
+    margin: 0 auto;
+}
+
+/* Gallery Block */
+.about-wysiwyg-content .wp-block-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 32px 0;
+    padding: 0;
+    list-style: none;
+}
+.about-wysiwyg-content .wp-block-gallery .wp-block-image {
+    flex: 1 1 calc(33.333% - 16px);
+    margin: 0;
+}
+.about-wysiwyg-content .wp-block-gallery img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+/* Quotes & Lists */
+.about-wysiwyg-content blockquote {
+    border-left: 4px solid #C5A880;
+    background: #f8fafc;
+    padding: 20px 28px;
+    font-weight: 600;
+    color: #0f172a;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin: 32px 0;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+}
+.about-wysiwyg-content ul, 
+.about-wysiwyg-content ol {
+    margin: 18px 0 24px 32px;
+    color: #334155;
+    line-height: 1.85;
+}
+.about-wysiwyg-content li {
+    margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+    .about-wysiwyg-content .alignleft,
+    .about-wysiwyg-content figure.alignleft,
+    .about-wysiwyg-content .alignright,
+    .about-wysiwyg-content figure.alignright {
+        float: none;
+        max-width: 100%;
+        margin: 20px 0;
+    }
+    .about-wysiwyg-content .wp-block-gallery .wp-block-image {
+        flex: 1 1 100%;
+    }
+}
+</style>
+
 <main id="primary" class="site-main page-about-portal">
+
+<?php while (have_posts()) : the_post(); ?>
 
     <!-- Page Breadcrumb & Header -->
     <section class="portal-hero-header">
@@ -37,67 +189,81 @@ $about_parts_rate  = get_option('hieugara_about_parts_rate', '100%');
     </section>
 
     <?php if ($about_show_story === '1') : ?>
-    <!-- Company Story & Mission -->
-    <section class="about-story-section" id="su-kien" style="padding: 70px 0; background: #ffffff;">
-        <div class="container">
-            <div class="about-story-grid">
-                <div class="about-story-content">
-                    <span class="story-tag"><i class="fa fa-award"></i> HÀNH TRÌNH <?php echo esc_html($about_years_exp); ?> NĂM (1995 — <?php echo date('Y'); ?>)</span>
-                    <h2 style="font-size: 2rem; line-height: 1.35; margin-bottom: 20px; color: #141414;"><?php echo esc_html($about_p_title); ?></h2>
-                    
-                    <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 16px;">
-                        Năm 1995, nhà sáng lập ông <strong>Nguyễn Hải Hà</strong> đặt những viên gạch đầu tiên cho Ôtô Hải Hà với một niềm tin giản dị: <em>mỗi chiếc xe đều xứng đáng được chăm sóc bằng cái tâm của người thợ</em>. 31 năm đã trôi qua, niềm tin ấy vẫn là kim chỉ nam trong từng công việc chúng tôi làm mỗi ngày.
-                    </p>
-                    
-                    <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 16px;">
-                        Qua hơn ba thập kỷ, biết bao thế hệ xe đã lăn bánh qua gara, mang theo những câu chuyện và kinh nghiệm quý giá cho nghề. Nhưng điều chúng tôi trân trọng nhất là sự tin tưởng của khách hàng. Bởi chúng tôi hiểu rằng, giao xe cho gara không chỉ là giao một phương tiện, mà còn là gửi gắm sự an tâm trên mỗi hành trình của bạn và gia đình.
-                    </p>
+    <!-- Company Story & Mission (100% Dynamic from WordPress Editor) -->
+    <section class="about-story-section" id="su-kien" style="padding: 60px 0 75px; background: #ffffff;">
+        <div class="container" style="max-width: 1100px; margin: 0 auto; padding: 0 20px;">
 
-                    <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 16px;">
-                        Ngày nay, Ôtô Hải Hà tự hào có <strong>đội ngũ <?php echo esc_html($about_staff_count); ?> nhân viên</strong> làm việc chuyên nghiệp và phục vụ tận tâm, cung cấp đầy đủ các dịch vụ sửa chữa và bảo dưỡng ô tô. Từ lần bảo dưỡng định kỳ đến những hạng mục sửa chữa cần sự tỉ mỉ, mọi nhu cầu của chiếc xe đều được chăm lo tại một địa chỉ duy nhất.
-                    </p>
-
-                    <blockquote style="border-left: 4px solid #F5A300; background: #F5F5F5; padding: 14px 20px; font-weight: 700; color: #1e3a8a; font-size: 1.05rem; margin-bottom: 26px; border-radius: 0 6px 6px 0;">
-                        "Ôtô Hải Hà: Tận tâm với từng chiếc xe, vững tin trên mọi hành trình."
-                    </blockquote>
-
-                    <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-bottom: 30px;">
-                        <a href="https://www.facebook.com/profile.php?id=100069673756551" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; background: #1877f2; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: 700; text-decoration: none; box-shadow: 0 4px 14px rgba(24, 119, 242, 0.35); transition: transform 0.2s;">
-                            <i class="fa-brands fa-facebook" style="font-size: 1.3rem;"></i>
-                            <span>Theo dõi Fanpage Ôtô Hải Hà trên Facebook &rarr;</span>
-                        </a>
-                        <a href="tel:02203892207" style="display: inline-flex; align-items: center; gap: 8px; background: #D4B996; color: #141414; padding: 12px 22px; border-radius: 6px; font-size: 0.95rem; font-weight: 700; text-decoration: none;">
-                            <i class="fa-solid fa-phone-volume"></i>
-                            <span>Tư vấn: 02203 892 207</span>
-                        </a>
-                    </div>
-
-                    <div class="about-highlights-row">
-                        <div class="hl-item">
-                            <strong><?php echo esc_html($about_years_exp); ?></strong>
-                            <span>Năm đồng hành (1995-<?php echo date('Y'); ?>)</span>
-                        </div>
-                        <div class="hl-item">
-                            <strong><?php echo esc_html($about_staff_count); ?></strong>
-                            <span>Nhân sự tận tâm &amp; chuyên môn cao</span>
-                        </div>
-                        <div class="hl-item">
-                            <strong><?php echo esc_html($about_parts_rate); ?></strong>
-                            <span>Phụ tùng chuẩn &amp; Bảo hành an tâm</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="about-story-media">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/shiftup/tech-about.jpg?v=' . HIEUGARA_THEME_VERSION); ?>" alt="Kỹ thuật viên xưởng dịch vụ Ôtô Hải Hà" class="story-img-main" style="border-radius: 8px; box-shadow: 0 16px 36px rgba(0,0,0,0.15);">
-                    <div class="story-floating-badge" style="background: #141414; color: #ffffff; border: 1px solid rgba(245, 163, 0, 0.4);">
-                        <i class="fa fa-shield-heart" style="color: #F5A300;"></i>
+            <?php if (current_user_can('edit_pages')) : ?>
+                <!-- Admin Quick Edit Toolbar -->
+                <div class="about-admin-bar" style="background: #141414; border: 1px solid #334155; border-left: 4px solid #C5A880; border-radius: 8px; padding: 14px 20px; margin-bottom: 35px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; box-shadow: 0 4px 15px rgba(0,0,0,0.06);">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <span style="font-size: 22px;">⚙️</span>
                         <div>
-                            <strong style="color: #F5A300;">CHỮ TÂM VỚI NGHỀ</strong>
-                            <small style="color: #94a3b8;">Ôtô Hải Hà từ 1995 &bull; <?php echo esc_html($about_staff_count); ?> nhân sự tận tâm</small>
+                            <strong style="color: #C5A880; font-size: 14px; display: block; font-family: 'Be Vietnam Pro', sans-serif;">QUẢN TRỊ VIÊN: TÙY BIẾN NỘI DUNG &amp; ẢNH TRANG NÀY</strong>
+                            <span style="color: #94a3b8; font-size: 13px;">Bạn có thể viết thêm bài, chèn thêm ảnh, căn trái/phải/giữa hoặc thêm album ảnh như một dịch vụ.</span>
                         </div>
                     </div>
+                    <a href="<?php echo esc_url(get_edit_post_link()); ?>" style="background: #C5A880; color: #141414; padding: 10px 20px; border-radius: 6px; font-weight: 800; font-size: 13.5px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-family: 'Be Vietnam Pro', sans-serif; text-transform: uppercase; letter-spacing: 0.5px;">
+                        <i class="fa-solid fa-pen-to-square"></i> Mở Trình Soạn Thảo Để Sửa
+                    </a>
                 </div>
+            <?php endif; ?>
+
+            <div class="about-main-wrapper">
+                
+                <!-- Story Tag & Subheader -->
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #f1f5f9;">
+                    <span class="story-tag" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(197, 168, 128, 0.12); color: #C5A880; border: 1px solid rgba(197, 168, 128, 0.3); padding: 6px 14px; border-radius: 4px; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.8rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;">
+                        <i class="fa fa-award"></i> HÀNH TRÌNH <?php echo esc_html($about_years_exp); ?> NĂM (1995 — <?php echo date('Y'); ?>)
+                    </span>
+                    <div style="display: flex; gap: 16px; align-items: center;">
+                        <a href="tel:02203892207" style="color: #334155; text-decoration: none; font-size: 0.9rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+                            <i class="fa-solid fa-phone-volume" style="color: #C5A880;"></i> 02203 892 207
+                        </a>
+                    </div>
+                </div>
+
+                <!-- WordPress Editor Content (WYSIWYG: text, images, alignments, galleries) -->
+                <article class="about-wysiwyg-content entry-content" style="margin-bottom: 45px;">
+                    <?php 
+                    $page_content = get_the_content();
+                    if (!empty(trim($page_content))) {
+                        the_content();
+                    } else {
+                        // Fallback in case content is completely blank
+                        echo '<p class="lead">Năm 1995, nhà sáng lập ông <strong>Nguyễn Hải Hà</strong> đặt những viên gạch đầu tiên cho Ôtô Hải Hà với một niềm tin giản dị: <em>mỗi chiếc xe đều xứng đáng được chăm sóc bằng cái tâm của người thợ</em>. 31 năm đã trôi qua, niềm tin ấy vẫn là kim chỉ nam trong từng công việc chúng tôi làm mỗi ngày.</p>';
+                    }
+                    ?>
+                </article>
+
+                <!-- Social & Hotline Buttons -->
+                <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-bottom: 40px; padding: 20px 24px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;">
+                    <a href="https://www.facebook.com/profile.php?id=100069673756551" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; background: #1877f2; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: 700; text-decoration: none; box-shadow: 0 4px 14px rgba(24, 119, 242, 0.35);">
+                        <i class="fa-brands fa-facebook" style="font-size: 1.25rem;"></i>
+                        <span>Theo dõi Fanpage Ôtô Hải Hà trên Facebook &rarr;</span>
+                    </a>
+                    <a href="tel:02203892207" style="display: inline-flex; align-items: center; gap: 8px; background: #C5A880; color: #141414; padding: 12px 22px; border-radius: 6px; font-size: 0.95rem; font-weight: 800; text-decoration: none;">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <span>Tư vấn kỹ thuật: 02203 892 207</span>
+                    </a>
+                </div>
+
+                <!-- Highlights Row (Key Statistics) -->
+                <div class="about-highlights-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; background: #141414; border: 1px solid rgba(197, 168, 128, 0.3); border-radius: 8px; padding: 28px 24px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+                    <div class="hl-item">
+                        <strong style="display: block; font-size: 2.2rem; color: #C5A880; font-weight: 800; font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.2;"><?php echo esc_html($about_years_exp); ?></strong>
+                        <span style="font-size: 0.88rem; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Năm đồng hành (1995-<?php echo date('Y'); ?>)</span>
+                    </div>
+                    <div class="hl-item" style="border-left: 1px solid rgba(255,255,255,0.12);">
+                        <strong style="display: block; font-size: 2.2rem; color: #C5A880; font-weight: 800; font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.2;"><?php echo esc_html($about_staff_count); ?></strong>
+                        <span style="font-size: 0.88rem; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Nhân sự tận tâm &amp; tay nghề cao</span>
+                    </div>
+                    <div class="hl-item" style="border-left: 1px solid rgba(255,255,255,0.12);">
+                        <strong style="display: block; font-size: 2.2rem; color: #22c55e; font-weight: 800; font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.2;"><?php echo esc_html($about_parts_rate); ?></strong>
+                        <span style="font-size: 0.88rem; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Phụ tùng chính hãng &amp; bảo hành chuẩn</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -123,7 +289,7 @@ $about_parts_rate  = get_option('hieugara_about_parts_rate', '100%');
                 </div>
                 <div class="commit-card">
                     <div class="commit-num">02</div>
-                    <h4>Báo Giá Chuẩn & Không Phát Sinh</h4>
+                    <h4>Báo Giá Chuẩn &amp; Không Phát Sinh</h4>
                     <p>Khách hàng duyệt bảng kê chi tiết phụ tùng và công thợ trước khi tiến hành. Tuyệt đối không phát sinh chi phí khi chưa được đồng ý.</p>
                 </div>
                 <div class="commit-card">
@@ -144,13 +310,15 @@ $about_parts_rate  = get_option('hieugara_about_parts_rate', '100%');
             </div>
 
             <div style="text-align: center; margin-top: 48px;">
-                <a href="tel:02203892207" class="btn-carpla btn-carpla-primary" style="padding: 14px 36px; font-weight: 800; background: #D4B996; color: #141414;">
+                <a href="tel:02203892207" class="btn-carpla btn-carpla-primary" style="padding: 14px 36px; font-weight: 800; background: #C5A880; color: #141414;">
                     <i class="fa-solid fa-phone-volume"></i> <?php _e('GỌI TƯ VẤN DỊCH VỤ: 02203 892 207', 'hieugara-motors'); ?>
                 </a>
             </div>
         </div>
     </section>
     <?php endif; ?>
+
+<?php endwhile; ?>
 
 </main>
 

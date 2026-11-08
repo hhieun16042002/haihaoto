@@ -495,17 +495,17 @@ function hieugara_render_theme_settings_page() {
                             🧭 Trình Quản Lý Menu &amp; Điều Hướng Toàn Diện Đã Sẵn Sàng!
                         </h3>
                         <p style="margin: 0 0 14px 0; color: #78350F; font-size: 13.5px; line-height: 1.6;">
-                            Hệ thống đã tích hợp menu riêng <strong>"🧭 Quản Lý Menu"</strong> trên thanh menu bên trái WP-Admin. Cho phép bạn Bật/Tắt hiển thị từng nút Menu trên Header, tùy biến danh mục con cho <strong>Giới Thiệu</strong> và <strong>Liên Hệ</strong> với đầy đủ CRUD (Thêm, Sửa, Xoá, Bật/Tắt).
+                            Hệ thống đã tích hợp menu riêng <strong>"🧭 Quản Lý Menu"</strong> trên thanh menu bên trái WP-Admin. Cho phép bạn Bật/Tắt hiển thị từng nút Menu trên Header, tùy biến danh mục con cho <strong>Giới Thiệu</strong> và <strong>Liên Hệ</strong> (Thêm, Sửa, Xoá, Bật/Tắt).
                         </p>
                         <div style="display: flex; flex-wrap: wrap; gap: 10px;">
                             <a href="<?php echo esc_url(admin_url('admin.php?page=hieugara-nav-manager')); ?>" class="button button-primary" style="background: #141414; border-color: #141414; font-weight: 700;">
                                 <span class="dashicons dashicons-admin-settings" style="margin-top: 4px;"></span> <?php _e('Mở Bảng Bật/Tắt Menu Chính', 'hieugara-motors'); ?>
                             </a>
                             <a href="<?php echo esc_url(admin_url('admin.php?page=hieugara-nav-manager&tab=about')); ?>" class="button" style="font-weight: 700; color: #92400E; border-color: #FCD34D;">
-                                <span class="dashicons dashicons-list-view" style="margin-top: 4px;"></span> <?php _e('Quản Lý Menu Giới Thiệu (CRUD)', 'hieugara-motors'); ?>
+                                <span class="dashicons dashicons-list-view" style="margin-top: 4px;"></span> <?php _e('Quản Lý Menu Giới Thiệu', 'hieugara-motors'); ?>
                             </a>
                             <a href="<?php echo esc_url(admin_url('admin.php?page=hieugara-nav-manager&tab=contact')); ?>" class="button" style="font-weight: 700; color: #166534; border-color: #86EFAC;">
-                                <span class="dashicons dashicons-phone" style="margin-top: 4px;"></span> <?php _e('Quản Lý Menu Liên Hệ (CRUD)', 'hieugara-motors'); ?>
+                                <span class="dashicons dashicons-phone" style="margin-top: 4px;"></span> <?php _e('Quản Lý Menu Liên Hệ', 'hieugara-motors'); ?>
                             </a>
                             <a href="<?php echo esc_url(admin_url('admin.php?page=hieugara-nav-manager&tab=page_about')); ?>" class="button" style="font-weight: 700; color: #1E3A8A; border-color: #93C5FD;">
                                 <span class="dashicons dashicons-building" style="margin-top: 4px;"></span> <?php _e('Tùy Biến Trang Về Chúng Tôi', 'hieugara-motors'); ?>

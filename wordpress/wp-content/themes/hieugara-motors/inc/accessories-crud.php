@@ -27,8 +27,8 @@ function hieugara_register_accessories_admin_menu() {
     // Submenu under Cài Đặt Giao Diện
     add_submenu_page(
         'hieugara-theme-settings',
-        'Quản Lý Phụ Kiện Ôtô (META.vn)',
-        '🛍️ Phụ Kiện Ôtô (CRUD)',
+        'Quản Lý Phụ Kiện Ôtô',
+        '🛍️ Phụ Kiện Ôtô',
         'manage_options',
         'hieugara-accessories-crud',
         'hieugara_render_accessories_crud_page'
@@ -479,7 +479,7 @@ function hieugara_render_accessories_crud_page() {
         <!-- HERO HEADER -->
         <div class="acc-hero">
             <div>
-                <h1><span>🛍️</span> QUẢN LÝ PHỤ KIỆN ÔTÔ (CRUD)</h1>
+                <h1><span>🛍️</span> QUẢN LÝ PHỤ KIỆN ÔTÔ</h1>
                 <p>Quản lý toàn bộ danh mục sản phẩm hiển thị tại mục <strong>Phụ Kiện Ôtô Chính Hãng</strong> trên trang chủ. Dữ liệu chuẩn lấy cảm hứng từ <a href="https://meta.vn/phu-kien-oto/" target="_blank" rel="noopener" class="meta-link">META.vn/phu-kien-oto ↗</a></p>
             </div>
             <div class="acc-top-actions">

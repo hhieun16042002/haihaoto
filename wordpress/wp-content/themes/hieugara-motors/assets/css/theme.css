@@ -4159,12 +4159,81 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     color: #141414;
 }
 
-/* 2x2 Contact Chips Grid */
+/* 2x2 Contact Chips Grid (Legacy fallback) */
 .footer-contact-chips {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     margin-bottom: 14px;
+}
+
+/* ==========================================================================
+   UNIFIED SINGLE-BOX FOOTER CONTACT (Chỉ hiển thị SĐT, màu đen)
+   ========================================================================== */
+.footer-contact-unified-box {
+    background: #ffffff;
+    border: 1px solid #dcdfe4;
+    border-radius: 12px;
+    padding: 10px 12px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.footer-contact-unified-box .contact-box-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.footer-contact-unified-box .contact-box-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #141414 !important;
+    background: transparent;
+    transition: background-color 0.18s ease;
+}
+
+.footer-contact-unified-box .contact-box-line:hover {
+    background: #f1f5f9;
+}
+
+.footer-contact-unified-box .contact-box-line i {
+    color: #141414 !important;
+    font-size: 0.88rem;
+    width: 18px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.footer-contact-unified-box .contact-box-line span {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: #141414 !important;
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+}
+
+.footer-contact-unified-box .contact-box-line:hover span,
+.footer-contact-unified-box .contact-box-line:hover i {
+    color: #000000 !important;
+}
+
+@media (max-width: 480px) {
+    .footer-contact-unified-box {
+        padding: 8px 10px;
+    }
+    .footer-contact-unified-box .contact-box-line {
+        padding: 7px 8px;
+        gap: 8px;
+    }
+    .footer-contact-unified-box .contact-box-line span {
+        font-size: 0.92rem;
+    }
 }
 
 .contact-chip {
@@ -4269,6 +4338,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     gap: 10px;
 }
 
+.footer-zalo-pill,
 .footer-fb-pill,
 .footer-mail-pill {
     display: inline-flex;
@@ -4281,6 +4351,19 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     font-weight: 600;
     text-decoration: none;
     transition: all 0.2s ease;
+}
+
+.footer-zalo-pill {
+    background: #0068FF;
+    color: #ffffff;
+    box-shadow: 0 3px 10px rgba(0, 104, 255, 0.22);
+}
+
+.footer-zalo-pill:hover {
+    background: #0052cc;
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 14px rgba(0, 104, 255, 0.32);
 }
 
 .footer-fb-pill {
@@ -9793,36 +9876,62 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     }
 }
 
-/* Mobile Top Bar (< 992px): Obsidian #141414 with #C5A880 accent & #D92D20 Rescue Call */
+/* Mobile Top Bar (< 992px): Obsidian #141414 at top -> Luxury Beige #F4ECE1 on Scroll */
 @media (max-width: 991px) {
     .mobile-only-brand-header {
         display: block !important;
-        background: rgba(15, 17, 20, 0.94) !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        z-index: 9990 !important;
+        background: rgba(15, 17, 20, 0.95) !important;
         backdrop-filter: blur(14px) !important;
         -webkit-backdrop-filter: blur(14px) !important;
         border-bottom: 1px solid rgba(201, 163, 129, 0.16) !important;
         padding: 9px 0 !important;
         transition: background 300ms cubic-bezier(0.16, 1, 0.3, 1), border-color 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
+    body {
+        padding-top: 64px !important;
+    }
+    body.admin-bar .mobile-only-brand-header {
+        top: 46px !important;
+    }
+    body.admin-bar {
+        padding-top: 110px !important;
+    }
+    @media (max-width: 600px) {
+        body.admin-bar #wpadminbar {
+            position: fixed !important;
+            top: 0 !important;
+        }
+    }
+
+    /* Khi lướt xuống trên điện thoại: chuyển thành màu be sang trọng (Luxury Beige) */
     .mobile-only-brand-header.is-scrolled {
-        background: rgba(246, 241, 235, 0.97) !important;
+        background: rgba(244, 236, 225, 0.98) !important;
         backdrop-filter: blur(16px) !important;
         -webkit-backdrop-filter: blur(16px) !important;
-        border-bottom: 1px solid rgba(158, 122, 74, 0.28) !important;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12) !important;
+        border-bottom: 1px solid rgba(140, 98, 57, 0.28) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
     }
     .mobile-only-brand-header.is-scrolled .brand-title {
-        color: #1a1a1a !important;
+        color: #141414 !important;
     }
     .mobile-only-brand-header.is-scrolled .brand-title .text-orange {
         color: #8C6239 !important;
     }
     .mobile-only-brand-header.is-scrolled .mobile-nav-toggle {
-        background: #ECE4D8 !important;
-        border-color: rgba(158, 122, 74, 0.4) !important;
+        background: #E5DACB !important;
+        border-color: rgba(140, 98, 57, 0.4) !important;
     }
     .mobile-only-brand-header.is-scrolled .mobile-nav-toggle .hamburger-bar {
-        background: #1a1a1a !important;
+        background: #141414 !important;
+    }
+    .mobile-only-brand-header.is-scrolled .mobile-call-pulse {
+        border-color: rgba(217, 45, 32, 0.65) !important;
     }
     .mobile-only-brand-header .brand-title {
         color: #ffffff !important;

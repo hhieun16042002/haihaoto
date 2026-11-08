@@ -48,27 +48,30 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                         <h4 class="footer-col-title footer-contact-title">
                             LIÊN HỆ
                         </h4>
-                        <div class="footer-contact-chips footer-contact-3phones">
-                            <a href="tel:0911211996" class="contact-chip chip-direct-phone" title="Gọi 0911 211 996">
-                                <i class="fa-solid fa-phone"></i>
-                                <strong>0911 211 996</strong>
-                            </a>
-                            <a href="tel:0915041989" class="contact-chip chip-direct-phone" title="Gọi 0915 041 989">
-                                <i class="fa-solid fa-phone"></i>
-                                <strong>0915 041 989</strong>
-                            </a>
-                            <a href="tel:02203892207" class="contact-chip chip-direct-phone" title="Gọi 02203 892 207">
-                                <i class="fa-solid fa-phone"></i>
-                                <strong>02203 892 207</strong>
-                            </a>
-                            <a href="https://zalo.me/0911211996" target="_blank" rel="noopener" class="contact-chip chip-zalo" title="Zalo 0911 211 996">
-                                <i class="fa-solid fa-comment-dots" style="color: #0068FF !important;"></i>
-                                <strong>Zalo 0911 211 996</strong>
-                            </a>
+                        <!-- Unified Single Box for All Phone Numbers (Chỉ hiện SĐT & màu đen) -->
+                        <div class="footer-contact-unified-box">
+                            <div class="contact-box-lines">
+                                <a href="tel:0911211996" class="contact-box-line" title="Gọi 0911 211 996">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <span>0911 211 996</span>
+                                </a>
+                                <a href="tel:0915041989" class="contact-box-line" title="Gọi 0915 041 989">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <span>0915 041 989</span>
+                                </a>
+                                <a href="tel:02203892207" class="contact-box-line" title="Gọi 02203 892 207">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <span>02203 892 207</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
                     <div class="footer-social-row">
+                        <a href="https://zalo.me/0911211996" target="_blank" rel="noopener" class="footer-zalo-pill" title="Chat Zalo: 0911 211 996">
+                            <i class="fa-solid fa-comment-dots"></i>
+                            <span>Zalo: 0911 211 996</span>
+                        </a>
                         <a href="https://www.facebook.com/profile.php?id=100069673756551" target="_blank" rel="noopener" class="footer-fb-pill">
                             <i class="fa-brands fa-facebook-f"></i>
                             <span>Fanpage Ôtô Hải Hà</span>

@@ -150,8 +150,8 @@ class HieuGara_SEO_Links_Manager {
         $table = self::$table_name;
 
         $existing = $wpdb->get_row($wpdb->prepare(
-            "SELECT * FROM $table WHERE object_id = %d AND source_type = %s",
-            $post_id, $type
+            "SELECT * FROM $table WHERE (object_id = %d AND source_type = %s) OR url_path = %s LIMIT 1",
+            $post_id, $type, $url_path
         ));
 
         if ($existing) {
@@ -209,8 +209,8 @@ class HieuGara_SEO_Links_Manager {
         $table = self::$table_name;
 
         $existing = $wpdb->get_row($wpdb->prepare(
-            "SELECT * FROM $table WHERE object_id = %d AND source_type = %s",
-            $term_id, $taxonomy
+            "SELECT * FROM $table WHERE (object_id = %d AND source_type = %s) OR url_path = %s LIMIT 1",
+            $term_id, $taxonomy, $url_path
         ));
 
         if ($existing) {

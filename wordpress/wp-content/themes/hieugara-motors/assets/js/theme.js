@@ -80,14 +80,14 @@
                 }
             } else {
                 $mainNav.removeClass('is-sticky is-scrolled');
-                if (scrollPos > 24) {
+                if (scrollPos > 15) {
                     $mobileHeader.addClass('is-scrolled');
                 } else {
                     $mobileHeader.removeClass('is-scrolled');
                 }
             }
         }
-        $(window).on('scroll resize', handleNavScroll);
+        $(window).on('scroll resize touchmove passive-scroll', handleNavScroll);
         handleNavScroll();
 
         // Mobile Navigation Toggle & Drawer Controller

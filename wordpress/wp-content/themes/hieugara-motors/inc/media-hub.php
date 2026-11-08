@@ -911,7 +911,7 @@ function hieugara_render_media_hub_page() {
                         <h2><span class="dashicons dashicons-cart" style="color: #1d4ed8;"></span> Mục 2.4: Ảnh Phụ Kiện Ôtô Chính Hãng (Thanh Trượt Sản Phẩm Trang Chủ)</h2>
                         <div style="display: flex; gap: 8px;">
                             <a href="<?php echo esc_url(admin_url('admin.php?page=hieugara-accessories-crud')); ?>" class="button" style="background: #C5A880; color: #141414; font-weight: 700; border: none;">
-                                🛍️ Mở Quản Lý Phụ Kiện (Full CRUD)
+                                🛍️ Mở Quản Lý Phụ Kiện
                             </a>
                             <button type="button" class="button button-primary" id="hub-add-acc-btn" style="background: #0c1e3a; border-color: #0c1e3a;">
                                 + Thêm Phụ Kiện Mới

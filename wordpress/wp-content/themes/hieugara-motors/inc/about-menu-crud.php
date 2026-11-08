@@ -170,20 +170,20 @@ function hieugara_register_navigation_admin_menu() {
         'hieugara_render_nav_manager_page'
     );
 
-    // Submenu 2: Menu Giới Thiệu (CRUD)
+    // Submenu 2: Menu Giới Thiệu
     add_submenu_page(
         'hieugara-nav-manager',
-        __('Menu Giới Thiệu (CRUD)', 'hieugara-motors'),
+        __('Menu Giới Thiệu', 'hieugara-motors'),
         __('📋 Menu Giới Thiệu', 'hieugara-motors'),
         'manage_options',
         'hieugara-about-menu-crud',
         'hieugara_render_about_menu_redirect'
     );
 
-    // Submenu 3: Menu Liên Hệ (CRUD)
+    // Submenu 3: Menu Liên Hệ
     add_submenu_page(
         'hieugara-nav-manager',
-        __('Menu Liên Hệ (CRUD)', 'hieugara-motors'),
+        __('Menu Liên Hệ', 'hieugara-motors'),
         __('📞 Menu Liên Hệ', 'hieugara-motors'),
         'manage_options',
         'hieugara-contact-menu-crud',
@@ -560,12 +560,12 @@ function hieugara_render_nav_manager_page() {
             <a href="<?php echo esc_url(admin_url('admin.php?page=hieugara-nav-manager&tab=about')); ?>" 
                class="nav-tab <?php echo $current_tab === 'about' ? 'nav-tab-active' : ''; ?>" 
                style="font-size: 14px; font-weight: 700; padding: 10px 18px;">
-                📋 Menu Giới Thiệu (CRUD: <?php echo count($about_items); ?>)
+                📋 Menu Giới Thiệu (<?php echo count($about_items); ?>)
             </a>
             <a href="<?php echo esc_url(admin_url('admin.php?page=hieugara-nav-manager&tab=contact')); ?>" 
                class="nav-tab <?php echo $current_tab === 'contact' ? 'nav-tab-active' : ''; ?>" 
                style="font-size: 14px; font-weight: 700; padding: 10px 18px;">
-                📞 Menu Liên Hệ (CRUD: <?php echo count($contact_items); ?>)
+                📞 Menu Liên Hệ (<?php echo count($contact_items); ?>)
             </a>
             <a href="<?php echo esc_url(admin_url('admin.php?page=hieugara-nav-manager&tab=page_about')); ?>" 
                class="nav-tab <?php echo $current_tab === 'page_about' ? 'nav-tab-active' : ''; ?>" 
@@ -788,329 +788,195 @@ function hieugara_render_nav_manager_page() {
             </div>
         <?php endif; ?>
 
-        <!-- TAB 2: MENU GIỚI THIỆU (CRUD) -->
+        <!-- TAB 2: MENU GIỚI THIỆU -->
         <?php if ($current_tab === 'about') : ?>
-            <div style="display: grid; grid-template-columns: 1fr 380px; gap: 24px; align-items: start;">
-                
-                <!-- Table List (Left) -->
-                <div style="background: #fff; border-radius: 12px; border: 1px solid #E2E8F0; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
-                        <div>
-                            <h3 style="margin: 0 0 6px 0; font-size: 18px; font-weight: 800; color: #1E293B;">
-                                📋 Danh Sách Mục Trong Dropdown "GIỚI THIỆU"
-                            </h3>
-                            <p style="margin: 0; color: #64748B; font-size: 13px;">
-                                Khách hàng hover chuột vào chữ <strong>"GIỚI THIỆU"</strong> trên menu sẽ thấy các mục này.
-                            </p>
-                        </div>
+            <div style="background: #fff; border-radius: 12px; border: 1px solid #E2E8F0; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+                    <div>
+                        <h3 style="margin: 0; font-size: 18px; font-weight: 800; color: #1E293B;">
+                            📋 Danh Sách Mục Trong Menu "GIỚI THIỆU"
+                        </h3>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <button type="button" class="button button-primary" onclick="hieugaraOpenAboutModal(null);" style="background: #10B981; border-color: #059669; font-weight: 700; border-radius: 6px; padding: 6px 16px; height: auto; box-shadow: 0 2px 6px rgba(16,185,129,0.25);">
+                            ➕ Thêm Mục Giới Thiệu Mới
+                        </button>
                         <a href="<?php echo esc_url(wp_nonce_url(add_query_arg(array('page' => 'hieugara-nav-manager', 'tab' => 'about', 'hieugara_nav_action' => 'reset_about_defaults'), admin_url('admin.php')), 'hieugara_about_reset_nonce')); ?>" 
                            class="button" 
                            onclick="return confirm('Bạn có chắc muốn khôi phục danh sách mục Giới Thiệu về mặc định?');"
-                           style="color: #64748B; font-size: 12px; border-radius: 6px;">
+                           style="color: #64748B; font-size: 12px; border-radius: 6px; padding: 6px 12px; height: auto;">
                             🔄 Khôi phục mặc định
                         </a>
                     </div>
+                </div>
 
-                    <table class="wp-list-table widefat fixed striped" style="border: 1px solid #E2E8F0; border-radius: 8px; overflow: hidden;">
-                        <thead>
-                            <tr style="background: #F8FAFC; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px;">
-                                <th style="width: 50px; text-align: center; font-weight: 700;">STT</th>
-                                <th style="font-weight: 700;">Tiêu Đề Mục</th>
-                                <th style="font-weight: 700;">Liên Kết (URL)</th>
-                                <th style="width: 100px; text-align: center; font-weight: 700;">Trạng Thái</th>
-                                <th style="width: 150px; text-align: right; font-weight: 700;">Thao Tác</th>
+                <table class="wp-list-table widefat fixed striped" style="border: 1px solid #E2E8F0; border-radius: 8px; overflow: hidden; width: 100%;">
+                    <thead>
+                        <tr style="background: #F8FAFC; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px;">
+                            <th style="width: 50px; text-align: center; font-weight: 700;">STT</th>
+                            <th style="width: 260px; font-weight: 700;">Tiêu Đề Mục</th>
+                            <th style="font-weight: 700;">Liên Kết (URL)</th>
+                            <th style="width: 100px; text-align: center; font-weight: 700;">Trạng Thái</th>
+                            <th style="width: 200px; text-align: center; font-weight: 700;">Thao Tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if (empty($about_items)) : ?>
+                            <tr>
+                                <td colspan="5" style="text-align: center; padding: 35px; color: #94A3B8;">
+                                    Chưa có mục nào trong menu Giới Thiệu. Bấm nút <strong>"➕ Thêm Mục Giới Thiệu Mới"</strong> ở trên để thêm!
+                                </td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <?php if (empty($about_items)) : ?>
+                        <?php else : ?>
+                            <?php foreach ($about_items as $it_id => $it) : 
+                                $is_active = !empty($it['enable']);
+                            ?>
                                 <tr>
-                                    <td colspan="5" style="text-align: center; padding: 30px; color: #94A3B8;">
-                                        Chưa có mục nào trong menu Giới Thiệu. Hãy thêm mục mới ở form bên phải!
+                                    <td style="text-align: center; font-weight: 700; color: #64748B;">
+                                        <?php echo esc_html($it['order'] ?? 1); ?>
+                                    </td>
+                                    <td>
+                                        <strong style="color: #0F172A; font-size: 14px;"><?php echo esc_html($it['title']); ?></strong>
+                                        <?php if (!empty($it['icon'])) : ?>
+                                            <br><small style="color: #64748B; font-size: 11.5px;"><i class="<?php echo esc_attr($it['icon']); ?>"></i> <code><?php echo esc_html($it['icon']); ?></code></small>
+                                        <?php endif; ?>
+                                    </td>
+                                    <td>
+                                        <a href="<?php echo esc_url($it['link']); ?>" target="_blank" style="color: #2563EB; font-size: 13px; text-decoration: none; word-break: break-all;">
+                                            <?php echo esc_html($it['link']); ?>
+                                        </a>
+                                        <?php if (($it['target'] ?? '_self') === '_blank') : ?>
+                                            <span style="font-size: 10px; background: #E0E7FF; color: #3730A3; padding: 2px 6px; border-radius: 4px; margin-left: 6px;">Tab mới</span>
+                                        <?php endif; ?>
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <?php if ($is_active) : ?>
+                                            <span style="background: #DEF7EC; color: #03543F; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 9999px;">Hiển Thị</span>
+                                        <?php else : ?>
+                                            <span style="background: #F3F4F6; color: #6B7280; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 9999px;">Đã Ẩn</span>
+                                        <?php endif; ?>
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <button type="button" class="button button-small" 
+                                           onclick='hieugaraOpenAboutModal(<?php echo json_encode($it); ?>);'
+                                           style="font-size: 12px; font-weight: 700; border-radius: 5px; color: #1D4ED8; border-color: #93C5FD; background: #EFF6FF; margin-right: 4px;">
+                                            ✏️ Sửa
+                                        </button>
+
+                                        <?php if (strpos($it['link'] ?? '', 've-chung-toi') !== false || $it_id === 'item_about_us') : ?>
+                                            <a href="<?php echo esc_url(admin_url('post.php?post=88&action=edit')); ?>" class="button button-small" style="font-size: 11px; font-weight: 700; border-radius: 5px; color: #92400E; border-color: #FCD34D; background: #FEF3C7; margin-right: 4px;" title="Soạn thảo nội dung và hình ảnh bài viết">
+                                                📝 Sửa bài &amp; ảnh
+                                            </a>
+                                        <?php endif; ?>
+                                        
+                                        <a href="<?php echo esc_url(wp_nonce_url(add_query_arg(array('page' => 'hieugara-nav-manager', 'tab' => 'about', 'hieugara_nav_action' => 'toggle_about_item', 'item_id' => $it_id), admin_url('admin.php')), 'hieugara_about_toggle_nonce')); ?>" 
+                                           class="button button-small" style="font-size: 12px; border-radius: 5px; margin-right: 4px;" title="Bật/Tắt hiển thị">
+                                            <?php echo $is_active ? 'Ẩn' : 'Bật'; ?>
+                                        </a>
+
+                                        <a href="<?php echo esc_url(wp_nonce_url(add_query_arg(array('page' => 'hieugara-nav-manager', 'tab' => 'about', 'hieugara_nav_action' => 'delete_about_item', 'item_id' => $it_id), admin_url('admin.php')), 'hieugara_about_del_nonce')); ?>" 
+                                           class="button button-small" 
+                                           onclick="return confirm('Bạn có chắc chắn muốn xóa mục: <?php echo esc_attr($it['title']); ?>?');"
+                                           style="font-size: 12px; color: #DC2626; border-radius: 5px; border-color: #FCA5A5;">Xóa</a>
                                     </td>
                                 </tr>
-                            <?php else : ?>
-                                <?php foreach ($about_items as $it_id => $it) : 
-                                    $is_active = !empty($it['enable']);
-                                ?>
-                                    <tr>
-                                        <td style="text-align: center; font-weight: 700; color: #64748B;">
-                                            <?php echo esc_html($it['order'] ?? 1); ?>
-                                        </td>
-                                        <td>
-                                            <strong style="color: #0F172A; font-size: 13.5px;"><?php echo esc_html($it['title']); ?></strong>
-                                            <?php if (!empty($it['icon'])) : ?>
-                                                <br><small style="color: #94A3B8;"><i class="<?php echo esc_attr($it['icon']); ?>"></i> <code><?php echo esc_html($it['icon']); ?></code></small>
-                                            <?php endif; ?>
-                                        </td>
-                                        <td>
-                                            <a href="<?php echo esc_url($it['link']); ?>" target="_blank" style="color: #2563EB; font-size: 12.5px; text-decoration: none; word-break: break-all;">
-                                                <?php echo esc_html($it['link']); ?>
-                                            </a>
-                                        </td>
-                                        <td style="text-align: center;">
-                                            <?php if ($is_active) : ?>
-                                                <span style="background: #DEF7EC; color: #03543F; font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 9999px;">Hiển Thị</span>
-                                            <?php else : ?>
-                                                <span style="background: #F3F4F6; color: #6B7280; font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 9999px;">Đã Ẩn</span>
-                                            <?php endif; ?>
-                                        </td>
-                                        <td style="text-align: right;">
-                                            <a href="<?php echo esc_url(add_query_arg(array('page' => 'hieugara-nav-manager', 'tab' => 'about', 'action' => 'edit', 'item_id' => $it_id), admin_url('admin.php'))); ?>" 
-                                               class="button button-small" style="font-size: 12px; border-radius: 4px;">Sửa</a>
-                                            
-                                            <a href="<?php echo esc_url(wp_nonce_url(add_query_arg(array('page' => 'hieugara-nav-manager', 'tab' => 'about', 'hieugara_nav_action' => 'toggle_about_item', 'item_id' => $it_id), admin_url('admin.php')), 'hieugara_about_toggle_nonce')); ?>" 
-                                               class="button button-small" style="font-size: 12px; border-radius: 4px;" title="Bật/Tắt hiển thị">
-                                                <?php echo $is_active ? 'Ẩn' : 'Bật'; ?>
-                                            </a>
-
-                                            <a href="<?php echo esc_url(wp_nonce_url(add_query_arg(array('page' => 'hieugara-nav-manager', 'tab' => 'about', 'hieugara_nav_action' => 'delete_about_item', 'item_id' => $it_id), admin_url('admin.php')), 'hieugara_about_del_nonce')); ?>" 
-                                               class="button button-small" 
-                                               onclick="return confirm('Bạn có chắc chắn muốn xóa mục: <?php echo esc_attr($it['title']); ?>?');"
-                                               style="font-size: 12px; color: #DC2626; border-radius: 4px;">Xóa</a>
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            <?php endif; ?>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Form Add/Edit (Right) -->
-                <div style="background: #fff; border-radius: 12px; border: 1px solid #E2E8F0; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-                    <h3 style="margin-top: 0; font-size: 16px; font-weight: 800; color: #1E293B; padding-bottom: 12px; border-bottom: 1px solid #E2E8F0;">
-                        <?php echo $edit_about_item ? '✏️ Chỉnh Sửa Mục Giới Thiệu' : '➕ Thêm Mục Giới Thiệu Mới'; ?>
-                    </h3>
-
-                    <form method="POST" action="<?php echo esc_url(admin_url('admin.php?page=hieugara-nav-manager&tab=about')); ?>">
-                        <?php wp_nonce_field('hieugara_about_item_nonce'); ?>
-                        <input type="hidden" name="hieugara_nav_action" value="save_about_item">
-                        <input type="hidden" name="current_tab" value="about">
-                        <?php if ($edit_about_item) : ?>
-                            <input type="hidden" name="item_id" value="<?php echo esc_attr($edit_about_item['id']); ?>">
+                            <?php endforeach; ?>
                         <?php endif; ?>
-
-                        <div style="margin-bottom: 16px;">
-                            <label style="display: block; font-weight: 700; font-size: 13px; color: #334155; margin-bottom: 6px;">
-                                Tiêu đề hiển thị <span style="color: #DC2626;">*</span>
-                            </label>
-                            <input type="text" name="title" required value="<?php echo esc_attr($edit_about_item['title'] ?? ''); ?>" placeholder="VD: Về Chúng Tôi, Đội Ngũ Kỹ Sư..." style="width: 100%; border-radius: 6px; padding: 8px 12px;">
-                        </div>
-
-                        <div style="margin-bottom: 16px;">
-                            <label style="display: block; font-weight: 700; font-size: 13px; color: #334155; margin-bottom: 6px;">
-                                Đường dẫn liên kết (URL) <span style="color: #DC2626;">*</span>
-                            </label>
-                            <input type="text" name="link" required value="<?php echo esc_attr($edit_about_item['link'] ?? ''); ?>" placeholder="VD: /ve-chung-toi/ hoặc https://..." style="width: 100%; border-radius: 6px; padding: 8px 12px;">
-                            <small style="color: #64748B; font-size: 11px;">Có thể điền link trang nội bộ hoặc link neo hashtag (#su-kien).</small>
-                        </div>
-
-                        <div style="margin-bottom: 16px;">
-                            <label style="display: block; font-weight: 700; font-size: 13px; color: #334155; margin-bottom: 6px;">
-                                Icon FontAwesome (Tùy chọn)
-                            </label>
-                            <input type="text" name="icon" value="<?php echo esc_attr($edit_about_item['icon'] ?? 'fa-solid fa-angle-right'); ?>" placeholder="VD: fa-solid fa-building" style="width: 100%; border-radius: 6px; padding: 8px 12px;">
-                        </div>
-
-                        <div style="margin-bottom: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                            <div>
-                                <label style="display: block; font-weight: 700; font-size: 13px; color: #334155; margin-bottom: 6px;">
-                                    Thứ tự ưu tiên
-                                </label>
-                                <input type="number" name="order" value="<?php echo esc_attr($edit_about_item['order'] ?? (count($about_items) + 1)); ?>" min="1" max="99" style="width: 100%; border-radius: 6px; padding: 8px 12px;">
-                            </div>
-                            <div>
-                                <label style="display: block; font-weight: 700; font-size: 13px; color: #334155; margin-bottom: 6px;">
-                                    Cửa sổ mở link
-                                </label>
-                                <select name="target" style="width: 100%; border-radius: 6px; height: 38px;">
-                                    <option value="_self" <?php selected($edit_about_item['target'] ?? '_self', '_self'); ?>>Cùng tab (_self)</option>
-                                    <option value="_blank" <?php selected($edit_about_item['target'] ?? '_self', '_blank'); ?>>Tab mới (_blank)</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div style="margin-bottom: 22px;">
-                            <label style="display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 13px; color: #334155; cursor: pointer;">
-                                <input type="checkbox" name="enable" value="1" <?php checked($edit_about_item['enable'] ?? '1', '1'); ?>>
-                                <span>Kích hoạt hiển thị trong Dropdown</span>
-                            </label>
-                        </div>
-
-                        <div style="display: flex; gap: 10px;">
-                            <button type="submit" class="button button-primary" style="background: #141414; border-color: #141414; font-weight: 700; padding: 8px 20px; height: auto; border-radius: 6px;">
-                                <?php echo $edit_about_item ? 'Cập Nhật Mục' : 'Thêm Vào Menu'; ?>
-                            </button>
-
-                            <?php if ($edit_about_item) : ?>
-                                <a href="<?php echo esc_url(admin_url('admin.php?page=hieugara-nav-manager&tab=about')); ?>" class="button" style="border-radius: 6px;">Hủy</a>
-                            <?php endif; ?>
-                        </div>
-                    </form>
-                </div>
-
+                    </tbody>
+                </table>
             </div>
         <?php endif; ?>
 
-        <!-- TAB 3: MENU LIÊN HỆ (CRUD) -->
+        <!-- TAB 3: MENU LIÊN HỆ -->
         <?php if ($current_tab === 'contact') : ?>
-            <div style="display: grid; grid-template-columns: 1fr 380px; gap: 24px; align-items: start;">
-                
-                <!-- Table List (Left) -->
-                <div style="background: #fff; border-radius: 12px; border: 1px solid #E2E8F0; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
-                        <div>
-                            <h3 style="margin: 0 0 6px 0; font-size: 18px; font-weight: 800; color: #1E293B;">
-                                📞 Danh Sách Mục Trong Dropdown "LIÊN HỆ"
-                            </h3>
-                            <p style="margin: 0; color: #64748B; font-size: 13px;">
-                                Khách hàng hover chuột vào chữ <strong>"LIÊN HỆ"</strong> trên menu sẽ thấy các mục này.
-                            </p>
-                        </div>
+            <div style="background: #fff; border-radius: 12px; border: 1px solid #E2E8F0; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+                    <div>
+                        <h3 style="margin: 0; font-size: 18px; font-weight: 800; color: #1E293B;">
+                            📞 Danh Sách Mục Trong Menu "LIÊN HỆ"
+                        </h3>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <button type="button" class="button button-primary" onclick="hieugaraOpenContactModal(null);" style="background: #10B981; border-color: #059669; font-weight: 700; border-radius: 6px; padding: 6px 16px; height: auto; box-shadow: 0 2px 6px rgba(16,185,129,0.25);">
+                            ➕ Thêm Mục Liên Hệ Mới
+                        </button>
                         <a href="<?php echo esc_url(wp_nonce_url(add_query_arg(array('page' => 'hieugara-nav-manager', 'tab' => 'contact', 'hieugara_nav_action' => 'reset_contact_defaults'), admin_url('admin.php')), 'hieugara_contact_reset_nonce')); ?>" 
                            class="button" 
                            onclick="return confirm('Bạn có chắc muốn khôi phục danh sách mục Liên Hệ về mặc định?');"
-                           style="color: #64748B; font-size: 12px; border-radius: 6px;">
+                           style="color: #64748B; font-size: 12px; border-radius: 6px; padding: 6px 12px; height: auto;">
                             🔄 Khôi phục mặc định
                         </a>
                     </div>
+                </div>
 
-                    <table class="wp-list-table widefat fixed striped" style="border: 1px solid #E2E8F0; border-radius: 8px; overflow: hidden;">
-                        <thead>
-                            <tr style="background: #F8FAFC; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px;">
-                                <th style="width: 50px; text-align: center; font-weight: 700;">STT</th>
-                                <th style="font-weight: 700;">Tiêu Đề Mục</th>
-                                <th style="font-weight: 700;">Liên Kết / Hotline</th>
-                                <th style="width: 100px; text-align: center; font-weight: 700;">Trạng Thái</th>
-                                <th style="width: 150px; text-align: right; font-weight: 700;">Thao Tác</th>
+                <table class="wp-list-table widefat fixed striped" style="border: 1px solid #E2E8F0; border-radius: 8px; overflow: hidden; width: 100%;">
+                    <thead>
+                        <tr style="background: #F8FAFC; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px;">
+                            <th style="width: 50px; text-align: center; font-weight: 700;">STT</th>
+                            <th style="width: 260px; font-weight: 700;">Tiêu Đề Mục</th>
+                            <th style="font-weight: 700;">Liên Kết / Hotline</th>
+                            <th style="width: 100px; text-align: center; font-weight: 700;">Trạng Thái</th>
+                            <th style="width: 200px; text-align: center; font-weight: 700;">Thao Tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if (empty($contact_items)) : ?>
+                            <tr>
+                                <td colspan="5" style="text-align: center; padding: 35px; color: #94A3B8;">
+                                    Chưa có mục nào trong menu Liên Hệ. Bấm nút <strong>"➕ Thêm Mục Liên Hệ Mới"</strong> ở trên để thêm!
+                                </td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <?php if (empty($contact_items)) : ?>
+                        <?php else : ?>
+                            <?php foreach ($contact_items as $it_id => $it) : 
+                                $is_active = !empty($it['enable']);
+                            ?>
                                 <tr>
-                                    <td colspan="5" style="text-align: center; padding: 30px; color: #94A3B8;">
-                                        Chưa có mục nào trong menu Liên Hệ. Hãy thêm mục mới ở form bên phải!
+                                    <td style="text-align: center; font-weight: 700; color: #64748B;">
+                                        <?php echo esc_html($it['order'] ?? 1); ?>
+                                    </td>
+                                    <td>
+                                        <strong style="color: #0F172A; font-size: 14px;"><?php echo esc_html($it['title']); ?></strong>
+                                        <?php if (!empty($it['icon'])) : ?>
+                                            <br><small style="color: #64748B; font-size: 11.5px;"><i class="<?php echo esc_attr($it['icon']); ?>"></i> <code><?php echo esc_html($it['icon']); ?></code></small>
+                                        <?php endif; ?>
+                                    </td>
+                                    <td>
+                                        <a href="<?php echo esc_url($it['link']); ?>" style="color: #2563EB; font-size: 13px; text-decoration: none; word-break: break-all;">
+                                            <?php echo esc_html($it['link']); ?>
+                                        </a>
+                                        <?php if (($it['target'] ?? '_self') === '_blank') : ?>
+                                            <span style="font-size: 10px; background: #E0E7FF; color: #3730A3; padding: 2px 6px; border-radius: 4px; margin-left: 6px;">Tab mới</span>
+                                        <?php endif; ?>
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <?php if ($is_active) : ?>
+                                            <span style="background: #DEF7EC; color: #03543F; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 9999px;">Hiển Thị</span>
+                                        <?php else : ?>
+                                            <span style="background: #F3F4F6; color: #6B7280; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 9999px;">Đã Ẩn</span>
+                                        <?php endif; ?>
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <button type="button" class="button button-small" 
+                                           onclick='hieugaraOpenContactModal(<?php echo json_encode($it); ?>);'
+                                           style="font-size: 12px; font-weight: 700; border-radius: 5px; color: #1D4ED8; border-color: #93C5FD; background: #EFF6FF; margin-right: 4px;">
+                                            ✏️ Sửa
+                                        </button>
+                                        
+                                        <a href="<?php echo esc_url(wp_nonce_url(add_query_arg(array('page' => 'hieugara-nav-manager', 'tab' => 'contact', 'hieugara_nav_action' => 'toggle_contact_item', 'item_id' => $it_id), admin_url('admin.php')), 'hieugara_contact_toggle_nonce')); ?>" 
+                                           class="button button-small" style="font-size: 12px; border-radius: 5px; margin-right: 4px;" title="Bật/Tắt hiển thị">
+                                            <?php echo $is_active ? 'Ẩn' : 'Bật'; ?>
+                                        </a>
+
+                                        <a href="<?php echo esc_url(wp_nonce_url(add_query_arg(array('page' => 'hieugara-nav-manager', 'tab' => 'contact', 'hieugara_nav_action' => 'delete_contact_item', 'item_id' => $it_id), admin_url('admin.php')), 'hieugara_contact_del_nonce')); ?>" 
+                                           class="button button-small" 
+                                           onclick="return confirm('Bạn có chắc chắn muốn xóa mục: <?php echo esc_attr($it['title']); ?>?');"
+                                           style="font-size: 12px; color: #DC2626; border-radius: 5px; border-color: #FCA5A5;">Xóa</a>
                                     </td>
                                 </tr>
-                            <?php else : ?>
-                                <?php foreach ($contact_items as $it_id => $it) : 
-                                    $is_active = !empty($it['enable']);
-                                ?>
-                                    <tr>
-                                        <td style="text-align: center; font-weight: 700; color: #64748B;">
-                                            <?php echo esc_html($it['order'] ?? 1); ?>
-                                        </td>
-                                        <td>
-                                            <strong style="color: #0F172A; font-size: 13.5px;"><?php echo esc_html($it['title']); ?></strong>
-                                            <?php if (!empty($it['icon'])) : ?>
-                                                <br><small style="color: #94A3B8;"><i class="<?php echo esc_attr($it['icon']); ?>"></i> <code><?php echo esc_html($it['icon']); ?></code></small>
-                                            <?php endif; ?>
-                                        </td>
-                                        <td>
-                                            <a href="<?php echo esc_url($it['link']); ?>" style="color: #2563EB; font-size: 12.5px; text-decoration: none; word-break: break-all;">
-                                                <?php echo esc_html($it['link']); ?>
-                                            </a>
-                                        </td>
-                                        <td style="text-align: center;">
-                                            <?php if ($is_active) : ?>
-                                                <span style="background: #DEF7EC; color: #03543F; font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 9999px;">Hiển Thị</span>
-                                            <?php else : ?>
-                                                <span style="background: #F3F4F6; color: #6B7280; font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 9999px;">Đã Ẩn</span>
-                                            <?php endif; ?>
-                                        </td>
-                                        <td style="text-align: right;">
-                                            <a href="<?php echo esc_url(add_query_arg(array('page' => 'hieugara-nav-manager', 'tab' => 'contact', 'action' => 'edit', 'item_id' => $it_id), admin_url('admin.php'))); ?>" 
-                                               class="button button-small" style="font-size: 12px; border-radius: 4px;">Sửa</a>
-                                            
-                                            <a href="<?php echo esc_url(wp_nonce_url(add_query_arg(array('page' => 'hieugara-nav-manager', 'tab' => 'contact', 'hieugara_nav_action' => 'toggle_contact_item', 'item_id' => $it_id), admin_url('admin.php')), 'hieugara_contact_toggle_nonce')); ?>" 
-                                               class="button button-small" style="font-size: 12px; border-radius: 4px;" title="Bật/Tắt hiển thị">
-                                                <?php echo $is_active ? 'Ẩn' : 'Bật'; ?>
-                                            </a>
-
-                                            <a href="<?php echo esc_url(wp_nonce_url(add_query_arg(array('page' => 'hieugara-nav-manager', 'tab' => 'contact', 'hieugara_nav_action' => 'delete_contact_item', 'item_id' => $it_id), admin_url('admin.php')), 'hieugara_contact_del_nonce')); ?>" 
-                                               class="button button-small" 
-                                               onclick="return confirm('Bạn có chắc chắn muốn xóa mục: <?php echo esc_attr($it['title']); ?>?');"
-                                               style="font-size: 12px; color: #DC2626; border-radius: 4px;">Xóa</a>
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            <?php endif; ?>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Form Add/Edit (Right) -->
-                <div style="background: #fff; border-radius: 12px; border: 1px solid #E2E8F0; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-                    <h3 style="margin-top: 0; font-size: 16px; font-weight: 800; color: #1E293B; padding-bottom: 12px; border-bottom: 1px solid #E2E8F0;">
-                        <?php echo $edit_contact_item ? '✏️ Chỉnh Sửa Mục Liên Hệ' : '➕ Thêm Mục Liên Hệ Mới'; ?>
-                    </h3>
-
-                    <form method="POST" action="<?php echo esc_url(admin_url('admin.php?page=hieugara-nav-manager&tab=contact')); ?>">
-                        <?php wp_nonce_field('hieugara_contact_item_nonce'); ?>
-                        <input type="hidden" name="hieugara_nav_action" value="save_contact_item">
-                        <input type="hidden" name="current_tab" value="contact">
-                        <?php if ($edit_contact_item) : ?>
-                            <input type="hidden" name="item_id" value="<?php echo esc_attr($edit_contact_item['id']); ?>">
+                            <?php endforeach; ?>
                         <?php endif; ?>
-
-                        <div style="margin-bottom: 16px;">
-                            <label style="display: block; font-weight: 700; font-size: 13px; color: #334155; margin-bottom: 6px;">
-                                Tiêu đề hiển thị <span style="color: #DC2626;">*</span>
-                            </label>
-                            <input type="text" name="title" required value="<?php echo esc_attr($edit_contact_item['title'] ?? ''); ?>" placeholder="VD: Hotline Tư Vấn, Cứu Hộ 24/7..." style="width: 100%; border-radius: 6px; padding: 8px 12px;">
-                        </div>
-
-                        <div style="margin-bottom: 16px;">
-                            <label style="display: block; font-weight: 700; font-size: 13px; color: #334155; margin-bottom: 6px;">
-                                Đường dẫn liên kết hoặc Số điện thoại <span style="color: #DC2626;">*</span>
-                            </label>
-                            <input type="text" name="link" required value="<?php echo esc_attr($edit_contact_item['link'] ?? ''); ?>" placeholder="VD: tel:02203892207 hoặc /ve-chung-toi/" style="width: 100%; border-radius: 6px; padding: 8px 12px;">
-                            <small style="color: #64748B; font-size: 11px;">Nếu là số điện thoại gọi trực tiếp, điền dạng: <code>tel:0911211996</code></small>
-                        </div>
-
-                        <div style="margin-bottom: 16px;">
-                            <label style="display: block; font-weight: 700; font-size: 13px; color: #334155; margin-bottom: 6px;">
-                                Icon FontAwesome (Tùy chọn)
-                            </label>
-                            <input type="text" name="icon" value="<?php echo esc_attr($edit_contact_item['icon'] ?? 'fa-solid fa-phone'); ?>" placeholder="VD: fa-solid fa-phone" style="width: 100%; border-radius: 6px; padding: 8px 12px;">
-                        </div>
-
-                        <div style="margin-bottom: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                            <div>
-                                <label style="display: block; font-weight: 700; font-size: 13px; color: #334155; margin-bottom: 6px;">
-                                    Thứ tự ưu tiên
-                                </label>
-                                <input type="number" name="order" value="<?php echo esc_attr($edit_contact_item['order'] ?? (count($contact_items) + 1)); ?>" min="1" max="99" style="width: 100%; border-radius: 6px; padding: 8px 12px;">
-                            </div>
-                            <div>
-                                <label style="display: block; font-weight: 700; font-size: 13px; color: #334155; margin-bottom: 6px;">
-                                    Cửa sổ mở link
-                                </label>
-                                <select name="target" style="width: 100%; border-radius: 6px; height: 38px;">
-                                    <option value="_self" <?php selected($edit_contact_item['target'] ?? '_self', '_self'); ?>>Cùng tab (_self)</option>
-                                    <option value="_blank" <?php selected($edit_contact_item['target'] ?? '_self', '_blank'); ?>>Tab mới (_blank)</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div style="margin-bottom: 22px;">
-                            <label style="display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 13px; color: #334155; cursor: pointer;">
-                                <input type="checkbox" name="enable" value="1" <?php checked($edit_contact_item['enable'] ?? '1', '1'); ?>>
-                                <span>Kích hoạt hiển thị trong Dropdown</span>
-                            </label>
-                        </div>
-
-                        <div style="display: flex; gap: 10px;">
-                            <button type="submit" class="button button-primary" style="background: #141414; border-color: #141414; font-weight: 700; padding: 8px 20px; height: auto; border-radius: 6px;">
-                                <?php echo $edit_contact_item ? 'Cập Nhật Mục' : 'Thêm Vào Menu'; ?>
-                            </button>
-
-                            <?php if ($edit_contact_item) : ?>
-                                <a href="<?php echo esc_url(admin_url('admin.php?page=hieugara-nav-manager&tab=contact')); ?>" class="button" style="border-radius: 6px;">Hủy</a>
-                            <?php endif; ?>
-                        </div>
-                    </form>
-                </div>
-
+                    </tbody>
+                </table>
             </div>
         <?php endif; ?>
 
@@ -1124,6 +990,21 @@ function hieugara_render_nav_manager_page() {
                     <p style="margin: 0; color: #64748B; font-size: 13px;">
                         Đường dẫn trang: <code>/ve-chung-toi/</code>. Cho phép chỉnh sửa tiêu đề chính, slogan triết lý và bật/tắt từng phân đoạn trên trang.
                     </p>
+                </div>
+
+                <!-- Callout Banner: Trình Soạn Thảo WordPress Cho Về Chúng Tôi -->
+                <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #ffffff; padding: 22px 24px; border-radius: 10px; margin-bottom: 28px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; border: 1px solid #334155; box-shadow: 0 4px 14px rgba(0,0,0,0.08);">
+                    <div style="max-width: 650px;">
+                        <h4 style="margin: 0 0 8px 0; font-size: 16px; color: #F5A300; font-weight: 800; display: flex; align-items: center; gap: 8px;">
+                            <span>📝</span> Bạn muốn thêm chữ, chèn ảnh, căn lề trái / phải / giữa như một dịch vụ?
+                        </h4>
+                        <p style="margin: 0; color: #cbd5e1; font-size: 13.5px; line-height: 1.6;">
+                            Trang <strong>Về Chúng Tôi</strong> nay đã được kết nối trực tiếp với <strong>Trình soạn thảo WordPress</strong>. Bạn có thể tự do gõ thêm câu chữ, bấm <em>"Thêm Media"</em> tải ảnh mới, đổi vị trí ảnh bất kỳ đâu, căn chữ bao quanh ảnh hoặc tạo album ảnh cực kỳ dễ dàng!
+                        </p>
+                    </div>
+                    <a href="<?php echo esc_url(admin_url('post.php?post=88&action=edit')); ?>" class="button button-primary" style="background: #F5A300; border-color: #F5A300; color: #141414; font-weight: 800; font-size: 13.5px; padding: 12px 22px; height: auto; text-decoration: none; border-radius: 6px; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(245, 163, 0, 0.35);">
+                        ✏️ Mở Trình Soạn Thảo Để Sửa Bài &amp; Ảnh Ngay &rarr;
+                    </a>
                 </div>
 
                 <form method="POST" action="<?php echo esc_url(admin_url('admin.php?page=hieugara-nav-manager&tab=page_about')); ?>">
@@ -1195,6 +1076,284 @@ function hieugara_render_nav_manager_page() {
                 </form>
             </div>
         <?php endif; ?>
+
+        <!-- ============================================================== -->
+        <!-- POPUP MODAL: THÊM / CHỈNH SỬA MỤC GIỚI THIỆU -->
+        <!-- ============================================================== -->
+        <div id="aboutModalOverlay" style="display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(5px); z-index: 999999; align-items: center; justify-content: center; padding: 20px;" onclick="if(event.target === this) hieugaraCloseAboutModal();">
+            <div style="background: #ffffff; border-radius: 14px; width: 100%; max-width: 540px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.3); border: 1px solid #E2E8F0; overflow: hidden; animation: hieugaraFadeIn 0.2s ease-out;">
+                
+                <!-- Modal Header -->
+                <div style="background: #1E293B; color: #fff; padding: 18px 24px; display: flex; justify-content: space-between; align-items: center;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 20px;">📋</span>
+                        <h3 id="aboutModalTitle" style="margin: 0; color: #fff; font-size: 17px; font-weight: 800;">
+                            Chỉnh Sửa Mục Giới Thiệu
+                        </h3>
+                    </div>
+                    <button type="button" onclick="hieugaraCloseAboutModal();" style="background: transparent; border: none; color: #94A3B8; font-size: 24px; cursor: pointer; line-height: 1; padding: 0;" title="Đóng cửa sổ">&times;</button>
+                </div>
+
+                <!-- Modal Body Form -->
+                <form method="POST" action="<?php echo esc_url(admin_url('admin.php?page=hieugara-nav-manager&tab=about')); ?>" style="padding: 24px;">
+                    <?php wp_nonce_field('hieugara_about_item_nonce'); ?>
+                    <input type="hidden" name="hieugara_nav_action" value="save_about_item">
+                    <input type="hidden" name="current_tab" value="about">
+                    <input type="hidden" name="item_id" id="about_item_id" value="">
+
+                    <div style="margin-bottom: 16px;">
+                        <label style="display: block; font-weight: 700; font-size: 13px; color: #334155; margin-bottom: 6px;">
+                            Tiêu đề hiển thị <span style="color: #DC2626;">*</span>
+                        </label>
+                        <input type="text" name="title" id="about_title" required placeholder="VD: Về Chúng Tôi, Đội Ngũ Kỹ Sư..." style="width: 100%; border-radius: 6px; padding: 10px 12px; font-size: 14px; font-weight: 600; border: 1px solid #CBD5E1;">
+                    </div>
+
+                    <div style="margin-bottom: 16px;">
+                        <label style="display: block; font-weight: 700; font-size: 13px; color: #334155; margin-bottom: 6px;">
+                            Đường dẫn liên kết (URL) <span style="color: #DC2626;">*</span>
+                        </label>
+                        <input type="text" name="link" id="about_link" required placeholder="VD: /ve-chung-toi/ hoặc https://..." style="width: 100%; border-radius: 6px; padding: 10px 12px; font-size: 13.5px; border: 1px solid #CBD5E1;">
+                        <small style="color: #64748B; font-size: 11px;">Có thể điền link nội bộ (<code>/ve-chung-toi/</code>) hoặc link neo (<code>/ve-chung-toi/#su-kien</code>).</small>
+                    </div>
+
+                    <div style="margin-bottom: 16px;">
+                        <label style="display: block; font-weight: 700; font-size: 13px; color: #334155; margin-bottom: 6px;">
+                            Icon FontAwesome (Tùy chọn)
+                        </label>
+                        <input type="text" name="icon" id="about_icon" placeholder="VD: fa-solid fa-building" style="width: 100%; border-radius: 6px; padding: 8px 12px; font-size: 13px; border: 1px solid #CBD5E1;">
+                        <small style="color: #64748B; font-size: 11px;">VD: <code>fa-solid fa-building</code>, <code>fa-solid fa-bullhorn</code>, <code>fa-solid fa-certificate</code></small>
+                    </div>
+
+                    <div style="margin-bottom: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                        <div>
+                            <label style="display: block; font-weight: 700; font-size: 13px; color: #334155; margin-bottom: 6px;">
+                                Thứ tự hiển thị
+                            </label>
+                            <input type="number" name="order" id="about_order" value="1" min="1" max="99" style="width: 100%; border-radius: 6px; padding: 8px 12px; border: 1px solid #CBD5E1;">
+                        </div>
+                        <div>
+                            <label style="display: block; font-weight: 700; font-size: 13px; color: #334155; margin-bottom: 6px;">
+                                Mở cửa sổ
+                            </label>
+                            <select name="target" id="about_target" style="width: 100%; border-radius: 6px; height: 38px; border: 1px solid #CBD5E1;">
+                                <option value="_self">Cùng trang (_self)</option>
+                                <option value="_blank">Tab mới (_blank)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 24px; background: #F8FAFC; padding: 12px 14px; border-radius: 8px; border: 1px solid #E2E8F0;">
+                        <label style="display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 13.5px; color: #1E293B; cursor: pointer;">
+                            <input type="checkbox" name="enable" id="about_enable" value="1" checked style="width: 18px; height: 18px;">
+                            <span>Kích hoạt hiển thị trong Dropdown Giới Thiệu</span>
+                        </label>
+                    </div>
+
+                    <div style="display: flex; justify-content: flex-end; gap: 12px; border-top: 1px solid #E2E8F0; padding-top: 18px;">
+                        <button type="button" onclick="hieugaraCloseAboutModal();" class="button" style="padding: 8px 18px; height: auto; border-radius: 6px; font-weight: 600;">
+                            Hủy Bỏ
+                        </button>
+                        <button type="submit" id="aboutModalSubmitBtn" class="button button-primary" style="background: #10B981; border-color: #059669; font-weight: 700; padding: 8px 24px; height: auto; border-radius: 6px; box-shadow: 0 2px 6px rgba(16,185,129,0.3);">
+                            💾 Lưu Thay Đổi
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- POPUP MODAL: THÊM / CHỈNH SỬA MỤC LIÊN HỆ -->
+        <!-- ============================================================== -->
+        <div id="contactModalOverlay" style="display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(5px); z-index: 999999; align-items: center; justify-content: center; padding: 20px;" onclick="if(event.target === this) hieugaraCloseContactModal();">
+            <div style="background: #ffffff; border-radius: 14px; width: 100%; max-width: 540px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.3); border: 1px solid #E2E8F0; overflow: hidden; animation: hieugaraFadeIn 0.2s ease-out;">
+                
+                <!-- Modal Header -->
+                <div style="background: #1E293B; color: #fff; padding: 18px 24px; display: flex; justify-content: space-between; align-items: center;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 20px;">📞</span>
+                        <h3 id="contactModalTitle" style="margin: 0; color: #fff; font-size: 17px; font-weight: 800;">
+                            Chỉnh Sửa Mục Liên Hệ
+                        </h3>
+                    </div>
+                    <button type="button" onclick="hieugaraCloseContactModal();" style="background: transparent; border: none; color: #94A3B8; font-size: 24px; cursor: pointer; line-height: 1; padding: 0;" title="Đóng cửa sổ">&times;</button>
+                </div>
+
+                <!-- Modal Body Form -->
+                <form method="POST" action="<?php echo esc_url(admin_url('admin.php?page=hieugara-nav-manager&tab=contact')); ?>" style="padding: 24px;">
+                    <?php wp_nonce_field('hieugara_contact_item_nonce'); ?>
+                    <input type="hidden" name="hieugara_nav_action" value="save_contact_item">
+                    <input type="hidden" name="current_tab" value="contact">
+                    <input type="hidden" name="item_id" id="contact_item_id" value="">
+
+                    <div style="margin-bottom: 16px;">
+                        <label style="display: block; font-weight: 700; font-size: 13px; color: #334155; margin-bottom: 6px;">
+                            Tiêu đề hiển thị <span style="color: #DC2626;">*</span>
+                        </label>
+                        <input type="text" name="title" id="contact_title" required placeholder="VD: Hotline Tư Vấn, Cứu Hộ 24/7..." style="width: 100%; border-radius: 6px; padding: 10px 12px; font-size: 14px; font-weight: 600; border: 1px solid #CBD5E1;">
+                    </div>
+
+                    <div style="margin-bottom: 16px;">
+                        <label style="display: block; font-weight: 700; font-size: 13px; color: #334155; margin-bottom: 6px;">
+                            Đường dẫn liên kết hoặc Số điện thoại <span style="color: #DC2626;">*</span>
+                        </label>
+                        <input type="text" name="link" id="contact_link" required placeholder="VD: tel:02203892207 hoặc /ve-chung-toi/" style="width: 100%; border-radius: 6px; padding: 10px 12px; font-size: 13.5px; border: 1px solid #CBD5E1;">
+                        <small style="color: #64748B; font-size: 11px;">Số điện thoại gọi trực tiếp: <code>tel:0911211996</code> hoặc link nội bộ: <code>/ve-chung-toi/</code></small>
+                    </div>
+
+                    <div style="margin-bottom: 16px;">
+                        <label style="display: block; font-weight: 700; font-size: 13px; color: #334155; margin-bottom: 6px;">
+                            Icon FontAwesome (Tùy chọn)
+                        </label>
+                        <input type="text" name="icon" id="contact_icon" placeholder="VD: fa-solid fa-phone" style="width: 100%; border-radius: 6px; padding: 8px 12px; font-size: 13px; border: 1px solid #CBD5E1;">
+                    </div>
+
+                    <div style="margin-bottom: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                        <div>
+                            <label style="display: block; font-weight: 700; font-size: 13px; color: #334155; margin-bottom: 6px;">
+                                Thứ tự hiển thị
+                            </label>
+                            <input type="number" name="order" id="contact_order" value="1" min="1" max="99" style="width: 100%; border-radius: 6px; padding: 8px 12px; border: 1px solid #CBD5E1;">
+                        </div>
+                        <div>
+                            <label style="display: block; font-weight: 700; font-size: 13px; color: #334155; margin-bottom: 6px;">
+                                Mở cửa sổ
+                            </label>
+                            <select name="target" id="contact_target" style="width: 100%; border-radius: 6px; height: 38px; border: 1px solid #CBD5E1;">
+                                <option value="_self">Cùng trang (_self)</option>
+                                <option value="_blank">Tab mới (_blank)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 24px; background: #F8FAFC; padding: 12px 14px; border-radius: 8px; border: 1px solid #E2E8F0;">
+                        <label style="display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 13.5px; color: #1E293B; cursor: pointer;">
+                            <input type="checkbox" name="enable" id="contact_enable" value="1" checked style="width: 18px; height: 18px;">
+                            <span>Kích hoạt hiển thị trong Dropdown Liên Hệ</span>
+                        </label>
+                    </div>
+
+                    <div style="display: flex; justify-content: flex-end; gap: 12px; border-top: 1px solid #E2E8F0; padding-top: 18px;">
+                        <button type="button" onclick="hieugaraCloseContactModal();" class="button" style="padding: 8px 18px; height: auto; border-radius: 6px; font-weight: 600;">
+                            Hủy Bỏ
+                        </button>
+                        <button type="submit" id="contactModalSubmitBtn" class="button button-primary" style="background: #10B981; border-color: #059669; font-weight: 700; padding: 8px 24px; height: auto; border-radius: 6px; box-shadow: 0 2px 6px rgba(16,185,129,0.3);">
+                            💾 Lưu Thay Đổi
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- JAVASCRIPT ĐIỀU KHIỂN MODAL POPUP -->
+        <!-- ============================================================== -->
+        <script>
+        function hieugaraOpenAboutModal(item) {
+            var overlay = document.getElementById('aboutModalOverlay');
+            var titleEl = document.getElementById('aboutModalTitle');
+            var submitBtn = document.getElementById('aboutModalSubmitBtn');
+
+            if (item) {
+                titleEl.innerHTML = '✏️ Chỉnh Sửa Mục: <span style="color: #FCD34D;">' + (item.title || '') + '</span>';
+                submitBtn.innerHTML = '💾 Cập Nhật Mục';
+                document.getElementById('about_item_id').value = item.id || '';
+                document.getElementById('about_title').value = item.title || '';
+                document.getElementById('about_link').value = item.link || '';
+                document.getElementById('about_icon').value = item.icon || 'fa-solid fa-angle-right';
+                document.getElementById('about_order').value = item.order || 1;
+                document.getElementById('about_target').value = item.target || '_self';
+                document.getElementById('about_enable').checked = (item.enable === '1' || item.enable === 1);
+            } else {
+                titleEl.innerHTML = '➕ Thêm Mục Giới Thiệu Mới';
+                submitBtn.innerHTML = '➕ Thêm Vào Menu';
+                document.getElementById('about_item_id').value = '';
+                document.getElementById('about_title').value = '';
+                document.getElementById('about_link').value = '';
+                document.getElementById('about_icon').value = 'fa-solid fa-angle-right';
+                document.getElementById('about_order').value = '<?php echo count($about_items) + 1; ?>';
+                document.getElementById('about_target').value = '_self';
+                document.getElementById('about_enable').checked = true;
+            }
+
+            overlay.style.display = 'flex';
+            setTimeout(function() {
+                document.getElementById('about_title').focus();
+            }, 50);
+        }
+
+        function hieugaraCloseAboutModal() {
+            var overlay = document.getElementById('aboutModalOverlay');
+            if (overlay) overlay.style.display = 'none';
+        }
+
+        function hieugaraOpenContactModal(item) {
+            var overlay = document.getElementById('contactModalOverlay');
+            var titleEl = document.getElementById('contactModalTitle');
+            var submitBtn = document.getElementById('contactModalSubmitBtn');
+
+            if (item) {
+                titleEl.innerHTML = '✏️ Chỉnh Sửa Mục: <span style="color: #FCD34D;">' + (item.title || '') + '</span>';
+                submitBtn.innerHTML = '💾 Cập Nhật Mục';
+                document.getElementById('contact_item_id').value = item.id || '';
+                document.getElementById('contact_title').value = item.title || '';
+                document.getElementById('contact_link').value = item.link || '';
+                document.getElementById('contact_icon').value = item.icon || 'fa-solid fa-phone';
+                document.getElementById('contact_order').value = item.order || 1;
+                document.getElementById('contact_target').value = item.target || '_self';
+                document.getElementById('contact_enable').checked = (item.enable === '1' || item.enable === 1);
+            } else {
+                titleEl.innerHTML = '➕ Thêm Mục Liên Hệ Mới';
+                submitBtn.innerHTML = '➕ Thêm Vào Menu';
+                document.getElementById('contact_item_id').value = '';
+                document.getElementById('contact_title').value = '';
+                document.getElementById('contact_link').value = '';
+                document.getElementById('contact_icon').value = 'fa-solid fa-phone';
+                document.getElementById('contact_order').value = '<?php echo count($contact_items) + 1; ?>';
+                document.getElementById('contact_target').value = '_self';
+                document.getElementById('contact_enable').checked = true;
+            }
+
+            overlay.style.display = 'flex';
+            setTimeout(function() {
+                document.getElementById('contact_title').focus();
+            }, 50);
+        }
+
+        function hieugaraCloseContactModal() {
+            var overlay = document.getElementById('contactModalOverlay');
+            if (overlay) overlay.style.display = 'none';
+        }
+
+        // Đóng modal khi bấm Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                hieugaraCloseAboutModal();
+                hieugaraCloseContactModal();
+            }
+        });
+
+        // Tự động mở modal nếu trang được tải với param action=edit
+        <?php if ($current_tab === 'about' && !empty($edit_about_item)) : ?>
+        window.addEventListener('DOMContentLoaded', function() {
+            hieugaraOpenAboutModal(<?php echo json_encode($edit_about_item); ?>);
+        });
+        <?php endif; ?>
+
+        <?php if ($current_tab === 'contact' && !empty($edit_contact_item)) : ?>
+        window.addEventListener('DOMContentLoaded', function() {
+            hieugaraOpenContactModal(<?php echo json_encode($edit_contact_item); ?>);
+        });
+        <?php endif; ?>
+        </script>
+
+        <style>
+        @keyframes hieugaraFadeIn {
+            from { opacity: 0; transform: scale(0.96) translateY(-10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        </style>
 
     </div>
     <?php

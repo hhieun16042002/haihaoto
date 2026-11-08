@@ -283,7 +283,7 @@ function hieugara_clean_admin_menu() {
     if (isset($submenu['edit.php'])) {
         foreach ($submenu['edit.php'] as $s_k => $s_v) {
             if ($s_v[2] === 'edit.php') {
-                $submenu['edit.php'][$s_k][0] = 'Tất Cả Bài Viết (CRUD)';
+                $submenu['edit.php'][$s_k][0] = 'Tất Cả Bài Viết';
             } elseif ($s_v[2] === 'post-new.php') {
                 $submenu['edit.php'][$s_k][0] = 'Viết Bài Mới';
             } elseif (strpos($s_v[2], 'taxonomy=category') !== false) {
