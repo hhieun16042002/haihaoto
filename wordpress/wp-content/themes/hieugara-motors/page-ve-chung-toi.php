@@ -7,6 +7,14 @@
  */
 
 get_header();
+
+$about_p_title     = get_option('hieugara_about_page_title', 'Ôtô Hải Hà: 31 Năm Giữ Trọn Chữ Tâm Với Nghề');
+$about_p_subtitle  = get_option('hieugara_about_page_subtitle', 'Khởi nguồn từ năm 1995 bởi nhà sáng lập ông Nguyễn Hải Hà. 31 năm trôi qua, niềm tin "chăm sóc xe bằng cái tâm người thợ" vẫn là kim chỉ nam trong từng công việc chúng tôi làm mỗi ngày.');
+$about_show_story  = get_option('hieugara_about_show_story', '1');
+$about_show_commit = get_option('hieugara_about_show_commitments', '1');
+$about_years_exp   = get_option('hieugara_about_years_exp', '31+');
+$about_staff_count = get_option('hieugara_about_staff_count', '80+');
+$about_parts_rate  = get_option('hieugara_about_parts_rate', '100%');
 ?>
 
 <main id="primary" class="site-main page-about-portal">
@@ -19,20 +27,23 @@ get_header();
                 <span>/</span>
                 <span class="current"><?php _e('Về chúng tôi', 'hieugara-motors'); ?></span>
             </div>
-            <h1 class="portal-page-title">Ôtô Hải Hà: 31 Năm Giữ Trọn Chữ Tâm Với Nghề</h1>
+            <h1 class="portal-page-title"><?php echo esc_html($about_p_title); ?></h1>
+            <?php if (!empty($about_p_subtitle)) : ?>
             <p class="portal-page-subtitle">
-                <?php _e('Khởi nguồn từ năm 1995 bởi nhà sáng lập ông Nguyễn Hải Hà. 31 năm trôi qua, niềm tin "chăm sóc xe bằng cái tâm người thợ" vẫn là kim chỉ nam trong từng công việc chúng tôi làm mỗi ngày.', 'hieugara-motors'); ?>
+                <?php echo nl2br(esc_html($about_p_subtitle)); ?>
             </p>
+            <?php endif; ?>
         </div>
     </section>
 
+    <?php if ($about_show_story === '1') : ?>
     <!-- Company Story & Mission -->
-    <section class="about-story-section" style="padding: 70px 0; background: #ffffff;">
+    <section class="about-story-section" id="su-kien" style="padding: 70px 0; background: #ffffff;">
         <div class="container">
             <div class="about-story-grid">
                 <div class="about-story-content">
-                    <span class="story-tag"><i class="fa fa-award"></i> HÀNH TRÌNH 31 NĂM (1995 — <?php echo date('Y'); ?>)</span>
-                    <h2 style="font-size: 2rem; line-height: 1.35; margin-bottom: 20px; color: #141414;">Ôtô Hải Hà: 31 năm giữ trọn chữ Tâm với nghề</h2>
+                    <span class="story-tag"><i class="fa fa-award"></i> HÀNH TRÌNH <?php echo esc_html($about_years_exp); ?> NĂM (1995 — <?php echo date('Y'); ?>)</span>
+                    <h2 style="font-size: 2rem; line-height: 1.35; margin-bottom: 20px; color: #141414;"><?php echo esc_html($about_p_title); ?></h2>
                     
                     <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 16px;">
                         Năm 1995, nhà sáng lập ông <strong>Nguyễn Hải Hà</strong> đặt những viên gạch đầu tiên cho Ôtô Hải Hà với một niềm tin giản dị: <em>mỗi chiếc xe đều xứng đáng được chăm sóc bằng cái tâm của người thợ</em>. 31 năm đã trôi qua, niềm tin ấy vẫn là kim chỉ nam trong từng công việc chúng tôi làm mỗi ngày.
@@ -43,7 +54,7 @@ get_header();
                     </p>
 
                     <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 16px;">
-                        Ngày nay, Ôtô Hải Hà tự hào có <strong>đội ngũ 80 nhân viên</strong> làm việc chuyên nghiệp và phục vụ tận tâm, cung cấp đầy đủ các dịch vụ sửa chữa và bảo dưỡng ô tô. Từ lần bảo dưỡng định kỳ đến những hạng mục sửa chữa cần sự tỉ mỉ, mọi nhu cầu của chiếc xe đều được chăm lo tại một địa chỉ duy nhất.
+                        Ngày nay, Ôtô Hải Hà tự hào có <strong>đội ngũ <?php echo esc_html($about_staff_count); ?> nhân viên</strong> làm việc chuyên nghiệp và phục vụ tận tâm, cung cấp đầy đủ các dịch vụ sửa chữa và bảo dưỡng ô tô. Từ lần bảo dưỡng định kỳ đến những hạng mục sửa chữa cần sự tỉ mỉ, mọi nhu cầu của chiếc xe đều được chăm lo tại một địa chỉ duy nhất.
                     </p>
 
                     <blockquote style="border-left: 4px solid #F5A300; background: #F5F5F5; padding: 14px 20px; font-weight: 700; color: #1e3a8a; font-size: 1.05rem; margin-bottom: 26px; border-radius: 0 6px 6px 0;">
@@ -63,16 +74,16 @@ get_header();
 
                     <div class="about-highlights-row">
                         <div class="hl-item">
-                            <strong>31+</strong>
-                            <span>Năm đồng hành (1995-2026)</span>
+                            <strong><?php echo esc_html($about_years_exp); ?></strong>
+                            <span>Năm đồng hành (1995-<?php echo date('Y'); ?>)</span>
                         </div>
                         <div class="hl-item">
-                            <strong>80+</strong>
-                            <span>Nhân sự tận tâm & chuyên môn cao</span>
+                            <strong><?php echo esc_html($about_staff_count); ?></strong>
+                            <span>Nhân sự tận tâm &amp; chuyên môn cao</span>
                         </div>
                         <div class="hl-item">
-                            <strong>100%</strong>
-                            <span>Phụ tùng chuẩn & Bảo hành an tâm</span>
+                            <strong><?php echo esc_html($about_parts_rate); ?></strong>
+                            <span>Phụ tùng chuẩn &amp; Bảo hành an tâm</span>
                         </div>
                     </div>
                 </div>
@@ -83,16 +94,18 @@ get_header();
                         <i class="fa fa-shield-heart" style="color: #F5A300;"></i>
                         <div>
                             <strong style="color: #F5A300;">CHỮ TÂM VỚI NGHỀ</strong>
-                            <small style="color: #94a3b8;">Ôtô Hải Hà từ 1995 &bull; 80 nhân sự tận tâm</small>
+                            <small style="color: #94a3b8;">Ôtô Hải Hà từ 1995 &bull; <?php echo esc_html($about_staff_count); ?> nhân sự tận tâm</small>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <?php endif; ?>
 
+    <?php if ($about_show_commit === '1') : ?>
     <!-- 5 Cam Kết "Vàng" -->
-    <section class="commitments-section">
+    <section class="commitments-section" id="tieu-chuan">
         <div class="container">
             <div class="section-header">
                 <div class="section-pill"><?php _e('NGUYÊN TẮC HOẠT ĐỘNG', 'hieugara-motors'); ?></div>
@@ -137,6 +150,7 @@ get_header();
             </div>
         </div>
     </section>
+    <?php endif; ?>
 
 </main>
 

@@ -122,17 +122,38 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
             ?>
         <?php else : ?>
         <ul class="custom-nav-menu">
+            <?php
+            // Master Navigation Toggles & Labels
+            $h_show_home        = get_option('hieugara_nav_show_home', '1');
+            $h_show_about       = get_option('hieugara_nav_show_about', '1');
+            $h_show_services    = get_option('hieugara_nav_show_services', '1');
+            $h_show_vinfast     = get_option('hieugara_nav_show_vinfast', '1');
+            $h_show_accessories = get_option('hieugara_nav_show_accessories', '1');
+            $h_show_blog        = get_option('hieugara_nav_show_blog', '1');
+            $h_show_contact     = get_option('hieugara_nav_show_contact', '1');
+
+            $h_label_home        = get_option('hieugara_nav_label_home', 'TRANG CHỦ');
+            $h_label_about       = get_option('hieugara_nav_label_about', 'GIỚI THIỆU');
+            $h_label_services    = get_option('hieugara_nav_label_services', 'DỊCH VỤ');
+            $h_label_accessories = get_option('hieugara_nav_label_accessories', 'PHỤ KIỆN');
+            $h_label_blog        = get_option('hieugara_nav_label_blog', 'BLOG');
+            $h_label_contact     = get_option('hieugara_nav_label_contact', 'LIÊN HỆ');
+            ?>
+
+            <?php if ($h_show_home === '1') : ?>
             <!-- 1. TRANG CHỦ -->
             <li class="nav-item <?php echo is_front_page() ? 'active' : ''; ?>">
-                <a href="<?php echo esc_url(home_url('/')); ?>" class="nav-link" title="TRANG CHỦ">
-                    <?php _e('TRANG CHỦ', 'hieugara-motors'); ?>
+                <a href="<?php echo esc_url(home_url('/')); ?>" class="nav-link" title="<?php echo esc_attr($h_label_home); ?>">
+                    <?php echo esc_html($h_label_home); ?>
                 </a>
             </li>
+            <?php endif; ?>
 
+            <?php if ($h_show_about === '1') : ?>
             <!-- 2. GIỚI THIỆU ⌵ (100% Dynamic CRUD from WP Admin) -->
             <li class="nav-item has-dropdown <?php echo is_page('ve-chung-toi') || is_page('garage-gan-ban') ? 'active' : ''; ?>">
-                <a href="<?php echo esc_url(home_url('/ve-chung-toi/')); ?>" class="nav-link" title="GIỚI THIỆU">
-                    <span><?php _e('GIỚI THIỆU', 'hieugara-motors'); ?></span>
+                <a href="<?php echo esc_url(home_url('/ve-chung-toi/')); ?>" class="nav-link" title="<?php echo esc_attr($h_label_about); ?>">
+                    <span><?php echo esc_html($h_label_about); ?></span>
                     <i class="fa-solid fa-chevron-down nav-caret"></i>
                 </a>
                 <ul class="nav-dropdown-menu">
@@ -149,14 +170,17 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                     <?php endforeach; ?>
                 </ul>
             </li>
+            <?php endif; ?>
 
+            <?php if ($h_show_services === '1') : ?>
             <!-- 3. DỊCH VỤ ⌵ (Đồng bộ sổ dọc + Danh mục con chuẩn ductri226.vn) -->
             <li class="nav-item has-dropdown <?php echo is_post_type_archive('garage_service') || is_singular('garage_service') || is_tax('service_category') || is_page('bang-gia') ? 'active' : ''; ?>">
-                <a href="<?php echo esc_url(home_url('/dich-vu/')); ?>" class="nav-link" title="HỆ THỐNG DỊCH VỤ Ô TÔ HẢI HÀ" aria-haspopup="true" aria-expanded="false">
-                    <span><?php _e('DỊCH VỤ', 'hieugara-motors'); ?></span>
+                <a href="<?php echo esc_url(home_url('/dich-vu/')); ?>" class="nav-link" title="<?php echo esc_attr($h_label_services); ?>" aria-haspopup="true" aria-expanded="false">
+                    <span><?php echo esc_html($h_label_services); ?></span>
                     <i class="fa-solid fa-chevron-down nav-caret" aria-hidden="true"></i>
                 </a>
                 <ul class="nav-dropdown-menu">
+                    <?php if ($h_show_vinfast === '1') : ?>
                     <li class="has-sub-dropdown">
                         <a href="<?php echo esc_url(home_url('/dich-vu/xe-vinfast/')); ?>">
                             <span><?php _e('Dịch Vụ Xe VinFast', 'hieugara-motors'); ?></span>
@@ -175,6 +199,7 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                             </li>
                         </ul>
                     </li>
+                    <?php endif; ?>
                     <?php
                     $dynamic_cats = get_terms(array(
                         'taxonomy'   => 'service_category',
@@ -228,11 +253,13 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                     ?>
                 </ul>
             </li>
+            <?php endif; ?>
 
+            <?php if ($h_show_accessories === '1') : ?>
             <!-- 4. PHỤ KIỆN ⌵ -->
             <li class="nav-item has-dropdown <?php echo is_page('phu-kien') || is_singular('garage_accessory') ? 'active' : ''; ?>">
-                <a href="<?php echo esc_url(home_url('/phu-kien/')); ?>" class="nav-link" title="PHỤ KIỆN Ô TÔ CHÍNH HÃNG">
-                    <span><?php _e('PHỤ KIỆN', 'hieugara-motors'); ?></span>
+                <a href="<?php echo esc_url(home_url('/phu-kien/')); ?>" class="nav-link" title="<?php echo esc_attr($h_label_accessories); ?>">
+                    <span><?php echo esc_html($h_label_accessories); ?></span>
                     <i class="fa-solid fa-chevron-down nav-caret"></i>
                 </a>
                 <ul class="nav-dropdown-menu">
@@ -248,11 +275,13 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                     <?php endforeach; ?>
                 </ul>
             </li>
+            <?php endif; ?>
 
+            <?php if ($h_show_blog === '1') : ?>
             <!-- 5. BLOG ⌵ -->
             <li class="nav-item has-dropdown <?php echo (is_page('blog') || is_home() || is_category() || is_singular('post')) ? 'active' : ''; ?>">
-                <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="nav-link" title="BLOG KỸ THUẬT">
-                    <span><?php _e('BLOG', 'hieugara-motors'); ?></span>
+                <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="nav-link" title="<?php echo esc_attr($h_label_blog); ?>">
+                    <span><?php echo esc_html($h_label_blog); ?></span>
                     <i class="fa-solid fa-chevron-down nav-caret"></i>
                 </a>
                 <ul class="nav-dropdown-menu">
@@ -263,25 +292,36 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                     <li><a href="<?php echo esc_url(home_url('/category/tin-tuc-su-kien/')); ?>"><?php _e('Tin Tức &amp; Hoạt Động Gara', 'hieugara-motors'); ?></a></li>
                 </ul>
             </li>
+            <?php endif; ?>
 
+            <?php if ($h_show_contact === '1') : ?>
             <!-- 6. LIÊN HỆ ⌵ -->
             <li class="nav-item has-dropdown">
-                <a href="<?php echo esc_url(home_url('/ve-chung-toi/#lien-he')); ?>" class="nav-link" title="LIÊN HỆ">
-                    <span><?php _e('LIÊN HỆ', 'hieugara-motors'); ?></span>
+                <a href="<?php echo esc_url(home_url('/ve-chung-toi/#lien-he')); ?>" class="nav-link" title="<?php echo esc_attr($h_label_contact); ?>">
+                    <span><?php echo esc_html($h_label_contact); ?></span>
                     <i class="fa-solid fa-chevron-down nav-caret"></i>
                 </a>
                 <ul class="nav-dropdown-menu">
-                    <li><a href="tel:02203892207">Hotline Tư Vấn: 02203 892 207</a></li>
-                    <li><a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>">Cứu Hộ 24/7: <?php echo esc_html($rescue_phone); ?></a></li>
-                    <li><a href="<?php echo esc_url(home_url('/ve-chung-toi/')); ?>">Gara Ô Tô Hải Hà</a></li>
-                    <li><a href="<?php echo esc_url(home_url('/ve-chung-toi/#hop-tac')); ?>">Hợp Tác Đối Tác &amp; Bảo Hiểm</a></li>
+                    <?php
+                    $contact_nav_items = function_exists('hieugara_get_contact_menu_items') ? hieugara_get_contact_menu_items() : array();
+                    foreach ($contact_nav_items as $c_item) :
+                        if (empty($c_item['enable'])) continue;
+                    ?>
+                        <li>
+                            <a href="<?php echo esc_url($c_item['link']); ?>" target="<?php echo esc_attr($c_item['target'] ?? '_self'); ?>">
+                                <?php echo esc_html($c_item['title']); ?>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
                 </ul>
             </li>
+            <?php endif; ?>
         </ul>
         <?php endif; ?>
 
         <!-- Right: Cứu Hộ 24/7 + Tìm Kiếm Chuẩn SEO ở Cuối Cùng -->
         <div class="navbar-inline-actions">
+            <?php if (get_option('hieugara_nav_show_rescue_btn', '1') === '1') : ?>
             <!-- 1. Cứu hộ 24/7 (Khẩn cấp #D92D20) -->
             <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="navbar-rescue-btn" title="Gọi cứu hộ ô tô 24/7 khẩn cấp: <?php echo esc_attr($rescue_phone); ?>">
                 <span class="rescue-live-dot" aria-hidden="true"></span>
@@ -291,9 +331,10 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                     <strong><?php echo esc_html($rescue_phone); ?></strong>
                 </span>
             </a>
+            <?php endif; ?>
 
             <!-- 2. Tìm kiếm chuẩn SEO ở cuối cùng -->
-            <?php if ($menu_search === '1' || $menu_search === true || $menu_search === 'yes') : ?>
+            <?php if (get_option('hieugara_nav_show_search', '1') === '1' && ($menu_search === '1' || $menu_search === true || $menu_search === 'yes')) : ?>
             <div class="seo-search-wrap">
                 <form class="menu-search-pill" role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>" aria-label="Tìm kiếm dịch vụ và phụ tùng ô tô">
                     <label for="seoMenuSearchInput" class="screen-reader-text">Tìm kiếm dịch vụ, phụ tùng ô tô tại Ôtô Hải Hà</label>
