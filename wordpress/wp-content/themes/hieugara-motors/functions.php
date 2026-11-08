@@ -118,7 +118,7 @@ function hieugara_theme_setup() {
 }
 add_action('after_setup_theme', 'hieugara_theme_setup');
 
-// 2. Enqueue Assets
+// 2. Enqueue Assets (Ultra-Fast Optimized & Render-Blocking Free)
 function hieugara_enqueue_scripts() {
     // FontAwesome Icons CDN
     wp_enqueue_style(
@@ -128,14 +128,6 @@ function hieugara_enqueue_scripts() {
         '6.5.1'
     );
 
-    // Swiper Carousel CSS
-    wp_enqueue_style(
-        'swiper-css',
-        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
-        array(),
-        '11.1.14'
-    );
-
     // Main Stylesheet with automatic filemtime cache-busting
     $css_version = file_exists(HIEUGARA_THEME_DIR . '/assets/css/theme.css') 
         ? filemtime(HIEUGARA_THEME_DIR . '/assets/css/theme.css') 
@@ -143,17 +135,8 @@ function hieugara_enqueue_scripts() {
     wp_enqueue_style(
         'hieugara-main-style',
         HIEUGARA_THEME_URI . '/assets/css/theme.css',
-        array('swiper-css'),
-        $css_version
-    );
-
-    // Swiper Carousel JS
-    wp_enqueue_script(
-        'swiper-js',
-        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
         array(),
-        '11.1.14',
-        true
+        $css_version
     );
 
     // Main JS with automatic filemtime cache-busting
@@ -163,19 +146,21 @@ function hieugara_enqueue_scripts() {
     wp_enqueue_script(
         'hieugara-main-script',
         HIEUGARA_THEME_URI . '/assets/js/theme.js',
-        array('jquery', 'swiper-js'),
+        array('jquery'),
         $js_version,
         true
     );
 
-    // Paint Calculator JS
-    wp_enqueue_script(
-        'hieugara-paint-calc',
-        HIEUGARA_THEME_URI . '/assets/js/paint-calculator.js',
-        array('jquery'),
-        HIEUGARA_THEME_VERSION,
-        true
-    );
+    // Paint Calculator JS (Conditionally loaded ONLY on Pricing page to save bandwidth & CPU)
+    if (is_page('bang-gia')) {
+        wp_enqueue_script(
+            'hieugara-paint-calc',
+            HIEUGARA_THEME_URI . '/assets/js/paint-calculator.js',
+            array('jquery'),
+            HIEUGARA_THEME_VERSION,
+            true
+        );
+    }
 
     wp_localize_script('hieugara-main-script', 'hieugara_vars', array(
         'ajax_url'  => admin_url('admin-ajax.php'),
@@ -185,6 +170,18 @@ function hieugara_enqueue_scripts() {
     ));
 }
 add_action('wp_enqueue_scripts', 'hieugara_enqueue_scripts');
+
+// 2b. Defer non-critical scripts to eliminate render-blocking delays
+function hieugara_defer_scripts($tag, $handle, $src) {
+    if (is_admin()) return $tag;
+    if (in_array($handle, array('hieugara-main-script', 'hieugara-paint-calc', 'garage-os-frontend-js'))) {
+        if (strpos($tag, ' defer') === false) {
+            return str_replace(' src=', ' defer src=', $tag);
+        }
+    }
+    return $tag;
+}
+add_filter('script_loader_tag', 'hieugara_defer_scripts', 10, 3);
 
 // 3. Module Includes
 require_once HIEUGARA_THEME_DIR . '/inc/post-types.php';
@@ -261,13 +258,15 @@ function hieugara_init_accessories_system() {
 }
 add_action('init', 'hieugara_init_accessories_system', 20);
 
-// 5d. Universal Dynamic Image URL Translation (Localhost + Tunnel + Public Domain) with strict host validation
+// 5d. Universal Dynamic URL & Media Normalization (Zero Double Ports, Zero Double Slugs)
 function hieugara_normalize_local_media_urls($content) {
     if (empty($content) || !is_string($content)) {
         return $content;
     }
     $raw_host = $_SERVER['HTTP_X_FORWARDED_HOST'] ?? ($_SERVER['HTTP_HOST'] ?? 'localhost:8080');
     $current_host = 'localhost:8080';
+    $is_tunnel = false;
+
     if (preg_match('/^[a-zA-Z0-9.\-]+(?::[0-9]+)?$/', $raw_host)) {
         $host_domain = strtolower(explode(':', $raw_host)[0]);
         if (
@@ -279,7 +278,8 @@ function hieugara_normalize_local_media_urls($content) {
             str_ends_with($host_domain, '.otohaiha.vn')
         ) {
             if (str_ends_with($host_domain, 'trycloudflare.com') || str_ends_with($host_domain, 'ngrok-free.app')) {
-                $current_host = $host_domain;
+                $current_host = $host_domain; // Public tunnels run on standard HTTPS 443 only
+                $is_tunnel = true;
             } else {
                 $current_host = $raw_host;
             }
@@ -287,20 +287,28 @@ function hieugara_normalize_local_media_urls($content) {
     }
     $is_https = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ||
                 (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false) ||
-                str_ends_with($current_host, 'trycloudflare.com') ||
-                str_ends_with($current_host, 'ngrok-free.app');
+                $is_tunnel;
     $current_origin = ($is_https ? 'https' : 'http') . '://' . $current_host;
 
-    $patterns = array(
-        'http://localhost:8080',
-        'http://127.0.0.1:8080',
-        'https://localhost:8080',
-        'https://127.0.0.1:8080',
-        'http://localhost',
-        'https://localhost',
-    );
-    $content = str_replace($patterns, $current_origin, $content);
-    $content = preg_replace('/https?:\/\/[a-z0-9\-]+\.trycloudflare\.com(?::[0-9]+)?/i', $current_origin, $content);
+    // Single-pass regex replacements (matches entire protocol + host + any port sequence)
+    $content = preg_replace('#https?://(?:localhost|127\.0\.0\.1)(?::\d+)*#i', $current_origin, $content);
+    $content = preg_replace('#https?://[a-z0-9\-]+\.trycloudflare\.com(?::\d+)*#i', $current_origin, $content);
+    $content = preg_replace('#https?://[a-z0-9\-]+\.ngrok-free\.app(?::\d+)*#i', $current_origin, $content);
+
+    // Strict post-replacement sanitation
+    if ($is_tunnel) {
+        // Tunnels never accept port 8080 or any other custom port
+        $content = preg_replace('#(https?://[a-z0-9\-]+\.(?:trycloudflare\.com|ngrok-free\.app))(?::\d+)+#i', '$1', $content);
+    } else {
+        // Localhost: collapse any duplicate port like :8080:8080 down to single :8080
+        $content = preg_replace('/(?::8080){2,}/', ':8080', $content);
+    }
+
+    // Clean duplicate page slug anomalies (e.g. /ve-chung-toi/ve-chung-toi/ -> /ve-chung-toi/)
+    $content = preg_replace('#(/ve-chung-toi)+/#', '/ve-chung-toi/', $content);
+    $content = preg_replace('#(/dich-vu)+/#', '/dich-vu/', $content);
+    $content = preg_replace('#(/phu-kien)+/#', '/phu-kien/', $content);
+    $content = preg_replace('#(/blog)+/#', '/blog/', $content);
 
     return $content;
 }
@@ -319,7 +327,52 @@ add_filter('wp_calculate_image_srcset', function($sources) {
 }, 99);
 add_filter('widget_text', 'hieugara_normalize_local_media_urls', 99);
 
-// 5e. Security Headers & X-Powered-By removal
+// 5e. Helper: Sanitize navigation link to prevent duplicate relative slugs
+function hieugara_sanitize_nav_url($url) {
+    if (empty($url)) return '#';
+    $url = trim($url);
+    if (preg_match('/^(https?:\/\/|tel:|mailto:|javascript:|#)/i', $url)) {
+        // Strip duplicate ports on tunnel domains
+        if (strpos($url, 'trycloudflare.com') !== false || strpos($url, 'ngrok-free.app') !== false) {
+            $url = preg_replace('#(https?://[a-z0-9\-]+\.(?:trycloudflare\.com|ngrok-free\.app))(?::\d+)+#i', '$1', $url);
+        }
+        return $url;
+    }
+    // Relative link without leading slash
+    if (strpos($url, '/') !== 0) {
+        $url = '/' . $url;
+    }
+    // Clean any accidental duplicate slugs
+    $url = preg_replace('#(/ve-chung-toi)+/#', '/ve-chung-toi/', $url);
+    $url = preg_replace('#(/dich-vu)+/#', '/dich-vu/', $url);
+    $url = preg_replace('#(/phu-kien)+/#', '/phu-kien/', $url);
+    $url = preg_replace('#(/blog)+/#', '/blog/', $url);
+    
+    return home_url($url);
+}
+
+// 5f. Automatic Ultra-Fast Page Cache Flushing on Updates
+function hieugara_flush_page_cache() {
+    $cache_dir = WP_CONTENT_DIR . '/cache/page-cache';
+    if (is_dir($cache_dir)) {
+        $files = glob($cache_dir . '/*.html');
+        if (!empty($files)) {
+            foreach ($files as $f) {
+                if (is_file($f)) {
+                    @unlink($f);
+                }
+            }
+        }
+    }
+}
+add_action('save_post', 'hieugara_flush_page_cache');
+add_action('comment_post', 'hieugara_flush_page_cache');
+add_action('wp_update_nav_menu', 'hieugara_flush_page_cache');
+add_action('update_option_hieugara_options', 'hieugara_flush_page_cache');
+add_action('update_option_hieugara_about_menu_items', 'hieugara_flush_page_cache');
+add_action('update_option_hieugara_contact_menu_items', 'hieugara_flush_page_cache');
+
+// 5g. Security Headers & X-Powered-By removal
 function hieugara_send_security_headers() {
     if (!headers_sent()) {
         @header_remove('X-Powered-By');
@@ -331,7 +384,7 @@ function hieugara_send_security_headers() {
 }
 add_action('send_headers', 'hieugara_send_security_headers');
 
-// 5f. Prevent Canonical Port 8080 Redirects on Cloudflare Tunnels
+// 5h. Prevent Canonical Port 8080 Redirects on Cloudflare Tunnels
 function hieugara_fix_tunnel_canonical_redirect($redirect_url, $requested_url) {
     if (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'trycloudflare.com') !== false) {
         // Prevent redirecting to port 8080 over external tunnel HTTPS
