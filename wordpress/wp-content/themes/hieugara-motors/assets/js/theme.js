@@ -9,8 +9,47 @@
     $(document).ready(function() {
 
         // ==========================================================================
-        // 0. Turbo Navigation Progress Bar
+        // 0. Ductri226-Grade Turbo Instant Navigation & Hover Prefetcher
         // ==========================================================================
+        var prefetchedUrls = new Set();
+        function prefetchUrl(url) {
+            if (!url || prefetchedUrls.has(url)) return;
+            try {
+                var parsed = new URL(url, window.location.origin);
+                if (parsed.origin !== window.location.origin) return;
+                if (parsed.pathname.indexOf('/wp-admin') === 0 || parsed.pathname.indexOf('/wp-login') === 0) return;
+                prefetchedUrls.add(url);
+                if (window.fetch) {
+                    fetch(url, { priority: 'low' }).catch(function(){});
+                } else {
+                    var link = document.createElement('link');
+                    link.rel = 'prefetch';
+                    link.href = url;
+                    document.head.appendChild(link);
+                }
+            } catch(e) {}
+        }
+
+        // Prefetch on hover (desktop, >65ms intent) or touchstart (mobile)
+        var hoverTimer = null;
+        $(document).on('mouseenter', 'a', function() {
+            var href = $(this).attr('href');
+            if (href && href.indexOf('#') !== 0 && href.indexOf('tel:') !== 0 && href.indexOf('mailto:') !== 0 && href.indexOf('javascript:') !== 0) {
+                hoverTimer = setTimeout(function() {
+                    prefetchUrl(href);
+                }, 65);
+            }
+        }).on('mouseleave', 'a', function() {
+            if (hoverTimer) clearTimeout(hoverTimer);
+        });
+
+        $(document).on('touchstart', 'a', function() {
+            var href = $(this).attr('href');
+            if (href && href.indexOf('#') !== 0 && href.indexOf('tel:') !== 0 && href.indexOf('mailto:') !== 0) {
+                prefetchUrl(href);
+            }
+        });
+
         $(document).on('click', 'a', function() {
             var href = $(this).attr('href');
             var target = $(this).attr('target');

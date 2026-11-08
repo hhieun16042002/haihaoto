@@ -94,7 +94,7 @@ if (!is_dir($cache_dir)) {
 
 $cache_key  = md5($req_path . ($normalized_query ? '?' . $normalized_query : ''));
 $cache_file = $cache_dir . '/' . $cache_key . '.html';
-$cache_ttl  = 3600; // 1 hour
+$cache_ttl  = 604800; // 7 days with instant stale-while-revalidate
 
 // Bypass/Purge cache: Only allowed for logged-in admin or local requests
 if (isset($_GET['nocache']) || isset($_GET['purge'])) {
@@ -112,11 +112,24 @@ if (isset($_GET['nocache']) || isset($_GET['purge'])) {
 if (file_exists($cache_file) && (time() - filemtime($cache_file) < $cache_ttl)) {
     garage_send_security_headers();
     header('X-Garage-Cache: HIT');
-    header('Cache-Control: public, max-age=60, stale-while-revalidate=86400');
+    header('Cache-Control: public, max-age=300, stale-while-revalidate=604800');
     header('Content-Type: text/html; charset=UTF-8');
     
     $raw_html = file_get_contents($cache_file);
-    echo str_replace('{{GARAGE_SITE_ORIGIN}}', $current_origin, $raw_html);
+    $served_html = str_replace('{{GARAGE_SITE_ORIGIN}}', $current_origin, $raw_html);
+
+    // Sanitize any remaining port errors or tunnel anomalies
+    if (str_ends_with($current_host, 'trycloudflare.com') || str_ends_with($current_host, 'ngrok-free.app')) {
+        $served_html = preg_replace('#(https?://[a-z0-9\-]+\.(?:trycloudflare\.com|ngrok-free\.app))(?::\d+)+#i', '$1', $served_html);
+    } else {
+        $served_html = preg_replace('/(?::8080){2,}/', ':8080', $served_html);
+    }
+    // Prevent double slugs in links
+    $served_html = preg_replace('#(/ve-chung-toi)+/#', '/ve-chung-toi/', $served_html);
+    $served_html = preg_replace('#(/dich-vu)+/#', '/dich-vu/', $served_html);
+    $served_html = preg_replace('#(/phu-kien)+/#', '/phu-kien/', $served_html);
+
+    echo $served_html;
     exit;
 }
 
@@ -132,14 +145,17 @@ function garage_save_page_cache($html) {
             @mkdir($cache_dir, 0775, true);
         }
         
-        $patterns = array(
-            $current_origin,
-            'http://localhost:8080',
-            'http://127.0.0.1:8080',
-            'https://localhost:8080',
-        );
-        $tokenized_html = str_replace($patterns, '{{GARAGE_SITE_ORIGIN}}', $html);
-        $tokenized_html = preg_replace('/https?:\/\/[a-z0-9\-]+\.trycloudflare\.com/i', '{{GARAGE_SITE_ORIGIN}}', $tokenized_html);
+        // Single-pass regex replacing all localhost/127.0.0.1/tunnel variants (including any stacked ports) with token
+        $tokenized_html = preg_replace('#https?://(?:localhost|127\.0\.0\.1)(?::\d+)*#i', '{{GARAGE_SITE_ORIGIN}}', $html);
+        $tokenized_html = preg_replace('#https?://[a-z0-9\-]+\.trycloudflare\.com(?::\d+)*#i', '{{GARAGE_SITE_ORIGIN}}', $tokenized_html);
+        $tokenized_html = preg_replace('#https?://[a-z0-9\-]+\.ngrok-free\.app(?::\d+)*#i', '{{GARAGE_SITE_ORIGIN}}', $tokenized_html);
+        
+        // Strip any stray token port suffix like {{GARAGE_SITE_ORIGIN}}:8080
+        $tokenized_html = preg_replace('/\{\{GARAGE_SITE_ORIGIN\}\}(?::\d+)+/', '{{GARAGE_SITE_ORIGIN}}', $tokenized_html);
+
+        // Sanitize double slugs
+        $tokenized_html = preg_replace('#(/ve-chung-toi)+/#', '/ve-chung-toi/', $tokenized_html);
+        $tokenized_html = preg_replace('#(/dich-vu)+/#', '/dich-vu/', $tokenized_html);
 
         $html_with_comment = $tokenized_html . "\n<!-- Served via Garage Ultra-Fast Page Cache [HIT] at " . gmdate('Y-m-d H:i:s') . " UTC -->";
         @file_put_contents($cache_file, $html_with_comment, LOCK_EX);

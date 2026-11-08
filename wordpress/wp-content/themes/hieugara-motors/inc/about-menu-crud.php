@@ -71,6 +71,12 @@ function hieugara_get_about_menu_items() {
         return ($oa < $ob) ? -1 : 1;
     });
 
+    foreach ($items as &$item) {
+        if (!empty($item['link']) && function_exists('hieugara_sanitize_nav_url')) {
+            $item['link'] = hieugara_sanitize_nav_url($item['link']);
+        }
+    }
+
     return $items;
 }
 
@@ -127,6 +133,12 @@ function hieugara_get_contact_menu_items() {
         if ($oa === $ob) return 0;
         return ($oa < $ob) ? -1 : 1;
     });
+
+    foreach ($items as &$item) {
+        if (!empty($item['link']) && function_exists('hieugara_sanitize_nav_url')) {
+            $item['link'] = hieugara_sanitize_nav_url($item['link']);
+        }
+    }
 
     return $items;
 }

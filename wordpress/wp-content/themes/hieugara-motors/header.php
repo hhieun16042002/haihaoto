@@ -14,6 +14,42 @@
     <link rel="icon" type="image/png" href="<?php echo esc_url($site_logo_url); ?>">
     <link rel="apple-touch-icon" href="<?php echo esc_url($site_logo_url); ?>">
     <link rel="profile" href="https://gmpg.org/xfn/11">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+    <!-- Ductri226-Grade Instant Navigation Engine (Speculation Rules API) -->
+    <script type="speculationrules">
+    {
+      "prerender": [
+        {
+          "source": "list",
+          "urls": [
+            "<?php echo esc_url(home_url('/')); ?>",
+            "<?php echo esc_url(home_url('/ve-chung-toi/')); ?>",
+            "<?php echo esc_url(home_url('/dich-vu/')); ?>",
+            "<?php echo esc_url(home_url('/dich-vu/xe-vinfast/')); ?>",
+            "<?php echo esc_url(home_url('/phu-kien/')); ?>",
+            "<?php echo esc_url(home_url('/blog/')); ?>"
+          ],
+          "eagerness": "moderate"
+        }
+      ],
+      "prefetch": [
+        {
+          "source": "document",
+          "where": {
+            "and": [
+              { "href_matches": "/*" },
+              { "not": { "href_matches": "/wp-admin/*" } },
+              { "not": { "href_matches": "/wp-login.php*" } },
+              { "not": { "href_matches": "/*\\?*(?:nocache|purge|logout)*" } }
+            ]
+          },
+          "eagerness": "conservative"
+        }
+      ]
+    }
+    </script>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
