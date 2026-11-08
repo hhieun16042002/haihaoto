@@ -382,28 +382,11 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
     <section class="shiftup-blog-section index-blog" id="blog-bai-viet">
         <div class="container">
             
-            <div class="blog-sec-head text-center">
-                <span class="blog-badge-tag"><i class="fa-solid fa-newspaper"></i> <?php _e('CẨM NANG &amp; KỸ THUẬT Ô TÔ', 'hieugara-motors'); ?></span>
+            <div class="blog-sec-head text-center" style="margin-bottom: 32px;">
                 <h2 class="blog-heading-main">
-                    <span>BLOG &amp; BÀI VIẾT</span> <span class="text-black">KỸ THUẬT</span>
+                    <span>MÁY MÓC KỸ THUẬT</span> <span class="text-black">TẠI Ô TÔ HẢI HÀ</span>
                 </h2>
-                <div class="tuning-shop-divider"></div>
-                <p class="blog-sec-sub">
-                    <?php _e('Cẩm nang kỹ thuật, thiết bị xưởng hiện đại và kinh nghiệm chăm sóc xe hơi chuyên sâu từ đội ngũ kỹ thuật Ô Tô Hải Hà', 'hieugara-motors'); ?>
-                </p>
-
-                <!-- Category Pills Navigation -->
-                <div class="accessory-cat-pills blog-cat-pills">
-                    <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="acc-pill-btn active"><i class="fa-solid fa-border-all"></i> <?php _e('Tất Cả Bài Viết', 'hieugara-motors'); ?></a>
-                    <?php 
-                    $blog_cats = get_categories(array('hide_empty' => false));
-                    foreach ($blog_cats as $b_cat) :
-                    ?>
-                        <a href="<?php echo esc_url(get_category_link($b_cat->term_id)); ?>" class="acc-pill-btn">
-                            <i class="fa-solid fa-folder-open"></i> <?php echo esc_html($b_cat->name); ?> (<?php echo esc_html($b_cat->count); ?>)
-                        </a>
-                    <?php endforeach; ?>
-                </div>
+                <div class="tuning-shop-divider" style="margin: 12px auto 0;"></div>
             </div>
 
             <?php
