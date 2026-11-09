@@ -320,7 +320,7 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                     <i class="fa-solid fa-chevron-down nav-caret"></i>
                 </a>
                 <ul class="nav-dropdown-menu">
-                    <li><a href="<?php echo esc_url(home_url('/category/he-thong-va-trang-thiet-bi/')); ?>"><?php _e('Hệ Thống &amp; Trang Thiết Bị', 'hieugara-motors'); ?></a></li>
+                    <li><a href="<?php echo esc_url(home_url('/category/may-moc-trang-thiet-bi/')); ?>"><?php _e('Máy Móc &amp; Trang Thiết Bị', 'hieugara-motors'); ?></a></li>
                     <li><a href="<?php echo esc_url(home_url('/category/cam-nang-bao-duong/')); ?>"><?php _e('Cẩm Nang Bảo Dưỡng Định Kỳ', 'hieugara-motors'); ?></a></li>
                     <li><a href="<?php echo esc_url(home_url('/category/kien-thuc-ky-thuat/')); ?>"><?php _e('Kiến Thức &amp; Kỹ Thuật Ô Tô', 'hieugara-motors'); ?></a></li>
                     <li><a href="<?php echo esc_url(home_url('/category/kinh-nghiem-lai-xe/')); ?>"><?php _e('Kinh Nghiệm Lái Xe An Toàn', 'hieugara-motors'); ?></a></li>

@@ -1,4 +1,4 @@
-/*! instant.page v5.2.0 - High Performance Speculative Preloader */
+/*! instant.page v5.2.0 - Universal Speculative Preloader (Safari + Chrome + Firefox) */
 (function() {
     'use strict';
     let mouseoverTimer;
@@ -7,14 +7,23 @@
 
     const prefetch = (url) => {
         if (!url || prefetched.has(url)) return;
+        prefetched.add(url);
+
+        // Standard link rel=prefetch
         try {
             const link = document.createElement('link');
             link.rel = 'prefetch';
             link.href = url;
             link.as = 'document';
             document.head.appendChild(link);
-            prefetched.add(url);
         } catch (e) {}
+
+        // Universal WebKit/Safari & Firefox HTTP cache pre-warm
+        if (window.fetch) {
+            try {
+                fetch(url, { priority: 'low', credentials: 'include', mode: 'no-cors' }).catch(() => {});
+            } catch (e) {}
+        }
     };
 
     const isEligible = (a) => {
@@ -38,14 +47,14 @@
         }
     }, { capture: true, passive: true });
 
-    // Desktop: prefetch after 65ms hover
+    // Desktop: prefetch after 50ms hover
     document.addEventListener('mouseover', (e) => {
         if (performance.now() - lastTouchTimestamp < 1100) return;
         const a = e.target.closest('a');
         if (!isEligible(a)) return;
         mouseoverTimer = setTimeout(() => {
             prefetch(a.href);
-        }, 65);
+        }, 50);
     }, { capture: true, passive: true });
 
     document.addEventListener('mouseout', (e) => {

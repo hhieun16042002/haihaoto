@@ -111,6 +111,12 @@ class HieuGara_SEO_Architecture {
         $path = parse_url($uri, PHP_URL_PATH) ?: $uri;
         $path = trim($path, '/');
 
+        // Check legacy category slug redirect
+        if ($path === 'category/he-thong-va-trang-thiet-bi') {
+            wp_safe_redirect(home_url('/category/may-moc-trang-thiet-bi/'), 301);
+            exit;
+        }
+
         // Check if legacy /chuyen-muc-dich-vu/[slug]/
         if (preg_match('#^chuyen-muc-dich-vu/([^/]+)#', $path, $m)) {
             $old_slug = $m[1];
