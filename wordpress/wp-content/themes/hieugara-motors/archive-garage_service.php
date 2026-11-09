@@ -167,9 +167,9 @@ if (!empty($parent_cats) && !is_wp_error($parent_cats)) {
                                             <?php echo wp_trim_words(get_the_excerpt($s_id) ?: strip_tags($srv->post_content), 18, '...'); ?>
                                         </p>
 
-                                        <div style="margin-top: auto; padding-top: 14px; border-top: 1px solid #f1f5f9;">
-                                            <a href="<?php echo esc_url($s_link); ?>" style="display: block; width: 100%; text-align: center; padding: 10px 14px; background: #0f172a; color: #C5A880; text-decoration: none; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; border-radius: 4px; transition: all 0.2s ease;">
-                                                <?php _e('Chi tiết', 'hieugara-motors'); ?> &rarr;
+                                        <div style="margin-top: auto; padding-top: 12px; border-top: 1px solid #f1f5f9;">
+                                            <a href="<?php echo esc_url($s_link); ?>" style="color: #C5A880; text-decoration: none; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; display: inline-flex; align-items: center; gap: 6px; transition: opacity 0.2s ease;">
+                                                <span><?php _e('Chi tiết', 'hieugara-motors'); ?></span> &rarr;
                                             </a>
                                         </div>
                                     </div>
