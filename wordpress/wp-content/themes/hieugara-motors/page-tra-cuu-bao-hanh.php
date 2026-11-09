@@ -12,7 +12,7 @@ get_header();
 <main id="primary" class="site-main page-warranty-portal">
 
     <!-- Page Breadcrumb & Header -->
-    <section class="portal-hero-header">
+    <section class="portal-hero-header" style="background-image: url('<?php echo esc_url(function_exists('hieugara_get_current_page_banner') ? hieugara_get_current_page_banner() : ''); ?>');">
         <div class="container">
             <div class="portal-breadcrumb">
                 <a href="<?php echo esc_url(home_url('/')); ?>"><?php _e('Trang chủ', 'hieugara-motors'); ?></a>

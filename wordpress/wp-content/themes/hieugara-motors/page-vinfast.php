@@ -107,7 +107,8 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
     </nav>
 
     <!-- SECTION 1: HERO -->
-    <section class="vinfast-hero-section">
+    <?php $vf_banner_bg = function_exists('hieugara_get_current_page_banner') ? hieugara_get_current_page_banner() : hieugara_get_page_banner_url('vinfast'); ?>
+    <section class="vinfast-hero-section" style="background-image: url('<?php echo esc_url($vf_banner_bg); ?>');">
         <div class="container">
             <div class="vinfast-hero-grid">
                 <div class="vinfast-hero-text">

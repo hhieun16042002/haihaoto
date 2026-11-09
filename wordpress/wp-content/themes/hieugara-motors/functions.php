@@ -151,6 +151,15 @@ function hieugara_enqueue_scripts() {
         true
     );
 
+    // Instant.Page 5.2 (Apple-style instant prefetch on hover / touchstart)
+    wp_enqueue_script(
+        'hieugara-instantpage',
+        HIEUGARA_THEME_URI . '/assets/js/instantpage.js',
+        array(),
+        '5.2.0',
+        true
+    );
+
     // Paint Calculator JS (Conditionally loaded ONLY on Pricing page to save bandwidth & CPU)
     if (is_page('bang-gia')) {
         wp_enqueue_script(
@@ -449,6 +458,106 @@ function hieugara_vinfast_seo_meta_tags() {
     }
 }
 add_action('wp_head', 'hieugara_vinfast_seo_meta_tags', 1);
+
+// =========================================================================
+// 10. UNIVERSAL HERO BANNER SYSTEM (Ảnh xưởng Ôtô Hải Hà + Tùy biến Admin)
+// =========================================================================
+
+/**
+ * Lấy URL ảnh banner theo từng trang cụ thể
+ */
+function hieugara_get_page_banner_url($page_key = 'default') {
+    $banners_dir_uri = get_template_directory_uri() . '/assets/images/banners';
+    
+    $defaults = array(
+        'about'      => $banners_dir_uri . '/banner-ve-chung-toi.jpg',
+        'phukien'    => $banners_dir_uri . '/banner-phu-kien.jpg',
+        'services'   => $banners_dir_uri . '/banner-dich-vu.jpg',
+        'vinfast'    => $banners_dir_uri . '/banner-vinfast.jpg',
+        'banggia'    => $banners_dir_uri . '/banner-bang-gia.jpg',
+        'datlich'    => $banners_dir_uri . '/banner-dat-lich.jpg',
+        'blog'       => $banners_dir_uri . '/banner-blog.jpg',
+        'contact'    => $banners_dir_uri . '/banner-lien-he.jpg',
+        'default'    => $banners_dir_uri . '/banner-default.jpg',
+    );
+
+    $option_name = 'hieugara_banner_' . $page_key;
+    $custom_url  = get_option($option_name, '');
+
+    if (!empty($custom_url)) {
+        if (function_exists('hieugara_normalize_local_media_urls')) {
+            $custom_url = hieugara_normalize_local_media_urls($custom_url);
+        }
+        return $custom_url;
+    }
+
+    $fallback = $defaults[$page_key] ?? $defaults['default'];
+    if (function_exists('hieugara_normalize_local_media_urls')) {
+        $fallback = hieugara_normalize_local_media_urls($fallback);
+    }
+    return $fallback;
+}
+
+/**
+ * Tự động phát hiện trang hiện tại và trả về URL ảnh banner tương ứng
+ */
+function hieugara_get_current_page_banner() {
+    // 1. Cho phép ghi đè bằng Ảnh Đại Diện (Featured Image) của trang/bài viết nếu có
+    if (is_singular() && has_post_thumbnail()) {
+        $feat = get_the_post_thumbnail_url(get_the_ID(), 'full');
+        if (!empty($feat)) {
+            if (function_exists('hieugara_normalize_local_media_urls')) {
+                $feat = hieugara_normalize_local_media_urls($feat);
+            }
+            return $feat;
+        }
+    }
+
+    // 2. Trang Về Chúng Tôi
+    if (is_page('ve-chung-toi') || is_page_template('page-ve-chung-toi.php')) {
+        return hieugara_get_page_banner_url('about');
+    }
+
+    // 3. Trang Phụ Kiện Ô Tô
+    if (is_page('phu-kien') || is_page_template('page-phu-kien.php')) {
+        return hieugara_get_page_banner_url('phukien');
+    }
+
+    // 4. Trang Dịch Vụ Xe VinFast
+    $request_uri = trim(parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
+    if ($request_uri === 'dich-vu/xe-vinfast' || is_page('xe-vinfast') || is_page_template('page-vinfast.php')) {
+        return hieugara_get_page_banner_url('vinfast');
+    }
+
+    // 5. Trang Dịch Vụ & Danh Mục Dịch Vụ
+    if (is_post_type_archive('garage_service') || is_tax('service_category') || is_singular('garage_service')) {
+        return hieugara_get_page_banner_url('services');
+    }
+
+    // 6. Trang Bảng Giá & Dự Toán
+    if (is_page('bang-gia') || is_page_template('page-bang-gia.php')) {
+        return hieugara_get_page_banner_url('banggia');
+    }
+
+    // 7. Trang Đặt Lịch Tiếp Nhận Xe
+    if (is_page('dat-lich') || is_page_template('page-dat-lich.php')) {
+        return hieugara_get_page_banner_url('datlich');
+    }
+
+    // 8. Trang Blog / Tin Tức
+    if (is_home() || is_archive() || is_singular('post') || is_page('blog') || is_page_template('page-blog.php')) {
+        return hieugara_get_page_banner_url('blog');
+    }
+
+    // 9. Trang Liên Hệ & Gara Gần Bạn
+    if (is_page('garage-gan-ban') || is_page('lien-he') || is_page_template('page-garage-gan-ban.php')) {
+        return hieugara_get_page_banner_url('contact');
+    }
+
+    // 10. Mặc định
+    return hieugara_get_page_banner_url('default');
+}
+
 
 
 

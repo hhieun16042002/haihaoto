@@ -28,6 +28,12 @@ function hieugara_get_prestige_service_data($slug) {
 
     // Map child slugs to primary Prestige content keys
     $alias_map = array(
+        // 4 Core Parent Categories
+        'bao-duong-sua-chua-o-to'         => 'bao-duong-o-to',
+        'son-phuc-hoi-than-vo'            => 'dong-son-o-to',
+        'cham-soc-lam-dep-o-to'           => 'cham-soc-o-to',
+        'cuu-ho-o-to'                     => 'cuu-ho-o-to',
+
         // 1. Bảo dưỡng ô tô
         'bao-duong-o-to'                  => 'bao-duong-o-to',
         'bao-duong-dinh-ky'               => 'bao-duong-o-to',

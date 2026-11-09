@@ -21,8 +21,8 @@ $pre_model   = isset($_GET['model']) ? sanitize_text_field($_GET['model']) : '';
 
 <main id="primary" class="site-main page-booking-portal">
 
-    <!-- Page Breadcrumb & Header -->
-    <section class="portal-hero-header">
+    <!-- Page Breadcrumb & Header (Universal Hero Banner) -->
+    <section class="portal-hero-header" style="background-image: url('<?php echo esc_url(hieugara_get_current_page_banner()); ?>');">
         <div class="container">
             <div class="portal-breadcrumb">
                 <a href="<?php echo esc_url(home_url('/')); ?>"><?php _e('Trang chủ', 'hieugara-motors'); ?></a>

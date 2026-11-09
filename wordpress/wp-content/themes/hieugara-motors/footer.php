@@ -40,7 +40,6 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                         </div>
                         <div class="footer-brand-heading">
                             <span class="brand-name">ÔTÔ <span class="brand-tag">HẢI HÀ</span></span>
-                            <span class="brand-tagline">Uy tín - chất lượng - hiệu quả là sự tồn tại của doanh nghiệp</span>
                         </div>
                     </div>
 
@@ -165,38 +164,49 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
         </div>
     </div>
 
-    <!-- Footer Bottom Strip -->
-    <div class="footer-bottom-bar">
-        <div class="container footer-bottom-inner">
-            <div class="bottom-copyright">
-                <span class="copy-text">© <?php echo date('Y'); ?> <strong>Ôtô Hải Hà</strong> — Uy tín - chất lượng - hiệu quả là sự tồn tại của doanh nghiệp.</span>
+    <!-- Shopee-Style Certified Compliance Footer Bottom Bar -->
+    <div class="footer-bottom-bar shopee-footer-bar">
+        <div class="container footer-bottom-inner shopee-footer-inner">
+            
+            <!-- 1. Top Policy Navigation Links (Shopee Style Uppercase with Vertical Dividers) -->
+            <nav class="shopee-policy-links" aria-label="Chính sách &amp; Quy định">
+                <a href="<?php echo esc_url(home_url('/chinh-sach-bao-mat/')); ?>">CHÍNH SÁCH BẢO MẬT</a>
+                <span class="shopee-sep" aria-hidden="true">|</span>
+                <a href="<?php echo esc_url(home_url('/ve-chung-toi/')); ?>">QUY CHẾ HOẠT ĐỘNG</a>
+                <span class="shopee-sep" aria-hidden="true">|</span>
+                <a href="<?php echo esc_url(home_url('/dich-vu/')); ?>">CHÍNH SÁCH DỊCH VỤ</a>
+                <span class="shopee-sep" aria-hidden="true">|</span>
+                <a href="<?php echo esc_url(home_url('/tra-cuu-bao-hanh/')); ?>">CHÍNH SÁCH BẢO HÀNH &amp; HỖ TRỢ</a>
+            </nav>
+
+            <!-- 2. Legal Entity Information (HTX CƠ KHÍ HẢI HÀ) -->
+            <div class="shopee-legal-info">
+                <div class="shopee-company-title">HTX CƠ KHÍ HẢI HÀ</div>
+                <div class="shopee-info-line">
+                    Địa chỉ: Km3+500 Đường Nguyễn Lương Bằng, Phường Bình Hàn, Thành phố Hải Dương, Tỉnh Hải Dương, Việt Nam
+                </div>
+                <div class="shopee-info-line">
+                    Chăm sóc khách hàng: <a href="tel:0911211996">0911 211 996</a> &bull; Email: <a href="mailto:thanhotohaiha@gmail.com">thanhotohaiha@gmail.com</a>
+                </div>
+                <div class="shopee-info-line">
+                    Người đại diện theo pháp luật: NGUYỄN THỊ THU HÀ &bull; Giới tính: Nữ &bull; Quốc tịch: Việt Nam
+                </div>
+                <div class="shopee-info-line">
+                    Mã số thuế (MST): 0800016457 do Chi cục Thuế Thành phố Hải Dương quản lý &amp; cấp phép
+                </div>
+                <div class="shopee-copyright-line">
+                    © <?php echo date('Y'); ?> - Bản quyền thuộc về HTX CƠ KHÍ HẢI HÀ
+                </div>
             </div>
 
-            <div class="bottom-extra-links">
-                <a href="<?php echo esc_url(home_url('/ve-chung-toi/')); ?>">Giới Thiệu</a>
-                <span class="sep">•</span>
-                <a href="<?php echo esc_url(home_url('/dich-vu/')); ?>">Dịch Vụ</a>
-                <span class="sep">•</span>
-                <a href="<?php echo esc_url(home_url('/bang-gia/')); ?>">Bảng Giá</a>
-                <span class="sep">•</span>
-                <a href="<?php echo esc_url(home_url('/chinh-sach-bao-mat/')); ?>" style="color: #D4B996; font-weight: 700;">Chính Sách Bảo Mật &amp; Pháp Lý</a>
-                <span class="sep">•</span>
-                <a href="<?php echo esc_url(home_url('/ve-chung-toi/#lien-he')); ?>">Liên Hệ</a>
-            </div>
-
-            <!-- Legal Entity Compliance Block (Luật TMĐT 122/2025/QH15 & Nghị định 52/2013/NĐ-CP) -->
-            <div style="font-size: 0.78rem; color: #94a3b8; margin: 12px 0 6px; line-height: 1.6; text-align: center;">
-                <strong>Đơn vị chủ quản:</strong> TRUNG TÂM DỊCH VỤ KỸ THUẬT Ô TÔ HẢI HÀ (GARA Ô TÔ HẢI HÀ) &bull; 
-                <strong>Địa chỉ:</strong> Km3+500 Đường Nguyễn Lương Bằng, Phường Bình Hàn, TP. Hải Dương &bull; 
-                <strong>Tổng đài:</strong> 02203 892 207 &bull; <strong>Hotline cứu hộ:</strong> 0911 211 996
-            </div>
-
+            <!-- Back to top button -->
             <div class="bottom-back-to-top">
                 <button type="button" id="footerBackToTop" class="back-to-top-btn" aria-label="Lên đầu trang">
                     <span class="btn-top-text">LÊN ĐẦU</span>
                     <span class="btn-top-icon"><i class="fa-solid fa-arrow-up"></i></span>
                 </button>
             </div>
+
         </div>
     </div>
 

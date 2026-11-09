@@ -17,44 +17,28 @@ $blog_query = new WP_Query(array(
     'orderby'        => 'date',
     'order'          => 'DESC'
 ));
+
+$banner_bg = function_exists('hieugara_get_current_page_banner') ? hieugara_get_current_page_banner() : hieugara_get_page_banner_url('blog');
 ?>
 
-<main id="primary" class="site-main blog-archive-page" style="padding: 40px 0 80px; background: #F9FAFB; min-height: 80vh;">
-    <div class="container">
-        
-        <!-- Breadcrumb -->
-        <nav class="blog-breadcrumb" aria-label="Breadcrumb" style="margin-bottom: 24px; font-size: 0.875rem; color: #6B7280;">
-            <a href="<?php echo esc_url(home_url('/')); ?>" style="color: #6B7280; text-decoration: none;"><i class="fa-solid fa-house"></i> Trang chủ</a>
-            <span style="margin: 0 8px; color: #D1D5DB;">/</span>
-            <span style="color: #141414; font-weight: 600;">Blog</span>
-        </nav>
+<main id="primary" class="site-main blog-archive-page" style="background: #F8FAFC; min-height: 80vh;">
 
-        <!-- Archive Header -->
-        <div class="blog-sec-head text-center" style="margin-bottom: 36px;">
-            <span class="blog-badge-tag"><i class="fa-solid fa-newspaper"></i> <?php _e('CẨM NANG &amp; KỸ THUẬT Ô TÔ', 'hieugara-motors'); ?></span>
-            <h1 class="blog-heading-main" style="margin-bottom: 12px;">
-                <span><?php _e('Cẩm Nang &amp; Kỹ Thuật Ô Tô', 'hieugara-motors'); ?></span>
-            </h1>
-            <div class="tuning-shop-divider"></div>
-            <p class="blog-sec-sub" style="margin-bottom: 24px;">
-                <?php _e('Tổng hợp kiến thức sửa chữa, quy trình bảo dưỡng chuẩn hãng và thiết bị công nghệ hiện đại tại Ô Tô Hải Hà.', 'hieugara-motors'); ?>
+    <!-- Page Breadcrumb & Header (Đức Trí 226 Style Hero Banner) -->
+    <section class="portal-hero-header" style="background-image: url('<?php echo esc_url($banner_bg); ?>');">
+        <div class="container">
+            <nav class="portal-breadcrumb" aria-label="Breadcrumb">
+                <a href="<?php echo esc_url(home_url('/')); ?>"><?php _e('Trang chủ', 'hieugara-motors'); ?></a>
+                <span class="sep">/</span>
+                <span class="current"><?php _e('Cẩm nang &amp; Tin tức ô tô', 'hieugara-motors'); ?></span>
+            </nav>
+            <h1 class="portal-page-title"><?php _e('CẨM NANG & KỸ THUẬT Ô TÔ', 'hieugara-motors'); ?></h1>
+            <p class="portal-page-subtitle">
+                <?php _e('Tổng hợp kiến thức sửa chữa, quy trình bảo dưỡng chuẩn hãng và thiết bị công nghệ hiện đại tại xưởng dịch vụ Ôtô Hải Hà.', 'hieugara-motors'); ?>
             </p>
-
-            <!-- Category Pills -->
-            <div class="blog-cat-pills">
-                <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="acc-pill-btn active">
-                    <i class="fa-solid fa-border-all"></i> <?php _e('Tất Cả Bài Viết', 'hieugara-motors'); ?> (<?php echo esc_html($blog_query->found_posts); ?>)
-                </a>
-                <?php 
-                $archive_cats = get_categories(array('hide_empty' => false));
-                foreach ($archive_cats as $a_cat) :
-                ?>
-                    <a href="<?php echo esc_url(get_category_link($a_cat->term_id)); ?>" class="acc-pill-btn">
-                        <i class="fa-solid fa-folder-open"></i> <?php echo esc_html($a_cat->name); ?> (<?php echo esc_html($a_cat->count); ?>)
-                    </a>
-                <?php endforeach; ?>
-            </div>
         </div>
+    </section>
+
+    <div class="container" style="padding-top: 55px; padding-bottom: 85px; max-width: 1200px; margin: 0 auto; padding-left: 20px; padding-right: 20px;">
 
         <?php if ($blog_query->have_posts()) : ?>
             <div class="hp-blog-grid">
@@ -100,33 +84,54 @@ $blog_query = new WP_Query(array(
                             </div>
                         </div>
                     </article>
-                <?php endwhile; wp_reset_postdata(); ?>
+                <?php endwhile; ?>
             </div>
 
             <!-- Pagination -->
-            <div style="margin-top: 48px;" class="text-center">
-                <?php
-                echo paginate_links(array(
-                    'total'        => $blog_query->max_num_pages,
-                    'current'      => $paged,
-                    'prev_text'    => '<i class="fa-solid fa-chevron-left"></i> Trước',
-                    'next_text'    => 'Sau <i class="fa-solid fa-chevron-right"></i>',
-                    'type'         => 'plain',
-                ));
-                ?>
-            </div>
+            <?php if ($blog_query->max_num_pages > 1) : ?>
+                <div class="pagination-wrapper" style="text-align: center; margin-top: 40px;">
+                    <?php
+                    echo paginate_links(array(
+                        'base'         => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
+                        'total'        => $blog_query->max_num_pages,
+                        'current'      => max(1, get_query_var('paged')),
+                        'format'       => '?paged=%#%',
+                        'show_all'     => false,
+                        'type'         => 'plain',
+                        'end_size'     => 2,
+                        'mid_size'     => 1,
+                        'prev_next'    => true,
+                        'prev_text'    => sprintf('<i></i> %1$s', __('&laquo; Trước', 'hieugara-motors')),
+                        'next_text'    => sprintf('%1$s <i></i>', __('Sau &raquo;', 'hieugara-motors')),
+                    ));
+                    ?>
+                </div>
+            <?php endif; ?>
 
         <?php else : ?>
-            <div class="text-center" style="background: #FFFFFF; border-radius: 16px; padding: 60px 24px; border: 1px solid #E5E7EB; max-width: 640px; margin: 0 auto;">
-                <div style="width: 72px; height: 72px; background: #FEF3C7; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2rem; color: #D97706;">
-                    <i class="fa-regular fa-folder-open"></i>
-                </div>
-                <h2 style="font-size: 1.4rem; color: #141414; font-weight: 700; margin-bottom: 10px;">
-                    <?php _e('Chưa có bài viết', 'hieugara-motors'); ?>
-                </h2>
-                <p style="color: #6B7280; margin-bottom: 24px; line-height: 1.6;">
-                    <?php _e('Bài viết đang được cập nhật.', 'hieugara-motors'); ?>
+            <!-- THÔNG BÁO NHẸ NHÀNG, KHÔNG IN ĐẬM, KHÔNG NỔI BẬT GÌ CẢ -->
+            <div class="empty-blog-hub" style="max-width: 860px; margin: 0 auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 40px 32px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.03);">
+                
+                <p style="font-size: 1rem; color: #475569; line-height: 1.85; margin: 0 0 18px; font-weight: 400;">
+                    Chuyên mục cẩm nang kinh nghiệm xe và tin tức kỹ thuật Ô Tô Hải Hà đang trong quá trình biên tập và cập nhật các bài viết chuyên môn mới nhất.
                 </p>
+
+                <p style="font-size: 1rem; color: #475569; line-height: 1.85; margin: 0 0 28px; font-weight: 400;">
+                    Quý khách cần tìm hiểu quy trình bảo dưỡng, thông số kỹ thuật hoặc tư vấn chăm sóc xe hơi, vui lòng liên hệ trực tiếp với đội ngũ kỹ thuật viên trưởng Ô Tô Hải Hà để được hỗ trợ 24/7.
+                </p>
+
+                <div style="display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap;">
+                    <a href="tel:0911211996" style="background: #141414; color: #ffffff; padding: 10px 20px; border-radius: 4px; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.88rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-phone-volume"></i> Hotline: 0911 211 996
+                    </a>
+                    <a href="tel:02203892207" style="background: #f8fafc; color: #1e293b; border: 1px solid #cbd5e1; padding: 10px 20px; border-radius: 4px; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.88rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-headset"></i> Tổng Đài: 02203 892 207
+                    </a>
+                    <a href="https://zalo.me/0911211996" target="_blank" rel="noopener" style="background: #0068FF; color: #ffffff; padding: 10px 20px; border-radius: 4px; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.88rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-comment-dots"></i> Chat Zalo
+                    </a>
+                </div>
+
             </div>
         <?php endif; ?>
 
@@ -135,4 +140,3 @@ $blog_query = new WP_Query(array(
 
 <?php
 get_footer();
-

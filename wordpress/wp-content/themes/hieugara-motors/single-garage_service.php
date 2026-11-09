@@ -16,7 +16,7 @@ while (have_posts()) : the_post();
     // Primary Data from WP Admin
     $page_title = get_the_title();
     $meta_price = get_post_meta($post_id, '_garage_price_from', true) ?: get_post_meta($post_id, '_service_price', true);
-    $price      = !empty($meta_price) ? $meta_price : 'Khảo sát báo giá miễn phí';
+    $price      = !empty($meta_price) ? $meta_price : 'Liên hệ';
 
     $meta_badge = get_post_meta($post_id, '_garage_badge', true);
     $badge      = !empty($meta_badge) ? $meta_badge : 'TIÊU CHUẨN ÔTÔ HẢI HÀ';

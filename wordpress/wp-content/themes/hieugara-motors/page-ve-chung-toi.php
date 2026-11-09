@@ -171,8 +171,8 @@ $about_parts_rate  = get_option('hieugara_about_parts_rate', '100%');
 
 <?php while (have_posts()) : the_post(); ?>
 
-    <!-- Page Breadcrumb & Header -->
-    <section class="portal-hero-header">
+    <!-- Page Breadcrumb & Header (Universal Hero Banner) -->
+    <section class="portal-hero-header" style="background-image: url('<?php echo esc_url(hieugara_get_current_page_banner()); ?>');">
         <div class="container">
             <div class="portal-breadcrumb">
                 <a href="<?php echo esc_url(home_url('/')); ?>"><?php _e('Trang chủ', 'hieugara-motors'); ?></a>
@@ -248,19 +248,19 @@ $about_parts_rate  = get_option('hieugara_about_parts_rate', '100%');
                     </a>
                 </div>
 
-                <!-- Highlights Row (Key Statistics) -->
-                <div class="about-highlights-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; background: #141414; border: 1px solid rgba(197, 168, 128, 0.3); border-radius: 8px; padding: 28px 24px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+                <!-- Highlights Row (Key Statistics - Light Luxury Style) -->
+                <div class="about-highlights-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; background: #FBF8F3; border: 1px solid #E2E8F0; border-top: 3px solid #C5A880; border-radius: 8px; padding: 28px 24px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.04);">
                     <div class="hl-item">
-                        <strong style="display: block; font-size: 2.2rem; color: #C5A880; font-weight: 800; font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.2;"><?php echo esc_html($about_years_exp); ?></strong>
-                        <span style="font-size: 0.88rem; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Năm đồng hành (1995-<?php echo date('Y'); ?>)</span>
+                        <strong style="display: block; font-size: 2.2rem; color: #8C6239; font-weight: 800; font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.2;"><?php echo esc_html($about_years_exp); ?></strong>
+                        <span style="font-size: 0.88rem; color: #475569; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Năm đồng hành (1995-<?php echo date('Y'); ?>)</span>
                     </div>
-                    <div class="hl-item" style="border-left: 1px solid rgba(255,255,255,0.12);">
-                        <strong style="display: block; font-size: 2.2rem; color: #C5A880; font-weight: 800; font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.2;"><?php echo esc_html($about_staff_count); ?></strong>
-                        <span style="font-size: 0.88rem; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Nhân sự tận tâm &amp; tay nghề cao</span>
+                    <div class="hl-item" style="border-left: 1px solid #E2E8F0;">
+                        <strong style="display: block; font-size: 2.2rem; color: #8C6239; font-weight: 800; font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.2;"><?php echo esc_html($about_staff_count); ?></strong>
+                        <span style="font-size: 0.88rem; color: #475569; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Nhân sự tận tâm &amp; tay nghề cao</span>
                     </div>
-                    <div class="hl-item" style="border-left: 1px solid rgba(255,255,255,0.12);">
-                        <strong style="display: block; font-size: 2.2rem; color: #22c55e; font-weight: 800; font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.2;"><?php echo esc_html($about_parts_rate); ?></strong>
-                        <span style="font-size: 0.88rem; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Phụ tùng chính hãng &amp; bảo hành chuẩn</span>
+                    <div class="hl-item" style="border-left: 1px solid #E2E8F0;">
+                        <strong style="display: block; font-size: 2.2rem; color: #16A34A; font-weight: 800; font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.2;"><?php echo esc_html($about_parts_rate); ?></strong>
+                        <span style="font-size: 0.88rem; color: #475569; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Phụ tùng chính hãng &amp; bảo hành chuẩn</span>
                     </div>
                 </div>
 
@@ -310,7 +310,7 @@ $about_parts_rate  = get_option('hieugara_about_parts_rate', '100%');
             </div>
 
             <div style="text-align: center; margin-top: 48px;">
-                <a href="tel:02203892207" class="btn-carpla btn-carpla-primary" style="padding: 14px 36px; font-weight: 800; background: #C5A880; color: #141414;">
+                <a href="tel:02203892207" class="btn-carpla btn-carpla-primary" style="padding: 14px 36px; font-weight: 800; background: #8C6239; color: #ffffff; border-radius: 6px; box-shadow: 0 4px 14px rgba(140, 98, 57, 0.25);">
                     <i class="fa-solid fa-phone-volume"></i> <?php _e('GỌI TƯ VẤN DỊCH VỤ: 02203 892 207', 'hieugara-motors'); ?>
                 </a>
             </div>

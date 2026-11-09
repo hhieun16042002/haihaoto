@@ -56,6 +56,12 @@ function hieugara_register_theme_settings() {
 
     // Gallery Images Data (Hình Ảnh Ôtô Hải Hà)
     register_setting('hieugara_settings_group', 'hieugara_gallery_items');
+
+    // Page Hero Banners Data (Banner mở đầu các trang)
+    $banner_keys = array('about', 'phukien', 'services', 'vinfast', 'banggia', 'datlich', 'blog', 'contact', 'default');
+    foreach ($banner_keys as $b_key) {
+        register_setting('hieugara_settings_group', 'hieugara_banner_' . $b_key, array('sanitize_callback' => 'esc_url_raw'));
+    }
 }
 add_action('admin_init', 'hieugara_register_theme_settings');
 
@@ -892,6 +898,103 @@ function hieugara_render_theme_settings_page() {
                 </div>
             </div>
 
+            <!-- TAB 4: BANNER MỞ ĐẦU CÁC TRANG (HERO BANNERS - BỘ ẢNH XƯỞNG ÔTÔ HẢI HÀ) -->
+            <div class="hieugara-card" id="card-hero-banners">
+                <div class="card-header" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: #fff; padding: 18px 24px;">
+                    <h2 style="color: #fff; margin: 0; font-size: 1.15rem; display: flex; align-items: center; gap: 10px;">
+                        <span class="dashicons dashicons-format-image" style="color: #C5A880; font-size: 24px;"></span>
+                        4. Quản Lý Banner Mở Đầu Các Trang (Hero Banners)
+                    </h2>
+                </div>
+                <div class="card-body" style="padding: 24px;">
+                    <div style="background: #f8fafc; border-left: 4px solid #C5A880; padding: 12px 16px; border-radius: 4px; margin-bottom: 22px; font-size: 0.92rem; color: #334155;">
+                        <p style="margin: 0; line-height: 1.6;">
+                            <strong>✨ Bộ ảnh Banner chuẩn xưởng Ôtô Hải Hà:</strong> Đã được tự động tối ưu và gán sẵn vào từng trang tương ứng. Bạn có thể bấm <strong>"Chọn ảnh / Tải lên"</strong> để thay bằng ảnh bất kỳ từ Thư viện WordPress, hoặc bấm <strong>"Khôi phục gốc"</strong> để trở về ảnh chuẩn ban đầu.
+                        </p>
+                    </div>
+
+                    <?php
+                    $page_banners_list = array(
+                        'about'    => array('label' => 'Về Chúng Tôi', 'url' => '/ve-chung-toi/', 'desc' => 'Trang giới thiệu 31 năm & quy mô xưởng'),
+                        'phukien'  => array('label' => 'Phụ Kiện Ô Tô', 'url' => '/phu-kien/', 'desc' => '7 danh mục phụ kiện & đồ chơi chính hãng'),
+                        'services' => array('label' => 'Dịch Vụ Gara', 'url' => '/dich-vu/', 'desc' => 'Trang tổng hợp & danh mục dịch vụ'),
+                        'vinfast'  => array('label' => 'Dịch Vụ VinFast', 'url' => '/dich-vu/xe-vinfast/', 'desc' => 'Xưởng dịch vụ đối tác chính thức VinFast'),
+                        'banggia'  => array('label' => 'Bảng Giá & Dự Toán', 'url' => '/bang-gia/', 'desc' => 'Bảng giá bảo dưỡng định kỳ & sơn gò'),
+                        'datlich'  => array('label' => 'Đặt Lịch Tiếp Nhận', 'url' => '/dat-lich/', 'desc' => 'Trang đặt lịch hẹn dịch vụ trực tuyến'),
+                        'blog'     => array('label' => 'Tin Tức & Blog', 'url' => '/blog/', 'desc' => 'Trang kiến thức ô tô, cẩm nang lái xe'),
+                        'contact'  => array('label' => 'Liên Hệ & Gara', 'url' => '/garage-gan-ban/', 'desc' => 'Mạng lưới chi nhánh & thông tin liên hệ'),
+                        'default'  => array('label' => 'Mặc Định Chung', 'url' => '*', 'desc' => 'Áp dụng cho các trang con khác chưa cài riêng'),
+                    );
+                    $banners_base_uri = get_template_directory_uri() . '/assets/images/banners';
+                    $default_filenames = array(
+                        'about'    => $banners_base_uri . '/banner-ve-chung-toi.jpg',
+                        'phukien'  => $banners_base_uri . '/banner-phu-kien.jpg',
+                        'services' => $banners_base_uri . '/banner-dich-vu.jpg',
+                        'vinfast'  => $banners_base_uri . '/banner-vinfast.jpg',
+                        'banggia'  => $banners_base_uri . '/banner-bang-gia.jpg',
+                        'datlich'  => $banners_base_uri . '/banner-dat-lich.jpg',
+                        'blog'     => $banners_base_uri . '/banner-blog.jpg',
+                        'contact'  => $banners_base_uri . '/banner-lien-he.jpg',
+                        'default'  => $banners_base_uri . '/banner-default.jpg',
+                    );
+                    ?>
+
+                    <table class="widefat fixed striped" style="border: 1px solid #cbd5e1; border-radius: 6px; overflow: hidden;">
+                        <thead>
+                            <tr style="background: #1e293b; color: #fff;">
+                                <th style="width: 220px; padding: 12px 14px; font-weight: 800; color: #fff;">TRANG ÁP DỤNG</th>
+                                <th style="width: 140px; padding: 12px; font-weight: 800; color: #fff; text-align: center;">ẢNH XEM TRƯỚC</th>
+                                <th style="padding: 12px 14px; font-weight: 800; color: #fff;">ĐƯỜNG DẪN ẢNH BANNER</th>
+                                <th style="width: 230px; padding: 12px; font-weight: 800; color: #fff; text-align: center;">THAO TÁC</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($page_banners_list as $b_key => $b_info) : 
+                                $curr_val = get_option('hieugara_banner_' . $b_key, '');
+                                $default_val = $default_filenames[$b_key] ?? '';
+                                $display_src = !empty($curr_val) ? $curr_val : $default_val;
+                                if (function_exists('hieugara_normalize_local_media_urls')) {
+                                    $display_src = hieugara_normalize_local_media_urls($display_src);
+                                    $default_val = hieugara_normalize_local_media_urls($default_val);
+                                }
+                            ?>
+                                <tr class="banner-config-row" data-key="<?php echo esc_attr($b_key); ?>">
+                                    <td style="vertical-align: middle;">
+                                        <strong style="display: block; font-size: 0.95rem; color: #0f172a; margin-bottom: 2px;">
+                                            <?php echo esc_html($b_info['label']); ?>
+                                        </strong>
+                                        <code style="font-size: 0.75rem; background: #e2e8f0; color: #475569; padding: 2px 6px; border-radius: 3px;">
+                                            <?php echo esc_html($b_info['url']); ?>
+                                        </code>
+                                        <span style="display: block; font-size: 0.8rem; color: #64748b; margin-top: 4px;">
+                                            <?php echo esc_html($b_info['desc']); ?>
+                                        </span>
+                                    </td>
+                                    <td style="text-align: center; vertical-align: middle;">
+                                        <div style="width: 120px; height: 68px; margin: 0 auto; border-radius: 6px; overflow: hidden; border: 2px solid #cbd5e1; background: #0f172a; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                                            <img src="<?php echo esc_url($display_src); ?>" alt="<?php echo esc_attr($b_info['label']); ?>" class="banner-preview-img" style="width: 100%; height: 100%; object-fit: cover;">
+                                        </div>
+                                    </td>
+                                    <td style="vertical-align: middle;">
+                                        <input type="text" name="hieugara_banner_<?php echo esc_attr($b_key); ?>" value="<?php echo esc_attr($curr_val); ?>" class="regular-text banner-url-input" style="width: 100%; font-size: 0.85rem; padding: 6px 10px;" placeholder="<?php echo esc_attr($default_val); ?> (Mặc định)">
+                                    </td>
+                                    <td style="text-align: center; vertical-align: middle;">
+                                        <div style="display: flex; gap: 6px; justify-content: center; flex-wrap: wrap;">
+                                            <button type="button" class="button button-primary banner-pick-btn" title="Chọn hoặc tải ảnh từ Media Library">
+                                                <span class="dashicons dashicons-upload" style="margin-top: 4px;"></span> Chọn ảnh
+                                            </button>
+                                            <button type="button" class="button button-secondary banner-reset-btn" data-default="<?php echo esc_attr($default_val); ?>" title="Khôi phục ảnh chuẩn ban đầu">
+                                                <span class="dashicons dashicons-image-rotate" style="margin-top: 4px;"></span> Gốc
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
             <!-- Submit Button -->
             <div class="hieugara-submit-bar">
                 <?php submit_button(__('LƯU TẤT CẢ CÀI ĐẶT', 'hieugara-motors'), 'primary large', 'submit', false); ?>
@@ -1107,6 +1210,45 @@ function hieugara_render_theme_settings_page() {
             $('html, body').animate({
                 scrollTop: $('#gallery-items-tbody tr:last-child').offset().top - 120
             }, 300);
+        });
+
+        // 11. Hero Banner Uploader
+        $(document).on('click', '.banner-pick-btn', function(e) {
+            e.preventDefault();
+            var $row = $(this).closest('tr');
+            var $input = $row.find('.banner-url-input');
+            var $preview = $row.find('.banner-preview-img');
+
+            var bannerUploader = wp.media({
+                title: 'Chọn Ảnh Banner Mở Đầu Trang',
+                button: { text: 'Sử dụng ảnh này làm Banner' },
+                multiple: false
+            }).on('select', function() {
+                var attachment = bannerUploader.state().get('selection').first().toJSON();
+                $input.val(attachment.url);
+                $preview.attr('src', attachment.url);
+            }).open();
+        });
+
+        // 12. Hero Banner Reset to Default
+        $(document).on('click', '.banner-reset-btn', function(e) {
+            e.preventDefault();
+            var $row = $(this).closest('tr');
+            var def = $(this).data('default');
+            $row.find('.banner-url-input').val('');
+            $row.find('.banner-preview-img').attr('src', def);
+        });
+
+        // 13. Live Preview Banner Input Change
+        $(document).on('input change', '.banner-url-input', function() {
+            var val = $(this).val();
+            var $row = $(this).closest('tr');
+            if (val.trim() === '') {
+                var def = $row.find('.banner-reset-btn').data('default');
+                $row.find('.banner-preview-img').attr('src', def);
+            } else {
+                $row.find('.banner-preview-img').attr('src', val);
+            }
         });
     });
     </script>

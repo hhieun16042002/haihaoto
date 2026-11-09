@@ -128,7 +128,6 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
             <img src="<?php echo esc_url($site_logo_url); ?>" alt="Ôtô Hải Hà" width="40" height="40">
             <div class="drawer-brand-text">
                 <span class="drawer-name">ÔTÔ <strong class="text-orange">HẢI HÀ</strong></span>
-                <small class="drawer-sub">Uy tín - chất lượng - hiệu quả là sự tồn tại của doanh nghiệp</small>
             </div>
         </div>
         <button type="button" class="mobile-drawer-close" id="mobileDrawerCloseBtn" aria-label="Đóng menu">

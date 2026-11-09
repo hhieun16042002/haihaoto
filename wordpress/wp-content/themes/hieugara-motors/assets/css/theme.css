@@ -5427,94 +5427,137 @@ p, span, a, li, th, td, label, blockquote, figcaption {
    Covers About (/ve-chung-toi/), Services (/dich-vu/), Price (/bang-gia/), etc.
    ========================================================================= */
 
-/* 1. Global Portal Hero Banner */
-.portal-hero-header {
-    background: #141414;
-    background-image: 
-        radial-gradient(circle at 80% 20%, rgba(197, 168, 128, 0.12) 0%, transparent 40%),
-        linear-gradient(180deg, #101010 0%, #141414 100%);
-    padding: 65px 0 55px;
-    border-bottom: 3px solid #C5A880;
-    position: relative;
-    overflow: hidden;
+/* =========================================================================
+   1. GLOBAL PORTAL HERO BANNER (ĐỨC TRÍ 226 STYLE: NỀN ẢNH XƯỞNG SẮC NÉT + DARK VIGNETTE OVERLAY)
+   ========================================================================= */
+.portal-hero-header,
+.phukien-hero-section,
+.service-single-header {
+    background-color: #0a0d12 !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    padding: 75px 0 65px !important;
+    border-bottom: 3px solid #C5A880 !important;
+    position: relative !important;
+    overflow: hidden !important;
+    text-align: center !important;
 }
 
-.portal-hero-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: repeating-linear-gradient(
-        45deg,
-        rgba(255, 255, 255, 0.015) 0,
-        rgba(255, 255, 255, 0.015) 1px,
-        transparent 0,
-        transparent 16px
-    );
-    pointer-events: none;
+.portal-hero-header::before,
+.phukien-hero-section::before,
+.service-single-header::before {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: linear-gradient(180deg, rgba(10, 13, 18, 0.58) 0%, rgba(10, 13, 18, 0.78) 100%) !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+    display: block !important;
 }
 
-.portal-breadcrumb {
+.portal-hero-header .container,
+.phukien-hero-section .container,
+.service-single-header .container {
+    position: relative !important;
+    z-index: 2 !important;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.portal-breadcrumb,
+.phukien-breadcrumb {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.2px;
-    color: #888888;
+    color: rgba(255, 255, 255, 0.72) !important;
     margin-bottom: 16px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    gap: 8px;
     position: relative;
     z-index: 2;
 }
 
-.portal-breadcrumb a {
-    color: #aaaaaa;
+.portal-breadcrumb a,
+.phukien-breadcrumb a {
+    color: #D4B996 !important;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
-.portal-breadcrumb a:hover {
-    color: #C5A880;
+.portal-breadcrumb a:hover,
+.phukien-breadcrumb a:hover {
+    color: #ffffff !important;
+    text-decoration: underline;
 }
 
-.portal-breadcrumb span {
-    color: #555555;
+.portal-breadcrumb span,
+.portal-breadcrumb .sep,
+.phukien-breadcrumb span,
+.phukien-breadcrumb .sep {
+    color: rgba(255, 255, 255, 0.45) !important;
 }
 
-.portal-breadcrumb .current {
-    color: #C5A880;
+.portal-breadcrumb .current,
+.phukien-breadcrumb .current {
+    color: #ffffff !important;
+    font-weight: 700 !important;
 }
 
-.portal-page-title {
+.portal-page-title,
+.phukien-title {
     font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: clamp(2rem, 4vw, 2.85rem);
+    font-size: clamp(1.85rem, 4vw, 2.75rem);
     font-weight: 800;
-    color: #ffffff;
+    color: #ffffff !important;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: -0.02em;
     line-height: 1.25;
-    margin: 0 0 16px;
+    margin: 0 auto 14px;
     position: relative;
     z-index: 2;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
 }
 
-.portal-page-subtitle {
-    color: #cbd5e1;
+.portal-page-subtitle,
+.phukien-subtitle {
+    color: rgba(255, 255, 255, 0.92) !important;
     font-size: 1.05rem;
+    font-weight: 500;
     line-height: 1.7;
     max-width: 860px;
-    margin: 0;
+    margin: 0 auto;
     position: relative;
     z-index: 2;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* 2. About Page (/ve-chung-toi/) */
+@media (max-width: 768px) {
+    .portal-hero-header,
+    .phukien-hero-section,
+    .service-single-header {
+        padding: 48px 16px 40px !important;
+    }
+    .portal-page-title,
+    .phukien-title {
+        font-size: 1.5rem !important;
+        margin-bottom: 10px !important;
+    }
+    .portal-page-subtitle,
+    .phukien-subtitle {
+        font-size: 0.92rem !important;
+        line-height: 1.55 !important;
+    }
+}
+
+/* 2. About Page (/ve-chung-toi/ - Editorial Content) */
 .page-about-portal {
-    background: #F5F5F5;
+    background: #F8FAFC;
 }
 
 .about-story-section {
@@ -5636,12 +5679,12 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     letter-spacing: 0.5px;
 }
 
-/* 3. Commitments Section (5 Cam Kết Vàng) */
+/* 3. Commitments Section (5 Cam Kết Vàng - Light Luxury Style) */
 .commitments-section {
     padding: 75px 0 85px;
-    background: #141414;
-    color: #ffffff;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: #FBF8F3;
+    color: #141414;
+    border-top: 1px solid #E2E8F0;
 }
 
 .commitments-section .section-header {
@@ -5651,28 +5694,30 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 
 .commitments-section .section-pill {
     display: inline-block;
-    background: rgba(197, 168, 128, 0.15);
-    color: #C5A880;
-    border: 1px solid rgba(197, 168, 128, 0.4);
-    padding: 5px 16px;
+    background: #FFFFFF;
+    color: #8C6239;
+    border: 1px solid #D4B996;
+    padding: 6px 16px;
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.8rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1.2px;
     margin-bottom: 12px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
 }
 
 .commitments-section .section-title {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: clamp(1.8rem, 3.5vw, 2.5rem);
     font-weight: 800;
-    color: #ffffff;
+    color: #141414;
     margin-bottom: 10px;
 }
 
 .commitments-section .section-desc {
-    color: #94a3b8;
+    color: #475569;
     max-width: 680px;
     margin: 0 auto;
     font-size: 0.95rem;
@@ -5685,11 +5730,12 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 }
 
 .commit-card {
-    background: #1c1c1c;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
     border-top: 3px solid #C5A880;
     padding: 26px 18px 22px;
-    border-radius: 4px;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -5698,14 +5744,14 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 .commit-card:hover {
     transform: translateY(-6px);
     border-color: #C5A880;
-    box-shadow: 0 14px 30px rgba(197, 168, 128, 0.14);
+    box-shadow: 0 14px 30px rgba(197, 168, 128, 0.18);
 }
 
 .commit-card .commit-num {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 2.2rem;
     font-weight: 800;
-    color: rgba(197, 168, 128, 0.35);
+    color: #C5A880;
     line-height: 1;
     margin-bottom: 12px;
 }
@@ -5714,7 +5760,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.02rem;
     font-weight: 800;
-    color: #ffffff;
+    color: #141414;
     margin-bottom: 10px;
     text-transform: uppercase;
     line-height: 1.35;
@@ -5722,7 +5768,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 
 .commit-card p {
     font-size: 0.86rem;
-    color: #94a3b8;
+    color: #475569;
     line-height: 1.6;
     margin: 0;
 }
@@ -10643,12 +10689,6 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     vertical-align: baseline !important;
 }
 
-/* Slogan "Uy tín - chất lượng - hiệu quả là sự tồn tại của doanh nghiệp" in black (#141414) */
-.footer-brand-heading .brand-tagline {
-    color: #141414 !important;
-    font-weight: 700 !important;
-}
-
 .footer-brand-desc,
 .footer-brand-desc strong {
     color: #141414 !important;
@@ -10908,6 +10948,123 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     background: #141414 !important;
     border-color: #141414 !important;
     color: #ffffff !important;
+}
+
+/* Shopee-Style Certified Compliance Footer Bottom Bar */
+.shiftup-main-footer .shopee-footer-bar {
+    background: #F7F7F7 !important;
+    border-top: 1px solid #E5E5E5 !important;
+    padding: 38px 0 32px !important;
+    position: relative;
+    z-index: 2;
+}
+
+.shopee-footer-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 16px !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    position: relative;
+}
+
+.shopee-policy-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.shopee-policy-links a {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.65) !important;
+    text-decoration: none !important;
+    letter-spacing: 0.4px;
+    transition: color 0.2s ease;
+}
+
+.shopee-policy-links a:hover {
+    color: #D92D20 !important;
+}
+
+.shopee-policy-links .shopee-sep {
+    color: #c4c4c4;
+    font-size: 0.75rem;
+    font-weight: 300;
+}
+
+.shopee-legal-info {
+    font-size: 0.78rem;
+    line-height: 1.85;
+    font-weight: 400 !important;
+    color: rgba(0, 0, 0, 0.62) !important;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.shopee-company-title {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: #222222 !important;
+    text-transform: none;
+    letter-spacing: 0.3px;
+    margin-bottom: 8px;
+}
+
+.shopee-info-line {
+    margin-bottom: 4px;
+    font-weight: 400 !important;
+}
+
+.shopee-info-line a {
+    color: rgba(0, 0, 0, 0.65) !important;
+    text-decoration: none !important;
+    font-weight: 400 !important;
+}
+
+.shopee-info-line a:hover {
+    color: #D92D20 !important;
+    text-decoration: underline !important;
+}
+
+.shopee-info-line strong {
+    font-weight: 400 !important;
+    color: rgba(0, 0, 0, 0.65) !important;
+}
+
+.shopee-copyright-line {
+    margin-top: 14px;
+    font-size: 0.8rem;
+    font-weight: 400 !important;
+    color: rgba(0, 0, 0, 0.52) !important;
+}
+
+.shopee-footer-bar .bottom-back-to-top {
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .shopee-footer-bar .bottom-back-to-top {
+        position: static;
+        margin-top: 10px;
+    }
+    .shopee-policy-links {
+        gap: 8px;
+        font-size: 0.72rem;
+    }
+    .shopee-legal-info {
+        font-size: 0.74rem;
+        line-height: 1.7;
+    }
 }
 
 /* 5. SEO Search Results Page Styles (search.php) */
@@ -11250,47 +11407,47 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 }
 
 .phukien-hero-section {
-    background: linear-gradient(180deg, #141414 0%, #1f2024 100%);
-    color: #ffffff;
+    background: linear-gradient(180deg, #FBF8F3 0%, #F4ECE1 100%);
+    color: #141414;
     padding: 48px 0 56px;
-    border-bottom: 2px solid #C5A880;
+    border-bottom: 2px solid #D4B996;
     position: relative;
     overflow: hidden;
 }
 
 .phukien-breadcrumb {
     font-size: 0.85rem;
-    color: #94a3b8;
+    color: #64748b;
     margin-bottom: 24px;
 }
 
 .phukien-breadcrumb a {
-    color: #cbd5e1;
+    color: #475569;
     text-decoration: none;
     transition: color 0.2s;
 }
 
 .phukien-breadcrumb a:hover {
-    color: #C5A880;
+    color: #8C6239;
 }
 
 .phukien-breadcrumb .sep {
     margin: 0 8px;
-    color: #64748b;
+    color: #94a3b8;
 }
 
 .phukien-breadcrumb .current {
-    color: #C5A880;
-    font-weight: 600;
+    color: #141414;
+    font-weight: 700;
 }
 
 .phukien-eyebrow {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(197, 168, 128, 0.15);
-    border: 1px solid rgba(197, 168, 128, 0.35);
-    color: #e2d2ba;
+    background: #FFFFFF;
+    border: 1px solid #D4B996;
+    color: #8C6239;
     padding: 6px 14px;
     border-radius: 999px;
     font-size: 0.75rem;
@@ -11299,12 +11456,13 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     text-transform: uppercase;
     margin-bottom: 16px;
     font-family: 'Be Vietnam Pro', sans-serif;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 
 .phukien-eyebrow .eyebrow-dot {
     width: 6px;
     height: 6px;
-    background: #C5A880;
+    background: #8C6239;
     border-radius: 50%;
 }
 
@@ -11312,7 +11470,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 2.6rem;
     font-weight: 900;
-    color: #ffffff;
+    color: #141414;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin: 0 0 16px;
@@ -11320,15 +11478,16 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 }
 
 .phukien-title .text-gold {
-    color: #C5A880;
+    color: #D4B996;
 }
 
 .phukien-subtitle {
     font-size: 1.05rem;
     line-height: 1.65;
-    color: #cbd5e1;
+    color: rgba(255, 255, 255, 0.92);
     max-width: 820px;
     margin: 0 auto 32px;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
 .phukien-value-props {
@@ -11337,7 +11496,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     justify-content: center;
     gap: 16px 24px;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(212, 185, 150, 0.35);
 }
 
 .phukien-value-props .prop-item {
@@ -11345,12 +11504,12 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     align-items: center;
     gap: 8px;
     font-size: 0.9rem;
-    color: #f1f5f9;
-    font-weight: 600;
+    color: rgba(255, 255, 255, 0.92);
+    font-weight: 700;
 }
 
 .phukien-value-props .prop-item .text-gold {
-    color: #C5A880;
+    color: #D4B996;
     font-size: 1rem;
 }
 
@@ -13392,9 +13551,26 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 /* HERO SECTION (PAGE) */
 .vinfast-hero-section {
     background-color: #141414;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
     color: #ffffff;
     padding: 64px 0 72px;
     border-bottom: 3px solid #D4B996;
+}
+
+.vinfast-hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(20, 20, 20, 0.94) 0%, rgba(20, 20, 20, 0.86) 60%, rgba(20, 20, 20, 0.72) 100%);
+    z-index: 1;
+}
+
+.vinfast-hero-section .container {
+    position: relative;
+    z-index: 2;
 }
 
 .vinfast-hero-grid {
@@ -14643,3 +14819,40 @@ p, span, a, li, th, td, label, blockquote, figcaption {
         border-radius: 12px;
     }
 }
+
+/* =========================================================================
+   APPLE-GRADE PERFORMANCE & HARDWARE ACCELERATION
+   ========================================================================= */
+html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* GPU Hardware Acceleration for fixed/sticky headers & animations */
+.site-header,
+.shiftup-floating-dock,
+.lexus-slide-bg,
+.portal-hero-header {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+}
+
+/* Content visibility auto for heavy offscreen sections to maximize FPS */
+.footer-wrap,
+.service-cat-block,
+.phukien-cat-block {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 350px;
+}
+
+/* Smooth tap & click response on iOS/Android (prevents 300ms tap delay) */
+a, button, input, select {
+    touch-action: manipulation;
+}
+
