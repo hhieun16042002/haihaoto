@@ -13665,6 +13665,19 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     background: rgba(212, 185, 150, 0.08);
 }
 
+.vf-btn-zalo {
+    background: #0068FF !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+.vf-btn-zalo:hover {
+    background: #0056cc !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 104, 255, 0.35);
+}
+
 .vf-btn-block {
     width: 100%;
     justify-content: center;
@@ -13930,61 +13943,66 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 
 /* SECTION 5: VÌ SAO CHỌN Ô TÔ HẢI HÀ */
 .vinfast-why-choose-section {
-    padding: 70px 0;
-    background: #141414;
-    color: #ffffff;
+    padding: 75px 0 85px;
+    background: #F8FAFC;
+    color: #0F172A;
 }
 
 .vinfast-why-choose-section .vf-section-sub {
-    background: rgba(212, 185, 150, 0.12);
-    color: #D4B996;
-    border-left-color: #D4B996;
+    background: rgba(197, 168, 128, 0.15);
+    color: #8C6239;
+    border-left-color: #C5A880;
+    font-weight: 800;
 }
 
 .vinfast-why-choose-section .vf-section-title {
-    color: #ffffff;
+    color: #0F172A;
+    font-weight: 800;
 }
 
 .vf-why-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 24px;
 }
 
 .vf-why-card {
-    background: #1f1f1f;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 28px 20px;
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 32px 24px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .vf-why-card:hover {
     transform: translateY(-4px);
-    border-color: #D4B996;
+    border-color: #C5A880;
+    box-shadow: 0 12px 30px rgba(197, 168, 128, 0.18);
 }
 
 .vf-why-num {
     font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 900;
-    color: #D4B996;
+    color: #C5A880;
     line-height: 1;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
 .vf-why-title {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.15rem;
-    font-weight: 700;
-    color: #ffffff;
+    font-weight: 800;
+    color: #0F172A;
     margin: 0 0 10px;
+    line-height: 1.35;
 }
 
 .vf-why-desc {
-    font-size: 0.88rem;
-    line-height: 1.6;
-    color: #d4d4d8;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: #64748B;
     margin: 0;
 }
 

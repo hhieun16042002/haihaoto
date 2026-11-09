@@ -375,9 +375,9 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
                             <i class="fa-solid fa-truck-pickup"></i>
                             <span>Cứu Hộ Pin &amp; Kéo Xe 24/7: <?php echo esc_html($rescue_phone); ?></span>
                         </a>
-                        <a href="https://zalo.me/<?php echo esc_attr($hotline_clean); ?>" target="_blank" rel="noopener" class="vf-btn vf-btn-outline" style="justify-content: center; padding: 14px;">
-                            <i class="fa-solid fa-comment-dots"></i>
-                            <span>Nhắn Tin Kỹ Thuật Viên Qua Zalo</span>
+                        <a href="https://zalo.me/<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" target="_blank" rel="noopener" class="vf-btn vf-btn-zalo" style="justify-content: center; padding: 14px; background: #0068FF; color: #ffffff !important; font-weight: 700; border: none; border-radius: 4px; box-shadow: 0 4px 12px rgba(0, 104, 255, 0.28); text-decoration: none;">
+                            <i class="fa-solid fa-comment-dots" style="font-size: 1.1rem; color: #ffffff;"></i>
+                            <span style="color: #ffffff !important;">Nhắn Tin Kỹ Thuật Viên Qua Zalo</span>
                         </a>
                     </div>
 

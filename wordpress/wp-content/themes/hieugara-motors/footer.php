@@ -11,8 +11,8 @@ if (!defined('ABSPATH')) {
 }
 
 $phone_rescue  = '0911 211 996';
-$phone_tech    = '0915 041 989';
-$phone_landline= '02203 892 207';
+$phone_tech    = '0911 211 996';
+$phone_landline= '0911 211 996';
 $rescue_phone  = $phone_rescue;
 $rescue_clean  = preg_replace('/[^0-9]/', '', $rescue_phone);
 $tech_phone    = $phone_tech;
@@ -47,20 +47,12 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                         <h4 class="footer-col-title footer-contact-title">
                             LIÊN HỆ
                         </h4>
-                        <!-- Unified Single Box for All Phone Numbers (Chỉ hiện SĐT & màu đen) -->
+                        <!-- Unified Single Box for All Phone Numbers (Chỉ hiện SĐT đuôi 996 & màu đen) -->
                         <div class="footer-contact-unified-box">
                             <div class="contact-box-lines">
                                 <a href="tel:0911211996" class="contact-box-line" title="Gọi 0911 211 996">
                                     <i class="fa-solid fa-phone"></i>
                                     <span>0911 211 996</span>
-                                </a>
-                                <a href="tel:0915041989" class="contact-box-line" title="Gọi 0915 041 989">
-                                    <i class="fa-solid fa-phone"></i>
-                                    <span>0915 041 989</span>
-                                </a>
-                                <a href="tel:02203892207" class="contact-box-line" title="Gọi 02203 892 207">
-                                    <i class="fa-solid fa-phone"></i>
-                                    <span>02203 892 207</span>
                                 </a>
                             </div>
                         </div>
@@ -216,15 +208,15 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
      LEXUS VIETNAM 3-COLUMN BOTTOM BAR (MOBILE) & FLOATING DOCK (DESKTOP)
      ========================================================================= -->
 <div class="shiftup-floating-dock lexus-bottom-action-bar" id="shiftupFloatingDock">
-    <!-- 1. Hotline Tư Vấn -->
-    <a href="tel:02203892207" class="float-dock-pill dock-book" title="Hotline tư vấn dịch vụ Ô Tô Hải Hà">
+    <!-- 1. Hotline Tư Vấn (0911 211 996) -->
+    <a href="tel:0911211996" class="float-dock-pill dock-book" title="Hotline Ô Tô Hải Hà: 0911 211 996">
         <i class="fa-solid fa-phone-volume dock-fa-icon"></i>
-        <span class="dock-text dock-text-desktop">HOTLINE: 02203 892 207</span>
-        <span class="dock-text dock-text-mobile">Tư Vấn</span>
+        <span class="dock-text dock-text-desktop">HOTLINE: 0911 211 996</span>
+        <span class="dock-text dock-text-mobile">0911 211 996</span>
     </a>
 
-    <!-- 2. So sánh bảng giá / Cứu hộ 24/7 (Lexus Dual Arrows Icon) -->
-    <a href="tel:<?php echo esc_attr($rescue_clean); ?>" class="float-dock-pill dock-rescue" title="Gọi cứu hộ 24/7 khẩn cấp: <?php echo esc_attr($rescue_phone); ?>">
+    <!-- 2. Cứu hộ 24/7 (0911 211 996) -->
+    <a href="tel:0911211996" class="float-dock-pill dock-rescue" title="Gọi cứu hộ 24/7 khẩn cấp: 0911 211 996">
         <div class="dock-pulse-beacon">
             <span class="pulse-ring"></span>
             <span class="pulse-dot"></span>
@@ -236,12 +228,12 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
             </svg>
         </span>
         <i class="fa-solid fa-truck-pickup dock-fa-icon"></i>
-        <span class="dock-text dock-text-desktop">CỨU HỘ: <?php echo esc_html($rescue_phone); ?></span>
-        <span class="dock-text dock-text-mobile">Cứu Hộ 24/7</span>
+        <span class="dock-text dock-text-desktop">CỨU HỘ: 0911 211 996</span>
+        <span class="dock-text dock-text-mobile">Cứu Hộ</span>
     </a>
 
-    <!-- 3. Chat tư vấn kỹ thuật Zalo (Lexus Square Chat Icon) -->
-    <a href="https://zalo.me/<?php echo esc_attr($tech_clean); ?>" target="_blank" rel="noopener" class="float-dock-pill dock-zalo" title="Tư vấn kỹ thuật qua Zalo: <?php echo esc_attr($tech_phone); ?>">
+    <!-- 3. Chat tư vấn kỹ thuật Zalo (0911 211 996) -->
+    <a href="https://zalo.me/0911211996" target="_blank" rel="noopener" class="float-dock-pill dock-zalo" title="Chat Zalo: 0911 211 996">
         <span class="lexus-dock-svg" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M4 4H20V16H13L9 20V16H4V4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -250,7 +242,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
             </svg>
         </span>
         <i class="fa-solid fa-comment-dots dock-fa-icon"></i>
-        <span class="dock-text dock-text-desktop">ZALO KỸ THUẬT</span>
+        <span class="dock-text dock-text-desktop">ZALO: 0911 211 996</span>
         <span class="dock-text dock-text-mobile">Chat Zalo</span>
     </a>
 </div>
