@@ -246,9 +246,9 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
 
                     if (!empty($dynamic_cats) && !is_wp_error($dynamic_cats)) :
                         foreach ($dynamic_cats as $d_cat) :
-                            $cat_services = get_posts(array(
+                            $raw_cat_services = get_posts(array(
                                 'post_type'      => 'garage_service',
-                                'posts_per_page' => 8,
+                                'posts_per_page' => 12,
                                 'post_status'    => 'publish',
                                 'orderby'        => 'menu_order title',
                                 'order'          => 'ASC',
@@ -261,6 +261,9 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                                     ),
                                 ),
                             ));
+                            $cat_services = array_filter($raw_cat_services, function($cs) {
+                                return $cs->menu_order > 0 && strpos($cs->post_name, 'tong-quan-') !== 0;
+                            });
                             $has_children = !empty($cat_services);
                     ?>
                             <li class="<?php echo $has_children ? 'has-sub-dropdown' : ''; ?>">

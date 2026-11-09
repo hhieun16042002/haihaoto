@@ -32,9 +32,9 @@ $parent_cats = get_terms(array(
 $categories_with_posts = array();
 if (!empty($parent_cats) && !is_wp_error($parent_cats)) {
     foreach ($parent_cats as $pcat) {
-        $posts_in_cat = get_posts(array(
+        $raw_posts = get_posts(array(
             'post_type'      => 'garage_service',
-            'posts_per_page' => 4, // Mỗi danh mục lớn chỉ hiển thị tối đa 4 bài
+            'posts_per_page' => 10,
             'post_status'    => 'publish',
             'orderby'        => 'menu_order title',
             'order'          => 'ASC',
@@ -47,6 +47,16 @@ if (!empty($parent_cats) && !is_wp_error($parent_cats)) {
                 ),
             ),
         ));
+
+        $posts_in_cat = array();
+        if (!empty($raw_posts)) {
+            foreach ($raw_posts as $rp) {
+                if ($rp->menu_order > 0 && strpos($rp->post_name, 'tong-quan-') !== 0) {
+                    $posts_in_cat[] = $rp;
+                }
+                if (count($posts_in_cat) >= 4) break;
+            }
+        }
 
         if (!empty($posts_in_cat)) {
             $categories_with_posts[] = array(

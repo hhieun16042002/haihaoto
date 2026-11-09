@@ -52,9 +52,9 @@ while (have_posts()) : the_post();
     // Sibling services in same category
     $related_services = array();
     if ($current_term) {
-        $related_services = get_posts(array(
+        $raw_related = get_posts(array(
             'post_type'      => 'garage_service',
-            'posts_per_page' => 8,
+            'posts_per_page' => 12,
             'post_status'    => 'publish',
             'post__not_in'   => array($post_id),
             'tax_query'      => array(
@@ -65,6 +65,10 @@ while (have_posts()) : the_post();
                 ),
             ),
         ));
+        $related_services = array_filter($raw_related, function($r) {
+            return $r->menu_order > 0 && strpos($r->post_name, 'tong-quan-') !== 0;
+        });
+        $related_services = array_slice($related_services, 0, 8);
     }
     ?>
 

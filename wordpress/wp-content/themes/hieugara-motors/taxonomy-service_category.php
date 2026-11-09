@@ -22,8 +22,10 @@ $hotline_phone = get_option('hieugara_hotline_phone', '02203 892 207');
 
 // Query child services in this category from database
 $child_services = array();
+$overview_post  = null;
+$overview_html  = '';
 if ($term_id) {
-    $child_services = get_posts(array(
+    $raw_services = get_posts(array(
         'post_type'      => 'garage_service',
         'posts_per_page' => -1,
         'post_status'    => 'publish',
@@ -38,6 +40,21 @@ if ($term_id) {
             ),
         ),
     ));
+
+    if (!empty($raw_services)) {
+        foreach ($raw_services as $cs) {
+            if ($cs->menu_order === 0 || strpos($cs->post_name, 'tong-quan-') === 0) {
+                $overview_post = $cs;
+            } else {
+                $child_services[] = $cs;
+            }
+        }
+    }
+
+    $overview_html = get_term_meta($term_id, '_overview_html', true);
+    if (empty($overview_html) && $overview_post) {
+        $overview_html = apply_filters('the_content', $overview_post->post_content);
+    }
 }
 
 // Other categories for sidebar jump
@@ -160,6 +177,14 @@ $banner_bg = function_exists('hieugara_get_current_page_banner') ? hieugara_get_
                             </article>
                         <?php endforeach; ?>
                     </div>
+
+                    <?php if (!empty($overview_html)) : ?>
+                        <div class="category-overview-wrap" style="margin-top: 45px; padding-top: 35px; border-top: 2px solid #e2e8f0;">
+                            <div class="entry-content" style="line-height: 1.85; color: #334155; font-size: 1.02rem;">
+                                <?php echo $overview_html; ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
 
                 </div>
 

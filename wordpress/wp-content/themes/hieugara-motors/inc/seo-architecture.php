@@ -17,31 +17,42 @@ if (!defined('ABSPATH')) {
 
 class HieuGara_SEO_Architecture {
 
-    // The 6 Canonical Service Hubs
+    // The 7 Canonical Service Hubs
     public static $category_slugs = array(
-        'bao-duong-o-to'            => '01. Bảo Dưỡng Ô Tô',
-        'sua-chua-o-to'             => '02. Sửa Chữa Ô Tô',
-        'dien-o-to-dieu-hoa'        => '03. Điện Ô Tô & Điều Hòa',
-        'dong-son-o-to'             => '04. Đồng Sơn & Ngoại Thất',
-        'cham-soc-nang-cap-o-to'    => '05. Chăm Sóc & Nâng Cấp',
-        'cuu-ho-ho-tro-o-to'        => '06. Dịch Vụ Hỗ Trợ & Cứu Hộ'
+        'bao-duong-dinh-ky'         => '01. Bảo Dưỡng Định Kỳ',
+        'sua-chua-dong-co-hop-so'   => '02. Sửa Chữa Động Cơ & Hộp Số',
+        'gam-phanh-lop'             => '03. Gầm, Phanh & Lốp',
+        'dien-dieu-hoa-dien-tu'     => '04. Điện, Điều Hòa & Điện Tử',
+        'dong-son-than-vo'          => '05. Đồng Sơn & Thân Vỏ',
+        'cham-soc-xe-detailing'     => '06. Chăm Sóc Xe & Detailing',
+        'cuu-ho-24-7'               => '07. Cứu Hộ Ô Tô 24/7'
     );
 
     // Mapping legacy slugs to new canonical slugs
     public static $legacy_map = array(
-        'dien-va-dieu-hoa-o-to'        => 'dien-o-to-dieu-hoa',
-        'dong-son-va-ngoai-that-o-to'  => 'dong-son-o-to',
-        'cham-soc-va-nang-cap-o-to'    => 'cham-soc-nang-cap-o-to',
-        'dich-vu-ho-tro-o-to'          => 'cuu-ho-ho-tro-o-to',
-        'detailing-cham-soc-xe'        => 'cham-soc-nang-cap-o-to',
-        'nang-cap-phu-kien'            => 'cham-soc-nang-cap-o-to',
-        'dich-vu-ho-tro-cuu-ho'        => 'cuu-ho-ho-tro-o-to',
-        'bao-duong'                    => 'bao-duong-o-to',
-        'may-gam'                      => 'sua-chua-o-to',
-        'dien-lanh'                    => 'dien-o-to-dieu-hoa',
-        'dong-son'                     => 'dong-son-o-to',
-        'detailing'                    => 'cham-soc-nang-cap-o-to',
-        'bao-hiem'                     => 'cuu-ho-ho-tro-o-to'
+        'bao-duong-o-to'              => 'bao-duong-sua-chua-o-to',
+        'sua-chua-o-to'               => 'bao-duong-sua-chua-o-to',
+        'dien-o-to-dieu-hoa'          => 'bao-duong-sua-chua-o-to',
+        'dong-son-o-to'               => 'son-phuc-hoi-than-vo',
+        'cham-soc-nang-cap-o-to'      => 'cham-soc-lam-dep-o-to',
+        'cuu-ho-ho-tro-o-to'          => 'cuu-ho-o-to',
+        'dong-son-than-vo'            => 'son-phuc-hoi-than-vo',
+        'bao-duong-dinh-ky'           => 'bao-duong-sua-chua-o-to',
+        'cham-soc-xe-detailing'       => 'cham-soc-lam-dep-o-to',
+        'cuu-ho-24-7'                 => 'cuu-ho-o-to',
+        'dien-va-dieu-hoa-o-to'       => 'bao-duong-sua-chua-o-to',
+        'dong-son-va-ngoai-that-o-to' => 'son-phuc-hoi-than-vo',
+        'cham-soc-va-nang-cap-o-to'   => 'cham-soc-lam-dep-o-to',
+        'dich-vu-ho-tro-o-to'         => 'cuu-ho-o-to',
+        'detailing-cham-soc-xe'       => 'cham-soc-lam-dep-o-to',
+        'nang-cap-phu-kien'           => 'cham-soc-lam-dep-o-to',
+        'dich-vu-ho-tro-cuu-ho'       => 'cuu-ho-o-to',
+        'bao-duong'                   => 'bao-duong-sua-chua-o-to',
+        'may-gam'                     => 'bao-duong-sua-chua-o-to',
+        'dien-lanh'                   => 'bao-duong-sua-chua-o-to',
+        'dong-son'                    => 'son-phuc-hoi-than-vo',
+        'detailing'                   => 'cham-soc-lam-dep-o-to',
+        'bao-hiem'                    => 'cuu-ho-o-to'
     );
 
     public static function init() {
@@ -58,6 +69,9 @@ class HieuGara_SEO_Architecture {
 
         // Query vars
         add_filter('query_vars', array(__CLASS__, 'add_query_vars'));
+
+        // Filter post_type_link for hierarchical URLs: /dich-vu/[cat-slug]/[service-slug]/
+        add_filter('post_type_link', array(__CLASS__, 'filter_service_permalink'), 10, 2);
 
         // Inject Schema JSON-LD into wp_head
         add_action('wp_head', array(__CLASS__, 'output_json_ld_schema'), 5);
@@ -98,6 +112,24 @@ class HieuGara_SEO_Architecture {
                 'top'
             );
         }
+
+        // 3. Single Child Service: /dich-vu/[category-slug]/[service-slug]/
+        add_rewrite_rule(
+            '^dich-vu/([^/]+)/([^/]+)/?$',
+            'index.php?garage_service=$matches[2]',
+            'top'
+        );
+    }
+
+    public static function filter_service_permalink($permalink, $post) {
+        if (is_object($post) && $post->post_type === 'garage_service') {
+            $terms = get_the_terms($post->ID, 'service_category');
+            if (!empty($terms) && !is_wp_error($terms)) {
+                $main_term = $terms[0];
+                return home_url('/dich-vu/' . $main_term->slug . '/' . $post->post_name . '/');
+            }
+        }
+        return $permalink;
     }
 
     public static function add_query_vars($vars) {

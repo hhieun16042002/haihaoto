@@ -62,29 +62,29 @@ if (!function_exists('hieugara_get_default_brand_logos')) {
             5 => array(
                 'id'     => 5,
                 'enable' => '1',
+                'name'   => 'VinFast',
+                'logo'   => $brand_dir . '/vinfast.svg?v=' . $v,
+                'grad1'  => '#0f172a',
+                'grad2'  => '#c5161d',
+                'url'    => 'https://vinfastauto.com/',
+            ),
+            6 => array(
+                'id'     => 6,
+                'enable' => '1',
                 'name'   => 'Lexus',
                 'logo'   => $brand_dir . '/lexus.svg?v=' . $v,
                 'grad1'  => '#0052cc',
                 'grad2'  => '#001f5c',
                 'url'    => 'https://www.lexus.com.vn/',
             ),
-            6 => array(
-                'id'     => 6,
+            7 => array(
+                'id'     => 7,
                 'enable' => '1',
                 'name'   => 'Toyota',
                 'logo'   => $brand_dir . '/toyota.svg?v=' . $v,
                 'grad1'  => '#eb0a1e',
                 'grad2'  => '#991b1b',
                 'url'    => 'https://www.toyota.com.vn/',
-            ),
-            7 => array(
-                'id'     => 7,
-                'enable' => '1',
-                'name'   => 'VinFast',
-                'logo'   => $brand_dir . '/vinfast.svg?v=' . $v,
-                'grad1'  => '#0f172a',
-                'grad2'  => '#c5161d',
-                'url'    => 'https://vinfastauto.com/',
             ),
             8 => array(
                 'id'     => 8,
@@ -98,14 +98,23 @@ if (!function_exists('hieugara_get_default_brand_logos')) {
             9 => array(
                 'id'     => 9,
                 'enable' => '1',
+                'name'   => 'Kia',
+                'logo'   => $brand_dir . '/kia.svg?v=' . $v,
+                'grad1'  => '#05141f',
+                'grad2'  => '#334155',
+                'url'    => 'https://kiavietnam.com.vn/',
+            ),
+            10 => array(
+                'id'     => 10,
+                'enable' => '1',
                 'name'   => 'Ford',
                 'logo'   => $brand_dir . '/ford.svg?v=' . $v,
                 'grad1'  => '#003478',
                 'grad2'  => '#1d4ed8',
                 'url'    => 'https://www.ford.com.vn/',
             ),
-            10 => array(
-                'id'     => 10,
+            11 => array(
+                'id'     => 11,
                 'enable' => '1',
                 'name'   => 'Honda',
                 'logo'   => $brand_dir . '/honda.svg?v=' . $v,
@@ -113,8 +122,8 @@ if (!function_exists('hieugara_get_default_brand_logos')) {
                 'grad2'  => '#b91c1c',
                 'url'    => 'https://www.honda.com.vn/',
             ),
-            11 => array(
-                'id'     => 11,
+            12 => array(
+                'id'     => 12,
                 'enable' => '1',
                 'name'   => 'Volkswagen',
                 'logo'   => $brand_dir . '/volkswagen.svg?v=' . $v,
@@ -122,8 +131,8 @@ if (!function_exists('hieugara_get_default_brand_logos')) {
                 'grad2'  => '#0284c7',
                 'url'    => 'https://vw.com.vn/',
             ),
-            12 => array(
-                'id'     => 12,
+            13 => array(
+                'id'     => 13,
                 'enable' => '1',
                 'name'   => 'Nissan',
                 'logo'   => $brand_dir . '/nissan.svg?v=' . $v,
@@ -131,14 +140,41 @@ if (!function_exists('hieugara_get_default_brand_logos')) {
                 'grad2'  => '#881337',
                 'url'    => 'https://www.nissanvietnam.vn/',
             ),
-            13 => array(
-                'id'     => 13,
+            14 => array(
+                'id'     => 14,
                 'enable' => '1',
-                'name'   => 'Bosch',
+                'name'   => 'Mazda',
+                'logo'   => $brand_dir . '/mazda.svg?v=' . $v,
+                'grad1'  => '#101010',
+                'grad2'  => '#475569',
+                'url'    => 'https://mazdamotors.vn/',
+            ),
+            15 => array(
+                'id'     => 15,
+                'enable' => '1',
+                'name'   => 'Mitsubishi',
+                'logo'   => $brand_dir . '/mitsubishi.svg?v=' . $v,
+                'grad1'  => '#e60012',
+                'grad2'  => '#1f2937',
+                'url'    => 'https://www.mitsubishi-motors.com.vn/',
+            ),
+            16 => array(
+                'id'     => 16,
+                'enable' => '1',
+                'name'   => 'Bosch Automotive',
                 'logo'   => $brand_dir . '/bosch.svg?v=' . $v,
                 'grad1'  => '#ea0016',
                 'grad2'  => '#005691',
                 'url'    => 'https://www.bosch.com.vn/',
+            ),
+            17 => array(
+                'id'     => 17,
+                'enable' => '1',
+                'name'   => '3M Automotive',
+                'logo'   => $brand_dir . '/3m.svg?v=' . $v,
+                'grad1'  => '#ff0000',
+                'grad2'  => '#1d4ed8',
+                'url'    => 'https://www.3m.com.vn/',
             ),
         );
     }
