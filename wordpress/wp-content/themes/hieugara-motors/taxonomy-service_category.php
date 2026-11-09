@@ -82,10 +82,6 @@ $banner_bg = function_exists('hieugara_get_current_page_banner') ? hieugara_get_
             <span class="current"><?php echo esc_html($page_title); ?></span>
         </nav>
 
-        <div style="display: inline-block; background: rgba(197, 168, 128, 0.2); border: 1px solid #C5A880; color: #D4B996; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.72rem; font-weight: 800; padding: 4px 14px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; border-radius: 20px;">
-            <?php echo esc_html($badge); ?>
-        </div>
-
         <h1 class="portal-page-title" style="margin: 0 auto 12px;">
             <?php echo esc_html($page_title); ?>
         </h1>

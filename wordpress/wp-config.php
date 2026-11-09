@@ -134,7 +134,7 @@ define( 'WP_CACHE', true );
 define( 'DISABLE_WP_CRON', true );
 
 // Dynamic Home & Siteurl with strict host validation
-$safe_host = 'localhost:8080';
+$safe_host = 'localhost:8888';
 $target_host = isset($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '');
 
 if (!empty($target_host) && preg_match('/^[a-zA-Z0-9.\-]+(?::[0-9]+)?$/', $target_host)) {

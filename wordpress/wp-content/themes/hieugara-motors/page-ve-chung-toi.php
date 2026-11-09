@@ -10,7 +10,7 @@
 get_header();
 
 $about_p_title     = get_option('hieugara_about_page_title', 'Ôtô Hải Hà: 31 Năm Giữ Trọn Chữ Tâm Với Nghề');
-$about_p_subtitle  = get_option('hieugara_about_page_subtitle', 'Khởi nguồn từ năm 1995 bởi nhà sáng lập ông Nguyễn Hải Hà. 31 năm trôi qua, niềm tin "chăm sóc xe bằng cái tâm người thợ" vẫn là kim chỉ nam trong từng công việc chúng tôi làm mỗi ngày.');
+$about_p_subtitle  = get_option('hieugara_about_page_subtitle', '');
 $about_show_story  = get_option('hieugara_about_show_story', '1');
 $about_show_commit = get_option('hieugara_about_show_commitments', '1');
 $about_years_exp   = get_option('hieugara_about_years_exp', '31+');
@@ -236,31 +236,19 @@ $about_parts_rate  = get_option('hieugara_about_parts_rate', '100%');
                     ?>
                 </article>
 
-                <!-- Social & Hotline Buttons -->
-                <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-bottom: 40px; padding: 20px 24px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;">
-                    <a href="https://www.facebook.com/profile.php?id=100069673756551" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; background: #1877f2; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-size: 0.95rem; font-weight: 700; text-decoration: none; box-shadow: 0 4px 14px rgba(24, 119, 242, 0.35);">
-                        <i class="fa-brands fa-facebook" style="font-size: 1.25rem;"></i>
-                        <span>Theo dõi Fanpage Ôtô Hải Hà trên Facebook &rarr;</span>
-                    </a>
-                    <a href="tel:02203892207" style="display: inline-flex; align-items: center; gap: 8px; background: #C5A880; color: #141414; padding: 12px 22px; border-radius: 6px; font-size: 0.95rem; font-weight: 800; text-decoration: none;">
-                        <i class="fa-solid fa-phone-volume"></i>
-                        <span>Tư vấn kỹ thuật: 02203 892 207</span>
-                    </a>
-                </div>
-
                 <!-- Highlights Row (Key Statistics - Light Luxury Style) -->
-                <div class="about-highlights-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; background: #FBF8F3; border: 1px solid #E2E8F0; border-top: 3px solid #C5A880; border-radius: 8px; padding: 28px 24px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.04);">
+                <div class="about-highlights-row" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; background: #FBF8F3; border: 1px solid #E2E8F0; border-top: 3px solid #C5A880; border-radius: 8px; padding: 26px 18px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.04);">
                     <div class="hl-item">
                         <strong style="display: block; font-size: 2.2rem; color: #8C6239; font-weight: 800; font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.2;"><?php echo esc_html($about_years_exp); ?></strong>
-                        <span style="font-size: 0.88rem; color: #475569; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Năm đồng hành (1995-<?php echo date('Y'); ?>)</span>
+                        <span style="font-size: 0.83rem; color: #475569; text-transform: uppercase; letter-spacing: 0.3px; font-weight: 600; white-space: nowrap;">Năm đồng hành (1995-<?php echo date('Y'); ?>)</span>
                     </div>
                     <div class="hl-item" style="border-left: 1px solid #E2E8F0;">
                         <strong style="display: block; font-size: 2.2rem; color: #8C6239; font-weight: 800; font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.2;"><?php echo esc_html($about_staff_count); ?></strong>
-                        <span style="font-size: 0.88rem; color: #475569; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Nhân sự tận tâm &amp; tay nghề cao</span>
+                        <span style="font-size: 0.83rem; color: #475569; text-transform: uppercase; letter-spacing: 0.3px; font-weight: 600; white-space: nowrap;">Nhân sự tận tâm &amp; tay nghề cao</span>
                     </div>
                     <div class="hl-item" style="border-left: 1px solid #E2E8F0;">
-                        <strong style="display: block; font-size: 2.2rem; color: #16A34A; font-weight: 800; font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.2;"><?php echo esc_html($about_parts_rate); ?></strong>
-                        <span style="font-size: 0.88rem; color: #475569; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Phụ tùng chính hãng &amp; bảo hành chuẩn</span>
+                        <strong style="display: block; font-size: 2.2rem; color: #8C6239; font-weight: 800; font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.2;"><?php echo esc_html($about_parts_rate); ?></strong>
+                        <span style="font-size: 0.83rem; color: #475569; text-transform: uppercase; letter-spacing: 0.3px; font-weight: 600; white-space: nowrap;">Phụ tùng chính hãng &amp; bảo hành chuẩn</span>
                     </div>
                 </div>
 
@@ -276,37 +264,56 @@ $about_parts_rate  = get_option('hieugara_about_parts_rate', '100%');
             <div class="section-header">
                 <div class="section-pill"><?php _e('NGUYÊN TẮC HOẠT ĐỘNG', 'hieugara-motors'); ?></div>
                 <h2 class="section-title"><?php _e('5 Cam Kết "Vàng" Từ Ôtô Hải Hà', 'hieugara-motors'); ?></h2>
-                <p class="section-desc">
+                <p class="section-desc" style="max-width: 960px;">
                     <?php _e('Kim chỉ nam trong mọi hoạt động tiếp nhận xe và phục vụ khách hàng trên toàn bộ hệ thống xưởng.', 'hieugara-motors'); ?>
                 </p>
             </div>
 
             <div class="commitments-grid">
-                <div class="commit-card">
-                    <div class="commit-num">01</div>
-                    <h4>100% Phụ Tùng Chính Hãng</h4>
-                    <p>Mọi linh kiện, dầu nhớt và phụ tùng thay thế đều có tem kiểm định, hóa đơn xuất xứ rõ ràng. Hoàn tiền 100% nếu phát hiện hàng giả, hàng nhái.</p>
+                <?php
+                $commits_list = array(
+                    1 => array(
+                        'num'   => '01',
+                        'title' => 'Phụ Tùng Chính Hãng',
+                        'desc'  => 'Mọi linh kiện, dầu nhớt và phụ tùng thay thế đều có tem kiểm định, hóa đơn xuất xứ rõ ràng.'
+                    ),
+                    2 => array(
+                        'num'   => '02',
+                        'title' => 'Báo Giá Chuẩn &amp; Không Phát Sinh',
+                        'desc'  => 'Khách hàng duyệt bảng kê chi tiết phụ tùng và công thợ trước khi tiến hành. Tuyệt đối không phát sinh chi phí khi chưa được đồng ý.'
+                    ),
+                    3 => array(
+                        'num'   => '03',
+                        'title' => 'Bảo Hành Dài Hạn Minh Bạch',
+                        'desc'  => 'Cam kết chất lượng bằng văn bản và phiếu bảo hành chính thức.'
+                    ),
+                    4 => array(
+                        'num'   => '04',
+                        'title' => 'Đúng Hẹn Bàn Giao Xe',
+                        'desc'  => 'Quy trình thi công được giám sát chặt chẽ trên bảng điều độ khoang xưởng, đảm bảo xe được bàn giao đúng giờ đã hẹn.'
+                    ),
+                    5 => array(
+                        'num'   => '05',
+                        'title' => 'Đồng Hành Trọn Vẹn 24/7',
+                        'desc'  => 'Hỗ trợ cứu hộ giao thông khẩn cấp, nhắc hẹn bảo dưỡng định kỳ và hỗ trợ thủ tục giám định bảo hiểm thân vỏ miễn phí trọn gói.'
+                    ),
+                );
+
+                foreach ($commits_list as $c_idx => $c_item) :
+                    $c_bg = function_exists('hieugara_get_commit_bg') ? hieugara_get_commit_bg($c_idx) : '';
+                ?>
+                <div class="commit-card has-bg-banner">
+                    <?php if (!empty($c_bg)) : ?>
+                        <div class="commit-card-bg" style="background-image: url('<?php echo esc_url($c_bg); ?>');" aria-hidden="true"></div>
+                        <div class="commit-card-overlay" aria-hidden="true"></div>
+                    <?php endif; ?>
+                    <div class="commit-card-content">
+                        <div class="commit-num"><?php echo esc_html($c_item['num']); ?></div>
+                        <h4><?php echo wp_kses_post($c_item['title']); ?></h4>
+                        <p><?php echo esc_html($c_item['desc']); ?></p>
+                    </div>
                 </div>
-                <div class="commit-card">
-                    <div class="commit-num">02</div>
-                    <h4>Báo Giá Chuẩn &amp; Không Phát Sinh</h4>
-                    <p>Khách hàng duyệt bảng kê chi tiết phụ tùng và công thợ trước khi tiến hành. Tuyệt đối không phát sinh chi phí khi chưa được đồng ý.</p>
-                </div>
-                <div class="commit-card">
-                    <div class="commit-num">03</div>
-                    <h4>Bảo Hành Dài Hạn Minh Bạch</h4>
-                    <p>Cam kết chất lượng bằng văn bản và phiếu bảo hành chính thức. Chế độ bảo hành đồng sơn lên đến 24 tháng và bảo hành phụ tùng chính hãng.</p>
-                </div>
-                <div class="commit-card">
-                    <div class="commit-num">04</div>
-                    <h4>Đúng Hẹn Bàn Giao Xe</h4>
-                    <p>Quy trình thi công được giám sát chặt chẽ trên bảng điều độ khoang xưởng Garage OS, đảm bảo xe được bàn giao đúng giờ đã hẹn.</p>
-                </div>
-                <div class="commit-card">
-                    <div class="commit-num">05</div>
-                    <h4>Đồng Hành Trọn Vẹn 24/7</h4>
-                    <p>Hỗ trợ cứu hộ giao thông khẩn cấp, nhắc hẹn bảo dưỡng định kỳ và hỗ trợ thủ tục giám định bảo hiểm thân vỏ miễn phí trọn gói.</p>
-                </div>
+                <?php endforeach; ?>
             </div>
 
             <div style="text-align: center; margin-top: 48px;">

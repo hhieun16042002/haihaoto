@@ -216,23 +216,10 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                 </a>
                 <ul class="nav-dropdown-menu">
                     <?php if ($h_show_vinfast === '1') : ?>
-                    <li class="has-sub-dropdown">
+                    <li>
                         <a href="<?php echo esc_url(home_url('/dich-vu/xe-vinfast/')); ?>">
                             <span><?php _e('Dịch Vụ Xe VinFast', 'hieugara-motors'); ?></span>
-                            <i class="fa-solid fa-chevron-right sub-caret" aria-hidden="true"></i>
                         </a>
-                        <ul class="nav-sub-dropdown">
-                            <li>
-                                <a href="<?php echo esc_url(home_url('/dich-vu/xe-vinfast/')); ?>">
-                                    <?php _e('Đối tác dịch vụ chính thức VinFast', 'hieugara-motors'); ?>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo esc_url(home_url('/dich-vu/xe-vinfast/#tiep-nhan')); ?>">
-                                    <?php _e('Tư vấn kỹ thuật xe VinFast', 'hieugara-motors'); ?>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
                     <?php endif; ?>
                     <?php
@@ -301,17 +288,20 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                     <i class="fa-solid fa-chevron-down nav-caret"></i>
                 </a>
                 <ul class="nav-dropdown-menu">
-                    <!-- Phụ Kiện VinFast (Đối Tác Chính Hãng) -->
+                    <!-- Phụ Kiện VinFast -->
                     <li class="nav-dropdown-item-vinfast">
-                        <a href="<?php echo esc_url(home_url('/phu-kien/phu-kien-vinfast/')); ?>" class="nav-link-vinfast-feature">
-                            <span class="vf-item-title"><i class="fa-solid fa-bolt" style="color: #0072CE; margin-right: 6px;"></i>Phụ kiện VinFast</span>
-                            <span class="badge-vinfast-partner">Đối tác chính hãng</span>
+                        <a href="<?php echo esc_url(home_url('/phu-kien/phu-kien-vinfast/')); ?>">
+                            <span><?php _e('Phụ kiện VinFast', 'hieugara-motors'); ?></span>
                         </a>
                     </li>
-                    <li class="nav-dropdown-divider" style="height: 1px; background: #e2e8f0; margin: 4px 0;"></li>
+                    <li class="nav-dropdown-divider" style="height: 1px; background: rgba(255, 255, 255, 0.1); margin: 4px 0;"></li>
                     <?php 
                     $nav_acc_cats = function_exists('hieugara_get_accessories_categories') ? hieugara_get_accessories_categories() : array();
                     foreach ($nav_acc_cats as $c_slug => $c_data) :
+                        // Ẩn mục Phụ kiện VinFast ở phía dưới (đã giữ mục nổi bật ở phía trên)
+                        if ($c_slug === 'phu-kien-vinfast' || strpos($c_slug, 'vinfast') !== false) {
+                            continue;
+                        }
                     ?>
                         <li>
                             <a href="<?php echo esc_url(home_url('/phu-kien/#cat-' . $c_slug)); ?>">

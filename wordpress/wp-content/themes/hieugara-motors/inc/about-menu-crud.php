@@ -212,6 +212,14 @@ function hieugara_render_about_content_redirect() {
     echo '<script>window.location.href="' . admin_url('admin.php?page=hieugara-nav-manager&tab=page_about') . '";</script>';
 }
 
+// Enqueue WordPress Media Library scripts on Nav Manager pages
+function hieugara_nav_manager_enqueue_scripts($hook) {
+    if (strpos($hook, 'hieugara-nav-manager') !== false || strpos($hook, 'hieugara-about-menu-crud') !== false) {
+        wp_enqueue_media();
+    }
+}
+add_action('admin_enqueue_scripts', 'hieugara_nav_manager_enqueue_scripts');
+
 /**
  * =========================================================================
  * 3. XỬ LÝ ACTIONS (LƯU MASTER TOGGLES, CRUD GIỚI THIỆU, CRUD LIÊN HỆ, PAGE ABOUT)
@@ -424,6 +432,13 @@ function hieugara_handle_nav_manager_actions() {
         update_option('hieugara_about_staff_count', sanitize_text_field($_POST['about_staff_count'] ?? '80+'));
         update_option('hieugara_about_parts_rate', sanitize_text_field($_POST['about_parts_rate'] ?? '100%'));
 
+        // Save 5 Commitments Background Banners
+        for ($i = 1; $i <= 5; $i++) {
+            if (isset($_POST['hieugara_commit_bg_' . $i])) {
+                update_option('hieugara_commit_bg_' . $i, esc_url_raw($_POST['hieugara_commit_bg_' . $i]));
+            }
+        }
+
         if (function_exists('hieugara_purge_page_cache')) {
             hieugara_purge_page_cache();
         }
@@ -483,7 +498,7 @@ function hieugara_render_nav_manager_page() {
 
     // Page About Content Values
     $about_p_title     = get_option('hieugara_about_page_title', 'Ôtô Hải Hà: 31 Năm Giữ Trọn Chữ Tâm Với Nghề');
-    $about_p_subtitle  = get_option('hieugara_about_page_subtitle', 'Khởi nguồn từ năm 1995 bởi nhà sáng lập ông Nguyễn Hải Hà. 31 năm trôi qua, niềm tin "chăm sóc xe bằng cái tâm người thợ" vẫn là kim chỉ nam trong từng công việc chúng tôi làm mỗi ngày.');
+    $about_p_subtitle  = get_option('hieugara_about_page_subtitle', '');
     $about_show_story  = get_option('hieugara_about_show_story', '1');
     $about_show_commit = get_option('hieugara_about_show_commitments', '1');
     $about_years_exp   = get_option('hieugara_about_years_exp', '31+');
@@ -1048,6 +1063,49 @@ function hieugara_render_nav_manager_page() {
                             </td>
                         </tr>
                         <tr>
+                            <th scope="row" style="font-weight: 700; color: #334155;">
+                                Ảnh Nền Banner Chìm (5 Cam Kết)<br>
+                                <small style="font-weight: normal; color: #64748B;">Ảnh chìm phía sau từng thẻ 01 - 05. Bấm "Đổi ảnh" để tải ảnh lên.</small>
+                            </th>
+                            <td>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-top: 6px;">
+                                    <?php
+                                    $crud_commits = array(
+                                        1 => array('num' => '01', 'title' => 'Phụ Tùng Chính Hãng'),
+                                        2 => array('num' => '02', 'title' => 'Báo Giá Chuẩn'),
+                                        3 => array('num' => '03', 'title' => 'Bảo Hành Dài Hạn'),
+                                        4 => array('num' => '04', 'title' => 'Đúng Hẹn Bàn Giao'),
+                                        5 => array('num' => '05', 'title' => 'Đồng Hành 24/7'),
+                                    );
+                                    foreach ($crud_commits as $c_num => $c_data) :
+                                        $curr_c_bg = get_option('hieugara_commit_bg_' . $c_num, '');
+                                        $def_c_bg = function_exists('hieugara_get_default_commit_bg') ? hieugara_get_default_commit_bg($c_num) : '';
+                                        $disp_c_bg = !empty($curr_c_bg) ? $curr_c_bg : $def_c_bg;
+                                    ?>
+                                    <div style="background: #F8FAFC; border: 1px solid #CBD5E1; border-top: 3px solid #C5A880; border-radius: 8px; padding: 12px; text-align: center;">
+                                        <div style="font-weight: 800; font-size: 11.5px; color: #C5A880; margin-bottom: 3px;">MỤC <?php echo esc_html($c_data['num']); ?></div>
+                                        <div style="font-weight: 700; font-size: 12.5px; color: #1E293B; margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="<?php echo esc_attr($c_data['title']); ?>"><?php echo esc_html($c_data['title']); ?></div>
+                                        
+                                        <div style="width: 100%; height: 75px; border-radius: 6px; overflow: hidden; border: 1px solid #CBD5E1; background: #0F172A; margin-bottom: 8px;">
+                                            <img src="<?php echo esc_url($disp_c_bg); ?>" class="nav-commit-preview-<?php echo esc_attr($c_num); ?>" style="width: 100%; height: 100%; object-fit: cover;">
+                                        </div>
+
+                                        <input type="hidden" name="hieugara_commit_bg_<?php echo esc_attr($c_num); ?>" id="nav_commit_input_<?php echo esc_attr($c_num); ?>" value="<?php echo esc_attr($curr_c_bg); ?>">
+
+                                        <div style="display: flex; gap: 4px; justify-content: center;">
+                                            <button type="button" class="button button-small nav-commit-pick-btn" data-target-input="#nav_commit_input_<?php echo esc_attr($c_num); ?>" data-target-preview=".nav-commit-preview-<?php echo esc_attr($c_num); ?>" data-title="Chọn ảnh Banner Mục <?php echo esc_attr($c_data['num'] . ' - ' . $c_data['title']); ?>" style="font-size: 11px;">
+                                                <span class="dashicons dashicons-upload" style="font-size: 14px; width: 14px; height: 14px; line-height: 1.4;"></span> Đổi ảnh
+                                            </button>
+                                            <button type="button" class="button button-small nav-commit-reset-btn" data-target-input="#nav_commit_input_<?php echo esc_attr($c_num); ?>" data-target-preview=".nav-commit-preview-<?php echo esc_attr($c_num); ?>" data-default="<?php echo esc_attr($def_c_bg); ?>" title="Khôi phục mặc định" style="font-size: 11px;">
+                                                <span class="dashicons dashicons-image-rotate" style="font-size: 14px; width: 14px; height: 14px; line-height: 1.4;"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <?php endforeach; ?>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
                             <th scope="row" style="font-weight: 700; color: #334155;">Thông Số Nổi Bật (3 Cột)</th>
                             <td>
                                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
@@ -1346,6 +1404,35 @@ function hieugara_render_nav_manager_page() {
             hieugaraOpenContactModal(<?php echo json_encode($edit_contact_item); ?>);
         });
         <?php endif; ?>
+
+        // Commitments Banner Pick in Nav Manager
+        jQuery(document).on('click', '.nav-commit-pick-btn', function(e) {
+            e.preventDefault();
+            var $btn = jQuery(this);
+            var targetInput = $btn.data('target-input');
+            var targetPreview = $btn.data('target-preview');
+            var title = $btn.data('title') || 'Chọn ảnh banner nền chìm';
+
+            var uploader = wp.media({
+                title: title,
+                button: { text: 'Sử dụng ảnh này làm Nền Banner' },
+                multiple: false
+            }).on('select', function() {
+                var attachment = uploader.state().get('selection').first().toJSON();
+                jQuery(targetInput).val(attachment.url);
+                jQuery(targetPreview).attr('src', attachment.url);
+            }).open();
+        });
+
+        jQuery(document).on('click', '.nav-commit-reset-btn', function(e) {
+            e.preventDefault();
+            var $btn = jQuery(this);
+            var targetInput = $btn.data('target-input');
+            var targetPreview = $btn.data('target-preview');
+            var def = $btn.data('default');
+            jQuery(targetInput).val('');
+            jQuery(targetPreview).attr('src', def);
+        });
         </script>
 
         <style>

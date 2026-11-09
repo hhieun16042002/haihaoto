@@ -16,6 +16,7 @@ $vinfast_logo  = $theme_uri . '/assets/images/brands/vinfast.svg';
 $sign_photo    = $theme_uri . '/assets/images/about/bien-vinfast-service-haiha.jpg';
 $facade_photo  = $theme_uri . '/assets/images/about/haiha-about-facade.jpg';
 $current_url   = home_url('/dich-vu/xe-vinfast/');
+$banner_photo  = function_exists('hieugara_get_current_page_banner') ? hieugara_get_current_page_banner() : (function_exists('hieugara_get_page_banner_url') ? hieugara_get_page_banner_url('vinfast') : ($theme_uri . '/assets/images/banners/banner-vinfast.jpg'));
 ?>
 
 <!-- JSON-LD SEO Structured Data -->
@@ -106,15 +107,16 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
         </div>
     </nav>
 
-    <!-- SECTION 1: HERO -->
-    <section class="vinfast-hero-section" style="background-image: url('<?php echo esc_url($sign_photo); ?>'); padding: 85px 0 75px; text-align: center; position: relative; background-size: cover; background-position: center;">
-        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 13, 18, 0.68) 0%, rgba(10, 13, 18, 0.84) 100%); z-index: 1;"></div>
-        <div class="container" style="position: relative; z-index: 2; max-width: 1080px; margin: 0 auto; text-align: center;">
-            <div class="vinfast-partner-pill" style="display: inline-flex; justify-content: center; margin: 0 auto 16px;">
-                <span>XƯỞNG DỊCH VỤ VINFAST TẠI HẢI DƯƠNG</span>
+    <!-- SECTION 1: HERO (Phong cách Banner Trang Chủ: Nổi bật ảnh nền xưởng sắc nét, overlay dịu, chữ sáng nổi bật) -->
+    <section class="vinfast-hero-section" style="background-image: url('<?php echo esc_url($banner_photo); ?>');">
+        <div class="vinfast-hero-overlay"></div>
+        <div class="container vinfast-hero-container">
+            <div class="vinfast-partner-pill">
+                <span>XƯỞNG DỊCH VỤ VINFAST TẠI HẢI PHÒNG</span>
             </div>
-            <h1 class="vinfast-hero-title" style="margin: 0 auto; text-align: center; font-size: clamp(1.8rem, 3.2vw, 2.5rem); line-height: 1.35; color: #ffffff;">
-                Dịch vụ sửa chữa và bảo dưỡng xe VinFast tại Hải Dương
+            <h1 class="vinfast-hero-title">
+                <span class="vf-hero-title-line">Dịch vụ sửa chữa và bảo dưỡng</span>
+                <span class="vf-hero-title-line">xe VinFast tại Hải Phòng</span>
             </h1>
         </div>
     </section>
@@ -122,7 +124,7 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
     <!-- SECTION 2: VỀ HỢP TÁC VỚI VINFAST -->
     <section class="vinfast-about-partnership-section">
         <div class="container">
-            <div class="vf-section-header text-center">
+            <div class="vf-section-header">
                 <span class="vf-section-sub">CHÍNH HÃNG &amp; TIÊU CHUẨN KỸ THUẬT</span>
                 <h2 class="vf-section-title">Về hợp tác với VinFast</h2>
             </div>
@@ -156,7 +158,7 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
     <!-- SECTION 3: CÁC DÒNG XE PHỤC VỤ -->
     <section class="vinfast-models-section">
         <div class="container">
-            <div class="vf-section-header text-center">
+            <div class="vf-section-header">
                 <span class="vf-section-sub">DANH MỤC XE VINFAST</span>
                 <h2 class="vf-section-title">Các dòng xe phục vụ</h2>
                 <p class="vf-section-desc">Tiếp nhận bảo dưỡng, chẩn đoán điện và sửa chữa thân vỏ cho toàn bộ dải sản phẩm VinFast hiện hành.</p>
@@ -180,10 +182,6 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
                     <div class="vf-model-badge">VINFAST</div>
                     <h3 class="vf-model-name"><?php echo esc_html($m['code']); ?></h3>
                     <p class="vf-model-desc"><?php echo esc_html($m['desc']); ?></p>
-                    <a href="tel:0911211996" class="vf-model-link">
-                        <span>Tư vấn kỹ thuật xe này</span>
-                        <i class="fa-solid fa-phone"></i>
-                    </a>
                 </div>
                 <?php endforeach; ?>
             </div>
@@ -193,7 +191,7 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
     <!-- SECTION 4: DỊCH VỤ CHO XE VINFAST -->
     <section class="vinfast-services-section">
         <div class="container">
-            <div class="vf-section-header text-center">
+            <div class="vf-section-header">
                 <span class="vf-section-sub">QUY TRÌNH KỸ THUẬT TIÊU CHUẨN</span>
                 <h2 class="vf-section-title">Dịch vụ cho xe VinFast</h2>
                 <p class="vf-section-desc">Các hạng mục dịch vụ chuyên nghiệp được thực hiện bằng thiết bị chuyên dụng và phụ tùng chuẩn hãng.</p>
@@ -251,7 +249,7 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
     <!-- SECTION 5: VÌ SAO CHỌN Ô TÔ HẢI HÀ -->
     <section class="vinfast-why-choose-section">
         <div class="container">
-            <div class="vf-section-header text-center">
+            <div class="vf-section-header">
                 <span class="vf-section-sub">CAM KẾT CHẤT LƯỢNG</span>
                 <h2 class="vf-section-title">Vì sao chọn Ô Tô Hải Hà</h2>
             </div>
@@ -287,7 +285,7 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
     <!-- SECTION 6: FAQ ACCORDION -->
     <section class="vinfast-faq-section" id="faq">
         <div class="container">
-            <div class="vf-section-header text-center">
+            <div class="vf-section-header">
                 <span class="vf-section-sub">GIẢI ĐÁP THẮC MẮC</span>
                 <h2 class="vf-section-title">Câu hỏi thường gặp</h2>
                 <p class="vf-section-desc">Các thắc mắc phổ biến của khách hàng khi đưa xe VinFast đến bảo dưỡng tại xưởng.</p>
@@ -349,77 +347,8 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
         </div>
     </section>
 
-    <!-- SECTION 7: CONTACT & INFORMATION -->
-    <section class="vinfast-booking-map-section" id="tiep-nhan">
-        <div class="container">
-            <div class="vf-section-header text-center">
-                <span class="vf-section-sub">TIẾP NHẬN TRỰC TIẾP</span>
-                <h2 class="vf-section-title">Tư vấn kỹ thuật &amp; Thông tin liên hệ</h2>
-            </div>
-
-            <div class="vf-booking-map-grid">
-                <!-- Left: Contact & Support Card -->
-                <div class="vf-booking-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-                    <div>
-                        <div class="vf-booking-card-head">
-                            <span class="vf-badge-gold">TIẾP NHẬN ƯU TIÊN</span>
-                            <h3>Trung Tâm Dịch Vụ Xe VinFast Hải Hà</h3>
-                            <p>Xưởng chuẩn bị sẵn khoang kỹ thuật chuyên biệt cho xe điện và xe xăng VinFast. Quý khách vui lòng liên hệ hotline hoặc Zalo để được phục vụ nhanh nhất.</p>
-                        </div>
-
-                        <div style="display: flex; flex-direction: column; gap: 14px; margin: 24px 0;">
-                            <a href="tel:0911211996" class="vf-btn vf-btn-primary" style="justify-content: center; padding: 16px; font-size: 1.05rem; font-weight: 800; border-radius: 8px;">
-                                <i class="fa-solid fa-phone-volume"></i>
-                                <span>Hotline Kỹ Thuật: 0911 211 996</span>
-                            </a>
-                            <a href="https://zalo.me/0911211996" target="_blank" rel="noopener" class="vf-btn vf-btn-zalo" style="justify-content: center; padding: 16px; background: #0068FF !important; color: #ffffff !important; font-size: 1.05rem; font-weight: 800; border: none; border-radius: 8px; box-shadow: 0 4px 14px rgba(0, 104, 255, 0.35); text-decoration: none; display: flex; align-items: center; gap: 10px;">
-                                <i class="fa-solid fa-comment-dots" style="font-size: 1.25rem; color: #ffffff !important;"></i>
-                                <span style="color: #ffffff !important;">Nhắn Tin Zalo: 0911 211 996</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div style="background: rgba(212, 185, 150, 0.15); border-left: 3px solid #D4B996; padding: 14px 16px; border-radius: 6px; margin-top: 10px;">
-                        <small style="color: #4b5563; line-height: 1.6; display: block;">
-                            <strong style="color: #141414;">Cam kết dịch vụ:</strong> 100% phụ tùng xe VinFast chính hãng, kỹ thuật viên có chứng chỉ xe điện, bảo hành điện tử minh bạch.
-                        </small>
-                    </div>
-                </div>
-
-                <!-- Right: Information & Navigation Card -->
-                <div class="vf-map-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-                    <div>
-                        <div class="vf-map-head">
-                            <span class="vf-badge-outline"><i class="fa-solid fa-location-dot"></i> ĐỊA CHỈ TRUNG TÂM</span>
-                            <h3 style="margin-top: 6px;">Ô Tô Hải Hà – Trụ sở chính</h3>
-                            <div class="vf-map-address" style="margin-top: 16px; font-size: 0.95rem; line-height: 1.8; color: #374151;">
-                                <p style="margin-bottom: 10px;">
-                                    <strong style="color: #141414;">Địa chỉ:</strong> KM3+500 Nguyễn Lương Bằng, Phường Bình Hàn, TP. Hải Dương
-                                </p>
-                                <p style="margin-bottom: 10px;">
-                                    <strong style="color: #141414;">Hotline tư vấn:</strong> <a href="tel:0911211996" style="color: #141414; font-weight: 700;">0911 211 996</a>
-                                </p>
-                                <p style="margin-bottom: 10px;">
-                                    <strong style="color: #141414;">Giờ làm việc:</strong> Thứ 2 – Chủ Nhật: 07:30 – 18:00 (mở cửa cả tuần)
-                                </p>
-                                <p style="margin-bottom: 0;">
-                                    <strong style="color: #141414;">Quy mô xưởng:</strong> 8 khoang sửa chữa, 2 cầu nâng chuyên dụng xe điện VinFast, phòng sơn sấy hấp kín tiêu chuẩn hãng.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="vf-map-actions" style="margin-top: 24px;">
-                        <a href="https://maps.google.com/?cid=962452285112173913" target="_blank" rel="noopener" class="vf-btn vf-btn-outline" style="width: 100%; justify-content: center; padding: 14px; font-weight: 700; border: 1.5px solid #141414; color: #141414; border-radius: 8px; display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                            <i class="fa-solid fa-diamond-turn-right" style="color: #c2410c;"></i>
-                            <span>Mở chỉ đường trên Google Maps</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- Anchor for any existing link to #tiep-nhan to scroll to footer -->
+    <div id="tiep-nhan"></div>
 </main>
 
 <!-- Vanilla JS for FAQ Accordion -->

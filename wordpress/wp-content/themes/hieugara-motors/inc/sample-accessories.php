@@ -94,6 +94,9 @@ function hieugara_get_accessories_categories() {
         $idx = 1;
         foreach ($terms as $t) {
             $slug = $t->slug;
+            if ($slug === 'phu-kien-vinfast' || strpos($slug, 'vinfast') !== false) {
+                continue;
+            }
             $cat_data = isset($defaults[$slug]) ? $defaults[$slug] : array();
 
             $icon = get_term_meta($t->term_id, '_accessory_cat_icon', true);

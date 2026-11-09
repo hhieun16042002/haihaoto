@@ -94,6 +94,28 @@ function hieugara_warranty_url() {
     return get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh/'));
 }
 
+// Default background banner images for 5 Commitments (Trang Về Chúng Tôi)
+function hieugara_get_default_commit_bg($index) {
+    $gallery_uri = get_template_directory_uri() . '/assets/images/gallery';
+    $defaults = array(
+        1 => $gallery_uri . '/haiha-gallery-1.jpg',
+        2 => $gallery_uri . '/haiha-gallery-4.jpg',
+        3 => $gallery_uri . '/haiha-gallery-2.jpg',
+        4 => $gallery_uri . '/haiha-gallery-7.jpg',
+        5 => $gallery_uri . '/haiha-gallery-5.jpg',
+    );
+    return isset($defaults[$index]) ? $defaults[$index] : '';
+}
+
+// Get active background banner image for commitment card $index
+function hieugara_get_commit_bg($index) {
+    $custom = get_option('hieugara_commit_bg_' . $index, '');
+    if (!empty($custom)) {
+        return $custom;
+    }
+    return hieugara_get_default_commit_bg($index);
+}
+
 // 1. Theme Setup
 function hieugara_theme_setup() {
     load_theme_textdomain('hieugara-motors', HIEUGARA_THEME_DIR . '/languages');

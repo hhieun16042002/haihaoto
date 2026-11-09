@@ -5537,6 +5537,22 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
+.portal-page-subtitle.portal-page-subtitle-wide {
+    max-width: 1360px !important;
+    white-space: nowrap !important;
+    font-size: clamp(0.82rem, 0.98vw, 1.02rem) !important;
+    letter-spacing: -0.01em;
+}
+
+@media (max-width: 991px) {
+    .portal-page-subtitle.portal-page-subtitle-wide {
+        white-space: normal !important;
+        font-size: 0.92rem !important;
+        max-width: 860px !important;
+        line-height: 1.6 !important;
+    }
+}
+
 @media (max-width: 768px) {
     .portal-hero-header,
     .phukien-hero-section,
@@ -5718,7 +5734,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 
 .commitments-section .section-desc {
     color: #475569;
-    max-width: 680px;
+    max-width: 960px;
     margin: 0 auto;
     font-size: 0.95rem;
 }
@@ -5730,21 +5746,65 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 }
 
 .commit-card {
-    background: #FFFFFF;
-    border: 1px solid #E2E8F0;
+    position: relative;
+    overflow: hidden;
+    background: #0B111E;
+    border: 1px solid rgba(197, 168, 128, 0.35);
     border-top: 3px solid #C5A880;
     padding: 26px 18px 22px;
     border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
     display: flex;
     flex-direction: column;
+}
+
+.commit-card.has-bg-banner {
+    background: #0B111E;
+}
+
+.commit-card-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.95;
+    filter: saturate(1.1) contrast(1.05);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+    z-index: 1;
+}
+
+.commit-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10, 15, 28, 0.38) 0%, rgba(10, 15, 28, 0.88) 100%);
+    z-index: 2;
+    pointer-events: none;
+    transition: background 0.35s ease;
+}
+
+.commit-card-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .commit-card:hover {
     transform: translateY(-6px);
     border-color: #C5A880;
-    box-shadow: 0 14px 30px rgba(197, 168, 128, 0.18);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
+}
+
+.commit-card:hover .commit-card-bg {
+    transform: scale(1.08);
+    opacity: 1;
+}
+
+.commit-card:hover .commit-card-overlay {
+    background: linear-gradient(180deg, rgba(10, 15, 28, 0.28) 0%, rgba(10, 15, 28, 0.82) 100%);
 }
 
 .commit-card .commit-num {
@@ -5754,23 +5814,32 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     color: #C5A880;
     line-height: 1;
     margin-bottom: 12px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+    transition: color 0.3s ease;
+}
+
+.commit-card:hover .commit-num {
+    color: #DFCCA8;
 }
 
 .commit-card h4 {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 1.02rem;
     font-weight: 800;
-    color: #141414;
+    color: #FFFFFF;
     margin-bottom: 10px;
     text-transform: uppercase;
     line-height: 1.35;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
 }
 
 .commit-card p {
-    font-size: 0.86rem;
-    color: #475569;
+    font-size: 0.88rem;
+    color: #F1F5F9;
+    font-weight: 400;
     line-height: 1.6;
     margin: 0;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
 }
 
 .btn-carpla,
@@ -5987,7 +6056,20 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 
 @media (max-width: 767px) {
     .about-highlights-row {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+    .about-highlights-row .hl-item {
+        border-left: none !important;
+        border-top: 1px solid #E2E8F0;
+        padding-top: 14px;
+    }
+    .about-highlights-row .hl-item:first-child {
+        border-top: none;
+        padding-top: 0;
+    }
+    .about-highlights-row .hl-item span {
+        white-space: normal !important;
     }
     .commitments-grid {
         grid-template-columns: 1fr;
@@ -13548,29 +13630,41 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     font-weight: 600;
 }
 
-/* HERO SECTION (PAGE) */
+/* HERO SECTION (PAGE) - Phong cách Banner Trang Chủ: Ảnh nền sắc nét, nổi bật, sống động */
 .vinfast-hero-section {
-    background-color: #141414;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    color: #ffffff;
-    padding: 64px 0 72px;
-    border-bottom: 3px solid #D4B996;
+    background-color: #0c1017 !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    position: relative !important;
+    color: #ffffff !important;
+    padding: 105px 0 95px !important;
+    border-bottom: 3px solid #C5A880 !important;
+    text-align: center !important;
+    overflow: hidden !important;
 }
 
 .vinfast-hero-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, rgba(20, 20, 20, 0.94) 0%, rgba(20, 20, 20, 0.86) 60%, rgba(20, 20, 20, 0.72) 100%);
-    z-index: 1;
+    display: none !important;
 }
 
-.vinfast-hero-section .container {
-    position: relative;
-    z-index: 2;
+.vinfast-hero-overlay {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: radial-gradient(ellipse at center, rgba(15, 20, 28, 0.28) 0%, rgba(15, 20, 28, 0.48) 60%, rgba(8, 12, 18, 0.80) 100%),
+                linear-gradient(to top, rgba(8, 12, 18, 0.82) 0%, transparent 40%) !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+}
+
+.vinfast-hero-container {
+    position: relative !important;
+    z-index: 2 !important;
+    max-width: 1260px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    padding: 0 20px !important;
 }
 
 .vinfast-hero-grid {
@@ -13581,19 +13675,25 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 }
 
 .vinfast-partner-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(212, 185, 150, 0.12);
-    border: 1px solid rgba(212, 185, 150, 0.35);
-    padding: 6px 14px;
-    border-radius: 999px;
-    margin-bottom: 16px;
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #D4B996;
-    letter-spacing: 0.8px;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    background: rgba(197, 168, 128, 0.22) !important;
+    border: 1px solid rgba(223, 204, 168, 0.65) !important;
+    color: #DFCCA8 !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    padding: 7px 20px !important;
+    border-radius: 999px !important;
+    margin-bottom: 18px !important;
+    font-family: 'Be Vietnam Pro', sans-serif !important;
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45) !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8) !important;
 }
 
 .vinfast-pill-logo {
@@ -13603,12 +13703,55 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 }
 
 .vinfast-hero-title {
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: clamp(1.9rem, 3.5vw, 2.75rem);
-    font-weight: 800;
-    color: #ffffff;
-    line-height: 1.25;
-    margin: 0 0 18px;
+    font-family: 'Be Vietnam Pro', sans-serif !important;
+    font-size: clamp(1.4rem, 2.35vw, 2.35rem) !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    line-height: 1.35 !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.85), 0 1px 4px rgba(0, 0, 0, 0.95) !important;
+}
+
+.vinfast-hero-title .vf-hero-title-line {
+    display: inline;
+}
+
+.vinfast-hero-title .vf-hero-title-line:first-child::after {
+    content: " ";
+}
+
+@media (max-width: 1024px) {
+    .vinfast-hero-section {
+        padding: 70px 0 60px !important;
+    }
+    .vinfast-hero-title {
+        white-space: normal !important;
+        font-size: 1.6rem !important;
+    }
+    .vinfast-hero-title .vf-hero-title-line {
+        display: block !important;
+    }
+    .vinfast-hero-title .vf-hero-title-line:first-child::after {
+        content: "";
+    }
+}
+
+@media (max-width: 767px) {
+    .vinfast-hero-title {
+        white-space: normal !important;
+        font-size: clamp(0.96rem, 4.3vw, 1.25rem) !important;
+        line-height: 1.38 !important;
+        max-width: 100% !important;
+    }
+    .vinfast-hero-title .vf-hero-title-line {
+        display: block !important;
+        white-space: nowrap !important;
+    }
+    .vinfast-hero-title .vf-hero-title-line:first-child::after {
+        content: "";
+    }
 }
 
 .vinfast-hero-lead {
@@ -13732,6 +13875,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 /* SECTION HEADERS */
 .vf-section-header {
     margin-bottom: 40px;
+    text-align: left;
 }
 
 .vf-section-sub {
@@ -13755,13 +13899,16 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     font-weight: 800;
     color: #141414;
     margin: 0 0 10px;
+    text-align: left;
 }
 
 .vf-section-desc {
     font-size: 0.95rem;
     color: #5F6368;
-    max-width: 680px;
-    margin: 0 auto;
+    max-width: 820px;
+    margin: 0;
+    text-align: left;
+    line-height: 1.6;
 }
 
 /* SECTION 2: VỀ HỢP TÁC */
@@ -13866,7 +14013,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     font-size: 0.88rem;
     color: #5F6368;
     line-height: 1.5;
-    margin-bottom: 18px;
+    margin: 0;
     flex: 1;
 }
 
@@ -13916,14 +14063,15 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 .vf-srv-icon {
     width: 48px;
     height: 48px;
-    background: #141414;
-    color: #D4B996;
+    background: #D4B996;
+    color: #141414;
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.25rem;
     margin-bottom: 16px;
+    transition: all 0.2s ease;
 }
 
 .vf-srv-title {
@@ -14246,8 +14394,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     .hp-vinfast-hero-partner {
         padding: 44px 0;
     }
-    .hp-vf-heading,
-    .vinfast-hero-title {
+    .hp-vf-heading {
         font-size: 1.5rem;
     }
     .hp-vf-actions,
@@ -14274,8 +14421,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 }
 
 @media (max-width: 375px) {
-    .hp-vf-heading,
-    .vinfast-hero-title {
+    .hp-vf-heading {
         font-size: 1.35rem;
     }
     .vf-section-title {

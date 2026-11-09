@@ -73,15 +73,15 @@ if (!empty($parent_cats) && !is_wp_error($parent_cats)) {
      HERO BANNER (Đức Trí 226 Style: Nền ảnh xưởng sắc nét + Dark Overlay)
      ========================================================================= -->
 <section class="portal-hero-header" style="background-image: url('<?php echo esc_url($banner_bg); ?>');">
-    <div class="container">
+    <div class="container" style="max-width: 1400px;">
         <nav class="portal-breadcrumb" aria-label="Breadcrumb">
             <a href="<?php echo esc_url(home_url('/')); ?>"><?php _e('Trang chủ', 'hieugara-motors'); ?></a>
             <span class="sep">/</span>
             <span class="current"><?php _e('Dịch Vụ', 'hieugara-motors'); ?></span>
         </nav>
         <h1 class="portal-page-title"><?php _e('HỆ THỐNG DỊCH VỤ ÔTÔ HẢI HÀ', 'hieugara-motors'); ?></h1>
-        <p class="portal-page-subtitle">
-            <?php _e('Trung tâm bảo dưỡng, sửa chữa cơ điện lạnh, đồng sơn sấy hấp hồng ngoại và dịch vụ xe VinFast chính hãng chuyên nghiệp tại Hải Dương.', 'hieugara-motors'); ?>
+        <p class="portal-page-subtitle portal-page-subtitle-wide">
+            <?php _e('Trung tâm bảo dưỡng, sửa chữa cơ điện lạnh, đồng sơn sấy hấp hồng ngoại và dịch vụ xe VinFast chính hãng chuyên nghiệp tại Hải Phòng.', 'hieugara-motors'); ?>
         </p>
     </div>
 </section>

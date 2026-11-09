@@ -1,0 +1,15 @@
+# Database backups & dumps
+*.sql
+
+# WordPress Cache
+wordpress/wp-content/cache/
+
+# WordPress Dynamic Uploads (Local media)
+wordpress/wp-content/uploads/2026/
+
+# Temporary scripts
+wordpress/scripts/create_vf_page.php
+
+# OS & Environment
+.DS_Store
+Thumbs.db

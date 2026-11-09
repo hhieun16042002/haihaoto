@@ -62,6 +62,11 @@ function hieugara_register_theme_settings() {
     foreach ($banner_keys as $b_key) {
         register_setting('hieugara_settings_group', 'hieugara_banner_' . $b_key, array('sanitize_callback' => 'esc_url_raw'));
     }
+
+    // 5 Commitments Background Banners Data (Trang Về Chúng Tôi)
+    for ($i = 1; $i <= 5; $i++) {
+        register_setting('hieugara_settings_group', 'hieugara_commit_bg_' . $i, array('sanitize_callback' => 'esc_url_raw'));
+    }
 }
 add_action('admin_init', 'hieugara_register_theme_settings');
 
@@ -1040,6 +1045,78 @@ function hieugara_render_theme_settings_page() {
                 </div>
             </div>
 
+            <!-- TAB 7: ẢNH NỀN CHÌM CHO 5 CAM KẾT "VÀNG" (TRANG VỀ CHÚNG TÔI) -->
+            <div class="hieugara-card" id="card-commit-banners">
+                <div class="card-header" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: #fff; padding: 18px 24px;">
+                    <h2 style="color: #fff; margin: 0; font-size: 1.15rem; display: flex; align-items: center; gap: 10px;">
+                        <span class="dashicons dashicons-shield-alt" style="color: #C5A880; font-size: 24px; width: 24px; height: 24px;"></span>
+                        <?php _e('5. Ảnh Nền Banner Chìm Cho 5 Cam Kết "Vàng" (Trang Về Chúng Tôi)', 'hieugara-motors'); ?>
+                    </h2>
+                </div>
+                <div class="card-body" style="padding: 24px;">
+                    <p class="description" style="margin-bottom: 22px; font-size: 0.95rem; color: #475569;">
+                        <?php _e('Tùy biến ảnh nền chìm (kiểu dạng banner) phía sau 5 thẻ cam kết nguyên tắc hoạt động tại trang Giới thiệu / Về Chúng Tôi (/ve-chung-toi/#tieu-chuan). Bấm "Chọn ảnh" để tải ảnh mới lên từ máy tính hoặc thư viện ảnh WordPress.', 'hieugara-motors'); ?>
+                    </p>
+
+                    <table class="widefat striped" style="border: 1px solid #cbd5e1; border-radius: 6px; overflow: hidden;">
+                        <thead>
+                            <tr style="background: #f1f5f9; text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.5px;">
+                                <th style="width: 260px; padding: 12px 16px;"><?php _e('Mục Cam Kết', 'hieugara-motors'); ?></th>
+                                <th style="width: 150px; text-align: center; padding: 12px;"><?php _e('Xem Trước Ảnh Nền Chìm', 'hieugara-motors'); ?></th>
+                                <th style="padding: 12px 16px;"><?php _e('Đường dẫn ảnh (URL)', 'hieugara-motors'); ?></th>
+                                <th style="width: 170px; text-align: center; padding: 12px 16px;"><?php _e('Thao tác', 'hieugara-motors'); ?></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $commit_admin_items = array(
+                                1 => array('num' => '01', 'title' => 'Phụ Tùng Chính Hãng', 'desc' => 'Tem kiểm định, hóa đơn xuất xứ rõ ràng'),
+                                2 => array('num' => '02', 'title' => 'Báo Giá Chuẩn & Không Phát Sinh', 'desc' => 'Bảng kê chi tiết công thợ và phụ tùng trước khi làm'),
+                                3 => array('num' => '03', 'title' => 'Bảo Hành Dài Hạn Minh Bạch', 'desc' => 'Chất lượng văn bản và phiếu bảo hành chính thức'),
+                                4 => array('num' => '04', 'title' => 'Đúng Hẹn Bàn Giao Xe', 'desc' => 'Giám sát chặt chẽ trên bảng điều độ khoang xưởng'),
+                                5 => array('num' => '05', 'title' => 'Đồng Hành Trọn Vẹn 24/7', 'desc' => 'Cứu hộ khẩn cấp, nhắc hẹn và hỗ trợ bảo hiểm'),
+                            );
+
+                            foreach ($commit_admin_items as $c_i => $c_meta) :
+                                $curr_bg = get_option('hieugara_commit_bg_' . $c_i, '');
+                                $def_bg = function_exists('hieugara_get_default_commit_bg') ? hieugara_get_default_commit_bg($c_i) : '';
+                                $disp_bg = !empty($curr_bg) ? $curr_bg : $def_bg;
+                            ?>
+                                <tr>
+                                    <td style="padding: 14px 16px; vertical-align: middle;">
+                                        <div style="display: flex; align-items: center; gap: 10px;">
+                                            <span style="display: inline-block; background: #C5A880; color: #fff; font-weight: 800; padding: 4px 10px; border-radius: 4px; font-size: 0.9rem;"><?php echo esc_html($c_meta['num']); ?></span>
+                                            <div>
+                                                <strong style="color: #0f172a; font-size: 0.95rem; display: block;"><?php echo esc_html($c_meta['title']); ?></strong>
+                                                <span style="font-size: 0.8rem; color: #64748b;"><?php echo esc_html($c_meta['desc']); ?></span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="text-align: center; vertical-align: middle; padding: 10px;">
+                                        <div style="width: 120px; height: 68px; margin: 0 auto; border-radius: 6px; overflow: hidden; border: 2px solid #cbd5e1; background: #0f172a; box-shadow: 0 2px 6px rgba(0,0,0,0.1); position: relative;">
+                                            <img src="<?php echo esc_url($disp_bg); ?>" alt="<?php echo esc_attr($c_meta['title']); ?>" class="commit-banner-preview-img" style="width: 100%; height: 100%; object-fit: cover;">
+                                        </div>
+                                    </td>
+                                    <td style="vertical-align: middle; padding: 10px 16px;">
+                                        <input type="text" name="hieugara_commit_bg_<?php echo esc_attr($c_i); ?>" value="<?php echo esc_attr($curr_bg); ?>" class="regular-text commit-banner-url-input" style="width: 100%; font-size: 0.85rem; padding: 6px 10px;" placeholder="<?php echo esc_attr($def_bg); ?> (Mặc định)">
+                                    </td>
+                                    <td style="text-align: center; vertical-align: middle; padding: 10px 16px;">
+                                        <div style="display: flex; gap: 6px; justify-content: center; flex-wrap: wrap;">
+                                            <button type="button" class="button button-primary commit-banner-pick-btn" title="Chọn hoặc tải ảnh từ Media Library">
+                                                <span class="dashicons dashicons-upload" style="margin-top: 4px;"></span> Chọn ảnh
+                                            </button>
+                                            <button type="button" class="button button-secondary commit-banner-reset-btn" data-default="<?php echo esc_attr($def_bg); ?>" title="Khôi phục ảnh chuẩn ban đầu">
+                                                <span class="dashicons dashicons-image-rotate" style="margin-top: 4px;"></span> Gốc
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
             <!-- Submit Button -->
             <div class="hieugara-submit-bar">
                 <?php submit_button(__('LƯU TẤT CẢ CÀI ĐẶT', 'hieugara-motors'), 'primary large', 'submit', false); ?>
@@ -1293,6 +1370,45 @@ function hieugara_render_theme_settings_page() {
                 $row.find('.banner-preview-img').attr('src', def);
             } else {
                 $row.find('.banner-preview-img').attr('src', val);
+            }
+        });
+
+        // 14. Commitments Banner Pick
+        $(document).on('click', '.commit-banner-pick-btn', function(e) {
+            e.preventDefault();
+            var $row = $(this).closest('tr');
+            var $input = $row.find('.commit-banner-url-input');
+            var $preview = $row.find('.commit-banner-preview-img');
+
+            var commitUploader = wp.media({
+                title: 'Chọn Ảnh Nền Banner Chìm Cho Thẻ Cam Kết',
+                button: { text: 'Sử dụng ảnh này làm Nền Banner' },
+                multiple: false
+            }).on('select', function() {
+                var attachment = commitUploader.state().get('selection').first().toJSON();
+                $input.val(attachment.url);
+                $preview.attr('src', attachment.url);
+            }).open();
+        });
+
+        // 15. Commitments Banner Reset
+        $(document).on('click', '.commit-banner-reset-btn', function(e) {
+            e.preventDefault();
+            var $row = $(this).closest('tr');
+            var def = $(this).data('default');
+            $row.find('.commit-banner-url-input').val('');
+            $row.find('.commit-banner-preview-img').attr('src', def);
+        });
+
+        // 16. Live Preview Commitments Input Change
+        $(document).on('input change', '.commit-banner-url-input', function() {
+            var val = $(this).val();
+            var $row = $(this).closest('tr');
+            if (val.trim() === '') {
+                var def = $row.find('.commit-banner-reset-btn').data('default');
+                $row.find('.commit-banner-preview-img').attr('src', def);
+            } else {
+                $row.find('.commit-banner-preview-img').attr('src', val);
             }
         });
     });
