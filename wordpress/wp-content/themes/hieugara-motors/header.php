@@ -239,7 +239,7 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                     $dynamic_cats = get_terms(array(
                         'taxonomy'   => 'service_category',
                         'parent'     => 0,
-                        'hide_empty' => false,
+                        'hide_empty' => true,
                         'orderby'    => 'name',
                         'order'      => 'ASC',
                     ));
@@ -295,12 +295,20 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
 
             <?php if ($h_show_accessories === '1') : ?>
             <!-- 4. PHỤ KIỆN ⌵ -->
-            <li class="nav-item has-dropdown <?php echo is_page('phu-kien') || is_singular('garage_accessory') ? 'active' : ''; ?>">
+            <li class="nav-item has-dropdown <?php echo is_page('phu-kien') || is_page('phu-kien-vinfast') || is_singular('garage_accessory') ? 'active' : ''; ?>">
                 <a href="<?php echo esc_url(home_url('/phu-kien/')); ?>" class="nav-link" title="<?php echo esc_attr($h_label_accessories); ?>">
                     <span><?php echo esc_html($h_label_accessories); ?></span>
                     <i class="fa-solid fa-chevron-down nav-caret"></i>
                 </a>
                 <ul class="nav-dropdown-menu">
+                    <!-- Phụ Kiện VinFast (Đối Tác Chính Hãng) -->
+                    <li class="nav-dropdown-item-vinfast">
+                        <a href="<?php echo esc_url(home_url('/phu-kien/phu-kien-vinfast/')); ?>" class="nav-link-vinfast-feature">
+                            <span class="vf-item-title"><i class="fa-solid fa-bolt" style="color: #0072CE; margin-right: 6px;"></i>Phụ kiện VinFast</span>
+                            <span class="badge-vinfast-partner">Đối tác chính hãng</span>
+                        </a>
+                    </li>
+                    <li class="nav-dropdown-divider" style="height: 1px; background: #e2e8f0; margin: 4px 0;"></li>
                     <?php 
                     $nav_acc_cats = function_exists('hieugara_get_accessories_categories') ? hieugara_get_accessories_categories() : array();
                     foreach ($nav_acc_cats as $c_slug => $c_data) :

@@ -23,7 +23,7 @@ $banner_bg = function_exists('hieugara_get_current_page_banner') ? hieugara_get_
 $parent_cats = get_terms(array(
     'taxonomy'   => 'service_category',
     'parent'     => 0,
-    'hide_empty' => false,
+    'hide_empty' => true,
     'orderby'    => 'term_id',
     'order'      => 'ASC',
 ));
@@ -163,27 +163,13 @@ if (!empty($parent_cats) && !is_wp_error($parent_cats)) {
                                             </a>
                                         </h3>
 
-                                        <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; font-size: 0.78rem; font-family: 'Be Vietnam Pro', sans-serif;">
-                                            <span style="background: #fff7ed; color: #c2410c; padding: 2px 8px; border-radius: 3px; font-weight: 700;">
-                                                <i class="fa fa-tag" style="margin-right: 3px;"></i> <?php echo esc_html($s_price); ?>
-                                            </span>
-                                            <?php if (!empty($s_dur)) : ?>
-                                                <span style="background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 3px; font-weight: 600;">
-                                                    <i class="fa fa-clock" style="margin-right: 3px;"></i> <?php echo esc_html($s_dur); ?>
-                                                </span>
-                                            <?php endif; ?>
-                                        </div>
-
                                         <p style="font-size: 0.88rem; color: #64748b; line-height: 1.6; margin: 0 0 14px; flex: 1;">
-                                            <?php echo wp_trim_words(get_the_excerpt($s_id) ?: strip_tags($srv->post_content), 16, '...'); ?>
+                                            <?php echo wp_trim_words(get_the_excerpt($s_id) ?: strip_tags($srv->post_content), 18, '...'); ?>
                                         </p>
 
-                                        <div style="margin-top: auto; padding-top: 12px; border-top: 1px solid #f1f5f9; display: flex; gap: 8px;">
-                                            <a href="<?php echo esc_url($s_link); ?>" style="flex: 1; text-align: center; padding: 8px 12px; background: #0f172a; color: #ffffff; text-decoration: none; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; border-radius: 4px;">
+                                        <div style="margin-top: auto; padding-top: 14px; border-top: 1px solid #f1f5f9;">
+                                            <a href="<?php echo esc_url($s_link); ?>" style="display: block; width: 100%; text-align: center; padding: 10px 14px; background: #0f172a; color: #C5A880; text-decoration: none; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; border-radius: 4px; transition: all 0.2s ease;">
                                                 <?php _e('Chi tiết', 'hieugara-motors'); ?> &rarr;
-                                            </a>
-                                            <a href="tel:0911211996" style="padding: 8px 12px; background: #C5A880; color: #141414; text-decoration: none; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.8rem; font-weight: 700; border-radius: 4px;" title="Gọi tư vấn">
-                                                <i class="fa fa-phone"></i>
                                             </a>
                                         </div>
                                     </div>

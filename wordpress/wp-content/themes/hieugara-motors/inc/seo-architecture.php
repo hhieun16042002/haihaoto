@@ -30,29 +30,30 @@ class HieuGara_SEO_Architecture {
 
     // Mapping legacy slugs to new canonical slugs
     public static $legacy_map = array(
-        'bao-duong-o-to'              => 'bao-duong-sua-chua-o-to',
-        'sua-chua-o-to'               => 'bao-duong-sua-chua-o-to',
-        'dien-o-to-dieu-hoa'          => 'bao-duong-sua-chua-o-to',
-        'dong-son-o-to'               => 'son-phuc-hoi-than-vo',
-        'cham-soc-nang-cap-o-to'      => 'cham-soc-lam-dep-o-to',
-        'cuu-ho-ho-tro-o-to'          => 'cuu-ho-o-to',
-        'dong-son-than-vo'            => 'son-phuc-hoi-than-vo',
-        'bao-duong-dinh-ky'           => 'bao-duong-sua-chua-o-to',
-        'cham-soc-xe-detailing'       => 'cham-soc-lam-dep-o-to',
-        'cuu-ho-24-7'                 => 'cuu-ho-o-to',
-        'dien-va-dieu-hoa-o-to'       => 'bao-duong-sua-chua-o-to',
-        'dong-son-va-ngoai-that-o-to' => 'son-phuc-hoi-than-vo',
-        'cham-soc-va-nang-cap-o-to'   => 'cham-soc-lam-dep-o-to',
-        'dich-vu-ho-tro-o-to'         => 'cuu-ho-o-to',
-        'detailing-cham-soc-xe'       => 'cham-soc-lam-dep-o-to',
-        'nang-cap-phu-kien'           => 'cham-soc-lam-dep-o-to',
-        'dich-vu-ho-tro-cuu-ho'       => 'cuu-ho-o-to',
-        'bao-duong'                   => 'bao-duong-sua-chua-o-to',
-        'may-gam'                     => 'bao-duong-sua-chua-o-to',
-        'dien-lanh'                   => 'bao-duong-sua-chua-o-to',
-        'dong-son'                    => 'son-phuc-hoi-than-vo',
-        'detailing'                   => 'cham-soc-lam-dep-o-to',
-        'bao-hiem'                    => 'cuu-ho-o-to'
+        'bao-duong-o-to'              => 'bao-duong-dinh-ky',
+        'sua-chua-o-to'               => 'sua-chua-dong-co-hop-so',
+        'dien-o-to-dieu-hoa'          => 'dien-dieu-hoa-dien-tu',
+        'dong-son-o-to'               => 'dong-son-than-vo',
+        'cham-soc-nang-cap-o-to'      => 'cham-soc-xe-detailing',
+        'cuu-ho-ho-tro-o-to'          => 'cuu-ho-24-7',
+        'dien-va-dieu-hoa-o-to'       => 'dien-dieu-hoa-dien-tu',
+        'dong-son-va-ngoai-that-o-to' => 'dong-son-than-vo',
+        'cham-soc-va-nang-cap-o-to'   => 'cham-soc-xe-detailing',
+        'dich-vu-ho-tro-o-to'         => 'cuu-ho-24-7',
+        'detailing-cham-soc-xe'       => 'cham-soc-xe-detailing',
+        'nang-cap-phu-kien'           => 'cham-soc-xe-detailing',
+        'dich-vu-ho-tro-cuu-ho'       => 'cuu-ho-24-7',
+        'bao-duong'                   => 'bao-duong-dinh-ky',
+        'may-gam'                     => 'gam-phanh-lop',
+        'dien-lanh'                   => 'dien-dieu-hoa-dien-tu',
+        'dong-son'                    => 'dong-son-than-vo',
+        'detailing'                   => 'cham-soc-xe-detailing',
+        'bao-hiem'                    => 'cuu-ho-24-7',
+        // Old 4 parent categories redirecting to new 7 canonical hubs
+        'bao-duong-sua-chua-o-to'     => 'bao-duong-dinh-ky',
+        'son-phuc-hoi-than-vo'        => 'dong-son-than-vo',
+        'cham-soc-lam-dep-o-to'       => 'cham-soc-xe-detailing',
+        'cuu-ho-o-to'                 => 'cuu-ho-24-7'
     );
 
     public static function init() {

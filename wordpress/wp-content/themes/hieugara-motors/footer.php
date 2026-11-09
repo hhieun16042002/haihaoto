@@ -99,7 +99,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                         $footer_cats = get_terms(array(
                             'taxonomy'   => 'service_category',
                             'parent'     => 0,
-                            'hide_empty' => false,
+                            'hide_empty' => true,
                             'orderby'    => 'name',
                             'order'      => 'ASC',
                         ));

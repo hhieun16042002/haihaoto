@@ -107,40 +107,15 @@ $current_url   = home_url('/dich-vu/xe-vinfast/');
     </nav>
 
     <!-- SECTION 1: HERO -->
-    <?php $vf_banner_bg = function_exists('hieugara_get_current_page_banner') ? hieugara_get_current_page_banner() : hieugara_get_page_banner_url('vinfast'); ?>
-    <section class="vinfast-hero-section" style="background-image: url('<?php echo esc_url($vf_banner_bg); ?>');">
-        <div class="container">
-            <div class="vinfast-hero-grid">
-                <div class="vinfast-hero-text">
-                    <div class="vinfast-partner-pill">
-                        <span>XƯỞNG DỊCH VỤ VINFAST TẠI HẢI DƯƠNG</span>
-                    </div>
-                    <h1 class="vinfast-hero-title">Dịch vụ sửa chữa và bảo dưỡng xe VinFast tại Hải Dương</h1>
-                    <p class="vinfast-hero-lead">
-                        Từ tháng 08/2026, Ô Tô Hải Hà chính thức hợp tác với VinFast, cung cấp phụ tùng chính hãng và dịch vụ sửa chữa, bảo dưỡng, đồng sơn cho xe VinFast. Đội ngũ kỹ thuật viên được đào tạo bài bản, phục vụ tận tâm mọi dòng xe VinFast.
-                    </p>
-                    <div class="vinfast-hero-cta-row">
-                        <a href="tel:0911211996" class="vf-btn vf-btn-primary">
-                            <i class="fa-solid fa-phone-volume"></i>
-                            <span>Tư vấn kỹ thuật: 0911 211 996</span>
-                        </a>
-                        <a href="tel:<?php echo esc_attr($hotline_clean); ?>" class="vf-btn vf-btn-outline">
-                            <i class="fa-solid fa-headset"></i>
-                            <span>Tổng đài: <?php echo esc_html($hotline_phone); ?></span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="vinfast-hero-media">
-                    <div class="vf-media-frame">
-                        <img src="<?php echo esc_url($sign_photo); ?>" alt="Biển VinFast Service tại gara Ô Tô Hải Hà" class="vf-sign-img" width="600" height="420" loading="eager">
-                        <div class="vf-media-badge">
-                            <span class="vf-badge-sub">ĐỐI TÁC DỊCH VỤ CHÍNH THỨC</span>
-                            <strong class="vf-badge-brand">VINFAST SERVICE</strong>
-                        </div>
-                    </div>
-                </div>
+    <section class="vinfast-hero-section" style="background-image: url('<?php echo esc_url($sign_photo); ?>'); padding: 85px 0 75px; text-align: center; position: relative; background-size: cover; background-position: center;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 13, 18, 0.68) 0%, rgba(10, 13, 18, 0.84) 100%); z-index: 1;"></div>
+        <div class="container" style="position: relative; z-index: 2; max-width: 1080px; margin: 0 auto; text-align: center;">
+            <div class="vinfast-partner-pill" style="display: inline-flex; justify-content: center; margin: 0 auto 16px;">
+                <span>XƯỞNG DỊCH VỤ VINFAST TẠI HẢI DƯƠNG</span>
             </div>
+            <h1 class="vinfast-hero-title" style="margin: 0 auto; text-align: center; font-size: clamp(1.8rem, 3.2vw, 2.5rem); line-height: 1.35; color: #ffffff;">
+                Dịch vụ sửa chữa và bảo dưỡng xe VinFast tại Hải Dương
+            </h1>
         </div>
     </section>
 

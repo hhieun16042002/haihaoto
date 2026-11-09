@@ -558,7 +558,162 @@ function hieugara_get_current_page_banner() {
     return hieugara_get_page_banner_url('default');
 }
 
+// =========================================================================
+// 11. VINFAST ACCESSORIES ROUTING, PERMALINKS & SEO
+// =========================================================================
 
+// Route /phu-kien/phu-kien-vinfast/ and /phu-kien/phu-kien-vinfast/{slug}/
+function hieugara_route_vinfast_accessory_pages() {
+    $request_uri = trim(parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
 
+    // 1. VinFast Accessories Portal
+    if ($request_uri === 'phu-kien/phu-kien-vinfast') {
+        global $wp_query;
+        $wp_query->is_page = true;
+        $wp_query->is_singular = true;
+        $wp_query->is_404 = false;
+        status_header(200);
+        include get_template_directory() . '/page-phu-kien-vinfast.php';
+        exit;
+    }
 
+    // 2. VinFast Accessory Product Single
+    if (preg_match('#^phu-kien/phu-kien-vinfast/([^/]+)$#', $request_uri, $matches)) {
+        $slug = sanitize_title($matches[1]);
+        $acc_posts = get_posts(array(
+            'name'           => $slug,
+            'post_type'      => 'garage_accessory',
+            'post_status'    => 'publish',
+            'posts_per_page' => 1
+        ));
+
+        if (!empty($acc_posts)) {
+            global $wp_query, $post;
+            $post = $acc_posts[0];
+            $wp_query->queried_object = $post;
+            $wp_query->queried_object_id = $post->ID;
+            $wp_query->is_single = true;
+            $wp_query->is_singular = true;
+            $wp_query->is_404 = false;
+            $wp_query->posts = array($post);
+            $wp_query->post = $post;
+            $wp_query->post_count = 1;
+            status_header(200);
+            setup_postdata($post);
+            include get_template_directory() . '/single-garage_accessory.php';
+            exit;
+        }
+    }
+}
+add_action('template_redirect', 'hieugara_route_vinfast_accessory_pages', 2);
+
+// Filter Permalinks for VinFast Accessories
+function hieugara_vinfast_accessory_post_link($post_link, $post) {
+    if (is_object($post) && $post->post_type === 'garage_accessory') {
+        $is_vf = get_post_meta($post->ID, '_accessory_is_vinfast', true);
+        if ($is_vf === '1') {
+            return home_url('/phu-kien/phu-kien-vinfast/' . $post->post_name . '/');
+        }
+    }
+    return $post_link;
+}
+add_filter('post_type_link', 'hieugara_vinfast_accessory_post_link', 10, 2);
+
+// Document Title for VinFast Accessories
+function hieugara_vinfast_accessory_document_title($title) {
+    $request_uri = trim(parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
+
+    if ($request_uri === 'phu-kien/phu-kien-vinfast') {
+        return 'Phụ kiện chính hãng VinFast tại Ô Tô Hải Hà | Đối tác dịch vụ ủy quyền';
+    }
+
+    if (preg_match('#^phu-kien/phu-kien-vinfast/([^/]+)$#', $request_uri, $matches)) {
+        $slug = sanitize_title($matches[1]);
+        $acc_posts = get_posts(array(
+            'name'           => $slug,
+            'post_type'      => 'garage_accessory',
+            'post_status'    => 'publish',
+            'posts_per_page' => 1
+        ));
+        if (!empty($acc_posts)) {
+            return esc_html($acc_posts[0]->post_title) . ' chính hãng VinFast | Ô Tô Hải Hà';
+        }
+    }
+
+    return $title;
+}
+add_filter('pre_get_document_title', 'hieugara_vinfast_accessory_document_title', 999);
+
+// SEO Meta Description, Canonical & Product Schema (WITHOUT offers or price)
+function hieugara_vinfast_accessory_head_meta() {
+    $request_uri = trim(parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
+
+    // Archive portal meta
+    if ($request_uri === 'phu-kien/phu-kien-vinfast') {
+        $canonical = home_url('/phu-kien/phu-kien-vinfast/');
+        $desc = 'Hệ sinh thái phụ kiện ô tô điện chính hãng VinFast tại Ô Tô Hải Hà - Đối tác dịch vụ VinFast ủy quyền tại Hải Dương. Lắp đặt cắm giắc zin, bảo hành chính hãng.';
+        echo '<meta name="description" content="' . esc_attr($desc) . '">' . "\n";
+        echo '<link rel="canonical" href="' . esc_url($canonical) . '">' . "\n";
+        echo '<meta property="og:title" content="Phụ kiện chính hãng VinFast tại Ô Tô Hải Hà | Đối tác dịch vụ ủy quyền">' . "\n";
+        echo '<meta property="og:description" content="' . esc_attr($desc) . '">' . "\n";
+        echo '<meta property="og:url" content="' . esc_url($canonical) . '">' . "\n";
+        return;
+    }
+
+    // Single product meta & schema
+    if (preg_match('#^phu-kien/phu-kien-vinfast/([^/]+)$#', $request_uri, $matches)) {
+        $slug = sanitize_title($matches[1]);
+        $acc_posts = get_posts(array(
+            'name'           => $slug,
+            'post_type'      => 'garage_accessory',
+            'post_status'    => 'publish',
+            'posts_per_page' => 1
+        ));
+
+        if (!empty($acc_posts)) {
+            $p = $acc_posts[0];
+            $canonical = home_url('/phu-kien/phu-kien-vinfast/' . $slug . '/');
+            $raw_desc = get_the_excerpt($p->ID) ?: strip_tags($p->post_content);
+            // Clean any price text if any
+            $clean_desc = preg_replace('/\b\d{1,3}(?:[.,]\d{3})+(?:\s*(?:vnđ|vnd|đ|₫))?\b/i', '', $raw_desc);
+            $clean_desc = wp_trim_words($clean_desc, 25, '...');
+            if (mb_strlen($clean_desc) > 155) {
+                $clean_desc = mb_substr($clean_desc, 0, 152) . '...';
+            }
+
+            $thumb = get_post_meta($p->ID, '_accessory_img', true) ?: get_the_post_thumbnail_url($p->ID, 'full');
+            $sku = get_post_meta($p->ID, '_accessory_sku', true);
+
+            echo '<meta name="description" content="' . esc_attr($clean_desc) . '">' . "\n";
+            echo '<link rel="canonical" href="' . esc_url($canonical) . '">' . "\n";
+            echo '<meta property="og:title" content="' . esc_attr($p->post_title) . ' chính hãng VinFast | Ô Tô Hải Hà">' . "\n";
+            echo '<meta property="og:description" content="' . esc_attr($clean_desc) . '">' . "\n";
+            echo '<meta property="og:url" content="' . esc_url($canonical) . '">' . "\n";
+            if ($thumb) {
+                echo '<meta property="og:image" content="' . esc_url($thumb) . '">' . "\n";
+            }
+
+            // Schema WITHOUT any offers or price
+            $schema = array(
+                '@context'    => 'https://schema.org/',
+                '@type'       => 'Product',
+                'name'        => $p->post_title . ' chính hãng VinFast',
+                'description' => $clean_desc,
+                'brand'       => array(
+                    '@type' => 'Brand',
+                    'name'  => 'VinFast'
+                )
+            );
+            if (!empty($sku)) {
+                $schema['sku'] = $sku;
+                $schema['mpn'] = $sku;
+            }
+            if ($thumb) {
+                $schema['image'] = array(esc_url($thumb));
+            }
+            echo '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '</script>' . "\n";
+        }
+    }
+}
+add_action('wp_head', 'hieugara_vinfast_accessory_head_meta', 1);
 
