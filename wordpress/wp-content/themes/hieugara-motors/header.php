@@ -387,9 +387,9 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
             <i class="fa-solid fa-truck-pickup"></i>
             <span>CỨU HỘ 24/7: <strong><?php echo esc_html($rescue_phone); ?></strong></span>
         </a>
-        <a href="tel:02203892207" class="drawer-btn-book" style="background: #D4B996; color: #141414;">
+        <a href="tel:0911211996" class="drawer-btn-book" style="background: #D4B996; color: #141414;">
             <i class="fa-solid fa-phone"></i>
-            <span>TỔNG ĐÀI TƯ VẤN: 02203 892 207</span>
+            <span>TỔNG ĐÀI TƯ VẤN: 0911 211 996</span>
         </a>
         <div class="drawer-meta-info">
             <span><i class="fa-solid fa-phone text-orange"></i> Hotline: <?php echo esc_html($hotline_phone); ?></span>
