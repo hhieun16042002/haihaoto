@@ -481,6 +481,34 @@ function hieugara_render_theme_settings_page() {
         <form method="post" action="options.php" class="hieugara-settings-form">
             <?php settings_fields('hieugara_settings_group'); ?>
 
+            <!-- HIEUGARA MODERN SENIOR-FRIENDLY TABS NAVIGATION -->
+            <div class="hieugara-admin-tabs-nav">
+                <button type="button" class="tab-btn active" data-tab="tab-contact">
+                    <span class="dashicons dashicons-phone"></span>
+                    <span class="tab-text">1. Hotline &amp; Liên Hệ</span>
+                </button>
+                <button type="button" class="tab-btn" data-tab="tab-slider">
+                    <span class="dashicons dashicons-images-alt2"></span>
+                    <span class="tab-text">2. Banner Slider</span>
+                </button>
+                <button type="button" class="tab-btn" data-tab="tab-services">
+                    <span class="dashicons dashicons-car"></span>
+                    <span class="tab-text">3. Dịch Vụ &amp; Hãng Xe</span>
+                </button>
+                <button type="button" class="tab-btn" data-tab="tab-gallery">
+                    <span class="dashicons dashicons-format-gallery"></span>
+                    <span class="tab-text">4. Thư Viện Ảnh Xưởng</span>
+                </button>
+                <button type="button" class="tab-btn" data-tab="tab-banners">
+                    <span class="dashicons dashicons-cover-image"></span>
+                    <span class="tab-text">5. Banner Trang Con &amp; Cam Kết</span>
+                </button>
+            </div>
+
+            <!-- ========================================== -->
+            <!-- TAB PANE 1: HOTLINE, TOPBAR & MENU         -->
+            <!-- ========================================== -->
+            <div class="hieugara-tab-pane active" id="tab-contact">
             <!-- TAB 1: DÒNG TIỆN ÍCH TRÊN CÙNG & HOTLINE -->
             <div class="hieugara-card">
                 <div class="card-header">
@@ -583,7 +611,12 @@ function hieugara_render_theme_settings_page() {
                     </table>
                 </div>
             </div>
+            </div><!-- /#tab-contact -->
 
+            <!-- ========================================== -->
+            <!-- TAB PANE 2: BANNER SLIDER TRANG CHỦ        -->
+            <!-- ========================================== -->
+            <div class="hieugara-tab-pane" id="tab-slider" style="display:none;">
             <!-- TAB 3: CHỈNH SỬA BANNER SLIDER (LEXUS STYLE) -->
             <div class="hieugara-card">
                 <div class="card-header">
@@ -661,7 +694,12 @@ function hieugara_render_theme_settings_page() {
                     </div>
                 </div>
             </div>
+            </div><!-- /#tab-slider -->
 
+            <!-- ========================================== -->
+            <!-- TAB PANE 3: DỊCH VỤ & ĐỐI TÁC HÃNG XE      -->
+            <!-- ========================================== -->
+            <div class="hieugara-tab-pane" id="tab-services" style="display:none;">
             <!-- TAB 4: QUẢN LÝ MỤC ALL ABOUT CARS (DỊCH VỤ & DỰ ÁN GARA) -->
             <div class="hieugara-card">
                 <div class="card-header">
@@ -865,7 +903,12 @@ function hieugara_render_theme_settings_page() {
                     </div>
                 </div>
             </div>
+            </div><!-- /#tab-services -->
 
+            <!-- ========================================== -->
+            <!-- TAB PANE 4: THƯ VIỆN ẢNH XƯỞNG             -->
+            <!-- ========================================== -->
+            <div class="hieugara-tab-pane" id="tab-gallery" style="display:none;">
             <!-- TAB 6: QUẢN LÝ GALLERY - HÌNH ẢNH ÔTÔ HẢI HÀ (THÊM, SỬA, XÓA) -->
             <div class="hieugara-card" id="hieugara-gallery-card">
                 <div class="card-header" style="display: flex; align-items: center; justify-content: space-between; background: #0c1e3a; color: #ffffff; border-bottom: 2px solid #1d4ed8;">
@@ -947,7 +990,12 @@ function hieugara_render_theme_settings_page() {
                     </div>
                 </div>
             </div>
+            </div><!-- /#tab-gallery -->
 
+            <!-- ========================================== -->
+            <!-- TAB PANE 5: BANNER TRANG CON & CAM KẾT     -->
+            <!-- ========================================== -->
+            <div class="hieugara-tab-pane" id="tab-banners" style="display:none;">
             <!-- TAB 4: BANNER MỞ ĐẦU CÁC TRANG (HERO BANNERS - BỘ ẢNH XƯỞNG ÔTÔ HẢI HÀ) -->
             <div class="hieugara-card" id="card-hero-banners">
                 <div class="card-header" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: #fff; padding: 18px 24px;">
@@ -1116,10 +1164,20 @@ function hieugara_render_theme_settings_page() {
                     </table>
                 </div>
             </div>
+            </div><!-- /#tab-banners -->
 
-            <!-- Submit Button -->
-            <div class="hieugara-submit-bar">
-                <?php submit_button(__('LƯU TẤT CẢ CÀI ĐẶT', 'hieugara-motors'), 'primary large', 'submit', false); ?>
+            <!-- STICKY FLOATING BOTTOM SAVE BAR (SENIOR-FRIENDLY & ACCESSIBLE) -->
+            <div class="hieugara-sticky-save-bar">
+                <div class="save-bar-info">
+                    <span class="dashicons dashicons-saved" style="color: #22c55e; font-size: 24px; width: 24px; height: 24px;"></span>
+                    <div>
+                        <strong>Lưu thay đổi nhanh:</strong>
+                        <span>Bấm nút bên phải sau khi chỉnh sửa để cập nhật toàn bộ cài đặt ra website tức thì.</span>
+                    </div>
+                </div>
+                <button type="submit" name="submit" id="submit" class="button button-primary button-hero hieugara-floating-save-btn">
+                    <span class="dashicons dashicons-saved"></span> LƯU TẤT CẢ CÀI ĐẶT
+                </button>
             </div>
         </form>
     </div>
@@ -1127,6 +1185,28 @@ function hieugara_render_theme_settings_page() {
     <!-- Media Uploader & Brand CRUD Script -->
     <script>
     jQuery(document).ready(function($) {
+        // 0. Senior-Friendly Tab Switching Logic
+        $('.hieugara-admin-tabs-nav .tab-btn').on('click', function(e) {
+            e.preventDefault();
+            var targetTab = $(this).data('tab');
+            $('.hieugara-admin-tabs-nav .tab-btn').removeClass('active');
+            $(this).addClass('active');
+            $('.hieugara-tab-pane').hide().removeClass('active');
+            $('#' + targetTab).show().addClass('active');
+
+            try {
+                sessionStorage.setItem('hieugara_active_settings_tab', targetTab);
+            } catch(e) {}
+        });
+
+        // Restore previously active tab on page reload
+        try {
+            var activeTab = sessionStorage.getItem('hieugara_active_settings_tab');
+            if (activeTab && $('#' + activeTab).length) {
+                $('.hieugara-admin-tabs-nav .tab-btn[data-tab="' + activeTab + '"]').trigger('click');
+            }
+        } catch(e) {}
+
         // 1. Slider Image Upload
         $('.hieugara-upload-btn').on('click', function(e) {
             e.preventDefault();
