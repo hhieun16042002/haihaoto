@@ -11,8 +11,8 @@ if (!defined('ABSPATH')) {
 }
 
 $phone_rescue  = '0911 211 996';
-$phone_tech    = '0911 211 996';
-$phone_landline= '0911 211 996';
+$phone_tech    = '0915 041 989';
+$phone_landline= '02203 892 207';
 $rescue_phone  = $phone_rescue;
 $rescue_clean  = preg_replace('/[^0-9]/', '', $rescue_phone);
 $tech_phone    = $phone_tech;
@@ -47,12 +47,20 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                         <h4 class="footer-col-title footer-contact-title">
                             LIÊN HỆ
                         </h4>
-                        <!-- Unified Single Box for All Phone Numbers (Chỉ hiện SĐT đuôi 996 & màu đen) -->
+                        <!-- Unified Single Box for All Phone Numbers (Đầy đủ 3 SĐT) -->
                         <div class="footer-contact-unified-box">
                             <div class="contact-box-lines">
-                                <a href="tel:0911211996" class="contact-box-line" title="Gọi 0911 211 996">
+                                <a href="tel:0911211996" class="contact-box-line" title="Gọi Cứu Hộ & Hotline 24/7: 0911 211 996">
                                     <i class="fa-solid fa-phone"></i>
                                     <span>0911 211 996</span>
+                                </a>
+                                <a href="tel:0915041989" class="contact-box-line" title="Gọi Hotline Kỹ Thuật: 0915 041 989">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <span>0915 041 989</span>
+                                </a>
+                                <a href="tel:02203892207" class="contact-box-line" title="Gọi Tổng Đài Xưởng: 02203 892 207">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <span>02203 892 207</span>
                                 </a>
                             </div>
                         </div>
