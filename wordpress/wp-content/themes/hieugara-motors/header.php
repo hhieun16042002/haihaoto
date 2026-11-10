@@ -282,7 +282,7 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
 
             <?php if ($h_show_accessories === '1') : ?>
             <!-- 4. PHỤ KIỆN ⌵ -->
-            <li class="nav-item has-dropdown <?php echo is_page('phu-kien') || is_page('phu-kien-vinfast') || is_singular('garage_accessory') ? 'active' : ''; ?>">
+            <li class="nav-item has-dropdown <?php echo is_page('phu-kien') || is_page('phu-kien-vinfast') || is_singular('garage_accessory') || is_tax('accessory_category') ? 'active' : ''; ?>">
                 <a href="<?php echo esc_url(home_url('/phu-kien/')); ?>" class="nav-link" title="<?php echo esc_attr($h_label_accessories); ?>">
                     <span><?php echo esc_html($h_label_accessories); ?></span>
                     <i class="fa-solid fa-chevron-down nav-caret"></i>
@@ -302,10 +302,13 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                         if ($c_slug === 'phu-kien-vinfast' || strpos($c_slug, 'vinfast') !== false) {
                             continue;
                         }
+                        $term = get_term_by('slug', $c_slug, 'accessory_category');
+                        $cat_url = ($term && !is_wp_error($term)) ? get_term_link($term) : home_url('/danh-muc-phu-kien/' . $c_slug . '/');
+                        $cat_title = !empty($c_data['name']) ? $c_data['name'] : (!empty($c_data['short_name']) ? $c_data['short_name'] : $c_slug);
                     ?>
                         <li>
-                            <a href="<?php echo esc_url(home_url('/phu-kien/#cat-' . $c_slug)); ?>">
-                                <?php echo esc_html($c_data['short_name']); ?>
+                            <a href="<?php echo esc_url($cat_url); ?>">
+                                <?php echo esc_html($cat_title); ?>
                             </a>
                         </li>
                     <?php endforeach; ?>
