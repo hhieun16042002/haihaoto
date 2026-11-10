@@ -237,18 +237,18 @@ $about_parts_rate  = get_option('hieugara_about_parts_rate', '100%');
                 </article>
 
                 <!-- Highlights Row (Key Statistics - Light Luxury Style) -->
-                <div class="about-highlights-row" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; background: #FBF8F3; border: 1px solid #E2E8F0; border-top: 3px solid #C5A880; border-radius: 8px; padding: 26px 18px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.04);">
+                <div class="about-highlights-row" style="background: #FBF8F3; border: 1px solid #E2E8F0; border-top: 3px solid #C5A880; border-radius: 8px; padding: 26px 18px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.04);">
                     <div class="hl-item">
                         <strong style="display: block; font-size: 2.2rem; color: #8C6239; font-weight: 800; font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.2;"><?php echo esc_html($about_years_exp); ?></strong>
-                        <span style="font-size: 0.83rem; color: #475569; text-transform: uppercase; letter-spacing: 0.3px; font-weight: 600; white-space: nowrap;">Năm đồng hành (1995-<?php echo date('Y'); ?>)</span>
+                        <span style="font-size: 0.83rem; color: #475569; text-transform: uppercase; letter-spacing: 0.3px; font-weight: 600;">Năm đồng hành (1995-<?php echo date('Y'); ?>)</span>
                     </div>
-                    <div class="hl-item" style="border-left: 1px solid #E2E8F0;">
+                    <div class="hl-item">
                         <strong style="display: block; font-size: 2.2rem; color: #8C6239; font-weight: 800; font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.2;"><?php echo esc_html($about_staff_count); ?></strong>
-                        <span style="font-size: 0.83rem; color: #475569; text-transform: uppercase; letter-spacing: 0.3px; font-weight: 600; white-space: nowrap;">Nhân sự tận tâm &amp; tay nghề cao</span>
+                        <span style="font-size: 0.83rem; color: #475569; text-transform: uppercase; letter-spacing: 0.3px; font-weight: 600;">Nhân sự tận tâm &amp; tay nghề cao</span>
                     </div>
-                    <div class="hl-item" style="border-left: 1px solid #E2E8F0;">
+                    <div class="hl-item">
                         <strong style="display: block; font-size: 2.2rem; color: #8C6239; font-weight: 800; font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.2;"><?php echo esc_html($about_parts_rate); ?></strong>
-                        <span style="font-size: 0.83rem; color: #475569; text-transform: uppercase; letter-spacing: 0.3px; font-weight: 600; white-space: nowrap;">Phụ tùng chính hãng &amp; bảo hành chuẩn</span>
+                        <span style="font-size: 0.83rem; color: #475569; text-transform: uppercase; letter-spacing: 0.3px; font-weight: 600;">Phụ tùng chính hãng &amp; bảo hành chuẩn</span>
                     </div>
                 </div>
 

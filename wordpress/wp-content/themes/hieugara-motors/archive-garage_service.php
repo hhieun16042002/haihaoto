@@ -79,10 +79,7 @@ if (!empty($parent_cats) && !is_wp_error($parent_cats)) {
             <span class="sep">/</span>
             <span class="current"><?php _e('Dịch Vụ', 'hieugara-motors'); ?></span>
         </nav>
-        <h1 class="portal-page-title"><?php _e('HỆ THỐNG DỊCH VỤ ÔTÔ HẢI HÀ', 'hieugara-motors'); ?></h1>
-        <p class="portal-page-subtitle portal-page-subtitle-wide">
-            <?php _e('Trung tâm bảo dưỡng, sửa chữa cơ điện lạnh, đồng sơn sấy hấp hồng ngoại và dịch vụ xe VinFast chính hãng chuyên nghiệp tại Hải Phòng.', 'hieugara-motors'); ?>
-        </p>
+        <h1 class="portal-page-title" style="margin: 0 auto;"><?php _e('HỆ THỐNG DỊCH VỤ ÔTÔ HẢI HÀ', 'hieugara-motors'); ?></h1>
     </div>
 </section>
 

@@ -7,7 +7,7 @@
  */
 
 // Chuyển hướng toàn bộ trang đặt lịch sang trang liên hệ & tư vấn trực tiếp
-wp_safe_redirect(home_url('/ve-chung-toi/#lien-he'), 301);
+wp_safe_redirect(home_url('/lien-he/'), 301);
 exit;
 
 get_header();

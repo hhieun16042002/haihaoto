@@ -67,12 +67,9 @@ if (!empty($parent_cats) && !is_wp_error($parent_cats)) {
         </nav>
 
         <div class="phukien-hero-content text-center">
-            <h1 class="phukien-title">
-                <?php _e('HỆ THỐNG PHỤ KIỆN & ĐỒ CHƠI Ô TÔ CHÍNH HÃNG', 'hieugara-motors'); ?>
+            <h1 class="phukien-title" style="margin: 0 auto;">
+                <?php _e('HỆ THỐNG PHỤ KIỆN Ô TÔ CHÍNH HÃNG', 'hieugara-motors'); ?>
             </h1>
-            <p class="phukien-subtitle">
-                <?php _e('Phân phối và lắp đặt phụ kiện xe hơi cắm giắc Zin theo tiêu chuẩn xưởng dịch vụ. Bảo hành điện tử chính hãng và hỗ trợ kỹ thuật tại xưởng Ô Tô Hải Hà.', 'hieugara-motors'); ?>
-            </p>
         </div>
     </div>
 </section>
@@ -133,9 +130,9 @@ if (!empty($parent_cats) && !is_wp_error($parent_cats)) {
                                 }
                             ?>
                                 <article style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 16px rgba(0,0,0,0.03); transition: transform 0.2s ease, box-shadow 0.2s ease;">
-                                    <div style="position: relative; height: 180px; overflow: hidden; background: #000;">
-                                        <a href="<?php echo esc_url($a_link); ?>">
-                                            <img src="<?php echo esc_url($a_thumb); ?>" alt="<?php echo esc_attr($acc->post_title); ?>" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                                    <div style="position: relative; height: 180px; overflow: hidden; background: #ffffff; display: flex; align-items: center; justify-content: center; padding: 10px;">
+                                        <a href="<?php echo esc_url($a_link); ?>" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                                            <img src="<?php echo esc_url($a_thumb); ?>" alt="<?php echo esc_attr($acc->post_title); ?>" loading="lazy" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                                         </a>
                                     </div>
 
@@ -146,22 +143,13 @@ if (!empty($parent_cats) && !is_wp_error($parent_cats)) {
                                             </a>
                                         </h3>
 
-                                        <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; font-size: 0.78rem; font-family: 'Be Vietnam Pro', sans-serif;">
-                                            <span style="background: #fff7ed; color: #c2410c; padding: 2px 8px; border-radius: 3px; font-weight: 700;">
-                                                <i class="fa fa-tag" style="margin-right: 3px;"></i> <?php echo esc_html($a_price); ?>
-                                            </span>
-                                        </div>
-
                                         <p style="font-size: 0.88rem; color: #64748b; line-height: 1.6; margin: 0 0 14px; flex: 1;">
                                             <?php echo wp_trim_words(get_the_excerpt($a_id) ?: strip_tags($acc->post_content), 16, '...'); ?>
                                         </p>
 
-                                        <div style="margin-top: auto; padding-top: 12px; border-top: 1px solid #f1f5f9; display: flex; gap: 8px;">
-                                            <a href="<?php echo esc_url($a_link); ?>" style="flex: 1; text-align: center; padding: 8px 12px; background: #0f172a; color: #ffffff; text-decoration: none; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; border-radius: 4px;">
-                                                <?php _e('Chi tiết', 'hieugara-motors'); ?> &rarr;
-                                            </a>
-                                            <a href="tel:0911211996" style="padding: 8px 12px; background: #C5A880; color: #141414; text-decoration: none; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.8rem; font-weight: 700; border-radius: 4px;" title="Gọi tư vấn">
-                                                <i class="fa fa-phone"></i>
+                                        <div style="margin-top: auto; padding-top: 12px; border-top: 1px solid #f1f5f9;">
+                                            <a href="<?php echo esc_url($a_link); ?>" style="color: #C5A880; text-decoration: none; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; display: inline-flex; align-items: center; gap: 6px; transition: opacity 0.2s ease;">
+                                                <span><?php _e('Chi tiết', 'hieugara-motors'); ?></span> &rarr;
                                             </a>
                                         </div>
                                     </div>

@@ -131,7 +131,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                     <div class="footer-map-card">
                         <div class="footer-map-frame">
                             <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14905.647157644455!2d106.295314!3d20.935972!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31359b66f542968b%3A0xd5b45cb9b6b0359!2zR2FyYSDDlCB0w7QgSOG6o2kgSMOg!5e0!3m2!1svi!2sus!4v1794193336111!5m2!1svi!2sus" 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.4116602473237!2d106.292738975968!3d20.935977190957903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31359b66f542968b%3A0xd5b45cb9b6b0359!2zR2FyYSDDlCB0w7QgSOG6o2kgSMOg!5e0!3m2!1svi!2s!4v1794282058564!5m2!1svi!2s" 
                                 width="100%" 
                                 height="175" 
                                 style="border:0;" 

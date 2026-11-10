@@ -40,6 +40,343 @@ while (have_posts()) : the_post();
     $cat_slug  = (!empty($cat_terms) && !is_wp_error($cat_terms)) ? $cat_terms[0]->slug : 'noi-that';
 ?>
 
+<style>
+/* ==========================================================================
+   MOBILE & RESPONSIVE FIX FOR ACCESSORY SINGLE PAGE
+   ========================================================================== */
+html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+}
+
+.page-accessory-single {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+}
+
+/* Contain Grid & Columns */
+.acc-single-grid {
+    min-width: 0 !important;
+    max-width: 100% !important;
+}
+
+.acc-left-col,
+.acc-right-col {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Gallery & Featured Image: Frame/Contain properly */
+.acc-gallery-container {
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+
+.acc-main-img-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    background: #ffffff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    padding: 20px !important;
+}
+
+.acc-featured-img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    transition: opacity 0.25s ease;
+}
+
+/* Interactive Thumbnails */
+.acc-gallery-thumbs {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 10px !important;
+    padding-bottom: 6px !important;
+    scrollbar-width: thin !important;
+}
+
+.acc-thumb-btn {
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.acc-thumb-btn img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    background: #ffffff !important;
+}
+
+/* Mobile Devices (<= 768px) */
+@media (max-width: 768px) {
+    .acc-single-header {
+        padding: 12px 0 !important;
+    }
+
+    .acc-breadcrumb {
+        font-size: 0.78rem !important;
+        line-height: 1.5 !important;
+        word-break: break-word !important;
+    }
+
+    .acc-single-body {
+        padding: 16px 0 30px !important;
+    }
+
+    .acc-single-body .container {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .acc-single-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        width: 100% !important;
+    }
+
+    /* Bo ảnh chính */
+    .acc-main-img-box {
+        height: 300px !important;
+        min-height: 250px !important;
+        padding: 16px !important;
+        border-radius: 12px !important;
+    }
+
+    .acc-featured-img {
+        max-height: 268px !important;
+    }
+
+    .acc-badge-pill {
+        top: 10px !important;
+        right: 10px !important;
+        font-size: 0.7rem !important;
+        padding: 4px 10px !important;
+    }
+
+    /* Bo thumbnails */
+    .acc-gallery-thumbs {
+        gap: 8px !important;
+    }
+
+    .acc-thumb-btn {
+        width: 62px !important;
+        height: 62px !important;
+        padding: 2px !important;
+        border-radius: 6px !important;
+    }
+
+    /* Bo bảng thông số kỹ thuật (Specs Card & Table) */
+    .acc-specs-card {
+        padding: 18px 14px !important;
+        border-radius: 12px !important;
+        margin-bottom: 20px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+
+    .specs-heading {
+        font-size: 1.1rem !important;
+        margin-bottom: 14px !important;
+        padding-bottom: 10px !important;
+    }
+
+    .acc-specs-table {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .acc-specs-table tbody {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .acc-specs-table tr {
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 10px 12px !important;
+        margin-bottom: 8px !important;
+        border: 1px solid #eef2f6 !important;
+        border-radius: 8px !important;
+        background: #f8fafc !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .acc-specs-table tr:nth-child(even) {
+        background: #ffffff !important;
+    }
+
+    .acc-specs-table th {
+        display: block !important;
+        width: 100% !important;
+        padding: 0 0 4px 0 !important;
+        font-size: 0.78rem !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+        color: #64748b !important;
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
+        border: none !important;
+    }
+
+    .acc-specs-table td {
+        display: block !important;
+        width: 100% !important;
+        padding: 0 !important;
+        font-size: 0.88rem !important;
+        color: #0f172a !important;
+        line-height: 1.55 !important;
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
+        border: none !important;
+    }
+
+    /* Bo khối bài viết / Đánh giá chi tiết (Content Card) */
+    .acc-content-card {
+        padding: 18px 14px !important;
+        border-radius: 12px !important;
+        margin-bottom: 20px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .content-heading {
+        font-size: 1.1rem !important;
+        margin-bottom: 14px !important;
+        padding-bottom: 10px !important;
+    }
+
+    .acc-prose-body {
+        font-size: 0.9rem !important;
+        line-height: 1.65 !important;
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    .acc-prose-body img {
+        max-width: 100% !important;
+        height: auto !important;
+        border-radius: 8px !important;
+    }
+
+    /* Bo khối Đặt mua / Liên hệ (Sticky Card -> Full Card) */
+    .acc-right-col {
+        position: static !important;
+        width: 100% !important;
+    }
+
+    .acc-buy-card-sticky {
+        padding: 18px 14px !important;
+        border-radius: 12px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .acc-buy-title {
+        font-size: 1.25rem !important;
+        line-height: 1.35 !important;
+        word-break: break-word !important;
+    }
+
+    .acc-price-main .current-num {
+        font-size: 1.6rem !important;
+    }
+
+    .acc-cta-stack {
+        width: 100% !important;
+        gap: 8px !important;
+    }
+
+    .btn-acc-primary-book,
+    .btn-acc-zalo,
+    .btn-acc-call {
+        width: 100% !important;
+        padding: 12px 8px !important;
+        font-size: 0.82rem !important;
+        line-height: 1.35 !important;
+        white-space: normal !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+        justify-content: center !important;
+    }
+
+    /* Bo Sản phẩm phụ kiện liên quan */
+    .acc-related-section {
+        padding: 36px 0 60px !important;
+    }
+
+    .related-title {
+        font-size: 1.35rem !important;
+    }
+
+    .phukien-products-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+
+    .phukien-card {
+        border-radius: 10px !important;
+        overflow: hidden !important;
+    }
+
+    .phukien-card-img-wrap {
+        height: 130px !important;
+        padding: 8px !important;
+        background: #ffffff !important;
+    }
+
+    .phukien-card-img-wrap img {
+        max-width: 90% !important;
+        max-height: 90% !important;
+        object-fit: contain !important;
+    }
+
+    .phukien-card-body {
+        padding: 10px !important;
+    }
+
+    .phukien-card-title {
+        font-size: 0.85rem !important;
+        line-height: 1.35 !important;
+        min-height: 2.7em !important;
+        margin-bottom: 6px !important;
+        word-break: break-word !important;
+    }
+
+    .phukien-card-badge {
+        font-size: 0.65rem !important;
+        padding: 2px 6px !important;
+        top: 8px !important;
+        right: 8px !important;
+    }
+
+    .phukien-card-pricing .price-current {
+        font-size: 0.95rem !important;
+    }
+}
+</style>
+
 <main id="primary" class="site-main page-accessory-single <?php echo $is_vf ? 'page-vf-accessory-single' : ''; ?>">
 
     <!-- Header Breadcrumbs -->
@@ -69,60 +406,38 @@ while (have_posts()) : the_post();
                 <!-- Left Column: Image & In-Depth Details -->
                 <div class="acc-left-col">
                     
-                    <!-- Product Image Viewer -->
-                    <div class="acc-main-img-box">
-                        <?php if (!empty($badge)) : ?>
-                            <span class="acc-badge-pill"><?php echo esc_html($badge); ?></span>
+                    <!-- Gallery Container -->
+                    <div class="acc-gallery-container" style="margin-bottom: 24px;">
+                        <!-- Product Image Viewer -->
+                        <div class="acc-main-img-box">
+                            <?php if (!empty($badge)) : ?>
+                                <span class="acc-badge-pill"><?php echo esc_html($badge); ?></span>
+                            <?php endif; ?>
+                            <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($title); ?>" class="acc-featured-img" id="accMainFeaturedImg">
+                        </div>
+
+                        <!-- Interactive Thumbnails -->
+                        <?php 
+                        $gallery = get_post_meta($post_id, '_accessory_gallery', true);
+                        if (!empty($gallery) && is_array($gallery) && count($gallery) > 1) :
+                            if (function_exists('hieugara_normalize_local_media_urls')) {
+                                $gallery = array_map('hieugara_normalize_local_media_urls', $gallery);
+                            }
+                        ?>
+                        <div class="acc-gallery-thumbs" id="accGalleryThumbs">
+                            <?php foreach ($gallery as $g_idx => $g_img) : ?>
+                                <button type="button" class="acc-thumb-btn <?php echo $g_idx === 0 ? 'active' : ''; ?>" data-src="<?php echo esc_url($g_img); ?>" aria-label="Xem ảnh <?php echo $g_idx + 1; ?>">
+                                    <img src="<?php echo esc_url($g_img); ?>" alt="Ảnh thumbnail <?php echo $g_idx + 1; ?>">
+                                </button>
+                            <?php endforeach; ?>
+                        </div>
                         <?php endif; ?>
-                        <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($title); ?>" class="acc-featured-img" id="accMainFeaturedImg">
-                    </div>
-
-                    <!-- Interactive Thumbnails -->
-                    <?php 
-                    $gallery = get_post_meta($post_id, '_accessory_gallery', true);
-                    if (!empty($gallery) && is_array($gallery) && count($gallery) > 1) :
-                        if (function_exists('hieugara_normalize_local_media_urls')) {
-                            $gallery = array_map('hieugara_normalize_local_media_urls', $gallery);
-                        }
-                    ?>
-                    <div class="acc-gallery-thumbs" id="accGalleryThumbs">
-                        <?php foreach ($gallery as $g_idx => $g_img) : ?>
-                            <button type="button" class="acc-thumb-btn <?php echo $g_idx === 0 ? 'active' : ''; ?>" data-src="<?php echo esc_url($g_img); ?>" aria-label="Xem ảnh <?php echo $g_idx + 1; ?>">
-                                <img src="<?php echo esc_url($g_img); ?>" alt="Ảnh thumbnail <?php echo $g_idx + 1; ?>">
-                            </button>
-                        <?php endforeach; ?>
-                    </div>
-                    <?php endif; ?>
-
-                    <!-- Trust Bar Under Image -->
-                    <div class="acc-trust-strip">
-                        <div class="trust-cell">
-                            <i class="fa-solid fa-shield-halved text-gold"></i>
-                            <div>
-                                <strong>100% Chính Hãng</strong>
-                                <small>Hoàn tiền 100% nếu phát hiện giả</small>
-                            </div>
-                        </div>
-                        <div class="trust-cell">
-                            <i class="fa-solid fa-rotate-left text-gold"></i>
-                            <div>
-                                <strong>Bảo Hành 1 Đổi 1</strong>
-                                <small><?php echo esc_html($warranty); ?></small>
-                            </div>
-                        </div>
-                        <div class="trust-cell">
-                            <i class="fa-solid fa-wrench text-gold"></i>
-                            <div>
-                                <strong>Lắp Đặt Tại Xưởng</strong>
-                                <small>Kỹ thuật viên tay nghề cao</small>
-                            </div>
-                        </div>
                     </div>
 
                     <!-- Specifications Table -->
                     <?php if (!empty($specs_raw)) : ?>
                     <div class="acc-specs-card">
-                        <h2 class="specs-heading"><i class="fa-solid fa-list-check text-gold mr-2"></i> Thông Số Kỹ Thuật Chi Tiết</h2>
+                        <h2 class="specs-heading">Thông Số Kỹ Thuật Chi Tiết</h2>
                         <table class="acc-specs-table">
                             <tbody>
                                 <?php if (!empty($sku)) : ?>
@@ -181,21 +496,10 @@ while (have_posts()) : the_post();
 
                     <!-- In-depth Product Content -->
                     <div class="acc-content-card">
-                        <h2 class="content-heading"><i class="fa-solid fa-circle-info text-gold mr-2"></i> Giới Thiệu &amp; Đánh Giá Chi Tiết</h2>
+                        <h2 class="content-heading">Giới Thiệu &amp; Đánh Giá Chi Tiết</h2>
                         <div class="acc-prose-body">
                             <?php the_content(); ?>
                         </div>
-                    </div>
-
-                    <!-- Workshop Installation Guarantee -->
-                    <div class="acc-workshop-guarantee">
-                        <h3><i class="fa-solid fa-medal text-gold"></i> Tiêu Chuẩn Thi Công Lắp Đặt Tại Ôtô Hải Hà</h3>
-                        <ul>
-                            <li><i class="fa-solid fa-check text-green"></i> <strong>Không cắt trích dây zin:</strong> Cắm giắc zin 100% tương thích theo từng đời xe, giữ nguyên chính sách bảo hành điện của hãng xe.</li>
-                            <li><i class="fa-solid fa-check text-green"></i> <strong>Cầu chì bảo vệ độc lập:</strong> Trang bị cầu chì an toàn chống chập cháy và tụt áp ắc quy.</li>
-                            <li><i class="fa-solid fa-check text-green"></i> <strong>Căn chỉnh chuẩn mực:</strong> Căn góc camera 360/hành trình và kiểm tra áp suất lốp bằng máy đo điện tử chuyên dụng.</li>
-                            <li><i class="fa-solid fa-check text-green"></i> <strong>Bảo hành điện tử:</strong> Kích hoạt mã QR bảo hành điện tử toàn quốc, lưu lịch sử sửa chữa minh bạch.</li>
-                        </ul>
                     </div>
 
                 </div>
@@ -224,17 +528,8 @@ while (have_posts()) : the_post();
                         </div>
                         <?php endif; ?>
 
-                        <!-- Price Box -->
-                        <?php if ($is_vf || $price === 'Liên hệ') : ?>
-                            <div class="acc-price-box vf-contact-price-box" style="background: linear-gradient(135deg, rgba(0, 114, 206, 0.08) 0%, rgba(0, 87, 184, 0.03) 100%); border-left: 4px solid #0072ce; padding: 16px 18px; border-radius: 6px; margin: 16px 0;">
-                                <div style="font-family: 'Be Vietnam Pro', sans-serif; font-size: 1.15rem; font-weight: 800; color: #0057b8; display: flex; align-items: center; gap: 8px;">
-                                    <i class="fa-solid fa-headset"></i>
-                                    <span>LIÊN HỆ BÁO GIÁ VÀ LẮP ĐẶT</span>
-                                </div>
-                                <small style="display: block; color: #64748b; font-size: 0.82rem; margin-top: 6px; line-height: 1.5;">Tư vấn đúng chủng loại theo từng phiên bản xe – Hỗ trợ kỹ thuật cắm giắc zin tiêu chuẩn nhà máy tại xưởng Ô Tô Hải Hà</small>
-                            </div>
-                        <?php else : ?>
-                            <div class="acc-price-box">
+                        <?php if (!$is_vf && $price !== 'Liên hệ') : ?>
+                            <div class="acc-price-box" style="margin: 16px 0;">
                                 <div class="acc-price-main">
                                     <span class="current-num"><?php echo esc_html($price); ?></span>
                                     <span class="currency">đ</span>
@@ -250,19 +545,14 @@ while (have_posts()) : the_post();
                         <?php endif; ?>
 
                         <!-- Primary CTA Buttons -->
-                        <div class="acc-cta-stack">
-                            <a href="tel:02203892207" class="btn-acc-primary-book" title="Tư vấn lắp đặt phụ kiện này" style="background: #0072ce; color: #ffffff;">
-                                <i class="fa-solid fa-phone-volume mr-2"></i>
+                        <div class="acc-cta-stack" style="margin-top: 18px; margin-bottom: 0;">
+                            <a href="tel:02203892207" class="btn-acc-primary-book" title="Tư vấn lắp đặt phụ kiện này" style="background: #C5A880; color: #141414; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; gap: 10px;">
+                                <i class="fa-solid fa-phone-volume"></i>
                                 <span>TỔNG ĐÀI TƯ VẤN: 02203 892 207</span>
                             </a>
-                            
-                            <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="btn-acc-call" title="Gọi hotline tư vấn nhanh">
-                                <i class="fa-solid fa-phone-volume mr-2"></i>
-                                <span>HOTLINE KỸ THUẬT: <strong><?php echo esc_html($rescue_phone); ?></strong></span>
-                            </a>
 
-                            <a href="https://zalo.me/0911211996" target="_blank" rel="noopener" class="btn-acc-zalo" title="Chat Zalo với kỹ thuật viên" style="background: #0068ff; color: #ffffff;">
-                                <i class="fa-solid fa-comment-dots mr-2"></i>
+                            <a href="https://zalo.me/0911211996" target="_blank" rel="noopener" class="btn-acc-zalo" title="Chat Zalo với kỹ thuật viên" style="background: #0068ff; color: #ffffff; display: inline-flex; align-items: center; justify-content: center; gap: 10px;">
+                                <i class="fa-solid fa-comment-dots"></i>
                                 <span>CHAT ZALO TƯ VẤN LẮP ĐẶT</span>
                             </a>
 
@@ -355,15 +645,21 @@ while (have_posts()) : the_post();
                             </h4>
 
                             <div class="phukien-card-pricing">
-                                <span class="price-current"><?php echo esc_html($rel_price); ?> <sup>đ</sup></span>
+                                <?php 
+                                $is_contact_price = (mb_strtolower(trim($rel_price), 'UTF-8') === 'liên hệ' || empty($rel_price));
+                                if ($is_contact_price) : ?>
+                                    <span class="price-current is-contact-price" style="color: #C5A880; font-weight: 800; font-family: 'Be Vietnam Pro', sans-serif; font-size: 1.15rem;"><?php _e('Liên hệ', 'hieugara-motors'); ?></span>
+                                <?php else : ?>
+                                    <span class="price-current"><?php echo esc_html($rel_price); ?> <sup>đ</sup></span>
+                                <?php endif; ?>
                                 <?php if (!empty($rel_old)) : ?>
                                     <span class="price-old"><?php echo esc_html($rel_old); ?> <sup>đ</sup></span>
                                 <?php endif; ?>
                             </div>
 
-                            <div class="phukien-card-actions">
-                                <a href="<?php echo esc_url(get_permalink($rel_id)); ?>" class="btn-pk-book">
-                                    Xem Chi Tiết
+                            <div class="phukien-card-actions" style="margin-top: auto; padding-top: 12px; border-top: 1px solid #f1f5f9; display: flex; justify-content: flex-start; align-items: center;">
+                                <a href="<?php echo esc_url(get_permalink($rel_id)); ?>" class="btn-pk-detail-link" style="color: #C5A880; text-decoration: none; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.88rem; font-weight: 700; text-transform: uppercase; display: inline-flex; align-items: center; gap: 6px; transition: color 0.2s ease;">
+                                    <span><?php _e('Chi tiết', 'hieugara-motors'); ?></span> &rarr;
                                 </a>
                             </div>
                         </div>

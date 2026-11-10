@@ -186,7 +186,7 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
 
             <?php if ($h_show_about === '1') : ?>
             <!-- 2. GIỚI THIỆU ⌵ (100% Dynamic CRUD from WP Admin) -->
-            <li class="nav-item has-dropdown <?php echo is_page('ve-chung-toi') || is_page('garage-gan-ban') ? 'active' : ''; ?>">
+            <li class="nav-item has-dropdown <?php echo is_page('ve-chung-toi') || is_page('garage-gan-ban') || is_page('doi-ngu-ky-thuat') || is_page_template('page-doi-ngu-ky-thuat.php') ? 'active' : ''; ?>">
                 <a href="<?php echo esc_url(home_url('/ve-chung-toi/')); ?>" class="nav-link" title="<?php echo esc_attr($h_label_about); ?>">
                     <span><?php echo esc_html($h_label_about); ?></span>
                     <i class="fa-solid fa-chevron-down nav-caret"></i>
@@ -331,25 +331,11 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
             <?php endif; ?>
 
             <?php if ($h_show_contact === '1') : ?>
-            <!-- 6. LIÊN HỆ ⌵ -->
-            <li class="nav-item has-dropdown">
-                <a href="<?php echo esc_url(home_url('/ve-chung-toi/#lien-he')); ?>" class="nav-link" title="<?php echo esc_attr($h_label_contact); ?>">
-                    <span><?php echo esc_html($h_label_contact); ?></span>
-                    <i class="fa-solid fa-chevron-down nav-caret"></i>
+            <!-- 6. LIÊN HỆ (Trang trực tiếp, không có dropdown con) -->
+            <li class="nav-item <?php echo is_page('lien-he') || is_page_template('page-lien-he.php') ? 'active' : ''; ?>">
+                <a href="<?php echo esc_url(home_url('/lien-he/')); ?>" class="nav-link" title="<?php echo esc_attr($h_label_contact); ?>">
+                    <?php echo esc_html($h_label_contact); ?>
                 </a>
-                <ul class="nav-dropdown-menu">
-                    <?php
-                    $contact_nav_items = function_exists('hieugara_get_contact_menu_items') ? hieugara_get_contact_menu_items() : array();
-                    foreach ($contact_nav_items as $c_item) :
-                        if (empty($c_item['enable'])) continue;
-                    ?>
-                        <li>
-                            <a href="<?php echo esc_url($c_item['link']); ?>" target="<?php echo esc_attr($c_item['target'] ?? '_self'); ?>">
-                                <?php echo esc_html($c_item['title']); ?>
-                            </a>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
             </li>
             <?php endif; ?>
         </ul>

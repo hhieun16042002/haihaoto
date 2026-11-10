@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('HIEUGARA_THEME_VERSION', '5.8.5');
+define('HIEUGARA_THEME_VERSION', '5.8.6');
 define('HIEUGARA_THEME_DIR', get_template_directory());
 define('HIEUGARA_THEME_URI', get_template_directory_uri());
 
@@ -228,6 +228,7 @@ require_once HIEUGARA_THEME_DIR . '/inc/media-hub.php';
 require_once HIEUGARA_THEME_DIR . '/inc/sample-accessories.php';
 require_once HIEUGARA_THEME_DIR . '/inc/about-menu-crud.php';
 require_once HIEUGARA_THEME_DIR . '/inc/seo-links-crud.php';
+require_once HIEUGARA_THEME_DIR . '/inc/category-banner-meta.php';
 
 // 4. Helper Functions
 function hieugara_get_service_features($post_id) {
@@ -457,7 +458,7 @@ add_action('template_redirect', 'hieugara_route_vinfast_service_page', 1);
 function hieugara_vinfast_seo_title($title) {
     $request_uri = trim(parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
     if ($request_uri === 'dich-vu/xe-vinfast') {
-        return 'Xưởng dịch vụ VinFast tại Hải Dương | Ô Tô Hải Hà';
+        return 'Xưởng dịch vụ VinFast tại Hải Phòng | Ô Tô Hải Hà';
     }
     return $title;
 }
@@ -472,7 +473,7 @@ function hieugara_vinfast_seo_meta_tags() {
         $img = get_template_directory_uri() . '/assets/images/about/bien-vinfast-service-haiha.jpg';
         echo '<meta name="description" content="' . esc_attr($desc) . '">' . "\n";
         echo '<link rel="canonical" href="' . esc_url($canonical) . '">' . "\n";
-        echo '<meta property="og:title" content="Xưởng dịch vụ VinFast tại Hải Dương | Ô Tô Hải Hà">' . "\n";
+        echo '<meta property="og:title" content="Xưởng dịch vụ VinFast tại Hải Phòng | Ô Tô Hải Hà">' . "\n";
         echo '<meta property="og:description" content="' . esc_attr($desc) . '">' . "\n";
         echo '<meta property="og:url" content="' . esc_url($canonical) . '">' . "\n";
         echo '<meta property="og:type" content="article">' . "\n";
@@ -535,8 +536,8 @@ function hieugara_get_current_page_banner() {
         }
     }
 
-    // 2. Trang Về Chúng Tôi
-    if (is_page('ve-chung-toi') || is_page_template('page-ve-chung-toi.php')) {
+    // 2. Trang Về Chúng Tôi & Đội Ngũ Kỹ Thuật
+    if (is_page('ve-chung-toi') || is_page_template('page-ve-chung-toi.php') || is_page('doi-ngu-ky-thuat') || is_page_template('page-doi-ngu-ky-thuat.php')) {
         return hieugara_get_page_banner_url('about');
     }
 
@@ -566,13 +567,28 @@ function hieugara_get_current_page_banner() {
         return hieugara_get_page_banner_url('datlich');
     }
 
+    // 7.5. Chuyên mục Blog / Tin tức (Category) - Hỗ trợ banner riêng cho từng danh mục
+    if (is_category()) {
+        $queried_cat = get_queried_object();
+        if ($queried_cat && !empty($queried_cat->term_id)) {
+            $cat_custom_banner = get_term_meta($queried_cat->term_id, 'hieugara_category_banner', true);
+            if (!empty($cat_custom_banner)) {
+                if (function_exists('hieugara_normalize_local_media_urls')) {
+                    $cat_custom_banner = hieugara_normalize_local_media_urls($cat_custom_banner);
+                }
+                return $cat_custom_banner;
+            }
+        }
+        return hieugara_get_page_banner_url('blog');
+    }
+
     // 8. Trang Blog / Tin Tức
     if (is_home() || is_archive() || is_singular('post') || is_page('blog') || is_page_template('page-blog.php')) {
         return hieugara_get_page_banner_url('blog');
     }
 
     // 9. Trang Liên Hệ & Gara Gần Bạn
-    if (is_page('garage-gan-ban') || is_page('lien-he') || is_page_template('page-garage-gan-ban.php')) {
+    if (is_page('garage-gan-ban') || is_page('lien-he') || is_page_template('page-garage-gan-ban.php') || is_page_template('page-lien-he.php')) {
         return hieugara_get_page_banner_url('contact');
     }
 
@@ -673,7 +689,7 @@ function hieugara_vinfast_accessory_head_meta() {
     // Archive portal meta
     if ($request_uri === 'phu-kien/phu-kien-vinfast') {
         $canonical = home_url('/phu-kien/phu-kien-vinfast/');
-        $desc = 'Hệ sinh thái phụ kiện ô tô điện chính hãng VinFast tại Ô Tô Hải Hà - Đối tác dịch vụ VinFast ủy quyền tại Hải Dương. Lắp đặt cắm giắc zin, bảo hành chính hãng.';
+        $desc = 'Hệ sinh thái phụ kiện ô tô điện chính hãng VinFast tại Ô Tô Hải Hà - Đối tác dịch vụ VinFast ủy quyền tại Hải Phòng. Lắp đặt cắm giắc zin, bảo hành chính hãng.';
         echo '<meta name="description" content="' . esc_attr($desc) . '">' . "\n";
         echo '<link rel="canonical" href="' . esc_url($canonical) . '">' . "\n";
         echo '<meta property="og:title" content="Phụ kiện chính hãng VinFast tại Ô Tô Hải Hà | Đối tác dịch vụ ủy quyền">' . "\n";

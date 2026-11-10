@@ -25,6 +25,11 @@ while (have_posts()) : the_post();
         $thumb_url = hieugara_normalize_local_media_urls($thumb_url);
     }
 
+    $banner_bg = function_exists('hieugara_get_current_page_banner') ? hieugara_get_current_page_banner() : (function_exists('hieugara_get_page_banner_url') ? hieugara_get_page_banner_url('blog') : '');
+    if (empty($banner_bg)) {
+        $banner_bg = get_template_directory_uri() . '/assets/images/banners/banner-blog.jpg';
+    }
+
     $hotline_phone = get_option('hieugara_hotline_phone', '0911 211 996');
     $hotline_clean = preg_replace('/[^0-9]/', '', $hotline_phone);
 
@@ -41,122 +46,135 @@ while (have_posts()) : the_post();
     }
 ?>
 
-<div class="single-post-wrapper" style="background: #F9FAFB; padding: 40px 0 80px; min-height: 80vh;">
-    <div class="container">
+<style>
+@media (max-width: 768px) {
+    .single-post-page .portal-hero-header {
+        padding: 42px 14px 36px !important;
+    }
+    .single-post-page .portal-breadcrumb {
+        font-size: clamp(0.64rem, 2.7vw, 0.78rem) !important;
+        letter-spacing: 0.4px !important;
+        gap: 5px !important;
+        margin-bottom: 12px !important;
+        flex-wrap: nowrap !important;
+        white-space: nowrap !important;
+        justify-content: center !important;
+        line-height: 1.3 !important;
+    }
+    .single-post-page .portal-breadcrumb a,
+    .single-post-page .portal-breadcrumb span,
+    .single-post-page .portal-breadcrumb .current {
+        white-space: nowrap !important;
+        display: inline-block !important;
+    }
+    .single-post-page .portal-page-title {
+        white-space: nowrap !important;
+        font-size: clamp(0.95rem, 4.5vw, 1.45rem) !important;
+        line-height: 1.25 !important;
+        letter-spacing: -0.01em !important;
+        margin: 0 auto !important;
+    }
+}
+</style>
 
-        <!-- Breadcrumb -->
-        <nav class="single-breadcrumb" aria-label="Breadcrumb" style="margin-bottom: 24px; font-size: 0.875rem; color: #6B7280;">
-            <a href="<?php echo esc_url(home_url('/')); ?>" style="color: #6B7280; text-decoration: none;"><i class="fa-solid fa-house"></i> Trang chủ</a>
-            <span style="margin: 0 8px; color: #D1D5DB;">/</span>
-            <a href="<?php echo esc_url(home_url('/blog/')); ?>" style="color: #6B7280; text-decoration: none;">Blog</a>
-            <?php if ($main_cat) : ?>
-                <span style="margin: 0 8px; color: #D1D5DB;">/</span>
-                <a href="<?php echo esc_url(get_category_link($main_cat->term_id)); ?>" style="color: #6B7280; text-decoration: none;"><?php echo esc_html($main_cat->name); ?></a>
-            <?php endif; ?>
-            <span style="margin: 0 8px; color: #D1D5DB;">/</span>
-            <span style="color: #141414; font-weight: 600;"><?php the_title(); ?></span>
-        </nav>
+<div class="single-post-page">
+    <!-- Universal Hero Banner for Blog Article -->
+    <section class="portal-hero-header" style="background-image: url('<?php echo esc_url($banner_bg); ?>');">
+        <div class="container">
+            <nav class="portal-breadcrumb" aria-label="Breadcrumb">
+                <a href="<?php echo esc_url(home_url('/')); ?>"><?php _e('Trang chủ', 'hieugara-motors'); ?></a>
+                <span class="sep">/</span>
+                <a href="<?php echo esc_url(home_url('/blog/')); ?>"><?php _e('Cẩm nang &amp; Tin tức ô tô', 'hieugara-motors'); ?></a>
+                <?php if ($main_cat) : ?>
+                    <span class="sep">/</span>
+                    <a href="<?php echo esc_url(get_category_link($main_cat->term_id)); ?>"><?php echo esc_html($main_cat->name); ?></a>
+                <?php endif; ?>
+            </nav>
+            <h1 class="portal-page-title"><?php _e('CẨM NANG & KỸ THUẬT Ô TÔ', 'hieugara-motors'); ?></h1>
+        </div>
+    </section>
 
-        <div class="single-post-layout" style="display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 40px; align-items: start;">
+    <div class="single-post-wrapper" style="background: #F9FAFB; padding: 40px 0 80px; min-height: 80vh;">
+        <div class="container">
+
+            <div class="single-post-layout" style="display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 40px; align-items: start;">
             
             <!-- Main Content Column -->
-            <main class="single-post-main" style="background: #FFFFFF; border-radius: 16px; padding: 36px 40px; border: 1px solid #E5E7EB; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
-                
-                <!-- Article Header -->
-                <header class="single-article-header" style="margin-bottom: 28px; border-bottom: 1px solid #F3F4F6; padding-bottom: 24px;">
-                    <?php if ($main_cat) : ?>
-                        <a href="<?php echo esc_url(get_category_link($main_cat->term_id)); ?>" class="post-cat-badge" style="display: inline-block; background: #FEF3C7; color: #92400E; font-size: 0.8rem; font-weight: 700; padding: 4px 12px; border-radius: 6px; text-decoration: none; margin-bottom: 14px; text-transform: uppercase;">
-                            <i class="fa-solid fa-folder-open"></i> <?php echo esc_html($main_cat->name); ?>
-                        </a>
+            <div class="single-post-main-col" style="display: flex; flex-direction: column; gap: 28px;">
+                <main class="single-post-main" style="background: #FFFFFF; border-radius: 16px; padding: 36px 40px; border: 1px solid #E5E7EB; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                    
+                    <!-- Article Header -->
+                    <header class="single-article-header" style="margin-bottom: 28px; border-bottom: 1px solid #F3F4F6; padding-bottom: 24px;">
+                        <?php if ($main_cat) : ?>
+                            <a href="<?php echo esc_url(get_category_link($main_cat->term_id)); ?>" class="post-cat-badge" style="display: inline-block; background: #C5A880; color: #141414; font-size: 0.8rem; font-weight: 700; padding: 4px 12px; border-radius: 6px; text-decoration: none; margin-bottom: 14px; text-transform: uppercase;">
+                                <?php echo esc_html($main_cat->name); ?>
+                            </a>
+                        <?php endif; ?>
+
+                        <h1 class="single-post-title" style="font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: #141414; line-height: 1.35; margin-bottom: 16px;">
+                            <?php the_title(); ?>
+                        </h1>
+
+                        <div class="single-post-meta-row" style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px; font-size: 0.875rem; color: #6B7280;">
+                            <span><i class="fa-regular fa-calendar-check" style="color: #C5A880; margin-right: 6px;"></i> <?php echo get_the_date('d/m/Y'); ?></span>
+                            <span><i class="fa-solid fa-user-gear" style="color: #C5A880; margin-right: 6px;"></i> Kỹ Sư Ô Tô Hải Hà</span>
+                            <span><i class="fa-solid fa-award" style="color: #C5A880; margin-right: 6px;"></i> 31 Năm Kinh Nghiệm</span>
+                        </div>
+                    </header>
+
+                    <?php if (!empty($thumb_url)) : ?>
+                        <div class="single-post-featured-image" style="margin-bottom: 32px; border-radius: 12px; overflow: hidden; max-height: 480px; background: #111827;">
+                            <img src="<?php echo esc_url($thumb_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" style="width: 100%; height: auto; max-height: 480px; object-fit: cover; display: block;">
+                        </div>
                     <?php endif; ?>
 
-                    <h1 class="single-post-title" style="font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: #141414; line-height: 1.35; margin-bottom: 16px;">
-                        <?php the_title(); ?>
-                    </h1>
+                    <!-- Article Body Content -->
+                    <article class="single-post-content article-rich-content" style="font-size: 1.05rem; line-height: 1.8; color: #374151;">
+                        <?php the_content(); ?>
+                    </article>
 
-                    <div class="single-post-meta-row" style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px; font-size: 0.875rem; color: #6B7280;">
-                        <span><i class="fa-regular fa-calendar-check" style="color: #D97706; margin-right: 6px;"></i> <?php echo get_the_date('d/m/Y'); ?></span>
-                        <span><i class="fa-solid fa-user-gear" style="color: #D97706; margin-right: 6px;"></i> Kỹ Sư Ô Tô Hải Hà</span>
-                        <span><i class="fa-solid fa-award" style="color: #D97706; margin-right: 6px;"></i> 31 Năm Kinh Nghiệm</span>
-                    </div>
-                </header>
+                    <!-- Post Tags -->
+                    <?php
+                    $tags = get_the_tags();
+                    if ($tags) :
+                    ?>
+                        <div class="post-tags-row" style="margin-top: 36px; padding-top: 20px; border-top: 1px solid #F3F4F6; display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+                            <span style="font-weight: 600; color: #141414; font-size: 0.875rem;"><i class="fa-solid fa-tags" style="color: #C5A880;"></i> Từ khóa:</span>
+                            <?php foreach ($tags as $tag) : ?>
+                                <a href="<?php echo esc_url(get_tag_link($tag->term_id)); ?>" style="background: #F3F4F6; color: #4B5563; font-size: 0.8rem; padding: 4px 10px; border-radius: 6px; text-decoration: none; transition: background 0.2s;">
+                                    #<?php echo esc_html($tag->name); ?>
+                                </a>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
 
-                <?php if (!empty($thumb_url)) : ?>
-                    <div class="single-post-featured-image" style="margin-bottom: 32px; border-radius: 12px; overflow: hidden; max-height: 480px; background: #111827;">
-                        <img src="<?php echo esc_url($thumb_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" style="width: 100%; height: auto; max-height: 480px; object-fit: cover; display: block;">
-                    </div>
-                <?php endif; ?>
+                </main>
 
-                <!-- Article Body Content -->
-                <article class="single-post-content article-rich-content" style="font-size: 1.05rem; line-height: 1.8; color: #374151;">
-                    <?php the_content(); ?>
-                </article>
-
-                <!-- Post Tags -->
-                <?php
-                $tags = get_the_tags();
-                if ($tags) :
-                ?>
-                    <div class="post-tags-row" style="margin-top: 36px; padding-top: 20px; border-top: 1px solid #F3F4F6; display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
-                        <span style="font-weight: 600; color: #141414; font-size: 0.875rem;"><i class="fa-solid fa-tags" style="color: #D97706;"></i> Từ khóa:</span>
-                        <?php foreach ($tags as $tag) : ?>
-                            <a href="<?php echo esc_url(get_tag_link($tag->term_id)); ?>" style="background: #F3F4F6; color: #4B5563; font-size: 0.8rem; padding: 4px 10px; border-radius: 6px; text-decoration: none; transition: background 0.2s;">
-                                #<?php echo esc_html($tag->name); ?>
-                            </a>
-                        <?php endforeach; ?>
-                    </div>
-                <?php endif; ?>
-
-                <!-- Garage CTA Box -->
-                <div class="article-cta-box" style="margin-top: 40px; background: linear-gradient(135deg, #141414 0%, #1f2937 100%); border-radius: 14px; padding: 30px 32px; color: #FFFFFF; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;">
+                <!-- Garage CTA Box (Tách thành khối riêng nền trắng như ảnh mẫu) -->
+                <div class="article-cta-box" style="background: #FFFFFF; border-radius: 16px; padding: 32px 36px; border: 1px solid #E5E7EB; box-shadow: 0 4px 20px rgba(0,0,0,0.03); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px;">
                     <div style="flex: 1 1 320px;">
-                        <span style="background: #F5EBE1; color: #7A5C34; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase;">Tư Vấn Kỹ Thuật Miễn Phí</span>
-                        <h3 style="font-size: 1.3rem; font-weight: 800; color: #FFFFFF; margin: 10px 0 8px;">Cần tư vấn kỹ thuật hoặc bảo dưỡng xe?</h3>
-                        <p style="color: #D1D5DB; font-size: 0.92rem; margin: 0; line-height: 1.5;">Kỹ thuật viên Ô Tô Hải Hà sẵn sàng kiểm tra, tư vấn chuẩn đoán và báo giá chi tiết minh bạch.</p>
+                        <span style="background: #C5A880; color: #141414; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Tư Vấn Kỹ Thuật Miễn Phí</span>
+                        <h3 style="font-size: 1.3rem; font-weight: 800; color: #141414; margin: 10px 0 8px;">Cần tư vấn kỹ thuật hoặc bảo dưỡng xe?</h3>
+                        <p style="color: #4B5563; font-size: 0.95rem; margin: 0; line-height: 1.6;">Kỹ thuật viên Ô Tô Hải Hà sẵn sàng kiểm tra, tư vấn chuẩn đoán và báo giá chi tiết minh bạch.</p>
                     </div>
                     <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                        <a href="tel:<?php echo esc_attr($hotline_clean); ?>" style="background: #D4B996; color: #141414; font-weight: 700; padding: 12px 22px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
-                            <i class="fa-solid fa-phone-volume"></i> Gọi Hotline: <?php echo esc_html($hotline_phone); ?>
+                        <a href="tel:02203892207" style="background: #C5A880; color: #141414; font-weight: 700; padding: 12px 22px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: 1px solid #B89A74; box-shadow: 0 2px 8px rgba(197,168,128,0.35);">
+                            <i class="fa-solid fa-phone-volume" style="color: #141414;"></i> Gọi Hotline: 02203 892 207
                         </a>
-                        <a href="https://zalo.me/<?php echo esc_attr($hotline_clean); ?>" target="_blank" rel="noopener" style="background: transparent; color: #FFFFFF; border: 1.5px solid rgba(255,255,255,0.4); font-weight: 600; padding: 12px 18px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
-                            <i class="fa-solid fa-comment-dots"></i> Chat Zalo Tư Vấn
+                        <a href="https://zalo.me/0911211996" target="_blank" rel="noopener" style="background: #0068FF; color: #FFFFFF; font-weight: 700; padding: 12px 20px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(0,104,255,0.35); border: 1px solid #0056D2;">
+                            <i class="fa-solid fa-comment-dots" style="color: #FFFFFF;"></i> Chat Zalo Tư Vấn
                         </a>
                     </div>
                 </div>
-
-            </main>
+            </div>
 
             <!-- Sidebar Column -->
             <aside class="single-post-sidebar" style="display: flex; flex-direction: column; gap: 24px;">
 
-                <!-- Consultation Widget -->
-                <div class="sidebar-widget" style="background: #FFFFFF; border-radius: 14px; padding: 24px; border: 1px solid #E5E7EB; box-shadow: 0 4px 16px rgba(0,0,0,0.02);">
-                    <h3 style="font-size: 1.1rem; font-weight: 800; color: #141414; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
-                        <i class="fa-solid fa-wrench" style="color: #7A5C34;"></i> Tư Vấn Xưởng Hải Hà
-                    </h3>
-                    <p style="font-size: 0.875rem; color: #6B7280; line-height: 1.5; margin-bottom: 16px;">
-                        Liên hệ trực tiếp với chuyên gia kỹ thuật Ô Tô Hải Hà để được tư vấn và tiếp nhận nhanh chóng.
-                    </p>
-                    <a href="tel:<?php echo esc_attr($hotline_clean); ?>" style="display: block; text-align: center; background: #D4B996; color: #141414; font-weight: 700; padding: 11px 16px; border-radius: 8px; text-decoration: none; transition: background 0.2s;">
-                        <i class="fa-solid fa-phone"></i> Gọi Tư Vấn: <?php echo esc_html($hotline_phone); ?>
-                    </a>
-                </div>
-
-                <!-- Hotline 24/7 Widget -->
-                <div class="sidebar-widget" style="background: #FFFFFF; border-radius: 14px; padding: 24px; border: 1px solid #E5E7EB;">
-                    <h3 style="font-size: 1.1rem; font-weight: 800; color: #141414; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-                        <i class="fa-solid fa-phone-volume" style="color: #DC2626;"></i> Hotline Cứu Hộ &amp; Kỹ Thuật
-                    </h3>
-                    <p style="font-size: 0.85rem; color: #6B7280; margin-bottom: 14px;">Trực tổng đài 24/7 cứu hộ khẩn cấp &amp; tư vấn kỹ thuật:</p>
-                    <a href="tel:<?php echo esc_attr($hotline_clean); ?>" style="display: flex; align-items: center; justify-content: center; gap: 10px; background: #FEF2F2; color: #DC2626; font-weight: 800; font-size: 1.15rem; padding: 12px 16px; border-radius: 8px; text-decoration: none; border: 1px solid #FECACA;">
-                        <i class="fa-solid fa-headset"></i> <?php echo esc_html($hotline_phone); ?>
-                    </a>
-                </div>
-
                 <!-- Categories Widget -->
                 <div class="sidebar-widget" style="background: #FFFFFF; border-radius: 14px; padding: 24px; border: 1px solid #E5E7EB;">
                     <h3 style="font-size: 1.1rem; font-weight: 800; color: #141414; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
-                        <i class="fa-solid fa-folder-tree" style="color: #D97706;"></i> Chuyên Mục Bài Viết
+                        <i class="fa-solid fa-folder-tree" style="color: #C5A880;"></i> Chuyên Mục Bài Viết
                     </h3>
                     <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
                         <?php
@@ -177,13 +195,25 @@ while (have_posts()) : the_post();
                 <?php if (!empty($related_posts)) : ?>
                     <div class="sidebar-widget" style="background: #FFFFFF; border-radius: 14px; padding: 24px; border: 1px solid #E5E7EB;">
                         <h3 style="font-size: 1.1rem; font-weight: 800; color: #141414; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
-                            <i class="fa-solid fa-book-open-reader" style="color: #D97706;"></i> Bài Viết Cùng Chuyên Mục
+                            <i class="fa-solid fa-book-open-reader" style="color: #C5A880;"></i> Bài Viết Cùng Chuyên Mục
                         </h3>
                         <div style="display: flex; flex-direction: column; gap: 14px;">
                             <?php foreach ($related_posts as $r_post) : 
-                                $r_thumb = get_post_meta($r_post->ID, '_custom_thumbnail_url', true);
+                                $r_thumb = '';
                                 if (has_post_thumbnail($r_post->ID)) {
                                     $r_thumb = get_the_post_thumbnail_url($r_post->ID, 'medium');
+                                    if (empty($r_thumb)) {
+                                        $r_thumb = get_the_post_thumbnail_url($r_post->ID, 'full');
+                                    }
+                                }
+                                if (empty($r_thumb)) {
+                                    $custom = get_post_meta($r_post->ID, '_custom_thumbnail_url', true);
+                                    if (!empty($custom)) {
+                                        $r_thumb = $custom;
+                                    }
+                                }
+                                if (empty($r_thumb)) {
+                                    $r_thumb = get_template_directory_uri() . '/assets/images/gallery/haiha-gallery-3.jpg';
                                 }
                                 if (function_exists('hieugara_normalize_local_media_urls') && !empty($r_thumb)) {
                                     $r_thumb = hieugara_normalize_local_media_urls($r_thumb);
@@ -211,6 +241,7 @@ while (have_posts()) : the_post();
 
         </div>
     </div>
+</div>
 </div>
 
 <style>
@@ -245,23 +276,35 @@ while (have_posts()) : the_post();
     font-size: 0.95rem;
     border-radius: 8px;
     overflow: hidden;
+    border: 1px solid #e2e8f0;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
-.article-rich-content th {
-    background: #141414;
-    color: #FFFFFF;
+.article-rich-content th,
+.article-rich-content table th,
+.article-rich-content .table-styled th,
+.article-rich-content .table-styled thead tr {
+    background: #D4B996 !important;
+    color: #141414 !important;
     padding: 12px 14px;
     text-align: left;
-    font-weight: 700;
+    font-weight: 800;
     font-size: 0.9rem;
+    border: 1px solid #c4a782 !important;
+}
+.article-rich-content .table-styled th * {
+    color: #141414 !important;
 }
 .article-rich-content td {
     padding: 12px 14px;
-    border-bottom: 1px solid #E5E7EB;
+    border: 1px solid #E5E7EB;
     color: #374151;
 }
-.article-rich-content tr:nth-child(even) {
+.article-rich-content tr:nth-child(even) td {
     background: #F9FAFB;
+}
+.blog-cta-box,
+.article-series-badge {
+    display: none !important;
 }
 .article-rich-content figure {
     margin: 28px 0;
