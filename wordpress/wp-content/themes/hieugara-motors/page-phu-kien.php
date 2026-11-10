@@ -24,13 +24,13 @@ $parent_cats = get_terms(array(
     'order'      => 'ASC',
 ));
 
-// Check each parent category for published child accessories (max 4 posts)
+// Check each parent category for published child accessories (max 3 posts per category row)
 $categories_with_posts = array();
 if (!empty($parent_cats) && !is_wp_error($parent_cats)) {
     foreach ($parent_cats as $pcat) {
         $posts_in_cat = get_posts(array(
             'post_type'      => 'garage_accessory',
-            'posts_per_page' => 4, // Mỗi danh mục lớn hiển thị tối đa 4 bài đại diện
+            'posts_per_page' => 3, // Mỗi danh mục lớn hiển thị tối đa 3 bài đại diện (1 hàng 3 sản phẩm)
             'post_status'    => 'publish',
             'orderby'        => 'menu_order title',
             'order'          => 'ASC',
@@ -59,96 +59,299 @@ if (!empty($parent_cats) && !is_wp_error($parent_cats)) {
      PAGE-SPECIFIC HIGH-PERFORMANCE RESPONSIVE STYLES
      ========================================================================= -->
 <style>
-/* Prevent horizontal overflow on entire mobile viewport */
-html, body {
-    overflow-x: hidden !important;
+/* Prevent horizontal overflow on mobile viewports */
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden !important;
+    }
+}
+/* Enable position: sticky for sidebar on desktop viewports */
+@media (min-width: 992px) {
+    html,
+    html body {
+        overflow-x: visible !important;
+    }
 }
 
 .page-phu-kien-portal {
     background: #F8FAFC;
     min-height: 60vh;
     padding: 30px 0 80px;
-    overflow-x: hidden;
 }
 
-/* --- QUICK CATEGORY NAVIGATION PILLS --- */
-.pk-quicknav-wrap {
-    background: #ffffff;
-    border-bottom: 1px solid #e2e8f0;
-    position: sticky;
-    top: 0;
-    z-index: 40;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+/* --- MAIN 2-COLUMN LAYOUT & SIDEBAR FILTER --- */
+.pk-portal-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
-.pk-quicknav-scroll {
+
+.pk-layout-grid {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+}
+
+/* --- LEFT SIDEBAR: BỘ LỌC TÌM KIẾM --- */
+.pk-sidebar-col {
+    width: 270px;
+    flex-shrink: 0;
+    align-self: stretch;
+}
+
+.pk-filter-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px 18px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+    position: sticky;
+    top: 105px;
+    max-height: calc(100vh - 125px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.pk-filter-card::-webkit-scrollbar {
+    width: 4px;
+}
+.pk-filter-card::-webkit-scrollbar-thumb {
+    background: #e2e8f0;
+    border-radius: 4px;
+}
+
+/* 1. Header */
+.pk-filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.pk-filter-title {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 0;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-}
-.pk-quicknav-scroll::-webkit-scrollbar {
-    display: none;
-}
-.pk-nav-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 7px 14px;
-    background: #f1f5f9;
-    color: #334155;
-    border: 1px solid #e2e8f0;
-    border-radius: 999px;
     font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 0.82rem;
-    font-weight: 700;
-    white-space: nowrap;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    flex-shrink: 0;
-}
-.pk-nav-pill:hover,
-.pk-nav-pill.is-active {
-    background: #141414;
-    color: #ffffff;
-    border-color: #141414;
-}
-.pk-nav-pill .pk-nav-count {
-    background: rgba(0, 0, 0, 0.08);
-    color: inherit;
-    font-size: 0.72rem;
-    padding: 1px 6px;
-    border-radius: 10px;
+    font-size: 0.88rem;
     font-weight: 800;
-}
-.pk-nav-pill:hover .pk-nav-count,
-.pk-nav-pill.is-active .pk-nav-count {
-    background: rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-}
-.pk-nav-pill-vf {
-    background: #FAF8F5;
-    color: #8C6D3B;
-    border-color: #E2DCD5;
+    color: #141414;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-/* --- MAIN CONTAINER & SECTIONS --- */
-.pk-portal-container {
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 0 16px;
+.pk-filter-title i {
+    color: #C5A880;
+    font-size: 0.95rem;
+}
+
+.pk-filter-reset {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #94a3b8;
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.pk-filter-reset:hover {
+    color: #C5A880;
+    text-decoration: underline;
+}
+
+/* 2. Search Box */
+.pk-filter-search {
+    position: relative;
+    margin-bottom: 18px;
+}
+
+.pk-search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 0.82rem;
+    pointer-events: none;
+}
+
+.pk-search-input {
+    width: 100%;
     box-sizing: border-box;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 9px 30px 9px 34px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.84rem;
+    color: #141414;
+    transition: all 0.2s ease;
+}
+
+.pk-search-input:focus {
+    background: #ffffff;
+    border-color: #C5A880;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(197, 168, 128, 0.15);
+}
+
+.pk-search-input::placeholder {
+    color: #94a3b8;
+    font-size: 0.82rem;
+}
+
+.pk-search-clear {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 0 4px;
+    line-height: 1;
+}
+
+/* 3. Group: Nhóm sản phẩm */
+.pk-filter-group {
+    border-top: 1px solid #f1f5f9;
+    padding-top: 14px;
+}
+
+.pk-group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 10px;
+}
+
+.pk-group-title {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #141414;
+}
+
+.pk-group-chevron {
+    font-size: 0.75rem;
+    color: #64748b;
+    transition: transform 0.25s ease;
+}
+
+.pk-filter-group.is-collapsed .pk-group-chevron {
+    transform: rotate(180deg);
+}
+
+.pk-filter-group.is-collapsed .pk-group-body {
+    display: none;
+}
+
+/* Category Menu List - NO CHECKBOXES, NO NUMBERS */
+.pk-cat-menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.pk-cat-menu-item {
+    margin: 0;
+}
+
+.pk-cat-menu-link {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #334155;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.pk-cat-menu-link:hover {
+    background: #f8fafc;
+    color: #141414;
+    padding-left: 16px;
+}
+
+.pk-cat-menu-item.is-active .pk-cat-menu-link {
+    background: #F3ECE1;
+    color: #141414;
+    font-weight: 700;
+}
+
+.pk-cat-menu-vf .pk-cat-menu-link {
+    color: #8C6D3B;
+}
+
+.pk-cat-menu-vf .pk-cat-menu-link:hover {
+    background: #FAF8F5;
+    color: #8C6D3B;
+}
+
+/* --- RIGHT MAIN CONTENT COLUMN --- */
+.pk-content-col {
+    flex: 1;
+    min-width: 0;
 }
 
 .pk-categories-stack {
     display: flex;
     flex-direction: column;
     gap: 28px;
-    margin-top: 24px;
+    margin-top: 0;
 }
 
+/* No results state */
+.pk-no-results {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 48px 24px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.02);
+}
+.pk-no-results i {
+    font-size: 2.2rem;
+    color: #cbd5e1;
+    margin-bottom: 12px;
+}
+.pk-no-results p {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin: 0 0 16px;
+}
+.pk-btn-reset-search {
+    background: #141414;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+.pk-btn-reset-search:hover {
+    background: #C5A880;
+}
 .pk-cat-block {
     background: #ffffff;
     border: 1px solid #e2e8f0;
@@ -224,11 +427,11 @@ html, body {
     border-color: #141414;
 }
 
-/* --- PRODUCT GRID (MOBILE 2-COL, DESKTOP 4-COL) --- */
+/* --- PRODUCT GRID (MOBILE 2-COL, DESKTOP 3-COL) --- */
 .pk-product-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
 }
 
 /* --- PRODUCT CARD --- */
@@ -328,30 +531,26 @@ html, body {
 
 .pk-card-price-row {
     margin-top: auto;
-    padding-top: 8px;
+    padding-top: 10px;
     border-top: 1px solid #f1f5f9;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-}
-.pk-card-price {
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 0.82rem;
-    font-weight: 800;
-    color: #8C6239;
+    justify-content: flex-start;
 }
 .pk-card-cta {
     font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 0.78rem;
+    font-size: 0.88rem;
     font-weight: 700;
-    color: #141414;
+    text-transform: uppercase;
+    color: #C5A880;
     display: inline-flex;
     align-items: center;
-    gap: 4px;
-    transition: color 0.2s ease;
+    gap: 6px;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 .pk-card:hover .pk-card-cta {
     color: #8C6239;
+    transform: translateX(3px);
 }
 
 /* Mobile bottom button for category */
@@ -439,10 +638,45 @@ html, body {
 /* =========================================================================
    RESPONSIVE BREAKPOINTS (TABLET & MOBILE)
    ========================================================================= */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     .pk-product-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 14px;
+    }
+}
+
+@media (max-width: 991px) {
+    .pk-layout-grid {
+        flex-direction: column;
+        gap: 18px;
+    }
+    .pk-sidebar-col {
+        width: 100%;
+    }
+    .pk-filter-card {
+        position: static;
+        max-height: none;
+        padding: 16px 14px;
+    }
+    .pk-cat-menu-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+    .pk-cat-menu-link {
+        background: #f1f5f9;
+        border: 1px solid #e2e8f0;
+        border-radius: 20px;
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+    .pk-cat-menu-link:hover,
+    .pk-cat-menu-item.is-active .pk-cat-menu-link {
+        background: #141414;
+        color: #ffffff;
+        border-color: #141414;
     }
 }
 
@@ -510,9 +744,7 @@ html, body {
     .pk-card-price {
         font-size: 0.75rem;
     }
-    .pk-card-cta span {
-        display: none; /* Icon-only CTA on small cards */
-    }
+    /* CTA visible on mobile */
     .pk-card-cta i {
         font-size: 0.75rem;
     }
@@ -572,45 +804,85 @@ html, body {
         </nav>
 
         <div class="phukien-hero-content text-center">
-            <h1 class="phukien-title" style="margin: 0 auto 10px;">
+            <h1 class="phukien-title" style="margin: 0 auto;">
                 <?php _e('HỆ THỐNG PHỤ KIỆN Ô TÔ CHÍNH HÃNG', 'hieugara-motors'); ?>
             </h1>
-            <p class="phukien-subtitle" style="margin: 0 auto; color: rgba(255,255,255,0.85); font-size: 0.95rem;">
-                <?php _e('Cung cấp &amp; lắp đặt phụ kiện, đồ chơi xe hơi chuẩn Zin 100% bảo hành uy tín tại Hải Dương', 'hieugara-motors'); ?>
-            </p>
         </div>
     </div>
 </section>
 
 <!-- =========================================================================
-     STICKY QUICK CATEGORY NAVIGATION (MOBILE & DESKTOP)
-     ========================================================================= -->
-<?php if (!empty($categories_with_posts)) : ?>
-<nav class="pk-quicknav-wrap" aria-label="Điều hướng nhanh danh mục phụ kiện">
-    <div class="pk-portal-container">
-        <div class="pk-quicknav-scroll">
-            <?php foreach ($categories_with_posts as $idx => $item) : 
-                $cat_term = $item['term'];
-            ?>
-                <a href="#cat-<?php echo esc_attr($cat_term->slug); ?>" class="pk-nav-pill <?php echo $idx === 0 ? 'is-active' : ''; ?>">
-                    <span><?php echo esc_html($cat_term->name); ?></span>
-                    <span class="pk-nav-count"><?php echo esc_html($item['total']); ?></span>
-                </a>
-            <?php endforeach; ?>
-            <a href="<?php echo esc_url(home_url('/phu-kien/phu-kien-vinfast/')); ?>" class="pk-nav-pill pk-nav-pill-vf">
-                <i class="fa-solid fa-shield-halved" style="color: #C5A880;"></i>
-                <span>Phụ Kiện VinFast</span>
-            </a>
-        </div>
-    </div>
-</nav>
-<?php endif; ?>
-
-<!-- =========================================================================
-     MAIN CONTENT
+     MAIN CONTENT (WITH LEFT SIDEBAR FILTER - LAYOUT REFERENCED FROM IMAGE 2)
      ========================================================================= -->
 <main id="primary" class="site-main page-phu-kien-portal">
     <div class="pk-portal-container">
+        
+        <div class="pk-layout-grid">
+            
+            <!-- LEFT SIDEBAR: BỘ LỌC TÌM KIẾM (NO CHECKBOXES, NO NUMBERS) -->
+            <aside class="pk-sidebar-col" id="pkSidebar">
+                <div class="pk-filter-card">
+                    
+                    <!-- 1. Header with Funnel Icon & Reset Button -->
+                    <div class="pk-filter-header">
+                        <div class="pk-filter-title">
+                            <i class="fa-solid fa-filter"></i>
+                            <span>BỘ LỌC TÌM KIẾM</span>
+                        </div>
+                        <button type="button" class="pk-filter-reset" id="pkFilterReset">
+                            Thiết lập lại
+                        </button>
+                    </div>
+
+                    <!-- 2. Search Box with Search Icon -->
+                    <div class="pk-filter-search">
+                        <i class="fa-solid fa-magnifying-glass pk-search-icon"></i>
+                        <input 
+                            type="text" 
+                            id="pkSearchInput" 
+                            class="pk-search-input" 
+                            placeholder="Tìm theo từ khóa, tên..."
+                            autocomplete="off"
+                        >
+                        <button type="button" id="pkSearchClear" class="pk-search-clear" style="display:none;" aria-label="Xóa tìm kiếm">&times;</button>
+                    </div>
+
+                    <!-- 3. Category Group Section (Nhóm sản phẩm) -->
+                    <div class="pk-filter-group" id="pkFilterGroup">
+                        <div class="pk-group-header" id="pkGroupToggle">
+                            <span class="pk-group-title">Nhóm sản phẩm</span>
+                            <i class="fa-solid fa-chevron-up pk-group-chevron"></i>
+                        </div>
+                        <div class="pk-group-body" id="pkGroupBody">
+                            <ul class="pk-cat-menu-list">
+                                <?php if (!empty($categories_with_posts)) : ?>
+                                    <?php 
+                                    $first_active = true;
+                                    foreach ($categories_with_posts as $idx => $item) : 
+                                        $cat_term = $item['term'];
+                                        // Ẩn Phụ Kiện VinFast khỏi menu theo yêu cầu
+                                        if (strpos($cat_term->slug, 'vinfast') !== false) {
+                                            continue;
+                                        }
+                                        $active_class = $first_active ? 'is-active' : '';
+                                        $first_active = false;
+                                    ?>
+                                        <li class="pk-cat-menu-item <?php echo $active_class; ?>" data-slug="<?php echo esc_attr($cat_term->slug); ?>">
+                                            <a href="#cat-<?php echo esc_attr($cat_term->slug); ?>" class="pk-cat-menu-link">
+                                                <span><?php echo esc_html($cat_term->name); ?></span>
+                                            </a>
+                                        </li>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </aside>
+
+            <!-- RIGHT MAIN CONTENT COLUMN -->
+            <div class="pk-content-col">
 
         <?php if (!empty($categories_with_posts)) : ?>
             <!-- STACK CÁC DANH MỤC LỚN (MỖI DANH MỤC ĐẠI DIỆN 4 SẢN PHẨM) -->
@@ -646,7 +918,7 @@ html, body {
                             </a>
                         </div>
 
-                        <!-- Lưới phụ kiện (2 cột trên Mobile, 4 cột trên Desktop) -->
+                        <!-- Lưới phụ kiện (2 cột trên Mobile, 3 cột trên Desktop) -->
                         <div class="pk-product-grid">
                             <?php foreach ($cat_accessories as $acc) : 
                                 $a_id    = $acc->ID;
@@ -678,10 +950,8 @@ html, body {
                                         </p>
 
                                         <div class="pk-card-price-row">
-                                            <span class="pk-card-price">Liên hệ</span>
                                             <span class="pk-card-cta">
-                                                <span>Chi tiết</span>
-                                                <i class="fa-solid fa-chevron-right"></i>
+                                                <span>Chi tiết</span> &rarr;
                                             </span>
                                         </div>
                                     </div>
@@ -701,22 +971,11 @@ html, body {
                 <?php endforeach; ?>
             </div>
 
-            <!-- Banner Tư Vấn Kỹ Thuật Cuối Trang -->
-            <div class="pk-consult-banner">
-                <h3>Tư Vấn &amp; Lắp Đặt Phụ Kiện Chuẩn Zin Theo Xe</h3>
-                <p>
-                    Ô Tô Hải Hà cung cấp và thi công phụ kiện, đồ chơi xe hơi chính hãng với quy trình kỹ thuật chuẩn xác, không cắt trích dây, bảo hành điện tử minh bạch.
-                </p>
-                <div class="pk-consult-actions">
-                    <a href="tel:0911211996" class="pk-btn-hotline">
-                        <i class="fa-solid fa-phone-volume"></i>
-                        <span>Hotline: 0911 211 996</span>
-                    </a>
-                    <a href="https://zalo.me/0911211996" target="_blank" rel="noopener" class="pk-btn-zalo">
-                        <i class="fa-solid fa-comment-dots"></i>
-                        <span>Nhắn Tin Zalo Tư Vấn</span>
-                    </a>
-                </div>
+            <!-- Empty state for search -->
+            <div id="pkNoResults" class="pk-no-results" style="display: none;">
+                <i class="fa-solid fa-box-open"></i>
+                <p>Không tìm thấy phụ kiện nào phù hợp với từ khóa của bạn.</p>
+                <button type="button" class="pk-btn-reset-search" id="pkBtnResetSearch">Xem tất cả phụ kiện</button>
             </div>
 
         <?php else : ?>
@@ -736,45 +995,158 @@ html, body {
             </div>
         <?php endif; ?>
 
-    </div>
+        </div><!-- /.pk-content-col -->
+    </div><!-- /.pk-layout-grid -->
+
+    </div><!-- /.pk-portal-container -->
 </main>
 
-<!-- Smooth active nav pills on scroll -->
+<!-- Sidebar interactions: Smooth scroll, scrollspy, live search & accordion -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    var pills = document.querySelectorAll('.pk-nav-pill[href^="#"]');
+    // 1. Smooth scroll on category link click
+    var catLinks = document.querySelectorAll('.pk-cat-menu-link[href^="#cat-"]');
+    catLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var targetId = this.getAttribute('href').substring(1);
+            var targetEl = document.getElementById(targetId);
+            if (targetEl) {
+                var headerOffset = 85;
+                var elementPosition = targetEl.getBoundingClientRect().top;
+                var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Update active state
+                document.querySelectorAll('.pk-cat-menu-item').forEach(function(item) {
+                    item.classList.remove('is-active');
+                });
+                this.closest('.pk-cat-menu-item').classList.add('is-active');
+            }
+        });
+    });
+
+    // 2. Scrollspy for Category Sections
     var sections = [];
-    pills.forEach(function(pill) {
-        var targetId = pill.getAttribute('href').substring(1);
+    catLinks.forEach(function(link) {
+        var targetId = link.getAttribute('href').substring(1);
         var sec = document.getElementById(targetId);
         if (sec) {
-            sections.push({ el: sec, pill: pill });
+            sections.push({ el: sec, link: link });
         }
     });
 
     if (sections.length > 0) {
         window.addEventListener('scroll', function() {
-            var scrollPos = window.scrollY + 120;
+            var scrollPos = window.scrollY + 220;
             sections.forEach(function(item) {
                 var top = item.el.offsetTop;
                 var height = item.el.offsetHeight;
                 if (scrollPos >= top && scrollPos < top + height) {
-                    pills.forEach(function(p) { p.classList.remove('is-active'); });
-                    item.pill.classList.add('is-active');
-                    // Scroll active pill into view smoothly inside nav scroll
-                    var parent = item.pill.parentElement;
-                    if (parent) {
-                        var pillLeft = item.pill.offsetLeft;
-                        var pillWidth = item.pill.offsetWidth;
-                        var parentScroll = parent.scrollLeft;
-                        var parentWidth = parent.offsetWidth;
-                        if (pillLeft < parentScroll || (pillLeft + pillWidth) > (parentScroll + parentWidth)) {
-                            parent.scrollTo({ left: pillLeft - 20, behavior: 'smooth' });
-                        }
-                    }
+                    document.querySelectorAll('.pk-cat-menu-item').forEach(function(p) {
+                        p.classList.remove('is-active');
+                    });
+                    item.link.closest('.pk-cat-menu-item').classList.add('is-active');
                 }
             });
         }, { passive: true });
+    }
+
+    // 3. Accordion toggle for "Nhóm sản phẩm"
+    var groupToggle = document.getElementById('pkGroupToggle');
+    var filterGroup = document.getElementById('pkFilterGroup');
+    if (groupToggle && filterGroup) {
+        groupToggle.addEventListener('click', function() {
+            filterGroup.classList.toggle('is-collapsed');
+        });
+    }
+
+    // 4. Real-time Live Search
+    var searchInput = document.getElementById('pkSearchInput');
+    var searchClear = document.getElementById('pkSearchClear');
+    var filterReset = document.getElementById('pkFilterReset');
+    var btnResetSearch = document.getElementById('pkBtnResetSearch');
+    var noResultsBox = document.getElementById('pkNoResults');
+    var catBlocks = document.querySelectorAll('.pk-cat-block');
+    var cards = document.querySelectorAll('.pk-card');
+
+    function filterProducts(query) {
+        query = query.trim().toLowerCase();
+        
+        if (query.length > 0) {
+            if (searchClear) searchClear.style.display = 'block';
+        } else {
+            if (searchClear) searchClear.style.display = 'none';
+        }
+
+        var totalVisibleCards = 0;
+
+        catBlocks.forEach(function(block) {
+            var blockCards = block.querySelectorAll('.pk-card');
+            var blockVisibleCount = 0;
+
+            blockCards.forEach(function(card) {
+                if (!query) {
+                    card.style.display = '';
+                    blockVisibleCount++;
+                    totalVisibleCards++;
+                    return;
+                }
+
+                var title = (card.querySelector('.pk-card-title') || {}).innerText || '';
+                var excerpt = (card.querySelector('.pk-card-excerpt') || {}).innerText || '';
+                var badge = (card.querySelector('.pk-card-badge') || {}).innerText || '';
+                var text = (title + ' ' + excerpt + ' ' + badge).toLowerCase();
+
+                if (text.indexOf(query) !== -1) {
+                    card.style.display = '';
+                    blockVisibleCount++;
+                    totalVisibleCards++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            if (!query) {
+                block.style.display = '';
+            } else {
+                block.style.display = (blockVisibleCount > 0) ? '' : 'none';
+            }
+        });
+
+        if (noResultsBox) {
+            noResultsBox.style.display = (query && totalVisibleCards === 0) ? 'block' : 'none';
+        }
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            filterProducts(this.value);
+        });
+    }
+
+    function resetSearch() {
+        if (searchInput) {
+            searchInput.value = '';
+        }
+        filterProducts('');
+        window.scrollTo({
+            top: (document.getElementById('primary') || {}).offsetTop || 0,
+            behavior: 'smooth'
+        });
+    }
+
+    if (searchClear) {
+        searchClear.addEventListener('click', resetSearch);
+    }
+    if (filterReset) {
+        filterReset.addEventListener('click', resetSearch);
+    }
+    if (btnResetSearch) {
+        btnResetSearch.addEventListener('click', resetSearch);
     }
 });
 </script>

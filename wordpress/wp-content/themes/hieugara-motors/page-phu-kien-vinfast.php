@@ -32,12 +32,19 @@ $models_list = array('VF 3', 'VF 5', 'VF 6', 'VF 7', 'VF 8', 'VF 9', 'Limo Green
 $categories_list = array('Màn hình và giải trí', 'Camera', 'An toàn', 'Phim và bảo vệ sơn', 'Nội thất', 'Ngoại thất và đèn', 'Tiện ích');
 ?>
 
+<?php
+$banner_bg = function_exists('hieugara_get_current_page_banner') ? hieugara_get_current_page_banner() : '';
+if (empty($banner_bg) || strpos($banner_bg, 'default') !== false) {
+    $banner_bg = function_exists('hieugara_get_page_banner_url') ? hieugara_get_page_banner_url('vinfast') : get_template_directory_uri() . '/assets/images/banners/banner-vinfast.jpg';
+}
+?>
+
 <!-- =========================================================================
-     HERO BANNER: PHỤ KIỆN CHÍNH HÃNG VINFAST (Luxury Warm Beige Style)
+     HERO BANNER: PHỤ KIỆN CHÍNH HÃNG VINFAST (Đức Trí 226 Style: Nền ảnh xưởng sắc nét + Dark Overlay)
      ========================================================================= -->
-<section class="vf-hero-section">
-    <div class="container vf-hero-container">
-        <nav class="vf-breadcrumb" aria-label="Breadcrumb">
+<section class="portal-hero-header phukien-hero-section" style="background-image: url('<?php echo esc_url($banner_bg); ?>');">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px; text-align: center;">
+        <nav class="portal-breadcrumb" aria-label="Breadcrumb">
             <a href="<?php echo esc_url(home_url('/')); ?>"><?php _e('Trang chủ', 'hieugara-motors'); ?></a>
             <span class="sep">/</span>
             <a href="<?php echo esc_url(home_url('/phu-kien/')); ?>"><?php _e('Phụ kiện ô tô', 'hieugara-motors'); ?></a>
@@ -45,24 +52,9 @@ $categories_list = array('Màn hình và giải trí', 'Camera', 'An toàn', 'Ph
             <span class="current"><?php _e('Phụ kiện VinFast', 'hieugara-motors'); ?></span>
         </nav>
 
-        <div class="vf-hero-content text-center">
-            <div class="vf-hero-badge">
-                <i class="fa-solid fa-shield-halved"></i> ĐỐI TÁC DỊCH VỤ CHÍNH HÃNG VINFAST
-            </div>
-            <h1 class="vf-hero-title">
-                Phụ kiện chính hãng VinFast tại Ô Tô Hải Hà
-            </h1>
-            <div class="vf-hero-actions">
-                <a href="tel:<?php echo esc_attr($hotline_clean); ?>" class="btn-vf-primary">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>Liên hệ tư vấn lắp đặt: <?php echo esc_html($hotline_phone); ?></span>
-                </a>
-                <a href="#vf-product-grid-section" class="btn-vf-secondary">
-                    <span>Xem danh mục phụ kiện</span>
-                    <i class="fa-solid fa-arrow-down"></i>
-                </a>
-            </div>
-        </div>
+        <h1 class="portal-page-title" style="margin-bottom: 0; text-transform: uppercase;">
+            <?php _e('Phụ kiện chính hãng VinFast', 'hieugara-motors'); ?>
+        </h1>
     </div>
 </section>
 
@@ -169,66 +161,36 @@ $categories_list = array('Màn hình và giải trí', 'Camera', 'An toàn', 'Ph
 </main>
 
 <style>
-/* VinFast Luxury Beige Styling */
-.vf-hero-section {
-    position: relative;
-    background: #FAF8F5;
-    background: linear-gradient(180deg, #F9F8F5 0%, #EFECE6 100%);
-    color: #141414;
-    padding: 55px 0 60px;
-    border-bottom: 1px solid #E2DCD5;
+/* Portal Hero Header (Đức Trí 226 Style: Nền ảnh xưởng sắc nét + Dark Overlay) */
+@media (max-width: 768px) {
+    .portal-hero-header.phukien-hero-section {
+        padding: 42px 14px 36px !important;
+    }
+    .portal-hero-header .portal-breadcrumb {
+        font-size: clamp(0.64rem, 2.7vw, 0.78rem) !important;
+        letter-spacing: 0.4px !important;
+        gap: 5px !important;
+        margin-bottom: 12px !important;
+        flex-wrap: nowrap !important;
+        white-space: nowrap !important;
+        justify-content: center !important;
+        line-height: 1.3 !important;
+    }
+    .portal-hero-header .portal-breadcrumb a,
+    .portal-hero-header .portal-breadcrumb span,
+    .portal-hero-header .portal-breadcrumb .current {
+        white-space: nowrap !important;
+        display: inline-block !important;
+    }
+    .portal-hero-header .portal-page-title {
+        white-space: normal !important;
+        font-size: clamp(1.2rem, 5vw, 1.8rem) !important;
+        line-height: 1.25 !important;
+        letter-spacing: -0.01em !important;
+        margin: 0 auto !important;
+    }
 }
-.vf-breadcrumb {
-    font-size: 0.85rem;
-    margin-bottom: 22px;
-    color: #78716c;
-}
-.vf-breadcrumb a {
-    color: #57534e;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-.vf-breadcrumb a:hover {
-    color: #C5A880;
-}
-.vf-breadcrumb .sep {
-    margin: 0 8px;
-    color: #a8a29e;
-}
-.vf-breadcrumb .current {
-    color: #141414;
-    font-weight: 700;
-}
-.vf-hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(197, 168, 128, 0.16);
-    border: 1px solid #C5A880;
-    padding: 6px 18px;
-    border-radius: 999px;
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 1.2px;
-    color: #8C6D3B;
-    margin-bottom: 18px;
-    text-transform: uppercase;
-}
-.vf-hero-title {
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: clamp(1.9rem, 3.8vw, 2.8rem);
-    font-weight: 800;
-    line-height: 1.25;
-    margin: 0 auto 24px;
-    max-width: 900px;
-    color: #141414;
-}
-.vf-hero-actions {
-    display: flex;
-    justify-content: center;
-    gap: 14px;
-    flex-wrap: wrap;
-}
+
 .btn-vf-primary {
     display: inline-flex;
     align-items: center;
@@ -251,26 +213,6 @@ $categories_list = array('Màn hình và giải trí', 'Camera', 'An toàn', 'Ph
     color: #141414;
     transform: translateY(-2px);
     box-shadow: 0 6px 18px rgba(197, 168, 128, 0.35);
-}
-.btn-vf-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #ffffff;
-    color: #141414;
-    border: 1.5px solid #d6d3d1;
-    padding: 13px 22px;
-    border-radius: 6px;
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 0.92rem;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all 0.25s ease;
-}
-.btn-vf-secondary:hover {
-    background: #141414;
-    color: #ffffff;
-    border-color: #141414;
 }
 
 /* Page Layout */

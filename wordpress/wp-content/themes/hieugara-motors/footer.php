@@ -164,47 +164,50 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
         </div>
     </div>
 
-    <!-- Shopee-Style Certified Compliance Footer Bottom Bar -->
-    <div class="footer-bottom-bar shopee-footer-bar">
-        <div class="container footer-bottom-inner shopee-footer-inner">
+    <!-- Certified Compliance Footer Bottom Bar (Layout referenced from Image 2) -->
+    <div class="footer-bottom-bar footer-legal-bar">
+        <div class="container footer-legal-container">
             
-            <!-- 1. Top Policy Navigation Links (Shopee Style Uppercase with Vertical Dividers) -->
-            <nav class="shopee-policy-links" aria-label="Chính sách &amp; Quy định">
-                <a href="<?php echo esc_url(home_url('/chinh-sach-bao-mat/')); ?>">CHÍNH SÁCH BẢO MẬT</a>
-                <span class="shopee-sep" aria-hidden="true">|</span>
-                <a href="<?php echo esc_url(home_url('/ve-chung-toi/')); ?>">QUY CHẾ HOẠT ĐỘNG</a>
-                <span class="shopee-sep" aria-hidden="true">|</span>
-                <a href="<?php echo esc_url(home_url('/dich-vu/')); ?>">CHÍNH SÁCH DỊCH VỤ</a>
-                <span class="shopee-sep" aria-hidden="true">|</span>
-                <a href="<?php echo esc_url(home_url('/tra-cuu-bao-hanh/')); ?>">CHÍNH SÁCH BẢO HÀNH &amp; HỖ TRỢ</a>
-            </nav>
-
-            <!-- 2. Legal Entity Information (HTX CƠ KHÍ HẢI HÀ) -->
-            <div class="shopee-legal-info">
-                <div class="shopee-company-title">HTX CƠ KHÍ HẢI HÀ</div>
-                <div class="shopee-info-line">
-                    Địa chỉ: Km3 + 500, Nguyễn Lương Bằng, Lê Thanh Nghị, Hải Phòng 170000, Việt Nam
-                </div>
-                <div class="shopee-info-line">
-                    Chăm sóc khách hàng: <a href="tel:0911211996">0911 211 996</a> &bull; Email: <a href="mailto:thanhotohaiha@gmail.com">thanhotohaiha@gmail.com</a>
-                </div>
-                <div class="shopee-info-line">
-                    Người đại diện theo pháp luật: NGUYỄN THỊ THU HÀ &bull; Giới tính: Nữ &bull; Quốc tịch: Việt Nam
-                </div>
-                <div class="shopee-info-line">
-                    Mã số thuế (MST): 0800016457 do Chi cục Thuế Thành phố Hải Dương quản lý &amp; cấp phép
-                </div>
-                <div class="shopee-copyright-line">
-                    © <?php echo date('Y'); ?> - Bản quyền thuộc về HTX CƠ KHÍ HẢI HÀ
+            <!-- 1. Beige Box (#F3ECE1 with Black Text & 2 Columns) -->
+            <div class="footer-beige-card">
+                <div class="footer-card-heading">HTX CƠ KHÍ HẢI HÀ</div>
+                <div class="footer-card-grid">
+                    <!-- Left Column -->
+                    <div class="footer-card-col col-left">
+                        <div class="card-line">
+                            <strong>Địa chỉ:</strong> Km3 + 500, Nguyễn Lương Bằng, Lê Thanh Nghị, Hải Phòng 170000, Việt Nam
+                        </div>
+                        <div class="card-line">
+                            <strong>Chăm sóc khách hàng:</strong> <a href="tel:0911211996">0911 211 996</a> &bull; <strong>Email:</strong> <a href="mailto:thanhotohaiha@gmail.com">thanhotohaiha@gmail.com</a>
+                        </div>
+                        <div class="card-line">
+                            <strong>Mã số thuế:</strong> 0800016457 do Chi cục Thuế Thành phố Hải Dương quản lý &amp; cấp phép
+                        </div>
+                    </div>
+                    <!-- Right Column -->
+                    <div class="footer-card-col col-right">
+                        <div class="card-line">
+                            <strong>Người đại diện theo pháp luật:</strong> NGUYỄN THỊ THU HÀ
+                        </div>
+                        <div class="card-line">
+                            <strong>Giới tính:</strong> Nữ &bull; <strong>Quốc tịch:</strong> Việt Nam
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Back to top button -->
-            <div class="bottom-back-to-top">
-                <button type="button" id="footerBackToTop" class="back-to-top-btn" aria-label="Lên đầu trang">
-                    <span class="btn-top-text">LÊN ĐẦU</span>
-                    <span class="btn-top-icon"><i class="fa-solid fa-arrow-up"></i></span>
-                </button>
+            <!-- 2. Bottom Row: Policy Links (Left) & Copyright (Right) separated by Divider Line -->
+            <div class="footer-bottom-row">
+                <nav class="footer-policy-nav" aria-label="Chính sách &amp; Quy định">
+                    <a href="<?php echo esc_url(home_url('/chinh-sach-bao-mat/')); ?>">Chính sách bảo mật</a>
+                    <a href="<?php echo esc_url(home_url('/ve-chung-toi/')); ?>">Quy chế hoạt động</a>
+                    <a href="<?php echo esc_url(home_url('/dich-vu/')); ?>">Chính sách dịch vụ</a>
+                    <a href="<?php echo esc_url(home_url('/tra-cuu-bao-hanh/')); ?>">Chính sách bảo hành &amp; hỗ trợ</a>
+                </nav>
+
+                <div class="footer-copyright-text">
+                    &copy; <?php echo date('Y'); ?> Bản quyền thuộc về HTX Cơ khí Hải Hà
+                </div>
             </div>
 
         </div>

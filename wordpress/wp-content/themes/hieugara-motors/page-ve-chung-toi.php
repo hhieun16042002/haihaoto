@@ -214,7 +214,7 @@ $about_parts_rate  = get_option('hieugara_about_parts_rate', '100%');
                 <!-- Story Tag & Subheader -->
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #f1f5f9;">
                     <span class="story-tag" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(197, 168, 128, 0.12); color: #C5A880; border: 1px solid rgba(197, 168, 128, 0.3); padding: 6px 14px; border-radius: 4px; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.8rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;">
-                        <i class="fa fa-award"></i> HÀNH TRÌNH <?php echo esc_html($about_years_exp); ?> NĂM (1995 — <?php echo date('Y'); ?>)
+                        HÀNH TRÌNH <?php echo esc_html($about_years_exp); ?> NĂM (1995 — <?php echo date('Y'); ?>)
                     </span>
                     <div style="display: flex; gap: 16px; align-items: center;">
                         <a href="tel:02203892207" style="color: #334155; text-decoration: none; font-size: 0.9rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">

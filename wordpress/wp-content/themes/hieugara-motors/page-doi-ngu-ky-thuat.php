@@ -246,7 +246,7 @@ $about_staff_count = get_option('hieugara_about_staff_count', '80+');
                     </span>
                     <div style="display: flex; gap: 16px; align-items: center;">
                         <a href="tel:02203892207" style="color: #334155; text-decoration: none; font-size: 0.9rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
-                            <i class="fa-solid fa-phone-volume" style="color: #C5A880;"></i> Tư vấn kỹ thuật: 02203 892 207
+                            <i class="fa-solid fa-phone-volume" style="color: #C5A880;"></i> 02203 892 207
                         </a>
                     </div>
                 </div>

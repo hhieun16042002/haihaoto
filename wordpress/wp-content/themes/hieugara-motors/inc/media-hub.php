@@ -62,28 +62,28 @@ function hieugara_get_default_pano_banners() {
             'desc'       => 'Sửa chữa động cơ, hệ thống điện, máy gầm, hệ thống lái, hệ thống chiếu sáng…',
             'img'        => $shiftup_img . '/banner-1.jpg?v=5.8.3',
             'img_mobile' => $shiftup_img . '/pano-mobile-2.jpg?v=5.8.3',
-            'link'       => home_url('/chuyen-muc-dich-vu/bao-duong-sua-chua-o-to/'),
+            'link'       => home_url('/dich-vu/sua-chua-dong-co-hop-so/'),
         ),
         2 => array(
             'title'      => 'BẢO DƯỠNG ĐỊNH KỲ',
             'desc'       => 'Thay nhớt, kiểm tra tổng quát, vệ sinh lọc gió, kim phun…',
             'img'        => $shiftup_img . '/banner-2.jpg?v=5.8.3',
             'img_mobile' => $shiftup_img . '/pano-mobile-4.jpg?v=5.8.3',
-            'link'       => home_url('/dich-vu/bao-duong-o-to-dinh-ky/'),
+            'link'       => home_url('/dich-vu/bao-duong-dinh-ky/'),
         ),
         3 => array(
             'title'      => 'THÂN VỎ ĐỒNG SƠN',
             'desc'       => 'Phục hồi hình dạng, sơn dặm, sơn toàn bộ xe với chất lượng bảo hành trọn đời',
             'img'        => $shiftup_img . '/banner-3.jpg?v=5.8.3',
             'img_mobile' => $shiftup_img . '/pano-mobile-3.jpg?v=5.8.3',
-            'link'       => home_url('/chuyen-muc-dich-vu/son-phuc-hoi-than-vo/'),
+            'link'       => home_url('/dich-vu/dong-son-than-vo/'),
         ),
         4 => array(
             'title'      => 'CHĂM SÓC XE',
             'desc'       => 'Vệ sinh nội thất, rửa xe chăm sóc ngoại thất, dán phim cách nhiệt, dán decal đổi màu xe...',
             'img'        => $shiftup_img . '/banner-4.jpg?v=5.8.3',
             'img_mobile' => $shiftup_img . '/pano-mobile-1.jpg?v=5.8.3',
-            'link'       => home_url('/chuyen-muc-dich-vu/cham-soc-lam-dep-o-to/'),
+            'link'       => home_url('/dich-vu/cham-soc-xe-detailing/'),
         ),
     );
 }
@@ -882,11 +882,14 @@ function hieugara_render_media_hub_page() {
                                     <div class="haiha-img-thumb">
                                         <img src="<?php echo esc_url($p['img']); ?>" id="prev-pano-<?php echo esc_attr($p_idx); ?>" alt="">
                                     </div>
-                                    <input type="hidden" name="hieugara_pano_banners[<?php echo esc_attr($p_idx); ?>][link]" value="<?php echo esc_attr($p['link']); ?>">
                                     <input type="hidden" name="hieugara_pano_banners[<?php echo esc_attr($p_idx); ?>][img_mobile]" value="<?php echo esc_attr($p['img_mobile']); ?>">
                                     <div>
                                         <label>Tiêu đề cột <?php echo esc_html($p_idx); ?>:</label>
                                         <input type="text" name="hieugara_pano_banners[<?php echo esc_attr($p_idx); ?>][title]" value="<?php echo esc_attr($p['title']); ?>">
+                                    </div>
+                                    <div>
+                                        <label>Đường dẫn khi click (URL):</label>
+                                        <input type="text" name="hieugara_pano_banners[<?php echo esc_attr($p_idx); ?>][link]" value="<?php echo esc_attr($p['link']); ?>">
                                     </div>
                                     <div>
                                         <label>Mô tả khi rê chuột:</label>

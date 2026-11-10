@@ -152,26 +152,26 @@ html, body {
 
 .pk-card-price-row {
     margin-top: auto;
-    padding-top: 8px;
+    padding-top: 10px;
     border-top: 1px solid #f1f5f9;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-}
-.pk-card-price {
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 0.82rem;
-    font-weight: 800;
-    color: #8C6239;
+    justify-content: flex-start;
 }
 .pk-card-cta {
     font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 0.78rem;
+    font-size: 0.88rem;
     font-weight: 700;
-    color: #141414;
+    text-transform: uppercase;
+    color: #C5A880;
     display: inline-flex;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+.pk-card:hover .pk-card-cta {
+    color: #8C6239;
+    transform: translateX(3px);
 }
 
 /* Consultation Banner */
@@ -272,13 +272,10 @@ html, body {
         line-height: 1.35;
     }
     .pk-card-price-row {
-        padding-top: 6px;
+        padding-top: 8px;
     }
-    .pk-card-price {
-        font-size: 0.75rem;
-    }
-    .pk-card-cta span {
-        display: none;
+    .pk-card-cta {
+        font-size: 0.8rem;
     }
     .pk-consult-banner {
         padding: 22px 16px;
@@ -373,10 +370,8 @@ html, body {
                             </h3>
 
                             <div class="pk-card-price-row">
-                                <span class="pk-card-price">Liên hệ</span>
                                 <span class="pk-card-cta">
-                                    <span>Chi tiết</span>
-                                    <i class="fa-solid fa-chevron-right"></i>
+                                    <span><?php _e('Chi tiết', 'hieugara-motors'); ?></span> &rarr;
                                 </span>
                             </div>
                         </div>

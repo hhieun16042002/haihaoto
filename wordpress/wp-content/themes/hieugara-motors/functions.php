@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('HIEUGARA_THEME_VERSION', '5.8.6');
+define('HIEUGARA_THEME_VERSION', '5.8.7');
 define('HIEUGARA_THEME_DIR', get_template_directory());
 define('HIEUGARA_THEME_URI', get_template_directory_uri());
 
@@ -546,9 +546,9 @@ function hieugara_get_current_page_banner() {
         return hieugara_get_page_banner_url('phukien');
     }
 
-    // 4. Trang Dịch Vụ Xe VinFast
+    // 4. Trang Dịch Vụ Xe VinFast & Phụ Kiện VinFast
     $request_uri = trim(parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
-    if ($request_uri === 'dich-vu/xe-vinfast' || is_page('xe-vinfast') || is_page_template('page-vinfast.php')) {
+    if ($request_uri === 'dich-vu/xe-vinfast' || is_page('xe-vinfast') || is_page_template('page-vinfast.php') || $request_uri === 'phu-kien/phu-kien-vinfast' || is_page('phu-kien-vinfast') || is_page_template('page-phu-kien-vinfast.php')) {
         return hieugara_get_page_banner_url('vinfast');
     }
 

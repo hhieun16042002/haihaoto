@@ -295,9 +295,9 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                     </div>
 
                     <div class="kobac-prose">
-                        <p>Chúng tôi hiểu rằng, mỗi chiếc xe là một phần quan trọng của cuộc sống, mang theo những hành trình, kỷ niệm và sự an toàn của cả gia đình. Chính vì lý do đó, Ôtô Hải Hà đã dành hơn 31 năm (từ năm 1995) để không ngừng đổi mới và hoàn thiện nghệ thuật chăm sóc, bảo dưỡng và sửa chữa xe hơi, đặt sự chính xác và chữ Tâm người thợ làm kim chỉ nam.</p>
-                        <p>Chúng tôi tiên phong đầu tư hệ thống trang thiết bị chẩn đoán hiện đại, chuẩn hóa quy trình bảo dưỡng và đồng sơn công nghệ cao nhằm tối ưu tốc độ và chất lượng dịch vụ mà vẫn giữ vững chuẩn mực khắt khe nhất. Với quy mô xưởng 2.500m², 28 khoang cầu nâng chuyên dụng và đội ngũ hơn 80 kỹ thuật viên lành nghề, Ôtô Hải Hà đã trở thành trung tâm bảo dưỡng – sửa chữa ô tô uy tín hàng đầu, khẳng định vị thế vững chắc trong lòng hàng chục nghìn chủ xe.</p>
-                        <p>Lý do Ôtô Hải Hà tồn tại và phát triển bền vững suốt hơn 3 thập kỷ thật đơn giản: mang lại sự an tâm tuyệt đối cho chủ xe thông qua một dịch vụ minh bạch, không chỉ đạt chuẩn mà còn vượt qua mong đợi.</p>
+                        <p>Chúng tôi hiểu rằng mỗi chiếc xe là một phần quan trọng của cuộc sống, mang theo những hành trình, kỷ niệm và sự an toàn của cả gia đình. Vì thế, từ năm 1995 đến nay, Ô Tô Hải Hà đã dành 31 năm không ngừng đổi mới và hoàn thiện nghề chăm sóc, bảo dưỡng và sửa chữa ô tô, lấy sự chính xác và chữ Tâm của người thợ làm kim chỉ nam.</p>
+                        <p>Chúng tôi đầu tư hệ thống thiết bị chẩn đoán hiện đại, chuẩn hóa quy trình bảo dưỡng và đồng sơn, để rút ngắn thời gian chờ đợi mà vẫn giữ vững chất lượng trên từng chiếc xe. Với nhà xưởng 30 cầu nâng chuyên dụng, 6 phòng sơn sấy khép kín và đội ngũ hơn 80 nhân sự giàu kinh nghiệm, Ô Tô Hải Hà đã trở thành địa chỉ bảo dưỡng – sửa chữa ô tô quen thuộc, được hàng chục nghìn chủ xe tin tưởng gửi gắm.</p>
+                        <p>Ô Tô Hải Hà phát triển bền vững suốt hơn ba thập kỷ với kim chỉ nam: Uy tín - chất lượng - hiệu quả là sự tồn tại của doanh nghiệp</p>
                     </div>
                     <div class="kobac-btn-wrap kobac-desktop-only-btn">
                         <a href="<?php echo esc_url(home_url('/ve-chung-toi/')); ?>" class="kobac-cta-btn">
@@ -357,12 +357,15 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                     </div>
 
                     <div class="kobac-prose">
-                        <p>Chúng tôi nhận thấy rằng tại thị trường Việt Nam, chủ xe thường phải đối mặt với nỗi lo về sự minh bạch trong báo giá, nguồn gốc phụ tùng không rõ ràng và chất lượng dịch vụ thiếu nhất quán. Đây là những rào cản lớn đối với sự an tâm khi sở hữu và bảo dưỡng xe.</p>
-                        <blockquote class="kobac-quote-box">
-                            Tại Ôtô Hải Hà, chúng tôi tin tưởng tuyệt đối vào triết lý: “Giấc mơ và uy tín được vẽ bằng trái tim người thợ thì nhất định sẽ chạm tới niềm tin trọn vẹn của khách hàng.”
+                        <p>Giữ trọn niềm tin của chủ xe, như chúng tôi đã làm từ năm 1995. Năm 1995, Ô Tô Hải Hà bắt đầu từ một xưởng sửa chữa nhỏ với niềm tin giản dị: Người thợ phải sửa chiếc xe của khách như sửa chiếc xe của chính mình.</p>
+                        <p>Ba mươi mốt năm qua, xe cộ đã thay đổi rất nhiều, từ những chiếc xe chế hòa khí đến xe điều khiển điện tử và xe điện. Nhưng những nỗi lo của chủ xe thì vẫn vậy: Phụ tùng có rõ nguồn gốc không, lần sửa này có tốt như lần trước không. Sứ mệnh của chúng tôi là trả lời những câu hỏi đó bằng việc làm, trên từng chiếc xe ra khỏi xưởng.</p>
+                        <blockquote class="kobac-quote-box" style="background: linear-gradient(90deg, rgba(197, 168, 128, 0.12) 0%, rgba(245, 245, 245, 0.6) 100%); border-left: 4px solid #C5A880; padding: 16px 22px;">
+                            <span style="font-size: 0.95rem; color: #444; font-weight: 600; display: block; margin-bottom: 6px;">Vì vậy, tại Ô Tô Hải Hà:</span>
+                            <strong style="font-size: 1.05rem; color: #141414; display: block; font-weight: 800; letter-spacing: 0.2px;">
+                                “Uy tín - chất lượng - hiệu quả là sự tồn tại của doanh nghiệp”
+                            </strong>
                         </blockquote>
-                        <p>Sứ mệnh của Ôtô Hải Hà là biến niềm tin này thành hành động thực tiễn trên từng chiếc xe xuất xưởng. Chúng tôi cam kết mang đến sự chăm sóc, bảo dưỡng, sửa chữa máy gầm và đồng sơn đạt chuẩn mực cao nhất, không chỉ dựa trên quy trình kỹ thuật nghiêm ngặt mà còn dựa trên sự chính trực và tận tâm tuyệt đối.</p>
-                        <p>Chúng tôi không chỉ bảo dưỡng và sửa chữa xe; chúng tôi kiến tạo những hành trình bình an, nâng cao tuổi thọ và giá trị bền vững cho tài sản quý giá này. Mục tiêu cuối cùng là mang lại sự an tâm tuyệt đối cho chủ xe thông qua một dịch vụ không chỉ đạt chuẩn mà còn vượt qua mong đợi.</p>
+                        <p>Chúng tôi tin rằng uy tín không đến từ lời hứa, mà được bồi đắp qua từng chiếc xe, từng năm tháng, như cách những người thợ Hải Hà đã làm suốt hơn ba thập kỷ. Bảo dưỡng, sửa chữa, điều chúng tôi mong muốn sau cùng vẫn là để mỗi chủ xe yên tâm cầm lái trên mọi hành trình, và tin tưởng quay lại vào lần sau.</p>
                     </div>
                     <div class="kobac-btn-wrap">
                         <a href="<?php echo esc_url(home_url('/ve-chung-toi/')); ?>" class="kobac-cta-btn">
