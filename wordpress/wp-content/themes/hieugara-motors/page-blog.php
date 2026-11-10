@@ -21,6 +21,37 @@ $blog_query = new WP_Query(array(
 $banner_bg = function_exists('hieugara_get_current_page_banner') ? hieugara_get_current_page_banner() : hieugara_get_page_banner_url('blog');
 ?>
 
+<style>
+@media (max-width: 768px) {
+    .blog-archive-page .portal-hero-header {
+        padding: 42px 14px 36px !important;
+    }
+    .blog-archive-page .portal-breadcrumb {
+        font-size: clamp(0.64rem, 2.7vw, 0.78rem) !important;
+        letter-spacing: 0.4px !important;
+        gap: 5px !important;
+        margin-bottom: 12px !important;
+        flex-wrap: nowrap !important;
+        white-space: nowrap !important;
+        justify-content: center !important;
+        line-height: 1.3 !important;
+    }
+    .blog-archive-page .portal-breadcrumb a,
+    .blog-archive-page .portal-breadcrumb span,
+    .blog-archive-page .portal-breadcrumb .current {
+        white-space: nowrap !important;
+        display: inline-block !important;
+    }
+    .blog-archive-page .portal-page-title {
+        white-space: nowrap !important;
+        font-size: clamp(0.95rem, 4.5vw, 1.45rem) !important;
+        line-height: 1.25 !important;
+        letter-spacing: -0.01em !important;
+        margin: 0 auto !important;
+    }
+}
+</style>
+
 <main id="primary" class="site-main blog-archive-page" style="background: #F8FAFC; min-height: 80vh;">
 
     <!-- Page Breadcrumb & Header (Đức Trí 226 Style Hero Banner) -->
@@ -32,9 +63,6 @@ $banner_bg = function_exists('hieugara_get_current_page_banner') ? hieugara_get_
                 <span class="current"><?php _e('Cẩm nang &amp; Tin tức ô tô', 'hieugara-motors'); ?></span>
             </nav>
             <h1 class="portal-page-title"><?php _e('CẨM NANG & KỸ THUẬT Ô TÔ', 'hieugara-motors'); ?></h1>
-            <p class="portal-page-subtitle">
-                <?php _e('Tổng hợp kiến thức sửa chữa, quy trình bảo dưỡng chuẩn hãng và thiết bị công nghệ hiện đại tại xưởng dịch vụ Ôtô Hải Hà.', 'hieugara-motors'); ?>
-            </p>
         </div>
     </section>
 

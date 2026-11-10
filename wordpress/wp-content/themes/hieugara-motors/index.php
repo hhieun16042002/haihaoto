@@ -1,57 +1,71 @@
 <?php
 /**
- * Blog Archive / Category Template
+ * Blog Archive / Fallback Template
+ * Displays a luxury hero header banner and responsive post grid.
  *
  * @package HieuGara_Motors
  */
 
 get_header();
 
-$page_title = is_category() ? single_cat_title('', false) : (is_tag() ? single_tag_title('', false) : __('Cẩm Nang &amp; Kỹ Thuật Ô Tô', 'hieugara-motors'));
+$raw_title  = is_category() ? single_cat_title('', false) : (is_tag() ? single_tag_title('', false) : __('Cẩm Nang &amp; Kỹ Thuật Ô Tô', 'hieugara-motors'));
+$page_title = html_entity_decode($raw_title, ENT_QUOTES, 'UTF-8');
 $page_desc  = is_category() ? category_description() : __('Tổng hợp kiến thức sửa chữa, quy trình bảo dưỡng chuẩn hãng và thiết bị công nghệ hiện đại tại Ô Tô Hải Hà.', 'hieugara-motors');
+
+$banner_bg  = function_exists('hieugara_get_current_page_banner') ? hieugara_get_current_page_banner() : hieugara_get_page_banner_url('blog');
 ?>
 
-<main id="primary" class="site-main blog-archive-page" style="padding: 40px 0 80px; background: #F9FAFB; min-height: 80vh;">
+<style>
+@media (max-width: 768px) {
+    .blog-archive-page .portal-hero-header {
+        padding: 42px 14px 36px !important;
+    }
+    .blog-archive-page .portal-breadcrumb {
+        font-size: clamp(0.64rem, 2.7vw, 0.78rem) !important;
+        letter-spacing: 0.4px !important;
+        gap: 5px !important;
+        margin-bottom: 12px !important;
+        flex-wrap: nowrap !important;
+        white-space: nowrap !important;
+        justify-content: center !important;
+        line-height: 1.3 !important;
+    }
+    .blog-archive-page .portal-breadcrumb a,
+    .blog-archive-page .portal-breadcrumb span,
+    .blog-archive-page .portal-breadcrumb .current {
+        white-space: nowrap !important;
+        display: inline-block !important;
+    }
+    .blog-archive-page .portal-page-title {
+        white-space: nowrap !important;
+        font-size: clamp(0.95rem, 4.5vw, 1.45rem) !important;
+        line-height: 1.25 !important;
+        letter-spacing: -0.01em !important;
+        margin: 0 auto !important;
+    }
+}
+</style>
+
+<!-- Category / Archive Hero Header Banner (Đức Trí 226 Style) -->
+<section class="portal-hero-header" style="background-image: url('<?php echo esc_url($banner_bg); ?>');">
     <div class="container">
-        
-        <!-- Breadcrumb -->
-        <nav class="blog-breadcrumb" aria-label="Breadcrumb" style="margin-bottom: 24px; font-size: 0.875rem; color: #6B7280;">
-            <a href="<?php echo esc_url(home_url('/')); ?>" style="color: #6B7280; text-decoration: none;"><i class="fa-solid fa-house"></i> Trang chủ</a>
-            <span style="margin: 0 8px; color: #D1D5DB;">/</span>
-            <a href="<?php echo esc_url(home_url('/blog/')); ?>" style="color: #6B7280; text-decoration: none;">Blog</a>
+        <nav class="portal-breadcrumb" aria-label="Breadcrumb">
+            <a href="<?php echo esc_url(home_url('/')); ?>"><?php _e('Trang chủ', 'hieugara-motors'); ?></a>
+            <span class="sep">/</span>
+            <a href="<?php echo esc_url(home_url('/blog/')); ?>"><?php _e('Cẩm nang &amp; Tin tức ô tô', 'hieugara-motors'); ?></a>
             <?php if (is_category() || is_tag()) : ?>
-                <span style="margin: 0 8px; color: #D1D5DB;">/</span>
-                <span style="color: #141414; font-weight: 600;"><?php echo esc_html($page_title); ?></span>
+                <span class="sep">/</span>
+                <span class="current"><?php echo esc_html($page_title); ?></span>
             <?php endif; ?>
         </nav>
+        <h1 class="portal-page-title" style="margin-bottom: 0; text-transform: uppercase;">
+            <?php echo esc_html(mb_strtoupper($page_title, 'UTF-8')); ?>
+        </h1>
+    </div>
+</section>
 
-        <!-- Archive Header -->
-        <div class="blog-sec-head text-center" style="margin-bottom: 36px;">
-            <span class="blog-badge-tag"><i class="fa-solid fa-newspaper"></i> <?php _e('CẨM NANG &amp; KỸ THUẬT Ô TÔ', 'hieugara-motors'); ?></span>
-            <h1 class="blog-heading-main" style="margin-bottom: 12px;">
-                <span><?php echo esc_html($page_title); ?></span>
-            </h1>
-            <div class="tuning-shop-divider"></div>
-            <?php if (!empty($page_desc)) : ?>
-                <p class="blog-sec-sub" style="margin-bottom: 24px;"><?php echo wp_kses_post($page_desc); ?></p>
-            <?php endif; ?>
-
-            <!-- Category Pills -->
-            <div class="blog-cat-pills">
-                <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="acc-pill-btn <?php echo (!is_category() && !is_tag()) ? 'active' : ''; ?>">
-                    <i class="fa-solid fa-border-all"></i> <?php _e('Tất Cả Bài Viết', 'hieugara-motors'); ?>
-                </a>
-                <?php 
-                $archive_cats = get_categories(array('hide_empty' => false));
-                foreach ($archive_cats as $a_cat) :
-                    $is_curr = is_category($a_cat->term_id);
-                ?>
-                    <a href="<?php echo esc_url(get_category_link($a_cat->term_id)); ?>" class="acc-pill-btn <?php echo $is_curr ? 'active' : ''; ?>">
-                        <i class="fa-solid fa-folder-open"></i> <?php echo esc_html($a_cat->name); ?> (<?php echo esc_html($a_cat->count); ?>)
-                    </a>
-                <?php endforeach; ?>
-            </div>
-        </div>
+<main id="primary" class="site-main blog-archive-page" style="background: #F8FAFC; min-height: 80vh;">
+    <div class="container" style="padding-top: 55px; padding-bottom: 85px; max-width: 1200px; margin: 0 auto; padding-left: 20px; padding-right: 20px;">
 
         <?php if (have_posts()) : ?>
             <div class="hp-blog-grid">
@@ -105,7 +119,7 @@ $page_desc  = is_category() ? category_description() : __('Tổng hợp kiến t
             </div>
 
         <?php else : ?>
-            <div class="text-center" style="background: #FFFFFF; border-radius: 16px; padding: 60px 24px; border: 1px solid #E5E7EB; max-width: 640px; margin: 0 auto;">
+            <div class="text-center" style="background: #FFFFFF; border-radius: 16px; padding: 60px 24px; border: 1px solid #E5E7EB; max-width: 640px; margin: 0 auto; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
                 <div style="width: 72px; height: 72px; background: #F5EBE1; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2rem; color: #7A5C34;">
                     <i class="fa-regular fa-folder-open"></i>
                 </div>

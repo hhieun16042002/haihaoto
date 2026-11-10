@@ -54,6 +54,15 @@ function hieugara_get_default_about_menu_items() {
             'enable' => '1',
             'order'  => 3,
         ),
+        'item_4' => array(
+            'id'     => 'item_4',
+            'title'  => 'Đội ngũ kỹ thuật',
+            'link'   => home_url('/doi-ngu-ky-thuat/'),
+            'icon'   => 'fa-solid fa-users-gear',
+            'target' => '_self',
+            'enable' => '1',
+            'order'  => 4,
+        ),
     );
 }
 
@@ -61,6 +70,14 @@ function hieugara_get_about_menu_items() {
     $items = get_option('hieugara_about_menu_items');
     if ($items === false || !is_array($items) || empty($items)) {
         $items = hieugara_get_default_about_menu_items();
+    } else {
+        // Tự động bổ sung item_4 nếu admin đã lưu option trước đó mà chưa có mục này
+        if (!isset($items['item_4']) && !isset($items['doi-ngu-ky-thuat'])) {
+            $defaults = hieugara_get_default_about_menu_items();
+            if (isset($defaults['item_4'])) {
+                $items['item_4'] = $defaults['item_4'];
+            }
+        }
     }
     
     // Sắp xếp theo order

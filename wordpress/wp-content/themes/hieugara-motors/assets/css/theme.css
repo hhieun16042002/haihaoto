@@ -4814,26 +4814,36 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     pointer-events: auto;
 }
 
-/* 1. Button Đặt lịch: Obsidian Luxury Dark with Gold Accent */
+/* 1. Button Hotline: Warm Beige #C5A880 with Solid Black Icon */
 .dock-book {
-    background: rgba(20, 20, 20, 0.95);
-    color: #ffffff;
-    border: 1.5px solid rgba(197, 168, 128, 0.45);
+    background: #C5A880 !important;
+    color: #141414 !important;
+    border: 1.5px solid #B89A74 !important;
+    box-shadow: 0 6px 20px rgba(197, 168, 128, 0.45) !important;
 }
 
 .dock-book .dock-fa-icon {
-    color: #C5A880;
+    color: #141414 !important;
+}
+
+.dock-book .dock-text-desktop {
+    color: #141414 !important;
+    font-weight: 800 !important;
 }
 
 .dock-book:hover {
-    background: #141414;
-    border-color: #C5A880;
-    color: #C5A880;
-    box-shadow: 0 10px 28px rgba(197, 168, 128, 0.42);
+    background: #baa07a !important;
+    border-color: #a88d67 !important;
+    color: #141414 !important;
+    box-shadow: 0 10px 28px rgba(197, 168, 128, 0.6) !important;
+}
+
+.dock-book:hover .dock-fa-icon {
+    color: #141414 !important;
 }
 
 .dock-book:hover .dock-text-desktop {
-    color: #ffffff;
+    color: #141414 !important;
 }
 
 /* 2. Button Cứu hộ 24/7: Emergency Red with SOS Beacon */
@@ -5481,6 +5491,17 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     gap: 8px;
     position: relative;
     z-index: 2;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+.portal-breadcrumb a,
+.portal-breadcrumb span,
+.portal-breadcrumb .current,
+.phukien-breadcrumb a,
+.phukien-breadcrumb span,
+.phukien-breadcrumb .current {
+    white-space: nowrap !important;
 }
 
 .portal-breadcrumb a,
@@ -5557,11 +5578,32 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     .portal-hero-header,
     .phukien-hero-section,
     .service-single-header {
-        padding: 48px 16px 40px !important;
+        padding: 42px 14px 36px !important;
+    }
+    .portal-breadcrumb,
+    .phukien-breadcrumb {
+        font-size: clamp(0.64rem, 2.7vw, 0.78rem) !important;
+        letter-spacing: 0.4px !important;
+        gap: 5px !important;
+        margin-bottom: 12px !important;
+        flex-wrap: nowrap !important;
+        white-space: nowrap !important;
+        justify-content: center !important;
+        line-height: 1.3 !important;
+        max-width: 100% !important;
+    }
+    .portal-breadcrumb a,
+    .portal-breadcrumb span,
+    .portal-breadcrumb .current,
+    .phukien-breadcrumb a,
+    .phukien-breadcrumb span,
+    .phukien-breadcrumb .current {
+        white-space: nowrap !important;
+        display: inline-block !important;
     }
     .portal-page-title,
     .phukien-title {
-        font-size: 1.5rem !important;
+        font-size: clamp(1.05rem, 5vw, 1.75rem) !important;
         margin-bottom: 10px !important;
     }
     .portal-page-subtitle,
@@ -5654,45 +5696,50 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     margin-top: 2px;
 }
 
-.about-highlights-row {
+.about-highlights-row,
+.team-highlights-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     margin-top: 28px;
 }
 
-.about-highlights-row .hl-item {
-    background: #F5F5F5;
-    border: 1px solid #e2e8f0;
-    border-top: 3px solid #C5A880;
+.about-highlights-row .hl-item,
+.team-highlights-row .hl-item {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
     padding: 18px 14px;
-    border-radius: 4px;
+    border-radius: 6px;
     text-align: center;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.about-highlights-row .hl-item:hover {
+.about-highlights-row .hl-item:hover,
+.team-highlights-row .hl-item:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
-.about-highlights-row .hl-item strong {
+.about-highlights-row .hl-item strong,
+.team-highlights-row .hl-item strong {
     display: block;
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 2.2rem;
     font-weight: 800;
-    color: #141414;
+    color: #8C6239;
     line-height: 1.1;
     margin-bottom: 6px;
 }
 
-.about-highlights-row .hl-item span {
+.about-highlights-row .hl-item span,
+.team-highlights-row .hl-item span {
     display: block;
-    font-size: 0.8rem;
-    color: #5F6368;
-    font-weight: 700;
+    font-size: 0.83rem;
+    color: #475569;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
+    line-height: 1.4;
 }
 
 /* 3. Commitments Section (5 Cam Kết Vàng - Light Luxury Style) */
@@ -6055,21 +6102,25 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 }
 
 @media (max-width: 767px) {
-    .about-highlights-row {
+    .about-highlights-row,
+    .team-highlights-row {
         grid-template-columns: 1fr !important;
-        gap: 16px !important;
+        gap: 14px !important;
+        padding: 18px 14px !important;
     }
-    .about-highlights-row .hl-item {
-        border-left: none !important;
-        border-top: 1px solid #E2E8F0;
-        padding-top: 14px;
+    .about-highlights-row .hl-item,
+    .team-highlights-row .hl-item {
+        background: #F8FAFC !important;
+        border: 1px solid #E2E8F0 !important;
+        border-radius: 6px !important;
+        padding: 16px 14px !important;
+        margin: 0 !important;
     }
-    .about-highlights-row .hl-item:first-child {
-        border-top: none;
-        padding-top: 0;
-    }
-    .about-highlights-row .hl-item span {
+    .about-highlights-row .hl-item span,
+    .team-highlights-row .hl-item span {
         white-space: normal !important;
+        display: block !important;
+        line-height: 1.4 !important;
     }
     .commitments-grid {
         grid-template-columns: 1fr;
@@ -11989,6 +12040,10 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     color: #141414;
 }
 
+.phukien-card-pricing .price-current.is-contact-price {
+    color: #C5A880 !important;
+}
+
 .phukien-card-pricing .price-current sup {
     font-size: 0.8rem;
     font-weight: 600;
@@ -12013,25 +12068,36 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 .phukien-card-actions {
     margin-top: auto;
     display: flex;
-    gap: 8px;
+    justify-content: flex-start;
+    align-items: center;
     padding-top: 12px;
     border-top: 1px solid #f1f5f9;
 }
 
-.btn-pk-book {
-    flex: 1;
-    background: #141414;
-    color: #ffffff;
-    font-size: 0.82rem;
-    font-weight: 700;
-    font-family: 'Be Vietnam Pro', sans-serif;
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 10px 14px;
-    border-radius: 6px;
-    text-decoration: none;
-    display: inline-flex;
+.btn-pk-book,
+.btn-pk-detail-link {
+    background: transparent !important;
+    color: #C5A880 !important;
+    font-size: 0.88rem !important;
+    font-weight: 700 !important;
+    font-family: 'Be Vietnam Pro', sans-serif !important;
+    letter-spacing: 0.3px !important;
+    text-transform: uppercase !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    transition: all 0.2s ease;
+    box-shadow: none !important;
+}
+
+.btn-pk-book:hover,
+.btn-pk-detail-link:hover {
+    color: #8C6239 !important;
+    opacity: 0.85;
+}
     align-items: center;
     justify-content: center;
     transition: all 0.2s;
@@ -12351,12 +12417,18 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .acc-gallery-thumbs {
     display: flex;
     gap: 12px;
     margin-top: 14px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+    scrollbar-width: thin;
 }
 
 .acc-thumb-btn {
@@ -12370,6 +12442,8 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     overflow: hidden;
     transition: all 0.2s;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    flex-shrink: 0;
+    box-sizing: border-box;
 }
 
 .acc-thumb-btn:hover, .acc-thumb-btn.active {
@@ -12381,8 +12455,9 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 .acc-thumb-btn img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 5px;
+    background: #ffffff;
 }
 
 .acc-badge-pill {
@@ -12402,9 +12477,12 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 }
 
 .acc-featured-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: opacity 0.25s ease;
 }
 
 .acc-trust-strip {
@@ -12819,26 +12897,110 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     }
     .acc-right-col {
         position: static;
+        width: 100%;
     }
     .acc-main-img-box {
         height: 360px;
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+    .acc-single-body .container {
+        padding-left: 14px;
+        padding-right: 14px;
+        box-sizing: border-box;
+    }
+    .acc-single-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
     .acc-main-img-box {
-        height: 280px;
+        height: 300px;
+        min-height: 250px;
+        padding: 16px;
+        border-radius: 12px;
+    }
+    .acc-featured-img {
+        max-height: 268px;
+    }
+    .acc-gallery-thumbs {
+        gap: 8px;
+    }
+    .acc-thumb-btn {
+        width: 62px;
+        height: 62px;
+        padding: 2px;
+        border-radius: 6px;
     }
     .acc-trust-strip {
         grid-template-columns: 1fr;
         gap: 12px;
     }
     .acc-specs-card, .acc-content-card, .acc-workshop-guarantee, .acc-buy-card-sticky {
-        padding: 20px 16px;
+        padding: 18px 14px;
+        border-radius: 12px;
+        box-sizing: border-box;
+        width: 100%;
+        overflow: hidden;
     }
-    .acc-specs-table th, .acc-specs-table td {
-        padding: 10px 8px;
+    .acc-specs-table {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .acc-specs-table tbody {
+        display: block;
+        width: 100%;
+    }
+    .acc-specs-table tr {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 12px;
+        margin-bottom: 8px;
+        border: 1px solid #eef2f6;
+        border-radius: 8px;
+        background: #f8fafc;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .acc-specs-table tr:nth-child(even) {
+        background: #ffffff;
+    }
+    .acc-specs-table th {
+        display: block;
+        width: 100%;
+        padding: 0 0 4px 0;
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #64748b;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+        border: none;
+    }
+    .acc-specs-table td {
+        display: block;
+        width: 100%;
+        padding: 0;
+        font-size: 0.88rem;
+        color: #0f172a;
+        line-height: 1.55;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+        border: none;
+    }
+    .btn-acc-primary-book, .btn-acc-zalo, .btn-acc-call {
+        width: 100%;
+        padding: 12px 8px;
         font-size: 0.82rem;
+        line-height: 1.35;
+        white-space: normal;
+        text-align: center;
+        box-sizing: border-box;
+        justify-content: center;
     }
 }
 
@@ -12890,16 +13052,30 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     border-radius: 6px;
     overflow: hidden;
 }
-.table-service-quote th {
-    background: #141414;
-    color: #ffffff;
+.table-service-quote th,
+.service-detail-main table th,
+.table-styled th,
+.table-styled thead tr,
+.article-rich-content table th {
+    background: #D4B996 !important;
+    color: #141414 !important;
     font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 700;
+    font-size: 0.88rem;
+    font-weight: 800;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
     padding: 14px 16px;
     text-align: left;
-    border: 1px solid #262626;
+    border: 1px solid #c4a782 !important;
+}
+.table-styled th *,
+.service-detail-main table th *,
+.article-rich-content table th * {
+    color: #141414 !important;
+}
+.blog-cta-box,
+.article-series-badge {
+    display: none !important;
 }
 .table-service-quote td {
     padding: 13px 16px;
@@ -13570,14 +13746,14 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: #141414;
-    border: 1px solid #141414;
-    color: #FFFFFF !important;
+    background: #C5A880;
+    border: 1px solid #C5A880;
+    color: #141414 !important;
     padding: 9px 18px;
     border-radius: 6px;
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.86rem;
-    font-weight: 700;
+    font-weight: 800;
     text-decoration: none;
     white-space: nowrap;
     transition: all 0.2s ease;
@@ -13585,9 +13761,9 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 }
 
 .vf-spotlight-btn:hover {
-    background: #D4B996;
-    border-color: #D4B996;
-    color: #141414 !important;
+    background: #8C6239;
+    border-color: #8C6239;
+    color: #FFFFFF !important;
 }
 
 /* 3. DEDICATED PAGE /dich-vu/xe-vinfast/ */
@@ -15019,4 +15195,12 @@ html {
 a, button, input, select {
     touch-action: manipulation;
 }
+
+/* Hide camera icon on image captions */
+figcaption .fa-camera,
+figcaption i.fa-solid.fa-camera,
+.service-media-figure figcaption i {
+    display: none !important;
+}
+
 

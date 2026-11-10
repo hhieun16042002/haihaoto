@@ -73,7 +73,7 @@ $banner_bg = function_exists('hieugara_get_current_page_banner') ? hieugara_get_
 
 <!-- Category Hero Header Banner (Đức Trí 226 Style: Nền ảnh xưởng sắc nét + Dark Overlay) -->
 <section class="portal-hero-header service-single-header" style="background-image: url('<?php echo esc_url($banner_bg); ?>');">
-    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px; text-align: center;">
+    <div class="container" style="max-width: 1360px; margin: 0 auto; padding: 0 20px; text-align: center;">
         <nav class="portal-breadcrumb" aria-label="Breadcrumb">
             <a href="<?php echo esc_url(home_url('/')); ?>"><?php _e('Trang chủ', 'hieugara-motors'); ?></a>
             <span class="sep">/</span>
@@ -87,7 +87,7 @@ $banner_bg = function_exists('hieugara_get_current_page_banner') ? hieugara_get_
         </h1>
 
         <?php if (!empty($term_desc)) : ?>
-            <p class="portal-page-subtitle">
+            <p class="portal-page-subtitle portal-page-subtitle-wide">
                 <?php echo esc_html($term_desc); ?>
             </p>
         <?php endif; ?>
@@ -106,9 +106,7 @@ $banner_bg = function_exists('hieugara_get_current_page_banner') ? hieugara_get_
                     
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px;">
                         <h2 style="font-family: 'Be Vietnam Pro', sans-serif; font-size: 1.35rem; font-weight: 800; color: #0f172a; margin: 0; text-transform: uppercase;">
-                            <i class="fa fa-wrench" style="color: #C5A880; margin-right: 8px;"></i>
                             <?php echo esc_html($page_title); ?>
-                            <span style="font-size: 0.85rem; color: #64748b; font-weight: 600; margin-left: 6px;">(<?php echo count($child_services); ?>)</span>
                         </h2>
                     </div>
 
@@ -186,23 +184,13 @@ $banner_bg = function_exists('hieugara_get_current_page_banner') ? hieugara_get_
                         </p>
 
                         <div style="display: flex; flex-direction: column; gap: 12px;">
-                            <a href="tel:0911211996" style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 15px; background: #D4B996; color: #141414; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.95rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; border-radius: 4px; box-shadow: 0 4px 12px rgba(212,185,150,0.3);">
-                                <i class="fa-solid fa-phone-volume"></i> Gọi Ngay: 0911 211 996
-                            </a>
-
-                            <a href="tel:02203892207" style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 13px; background: #141414; color: #ffffff; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.9rem; font-weight: 700; text-decoration: none; border-radius: 4px;">
-                                <i class="fa-solid fa-headset"></i> Tổng Đài: 02203 892 207
+                            <a href="tel:02203892207" style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 15px; background: #D4B996; color: #141414; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.95rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; border-radius: 4px; box-shadow: 0 4px 12px rgba(212,185,150,0.3);">
+                                <i class="fa-solid fa-phone-volume"></i> Gọi Ngay: 02203 892 207
                             </a>
 
                             <a href="https://zalo.me/0911211996" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 13px; background: #0068FF; color: #ffffff; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.9rem; font-weight: 700; text-decoration: none; border-radius: 4px;">
                                 <i class="fa-solid fa-comment-dots"></i> Chat Zalo Kỹ Thuật
                             </a>
-                        </div>
-
-                        <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #eee; font-size: 0.82rem; color: #666; line-height: 1.6;">
-                            <p style="margin-bottom: 6px;"><i class="fa fa-check" style="color: #C5A880;"></i> Kiểm tra tổng quát miễn phí 45 hạng mục.</p>
-                            <p style="margin-bottom: 6px;"><i class="fa fa-check" style="color: #C5A880;"></i> Báo giá trước minh bạch, khách duyệt mới làm.</p>
-                            <p style="margin-bottom: 0;"><i class="fa fa-check" style="color: #C5A880;"></i> Bảo hành dài hạn minh bạch bằng hóa đơn &amp; tem kiểm định.</p>
                         </div>
                     </div>
 

@@ -70,44 +70,32 @@ while (have_posts()) : the_post();
         });
         $related_services = array_slice($related_services, 0, 8);
     }
+
+    $banner_bg = function_exists('hieugara_get_current_page_banner') ? hieugara_get_current_page_banner() : hieugara_get_page_banner_url('services');
+    if (empty($banner_bg)) {
+        $banner_bg = !empty($thumb) ? $thumb : get_template_directory_uri() . '/assets/images/banners/banner-dich-vu.jpg';
+    }
     ?>
 
-    <!-- Service Header Banner -->
-    <section class="service-single-header" style="background: #141414; padding: 45px 0 35px; border-bottom: 3px solid #C5A880; position: relative;">
-        <div class="container" style="max-width: 1360px; margin: 0 auto; padding: 0 20px;">
+    <!-- Service Header Banner (Đức Trí 226 Style / VinFast Style: Nền ảnh xưởng sắc nét + Dark Overlay) -->
+    <section class="portal-hero-header service-single-header" style="background-image: url('<?php echo esc_url($banner_bg); ?>');">
+        <div class="container" style="max-width: 1360px; margin: 0 auto; padding: 0 20px; text-align: center;">
             <!-- Breadcrumbs -->
-            <div class="portal-breadcrumb" style="display: flex; gap: 8px; align-items: center; font-size: 0.85rem; color: #94a3b8; margin-bottom: 14px; font-family: 'Be Vietnam Pro', sans-serif; text-transform: uppercase; flex-wrap: wrap;">
-                <a href="<?php echo esc_url(home_url('/')); ?>" style="color: #cbd5e1; text-decoration: none;"><?php _e('Trang chủ', 'hieugara-motors'); ?></a>
-                <span style="color: #64748b;">/</span>
-                <a href="<?php echo esc_url(home_url('/dich-vu/')); ?>" style="color: #cbd5e1; text-decoration: none;"><?php _e('Dịch Vụ', 'hieugara-motors'); ?></a>
+            <nav class="portal-breadcrumb" aria-label="Breadcrumb">
+                <a href="<?php echo esc_url(home_url('/')); ?>"><?php _e('Trang chủ', 'hieugara-motors'); ?></a>
+                <span class="sep">/</span>
+                <a href="<?php echo esc_url(home_url('/dich-vu/')); ?>"><?php _e('Dịch Vụ', 'hieugara-motors'); ?></a>
                 <?php if ($current_term) : ?>
-                    <span style="color: #64748b;">/</span>
-                    <a href="<?php echo esc_url(home_url('/dich-vu/' . $current_term->slug . '/')); ?>" style="color: #C5A880; text-decoration: none;"><?php echo esc_html($current_term->name); ?></a>
+                    <span class="sep">/</span>
+                    <a href="<?php echo esc_url(home_url('/dich-vu/' . $current_term->slug . '/')); ?>"><?php echo esc_html($current_term->name); ?></a>
                 <?php endif; ?>
-                <span style="color: #64748b;">/</span>
-                <span class="current" style="color: #ffffff; font-weight: 700;"><?php echo esc_html($page_title); ?></span>
-            </div>
+                <span class="sep">/</span>
+                <span class="current"><?php echo esc_html($page_title); ?></span>
+            </nav>
 
-            <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
-                <div style="max-width: 900px;">
-                    <?php if (!empty($badge)) : ?>
-                        <div style="display: inline-block; background: #C5A880; color: #141414; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.72rem; font-weight: 800; padding: 4px 12px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; border-radius: 2px;">
-                            <?php echo esc_html($badge); ?>
-                        </div>
-                    <?php endif; ?>
-                    <h1 style="font-family: 'Be Vietnam Pro', sans-serif; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; color: #ffffff; margin: 0; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.3;">
-                        <span style="color: #C5A880;">|</span> <?php echo esc_html($page_title); ?>
-                    </h1>
-                </div>
-
-                <!-- Emergency Contact Badge -->
-                <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
-                    <a href="tel:<?php echo esc_attr($rescue_clean); ?>" style="display: inline-flex; align-items: center; gap: 8px; background: #D92D20; border: 1px solid rgba(255,255,255,0.25); color: #ffffff; padding: 10px 18px; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.85rem; font-weight: 700; text-decoration: none; text-transform: uppercase; border-radius: 4px;">
-                        <i class="fa fa-phone-volume"></i>
-                        <span>CỨU HỘ 24/7: <strong><?php echo esc_html($rescue_phone); ?></strong></span>
-                    </a>
-                </div>
-            </div>
+            <h1 class="portal-page-title" style="margin: 0 auto;">
+                <?php echo esc_html($page_title); ?>
+            </h1>
         </div>
     </section>
 
@@ -120,23 +108,22 @@ while (have_posts()) : the_post();
                 <!-- Left: Service Presentation -->
                 <article class="service-detail-main" style="background: #ffffff; padding: 36px 40px; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.04);">
                     
-                    <!-- Key Service Metrics Bar -->
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; padding: 20px 24px; background: #141414; border-radius: 6px; margin-bottom: 30px; border-left: 4px solid #C5A880;">
+                    <!-- Key Service Metrics Bar (Màu be chủ đạo của website) -->
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; padding: 20px 24px; background: #FBF8F3; border: 1px solid #E2E8F0; border-left: 4px solid #C5A880; border-radius: 6px; margin-bottom: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.02);">
                         <div>
-                            <small style="color: #94a3b8; font-size: 0.72rem; text-transform: uppercase; font-family: 'Be Vietnam Pro', sans-serif; font-weight: 700; letter-spacing: 0.5px;"><?php _e('Chi phí khởi điểm:', 'hieugara-motors'); ?></small>
-                            <div style="font-family: 'Be Vietnam Pro', sans-serif; font-size: 1.15rem; font-weight: 800; color: #C5A880; margin-top: 4px;"><?php echo esc_html($price); ?></div>
-                            <div style="font-size: 0.72rem; color: #94a3b8; margin-top: 2px;">* Giá tham khảo chưa bao gồm VAT &amp; vật tư</div>
+                            <small style="color: #8C6239; font-size: 0.72rem; text-transform: uppercase; font-family: 'Be Vietnam Pro', sans-serif; font-weight: 700; letter-spacing: 0.5px;"><?php _e('Chi phí khởi điểm:', 'hieugara-motors'); ?></small>
+                            <div style="font-family: 'Be Vietnam Pro', sans-serif; font-size: 1.15rem; font-weight: 800; color: #8C6239; margin-top: 4px;"><?php echo esc_html($price); ?></div>
                         </div>
                         <?php if (!empty($duration)) : ?>
-                            <div style="border-left: 1px solid rgba(255,255,255,0.12); padding-left: 16px;">
-                                <small style="color: #94a3b8; font-size: 0.72rem; text-transform: uppercase; font-family: 'Be Vietnam Pro', sans-serif; font-weight: 700; letter-spacing: 0.5px;"><?php _e('Thời gian thi công:', 'hieugara-motors'); ?></small>
-                                <div style="font-family: 'Be Vietnam Pro', sans-serif; font-size: 1.05rem; font-weight: 700; color: #ffffff; margin-top: 4px;"><?php echo esc_html($duration); ?></div>
+                            <div style="border-left: 1px solid #E2E8F0; padding-left: 16px;">
+                                <small style="color: #8C6239; font-size: 0.72rem; text-transform: uppercase; font-family: 'Be Vietnam Pro', sans-serif; font-weight: 700; letter-spacing: 0.5px;"><?php _e('Thời gian thi công:', 'hieugara-motors'); ?></small>
+                                <div style="font-family: 'Be Vietnam Pro', sans-serif; font-size: 1.05rem; font-weight: 800; color: #141414; margin-top: 4px;"><?php echo esc_html($duration); ?></div>
                             </div>
                         <?php endif; ?>
                         <?php if (!empty($warranty)) : ?>
-                            <div style="border-left: 1px solid rgba(255,255,255,0.12); padding-left: 16px;">
-                                <small style="color: #94a3b8; font-size: 0.72rem; text-transform: uppercase; font-family: 'Be Vietnam Pro', sans-serif; font-weight: 700; letter-spacing: 0.5px;"><?php _e('Chế độ bảo hành:', 'hieugara-motors'); ?></small>
-                                <div style="font-family: 'Be Vietnam Pro', sans-serif; font-size: 1.05rem; font-weight: 700; color: #22c55e; margin-top: 4px;"><?php echo esc_html($warranty); ?></div>
+                            <div style="border-left: 1px solid #E2E8F0; padding-left: 16px;">
+                                <small style="color: #8C6239; font-size: 0.72rem; text-transform: uppercase; font-family: 'Be Vietnam Pro', sans-serif; font-weight: 700; letter-spacing: 0.5px;"><?php _e('Chế độ bảo hành:', 'hieugara-motors'); ?></small>
+                                <div style="font-family: 'Be Vietnam Pro', sans-serif; font-size: 1.05rem; font-weight: 800; color: #16A34A; margin-top: 4px;"><?php echo esc_html($warranty); ?></div>
                             </div>
                         <?php endif; ?>
                     </div>
@@ -166,22 +153,6 @@ while (have_posts()) : the_post();
                     <!-- Body Content from WP Admin (WYSIWYG) -->
                     <div class="entry-content" style="line-height: 1.85; color: #334155; font-size: 1.02rem;">
                         <?php the_content(); ?>
-                    </div>
-
-                    <!-- Workshop Guarantee Box -->
-                    <div style="margin-top: 36px; padding: 24px; background: #f8fafc; border: 1.5px dashed #cbd5e1; border-radius: 6px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
-                        <div>
-                            <strong style="font-family: 'Be Vietnam Pro', sans-serif; font-size: 1.05rem; color: #141414; display: block; margin-bottom: 4px;"><?php _e('CẦN TƯ VẤN KỸ THUẬT & BÁO GIÁ TRỰC TIẾP?', 'hieugara-motors'); ?></strong>
-                            <span style="color: #64748b; font-size: 0.92rem;"><?php _e('Cố vấn dịch vụ Ôtô Hải Hà hỗ trợ kiểm tra xe và tư vấn giải pháp 24/7.', 'hieugara-motors'); ?></span>
-                        </div>
-                        <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-                            <a href="tel:<?php echo esc_attr($rescue_clean); ?>" style="background: #141414; color: #C5A880; border: 1px solid #C5A880; padding: 12px 20px; text-decoration: none; font-family: 'Be Vietnam Pro', sans-serif; font-weight: 800; font-size: 0.9rem; text-transform: uppercase; border-radius: 4px; display: inline-flex; align-items: center; gap: 8px;">
-                                <i class="fa fa-phone"></i> <?php echo esc_html($rescue_phone); ?>
-                            </a>
-                            <a href="https://zalo.me/<?php echo esc_attr($rescue_clean); ?>" target="_blank" rel="noopener" style="background: #0068FF; color: #ffffff; padding: 12px 20px; text-decoration: none; font-family: 'Be Vietnam Pro', sans-serif; font-weight: 800; font-size: 0.9rem; text-transform: uppercase; border-radius: 4px; display: inline-flex; align-items: center; gap: 8px;">
-                                <i class="fa-solid fa-comment-dots"></i> <?php _e('Chat Zalo', 'hieugara-motors'); ?>
-                            </a>
-                        </div>
                     </div>
                 </article>
 
@@ -221,23 +192,13 @@ while (have_posts()) : the_post();
                         </p>
 
                         <div style="display: flex; flex-direction: column; gap: 12px;">
-                            <a href="tel:0911211996" style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 14px; background: #D4B996; color: #141414; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.92rem; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; text-decoration: none; border-radius: 4px; box-shadow: 0 4px 12px rgba(212,185,150,0.3);">
-                                <i class="fa-solid fa-phone-volume"></i> Gọi Ngay: 0911 211 996
-                            </a>
-
-                            <a href="tel:02203892207" style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 13px; background: #141414; color: #ffffff; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.9rem; font-weight: 700; text-decoration: none; border-radius: 4px;">
-                                <i class="fa-solid fa-headset"></i> Tổng Đài: 02203 892 207
+                            <a href="tel:02203892207" style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 14px; background: #D4B996; color: #141414; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.92rem; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; text-decoration: none; border-radius: 4px; box-shadow: 0 4px 12px rgba(212,185,150,0.3);">
+                                <i class="fa-solid fa-phone-volume"></i> Gọi Ngay: 02203 892 207
                             </a>
 
                             <a href="https://zalo.me/0911211996" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 13px; background: #0068FF; color: #ffffff; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.9rem; font-weight: 700; text-decoration: none; border-radius: 4px;">
                                 <i class="fa-solid fa-comment-dots"></i> Chat Zalo Kỹ Thuật
                             </a>
-                        </div>
-
-                        <div style="margin-top: 22px; padding-top: 16px; border-top: 1px solid #eee; font-size: 0.82rem; color: #64748b; line-height: 1.6;">
-                            <p style="margin-bottom: 6px;"><i class="fa fa-check" style="color: #C5A880;"></i> Khám xe &amp; tư vấn kỹ thuật miễn phí.</p>
-                            <p style="margin-bottom: 6px;"><i class="fa fa-check" style="color: #C5A880;"></i> Báo giá trước minh bạch, khách duyệt mới làm.</p>
-                            <p style="margin-bottom: 0;"><i class="fa fa-check" style="color: #C5A880;"></i> Bảo hành dài hạn bằng hóa đơn &amp; tem kiểm định.</p>
                         </div>
                     </div>
 
