@@ -168,7 +168,6 @@ function hieugara_reorder_admin_menu($menu_order) {
         // Group 1: Điều hành xưởng
         'botble-sep-workshop',
         'index.php',                                    // Bảng Điều Khiển
-        'garage-os-bookings',                           // Lịch Hẹn Khách Hàng
         'garage-os-orders',                             // Đơn Tiếp Nhận Xe
 
         // Group 2: Dịch vụ & Phụ kiện
@@ -205,16 +204,8 @@ function hieugara_clean_admin_menu() {
     remove_menu_page('upload.php');                   // Đã có Thư Viện Ảnh Gara trực quan
     remove_menu_page('garage-os-kanban');             // Đóng mục Kanban không dùng
     remove_menu_page('garage-os-warranties');         // Đóng mục Sổ Bảo Hành theo yêu cầu
+    remove_menu_page('garage-os-bookings');           // Xóa hoàn toàn menu Lịch Hẹn theo yêu cầu
     remove_menu_page('hieugara-accessories-crud');    // Xóa triệt để menu phụ kiện thứ 2 bị trùng
-    remove_submenu_page('garage-os-bookings', 'garage-os-kanban');
-
-    // Count pending bookings for notification badge
-    $table_bookings = $wpdb->prefix . 'garage_bookings';
-    $pending_count = 0;
-    if ($wpdb->get_var("SHOW TABLES LIKE '$table_bookings'") === $table_bookings) {
-        $pending_count = (int) $wpdb->get_var("SELECT COUNT(*) FROM $table_bookings WHERE status = 'pending'");
-    }
-    $booking_badge = $pending_count > 0 ? ' <span class="update-plugins count-' . $pending_count . '"><span class="plugin-count">' . $pending_count . '</span></span>' : '';
 
     // Rename default menu items to crisp, professional enterprise terms
     foreach ($menu as $key => $value) {
@@ -223,10 +214,6 @@ function hieugara_clean_admin_menu() {
                 case 'index.php':
                     $menu[$key][0] = 'Bảng Điều Khiển';
                     $menu[$key][6] = 'dashicons-dashboard';
-                    break;
-                case 'garage-os-bookings':
-                    $menu[$key][0] = 'Lịch Hẹn Khách Hàng' . $booking_badge;
-                    $menu[$key][6] = 'dashicons-calendar-alt';
                     break;
                 case 'garage-os-orders':
                     $menu[$key][0] = 'Đơn Tiếp Nhận Xe';
@@ -399,13 +386,11 @@ function hieugara_render_dashboard_hub_widget() {
     // Stats
     $total_services = wp_count_posts('garage_service')->publish ?? 0;
     
-    // Total bookings count
-    $table_bookings = $wpdb->prefix . 'garage_bookings';
-    $total_bookings = 0;
-    $pending_bookings = 0;
-    if ($wpdb->get_var("SHOW TABLES LIKE '$table_bookings'") === $table_bookings) {
-        $total_bookings = (int) $wpdb->get_var("SELECT COUNT(*) FROM $table_bookings");
-        $pending_bookings = (int) $wpdb->get_var("SELECT COUNT(*) FROM $table_bookings WHERE status = 'pending'");
+    // Total orders count
+    $table_orders = $wpdb->prefix . 'garage_work_orders';
+    $total_orders = 0;
+    if ($wpdb->get_var("SHOW TABLES LIKE '$table_orders'") === $table_orders) {
+        $total_orders = (int) $wpdb->get_var("SELECT COUNT(*) FROM $table_orders");
     }
 
     // Total accessories count
@@ -443,12 +428,12 @@ function hieugara_render_dashboard_hub_widget() {
 
         <!-- KPI Grid -->
         <div class="hieugara-hub-kpis">
-            <a href="<?php echo admin_url('admin.php?page=garage-os-bookings'); ?>" class="hub-kpi-card kpi-orange">
-                <div class="kpi-icon"><span class="dashicons dashicons-calendar-alt"></span></div>
+            <a href="<?php echo admin_url('admin.php?page=garage-os-orders'); ?>" class="hub-kpi-card kpi-orange">
+                <div class="kpi-icon"><span class="dashicons dashicons-clipboard"></span></div>
                 <div class="kpi-info">
-                    <span class="kpi-label">Lịch Hẹn Đang Chờ</span>
-                    <strong class="kpi-num"><?php echo esc_html($pending_bookings); ?></strong>
-                    <span class="kpi-sub">Tổng: <?php echo esc_html($total_bookings); ?> cuộc hẹn</span>
+                    <span class="kpi-label">Đơn Tiếp Nhận Xe</span>
+                    <strong class="kpi-num"><?php echo esc_html($total_orders); ?></strong>
+                    <span class="kpi-sub">Hồ sơ kỹ thuật tại xưởng</span>
                 </div>
             </a>
 
@@ -488,10 +473,10 @@ function hieugara_render_dashboard_hub_widget() {
                 <strong>Thêm Dịch Vụ Mới</strong>
                 <small>Tạo gói bảo dưỡng, đồng sơn, máy gầm</small>
             </a>
-            <a href="<?php echo admin_url('admin.php?page=garage-os-bookings'); ?>" class="shortcut-box">
-                <span class="sc-icon dashicons dashicons-clock"></span>
-                <strong>Quản Lý Đặt Lịch</strong>
-                <small>Xem và duyệt yêu cầu hẹn làm xe</small>
+            <a href="<?php echo admin_url('admin.php?page=garage-os-orders'); ?>" class="shortcut-box">
+                <span class="sc-icon dashicons dashicons-clipboard"></span>
+                <strong>Đơn Tiếp Nhận Xe</strong>
+                <small>Hồ sơ và phiếu tiếp nhận sửa chữa</small>
             </a>
             <a href="<?php echo admin_url('edit.php?post_type=garage_service'); ?>" class="shortcut-box">
                 <span class="sc-icon dashicons dashicons-money-alt"></span>
