@@ -35,9 +35,10 @@ $banner_photo  = function_exists('hieugara_get_current_page_banner') ? hieugara_
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "KM3+500 Nguyễn Lương Bằng",
-        "addressLocality": "Hải Dương",
-        "addressRegion": "Hải Dương",
+        "streetAddress": "Km3 + 500, Nguyễn Lương Bằng, Lê Thanh Nghị",
+        "addressLocality": "Hải Phòng",
+        "addressRegion": "Hải Phòng",
+        "postalCode": "170000",
         "addressCountry": "VN"
       },
       "geo": {

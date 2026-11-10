@@ -238,7 +238,7 @@ $banner_bg = function_exists('hieugara_get_current_page_banner') ? hieugara_get_
                 </p>
 
                 <p style="font-size: 1rem; color: #475569; line-height: 1.85; margin: 0 0 28px; font-weight: 400;">
-                    Hệ thống xưởng dịch vụ Ô Tô Hải Hà vẫn tiếp nhận xe, bảo dưỡng định kỳ và sửa chữa toàn diện bình thường tại xưởng: KM3+500 Đường Nguyễn Lương Bằng, Phường Bình Hàn, TP. Hải Dương. Mọi nhu cầu tư vấn kỹ thuật hoặc báo giá thực tế, quý khách vui lòng liên hệ hotline hoặc Zalo để được cố vấn hỗ trợ nhanh nhất 24/7.
+                    Hệ thống xưởng dịch vụ Ô Tô Hải Hà vẫn tiếp nhận xe, bảo dưỡng định kỳ và sửa chữa toàn diện bình thường tại xưởng: Km3 + 500, Nguyễn Lương Bằng, Lê Thanh Nghị, Hải Phòng 170000, Việt Nam. Mọi nhu cầu tư vấn kỹ thuật hoặc báo giá thực tế, quý khách vui lòng liên hệ hotline hoặc Zalo để được cố vấn hỗ trợ nhanh nhất 24/7.
                 </p>
 
                 <!-- Các nút liên hệ hỗ trợ nhẹ nhàng -->

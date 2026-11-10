@@ -437,7 +437,7 @@ function hieugara_render_dashboard_hub_widget() {
             <div class="hieugara-hub-banner-content">
                 <span class="hub-badge">HỆ THỐNG ĐIỀU HÀNH 5.0</span>
                 <h2>ÔTÔ HẢI HÀ SERVICE</h2>
-                <p>Địa chỉ: Km3+500 Đường Nguyễn Lương Bằng, Phường Bình Hàn, TP. Hải Dương | Cứu hộ 24/7 toàn miền Bắc</p>
+                <p>Địa chỉ: Km3 + 500, Nguyễn Lương Bằng, Lê Thanh Nghị, Hải Phòng 170000, Việt Nam | Cứu hộ 24/7 toàn miền Bắc</p>
             </div>
             <div class="hieugara-hub-banner-actions">
                 <a href="<?php echo esc_url($purge_url); ?>" class="hub-btn hub-btn-cache">
@@ -577,7 +577,7 @@ function hieugara_render_dashboard_hub_widget() {
 // 8. Custom Admin Footer
 function hieugara_custom_admin_footer() {
     echo '<span id="footer-thankyou" style="font-weight: 600; color: #475569;">
-        ÔTÔ HẢI HÀ SERVICE — Km3+500 Đường Nguyễn Lương Bằng, TP. Hải Dương | Hotline: <strong>0911 211 996</strong> | Bản quyền © ' . date('Y') . '
+        ÔTÔ HẢI HÀ SERVICE — Km3 + 500, Nguyễn Lương Bằng, Lê Thanh Nghị, Hải Phòng 170000, Việt Nam | Hotline: <strong>0911 211 996</strong> | Bản quyền © ' . date('Y') . '
     </span>';
 }
 add_filter('admin_footer_text', 'hieugara_custom_admin_footer');

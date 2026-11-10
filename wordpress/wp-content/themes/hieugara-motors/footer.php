@@ -38,7 +38,7 @@ $footer_logo_url = function_exists('hieugara_get_site_logo') ? hieugara_get_site
                 <ul class="dt226-footer-contact-list">
                     <li>
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        <span><strong>Địa chỉ:</strong> Km 3+500 Đường Nguyễn Lương Bằng, Phường Bình Hàn, TP. Hải Dương</span>
+                        <span><strong>Địa chỉ:</strong> <a href="https://maps.google.com/?cid=15399047910545937753" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;" title="Mở bản đồ chỉ đường Google Maps">Km3 + 500, Nguyễn Lương Bằng, Lê Thanh Nghị, Hải Phòng 170000, Việt Nam</a> <a href="https://maps.google.com/?cid=15399047910545937753" target="_blank" rel="noopener" class="dt226-link-highlight" style="display: inline-flex; align-items: center; gap: 3px; margin-left: 4px; font-size: 0.82rem;" title="Xem vị trí xưởng trên Google Maps">(Bản đồ ↗)</a></span>
                     </li>
                     <li>
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>

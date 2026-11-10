@@ -41,7 +41,7 @@ $hotline_phone = get_option('hieugara_hotline_phone', '02203 892 207');
                     <li><strong>Đơn vị sở hữu &amp; quản lý:</strong> HTX CƠ KHÍ HẢI HÀ (Gara Ô Tô Hải Hà - Thành lập từ năm 1995).</li>
                     <li><strong>Mã số thuế (MST):</strong> 0800016457 do Chi cục Thuế Thành phố Hải Dương quản lý &amp; cấp phép.</li>
                     <li><strong>Người đại diện theo pháp luật:</strong> NGUYỄN THỊ THU HÀ &bull; Giới tính: Nữ &bull; Quốc tịch: Việt Nam.</li>
-                    <li><strong>Địa chỉ trụ sở &amp; xưởng dịch vụ:</strong> Km3+500 Đường Nguyễn Lương Bằng, Phường Bình Hàn, Thành phố Hải Dương, Tỉnh Hải Dương.</li>
+                    <li><strong>Địa chỉ trụ sở &amp; xưởng dịch vụ:</strong> Km3 + 500, Nguyễn Lương Bằng, Lê Thanh Nghị, Hải Phòng 170000, Việt Nam.</li>
                     <li><strong>Tổng đài hỗ trợ kỹ thuật:</strong> <a href="tel:02203892207" style="color: #8C6D46; font-weight: 700; text-decoration: none;">02203 892 207</a></li>
                     <li><strong>Hotline cứu hộ khẩn cấp 24/7:</strong> <a href="tel:0911211996" style="color: #D92D20; font-weight: 700; text-decoration: none;">0911 211 996</a></li>
                     <li><strong>Email tiếp nhận thông tin:</strong> thanhotohaiha@gmail.com</li>
