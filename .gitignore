@@ -1,15 +1,17 @@
-# Database backups & dumps
-*.sql
+# Ignore everything at root except .gitignore and wordpress/
+/*
+!/.gitignore
+!/wordpress/
 
-# WordPress Cache
+# WordPress internal caches & dynamic media
 wordpress/wp-content/cache/
-
-# WordPress Dynamic Uploads (Local media)
+wordpress/wp-content/upgrade/
 wordpress/wp-content/uploads/2026/
-
-# Temporary scripts
 wordpress/scripts/create_vf_page.php
 
-# OS & Environment
+# OS & Logs
+*.log
+*.tmp
 .DS_Store
 Thumbs.db
+desktop.ini

@@ -332,15 +332,6 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
                 </ul>
             </li>
             <?php endif; ?>
-
-            <?php if ($h_show_contact === '1') : ?>
-            <!-- 6. LIÊN HỆ (Trang trực tiếp, không có dropdown con) -->
-            <li class="nav-item <?php echo is_page('lien-he') || is_page_template('page-lien-he.php') ? 'active' : ''; ?>">
-                <a href="<?php echo esc_url(home_url('/lien-he/')); ?>" class="nav-link" title="<?php echo esc_attr($h_label_contact); ?>">
-                    <?php echo esc_html($h_label_contact); ?>
-                </a>
-            </li>
-            <?php endif; ?>
         </ul>
         <?php endif; ?>
 
