@@ -10742,10 +10742,10 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     color: #141414 !important;
 }
 
-/* 4. FOOTER: ALL-BLACK (#141414) TEXT, HEADINGS, SLOGAN, "ÔTÔ HẢI HÀ" & ICONS */
+/* 4. FOOTER: LUXURY REFINED COLOR PALETTE (GOLD ACCENTS & SLATE NAVY - NO HARSH BLACK) */
 .shiftup-main-footer {
-    background: #F5F5F5 !important;
-    color: #141414 !important;
+    background: #F8FAFC !important;
+    color: #475569 !important;
     border-top: 3px solid #C5A880 !important;
 }
 
@@ -10753,107 +10753,106 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     display: none !important;
 }
 
-/* "Hải Hà" same font size, weight & black color (#141414) as "Ôtô" */
+/* Brand heading with Gold "Hải Hà" */
 .footer-brand-heading .brand-name {
-    color: #141414 !important;
+    color: #0F172A !important;
     font-size: 1.4rem !important;
     font-weight: 800 !important;
 }
 
 .footer-brand-heading .brand-tag {
     background: transparent !important;
-    color: #141414 !important;
+    color: #C5A880 !important;
     font-size: inherit !important;
     font-weight: 800 !important;
     padding: 0 !important;
-    margin-left: 0 !important;
+    margin-left: 4px !important;
     border-radius: 0 !important;
     vertical-align: baseline !important;
 }
 
 .footer-brand-desc,
 .footer-brand-desc strong {
-    color: #141414 !important;
+    color: #64748B !important;
 }
 
-/* Footer Contact Chips & All Icons in Black (#141414) */
-.shiftup-main-footer .contact-chip,
-.shiftup-main-footer .contact-chip.chip-rescue {
+/* Footer Contact Box in Clean Elegant White with Gold Icon */
+.footer-contact-unified-box {
     background: #ffffff !important;
-    border: 1px solid #d4d4d8 !important;
-    color: #141414 !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03) !important;
 }
 
-.shiftup-main-footer .contact-chip i,
-.shiftup-main-footer .contact-chip.chip-rescue i {
-    background: #F5F5F5 !important;
-    border: 1px solid #d4d4d8 !important;
-    color: #141414 !important;
+.contact-box-line {
+    color: #0F172A !important;
+    font-weight: 800 !important;
+    font-size: 1.05rem !important;
 }
 
-.shiftup-main-footer .contact-chip.chip-zalo i {
-    background: #e8f3ff !important;
-    border: 1px solid #b8daff !important;
-    color: #0068FF !important;
+.contact-box-line i {
+    color: #C5A880 !important;
 }
 
-.shiftup-main-footer .contact-chip.chip-zalo:hover {
-    border-color: #0068FF !important;
-}
-
-.shiftup-main-footer .contact-chip.chip-zalo:hover i {
+/* Footer Social & Email Pills */
+.shiftup-main-footer .footer-zalo-pill {
     background: #0068FF !important;
+    border: none !important;
     color: #ffffff !important;
-    border-color: #0068FF !important;
+    border-radius: 6px !important;
+    font-weight: 700 !important;
 }
 
-.shiftup-main-footer .contact-chip small,
-.shiftup-main-footer .contact-chip strong,
-.shiftup-main-footer .contact-chip span,
-.shiftup-main-footer .contact-chip.chip-rescue strong {
-    color: #141414 !important;
-}
-
-.shiftup-main-footer .contact-chip:hover {
-    border-color: #141414 !important;
-}
-
-.shiftup-main-footer .contact-chip:hover i {
-    background: #141414 !important;
+.shiftup-main-footer .footer-zalo-pill i {
     color: #ffffff !important;
-    border-color: #141414 !important;
 }
 
-/* Footer Social & Email Pills + Icons in Black (#141414) */
-.shiftup-main-footer .footer-fb-pill,
+.shiftup-main-footer .footer-fb-pill {
+    background: #ffffff !important;
+    border: 1px solid #E2E8F0 !important;
+    color: #1877F2 !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+}
+
+.shiftup-main-footer .footer-fb-pill i {
+    color: #1877F2 !important;
+}
+
+.shiftup-main-footer .footer-fb-pill:hover {
+    background: #1877F2 !important;
+    border-color: #1877F2 !important;
+    color: #ffffff !important;
+}
+
+.shiftup-main-footer .footer-fb-pill:hover i {
+    color: #ffffff !important;
+}
+
 .shiftup-main-footer .footer-mail-pill {
     background: #ffffff !important;
-    border: 1px solid #d4d4d8 !important;
-    color: #141414 !important;
-    box-shadow: none !important;
+    border: 1px solid #E2E8F0 !important;
+    color: #475569 !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
 }
 
-.shiftup-main-footer .footer-fb-pill i,
 .shiftup-main-footer .footer-mail-pill i {
-    color: #141414 !important;
+    color: #EA4335 !important;
 }
 
-.shiftup-main-footer .footer-fb-pill:hover,
 .shiftup-main-footer .footer-mail-pill:hover {
-    background: #141414 !important;
-    border-color: #141414 !important;
-    color: #ffffff !important;
+    border-color: #C5A880 !important;
+    color: #C5A880 !important;
 }
 
-.shiftup-main-footer .footer-fb-pill:hover i,
-.shiftup-main-footer .footer-mail-pill:hover i {
-    color: #ffffff !important;
-}
-
-/* Footer Column Titles, Squares, Links & Map Card in Black (#141414) */
+/* Footer Column Titles with Gold Accent Underline */
 .shiftup-main-footer .footer-col-title {
-    color: #141414 !important;
-    border-bottom-color: #d4d4d8 !important;
+    color: #0F172A !important;
+    border-bottom: 2px solid #E2E8F0 !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.5px !important;
+    position: relative !important;
 }
 
 .shiftup-main-footer .footer-contact-title {
@@ -10863,176 +10862,144 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 }
 
 .shiftup-main-footer .footer-col-title::after {
-    background: #141414 !important;
+    background: #C5A880 !important;
+    height: 2px !important;
+    width: 32px !important;
+    bottom: -2px !important;
 }
 
 .shiftup-main-footer .title-square {
     display: none !important;
 }
 
-.shiftup-main-footer .footer-contact-chips {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 8px !important;
-}
-
-.shiftup-main-footer .chip-direct-phone,
-.shiftup-main-footer .chip-zalo {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    padding: 8px 10px !important;
-    min-width: 0 !important;
-    overflow: hidden !important;
-    border-radius: 8px !important;
-}
-
-.shiftup-main-footer .chip-direct-phone strong,
-.shiftup-main-footer .chip-zalo strong {
-    font-size: 0.92rem !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.1px !important;
-    line-height: 1.2 !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-}
-
-@media (max-width: 480px) {
-    .shiftup-main-footer .footer-contact-chips {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 6px !important;
-    }
-    .shiftup-main-footer .chip-direct-phone,
-    .shiftup-main-footer .chip-zalo {
-        padding: 7px 6px !important;
-        gap: 5px !important;
-        border-radius: 8px !important;
-    }
-    .shiftup-main-footer .contact-chip i {
-        width: 26px !important;
-        height: 26px !important;
-        font-size: 0.72rem !important;
-        flex-shrink: 0 !important;
-    }
-    .shiftup-main-footer .chip-direct-phone strong,
-    .shiftup-main-footer .chip-zalo strong {
-        font-size: 0.75rem !important;
-        letter-spacing: -0.3px !important;
-        white-space: nowrap !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
-    }
-}
-
-/* ==========================================================================
-   HOMEPAGE HERO BANNER: SINGLE-LINE TITLES & EYEBROW ON DESKTOP
-   ========================================================================== */
-@media (min-width: 992px) {
-    .lexus-slide-container {
-        max-width: 1320px !important;
-        width: 100% !important;
-    }
-    .lexus-slide-content {
-        max-width: 1260px !important;
-        width: 100% !important;
-    }
-    .lexus-slide-title {
-        white-space: nowrap !important;
-        font-size: clamp(1.8rem, 2.9vw, 3.2rem) !important;
-        letter-spacing: 1.5px !important;
-        line-height: 1.2 !important;
-    }
-    .lexus-eyebrow {
-        white-space: nowrap !important;
-        font-size: 0.95rem !important;
-    }
-    .lexus-slide-desc {
-        max-width: 920px !important;
-    }
-    .lexus-pagination-bar .dash-label {
-        white-space: nowrap !important;
-    }
-}
-
-.shiftup-main-footer .footer-links-list li a,
-.shiftup-main-footer .footer-links-list li a.highlight-link {
-    color: #141414 !important;
+/* Footer Links List in Slate & Gold on Hover */
+.shiftup-main-footer .footer-links-list li a {
+    color: #475569 !important;
     padding-left: 0 !important;
+    font-size: 0.92rem !important;
+    transition: color 0.2s ease, transform 0.2s ease !important;
 }
 
-.shiftup-main-footer .footer-links-list li a::before,
-.shiftup-main-footer .footer-links-list li a.highlight-link::before {
-    display: none !important;
-    content: none !important;
+.shiftup-main-footer .footer-links-list li a:hover {
+    color: #C5A880 !important;
+    transform: translateX(4px) !important;
+}
+
+.shiftup-main-footer .footer-links-list li a.highlight-link {
+    color: #8C6239 !important;
+    font-weight: 700 !important;
 }
 
 .shiftup-main-footer .badge-mini {
-    background: #141414 !important;
-    color: #ffffff !important;
+    background: #C5A880 !important;
+    color: #0F172A !important;
+    font-weight: 800 !important;
+    border-radius: 3px !important;
 }
 
-.shiftup-main-footer .footer-action-link,
-.shiftup-main-footer .footer-action-link i {
-    color: #141414 !important;
-    border-color: #d4d4d8 !important;
-}
-
-.shiftup-main-footer .footer-action-link:hover {
-    background: #141414 !important;
-    border-color: #141414 !important;
-    color: #ffffff !important;
-}
-
-.shiftup-main-footer .footer-action-link:hover i {
-    color: #ffffff !important;
-}
-
+/* Map Card */
 .shiftup-main-footer .map-live-dot {
-    background: #141414 !important;
-    box-shadow: none !important;
+    background: #22C55E !important;
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.5) !important;
 }
 
-.shiftup-main-footer .map-loc-title,
+.shiftup-main-footer .map-loc-title {
+    color: #0F172A !important;
+    font-weight: 800 !important;
+}
+
 .shiftup-main-footer .map-loc-desc {
-    color: #141414 !important;
+    color: #64748B !important;
+    font-size: 0.88rem !important;
 }
 
 .shiftup-main-footer .map-direct-btn,
 .shiftup-main-footer .map-direct-btn i {
-    background: #F5F5F5 !important;
-    border: 1px solid #d4d4d8 !important;
-    color: #141414 !important;
+    background: rgba(197, 168, 128, 0.12) !important;
+    border: 1px solid #C5A880 !important;
+    color: #8C6239 !important;
+    font-weight: 700 !important;
+    border-radius: 6px !important;
+    transition: all 0.2s ease !important;
 }
 
 .shiftup-main-footer .map-direct-btn:hover,
 .shiftup-main-footer .map-direct-btn:hover i {
-    background: #141414 !important;
-    border-color: #141414 !important;
+    background: #C5A880 !important;
+    border-color: #C5A880 !important;
+    color: #ffffff !important;
+}
+
+/* Bottom Bar Compliance: Clean Light Gray & Slate */
+.shiftup-main-footer .shopee-footer-bar {
+    background: #F1F5F9 !important;
+    border-top: 1px solid #E2E8F0 !important;
+    padding: 32px 0 28px !important;
+}
+
+.shopee-policy-links a {
+    color: #475569 !important;
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    transition: color 0.2s ease !important;
+}
+
+.shopee-policy-links a:hover {
+    color: #C5A880 !important;
+}
+
+.shopee-policy-links .shopee-sep {
+    color: #CBD5E1 !important;
+}
+
+.shopee-company-title {
+    color: #0F172A !important;
+    font-size: 0.92rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.5px !important;
+}
+
+.shopee-info-line {
+    color: #64748B !important;
+    font-size: 0.82rem !important;
+}
+
+.shopee-info-line a {
+    color: #8C6239 !important;
+    font-weight: 700 !important;
+}
+
+.shopee-copyright-line {
+    color: #94A3B8 !important;
+    font-size: 0.8rem !important;
+}
+
+.shiftup-main-footer .back-to-top-btn {
+    background: #ffffff !important;
+    border: 1px solid #CBD5E1 !important;
+    color: #475569 !important;
+    border-radius: 20px !important;
+    transition: all 0.2s ease !important;
+}
+
+.shiftup-main-footer .back-to-top-btn i {
+    color: #475569 !important;
+}
+
+.shiftup-main-footer .back-to-top-btn:hover {
+    background: #C5A880 !important;
+    border-color: #C5A880 !important;
+    color: #ffffff !important;
+}
+
+.shiftup-main-footer .back-to-top-btn:hover i {
     color: #ffffff !important;
 }
 
 .shiftup-main-footer .footer-bottom-bar {
-    background: #ebebeb !important;
-    border-top: 1px solid #d4d4d8 !important;
+    background: #F1F5F9 !important;
+    border-top: 1px solid #E2E8F0 !important;
 }
-
-.shiftup-main-footer .copy-text,
-.shiftup-main-footer .copy-text strong,
-.shiftup-main-footer .bottom-extra-links a,
-.shiftup-main-footer .bottom-extra-links .sep,
-.shiftup-main-footer .back-to-top-btn,
-.shiftup-main-footer .back-to-top-btn i {
-    color: #141414 !important;
-}
-
-.shiftup-main-footer .back-to-top-btn:hover,
-.shiftup-main-footer .back-to-top-btn:hover i {
-    background: #141414 !important;
-    border-color: #141414 !important;
-    color: #ffffff !important;
-}
-
-/* Shopee-Style Certified Compliance Footer Bottom Bar */
 .shiftup-main-footer .shopee-footer-bar {
     background: #F7F7F7 !important;
     border-top: 1px solid #E5E5E5 !important;
@@ -15018,299 +14985,6 @@ html {
 /* Smooth tap & click response on iOS/Android (prevents 300ms tap delay) */
 a, button, input, select {
     touch-action: manipulation;
-}
-
-/* ==========================================================================
-   MODERN CLEAN 4-COLUMN FOOTER (INSPIRED BY ĐỨC TRÍ 226)
-   ========================================================================== */
-.dt226-footer.haiha-modern-footer {
-    background-color: #0f172a;
-    color: #94a3b8;
-    font-size: 0.9375rem;
-    padding-top: 4rem;
-    position: relative;
-    z-index: 10;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
-}
-
-.dt226-footer-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-    padding-bottom: 3.5rem;
-}
-
-@media (min-width: 768px) {
-    .dt226-footer-grid {
-        grid-template-columns: 1.4fr 1fr;
-    }
-}
-
-@media (min-width: 1024px) {
-    .dt226-footer-grid {
-        grid-template-columns: 1.45fr 1fr 1fr 1.15fr;
-        gap: 2.2rem;
-    }
-}
-
-/* Brand block */
-.dt226-brand-heading-wrap {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 1.5rem;
-}
-
-.dt226-footer-logo {
-    width: 46px;
-    height: 46px;
-    object-fit: contain;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.06);
-    padding: 4px;
-}
-
-.dt226-brand-sub {
-    display: block;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: #C5A880;
-    text-transform: uppercase;
-}
-
-.dt226-brand-name {
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 900;
-    color: #ffffff;
-    margin: 2px 0 0;
-    letter-spacing: 0.02em;
-}
-
-/* Titles */
-.dt226-footer-title {
-    color: #ffffff;
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 1.05rem;
-    font-weight: 800;
-    margin-bottom: 1.25rem;
-    letter-spacing: 0.02em;
-    position: relative;
-    padding-bottom: 8px;
-}
-
-.dt226-footer-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 28px;
-    height: 2px;
-    background: #C5A880;
-    border-radius: 2px;
-}
-
-/* Contact List */
-.dt226-footer-contact-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.85rem;
-}
-
-.dt226-footer-contact-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    line-height: 1.55;
-    font-size: 0.9rem;
-    color: #cbd5e1;
-}
-
-.dt226-footer-contact-list svg {
-    color: #C5A880;
-    flex-shrink: 0;
-    margin-top: 3px;
-}
-
-.dt226-footer-contact-list a {
-    color: #cbd5e1;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.dt226-footer-contact-list a:hover {
-    color: #C5A880;
-}
-
-.dt226-hotline-highlight {
-    color: #C5A880 !important;
-    font-weight: 800;
-    font-size: 1.02rem;
-}
-
-/* Links */
-.dt226-footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-.dt226-footer-links li a {
-    color: #94a3b8;
-    text-decoration: none;
-    font-size: 0.9rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: all 0.2s ease;
-}
-
-.dt226-footer-links li a:hover {
-    color: #ffffff;
-    transform: translateX(3px);
-}
-
-.dt226-link-highlight {
-    color: #C5A880 !important;
-    font-weight: 700;
-}
-
-.dt226-badge-mini {
-    display: inline-block;
-    padding: 2px 6px;
-    font-size: 0.65rem;
-    font-weight: 800;
-    border-radius: 3px;
-    background: #C5A880;
-    color: #0f172a;
-    line-height: 1.2;
-}
-
-.dt226-badge-mini.dt226-badge-red {
-    background: #ef4444;
-    color: #ffffff;
-}
-
-/* Trust Badges (Đức Trí 226 Style) */
-.dt226-footer-trust {
-    display: flex;
-    flex-direction: column;
-    gap: 0.85rem;
-}
-
-.dt226-trust-badge {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    background: rgba(255, 255, 255, 0.04);
-    padding: 12px 14px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-}
-
-.dt226-trust-badge:hover {
-    transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.07);
-    border-color: rgba(197, 168, 128, 0.3);
-}
-
-.dt226-badge-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: rgba(197, 168, 128, 0.15);
-    color: #C5A880;
-    font-size: 0.75rem;
-    font-weight: 900;
-    flex-shrink: 0;
-    margin-top: 2px;
-}
-
-.dt226-trust-badge strong {
-    display: block;
-    color: #ffffff;
-    font-size: 0.88rem;
-    font-weight: 700;
-    margin-bottom: 2px;
-}
-
-.dt226-trust-badge p {
-    font-size: 0.78rem;
-    color: #94a3b8;
-    line-height: 1.45;
-    margin: 0;
-}
-
-/* Footer Bottom Bar */
-.dt226-footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 1.35rem 0 5rem;
-    font-size: 0.82rem;
-    color: #64748b;
-    background: #090e1a;
-}
-
-@media (min-width: 992px) {
-    .dt226-footer-bottom {
-        padding-bottom: 1.35rem;
-    }
-}
-
-.dt226-bottom-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.dt226-copyright-text {
-    line-height: 1.6;
-}
-
-.dt226-copyright-text strong {
-    color: #cbd5e1;
-    font-weight: 600;
-}
-
-.dt226-back-top-btn {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: #94a3b8;
-    font-size: 0.78rem;
-    font-weight: 600;
-    padding: 6px 14px;
-    border-radius: 20px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: all 0.2s ease;
-}
-
-.dt226-back-top-btn:hover {
-    background: #C5A880;
-    border-color: #C5A880;
-    color: #0f172a;
-}
-
-.dt226-back-top-btn svg {
-    transition: transform 0.2s ease;
-}
-
-.dt226-back-top-btn:hover svg {
-    transform: translateY(-2px);
 }
 
 
