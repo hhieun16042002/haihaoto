@@ -15020,3 +15020,297 @@ a, button, input, select {
     touch-action: manipulation;
 }
 
+/* ==========================================================================
+   MODERN CLEAN 4-COLUMN FOOTER (INSPIRED BY ĐỨC TRÍ 226)
+   ========================================================================== */
+.dt226-footer.haiha-modern-footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    font-size: 0.9375rem;
+    padding-top: 4rem;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.dt226-footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-bottom: 3.5rem;
+}
+
+@media (min-width: 768px) {
+    .dt226-footer-grid {
+        grid-template-columns: 1.4fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .dt226-footer-grid {
+        grid-template-columns: 1.45fr 1fr 1fr 1.15fr;
+        gap: 2.2rem;
+    }
+}
+
+/* Brand block */
+.dt226-brand-heading-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 1.5rem;
+}
+
+.dt226-footer-logo {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 4px;
+}
+
+.dt226-brand-sub {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #C5A880;
+    text-transform: uppercase;
+}
+
+.dt226-brand-name {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin: 2px 0 0;
+    letter-spacing: 0.02em;
+}
+
+/* Titles */
+.dt226-footer-title {
+    color: #ffffff;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.02em;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.dt226-footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 28px;
+    height: 2px;
+    background: #C5A880;
+    border-radius: 2px;
+}
+
+/* Contact List */
+.dt226-footer-contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.dt226-footer-contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.55;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+}
+
+.dt226-footer-contact-list svg {
+    color: #C5A880;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.dt226-footer-contact-list a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.dt226-footer-contact-list a:hover {
+    color: #C5A880;
+}
+
+.dt226-hotline-highlight {
+    color: #C5A880 !important;
+    font-weight: 800;
+    font-size: 1.02rem;
+}
+
+/* Links */
+.dt226-footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.dt226-footer-links li a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.dt226-footer-links li a:hover {
+    color: #ffffff;
+    transform: translateX(3px);
+}
+
+.dt226-link-highlight {
+    color: #C5A880 !important;
+    font-weight: 700;
+}
+
+.dt226-badge-mini {
+    display: inline-block;
+    padding: 2px 6px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    border-radius: 3px;
+    background: #C5A880;
+    color: #0f172a;
+    line-height: 1.2;
+}
+
+.dt226-badge-mini.dt226-badge-red {
+    background: #ef4444;
+    color: #ffffff;
+}
+
+/* Trust Badges (Đức Trí 226 Style) */
+.dt226-footer-trust {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.dt226-trust-badge {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.dt226-trust-badge:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(197, 168, 128, 0.3);
+}
+
+.dt226-badge-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(197, 168, 128, 0.15);
+    color: #C5A880;
+    font-size: 0.75rem;
+    font-weight: 900;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.dt226-trust-badge strong {
+    display: block;
+    color: #ffffff;
+    font-size: 0.88rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.dt226-trust-badge p {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    line-height: 1.45;
+    margin: 0;
+}
+
+/* Footer Bottom Bar */
+.dt226-footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1.35rem 0 5rem;
+    font-size: 0.82rem;
+    color: #64748b;
+    background: #090e1a;
+}
+
+@media (min-width: 992px) {
+    .dt226-footer-bottom {
+        padding-bottom: 1.35rem;
+    }
+}
+
+.dt226-bottom-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.dt226-copyright-text {
+    line-height: 1.6;
+}
+
+.dt226-copyright-text strong {
+    color: #cbd5e1;
+    font-weight: 600;
+}
+
+.dt226-back-top-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #94a3b8;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.dt226-back-top-btn:hover {
+    background: #C5A880;
+    border-color: #C5A880;
+    color: #0f172a;
+}
+
+.dt226-back-top-btn svg {
+    transition: transform 0.2s ease;
+}
+
+.dt226-back-top-btn:hover svg {
+    transform: translateY(-2px);
+}
+
+
