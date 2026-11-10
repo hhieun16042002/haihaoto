@@ -315,7 +315,7 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
 
             <?php if ($h_show_blog === '1') : ?>
             <!-- 5. BLOG ⌵ -->
-            <li class="nav-item has-dropdown <?php echo (is_page('blog') || is_home() || is_category() || is_singular('post')) ? 'active' : ''; ?>">
+            <li class="nav-item has-dropdown <?php echo (!is_front_page() && (is_page('blog') || is_home() || is_category() || is_singular('post'))) ? 'active' : ''; ?>">
                 <a href="<?php echo esc_url(home_url('/blog/')); ?>" class="nav-link" title="<?php echo esc_attr($h_label_blog); ?>">
                     <span><?php echo esc_html($h_label_blog); ?></span>
                     <i class="fa-solid fa-chevron-down nav-caret"></i>

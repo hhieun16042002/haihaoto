@@ -659,14 +659,14 @@ p, span, a, li, th, td, label, blockquote, figcaption {
    TRANG CHỦ | GIỚI THIỆU ⌵ | DỊCH VỤ ⌵ | PHỤ KIỆN ⌵ | BLOG ⌵ | KHUYẾN MẠI | LIÊN HỆ ⌵ | [Tìm kiếm.... 🔍]
    ========================================================================= */
 .custom-navbar-strip {
-    background: linear-gradient(90deg, #141414 0%, #1c1c1c 50%, #141414 100%);
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    background: #F6F1EB;
+    border-top: none;
+    border-bottom: 1px solid rgba(158, 122, 74, 0.24) !important;
     width: 100%;
     position: relative;
     z-index: 100;
     transition: all 0.3s ease;
-    box-shadow: 0 6px 20px rgba(20, 20, 20, 0.18);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 @media (min-width: 992px) {
@@ -10198,12 +10198,12 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 
 @media (min-width: 992px) {
     .custom-navbar-strip {
-        background: rgba(15, 17, 20, 0.94) !important;
+        background: rgba(246, 241, 235, 0.98) !important;
         backdrop-filter: blur(14px) saturate(1.2) !important;
         -webkit-backdrop-filter: blur(14px) saturate(1.2) !important;
         border-top: none !important;
-        border-bottom: 1px solid rgba(201, 163, 129, 0.16) !important;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+        border-bottom: 1px solid rgba(158, 122, 74, 0.24) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
         transition: background 280ms cubic-bezier(0.16, 1, 0.3, 1),
                     border-color 280ms cubic-bezier(0.16, 1, 0.3, 1),
                     box-shadow 280ms cubic-bezier(0.16, 1, 0.3, 1) !important;
@@ -10216,66 +10216,66 @@ p, span, a, li, th, td, label, blockquote, figcaption {
         left: 0 !important;
         width: 100% !important;
         z-index: 1000 !important;
-        background: rgba(246, 241, 235, 0.97) !important;
+        background: rgba(246, 241, 235, 0.98) !important;
         backdrop-filter: blur(16px) !important;
         -webkit-backdrop-filter: blur(16px) !important;
         border-bottom: 1px solid rgba(158, 122, 74, 0.28) !important;
         box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12) !important;
     }
 
-    .custom-navbar-strip.is-scrolled .navbar-inline-brand {
+    .custom-navbar-strip .navbar-inline-brand {
         border-right-color: rgba(20, 20, 20, 0.15) !important;
     }
 
-    .custom-navbar-strip.is-scrolled .navbar-brand-name {
+    .custom-navbar-strip .navbar-brand-name {
         color: #1a1a1a !important;
     }
 
-    .custom-navbar-strip.is-scrolled .navbar-brand-name .brand-accent {
+    .custom-navbar-strip .navbar-brand-name .brand-accent {
         color: #8C6239 !important;
     }
 
-    .custom-navbar-strip.is-scrolled .navbar-brand-sub {
+    .custom-navbar-strip .navbar-brand-sub {
         color: #666666 !important;
     }
 
-    .custom-navbar-strip.is-scrolled .custom-nav-menu > .nav-item > .nav-link {
+    .custom-navbar-strip .custom-nav-menu > .nav-item > .nav-link {
         color: #1f2328 !important;
     }
 
-    .custom-navbar-strip.is-scrolled .custom-nav-menu > .nav-item.active > .nav-link,
-    .custom-navbar-strip.is-scrolled .custom-nav-menu > .nav-item:hover > .nav-link,
-    .custom-navbar-strip.is-scrolled .custom-nav-menu > .nav-item:focus-within > .nav-link {
+    .custom-navbar-strip .custom-nav-menu > .nav-item.active > .nav-link,
+    .custom-navbar-strip .custom-nav-menu > .nav-item:hover > .nav-link,
+    .custom-navbar-strip .custom-nav-menu > .nav-item:focus-within > .nav-link {
         color: #8C6239 !important;
     }
 
-    .custom-navbar-strip.is-scrolled .custom-nav-menu .nav-caret {
+    .custom-navbar-strip .custom-nav-menu .nav-caret {
         color: rgba(30, 30, 30, 0.6) !important;
     }
 
-    .custom-navbar-strip.is-scrolled .custom-nav-menu > .nav-item:hover .nav-caret,
-    .custom-navbar-strip.is-scrolled .custom-nav-menu > .nav-item.active .nav-caret {
+    .custom-navbar-strip .custom-nav-menu > .nav-item:hover .nav-caret,
+    .custom-navbar-strip .custom-nav-menu > .nav-item.active .nav-caret {
         color: #8C6239 !important;
     }
 
-    .custom-navbar-strip.is-scrolled .menu-search-pill {
+    .custom-navbar-strip .menu-search-pill {
         background: #ECE4D8 !important;
         border-color: rgba(158, 122, 74, 0.35) !important;
     }
 
-    .custom-navbar-strip.is-scrolled .menu-search-pill .search-field {
+    .custom-navbar-strip .menu-search-pill .search-field {
         color: #1a1a1a !important;
     }
 
-    .custom-navbar-strip.is-scrolled .menu-search-pill .search-field::placeholder {
+    .custom-navbar-strip .menu-search-pill .search-field::placeholder {
         color: #777777 !important;
     }
 
-    .custom-navbar-strip.is-scrolled .menu-search-pill .search-submit i {
+    .custom-navbar-strip .menu-search-pill .search-submit i {
         color: #8C6239 !important;
     }
 
-    .custom-navbar-strip.is-scrolled .menu-search-pill:focus-within {
+    .custom-navbar-strip .menu-search-pill:focus-within {
         border-color: #8C6239 !important;
         background: #ffffff !important;
         box-shadow: 0 0 0 2px rgba(140, 98, 57, 0.25) !important;
@@ -10336,20 +10336,20 @@ p, span, a, li, th, td, label, blockquote, figcaption {
         font-family: 'Be Vietnam Pro', sans-serif;
         font-size: 1.12rem;
         font-weight: 800;
-        color: #ffffff;
+        color: #1a1a1a !important;
         letter-spacing: 0.6px;
         white-space: nowrap;
     }
 
     .navbar-brand-name .brand-accent {
-        color: #C5A880;
+        color: #8C6239 !important;
     }
 
     .navbar-brand-sub {
         font-family: 'Be Vietnam Pro', sans-serif;
         font-size: 0.58rem;
         font-weight: 700;
-        color: #a1a1aa;
+        color: #666666 !important;
         letter-spacing: 1.4px;
         margin-top: 2px;
         white-space: nowrap;
@@ -10382,7 +10382,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
         font-size: 0.85rem !important;
         font-weight: 700 !important;
         padding: 10px 12px !important;
-        color: rgba(255, 255, 255, 0.92) !important;
+        color: #1f2328 !important;
         letter-spacing: 0.03em !important;
         outline: none !important;
         box-shadow: none !important;
@@ -10396,7 +10396,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
         right: 10px;
         bottom: 4px;
         height: 2px;
-        background: linear-gradient(90deg, #9E7A4A, #d4af37);
+        background: linear-gradient(90deg, #9E7A4A, #C5A880);
         transform: scaleX(0);
         transform-origin: center;
         transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -10406,7 +10406,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     .custom-nav-menu > .nav-item.active > .nav-link,
     .custom-nav-menu > .nav-item:hover > .nav-link,
     .custom-nav-menu > .nav-item:focus-within > .nav-link {
-        color: #F3D8B4 !important;
+        color: #8C6239 !important;
     }
 
     .custom-nav-menu > .nav-item.active > .nav-link::after,
@@ -10416,14 +10416,14 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     }
 
     .custom-nav-menu .nav-caret {
-        color: rgba(255, 255, 255, 0.55) !important;
+        color: rgba(30, 30, 30, 0.6) !important;
         transition: transform 220ms ease, color 200ms ease !important;
     }
 
     .custom-nav-menu > .nav-item:hover .nav-caret,
     .custom-nav-menu > .nav-item.active .nav-caret {
         transform: rotate(180deg) !important;
-        color: #F3D8B4 !important;
+        color: #8C6239 !important;
     }
 
     /* Right: Inline Rescue 24/7 + Book Appointment + SEO Search at the End */
@@ -10533,22 +10533,22 @@ p, span, a, li, th, td, label, blockquote, figcaption {
         margin-left: 0 !important;
         height: 36px !important;
         padding: 2px 8px 2px 13px !important;
-        background: #1f1f1f !important;
-        border: 1px solid rgba(255, 255, 255, 0.18) !important;
+        background: #ECE4D8 !important;
+        border: 1px solid rgba(158, 122, 74, 0.35) !important;
         border-radius: 999px !important;
     }
 
     .custom-navbar-inner .menu-search-pill .search-field {
         width: 128px !important;
-        color: #ffffff !important;
+        color: #1a1a1a !important;
         font-style: normal !important;
         font-size: 0.78rem !important;
     }
 
     .custom-navbar-inner .menu-search-pill:focus-within {
-        border-color: #C5A880 !important;
-        background: #141414 !important;
-        box-shadow: 0 0 0 2px rgba(197, 168, 128, 0.25) !important;
+        border-color: #8C6239 !important;
+        background: #ffffff !important;
+        box-shadow: 0 0 0 2px rgba(140, 98, 57, 0.25) !important;
     }
 
     .custom-navbar-inner .menu-search-pill:focus-within .search-field {
@@ -10556,12 +10556,43 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     }
 
     .custom-navbar-inner .menu-search-pill .search-field::placeholder {
-        color: #9ca3af !important;
+        color: #777777 !important;
         font-style: normal !important;
     }
 
     .custom-navbar-inner .menu-search-pill .search-submit {
-        color: #C5A880 !important;
+        color: #8C6239 !important;
+    }
+
+    /* Mega / Dropdown Menus in Elegant Beige Luxury */
+    .nav-dropdown-menu,
+    .nav-sub-dropdown {
+        background: #FAF7F2 !important;
+        border: 1px solid rgba(197, 168, 128, 0.35) !important;
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+        border-radius: 10px !important;
+    }
+
+    .nav-dropdown-menu > li > a,
+    .nav-sub-dropdown > li > a {
+        color: #1F2937 !important;
+        background: transparent !important;
+        font-weight: 600 !important;
+    }
+
+    .nav-dropdown-menu > li > a:hover,
+    .nav-sub-dropdown > li > a:hover {
+        background: #F3EBE1 !important;
+        border-color: rgba(197, 168, 128, 0.35) !important;
+        color: #8C6239 !important;
+    }
+
+    .nav-dropdown-menu > li.has-sub-dropdown > a .sub-caret {
+        color: #8C6239 !important;
+    }
+
+    .nav-dropdown-divider {
+        background: rgba(197, 168, 128, 0.25) !important;
     }
 }
 

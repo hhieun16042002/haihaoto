@@ -386,7 +386,6 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                 <h2 class="blog-heading-main">
                     <span>MÁY MÓC KỸ THUẬT</span> <span class="text-black">TẠI Ô TÔ HẢI HÀ</span>
                 </h2>
-                <div class="tuning-shop-divider" style="margin: 12px auto 0;"></div>
             </div>
 
             <?php
