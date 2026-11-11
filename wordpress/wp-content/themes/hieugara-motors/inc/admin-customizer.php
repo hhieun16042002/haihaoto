@@ -30,11 +30,15 @@ function hieugara_admin_bar_customization($wp_admin_bar) {
     $wp_admin_bar->remove_node('comments');
     $wp_admin_bar->remove_node('new-content');
     $wp_admin_bar->remove_node('updates');
+    $wp_admin_bar->remove_node('command-palette');
+    $wp_admin_bar->remove_node('menu-toggle');
 
-    // Add Brand Node
+    $site_logo_url = function_exists('hieugara_get_site_logo') ? hieugara_get_site_logo() : get_template_directory_uri() . '/assets/images/haiha-logo.png';
+
+    // Add Brand Node with Authentic Hải Hà Logo
     $wp_admin_bar->add_node(array(
         'id'    => 'hieugara-brand',
-        'title' => '<span class="ab-icon dashicons dashicons-car" style="color:#60a5fa !important;"></span> <strong style="color:#fff;font-weight:700;letter-spacing:0.5px;">ÔTÔ HẢI HÀ</strong>',
+        'title' => '<img src="' . esc_url($site_logo_url) . '" alt="Ôtô Hải Hà" class="hieugara-topbar-logo-img"> <strong class="hieugara-topbar-title">ÔTÔ HẢI HÀ</strong>',
         'href'  => admin_url('index.php'),
         'meta'  => array('class' => 'hieugara-topbar-brand')
     ));
@@ -43,7 +47,7 @@ function hieugara_admin_bar_customization($wp_admin_bar) {
     $purge_url = wp_nonce_url(admin_url('index.php?hieugara_action=purge_cache'), 'hieugara_purge_cache');
     $wp_admin_bar->add_node(array(
         'id'    => 'hieugara-purge-cache',
-        'title' => '<span class="ab-icon dashicons dashicons-update" style="color:#22c55e !important;"></span> <span style="color:#22c55e;font-weight:700;">⚡ LÀM MỚI WEB (XÓA CACHE)</span>',
+        'title' => '<span class="ab-icon dashicons dashicons-update"></span> <span class="btn-text">⚡ LÀM MỚI WEB (XÓA CACHE)</span>',
         'href'  => $purge_url,
         'meta'  => array(
             'title' => 'Bấm vào đây để làm mới web ngay lập tức sau khi sửa nội dung',
@@ -54,7 +58,7 @@ function hieugara_admin_bar_customization($wp_admin_bar) {
     // Add Quick View Website button
     $wp_admin_bar->add_node(array(
         'id'    => 'hieugara-view-site',
-        'title' => '<span class="ab-icon dashicons dashicons-external"></span> <span>🚗 Xem Website Ngoài</span>',
+        'title' => '<span class="ab-icon dashicons dashicons-external"></span> <span class="btn-text">🚗 Xem Trang Chủ Website</span>',
         'href'  => home_url('/'),
         'meta'  => array(
             'target' => '_blank',
@@ -66,8 +70,8 @@ function hieugara_admin_bar_customization($wp_admin_bar) {
     $user_id = get_current_user_id();
     $my_account = $wp_admin_bar->get_node('my-account');
     if ($my_account) {
-        $avatar = get_avatar($user_id, 26);
-        $my_account->title = '<span class="admin-greeting-text" style="color:#cbd5e1;font-weight:600;">Xin chào, <strong style="color:#fff;">Quản Trị Viên</strong></span> ' . $avatar;
+        $avatar = get_avatar($user_id, 26, '', 'Quản Trị Viên', array('class' => 'topbar-user-avatar'));
+        $my_account->title = '<span class="admin-greeting-text">Xin chào, <strong>Quản Trị Viên</strong></span> ' . $avatar;
         $wp_admin_bar->add_node($my_account);
     }
 }
@@ -306,6 +310,7 @@ add_action('admin_menu', 'hieugara_clean_admin_menu', 999);
 
 // 7. Inject Section Headers & Top Brand Card
 function hieugara_admin_botble_sidebar_script() {
+    $site_logo_url = function_exists('hieugara_get_site_logo') ? hieugara_get_site_logo() : get_template_directory_uri() . '/assets/images/haiha-logo.png';
     ?>
     <script type="text/javascript">
     (function($) {
@@ -323,11 +328,11 @@ function hieugara_admin_botble_sidebar_script() {
                 }
             });
 
-            // Prepend Workspace Brand Header
+            // Prepend Workspace Brand Header with Official Hải Hà Logo
             if (!$('#adminmenu .botble-brand-card').length) {
                 var brandHtml = '<li class="botble-brand-card">' +
                     '<div class="botble-brand-inner">' +
-                        '<div class="botble-brand-badge"><span class="dashicons dashicons-car"></span></div>' +
+                        '<div class="botble-brand-badge"><img src="<?php echo esc_url($site_logo_url); ?>" alt="Ôtô Hải Hà" class="botble-brand-logo-img"></div>' +
                         '<div class="botble-brand-info">' +
                             '<strong class="botble-brand-title">ÔTÔ HẢI HÀ</strong>' +
                             '<span class="botble-brand-tag">QUẢN TRỊ WEBSITE</span>' +
@@ -411,7 +416,8 @@ function hieugara_render_dashboard_hub_widget() {
     $total_accessories = (int) (wp_count_posts('garage_accessory')->publish ?? 0);
     $total_posts = (int) (wp_count_posts('post')->publish ?? 0);
 
-    // Contact options
+    // Contact options & Site Logo
+    $site_logo_url = function_exists('hieugara_get_site_logo') ? hieugara_get_site_logo() : get_template_directory_uri() . '/assets/images/haiha-logo.png';
     $hotline = hieugara_hotline_phone();
     $rescue  = hieugara_rescue_phone();
     $tech    = hieugara_tech_phone();
@@ -420,12 +426,17 @@ function hieugara_render_dashboard_hub_widget() {
     $purge_url = wp_nonce_url(admin_url('index.php?hieugara_action=purge_cache'), 'hieugara_purge_cache');
     ?>
     <div class="hieugara-hub-wrap">
-        <!-- Top Banner -->
+        <!-- Top Banner with Official Brand Logo -->
         <div class="hieugara-hub-banner">
-            <div class="hieugara-hub-banner-content">
-                <span class="hub-badge">HỆ THỐNG QUẢN LÝ ÔTÔ HẢI HÀ</span>
-                <h2>TRUNG TÂM QUẢN TRỊ WEBSITE</h2>
-                <p>Giao diện trực quan, dễ dùng cho mọi lứa tuổi — Thay đổi nội dung, phụ kiện, số điện thoại & hình ảnh tức thì.</p>
+            <div class="hieugara-hub-banner-main">
+                <div class="hieugara-hub-banner-logo">
+                    <img src="<?php echo esc_url($site_logo_url); ?>" alt="Ôtô Hải Hà" class="hub-banner-logo-img">
+                </div>
+                <div class="hieugara-hub-banner-content">
+                    <span class="hub-badge">HỆ THỐNG QUẢN LÝ ÔTÔ HẢI HÀ</span>
+                    <h2>TRUNG TÂM QUẢN TRỊ WEBSITE</h2>
+                    <p>Giao diện trực quan, dễ dùng cho mọi lứa tuổi — Thay đổi nội dung, phụ kiện, số điện thoại & hình ảnh tức thì.</p>
+                </div>
             </div>
             <div class="hieugara-hub-banner-actions">
                 <a href="<?php echo esc_url($purge_url); ?>" class="hub-btn hub-btn-cache" title="Bấm vào đây để làm mới web ngay lập tức">

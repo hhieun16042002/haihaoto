@@ -13,12 +13,18 @@ body.wp-admin {
 }
 
 /* ==========================================================================
-   2. WP ADMIN BAR (TOP BAR)
+   2. WP ADMIN BAR (TOP BAR) - LUXURY & HIGH VISIBILITY
    ========================================================================== */
 #wpadminbar {
-    background: #0c1e3a !important;
-    border-bottom: 2px solid #1d4ed8;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(90deg, #070d18 0%, #0f172a 100%) !important;
+    border-bottom: 2px solid #2563eb !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Hide WP Command Palette (Ctrl+K) and default toggle completely */
+#wp-admin-bar-command-palette,
+#wp-admin-bar-menu-toggle {
+    display: none !important;
 }
 
 #wpadminbar .ab-item,
@@ -34,44 +40,135 @@ body.wp-admin {
     background: rgba(255, 255, 255, 0.08) !important;
 }
 
-#wpadminbar .hieugara-topbar-brand .ab-item {
-    background: rgba(29, 78, 216, 0.15) !important;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
+/* Official Hải Hà Brand in Top Bar */
+#wpadminbar .ab-top-menu > li.hieugara-topbar-brand {
+    display: inline-flex !important;
+    align-items: center !important;
 }
 
+#wpadminbar .hieugara-topbar-brand .ab-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 0 16px 0 12px !important;
+    background: rgba(37, 99, 235, 0.15) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+    height: 32px !important;
+    line-height: 32px !important;
+}
+
+#wpadminbar .hieugara-topbar-logo-img {
+    height: 24px !important;
+    width: 24px !important;
+    object-fit: contain !important;
+    border-radius: 50% !important;
+    background: #ffffff !important;
+    padding: 1.5px !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3) !important;
+    vertical-align: middle !important;
+}
+
+#wpadminbar .hieugara-topbar-title {
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    font-size: 13.5px !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Quick Cache Purge Button */
 #wpadminbar .hieugara-topbar-cache-btn .ab-item {
-    background: rgba(34, 197, 94, 0.15) !important;
-    border: 1px solid rgba(34, 197, 94, 0.3) !important;
-    border-radius: 4px;
-    margin: 4px 6px;
-    height: 24px;
-    line-height: 24px;
-    padding: 0 10px !important;
+    background: rgba(34, 197, 94, 0.18) !important;
+    border: 1px solid rgba(34, 197, 94, 0.45) !important;
+    border-radius: 6px !important;
+    margin: 4px 6px !important;
+    height: 24px !important;
+    line-height: 24px !important;
+    padding: 0 12px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    color: #4ade80 !important;
+    font-weight: 700 !important;
+    font-size: 12.5px !important;
+    transition: all 0.2s ease !important;
 }
 
 #wpadminbar .hieugara-topbar-cache-btn .ab-item:hover {
-    background: #22c55e !important;
+    background: #16a34a !important;
+    border-color: #16a34a !important;
     color: #ffffff !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(22, 163, 74, 0.4) !important;
 }
 
-#wpadminbar .hieugara-topbar-cache-btn .ab-item:hover span,
-#wpadminbar .hieugara-topbar-cache-btn .ab-item:hover .ab-icon {
-    color: #ffffff !important;
+#wpadminbar .hieugara-topbar-cache-btn .ab-item .ab-icon {
+    color: inherit !important;
+    font-size: 15px !important;
+    line-height: 1 !important;
+    width: 15px !important;
+    height: 15px !important;
 }
 
+/* Quick View Website Button */
 #wpadminbar .hieugara-topbar-view-btn .ab-item {
-    background: #1d4ed8 !important;
-    color: #ffffff !important;
-    font-weight: 700 !important;
-    border-radius: 4px;
-    margin: 4px 6px;
-    height: 24px;
-    line-height: 24px;
+    background: rgba(37, 99, 235, 0.22) !important;
+    border: 1px solid rgba(37, 99, 235, 0.45) !important;
+    border-radius: 6px !important;
+    margin: 4px 6px !important;
+    height: 24px !important;
+    line-height: 24px !important;
     padding: 0 12px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    color: #93c5fd !important;
+    font-weight: 700 !important;
+    font-size: 12.5px !important;
+    transition: all 0.2s ease !important;
 }
 
 #wpadminbar .hieugara-topbar-view-btn .ab-item:hover {
-    background: #e03e17 !important;
+    background: #2563eb !important;
+    border-color: #2563eb !important;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4) !important;
+}
+
+#wpadminbar .hieugara-topbar-view-btn .ab-item .ab-icon {
+    color: inherit !important;
+    font-size: 15px !important;
+    line-height: 1 !important;
+    width: 15px !important;
+    height: 15px !important;
+}
+
+/* User Greeting Node */
+#wpadminbar #wp-admin-bar-my-account .ab-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 0 16px !important;
+    font-size: 13px !important;
+    color: #cbd5e1 !important;
+}
+
+#wpadminbar #wp-admin-bar-my-account .display-name {
+    margin-left: 5px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+}
+
+#wpadminbar #wp-admin-bar-my-account .admin-greeting-text strong {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+#wpadminbar #wp-admin-bar-my-account .avatar {
+    border-radius: 50% !important;
+    border: 1.5px solid #3b82f6 !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3) !important;
+    margin-left: 8px !important;
+    vertical-align: middle !important;
 }
 
 /* ==========================================================================
@@ -140,22 +237,23 @@ body.wp-admin {
 }
 
 .botble-brand-badge {
-    width: 28px;
-    height: 28px;
-    border-radius: 6px;
-    background: #2563eb;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    padding: 2px;
     flex-shrink: 0;
 }
 
-.botble-brand-badge .dashicons {
-    font-size: 16px;
-    width: 16px;
-    height: 16px;
-    line-height: 16px;
+.botble-brand-logo-img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    border-radius: 50%;
 }
 
 .botble-brand-info {
@@ -609,18 +707,51 @@ body.folded #adminmenu li.menu-top:hover .wp-submenu-head {
 
 /* Banner */
 .hieugara-hub-banner {
-    background: linear-gradient(135deg, #0b0f19 0%, #1e293b 100%);
-    border-radius: 12px;
-    padding: 24px 30px;
+    background: linear-gradient(135deg, #070d18 0%, #1e293b 100%);
+    border-radius: 14px;
+    padding: 24px 28px;
     color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-left: 6px solid #1d4ed8;
+    border-left: 6px solid #2563eb;
     box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
     margin-bottom: 24px;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 20px;
+}
+
+.hieugara-hub-banner-main {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1 1 500px;
+    min-width: 0;
+}
+
+.hieugara-hub-banner-logo {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: #ffffff;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    flex-shrink: 0;
+}
+
+.hub-banner-logo-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.hieugara-hub-banner-content {
+    flex: 1 1 auto;
+    min-width: 0;
 }
 
 .hub-badge {
