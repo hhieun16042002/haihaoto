@@ -15273,3 +15273,20 @@ figcaption i.fa-solid.fa-camera,
     display: none !important;
 }
 
+/* Strict Sizing for Admin Bar Logo on Frontend */
+#wpadminbar img.hieugara-topbar-logo-img {
+    width: 22px !important;
+    height: 22px !important;
+    max-width: 22px !important;
+    max-height: 22px !important;
+    min-width: 22px !important;
+    min-height: 22px !important;
+    object-fit: contain !important;
+    border-radius: 50% !important;
+    background: #ffffff !important;
+    padding: 1px !important;
+    vertical-align: middle !important;
+    display: inline-block !important;
+    margin-right: 6px !important;
+}
+

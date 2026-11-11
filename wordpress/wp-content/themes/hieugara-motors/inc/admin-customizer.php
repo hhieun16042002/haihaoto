@@ -32,22 +32,27 @@ function hieugara_admin_bar_customization($wp_admin_bar) {
     $wp_admin_bar->remove_node('updates');
     $wp_admin_bar->remove_node('command-palette');
     $wp_admin_bar->remove_node('menu-toggle');
+    $wp_admin_bar->remove_node('customize');
 
     $site_logo_url = function_exists('hieugara_get_site_logo') ? hieugara_get_site_logo() : get_template_directory_uri() . '/assets/images/haiha-logo.png';
 
-    // Add Brand Node with Authentic Hải Hà Logo
+    // Add Brand Node with Authentic Hải Hà Logo (With strict inline dimensions so it NEVER blows up anywhere)
+    $brand_logo_img = '<img src="' . esc_url($site_logo_url) . '" alt="Ôtô Hải Hà" class="hieugara-topbar-logo-img" width="22" height="22" style="width:22px!important;height:22px!important;max-width:22px!important;max-height:22px!important;min-width:22px!important;min-height:22px!important;object-fit:contain!important;border-radius:50%!important;background:#ffffff!important;padding:1px!important;vertical-align:middle!important;display:inline-block!important;margin-right:6px!important;box-shadow:0 1px 3px rgba(0,0,0,0.3)!important;">';
+
     $wp_admin_bar->add_node(array(
         'id'    => 'hieugara-brand',
-        'title' => '<img src="' . esc_url($site_logo_url) . '" alt="Ôtô Hải Hà" class="hieugara-topbar-logo-img"> <strong class="hieugara-topbar-title">ÔTÔ HẢI HÀ</strong>',
+        'title' => $brand_logo_img . '<strong class="hieugara-topbar-title" style="color:#ffffff!important;font-weight:800!important;font-size:13px!important;letter-spacing:0.5px!important;">ÔTÔ HẢI HÀ</strong>',
         'href'  => admin_url('index.php'),
         'meta'  => array('class' => 'hieugara-topbar-brand')
     ));
 
-    // Add 1-Click Cache Purge button (Clear, friendly)
-    $purge_url = wp_nonce_url(admin_url('index.php?hieugara_action=purge_cache'), 'hieugara_purge_cache');
+    // Add 1-Click Cache Purge button (Clear, friendly, works on both frontend and admin)
+    $purge_redirect = is_admin() ? admin_url('index.php?hieugara_action=purge_cache') : add_query_arg('hieugara_action', 'purge_cache');
+    $purge_url = wp_nonce_url($purge_redirect, 'hieugara_purge_cache');
+
     $wp_admin_bar->add_node(array(
         'id'    => 'hieugara-purge-cache',
-        'title' => '<span class="ab-icon dashicons dashicons-update"></span> <span class="btn-text">⚡ LÀM MỚI WEB (XÓA CACHE)</span>',
+        'title' => '<span class="btn-text" style="font-weight:700!important;font-size:12px!important;">⚡ LÀM MỚI WEB (XÓA CACHE)</span>',
         'href'  => $purge_url,
         'meta'  => array(
             'title' => 'Bấm vào đây để làm mới web ngay lập tức sau khi sửa nội dung',
@@ -55,13 +60,25 @@ function hieugara_admin_bar_customization($wp_admin_bar) {
         )
     ));
 
-    // Add Quick View Website button
+    // Context-aware Navigation Button:
+    // If in Admin -> Link to Frontend ("🚗 Xem Trang Chủ Website")
+    // If on Frontend -> Link to Admin Dashboard ("⚙️ Vào Bảng Quản Trị")
+    if (is_admin()) {
+        $nav_title = '<span class="btn-text" style="font-weight:700!important;font-size:12px!important;">🚗 Xem Trang Chủ Website</span>';
+        $nav_url   = home_url('/');
+        $nav_target = '_blank';
+    } else {
+        $nav_title = '<span class="btn-text" style="font-weight:700!important;font-size:12px!important;">⚙️ Vào Bảng Quản Trị</span>';
+        $nav_url   = admin_url('index.php');
+        $nav_target = '_self';
+    }
+
     $wp_admin_bar->add_node(array(
         'id'    => 'hieugara-view-site',
-        'title' => '<span class="ab-icon dashicons dashicons-external"></span> <span class="btn-text">🚗 Xem Trang Chủ Website</span>',
-        'href'  => home_url('/'),
+        'title' => $nav_title,
+        'href'  => $nav_url,
         'meta'  => array(
-            'target' => '_blank',
+            'target' => $nav_target,
             'class'  => 'hieugara-topbar-view-btn'
         )
     ));
@@ -70,12 +87,100 @@ function hieugara_admin_bar_customization($wp_admin_bar) {
     $user_id = get_current_user_id();
     $my_account = $wp_admin_bar->get_node('my-account');
     if ($my_account) {
-        $avatar = get_avatar($user_id, 26, '', 'Quản Trị Viên', array('class' => 'topbar-user-avatar'));
-        $my_account->title = '<span class="admin-greeting-text">Xin chào, <strong>Quản Trị Viên</strong></span> ' . $avatar;
+        $avatar = get_avatar($user_id, 24, '', 'Quản Trị Viên', array('class' => 'topbar-user-avatar', 'extra_attr' => 'style="width:24px!important;height:24px!important;border-radius:50%!important;vertical-align:middle!important;margin-left:6px!important;"'));
+        $my_account->title = '<span class="admin-greeting-text" style="font-size:13px!important;color:#cbd5e1!important;">Xin chào, <strong style="color:#ffffff!important;font-weight:700!important;margin-left:3px!important;">Quản Trị Viên</strong></span> ' . $avatar;
         $wp_admin_bar->add_node($my_account);
     }
 }
 add_action('admin_bar_menu', 'hieugara_admin_bar_customization', 999);
+
+// Frontend Admin Bar Styling when Admin is logged in
+function hieugara_frontend_admin_bar_styles() {
+    if (is_admin_bar_showing()) {
+        ?>
+        <style id="hieugara-frontend-adminbar-css">
+        #wpadminbar {
+            background: linear-gradient(90deg, #070d18 0%, #0f172a 100%) !important;
+            border-bottom: 2px solid #2563eb !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25) !important;
+        }
+        #wp-admin-bar-command-palette,
+        #wp-admin-bar-menu-toggle,
+        #wp-admin-bar-customize {
+            display: none !important;
+        }
+        #wpadminbar .hieugara-topbar-brand .ab-item {
+            display: inline-flex !important;
+            align-items: center !important;
+            padding: 0 14px 0 10px !important;
+        }
+        #wpadminbar .hieugara-topbar-logo-img {
+            width: 22px !important;
+            height: 22px !important;
+            max-width: 22px !important;
+            max-height: 22px !important;
+            min-width: 22px !important;
+            min-height: 22px !important;
+            object-fit: contain !important;
+            border-radius: 50% !important;
+            background: #ffffff !important;
+            padding: 1px !important;
+            vertical-align: middle !important;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3) !important;
+            margin-right: 6px !important;
+            display: inline-block !important;
+        }
+        #wpadminbar .hieugara-topbar-title {
+            color: #ffffff !important;
+            font-weight: 800 !important;
+            font-size: 13px !important;
+        }
+        #wpadminbar .hieugara-topbar-cache-btn .ab-item {
+            background: rgba(34, 197, 94, 0.18) !important;
+            border: 1px solid rgba(34, 197, 94, 0.45) !important;
+            border-radius: 6px !important;
+            margin: 4px 6px !important;
+            height: 24px !important;
+            line-height: 24px !important;
+            padding: 0 12px !important;
+            color: #4ade80 !important;
+            font-weight: 700 !important;
+            font-size: 12px !important;
+            display: inline-flex !important;
+            align-items: center !important;
+        }
+        #wpadminbar .hieugara-topbar-cache-btn .ab-item:hover {
+            background: #16a34a !important;
+            color: #ffffff !important;
+        }
+        #wpadminbar .hieugara-topbar-view-btn .ab-item {
+            background: rgba(37, 99, 235, 0.22) !important;
+            border: 1px solid rgba(37, 99, 235, 0.45) !important;
+            border-radius: 6px !important;
+            margin: 4px 6px !important;
+            height: 24px !important;
+            line-height: 24px !important;
+            padding: 0 12px !important;
+            color: #93c5fd !important;
+            font-weight: 700 !important;
+            font-size: 12px !important;
+            display: inline-flex !important;
+            align-items: center !important;
+        }
+        #wpadminbar .hieugara-topbar-view-btn .ab-item:hover {
+            background: #2563eb !important;
+            color: #ffffff !important;
+        }
+        #wpadminbar #wp-admin-bar-my-account .display-name {
+            margin-left: 5px !important;
+            font-weight: 700 !important;
+            color: #ffffff !important;
+        }
+        </style>
+        <?php
+    }
+}
+add_action('wp_head', 'hieugara_frontend_admin_bar_styles');
 
 // Translate default Howdy to Vietnamese Xin chào
 add_filter('gettext', function($translation, $text) {
@@ -90,7 +195,8 @@ function hieugara_handle_admin_actions() {
     if (isset($_GET['hieugara_action']) && $_GET['hieugara_action'] === 'purge_cache') {
         if (check_admin_referer('hieugara_purge_cache') && current_user_can('manage_options')) {
             hieugara_purge_page_cache();
-            wp_safe_redirect(admin_url('index.php?hieugara_cache_purged=1'));
+            $redirect_url = is_admin() ? admin_url('index.php?hieugara_cache_purged=1') : remove_query_arg(array('hieugara_action', '_wpnonce'), wp_get_referer() ? wp_get_referer() : home_url('/?hieugara_cache_purged=1'));
+            wp_safe_redirect($redirect_url);
             exit;
         }
     }
@@ -122,7 +228,7 @@ function hieugara_handle_admin_actions() {
         }
     }
 }
-add_action('admin_init', 'hieugara_handle_admin_actions');
+add_action('init', 'hieugara_handle_admin_actions');
 
 // Show Admin Notices
 function hieugara_admin_customizer_notices() {
