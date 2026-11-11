@@ -706,6 +706,219 @@
             }, 650);
         });
 
+        // ==========================================================================
+        // EMERGENCY RESCUE 24/7 (1-CLICK GPS SHARE & ZALO DISPATCH)
+        // ==========================================================================
+        var rescueState = {
+            lat: null,
+            lng: null,
+            accuracy: null,
+            isLocating: false
+        };
+
+        function showRescueToast(msg, type) {
+            var $toast = $('#rescueToast');
+            if (!$toast.length) return;
+            $toast.removeClass('success info error').addClass(type || 'info').html(msg).stop(true, true).fadeIn(200);
+            setTimeout(function() {
+                $toast.fadeOut(400);
+            }, 6000);
+        }
+
+        function openRescueModal() {
+            var $backdrop = $('#rescueModalBackdrop');
+            if (!$backdrop.length) return;
+            $backdrop.addClass('is-open').attr('aria-hidden', 'false');
+            $('body').addClass('rescue-modal-open');
+        }
+
+        function closeRescueModal() {
+            var $backdrop = $('#rescueModalBackdrop');
+            if (!$backdrop.length) return;
+            $backdrop.removeClass('is-open').attr('aria-hidden', 'true');
+            $('body').removeClass('rescue-modal-open');
+        }
+
+        // Trigger Modal Open from any rescue button
+        $(document).on('click', '.js-open-rescue-modal', function(e) {
+            e.preventDefault();
+            openRescueModal();
+        });
+
+        // Close Modal via close button or backdrop click
+        $(document).on('click', '#rescueModalClose', function(e) {
+            e.preventDefault();
+            closeRescueModal();
+        });
+
+        $(document).on('click', '.hieugara-rescue-modal-box', function(e) {
+            e.stopPropagation();
+        });
+
+        $(document).on('click', '#rescueModalBackdrop', function(e) {
+            if (e.target === this) {
+                closeRescueModal();
+            }
+        });
+
+        $(document).on('keydown', function(e) {
+            if (e.key === 'Escape' || e.keyCode === 27) {
+                if ($('#rescueModalBackdrop').hasClass('is-open')) {
+                    closeRescueModal();
+                }
+            }
+        });
+
+        // 1-Click GPS Location Retrieval
+        $(document).on('click', '#rescueGetGpsBtn', function(e) {
+            e.preventDefault();
+            var $btn = $(this);
+            var $status = $('#rescueGpsStatus');
+
+            if (!navigator.geolocation) {
+                $status.html('<span class="gps-status-badge error"><i class="fa-solid fa-circle-exclamation"></i> Trình duyệt không hỗ trợ GPS tự động. Vui lòng nhập địa chỉ bên dưới:</span>');
+                $('#rescueManualAddress').focus();
+                return;
+            }
+
+            if (rescueState.isLocating) return;
+            rescueState.isLocating = true;
+
+            $btn.prop('disabled', true).html('<i class="fa-solid fa-spinner fa-spin"></i> <span>Đang định vị vệ tinh...</span>');
+            $status.html('<span class="gps-status-badge locating"><i class="fa-solid fa-spinner fa-spin"></i> Đang kết nối vệ tinh GPS...</span>');
+
+            navigator.geolocation.getCurrentPosition(
+                function(pos) {
+                    rescueState.isLocating = false;
+                    $btn.prop('disabled', false);
+                    rescueState.lat = pos.coords.latitude;
+                    rescueState.lng = pos.coords.longitude;
+                    rescueState.accuracy = Math.round(pos.coords.accuracy);
+
+                    var latStr = rescueState.lat.toFixed(5);
+                    var lngStr = rescueState.lng.toFixed(5);
+                    var mapsUrl = 'https://maps.google.com/?q=' + rescueState.lat + ',' + rescueState.lng;
+
+                    $btn.addClass('is-success').html('<i class="fa-solid fa-circle-check"></i> <span>Đã lấy tọa độ GPS</span>');
+                    $status.html(
+                        '<span class="gps-status-badge success">' +
+                        '<i class="fa-solid fa-location-dot"></i> ' + latStr + ', ' + lngStr + ' (±' + rescueState.accuracy + 'm) ' +
+                        '<a href="' + mapsUrl + '" target="_blank" rel="noopener" class="gps-maps-link">Xem bản đồ</a>' +
+                        '</span>'
+                    );
+
+                    var currentManual = $('#rescueManualAddress').val().trim();
+                    if (!currentManual) {
+                        $('#rescueManualAddress').val('Tọa độ GPS: ' + latStr + ', ' + lngStr + ' (Sai số ~' + rescueState.accuracy + 'm)');
+                    }
+                },
+                function(err) {
+                    rescueState.isLocating = false;
+                    $btn.prop('disabled', false).html('<i class="fa-solid fa-crosshairs"></i> <span>Thử lấy lại GPS</span>');
+                    var errMsg = 'Không lấy được GPS';
+                    if (err.code === 1) {
+                        errMsg = 'Bạn đã từ chối quyền truy cập vị trí';
+                    } else if (err.code === 2) {
+                        errMsg = 'Tín hiệu GPS không khả dụng';
+                    } else if (err.code === 3) {
+                        errMsg = 'Quá thời gian kết nối GPS';
+                    }
+                    $status.html('<span class="gps-status-badge error"><i class="fa-solid fa-circle-exclamation"></i> ' + errMsg + '. Vui lòng nhập địa chỉ bên dưới:</span>');
+                    $('#rescueManualAddress').focus();
+                },
+                {
+                    enableHighAccuracy: true,
+                    timeout: 12000,
+                    maximumAge: 30000
+                }
+            );
+        });
+
+        // Vehicle Issue Chips Toggle
+        $(document).on('click', '.rescue-issue-chip', function(e) {
+            e.preventDefault();
+            $(this).toggleClass('active');
+            if ($('.rescue-issue-chip.active').length === 0) {
+                $(this).addClass('active');
+            }
+        });
+
+        // Build Emergency Message Payload
+        function buildEmergencyMessage() {
+            var issues = $('.rescue-issue-chip.active').map(function() {
+                return $(this).data('issue') || $(this).text().trim();
+            }).get();
+            var issueStr = issues.length > 0 ? issues.join(', ') : 'Cần cứu hộ khẩn cấp';
+
+            var locStr = '';
+            if (rescueState.lat && rescueState.lng) {
+                var mapsUrl = 'https://maps.google.com/?q=' + rescueState.lat + ',' + rescueState.lng;
+                locStr = mapsUrl + ' (Tọa độ: ' + rescueState.lat.toFixed(6) + ', ' + rescueState.lng.toFixed(6) + ')';
+            }
+            var manualLoc = $('#rescueManualAddress').val().trim();
+            if (manualLoc) {
+                locStr = locStr ? (locStr + ' | Địa chỉ bổ sung: ' + manualLoc) : manualLoc;
+            }
+            if (!locStr) {
+                locStr = 'Chưa xác định (Cần gọi lại để xác nhận địa chỉ)';
+            }
+
+            var phone = $('#rescueUserPhone').val().trim() || 'Chưa cung cấp';
+            var car = $('#rescueUserCar').val().trim() || 'Chưa cung cấp';
+
+            var msg = '🚨 YÊU CẦU CỨU HỘ GIAO THÔNG 24/7 - GARA Ô TÔ HẢI HÀ\n' +
+                      '━━━━━━━━━━━━━━━━━━━━━\n' +
+                      '• Sự cố xe: ' + issueStr + '\n' +
+                      '• Vị trí: ' + locStr + '\n' +
+                      '• Số điện thoại khách: ' + phone + '\n' +
+                      '• Xe / Biển số: ' + car + '\n' +
+                      '━━━━━━━━━━━━━━━━━━━━━\n' +
+                      '👉 Kính đề nghị gara điều phối xe cứu hộ hỗ trợ khẩn cấp!';
+
+            return {
+                text: msg,
+                issue: issueStr,
+                location: locStr,
+                phone: phone,
+                car: car
+            };
+        }
+
+        // Zalo Dispatch
+        $(document).on('click', '#rescueDispatchZaloBtn', function(e) {
+            e.preventDefault();
+            var payload = buildEmergencyMessage();
+
+            // Copy to clipboard
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(payload.text).catch(function() {});
+            } else {
+                try {
+                    var $temp = $('<textarea>');
+                    $('body').append($temp);
+                    $temp.val(payload.text).select();
+                    document.execCommand('copy');
+                    $temp.remove();
+                } catch(e) {}
+            }
+
+            showRescueToast('✅ Đã sao chép nội dung vị trí & mở Zalo cứu hộ Hải Hà!', 'success');
+
+            // Open Zalo
+            var zaloUrl = 'https://zalo.me/0911211996';
+            setTimeout(function() {
+                window.open(zaloUrl, '_blank');
+            }, 300);
+        });
+
+        // SMS Fallback Dispatch
+        $(document).on('click', '#rescueDispatchSmsBtn', function(e) {
+            e.preventDefault();
+            var payload = buildEmergencyMessage();
+            var smsUrl = 'sms:0911211996?body=' + encodeURIComponent(payload.text);
+            window.location.href = smsUrl;
+        });
+
     });
 
 })(jQuery);

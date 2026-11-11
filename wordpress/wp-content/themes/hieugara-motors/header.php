@@ -102,7 +102,7 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
 
         <!-- Right: Mobile Quick Rescue Call + Hamburger Toggle -->
         <div class="brand-header-actions">
-            <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="mobile-quick-call" aria-label="<?php esc_attr_e('Gọi hotline cứu hộ 24/7', 'hieugara-motors'); ?>" title="Cứu hộ 24/7: <?php echo esc_attr($rescue_phone); ?>">
+            <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="mobile-quick-call js-open-rescue-modal" aria-label="<?php esc_attr_e('Gọi hotline cứu hộ 24/7', 'hieugara-motors'); ?>" title="Cứu hộ 24/7: <?php echo esc_attr($rescue_phone); ?>">
                 <span class="mobile-call-pulse"></span>
                 <i class="fa-solid fa-phone-volume"></i>
             </a>
@@ -339,7 +339,7 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
         <div class="navbar-inline-actions">
             <?php if (get_option('hieugara_nav_show_rescue_btn', '1') === '1') : ?>
             <!-- 1. Cứu hộ 24/7 (Khẩn cấp #D92D20) -->
-            <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="navbar-rescue-btn" title="Gọi cứu hộ ô tô 24/7 khẩn cấp: <?php echo esc_attr($rescue_phone); ?>">
+            <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="navbar-rescue-btn js-open-rescue-modal" title="Gọi cứu hộ ô tô 24/7 khẩn cấp: <?php echo esc_attr($rescue_phone); ?>">
                 <span class="rescue-live-dot" aria-hidden="true"></span>
                 <i class="fa-solid fa-truck-pickup" aria-hidden="true"></i>
                 <span class="rescue-btn-text">
@@ -377,7 +377,7 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
 
     <!-- Mobile Drawer Bottom Actions -->
     <div class="mobile-drawer-bottom">
-        <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="drawer-btn-rescue">
+        <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $rescue_phone)); ?>" class="drawer-btn-rescue js-open-rescue-modal">
             <i class="fa-solid fa-truck-pickup"></i>
             <span>CỨU HỘ 24/7: <strong><?php echo esc_html($rescue_phone); ?></strong></span>
         </a>

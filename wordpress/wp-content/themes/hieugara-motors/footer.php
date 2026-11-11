@@ -10,8 +10,8 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-$phone_rescue  = '0911 211 996';
-$phone_tech    = '0915 041 989';
+$phone_rescue  = get_option('hieugara_rescue_phone', '0911 211 996');
+$phone_tech    = get_option('hieugara_tech_phone', '0911 211 996');
 $phone_landline= '02203 892 207';
 $rescue_phone  = $phone_rescue;
 $rescue_clean  = preg_replace('/[^0-9]/', '', $rescue_phone);
@@ -234,7 +234,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
     </a>
 
     <!-- 2. Cứu hộ 24/7 (0911 211 996) -->
-    <a href="tel:0911211996" class="float-dock-pill dock-rescue" title="Gọi cứu hộ 24/7 khẩn cấp: 0911 211 996">
+    <a href="tel:<?php echo esc_attr($rescue_clean); ?>" class="float-dock-pill dock-rescue js-open-rescue-modal" title="Gọi cứu hộ 24/7 khẩn cấp: <?php echo esc_attr($rescue_phone); ?>">
         <div class="dock-pulse-beacon">
             <span class="pulse-ring"></span>
             <span class="pulse-dot"></span>
@@ -246,7 +246,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
             </svg>
         </span>
         <i class="fa-solid fa-truck-pickup dock-fa-icon"></i>
-        <span class="dock-text dock-text-desktop">CỨU HỘ: 0911 211 996</span>
+        <span class="dock-text dock-text-desktop">CỨU HỘ: <?php echo esc_html($rescue_phone); ?></span>
         <span class="dock-text dock-text-mobile">Cứu Hộ</span>
     </a>
 
@@ -275,6 +275,124 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
         <span class="dock-text dock-text-desktop">ZALO: 0911 211 996</span>
         <span class="dock-text dock-text-mobile">Chat Zalo</span>
     </a>
+</div>
+
+<!-- =========================================================================
+     EMERGENCY RESCUE 24/7 MODAL (1-CLICK GPS SHARE & ZALO DISPATCH)
+     ========================================================================= -->
+<div class="hieugara-rescue-modal-backdrop" id="rescueModalBackdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="rescueModalTitle">
+    <div class="hieugara-rescue-modal-box">
+        <button type="button" class="rescue-modal-close" id="rescueModalClose" aria-label="Đóng bảng cứu hộ">&times;</button>
+        
+        <!-- Header -->
+        <div class="rescue-modal-header">
+            <div class="rescue-badge-pulsing">
+                <span class="pulse-beacon-ring"></span>
+                <span class="rescue-badge-text"><i class="fa-solid fa-triangle-exclamation"></i> CỨU HỘ GIAO THÔNG 24/7</span>
+            </div>
+            <h3 class="rescue-modal-title" id="rescueModalTitle">Gara Ôtô Hải Hà - Phản Ứng Nhanh</h3>
+            <p class="rescue-modal-desc">Đội cứu hộ túc trực xuyên ngày đêm tại Hải Dương và các tỉnh lân cận. Có mặt sau 15-30 phút.</p>
+        </div>
+
+        <!-- 1. Direct Emergency Call (High priority) -->
+        <div class="rescue-action-call-wrap">
+            <a href="tel:<?php echo esc_attr($rescue_clean); ?>" class="rescue-direct-call-btn" id="rescueDirectCallBtn">
+                <span class="call-pulse-dot"></span>
+                <i class="fa-solid fa-phone-volume"></i>
+                <div class="call-btn-info">
+                    <span class="call-btn-lead">GỌI CỨU HỘ KHẨN CẤP NGAY</span>
+                    <strong class="call-btn-num"><?php echo esc_html($rescue_phone); ?></strong>
+                </div>
+            </a>
+            <span class="call-btn-hint"><i class="fa-solid fa-bolt"></i> Bấm để kết nối trực tiếp với đội trưởng cứu hộ</span>
+        </div>
+
+        <div class="rescue-divider">
+            <span>HOẶC GỬI ĐỊA ĐIỂM SỰ CỐ ĐỂ XE CỨU HỘ TỚI</span>
+        </div>
+
+        <!-- 2. One-click GPS Location Share -->
+        <div class="rescue-form-group">
+            <label class="rescue-form-label">
+                <i class="fa-solid fa-location-crosshairs"></i> 1. Vị trí xe cần cứu hộ:
+            </label>
+            <div class="rescue-gps-action-row">
+                <button type="button" class="rescue-gps-btn" id="rescueGetGpsBtn">
+                    <i class="fa-solid fa-crosshairs"></i>
+                    <span id="rescueGpsBtnText">Lấy Vị Trí Hiện Tại (GPS)</span>
+                </button>
+                <div class="rescue-gps-status" id="rescueGpsStatus">
+                    <span class="gps-status-badge idle"><i class="fa-solid fa-circle-info"></i> Chưa định vị</span>
+                </div>
+            </div>
+            <div class="rescue-location-manual-wrap" id="rescueManualWrap">
+                <input type="text" id="rescueManualAddress" class="rescue-input" placeholder="Hoặc nhập địa chỉ / mốc đường (VD: Km 48 QL5, Chân cầu Hàn, TP Hải Dương...)" aria-label="Địa chỉ cụ thể hoặc mốc nhận biết" />
+            </div>
+        </div>
+
+        <!-- 3. Vehicle Issue Chips -->
+        <div class="rescue-form-group">
+            <label class="rescue-form-label">
+                <i class="fa-solid fa-wrench"></i> 2. Sự cố đang gặp phải:
+            </label>
+            <div class="rescue-issue-grid" id="rescueIssueGrid">
+                <button type="button" class="rescue-issue-chip active" data-issue="Thủng lốp / Nổ lốp">
+                    <span class="chip-icon">🛞</span>
+                    <span class="chip-text">Thủng / Nổ lốp</span>
+                </button>
+                <button type="button" class="rescue-issue-chip" data-issue="Hết bình / Kích ắc quy">
+                    <span class="chip-icon">🔋</span>
+                    <span class="chip-text">Hết bình / Ắc quy</span>
+                </button>
+                <button type="button" class="rescue-issue-chip" data-issue="Chết máy / Ngập nước">
+                    <span class="chip-icon">⚠️</span>
+                    <span class="chip-text">Chết máy / Ngập nước</span>
+                </button>
+                <button type="button" class="rescue-issue-chip" data-issue="Va chạm / Cần xe kéo chở sàn">
+                    <span class="chip-icon">💥</span>
+                    <span class="chip-text">Xe kéo sàn / Va chạm</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 4. Contact Info -->
+        <div class="rescue-form-row">
+            <div class="rescue-form-col">
+                <label for="rescueUserPhone" class="rescue-sublabel">Số điện thoại của bạn:</label>
+                <input type="tel" id="rescueUserPhone" class="rescue-input" placeholder="Nhập SĐT để tài xế gọi lại..." />
+            </div>
+            <div class="rescue-form-col">
+                <label for="rescueUserCar" class="rescue-sublabel">Dòng xe / Biển số (tùy chọn):</label>
+                <input type="text" id="rescueUserCar" class="rescue-input" placeholder="VD: Vios 34A-12345..." />
+            </div>
+        </div>
+
+        <!-- Feedback Alert / Toast -->
+        <div class="rescue-toast" id="rescueToast" style="display: none;"></div>
+
+        <!-- 5. Dispatch Buttons -->
+        <div class="rescue-dispatch-actions">
+            <button type="button" class="rescue-dispatch-zalo" id="rescueDispatchZaloBtn">
+                <svg width="24" height="24" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle; flex-shrink: 0;">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.779 43.5892C10.1019 43.846 13.0061 43.1836 15.0682 42.1825C24.0225 47.1318 38.0197 46.8954 46.4923 41.4732C46.8209 40.9803 47.1279 40.4677 47.4128 39.9363C49.1062 36.7779 50.0004 33.22 50.0004 27.1316V22.7175C50.0004 16.629 49.1062 13.0711 47.4128 9.91273C45.7385 6.75436 43.2461 4.28093 40.0877 2.58758C36.9293 0.894239 33.3714 0 27.283 0H22.8499C17.6644 0 14.2982 0.652754 11.4699 1.89893C11.3153 2.03737 11.1636 2.17818 11.0151 2.32135C2.71734 10.3203 2.08658 27.6593 9.12279 37.0782C9.13064 37.0921 9.13933 37.1061 9.14889 37.1203C10.2334 38.7185 9.18694 41.5154 7.55068 43.1516C7.28431 43.399 7.37944 43.5512 7.779 43.5892Z" fill="white"/>
+                    <path d="M20.5632 17H10.8382V19.0853H17.5869L10.9329 27.3317C10.7244 27.635 10.5728 27.9194 10.5728 28.5639V29.0947H19.748C20.203 29.0947 20.5822 28.7156 20.5822 28.2606V27.1421H13.4922L19.748 19.2938C19.8428 19.1801 20.0134 18.9716 20.0893 18.8768L20.1272 18.8199C20.4874 18.2891 20.5632 17.8341 20.5632 17.2844V17Z" fill="#0068FF"/>
+                    <path d="M32.9416 29.0947H34.3255V17H32.2402V28.3933C32.2402 28.7725 32.5435 29.0947 32.9416 29.0947Z" fill="#0068FF"/>
+                    <path d="M25.814 19.6924C23.1979 19.6924 21.0747 21.8156 21.0747 24.4317C21.0747 27.0478 23.1979 29.171 25.814 29.171C28.4301 29.171 30.5533 27.0478 30.5533 24.4317C30.5723 21.8156 28.4491 19.6924 25.814 19.6924ZM25.814 27.2184C24.2785 27.2184 23.0273 25.9672 23.0273 24.4317C23.0273 22.8962 24.2785 21.645 25.814 21.645C27.3495 21.645 28.6007 22.8962 28.6007 24.4317C28.6007 25.9672 27.3685 27.2184 25.814 27.2184Z" fill="#0068FF"/>
+                    <path d="M40.4867 19.6162C37.8516 19.6162 35.7095 21.7584 35.7095 24.3934C35.7095 27.0285 37.8516 29.1707 40.4867 29.1707C43.1217 29.1707 45.2639 27.0285 45.2639 24.3934C45.2639 21.7584 43.1217 19.6162 40.4867 19.6162ZM40.4867 27.2181C38.9322 27.2181 37.681 25.9669 37.681 24.4124C37.681 22.8579 38.9322 21.6067 40.4867 21.6067C42.0412 21.6067 43.2924 22.8579 43.2924 24.4124C43.2924 25.9669 42.0412 27.2181 40.4867 27.2181Z" fill="#0068FF"/>
+                    <path d="M29.4562 29.0944H30.5747V19.957H28.6221V28.2793C28.6221 28.7153 29.0012 29.0944 29.4562 29.0944Z" fill="#0068FF"/>
+                </svg>
+                <span>GỬI VỊ TRÍ & SỰ CỐ QUA ZALO CỨU HỘ</span>
+            </button>
+            <button type="button" class="rescue-dispatch-sms" id="rescueDispatchSmsBtn">
+                <i class="fa-solid fa-comment-sms"></i>
+                <span>Gửi Tin Nhắn Khẩn Cấp (SMS Dự Phòng)</span>
+            </button>
+        </div>
+
+        <div class="rescue-modal-footer-note">
+            <span><i class="fa-solid fa-shield-halved"></i> Vị trí được bảo mật & chỉ gửi tới kỹ thuật viên cứu hộ Ôtô Hải Hà</span>
+        </div>
+    </div>
 </div>
 
 <?php wp_footer(); ?>
