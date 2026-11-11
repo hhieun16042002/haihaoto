@@ -274,6 +274,19 @@ function hieugara_register_botble_menu_separators() {
 add_action('admin_menu', 'hieugara_register_botble_menu_separators', 8);
 
 // 5. Simplify & Reorder Admin Menu into 3 Intuitive Groups
+function hieugara_register_redirection_menu() {
+    add_menu_page(
+        'Chuyển Hướng 301',
+        'Chuyển Hướng 301',
+        'manage_options',
+        'tools.php?page=redirection.php',
+        '',
+        'dashicons-randomize',
+        75
+    );
+}
+add_action('admin_menu', 'hieugara_register_redirection_menu', 9);
+
 function hieugara_reorder_admin_menu($menu_order) {
     return array(
         // Group 1: Tổng quan
@@ -292,6 +305,8 @@ function hieugara_reorder_admin_menu($menu_order) {
         // Group 3: Cài đặt website
         'botble-sep-system',
         'hieugara-theme-settings',                      // Cài Đặt Hotline & Web
+        'tools.php?page=redirection.php',               // Chuyển Hướng 301 (Tự động bắt link cũ)
+        'plugins.php',                                  // Cài Đặt Plugin
         'users.php',                                    // Tài Khoản Quản Trị
     );
 }
@@ -310,7 +325,6 @@ function hieugara_clean_admin_menu() {
     remove_menu_page('hieugara-accessories-crud');    // Xóa menu phụ kiện thứ 2 bị trùng
     remove_menu_page('edit-comments.php');            // Không dùng bình luận blog
     remove_menu_page('tools.php');                    // Công cụ kỹ thuật phức tạp
-    remove_menu_page('plugins.php');                  // Tránh bấm nhầm tắt plugin
     remove_menu_page('themes.php');                   // Tùy biến qua Cài Đặt Hotline & Web
     remove_menu_page('upload.php');                   // Đã có Thư Viện Ảnh Gara trực quan
     remove_menu_page('options-general.php');          // Tránh cấu hình nhầm URL hệ thống
@@ -363,10 +377,29 @@ function hieugara_clean_admin_menu() {
                     $menu[$key][0] = 'Cài Đặt Hotline & Web';
                     $menu[$key][6] = 'dashicons-admin-generic';
                     break;
+                case 'tools.php?page=redirection.php':
+                    $menu[$key][0] = 'Chuyển Hướng 301';
+                    $menu[$key][6] = 'dashicons-randomize';
+                    break;
+                case 'plugins.php':
+                    $menu[$key][0] = 'Cài Đặt Plugin';
+                    $menu[$key][6] = 'dashicons-admin-plugins';
+                    break;
                 case 'users.php':
                     $menu[$key][0] = 'Tài Khoản Quản Trị';
                     $menu[$key][6] = 'dashicons-admin-users';
                     break;
+            }
+        }
+    }
+
+    // Rename Plugins submenus
+    if (isset($submenu['plugins.php'])) {
+        foreach ($submenu['plugins.php'] as $s_k => $s_v) {
+            if ($s_v[2] === 'plugins.php') {
+                $submenu['plugins.php'][$s_k][0] = 'Plugin Đã Cài Đặt';
+            } elseif ($s_v[2] === 'plugin-install.php') {
+                $submenu['plugins.php'][$s_k][0] = '➕ Cài Plugin Mới';
             }
         }
     }
