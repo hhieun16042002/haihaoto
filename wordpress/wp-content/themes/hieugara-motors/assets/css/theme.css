@@ -4905,6 +4905,17 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     color: #ffffff;
 }
 
+.dock-zalo .dock-zalo-svg-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dock-zalo .dock-zalo-svg-wrap svg {
+    display: block;
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.12));
+}
+
 .dock-zalo:hover {
     background: #0056d6;
     border-color: #ffffff;
