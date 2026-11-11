@@ -981,6 +981,350 @@
             window.location.href = smsUrl;
         });
 
+        // ==========================================================================
+        // SMART VEHICLE DIAGNOSTICS & MAINTENANCE CHECKLIST (NHÓM 1)
+        // ==========================================================================
+        
+        // 1. Tab Switching
+        $(document).on('click', '.smart-tool-tab', function(e) {
+            e.preventDefault();
+            var targetTab = $(this).data('tab');
+            $('.smart-tool-tab').removeClass('active').attr('aria-selected', 'false');
+            $(this).addClass('active').attr('aria-selected', 'true');
+            
+            $('.smart-tool-panel').removeClass('active');
+            $('#panel-' + targetTab).addClass('active');
+        });
+
+        // 2. Maintenance Checklist Logic
+        var maintState = {
+            km: '5000',
+            engine: 'gasoline'
+        };
+
+        var maintData = {
+            '5000': {
+                name: 'Cấp 1 (5.000 km)',
+                desc: 'Bảo dưỡng cấp nhỏ định kỳ - Kiểm tra an toàn căn bản',
+                items: {
+                    gasoline: [
+                        'Thay dầu động cơ chính hãng đúng tiêu chuẩn và độ nhớt',
+                        'Vệ sinh lọc gió động cơ & lọc gió điều hòa cabin',
+                        'Kiểm tra và châm thêm nước làm mát, nước rửa kính',
+                        'Kiểm tra áp suất lốp & độ mòn hoa lốp 4 bánh',
+                        'Soi gầm nhanh 12 điểm an toàn (xì dầu, rách cao su, rô-tuyn)',
+                        'Kiểm tra toàn bộ hệ thống đèn chiếu sáng và gạt mưa'
+                    ],
+                    diesel: [
+                        'Thay dầu động cơ chuyên dụng cho máy dầu Diesel',
+                        'Xả nước lắng cặn đáy cốc lọc nhiên liệu Diesel',
+                        'Vệ sinh lọc gió động cơ & lọc gió điều hòa cabin',
+                        'Kiểm tra nước làm mát động cơ & nước rửa kính',
+                        'Kiểm tra áp suất lốp & độ mòn hoa lốp 4 bánh',
+                        'Soi gầm nhanh 12 điểm an toàn gầm bệ'
+                    ],
+                    electric: [
+                        'Quét chẩn đoán tình trạng pack pin cao áp & cell pin qua cổng OBD-II',
+                        'Kiểm tra dung dịch làm mát pack pin cao áp & mô tơ điện',
+                        'Kiểm tra hệ thống phanh tái sinh năng lượng (Regenerative Braking)',
+                        'Vệ sinh & bôi trơn bảo dưỡng cụm phanh đĩa 4 bánh',
+                        'Vệ sinh lọc gió điều hòa cabin',
+                        'Kiểm tra áp suất lốp & cân bằng động bánh xe điện'
+                    ]
+                }
+            },
+            '10000': {
+                name: 'Cấp 2 (10.000 km)',
+                desc: 'Bảo dưỡng cấp trung bình - Đảo lốp & bảo dưỡng phanh',
+                items: {
+                    gasoline: [
+                        'Tất cả hạng mục bảo dưỡng của cấp 5.000 km',
+                        'Thay mới cốc lọc dầu (lọc nhớt) động cơ chính hãng',
+                        'Đảo lốp 4 bánh & cân bằng động bánh xe chống rung vô lăng',
+                        'Vệ sinh và bảo dưỡng toàn diện hệ thống phanh 4 bánh',
+                        'Đo dòng khởi động & kiểm tra ắc quy bằng máy Midtronics',
+                        'Kiểm tra độ rơ thước lái, hệ thống treo và thanh cân bằng'
+                    ],
+                    diesel: [
+                        'Tất cả hạng mục bảo dưỡng của cấp 5.000 km',
+                        'Thay mới cốc lọc nhớt động cơ Diesel chuyên dụng',
+                        'Đảo lốp 4 bánh & cân bằng động điện tử 4 bánh',
+                        'Vệ sinh & bảo dưỡng toàn bộ hệ thống phanh 4 bánh',
+                        'Kiểm tra ắc quy công suất lớn của máy dầu',
+                        'Kiểm tra hệ thống treo, rô-tuyn gầm & giảm xóc'
+                    ],
+                    electric: [
+                        'Tất cả hạng mục kiểm tra của cấp 5.000 km',
+                        'Đảo lốp 4 bánh & cân bằng động bánh xe điện',
+                        'Kiểm tra độ mòn má phanh & đĩa phanh 4 bánh',
+                        'Cập nhật phần mềm ECU hệ thống điều khiển nếu có phiên bản mới',
+                        'Kiểm tra bình ắc quy 12V phụ trợ cho hệ thống điện',
+                        'Kiểm tra các đường ống dẫn môi chất làm mát pin'
+                    ]
+                }
+            },
+            '20000': {
+                name: 'Cấp 3 (20.000 km)',
+                desc: 'Bảo dưỡng cấp trung bình lớn - Cân chỉnh góc đặt bánh xe Hunter',
+                items: {
+                    gasoline: [
+                        'Tất cả hạng mục bảo dưỡng của cấp 10.000 km',
+                        'Thay mới lọc gió động cơ & lọc gió điều hòa kháng khuẩn',
+                        'Cân chỉnh góc đặt bánh xe điện tử bằng dàn máy Hunter (USA)',
+                        'Vệ sinh họng hút gió, bướm ga và cảm biến khí nạp (MAF)',
+                        'Kiểm tra chất lượng dầu phanh, dầu trợ lực lái & nước làm mát',
+                        'Kiểm tra gầm tổng thể 28 điểm tiêu chuẩn kỹ thuật Hải Hà'
+                    ],
+                    diesel: [
+                        'Tất cả hạng mục bảo dưỡng của cấp 10.000 km',
+                        'Thay mới lọc gió động cơ & lọc gió điều hòa than hoạt tính',
+                        'Cân chỉnh góc đặt bánh xe điện tử Hunter (USA)',
+                        'Vệ sinh bướm ga và cảm biến áp suất đường ống nạp Turbo',
+                        'Kiểm tra tình trạng van luân hồi khí xả EGR máy dầu',
+                        'Kiểm tra tổng thể hệ thống truyền động và gầm bệ 28 điểm'
+                    ],
+                    electric: [
+                        'Tất cả hạng mục bảo dưỡng của cấp 10.000 km',
+                        'Cân chỉnh góc đặt bánh xe Hunter chống nhao lái & mòn lốp lệch',
+                        'Thay mới lọc gió điều hòa than hoạt tính cao cấp',
+                        'Kiểm tra độ kín khít vỏ pack pin chống nước tiêu chuẩn IP68',
+                        'Kiểm tra hệ thống giảm xóc và thanh giằng chịu tải trọng pin nặng',
+                        'Bảo dưỡng tổng thể hệ thống cơ cấu phanh và trợ lực phanh điện'
+                    ]
+                }
+            },
+            '40000': {
+                name: 'Cấp 4 (40.000 km)',
+                desc: 'Bảo dưỡng cấp lớn toàn diện - Thay các loại dầu truyền động & lọc',
+                items: {
+                    gasoline: [
+                        'Tất cả hạng mục bảo dưỡng của cấp 20.000 km',
+                        'Thay mới dầu hộp số (số sàn / số tự động AT / CVT) & dầu cầu',
+                        'Thay mới toàn bộ dầu phanh DOT4 tuần hoàn',
+                        'Thay mới nước làm mát động cơ tuần hoàn',
+                        'Thay mới lọc nhiên liệu xăng chính hãng',
+                        'Thay mới bộ bu-gi đánh lửa (Iridium / Platinum)',
+                        'Vệ sinh kim phun điện tử và buồng đốt bằng máy chuyên dụng',
+                        'Siết lại toàn bộ ốc gầm theo tiêu chuẩn lực xiết nhà sản xuất'
+                    ],
+                    diesel: [
+                        'Tất cả hạng mục bảo dưỡng của cấp 20.000 km',
+                        'Thay mới dầu hộp số và dầu cầu trước / sau',
+                        'Thay mới cốc lọc nhiên liệu Diesel chính hãng',
+                        'Thay mới dầu phanh DOT4 & nước làm mát tuần hoàn',
+                        'Vệ sinh giàn kim phun dầu áp suất cao Common Rail',
+                        'Vệ sinh van EGR và họng nạp muội than máy dầu',
+                        'Siết lại toàn bộ hệ thống gầm theo bảng lực siết kỹ thuật'
+                    ],
+                    electric: [
+                        'Tất cả hạng mục bảo dưỡng của cấp 20.000 km',
+                        'Thay mới dung dịch làm mát pin cao áp chuyên dụng',
+                        'Thay mới dầu bôi trơn cụm truyền động mô-tơ điện',
+                        'Thay mới dầu phanh điện tử tuần hoàn',
+                        'Kiểm tra chuyên sâu độ thoái hóa pin (SOH) và cân bằng cell pin',
+                        'Kiểm tra bảo dưỡng toàn bộ hệ thống cáp điện cam cao áp',
+                        'Siết lại toàn bộ khung gầm đỡ khối pin cao áp'
+                    ]
+                }
+            },
+            '80000': {
+                name: 'Cấp 80.000 km+ (Đại Tu Định Kỳ)',
+                desc: 'Đại tu bảo dưỡng tổng thể - Đưa xe về trạng thái vận hành như mới',
+                items: {
+                    gasoline: [
+                        'Tất cả hạng mục bảo dưỡng cấp lớn 40.000 km',
+                        'Thay dây curoa tổng, bi tăng tỳ, kiểm tra bơm nước làm mát',
+                        'Kiểm tra & thay thế cao su chân máy, chân hộp số nếu bị nứt lún',
+                        'Nội soi làm sạch giàn lạnh điều hòa bằng công nghệ không tháo taplo',
+                        'Kiểm tra phục hồi hệ thống giảm xóc và thanh giằng gầm',
+                        'Đo áp suất buồng đốt từng xi lanh kiểm tra độ kín xéc-măng',
+                        'Thay thế các ống cao su dẫn nước làm mát và dẫn dầu lão hóa'
+                    ],
+                    diesel: [
+                        'Tất cả hạng mục bảo dưỡng cấp lớn 40.000 km',
+                        'Thay mới bộ dây curoa cam / xích cam và curoa tổng',
+                        'Cân chỉnh áp suất bơm cao áp và kim phun máy dầu',
+                        'Vệ sinh bầu lọc khí thải DPF và van luân hồi khí xả EGR',
+                        'Nội soi làm sạch hệ thống giàn lạnh điều hòa',
+                        'Kiểm tra thay thế cao su chân máy dầu và đệm giảm chấn',
+                        'Đại tu bảo dưỡng hệ thống phanh và gầm bệ toàn diện'
+                    ],
+                    electric: [
+                        'Tất cả hạng mục bảo dưỡng của cấp 40.000 km',
+                        'Kiểm tra và kiểm định lại toàn bộ hệ thống ngắt điện an toàn tự động',
+                        'Vệ sinh khử khuẩn nội soi giàn lạnh điều hòa nhiệt độ cabin',
+                        'Kiểm tra độ rơ của trục láp và các khớp cầu truyền động',
+                        'Kiểm định toàn bộ hệ thống cách điện của pack pin và mô tơ',
+                        'Bảo dưỡng hệ thống giảm xóc khí nén / thủy lực xe điện',
+                        'Cân chỉnh lại toàn bộ hệ thống cảm biến hỗ trợ lái ADAS'
+                    ]
+                }
+            }
+        };
+
+        function renderMaintChecklist() {
+            var km = maintState.km;
+            var engine = maintState.engine;
+            var pack = maintData[km];
+            if (!pack) return;
+
+            var engineNames = {
+                gasoline: 'Động Cơ Xăng',
+                diesel: 'Động Cơ Dầu (Diesel)',
+                electric: 'Xe Điện VinFast'
+            };
+
+            var items = (pack.items && pack.items[engine]) ? pack.items[engine] : pack.items.gasoline;
+
+            $('#maintSelectedTitle').text('GÓI BẢO DƯỠNG ' + pack.name.toUpperCase() + ' — ' + engineNames[engine].toUpperCase());
+
+            var html = '';
+            for (var i = 0; i < items.length; i++) {
+                html += '<div class="maint-check-item">' +
+                    '<i class="fa-solid fa-circle-check"></i>' +
+                    '<span>' + items[i] + '</span>' +
+                    '</div>';
+            }
+            $('#maintItemsGrid').html(html);
+
+            // Toggle VinFast Notice
+            if (engine === 'electric') {
+                $('#vfElectricNotice').slideDown(200);
+            } else {
+                $('#vfElectricNotice').slideUp(200);
+            }
+
+            // Update Zalo CTA button
+            var zaloMsg = 'Chào Gara Ôtô Hải Hà, tôi muốn tư vấn gói ' + pack.name + ' cho xe ' + engineNames[engine] + '. Xưởng báo giúp tôi các hạng mục và sắp xếp lịch kiểm tra nhé!';
+            var zaloUrl = 'https://zalo.me/0911211996';
+            $('#maintZaloBtn').attr('href', zaloUrl).off('click.maint').on('click.maint', function(e) {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(zaloMsg).catch(function() {});
+                }
+            });
+        }
+
+        // Click Km Chip
+        $(document).on('click', '.km-chip', function(e) {
+            e.preventDefault();
+            $('.km-chip').removeClass('active');
+            $(this).addClass('active');
+            maintState.km = $(this).data('km').toString();
+            renderMaintChecklist();
+        });
+
+        // Click Engine Chip
+        $(document).on('click', '.engine-chip', function(e) {
+            e.preventDefault();
+            $('.engine-chip').removeClass('active');
+            $(this).addClass('active');
+            maintState.engine = $(this).data('engine');
+            renderMaintChecklist();
+        });
+
+        // 3. Symptom Checker Logic
+        var symptomData = {
+            ac: {
+                title: 'Điều hòa không mát / Chỉ ra gió nóng',
+                severity: 'warning',
+                severityText: '🟡 Cần xử lý sớm',
+                cause: 'Thiếu gas lạnh do rò rỉ ti van hoặc phớt đầu lốc, lốc lạnh (máy nén) không đóng ly hợp từ, tắc phin lọc ga hoặc dàn nóng bám đầy bụi đất không giải nhiệt được.',
+                solution: 'Đo áp suất ga cao áp & thấp áp bằng đồng hồ chuyên dụng, nội soi dàn lạnh khử mùi, kiểm tra điện điều khiển ngắt lốc và xịt rửa vệ sinh dàn nóng tản nhiệt.',
+                zaloMsg: 'Chào Ôtô Hải Hà, xe tôi đang bị: Điều hòa không mát, chỉ ra gió nóng. Kỹ sư tư vấn giúp tôi nguyên nhân và cách khắc phục nhé!'
+            },
+            underbody: {
+                title: 'Gầm kêu lục cục khi qua gờ giảm tốc',
+                severity: 'danger',
+                severityText: '🔴 Nguy hiểm - Cần kiểm tra ngay',
+                cause: 'Rách cao su đệm càng A, vỡ bi bát bèo giảm xóc, lỏng rô-tuyn cân bằng hoặc rơ lỏng thanh giằng thước lái. Để lâu có thể rơi rô-tuyn mất lái.',
+                solution: 'Đưa xe lên cầu nâng thủy lực soi gầm 28 điểm tại Hải Hà, dùng thiết bị chuyên dụng kiểm tra độ rơ của từng khớp rô-tuyn, thay thế linh kiện mòn và siết lực chuẩn.',
+                zaloMsg: 'Chào Ôtô Hải Hà, xe tôi đang bị: Gầm kêu lục cục khi đi đường xóc / qua gờ giảm tốc. Xưởng tư vấn kiểm tra giúp tôi với!'
+            },
+            steering: {
+                title: 'Vô lăng rung lắc / Nhao lái sang bên',
+                severity: 'warning',
+                severityText: '🟡 Nên xử lý ngay',
+                cause: 'Mất chì cân bằng động bánh xe, lốp bị chửa/mòn vẹt không đều, hoặc sai lệch các góc đặt bánh xe (Camber, Caster, Toe) do sụp ổ gà.',
+                solution: 'Cân bằng động điện tử 4 bánh và cân chỉnh độ chụm góc đặt bánh xe bằng dàn máy quang học 3D Hunter (Hoa Kỳ) tại Ôtô Hải Hà (xong trong 20 phút).',
+                zaloMsg: 'Chào Ôtô Hải Hà, xe tôi bị: Vô lăng rung lắc khi chạy tốc độ cao / nhao lái sang một bên. Nhờ xưởng hỗ trợ tư vấn cân chỉnh Hunter!'
+            },
+            brake: {
+                title: 'Phanh rít két két / Đạp phanh bị sâu',
+                severity: 'danger',
+                severityText: '🔴 Cực kỳ nguy hiểm - Dễ mất phanh',
+                cause: 'Má phanh mòn hết đến cữ cảnh báo kim loại, đĩa phanh bị gờ xước / cong vênh nhiệt, hoặc cúp-pen phanh bị xì dầu gây hụt áp lực dầu phanh.',
+                solution: 'Kiểm tra độ dày má phanh, láng phẳng mặt đĩa phanh bằng máy tự động chống rung giật, thay dầu phanh tuần hoàn DOT4 và xả e hệ thống phanh an toàn.',
+                zaloMsg: 'Chào Ôtô Hải Hà, xe tôi đang bị: Phanh có tiếng kêu rít két két / bàn đạp phanh bị sâu. Kỹ sư hỗ trợ tôi gấp nhé!'
+            },
+            start: {
+                title: 'Đề dai khó nổ / Chết máy đột ngột',
+                severity: 'danger',
+                severityText: '🔴 Khẩn cấp - Dễ nằm đường',
+                cause: 'Bình ắc quy tụt áp / hỏng cọc bình, máy phát điện (Dynamo) không nạp, chổi than củ đề mòn, hoặc tắc lọc nhiên liệu / yếu bơm xăng.',
+                solution: 'Đo dòng khởi động CCA của ắc quy bằng máy Midtronics, kiểm tra điện áp sạc máy phát và đo áp suất nhiên liệu đường ống nạp để xử lý triệt để.',
+                zaloMsg: 'Chào Ôtô Hải Hà, xe tôi đang bị: Đề dai khó nổ / chết máy bất ngờ. Xưởng tư vấn kiểm tra giúp tôi với!'
+            },
+            check_engine: {
+                title: 'Đèn Check Engine sáng (Đèn cá vàng)',
+                severity: 'warning',
+                severityText: '🟡 Cần cắm máy quét lỗi OBD-II',
+                cause: 'Cảm biến oxy / cảm biến đo gió (MAF) bẩn hoặc hỏng, bỏ máy (misfire bu-gi/mobin), hỏng van luân hồi khí xả EGR hoặc thủng ống nạp khí.',
+                solution: 'Kỹ sư trưởng Hải Hà kết nối máy chẩn đoán đa năng chuyên hãng quét mã lỗi DTC chuẩn xác, đọc dữ liệu live-data và kiểm tra xóa lỗi miễn phí.',
+                zaloMsg: 'Chào Ôtô Hải Hà, taplo xe tôi đang sáng đèn Check Engine cá vàng. Nhờ xưởng tư vấn quét mã lỗi giúp tôi!'
+            }
+        };
+
+        function renderSymptomDetail(key) {
+            var data = symptomData[key] || symptomData.ac;
+            var html = '<div class="diag-header-row">' +
+                '<div class="diag-title-wrap">' +
+                '<h4 class="diag-symptom-title">' + data.title + '</h4>' +
+                '<span class="diag-severity-pill ' + data.severity + '">' + data.severityText + '</span>' +
+                '</div>' +
+                '</div>' +
+                '<div class="diag-body-grid">' +
+                '<div class="diag-col-box">' +
+                '<h5 class="diag-col-heading cause"><i class="fa-solid fa-triangle-exclamation"></i> Nguyên nhân tiềm ẩn:</h5>' +
+                '<p class="diag-col-text">' + data.cause + '</p>' +
+                '</div>' +
+                '<div class="diag-col-box">' +
+                '<h5 class="diag-col-heading solution"><i class="fa-solid fa-wrench"></i> Giải pháp từ Kỹ Sư Hải Hà:</h5>' +
+                '<p class="diag-col-text">' + data.solution + '</p>' +
+                '</div>' +
+                '</div>' +
+                '<div class="diag-action-bar">' +
+                '<a href="https://zalo.me/0911211996" target="_blank" rel="noopener" class="diag-zalo-btn" id="diagZaloBtn">' +
+                '<i class="fa-solid fa-comment-dots"></i> <span>Nhờ Kỹ Sư Trưởng Hải Hà Tư Vấn Hiện Tượng Này Qua Zalo</span>' +
+                '</a>' +
+                '<a href="tel:0915041989" class="diag-call-btn">' +
+                '<i class="fa-solid fa-phone"></i> <span>Hotline Kỹ Thuật: <strong>0915 041 989</strong></span>' +
+                '</a>' +
+                '</div>';
+
+            $('#diagnosisDetailCard').html(html);
+
+            $('#diagZaloBtn').off('click.diag').on('click.diag', function() {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(data.zaloMsg).catch(function() {});
+                }
+            });
+        }
+
+        // Click Symptom Card
+        $(document).on('click', '.symptom-card', function(e) {
+            e.preventDefault();
+            $('.symptom-card').removeClass('active');
+            $(this).addClass('active');
+            var key = $(this).data('symptom');
+            renderSymptomDetail(key);
+        });
+
+        // Initialize Tools if container exists
+        if ($('.haiha-smart-tools-section').length) {
+            renderMaintChecklist();
+            renderSymptomDetail('ac');
+        }
+
     });
 
 })(jQuery);

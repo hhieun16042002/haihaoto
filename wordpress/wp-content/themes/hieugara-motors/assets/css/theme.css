@@ -15869,4 +15869,588 @@ body.rescue-modal-open {
     }
 }
 
+/* ==========================================================================
+   SMART VEHICLE DIAGNOSTICS & MAINTENANCE CHECKLIST (NHÓM 1)
+   ========================================================================== */
+.haiha-smart-tools-section {
+    padding: 30px 0;
+    font-family: inherit;
+}
+
+.smart-tools-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+.smart-tools-header {
+    margin-bottom: 24px;
+}
+
+.smart-tools-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(140, 98, 57, 0.12);
+    color: #8C6239;
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.smart-tools-heading {
+    font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+    font-weight: 800;
+    color: #0f172a;
+    text-transform: uppercase;
+    margin: 4px 0 8px;
+    letter-spacing: -0.2px;
+}
+
+.smart-tools-sub {
+    font-size: 0.95rem;
+    color: #64748b;
+    max-width: 760px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Nav Tabs */
+.smart-tools-nav-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.smart-tools-nav {
+    display: inline-flex;
+    background: #e2e8f0;
+    padding: 5px;
+    border-radius: 12px;
+    gap: 6px;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.smart-tool-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.smart-tool-tab:hover {
+    color: #0f172a;
+}
+
+.smart-tool-tab.active {
+    background: #0f172a;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+}
+
+.smart-tool-tab .tab-icon {
+    font-size: 16px;
+}
+
+/* Panels */
+.smart-tool-panel {
+    display: none;
+}
+
+.smart-tool-panel.active {
+    display: block;
+    animation: fadeInToolPanel 0.25s ease-out;
+}
+
+@keyframes fadeInToolPanel {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tab 1: Maintenance Builder Card */
+.maint-builder-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    padding: 24px 24px 28px;
+}
+
+.maint-selector-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1.5px solid #f1f5f9;
+    margin-bottom: 22px;
+}
+
+.selector-title {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.selector-title i {
+    color: #8C6239;
+    margin-right: 4px;
+}
+
+.km-chips-row,
+.engine-chips-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.km-chip,
+.engine-chip {
+    background: #f8fafc;
+    border: 1.5px solid #cbd5e1;
+    color: #334155;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.km-chip:hover,
+.engine-chip:hover {
+    border-color: #94a3b8;
+    background: #f1f5f9;
+}
+
+.km-chip.active,
+.engine-chip.active {
+    background: #1e293b;
+    border-color: #1e293b;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(30, 41, 59, 0.2);
+}
+
+/* Checklist Result Box */
+.maint-results-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px 22px;
+}
+
+.maint-results-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 18px;
+}
+
+.maint-badge-lead {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #0f172a;
+}
+
+.maint-badge-lead .lead-dot {
+    width: 9px;
+    height: 9px;
+    background: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+.maint-quality-badge {
+    font-size: 12px;
+    color: #8C6239;
+    font-weight: 700;
+}
+
+.maint-quality-badge i {
+    color: #10b981;
+}
+
+.maint-items-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.maint-check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13.5px;
+    color: #1e293b;
+    line-height: 1.45;
+}
+
+.maint-check-item i {
+    color: #10b981;
+    font-size: 15px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.vf-electric-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #1e40af;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 16px;
+}
+
+.vf-electric-notice i {
+    color: #2563eb;
+    font-size: 16px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.maint-actions-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid #e2e8f0;
+    flex-wrap: wrap;
+}
+
+.maint-cta-zalo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #0068ff;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 11px 22px;
+    border-radius: 9px;
+    box-shadow: 0 4px 14px rgba(0, 104, 255, 0.3);
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.maint-cta-zalo:hover {
+    background: #0056d6;
+    transform: translateY(-1px);
+    color: #ffffff !important;
+}
+
+.maint-cta-call {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #0f172a !important;
+    text-decoration: none !important;
+    font-size: 13.5px;
+    padding: 10px 18px;
+    border-radius: 9px;
+    transition: all 0.15s ease;
+}
+
+.maint-cta-call:hover {
+    border-color: #8C6239;
+    color: #8C6239 !important;
+}
+
+/* Tab 2: Symptom Checker Card */
+.symptom-builder-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    padding: 24px 24px 28px;
+}
+
+.symptom-prompt-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.prompt-icon {
+    font-size: 20px;
+}
+
+.prompt-text {
+    margin: 0;
+    font-size: 13.5px;
+    color: #334155;
+    font-weight: 600;
+}
+
+.symptoms-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.symptom-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 14px 16px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.symptom-card:hover {
+    background: #ffffff;
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+}
+
+.symptom-card.active {
+    background: #ffffff;
+    border-color: #8C6239;
+    box-shadow: 0 0 0 2px rgba(140, 98, 57, 0.2), 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.symptom-icon {
+    font-size: 24px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.symptom-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.symptom-name {
+    font-size: 13.5px;
+    font-weight: 750;
+    color: #0f172a;
+    line-height: 1.35;
+}
+
+.symptom-short {
+    font-size: 12px;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+/* Diagnosis Detail Box */
+.diagnosis-detail-card {
+    background: #f8fafc;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 14px;
+    padding: 22px 24px;
+    animation: fadeInToolPanel 0.25s ease-out;
+}
+
+.diag-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.diag-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.diag-symptom-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+}
+
+.diag-severity-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 50px;
+}
+
+.diag-severity-pill.danger {
+    background: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fca5a5;
+}
+
+.diag-severity-pill.warning {
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fcd34d;
+}
+
+.diag-body-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.diag-col-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 14px 16px;
+}
+
+.diag-col-heading {
+    font-size: 13px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 6px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.diag-col-heading.cause i {
+    color: #ef4444;
+}
+
+.diag-col-heading.solution i {
+    color: #10b981;
+}
+
+.diag-col-text {
+    font-size: 13px;
+    color: #475569;
+    line-height: 1.55;
+    margin: 0;
+}
+
+.diag-action-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.diag-zalo-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #0068ff;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 11px 22px;
+    border-radius: 9px;
+    box-shadow: 0 4px 14px rgba(0, 104, 255, 0.3);
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.diag-zalo-btn:hover {
+    background: #0056d6;
+    transform: translateY(-1px);
+    color: #ffffff !important;
+}
+
+.diag-call-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    color: #0f172a !important;
+    text-decoration: none !important;
+    font-size: 13.5px;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: 9px;
+    transition: all 0.15s ease;
+}
+
+.diag-call-btn:hover {
+    border-color: #8C6239;
+    color: #8C6239 !important;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .symptoms-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .maint-selector-grid {
+        grid-template-columns: 1fr;
+    }
+    .diag-body-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .symptoms-grid {
+        grid-template-columns: 1fr;
+    }
+    .maint-items-grid {
+        grid-template-columns: 1fr;
+    }
+    .maint-builder-card,
+    .symptom-builder-card {
+        padding: 18px 14px;
+    }
+    .smart-tool-tab {
+        padding: 8px 12px;
+        font-size: 12.5px;
+    }
+}
+
+
 
