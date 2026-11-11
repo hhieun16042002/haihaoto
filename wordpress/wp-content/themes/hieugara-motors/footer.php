@@ -328,6 +328,14 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
             <div class="rescue-location-manual-wrap" id="rescueManualWrap">
                 <input type="text" id="rescueManualAddress" class="rescue-input" placeholder="Hoặc nhập địa chỉ / mốc đường (VD: Km 48 QL5, Chân cầu Hàn, TP Hải Dương...)" aria-label="Địa chỉ cụ thể hoặc mốc nhận biết" />
             </div>
+            <div class="rescue-quick-landmarks">
+                <span class="landmark-hint"><i class="fa-solid fa-map-pin"></i> Mốc nhanh:</span>
+                <button type="button" class="landmark-chip" data-place="Cầu Hàn, TP Hải Dương">Cầu Hàn</button>
+                <button type="button" class="landmark-chip" data-place="Cầu Phú Lương, QL5">Cầu Phú Lương</button>
+                <button type="button" class="landmark-chip" data-place="Ngã 4 Máy Sứ, TP Hải Dương">Ngã 4 Máy Sứ</button>
+                <button type="button" class="landmark-chip" data-place="QL5 (Đoạn qua Hải Dương)">QL5</button>
+                <button type="button" class="landmark-chip" data-place="Cao tốc 5B Hà Nội - Hải Phòng">Cao tốc 5B</button>
+            </div>
         </div>
 
         <!-- 3. Vehicle Issue Chips -->

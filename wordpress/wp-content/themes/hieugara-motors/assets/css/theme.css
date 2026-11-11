@@ -15301,20 +15301,19 @@ figcaption i.fa-solid.fa-camera,
     bottom: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(10, 14, 23, 0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(10, 14, 23, 0.94);
     z-index: 9999999;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    padding: 16px;
+    padding: 20px 16px;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.15s ease, visibility 0.15s ease;
     overflow-y: auto;
-    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
 }
 
 .hieugara-rescue-modal-backdrop.is-open {
@@ -15325,7 +15324,6 @@ figcaption i.fa-solid.fa-camera,
 
 body.rescue-modal-open {
     overflow: hidden !important;
-    touch-action: none;
 }
 
 .hieugara-rescue-modal-box {
@@ -15333,22 +15331,21 @@ body.rescue-modal-open {
     width: 100%;
     max-width: 540px;
     background: #141824;
-    border: 1.5px solid rgba(220, 38, 38, 0.45);
+    border: 1.5px solid rgba(220, 38, 38, 0.5);
     border-radius: 20px;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 35px rgba(220, 38, 38, 0.2);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(220, 38, 38, 0.2);
     padding: 26px 24px;
     color: #ffffff;
-    max-height: calc(100vh - 32px);
-    overflow-y: auto;
-    transform: scale(0.92) translateY(18px);
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    margin: auto;
+    margin: 20px auto;
     font-family: inherit;
     box-sizing: border-box;
+    transform: translate3d(0, 12px, 0);
+    transition: transform 0.15s ease;
+    will-change: transform, opacity;
 }
 
 .hieugara-rescue-modal-backdrop.is-open .hieugara-rescue-modal-box {
-    transform: scale(1) translateY(0);
+    transform: translate3d(0, 0, 0);
 }
 
 /* Close Button */
@@ -15467,7 +15464,11 @@ body.rescue-modal-open {
 .rescue-direct-call-btn i {
     font-size: 24px;
     color: #ffffff;
-    animation: rescuePhoneShake 1.8s infinite ease-in-out;
+    transition: transform 0.2s ease;
+}
+
+.rescue-direct-call-btn:hover i {
+    animation: rescuePhoneShake 0.6s ease-in-out;
 }
 
 @keyframes rescuePhoneShake {
@@ -15663,6 +15664,39 @@ body.rescue-modal-open {
 .rescue-input::placeholder {
     color: #64748b;
     font-size: 13px;
+}
+
+/* Quick Landmarks Chips */
+.rescue-quick-landmarks {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.landmark-hint {
+    font-size: 11.5px;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+.landmark-chip {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: #cbd5e1;
+    border-radius: 6px;
+    padding: 4px 9px;
+    font-size: 11.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.landmark-chip:hover {
+    background: rgba(212, 185, 150, 0.2);
+    border-color: #d4b996;
+    color: #ffffff;
 }
 
 /* Issue Chips Grid */

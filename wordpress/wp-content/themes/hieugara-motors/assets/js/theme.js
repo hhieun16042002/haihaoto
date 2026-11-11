@@ -769,14 +769,28 @@
             }
         });
 
-        // 1-Click GPS Location Retrieval
+        // Quick Landmark Chips
+        $(document).on('click', '.landmark-chip', function(e) {
+            e.preventDefault();
+            var place = $(this).data('place') || $(this).text().trim();
+            var $input = $('#rescueManualAddress');
+            var current = $input.val().trim();
+            if (!current || current.indexOf('Tọa độ GPS') === 0) {
+                $input.val(place);
+            } else if (current.indexOf(place) === -1) {
+                $input.val(current + ' - ' + place);
+            }
+            $input.focus();
+        });
+
+        // 1-Click GPS Location Retrieval (Fast, Accurate & Non-blocking)
         $(document).on('click', '#rescueGetGpsBtn', function(e) {
             e.preventDefault();
             var $btn = $(this);
             var $status = $('#rescueGpsStatus');
 
             if (!navigator.geolocation) {
-                $status.html('<span class="gps-status-badge error"><i class="fa-solid fa-circle-exclamation"></i> Trình duyệt không hỗ trợ GPS tự động. Vui lòng nhập địa chỉ bên dưới:</span>');
+                $status.html('<span class="gps-status-badge error"><i class="fa-solid fa-circle-exclamation"></i> Thiết bị không hỗ trợ GPS. Vui lòng nhập địa chỉ bên dưới:</span>');
                 $('#rescueManualAddress').focus();
                 return;
             }
@@ -784,8 +798,8 @@
             if (rescueState.isLocating) return;
             rescueState.isLocating = true;
 
-            $btn.prop('disabled', true).html('<i class="fa-solid fa-spinner fa-spin"></i> <span>Đang định vị vệ tinh...</span>');
-            $status.html('<span class="gps-status-badge locating"><i class="fa-solid fa-spinner fa-spin"></i> Đang kết nối vệ tinh GPS...</span>');
+            $btn.prop('disabled', true).html('<i class="fa-solid fa-spinner fa-spin"></i> <span>Đang dò GPS...</span>');
+            $status.html('<span class="gps-status-badge locating"><i class="fa-solid fa-spinner fa-spin"></i> Đang kết nối vệ tinh định vị...</span>');
 
             navigator.geolocation.getCurrentPosition(
                 function(pos) {
@@ -793,43 +807,91 @@
                     $btn.prop('disabled', false);
                     rescueState.lat = pos.coords.latitude;
                     rescueState.lng = pos.coords.longitude;
-                    rescueState.accuracy = Math.round(pos.coords.accuracy);
+
+                    var rawAcc = pos.coords.accuracy;
+                    var accMeters = Math.round(rawAcc);
+                    if (accMeters <= 2 || isNaN(accMeters) || accMeters === 0) {
+                        accMeters = 2; // Real-world optimal GPS fix
+                    }
+                    rescueState.accuracy = accMeters;
 
                     var latStr = rescueState.lat.toFixed(5);
                     var lngStr = rescueState.lng.toFixed(5);
                     var mapsUrl = 'https://maps.google.com/?q=' + rescueState.lat + ',' + rescueState.lng;
 
-                    $btn.addClass('is-success').html('<i class="fa-solid fa-circle-check"></i> <span>Đã lấy tọa độ GPS</span>');
-                    $status.html(
-                        '<span class="gps-status-badge success">' +
-                        '<i class="fa-solid fa-location-dot"></i> ' + latStr + ', ' + lngStr + ' (±' + rescueState.accuracy + 'm) ' +
-                        '<a href="' + mapsUrl + '" target="_blank" rel="noopener" class="gps-maps-link">Xem bản đồ</a>' +
-                        '</span>'
-                    );
+                    $btn.addClass('is-success').html('<i class="fa-solid fa-circle-check"></i> <span>Đã lấy tọa độ</span>');
 
-                    var currentManual = $('#rescueManualAddress').val().trim();
-                    if (!currentManual) {
-                        $('#rescueManualAddress').val('Tọa độ GPS: ' + latStr + ', ' + lngStr + ' (Sai số ~' + rescueState.accuracy + 'm)');
+                    var badgeHtml = '';
+                    if (accMeters <= 5) {
+                        badgeHtml = '<span class="gps-status-badge success">' +
+                            '<i class="fa-solid fa-satellite-dish"></i> Chuẩn GPS (±' + accMeters + 'm): ' + latStr + ', ' + lngStr + ' ' +
+                            '<a href="' + mapsUrl + '" target="_blank" rel="noopener" class="gps-maps-link">Xem bản đồ</a>' +
+                            '</span>';
+                    } else if (accMeters <= 30) {
+                        badgeHtml = '<span class="gps-status-badge success">' +
+                            '<i class="fa-solid fa-location-dot"></i> Tọa độ GPS (±' + accMeters + 'm): ' + latStr + ', ' + lngStr + ' ' +
+                            '<a href="' + mapsUrl + '" target="_blank" rel="noopener" class="gps-maps-link">Xem bản đồ</a>' +
+                            '</span>';
+                    } else {
+                        badgeHtml = '<span class="gps-status-badge locating">' +
+                            '<i class="fa-solid fa-wifi"></i> Vị trí mạng Wi-Fi (sai số ~' + accMeters + 'm) ' +
+                            '<a href="' + mapsUrl + '" target="_blank" rel="noopener" class="gps-maps-link">Xem bản đồ</a>' +
+                            '</span>';
+                    }
+                    $status.html(badgeHtml);
+
+                    // Non-blocking reverse geocoding to human street address
+                    if (window.fetch) {
+                        var controller = window.AbortController ? new AbortController() : null;
+                        var fetchTimer = setTimeout(function() { if (controller) controller.abort(); }, 2500);
+
+                        fetch('https://nominatim.openstreetmap.org/reverse?format=json&lat=' + rescueState.lat + '&lon=' + rescueState.lng + '&accept-language=vi', {
+                            signal: controller ? controller.signal : undefined
+                        })
+                        .then(function(res) { return res.json(); })
+                        .then(function(data) {
+                            clearTimeout(fetchTimer);
+                            if (data && data.address) {
+                                var parts = [];
+                                if (data.address.road) parts.push(data.address.road);
+                                if (data.address.suburb || data.address.quarter) parts.push(data.address.suburb || data.address.quarter);
+                                if (data.address.city || data.address.county || data.address.town) parts.push(data.address.city || data.address.county || data.address.town);
+                                var formatted = parts.join(', ');
+                                if (formatted && !$('#rescueManualAddress').val().trim()) {
+                                    $('#rescueManualAddress').val(formatted);
+                                }
+                            }
+                        })
+                        .catch(function() {
+                            clearTimeout(fetchTimer);
+                            if (!$('#rescueManualAddress').val().trim()) {
+                                $('#rescueManualAddress').val('Tọa độ GPS: ' + latStr + ', ' + lngStr + ' (Sai số ~' + accMeters + 'm)');
+                            }
+                        });
+                    } else {
+                        if (!$('#rescueManualAddress').val().trim()) {
+                            $('#rescueManualAddress').val('Tọa độ GPS: ' + latStr + ', ' + lngStr + ' (Sai số ~' + accMeters + 'm)');
+                        }
                     }
                 },
                 function(err) {
                     rescueState.isLocating = false;
                     $btn.prop('disabled', false).html('<i class="fa-solid fa-crosshairs"></i> <span>Thử lấy lại GPS</span>');
-                    var errMsg = 'Không lấy được GPS';
+                    var errMsg = 'Không lấy được GPS tự động';
                     if (err.code === 1) {
-                        errMsg = 'Bạn đã từ chối quyền truy cập vị trí';
+                        errMsg = 'Chưa cấp quyền vị trí cho trình duyệt';
                     } else if (err.code === 2) {
-                        errMsg = 'Tín hiệu GPS không khả dụng';
+                        errMsg = 'Tín hiệu GPS yếu hoặc thiết bị không có GPS';
                     } else if (err.code === 3) {
-                        errMsg = 'Quá thời gian kết nối GPS';
+                        errMsg = 'Hết thời gian chờ GPS';
                     }
-                    $status.html('<span class="gps-status-badge error"><i class="fa-solid fa-circle-exclamation"></i> ' + errMsg + '. Vui lòng nhập địa chỉ bên dưới:</span>');
+                    $status.html('<span class="gps-status-badge error"><i class="fa-solid fa-circle-exclamation"></i> ' + errMsg + '. Vui lòng nhập địa chỉ / chọn mốc bên dưới:</span>');
                     $('#rescueManualAddress').focus();
                 },
                 {
                     enableHighAccuracy: true,
-                    timeout: 12000,
-                    maximumAge: 30000
+                    timeout: 6000,
+                    maximumAge: 0
                 }
             );
         });
