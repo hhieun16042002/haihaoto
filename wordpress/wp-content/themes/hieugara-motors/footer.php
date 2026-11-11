@@ -291,7 +291,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                 <span class="rescue-badge-text"><i class="fa-solid fa-triangle-exclamation"></i> CỨU HỘ GIAO THÔNG 24/7</span>
             </div>
             <h3 class="rescue-modal-title" id="rescueModalTitle">Gara Ôtô Hải Hà - Phản Ứng Nhanh</h3>
-            <p class="rescue-modal-desc">Đội cứu hộ túc trực xuyên ngày đêm tại Hải Dương và các tỉnh lân cận. Có mặt sau 15-30 phút.</p>
+            <p class="rescue-modal-desc">Đội cứu hộ túc trực xuyên ngày đêm tại Hải Phòng và các tỉnh lân cận. Có mặt sau 15-30 phút.</p>
         </div>
 
         <!-- 1. Direct Emergency Call (High priority) -->

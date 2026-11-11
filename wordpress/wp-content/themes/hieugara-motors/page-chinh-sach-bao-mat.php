@@ -127,7 +127,7 @@ $hotline_phone = get_option('hieugara_hotline_phone', '02203 892 207');
                     6. Điều Khoản Dịch Vụ Cứu Hộ Giao Thông 24/7 &amp; Khuyến Cáo Kỹ Thuật Trực Tuyến
                 </h2>
                 <ul style="padding-left: 20px;">
-                    <li><strong>Ước tính thời gian tiếp cận cứu hộ:</strong> Thời gian có mặt 15 – 30 phút là ước tính trong điều kiện giao thông bình thường tại khu vực Hải Dương và các tuyến đường kết nối chính (không áp dụng trong các trường hợp bất khả kháng như bão lũ, đường ngập sâu, cấm tải hoặc ùn tắc giao thông nghiêm trọng).</li>
+                    <li><strong>Ước tính thời gian tiếp cận cứu hộ:</strong> Thời gian có mặt 15 – 30 phút là ước tính trong điều kiện giao thông bình thường tại khu vực Hải Phòng và các tuyến đường kết nối chính (không áp dụng trong các trường hợp bất khả kháng như bão lũ, đường ngập sâu, cấm tải hoặc ùn tắc giao thông nghiêm trọng).</li>
                     <li><strong>Minh bạch chi phí cứu hộ:</strong> Kỹ thuật viên cứu hộ Hải Hà sẽ thông báo rõ chi phí cứu hộ/kéo xe qua điện thoại trước khi xe cứu hộ xuất phát và chỉ tiến hành khi chủ xe đã đồng ý.</li>
                     <li><strong>Miễn trừ trách nhiệm công cụ chẩn đoán online:</strong> Bảng tra cứu bảo dưỡng theo số Km và công cụ bắt bệnh xe nhanh trên website mang tính chất tham khảo kỹ thuật tiêu chuẩn. Tình trạng thực tế cần được kiểm tra trực tiếp tại xưởng bằng thiết bị đo kiểm và máy quét OBD-II chuyên hãng.</li>
                 </ul>
