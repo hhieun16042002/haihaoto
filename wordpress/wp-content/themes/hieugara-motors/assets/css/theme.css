@@ -16452,5 +16452,40 @@ body.rescue-modal-open {
     }
 }
 
+/* Smart Tool Disclaimer Box */
+.smart-tool-disclaimer {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #8C6239;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-top: 24px;
+    font-size: 13px;
+    color: #475569;
+    line-height: 1.6;
+}
+.smart-tool-disclaimer i {
+    color: #8C6239;
+    font-size: 16px;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+.smart-tool-disclaimer p {
+    margin: 0;
+}
+.smart-tool-disclaimer a {
+    color: #8C6239;
+    font-weight: 700;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+.smart-tool-disclaimer a:hover {
+    color: #1e293b;
+}
+
+
 
 

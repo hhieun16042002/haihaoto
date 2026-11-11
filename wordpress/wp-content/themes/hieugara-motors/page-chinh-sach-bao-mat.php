@@ -78,6 +78,13 @@ $hotline_phone = get_option('hieugara_hotline_phone', '02203 892 207');
 
                 <h3 style="font-size: 1.05rem; font-weight: 700; color: #1e293b; margin: 16px 0 8px;">2.5. Tích hợp dịch vụ của bên thứ ba (Điều 18 Luật 91/2025/QH15)</h3>
                 <p>Website có sử dụng bản đồ nhúng Google Maps để hỗ trợ chỉ đường đến xưởng. Khi Quý khách tương tác với bản đồ, dữ liệu địa chỉ IP kết nối mạng có thể được truyền tải tới máy chủ của Google theo chính sách bảo mật của Google.</p>
+
+                <h3 style="font-size: 1.05rem; font-weight: 700; color: #1e293b; margin: 16px 0 8px;">2.6. Chính sách bảo vệ dữ liệu vị trí vệ tinh (GPS Cứu Hộ 24/7)</h3>
+                <p>Khi Quý khách sử dụng tính năng "Cứu hộ khẩn cấp 24/7" và đồng ý cấp quyền vị trí trình duyệt:</p>
+                <ul style="padding-left: 20px;">
+                    <li>Tọa độ GPS chỉ được sử dụng duy nhất cho mục đích định hướng và điều phối phương tiện cứu hộ Hải Hà tiếp cận xe gặp sự cố trong thời gian sớm nhất.</li>
+                    <li>Chúng tôi không lưu vết ngầm, không theo dõi định vị sau khi phiên cứu hộ kết thúc và tuyệt đối không chia sẻ dữ liệu vị trí cho bất kỳ bên thứ ba nào vì mục đích thương mại.</li>
+                </ul>
             </section>
 
             <!-- Section 3: Chính sách giá & VAT -->
@@ -104,7 +111,7 @@ $hotline_phone = get_option('hieugara_hotline_phone', '02203 892 207');
             </section>
 
             <!-- Section 5: Quy trình tiếp nhận giải quyết khiếu nại -->
-            <section>
+            <section style="margin-bottom: 36px;">
                 <h2 style="font-family: 'Be Vietnam Pro', sans-serif; font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-bottom: 14px;">
                     5. Quy Trình Tiếp Nhận &amp; Giải Quyết Khiếu Nại
                 </h2>
@@ -112,6 +119,18 @@ $hotline_phone = get_option('hieugara_hotline_phone', '02203 892 207');
                 <p style="background: #FFFBEB; border-left: 4px solid #F59E0B; padding: 14px 18px; border-radius: 4px; font-weight: 600; color: #92400E;">
                     Đường dây nóng phản ánh chất lượng &amp; khiếu nại dịch vụ: <strong>0911 211 996</strong> (Giám đốc kỹ thuật tiếp nhận trực tiếp 24/7). Chúng tôi cam kết phản hồi và xử lý thỏa đáng trong vòng 24 giờ làm việc.
                 </p>
+            </section>
+
+            <!-- Section 6: Điều khoản cứu hộ & Khuyến cáo kỹ thuật trực tuyến -->
+            <section style="margin-bottom: 36px;">
+                <h2 style="font-family: 'Be Vietnam Pro', sans-serif; font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-bottom: 14px;">
+                    6. Điều Khoản Dịch Vụ Cứu Hộ Giao Thông 24/7 &amp; Khuyến Cáo Kỹ Thuật Trực Tuyến
+                </h2>
+                <ul style="padding-left: 20px;">
+                    <li><strong>Ước tính thời gian tiếp cận cứu hộ:</strong> Thời gian có mặt 15 – 30 phút là ước tính trong điều kiện giao thông bình thường tại khu vực Hải Dương và các tuyến đường kết nối chính (không áp dụng trong các trường hợp bất khả kháng như bão lũ, đường ngập sâu, cấm tải hoặc ùn tắc giao thông nghiêm trọng).</li>
+                    <li><strong>Minh bạch chi phí cứu hộ:</strong> Kỹ thuật viên cứu hộ Hải Hà sẽ thông báo rõ chi phí cứu hộ/kéo xe qua điện thoại trước khi xe cứu hộ xuất phát và chỉ tiến hành khi chủ xe đã đồng ý.</li>
+                    <li><strong>Miễn trừ trách nhiệm công cụ chẩn đoán online:</strong> Bảng tra cứu bảo dưỡng theo số Km và công cụ bắt bệnh xe nhanh trên website mang tính chất tham khảo kỹ thuật tiêu chuẩn. Tình trạng thực tế cần được kiểm tra trực tiếp tại xưởng bằng thiết bị đo kiểm và máy quét OBD-II chuyên hãng.</li>
+                </ul>
             </section>
 
         </article>

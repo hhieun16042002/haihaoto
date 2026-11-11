@@ -181,5 +181,12 @@ $zalo_phone    = '0911211996';
             </div>
         </div>
 
+        <!-- Technical Disclaimer -->
+        <div class="smart-tool-disclaimer">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <p><strong>Khuyến cáo kỹ thuật &amp; Pháp lý:</strong> Bảng tra cứu hạng mục bảo dưỡng và công cụ bắt bệnh xe nhanh mang tính chất tham khảo kỹ thuật tiêu chuẩn. Tình trạng thực tế của từng xe phụ thuộc vào điều kiện vận hành cụ thể. Quý khách vui lòng đưa xe đến xưởng Ôtô Hải Hà để kỹ thuật viên kiểm tra trực tiếp bằng máy chẩn đoán chuyên dụng trước khi quyết định can thiệp sửa chữa. Xem thêm tại <a href="<?php echo esc_url(home_url('/chinh-sach-bao-mat/')); ?>">Chính sách bảo mật &amp; Điều khoản dịch vụ</a>.</p>
+        </div>
+
     </div>
 </section>
+

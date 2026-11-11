@@ -398,7 +398,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
         </div>
 
         <div class="rescue-modal-footer-note">
-            <span><i class="fa-solid fa-shield-halved"></i> Vị trí được bảo mật & chỉ gửi tới kỹ thuật viên cứu hộ Ôtô Hải Hà</span>
+            <span><i class="fa-solid fa-shield-halved"></i> Vị trí được bảo mật & chỉ gửi tới kỹ thuật viên cứu hộ Hải Hà &bull; <a href="<?php echo esc_url(home_url('/chinh-sach-bao-mat/')); ?>" target="_blank" style="color: #94a3b8; text-decoration: underline;">Chính sách bảo mật vị trí</a></span>
         </div>
     </div>
 </div>
