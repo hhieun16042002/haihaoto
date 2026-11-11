@@ -91,8 +91,8 @@ $banner_bg = function_exists('hieugara_get_current_page_banner') ? hieugara_get_
                     <a href="<?php echo esc_url(home_url('/ve-chung-toi/')); ?>" style="background: #f1f5f9; color: #1e293b; border: 1px solid #cbd5e1; padding: 10px 18px; border-radius: 6px; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.85rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
                         <i class="fa-solid fa-users"></i> Về Chúng Tôi
                     </a>
-                    <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>" style="background: #C5A880; color: #141414; padding: 10px 18px; border-radius: 6px; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.85rem; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-                        <i class="fa-solid fa-calendar-check"></i> Đặt Lịch Tiếp Nhận
+                    <a href="<?php echo esc_url(home_url('/lien-he/')); ?>" style="background: #C5A880; color: #141414; padding: 10px 18px; border-radius: 6px; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.85rem; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+                        <i class="fa-solid fa-phone"></i> Liên Hệ Trực Tiếp
                     </a>
                 </div>
             </div>

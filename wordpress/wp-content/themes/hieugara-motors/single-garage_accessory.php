@@ -556,9 +556,9 @@ html, body {
                                 <span>CHAT ZALO TƯ VẤN LẮP ĐẶT</span>
                             </a>
 
-                            <a href="<?php echo esc_url(home_url('/dat-lich/')); ?>" class="btn-acc-book-modal" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: #0f172a; color: #ffffff; text-decoration: none; padding: 12px; border-radius: 6px; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.88rem; font-weight: 700; text-transform: uppercase;">
-                                <i class="fa-solid fa-calendar-check"></i>
-                                <span>ĐẶT HẸN LẮP ĐẶT TẠI XƯỞNG</span>
+                            <a href="<?php echo esc_url(home_url('/lien-he/')); ?>" class="btn-acc-book-modal" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: #0f172a; color: #ffffff; text-decoration: none; padding: 12px; border-radius: 6px; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.88rem; font-weight: 700; text-transform: uppercase;">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>LIÊN HỆ ĐẾN XƯỞNG LẮP ĐẶT</span>
                             </a>
                         </div>
 
