@@ -7,7 +7,7 @@
  */
 
 $rescue_phone  = get_option('hieugara_rescue_phone', '0911 211 996');
-$tech_phone    = get_option('hieugara_tech_phone', '0915 041 989');
+$tech_phone    = '02203 892 207';
 $zalo_phone    = '0911211996';
 ?>
 
@@ -15,20 +15,17 @@ $zalo_phone    = '0911211996';
     <div class="smart-tools-container">
         <!-- Section Header -->
         <div class="smart-tools-header text-center">
-            <span class="smart-tools-badge"><i class="fa-solid fa-microchip"></i> TIỆN ÍCH KỸ THUẬT Ô TÔ HẢI HÀ</span>
+            <span class="smart-tools-badge">TIỆN ÍCH KỸ THUẬT Ô TÔ HẢI HÀ</span>
             <h2 class="smart-tools-heading">TRUNG TÂM TRA CỨU BẢO DƯỠNG &amp; BẮT BỆNH XE THÔNG MINH</h2>
-            <p class="smart-tools-sub">Biết ngay các hạng mục phụ tùng cần làm theo từng mốc số Km hoặc chẩn đoán nguyên nhân triệu chứng xe đang gặp phải trước khi mang xe tới xưởng.</p>
         </div>
 
         <!-- Tool Nav Tabs -->
         <div class="smart-tools-nav-wrap">
             <div class="smart-tools-nav" role="tablist">
                 <button type="button" class="smart-tool-tab active" data-tab="maintenance" role="tab" aria-selected="true" id="tab-btn-maint">
-                    <span class="tab-icon">🛞</span>
                     <span class="tab-label">Tra Cứu Hạng Mục Bảo Dưỡng Theo Km</span>
                 </button>
                 <button type="button" class="smart-tool-tab" data-tab="symptoms" role="tab" aria-selected="false" id="tab-btn-symp">
-                    <span class="tab-icon">🔍</span>
                     <span class="tab-label">Bắt Bệnh Xe Nhanh Theo Hiện Tượng</span>
                 </button>
             </div>
@@ -43,7 +40,7 @@ $zalo_phone    = '0911211996';
                 <div class="maint-selector-grid">
                     <!-- 1. Select Km -->
                     <div class="selector-group">
-                        <label class="selector-title"><i class="fa-solid fa-gauge-high"></i> 1. Chọn cấp số Km hiện tại của xe:</label>
+                        <label class="selector-title">1. Chọn cấp số Km hiện tại của xe:</label>
                         <div class="km-chips-row" id="kmChipsRow">
                             <button type="button" class="km-chip active" data-km="5000">5.000 km</button>
                             <button type="button" class="km-chip" data-km="10000">10.000 km</button>
@@ -55,11 +52,11 @@ $zalo_phone    = '0911211996';
 
                     <!-- 2. Select Engine -->
                     <div class="selector-group">
-                        <label class="selector-title"><i class="fa-solid fa-car-side"></i> 2. Chọn loại động cơ:</label>
+                        <label class="selector-title">2. Chọn loại động cơ:</label>
                         <div class="engine-chips-row" id="engineChipsRow">
-                            <button type="button" class="engine-chip active" data-engine="gasoline">⛽ Động Cơ Xăng</button>
-                            <button type="button" class="engine-chip" data-engine="diesel">🛢️ Động Cơ Dầu (Diesel)</button>
-                            <button type="button" class="engine-chip" data-engine="electric">⚡ Xe Điện VinFast</button>
+                            <button type="button" class="engine-chip active" data-engine="gasoline">Động Cơ Xăng</button>
+                            <button type="button" class="engine-chip" data-engine="diesel">Động Cơ Dầu (Diesel)</button>
+                            <button type="button" class="engine-chip" data-engine="electric">Xe Điện VinFast</button>
                         </div>
                     </div>
                 </div>
@@ -68,10 +65,8 @@ $zalo_phone    = '0911211996';
                 <div class="maint-results-box" id="maintResultsBox">
                     <div class="maint-results-header">
                         <div class="maint-badge-lead">
-                            <span class="lead-dot"></span>
                             <strong id="maintSelectedTitle">GÓI BẢO DƯỠNG CẤP 1 (5.000 KM) — ĐỘNG CƠ XĂNG</strong>
                         </div>
-                        <span class="maint-quality-badge"><i class="fa-solid fa-circle-check"></i> Tiêu Chuẩn 45 Hạng Mục Kỹ Thuật Hải Hà</span>
                     </div>
 
                     <!-- Checklist Items List -->
@@ -96,11 +91,11 @@ $zalo_phone    = '0911211996';
                                 <path d="M40.4867 19.6162C37.8516 19.6162 35.7095 21.7584 35.7095 24.3934C35.7095 27.0285 37.8516 29.1707 40.4867 29.1707C43.1217 29.1707 45.2639 27.0285 45.2639 24.3934C45.2639 21.7584 43.1217 19.6162 40.4867 19.6162ZM40.4867 27.2181C38.9322 27.2181 37.681 25.9669 37.681 24.4124C37.681 22.8579 38.9322 21.6067 40.4867 21.6067C42.0412 21.6067 43.2924 22.8579 43.2924 24.4124C43.2924 25.9669 42.0412 27.2181 40.4867 27.2181Z" fill="#0068FF"/>
                                 <path d="M29.4562 29.0944H30.5747V19.957H28.6221V28.2793C28.6221 28.7153 29.0012 29.0944 29.4562 29.0944Z" fill="#0068FF"/>
                             </svg>
-                            <span>Nhận Tư Vấn Gói Bảo Dưỡng Này Qua Zalo</span>
+                            <span>Tư vấn qua Zalo</span>
                         </a>
-                        <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $tech_phone)); ?>" class="maint-cta-call">
+                        <a href="tel:02203892207" class="maint-cta-call">
                             <i class="fa-solid fa-phone"></i>
-                            <span>Hotline Kỹ Thuật: <strong><?php echo esc_html($tech_phone); ?></strong></span>
+                            <span>Hotline Kỹ Thuật: <strong>02203 892 207</strong></span>
                         </a>
                     </div>
                 </div>
@@ -183,7 +178,6 @@ $zalo_phone    = '0911211996';
 
         <!-- Technical Disclaimer -->
         <div class="smart-tool-disclaimer">
-            <i class="fa-solid fa-circle-exclamation"></i>
             <p><strong>Khuyến cáo kỹ thuật &amp; Pháp lý:</strong> Bảng tra cứu hạng mục bảo dưỡng và công cụ bắt bệnh xe nhanh mang tính chất tham khảo kỹ thuật tiêu chuẩn. Tình trạng thực tế của từng xe phụ thuộc vào điều kiện vận hành cụ thể. Quý khách vui lòng đưa xe đến xưởng Ôtô Hải Hà để kỹ thuật viên kiểm tra trực tiếp bằng máy chẩn đoán chuyên dụng trước khi quyết định can thiệp sửa chữa. Xem thêm tại <a href="<?php echo esc_url(home_url('/chinh-sach-bao-mat/')); ?>">Chính sách bảo mật &amp; Điều khoản dịch vụ</a>.</p>
         </div>
 

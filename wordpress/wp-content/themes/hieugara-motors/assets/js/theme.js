@@ -1181,7 +1181,6 @@
             var html = '';
             for (var i = 0; i < items.length; i++) {
                 html += '<div class="maint-check-item">' +
-                    '<i class="fa-solid fa-circle-check"></i>' +
                     '<span>' + items[i] + '</span>' +
                     '</div>';
             }
@@ -1296,8 +1295,8 @@
                 '<a href="https://zalo.me/0911211996" target="_blank" rel="noopener" class="diag-zalo-btn" id="diagZaloBtn">' +
                 '<i class="fa-solid fa-comment-dots"></i> <span>Nhờ Kỹ Sư Trưởng Hải Hà Tư Vấn Hiện Tượng Này Qua Zalo</span>' +
                 '</a>' +
-                '<a href="tel:0915041989" class="diag-call-btn">' +
-                '<i class="fa-solid fa-phone"></i> <span>Hotline Kỹ Thuật: <strong>0915 041 989</strong></span>' +
+                '<a href="tel:02203892207" class="diag-call-btn">' +
+                '<i class="fa-solid fa-phone"></i> <span>Hotline Kỹ Thuật: <strong>02203 892 207</strong></span>' +
                 '</a>' +
                 '</div>';
 

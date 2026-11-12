@@ -13794,7 +13794,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 .vf-spotlight-inner {
     background: #FFFFFF;
     border: 1.5px solid #E5E7EB;
-    border-left: 4px solid #FFB81C;
+    border-left: 4px solid #D4B996;
     border-radius: 12px;
     padding: 16px 24px;
     display: flex;
@@ -13806,12 +13806,12 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 
 .vf-spotlight-inner:hover {
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
-    border-color: #E5E7EB;
-    border-left-color: #FFB81C;
+    border-color: #D4B996;
+    border-left-color: #D4B996;
 }
 
 .vf-spotlight-badge {
-    background: #FFB81C;
+    background: #D4B996;
     color: #141414;
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.75rem;
@@ -13866,8 +13866,8 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: #FFB81C;
-    border: 1px solid #FFB81C;
+    background: #D4B996;
+    border: 1px solid #D4B996;
     color: #141414 !important;
     padding: 9px 18px;
     border-radius: 6px;
