@@ -379,12 +379,6 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
         </div>
     </section>
 
-    <!-- =========================================================================
-         TIỆN ÍCH KIỂM TRA XE THÔNG MINH (BẢO DƯỠNG THEO KM & BẮT BỆNH XE NHANH)
-         ========================================================================= -->
-    <div style="background: #F8FAFC; padding: 20px 0 10px;">
-        <?php get_template_part('template-parts/vehicle-diagnostics-tool'); ?>
-    </div>
 
     <!-- =========================================================================
          MỤC 4C: BLOG & BÀI VIẾT KỸ THUẬT (Ô TÔ HẢI HÀ)
