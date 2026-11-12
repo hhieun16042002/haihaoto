@@ -110,7 +110,7 @@ $banner_photo  = function_exists('hieugara_get_current_page_banner') ? hieugara_
             </h1>
 
             <p class="portal-page-subtitle portal-page-subtitle-wide">
-                Trung tâm bảo dưỡng, sửa chữa &amp; cung cấp phụ tùng chính hãng VinFast tại Ô Tô Hải Hà. Cam kết tiêu chuẩn kỹ thuật hãng, phụ tùng chính hãng 100%.
+                Trung tâm bảo dưỡng, sửa chữa &amp; cung cấp phụ tùng chính hãng VinFast tại Ô Tô Hải Hà.
             </p>
         </div>
     </section>
