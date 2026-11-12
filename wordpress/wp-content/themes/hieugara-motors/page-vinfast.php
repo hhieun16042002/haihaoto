@@ -12,7 +12,6 @@ $theme_uri     = get_template_directory_uri();
 $rescue_phone  = '0911 211 996';
 $hotline_phone = '0911 211 996';
 $hotline_clean = '0911211996';
-$vinfast_logo  = $theme_uri . '/assets/images/brands/vinfast.svg';
 $sign_photo    = $theme_uri . '/assets/images/about/bien-vinfast-service-haiha.jpg';
 $facade_photo  = $theme_uri . '/assets/images/about/haiha-about-facade.jpg';
 $current_url   = home_url('/dich-vu/xe-vinfast/');

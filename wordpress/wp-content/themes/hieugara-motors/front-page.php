@@ -473,7 +473,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
     <section class="shiftup-brand-marquee-section" id="dong-xe-phuc-vu">
         <div class="container">
             <div class="marquee-head text-center">
-                <h3 class="marquee-title"><?php _e('CÁC DÒNG XE CHÚNG TÔI PHỤC VỤ', 'hieugara-motors'); ?></h3>
+                <h2 class="marquee-title"><?php _e('CÁC DÒNG XE CHÚNG TÔI PHỤC VỤ', 'hieugara-motors'); ?></h2>
             </div>
 
             <!-- VinFast Official Service Partner Highlighted Separation -->
@@ -483,7 +483,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                         <span>ĐỐI TÁC DỊCH VỤ CHÍNH THỨC</span>
                     </div>
                     <div class="vf-spotlight-brand">
-                        <img src="<?php echo esc_url($theme_uri . '/assets/images/brands/vinfast.svg?v=' . HIEUGARA_THEME_VERSION); ?>" alt="VinFast" class="vf-spotlight-logo" width="38" height="30">
+                        <span class="vf-spotlight-text-brand">VinFast</span>
                         <div class="vf-spotlight-titles">
                             <strong>VINFAST VIỆT NAM</strong>
                             <small>Xưởng tiếp nhận bảo dưỡng, sửa chữa &amp; phụ tùng chính hãng</small>
@@ -501,52 +501,33 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
             <div class="brand-marquee">
                 <div class="brand-marquee-track">
                     <?php
-                    $raw_brands = function_exists('hieugara_get_brand_logos') ? hieugara_get_brand_logos() : array();
-                    $brands = array();
-                    if (!empty($raw_brands)) {
-                        foreach ($raw_brands as $rb) {
-                            if (!empty($rb['enable'])) {
-                                $g1 = !empty($rb['grad1']) ? $rb['grad1'] : '#0c1e3a';
-                                $g2 = !empty($rb['grad2']) ? $rb['grad2'] : '#334155';
-                                $brands[] = array(
-                                    'name' => $rb['name'],
-                                    'logo' => function_exists('hieugara_normalize_local_media_urls') ? hieugara_normalize_local_media_urls($rb['logo']) : $rb['logo'],
-                                    'grad' => 'linear-gradient(135deg, ' . $g1 . ', ' . $g2 . ')',
-                                    'url'  => !empty($rb['url']) ? $rb['url'] : '#',
-                                );
-                            }
-                        }
-                    }
-                    // Fallback if empty
-                    if (empty($brands)) {
-                        $brands = array(
-                            array('name' => 'Mercedes-Benz', 'logo' => $theme_uri . '/assets/images/brands/mercedes.svg?v=' . HIEUGARA_THEME_VERSION, 'grad' => 'linear-gradient(135deg, rgba(0,40,90,0.06), rgba(0,40,90,0.12))'),
-                            array('name' => 'BMW',           'logo' => $theme_uri . '/assets/images/brands/bmw.svg?v=' . HIEUGARA_THEME_VERSION,      'grad' => 'linear-gradient(135deg, rgba(0,102,177,0.08), rgba(0,102,177,0.15))'),
-                            array('name' => 'VinFast',       'logo' => $theme_uri . '/assets/images/brands/vinfast.svg?v=' . HIEUGARA_THEME_VERSION,  'grad' => 'linear-gradient(135deg, #0f172a, #c5161d)'),
-                            array('name' => 'Audi',          'logo' => $theme_uri . '/assets/images/brands/audi.svg?v=' . HIEUGARA_THEME_VERSION,     'grad' => 'linear-gradient(135deg, rgba(226,0,26,0.08), rgba(20,20,20,0.12))'),
-                            array('name' => 'Porsche',       'logo' => $theme_uri . '/assets/images/brands/porsche.svg?v=' . HIEUGARA_THEME_VERSION,  'grad' => 'linear-gradient(135deg, rgba(217,45,32,0.08), rgba(245,163,0,0.14))'),
-                            array('name' => 'Toyota',        'logo' => $theme_uri . '/assets/images/brands/toyota.svg?v=' . HIEUGARA_THEME_VERSION,   'grad' => 'linear-gradient(135deg, rgba(235,10,30,0.08), rgba(235,10,30,0.14))'),
-                        );
-                    }
+                    $car_brands = function_exists('hieugara_get_service_car_brands') ? hieugara_get_service_car_brands() : array(
+                        'Mercedes-Benz', 'BMW', 'Audi', 'Porsche', 'Lexus', 'Toyota', 'VinFast',
+                        'Hyundai', 'Kia', 'Ford', 'Honda', 'Volkswagen', 'Mazda', 'Mitsubishi'
+                    );
                     ?>
-                    <div class="brand-marquee-group">
-                        <?php foreach ($brands as $b) : ?>
-                            <div class="brand-capsule-card" title="<?php echo esc_attr($b['name']); ?>">
-                                <div class="capsule-gradient-bg" style="background: <?php echo esc_attr($b['grad']); ?>;"></div>
-                                <img src="<?php echo esc_url($b['logo']); ?>" alt="<?php echo esc_attr($b['name']); ?>" loading="lazy" class="brand-logo-img">
-                            </div>
+                    <ul class="brand-pills-list">
+                        <?php foreach ($car_brands as $brand_name) : ?>
+                            <li class="brand-pill-item">
+                                <span class="brand-pill-name"><?php echo esc_html($brand_name); ?></span>
+                            </li>
                         <?php endforeach; ?>
-                    </div>
-                    <div class="brand-marquee-group" aria-hidden="true">
-                        <?php foreach ($brands as $b) : ?>
-                            <div class="brand-capsule-card" title="<?php echo esc_attr($b['name']); ?>">
-                                <div class="capsule-gradient-bg" style="background: <?php echo esc_attr($b['grad']); ?>;"></div>
-                                <img src="<?php echo esc_url($b['logo']); ?>" alt="<?php echo esc_attr($b['name']); ?>" loading="lazy" class="brand-logo-img">
-                            </div>
+                    </ul>
+                    <ul class="brand-pills-list" aria-hidden="true">
+                        <?php foreach ($car_brands as $brand_name) : ?>
+                            <li class="brand-pill-item">
+                                <span class="brand-pill-name"><?php echo esc_html($brand_name); ?></span>
+                            </li>
                         <?php endforeach; ?>
-                    </div>
+                    </ul>
                 </div>
             </div>
+        </div>
+
+        <div class="container">
+            <p class="brand-legal-disclaimer">
+                <?php _e('Tên các hãng xe chỉ nhằm mô tả dòng xe mà Ô Tô Hải Hà nhận bảo dưỡng, sửa chữa. Các nhãn hiệu thuộc quyền sở hữu của chủ sở hữu tương ứng. Ô Tô Hải Hà là xưởng dịch vụ độc lập, không phải đại lý ủy quyền của các hãng, ngoại trừ VinFast.', 'hieugara-motors'); ?>
+            </p>
         </div>
     </section>
 

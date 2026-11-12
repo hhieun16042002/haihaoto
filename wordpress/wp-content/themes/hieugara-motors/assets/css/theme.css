@@ -2701,99 +2701,142 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     position: relative;
     width: 100%;
     overflow: hidden;
-    padding: 10px 0;
+    padding: 12px 0;
     user-select: none;
     -webkit-user-select: none;
-    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
 }
 
 .brand-marquee-track {
     display: flex;
     width: max-content;
-    animation: brandMarquee 34s linear infinite;
+    align-items: center;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    animation: brandTextMarquee 42s linear infinite;
     will-change: transform;
 }
 
-.brand-marquee:hover .brand-marquee-track {
+.brand-marquee:hover .brand-marquee-track,
+.brand-marquee:focus-within .brand-marquee-track {
     animation-play-state: paused;
 }
 
-.brand-marquee-group {
+.brand-pills-list {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding-right: 20px;
+    gap: 16px;
+    margin: 0;
+    padding: 0 16px 0 0;
+    list-style: none;
     flex-shrink: 0;
 }
 
-/* Brand Capsule Card (Exact Replica of Marquee.tsx) */
-.brand-capsule-card {
-    position: relative;
-    height: 96px;
-    width: 168px;
-    flex-shrink: 0;
+/* Brand Text Pill Design (Text-only, No Logos, Identical Typography) */
+.brand-pill-item {
+    margin: 0;
+    padding: 0;
     display: flex;
+    align-items: center;
+}
+
+.brand-pill-name {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    height: 64px;
+    padding: 0 32px;
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
     border-radius: 9999px;
-    background: #ffffff;
-    border: 1px solid rgba(226, 232, 240, 0.85);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    overflow: hidden;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #5F6368;
+    white-space: nowrap;
+    line-height: 1;
+    cursor: default;
+    user-select: none;
+    transition: border-color 200ms ease, color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
 }
 
-.brand-capsule-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
-    border-color: transparent;
+.brand-pill-name:hover,
+.brand-pill-item:focus-within .brand-pill-name {
+    border-color: #141414;
+    color: #141414;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
 }
 
-.capsule-gradient-bg {
-    position: absolute;
-    inset: 0;
-    transform: scale(1.5);
-    opacity: 0;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 1;
-}
-
-.brand-capsule-card:hover .capsule-gradient-bg {
-    transform: scale(1);
-    opacity: 1;
-}
-
-.brand-capsule-card .brand-logo-img {
-    position: relative;
-    z-index: 10;
-    height: 38px;
-    width: auto;
-    max-width: 96px;
-    object-fit: contain;
-    transition: all 0.3s ease;
-    filter: none !important;
-}
-
-.brand-capsule-card:hover .brand-logo-img {
-    filter: none !important;
-    transform: scale(1.1);
-}
-
-@keyframes brandMarquee {
-    from {
+@keyframes brandTextMarquee {
+    0% {
         transform: translateX(0);
     }
-    to {
+    100% {
         transform: translateX(-50%);
     }
 }
 
+/* Legal disclaimer line below the brand marquee strip */
+.brand-legal-disclaimer {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #5F6368;
+    text-align: center;
+    max-width: 980px;
+    margin: 28px auto 0;
+    padding: 0 16px;
+}
+
+@media (max-width: 768px) {
+    .brand-marquee {
+        padding: 8px 0;
+        mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    }
+    .brand-pills-list {
+        gap: 12px;
+        padding-right: 12px;
+    }
+    .brand-pill-name {
+        height: 50px;
+        padding: 0 22px;
+        font-size: 15px;
+    }
+    .brand-legal-disclaimer {
+        font-size: 12px;
+        margin-top: 20px;
+        line-height: 1.55;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
+    .brand-marquee {
+        mask-image: none !important;
+        -webkit-mask-image: none !important;
+        overflow: visible !important;
+    }
     .brand-marquee-track {
-        animation: none;
+        animation: none !important;
+        width: 100% !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 12px !important;
+    }
+    .brand-pills-list[aria-hidden="true"] {
+        display: none !important;
+    }
+    .brand-pills-list {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        padding-right: 0 !important;
+        gap: 12px !important;
+        width: 100% !important;
     }
 }
 
@@ -13751,7 +13794,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 .vf-spotlight-inner {
     background: #FFFFFF;
     border: 1.5px solid #E5E7EB;
-    border-left: 4px solid #D4B996;
+    border-left: 4px solid #FFB81C;
     border-radius: 12px;
     padding: 16px 24px;
     display: flex;
@@ -13763,11 +13806,12 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 
 .vf-spotlight-inner:hover {
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
-    border-color: #D4B996;
+    border-color: #E5E7EB;
+    border-left-color: #FFB81C;
 }
 
 .vf-spotlight-badge {
-    background: #D4B996;
+    background: #FFB81C;
     color: #141414;
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 0.75rem;
@@ -13785,15 +13829,21 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 .vf-spotlight-brand {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 16px;
     flex: 1;
     min-width: 0;
 }
 
-.vf-spotlight-logo {
-    width: 44px;
-    height: 32px;
-    object-fit: contain;
+.vf-spotlight-text-brand {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #141414;
+    letter-spacing: 0.02em;
+    padding-right: 16px;
+    border-right: 2px solid #E5E7EB;
+    display: inline-block;
+    line-height: 1;
     flex-shrink: 0;
 }
 
@@ -13816,8 +13866,8 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: #C5A880;
-    border: 1px solid #C5A880;
+    background: #FFB81C;
+    border: 1px solid #FFB81C;
     color: #141414 !important;
     padding: 9px 18px;
     border-radius: 6px;
@@ -13831,8 +13881,8 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 }
 
 .vf-spotlight-btn:hover {
-    background: #8C6239;
-    border-color: #8C6239;
+    background: #141414;
+    border-color: #141414;
     color: #FFFFFF !important;
 }
 

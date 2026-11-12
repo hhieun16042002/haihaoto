@@ -13,170 +13,51 @@ if (!defined('ABSPATH')) {
 }
 
 // =========================================================================
-// 1. DATA HELPERS - MARQUEE BRANDS
+// 1. DATA HELPERS - MARQUEE BRANDS (TEXT-ONLY)
 // =========================================================================
+
+if (!function_exists('hieugara_get_service_car_brands')) {
+    /**
+     * Danh sách các dòng xe Ô Tô Hải Hà nhận bảo dưỡng & sửa chữa (Text-only)
+     * Show only car makes the garage services, in exact required order:
+     * Mercedes-Benz, BMW, Audi, Porsche, Lexus, Toyota, VinFast, Hyundai, Kia, Ford, Honda, Volkswagen, Mazda, Mitsubishi
+     */
+    function hieugara_get_service_car_brands() {
+        return array(
+            'Mercedes-Benz',
+            'BMW',
+            'Audi',
+            'Porsche',
+            'Lexus',
+            'Toyota',
+            'VinFast',
+            'Hyundai',
+            'Kia',
+            'Ford',
+            'Honda',
+            'Volkswagen',
+            'Mazda',
+            'Mitsubishi',
+        );
+    }
+}
 
 if (!function_exists('hieugara_get_default_brand_logos')) {
     function hieugara_get_default_brand_logos() {
-        $theme_uri = get_template_directory_uri();
-        $brand_dir = $theme_uri . '/assets/images/brands';
-        $v = defined('HIEUGARA_THEME_VERSION') ? HIEUGARA_THEME_VERSION : '2.0.0';
-
-        return array(
-            1 => array(
-                'id'     => 1,
+        $makes = hieugara_get_service_car_brands();
+        $brands = array();
+        foreach ($makes as $idx => $name) {
+            $brands[$idx + 1] = array(
+                'id'     => $idx + 1,
                 'enable' => '1',
-                'name'   => 'Mercedes-Benz',
-                'logo'   => $brand_dir . '/mercedes.svg?v=' . $v,
-                'grad1'  => '#00285a',
-                'grad2'  => '#001a3d',
-                'url'    => 'https://www.mercedes-benz.com.vn/',
-            ),
-            2 => array(
-                'id'     => 2,
-                'enable' => '1',
-                'name'   => 'BMW',
-                'logo'   => $brand_dir . '/bmw.svg?v=' . $v,
-                'grad1'  => '#0066b1',
-                'grad2'  => '#0284c7',
-                'url'    => 'https://www.bmw.vn/',
-            ),
-            3 => array(
-                'id'     => 3,
-                'enable' => '1',
-                'name'   => 'Audi',
-                'logo'   => $brand_dir . '/audi.svg?v=' . $v,
-                'grad1'  => '#e2001a',
-                'grad2'  => '#141414',
-                'url'    => 'https://www.audi.vn/',
-            ),
-            4 => array(
-                'id'     => 4,
-                'enable' => '1',
-                'name'   => 'Porsche',
-                'logo'   => $brand_dir . '/porsche.svg?v=' . $v,
-                'grad1'  => '#d92d20',
-                'grad2'  => '#f5a300',
-                'url'    => 'https://www.porsche.com/vietnam/',
-            ),
-            5 => array(
-                'id'     => 5,
-                'enable' => '1',
-                'name'   => 'VinFast',
-                'logo'   => $brand_dir . '/vinfast.svg?v=' . $v,
-                'grad1'  => '#0f172a',
-                'grad2'  => '#c5161d',
-                'url'    => 'https://vinfastauto.com/',
-            ),
-            6 => array(
-                'id'     => 6,
-                'enable' => '1',
-                'name'   => 'Lexus',
-                'logo'   => $brand_dir . '/lexus.svg?v=' . $v,
-                'grad1'  => '#0052cc',
-                'grad2'  => '#001f5c',
-                'url'    => 'https://www.lexus.com.vn/',
-            ),
-            7 => array(
-                'id'     => 7,
-                'enable' => '1',
-                'name'   => 'Toyota',
-                'logo'   => $brand_dir . '/toyota.svg?v=' . $v,
-                'grad1'  => '#eb0a1e',
-                'grad2'  => '#991b1b',
-                'url'    => 'https://www.toyota.com.vn/',
-            ),
-            8 => array(
-                'id'     => 8,
-                'enable' => '1',
-                'name'   => 'Hyundai',
-                'logo'   => $brand_dir . '/hyundai.svg?v=' . $v,
-                'grad1'  => '#004b93',
-                'grad2'  => '#0369a1',
-                'url'    => 'https://hyundai.thanhcong.vn/',
-            ),
-            9 => array(
-                'id'     => 9,
-                'enable' => '1',
-                'name'   => 'Kia',
-                'logo'   => $brand_dir . '/kia.svg?v=' . $v,
-                'grad1'  => '#05141f',
+                'name'   => $name,
+                'logo'   => '',
+                'grad1'  => '#0c1e3a',
                 'grad2'  => '#334155',
-                'url'    => 'https://kiavietnam.com.vn/',
-            ),
-            10 => array(
-                'id'     => 10,
-                'enable' => '1',
-                'name'   => 'Ford',
-                'logo'   => $brand_dir . '/ford.svg?v=' . $v,
-                'grad1'  => '#003478',
-                'grad2'  => '#1d4ed8',
-                'url'    => 'https://www.ford.com.vn/',
-            ),
-            11 => array(
-                'id'     => 11,
-                'enable' => '1',
-                'name'   => 'Honda',
-                'logo'   => $brand_dir . '/honda.svg?v=' . $v,
-                'grad1'  => '#e40521',
-                'grad2'  => '#b91c1c',
-                'url'    => 'https://www.honda.com.vn/',
-            ),
-            12 => array(
-                'id'     => 12,
-                'enable' => '1',
-                'name'   => 'Volkswagen',
-                'logo'   => $brand_dir . '/volkswagen.svg?v=' . $v,
-                'grad1'  => '#00437a',
-                'grad2'  => '#0284c7',
-                'url'    => 'https://vw.com.vn/',
-            ),
-            13 => array(
-                'id'     => 13,
-                'enable' => '1',
-                'name'   => 'Nissan',
-                'logo'   => $brand_dir . '/nissan.svg?v=' . $v,
-                'grad1'  => '#c3002f',
-                'grad2'  => '#881337',
-                'url'    => 'https://www.nissanvietnam.vn/',
-            ),
-            14 => array(
-                'id'     => 14,
-                'enable' => '1',
-                'name'   => 'Mazda',
-                'logo'   => $brand_dir . '/mazda.svg?v=' . $v,
-                'grad1'  => '#101010',
-                'grad2'  => '#475569',
-                'url'    => 'https://mazdamotors.vn/',
-            ),
-            15 => array(
-                'id'     => 15,
-                'enable' => '1',
-                'name'   => 'Mitsubishi',
-                'logo'   => $brand_dir . '/mitsubishi.svg?v=' . $v,
-                'grad1'  => '#e60012',
-                'grad2'  => '#1f2937',
-                'url'    => 'https://www.mitsubishi-motors.com.vn/',
-            ),
-            16 => array(
-                'id'     => 16,
-                'enable' => '1',
-                'name'   => 'Bosch Automotive',
-                'logo'   => $brand_dir . '/bosch.svg?v=' . $v,
-                'grad1'  => '#ea0016',
-                'grad2'  => '#005691',
-                'url'    => 'https://www.bosch.com.vn/',
-            ),
-            17 => array(
-                'id'     => 17,
-                'enable' => '1',
-                'name'   => '3M Automotive',
-                'logo'   => $brand_dir . '/3m.svg?v=' . $v,
-                'grad1'  => '#ff0000',
-                'grad2'  => '#1d4ed8',
-                'url'    => 'https://www.3m.com.vn/',
-            ),
-        );
+                'url'    => '',
+            );
+        }
+        return $brands;
     }
 }
 
@@ -223,7 +104,7 @@ if (!function_exists('hieugara_get_default_comprehensive_partner')) {
             'partner_badge'      => 'ĐỐI TÁC HỢP TÁC TOÀN DIỆN & TIÊU CHUẨN DỊCH VỤ XE ĐIỆN',
             'headline'           => 'TRUNG TÂM TIẾP NHẬN BẢO DƯỠNG & SỬA CHỮA VINFAST TẠI HẢI DƯƠNG',
             'subheadline'        => 'Ôtô Hải Hà tự hào là đơn vị tiên phong hợp tác kỹ thuật toàn diện cùng VinFast. Đáp ứng trọn gói từ dịch vụ xe điện (EV) thế hệ mới đến các dòng xe xăng cao cấp, trang bị trạm sạc tiêu chuẩn và 100% linh phụ kiện chính hãng.',
-            'logo_url'           => $brand_dir . '/vinfast.svg?v=' . $v,
+            'logo_url'           => '',
             'hero_image'         => '',
             'supported_models'   => 'VF 3, VF 5 Plus, VF 6, VF 7, VF 8, VF 9, VF e34, Fadil, Lux A2.0, Lux SA2.0, President',
             'stat_1_val'         => '100%',
