@@ -11550,6 +11550,133 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     text-decoration: none;
 }
 
+/* =========================================================================
+   LUXURY SEARCH & GLOBAL PAGINATION STYLING
+   ========================================================================= */
+.seo-pagination,
+.pagination-wrapper {
+    margin: 48px 0 24px;
+    padding-top: 32px;
+    border-top: 1px solid #e2e8f0;
+    width: 100%;
+    clear: both;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seo-pagination .navigation.pagination,
+.pagination-wrapper .navigation.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.seo-pagination .screen-reader-text,
+.pagination-wrapper .screen-reader-text {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.seo-pagination .nav-links,
+.pagination-wrapper .nav-links,
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.seo-pagination .page-numbers,
+.pagination-wrapper .page-numbers {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    height: 44px;
+    padding: 0 14px;
+    background: #ffffff;
+    color: #1e293b;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.seo-pagination a.page-numbers:hover,
+.pagination-wrapper a.page-numbers:hover {
+    background: #141414;
+    color: #D4B996;
+    border-color: #141414;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(20, 20, 20, 0.15);
+}
+
+/* Active / Current Page Number */
+.seo-pagination .page-numbers.current,
+.pagination-wrapper .page-numbers.current {
+    background: #141414 !important;
+    color: #ffffff !important;
+    border-color: #141414 !important;
+    font-weight: 800;
+    box-shadow: 0 4px 12px rgba(20, 20, 20, 0.2);
+    cursor: default;
+    pointer-events: none;
+}
+
+/* Previous / Next buttons */
+.seo-pagination a.page-numbers.prev,
+.seo-pagination a.page-numbers.next,
+.pagination-wrapper a.page-numbers.prev,
+.pagination-wrapper a.page-numbers.next {
+    padding: 0 18px;
+    gap: 8px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    color: #0f172a;
+}
+
+.seo-pagination a.page-numbers.prev:hover,
+.seo-pagination a.page-numbers.next:hover,
+.pagination-wrapper a.page-numbers.prev:hover,
+.pagination-wrapper a.page-numbers.next:hover {
+    background: #141414;
+    color: #ffffff;
+    border-color: #141414;
+}
+
+/* Dots ellipsis */
+.seo-pagination .page-numbers.dots,
+.pagination-wrapper .page-numbers.dots {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    min-width: 28px;
+    color: #94a3b8;
+    cursor: default;
+    padding: 0;
+}
+
 .seo-empty-results {
     background: #ffffff;
     border: 1px solid #e5e7eb;

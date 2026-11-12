@@ -114,9 +114,10 @@ if (empty($banner_bg)) {
                 <div class="seo-pagination">
                     <?php
                     the_posts_pagination(array(
-                        'mid_size'  => 2,
-                        'prev_text' => '<i class="fa-solid fa-chevron-left"></i> Trước',
-                        'next_text' => 'Tiếp <i class="fa-solid fa-chevron-right"></i>',
+                        'mid_size'           => 2,
+                        'prev_text'          => '<i class="fa-solid fa-chevron-left"></i> Trước',
+                        'next_text'          => 'Tiếp <i class="fa-solid fa-chevron-right"></i>',
+                        'screen_reader_text' => __('Phân trang', 'hieugara-motors'),
                     ));
                     ?>
                 </div>
@@ -134,7 +135,7 @@ if (empty($banner_bg)) {
                         <a href="<?php echo esc_url(home_url('/dich-vu/cuu-ho-ho-tro-o-to/')); ?>">06. Cứu hộ giao thông 24/7</a>
                     </div>
                     <div class="seo-empty-actions">
-                        <a href="tel:02203892207" class="seo-btn-amber" style="background: #D4B996; color: #141414;">GỌI TƯ VẤN: 02203 892 207</a>
+                        <a href="tel:0911211996" class="seo-btn-amber" style="background: #D4B996; color: #141414;">GỌI TƯ VẤN: 0911 211 996</a>
                         <a href="tel:<?php echo esc_attr($rescue_clean); ?>" class="seo-btn-rescue">CỨU HỘ 24/7: <?php echo esc_html($rescue_phone); ?></a>
                     </div>
                 </div>
@@ -142,6 +143,146 @@ if (empty($banner_bg)) {
         </div>
     </section>
 </main>
+
+<style>
+/* =========================================================================
+   LUXURY SEARCH PAGINATION STYLING (MATCHING WORKSHOP DESIGN)
+   ========================================================================= */
+.seo-pagination {
+    margin: 48px 0 24px;
+    padding-top: 32px;
+    border-top: 1px solid #e2e8f0;
+    width: 100%;
+    clear: both;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seo-pagination .navigation.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.seo-pagination .screen-reader-text {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.seo-pagination .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.seo-pagination .page-numbers {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    height: 44px;
+    padding: 0 14px;
+    background: #ffffff;
+    color: #1e293b;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.seo-pagination a.page-numbers:hover {
+    background: #141414;
+    color: #D4B996;
+    border-color: #141414;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(20, 20, 20, 0.15);
+}
+
+/* Active / Current Page Number */
+.seo-pagination .page-numbers.current {
+    background: #141414 !important;
+    color: #ffffff !important;
+    border-color: #141414 !important;
+    font-weight: 800;
+    box-shadow: 0 4px 12px rgba(20, 20, 20, 0.2);
+    cursor: default;
+    pointer-events: none;
+}
+
+/* Previous / Next buttons */
+.seo-pagination a.page-numbers.prev,
+.seo-pagination a.page-numbers.next {
+    padding: 0 18px;
+    gap: 8px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    color: #0f172a;
+}
+
+.seo-pagination a.page-numbers.prev:hover,
+.seo-pagination a.page-numbers.next:hover {
+    background: #141414;
+    color: #ffffff;
+    border-color: #141414;
+}
+
+/* Dots ellipsis */
+.seo-pagination .page-numbers.dots {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    min-width: 28px;
+    color: #94a3b8;
+    cursor: default;
+    padding: 0;
+}
+
+/* Mobile Responsive Breakpoint */
+@media (max-width: 640px) {
+    .seo-pagination {
+        margin: 32px 0 16px;
+        padding-top: 20px;
+    }
+    .seo-pagination .nav-links {
+        gap: 6px;
+    }
+    .seo-pagination .page-numbers {
+        min-width: 38px;
+        height: 38px;
+        padding: 0 10px;
+        font-size: 0.82rem;
+        border-radius: 6px;
+    }
+    .seo-pagination a.page-numbers.prev,
+    .seo-pagination a.page-numbers.next {
+        padding: 0 12px;
+        font-size: 0.78rem;
+        gap: 6px;
+    }
+}
+</style>
 
 <?php get_footer(); ?>
 
