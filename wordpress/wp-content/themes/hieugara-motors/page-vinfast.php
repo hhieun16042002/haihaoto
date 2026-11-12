@@ -94,30 +94,24 @@ $banner_photo  = function_exists('hieugara_get_current_page_banner') ? hieugara_
 
 <main id="primary" class="site-main vinfast-service-portal">
 
-    <!-- BREADCRUMB -->
-    <nav class="vinfast-breadcrumb-bar" aria-label="Breadcrumb">
-        <div class="container">
-            <ol class="vinfast-breadcrumb-list">
-                <li><a href="<?php echo esc_url(home_url('/')); ?>"><i class="fa fa-home"></i> Trang chủ</a></li>
-                <li class="sep">/</li>
-                <li><a href="<?php echo esc_url(home_url('/dich-vu/')); ?>">Dịch vụ</a></li>
-                <li class="sep">/</li>
-                <li class="current" aria-current="page">Dịch vụ xe VinFast</li>
-            </ol>
-        </div>
-    </nav>
+    <!-- SECTION 1: HERO HEADER (Đồng bộ 100% chuẩn với các trang dịch vụ khác: Nền ảnh xưởng sắc nét + Breadcrumb bên trong) -->
+    <section class="portal-hero-header service-single-header" style="background-image: url('<?php echo esc_url($banner_photo); ?>');">
+        <div class="container" style="max-width: 1360px; margin: 0 auto; padding: 0 20px; text-align: center;">
+            <nav class="portal-breadcrumb" aria-label="Breadcrumb">
+                <a href="<?php echo esc_url(home_url('/')); ?>"><?php _e('Trang chủ', 'hieugara-motors'); ?></a>
+                <span class="sep">/</span>
+                <a href="<?php echo esc_url(home_url('/dich-vu/')); ?>"><?php _e('Dịch Vụ', 'hieugara-motors'); ?></a>
+                <span class="sep">/</span>
+                <span class="current">Dịch Vụ Xe VinFast</span>
+            </nav>
 
-    <!-- SECTION 1: HERO (Phong cách Banner Trang Chủ: Nổi bật ảnh nền xưởng sắc nét, overlay dịu, chữ sáng nổi bật) -->
-    <section class="vinfast-hero-section" style="background-image: url('<?php echo esc_url($banner_photo); ?>');">
-        <div class="vinfast-hero-overlay"></div>
-        <div class="container vinfast-hero-container">
-            <div class="vinfast-partner-pill">
-                <span>XƯỞNG DỊCH VỤ VINFAST TẠI HẢI PHÒNG</span>
-            </div>
-            <h1 class="vinfast-hero-title">
-                <span class="vf-hero-title-line">Dịch vụ sửa chữa và bảo dưỡng</span>
-                <span class="vf-hero-title-line">xe VinFast tại Hải Phòng</span>
+            <h1 class="portal-page-title" style="margin: 0 auto 12px;">
+                DỊCH VỤ XE VINFAST
             </h1>
+
+            <p class="portal-page-subtitle portal-page-subtitle-wide">
+                Trung tâm bảo dưỡng, sửa chữa &amp; cung cấp phụ tùng chính hãng VinFast tại Ô Tô Hải Hà. Cam kết tiêu chuẩn kỹ thuật hãng, phụ tùng chính hãng 100%.
+            </p>
         </div>
     </section>
 

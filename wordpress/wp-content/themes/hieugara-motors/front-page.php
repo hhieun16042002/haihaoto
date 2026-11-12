@@ -128,7 +128,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
             <div class="hp-vf-grid">
                 <!-- Text Left (on desktop) / Top (on mobile) -->
                 <div class="hp-vf-content">
-                    <span class="hp-vf-eyebrow">XƯỞNG DỊCH VỤ VINFAST TẠI HẢI PHÒNG</span>
+                    <span class="hp-vf-eyebrow">ĐỐI TÁC DỊCH VỤ VINFAST CHÍNH THỨC</span>
                     <h2 class="hp-vf-heading">Ô Tô Hải Hà – Đối tác dịch vụ chính thức của VinFast</h2>
                     <p class="hp-vf-paragraph">
                         Từ tháng 08/2026, Ô Tô Hải Hà chính thức hợp tác với VinFast, cung cấp phụ tùng chính hãng và dịch vụ sửa chữa, bảo dưỡng, đồng sơn cho xe VinFast. Đội ngũ của chúng tôi kết hợp 31 năm kinh nghiệm sửa chữa với kỹ thuật viên xe điện được đào tạo bài bản, phục vụ mọi dòng xe xăng, dầu, điện và hybrid.
