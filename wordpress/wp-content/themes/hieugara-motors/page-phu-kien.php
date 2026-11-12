@@ -921,9 +921,13 @@ if (!empty($parent_cats) && !is_wp_error($parent_cats)) {
                         <!-- Lưới phụ kiện (2 cột trên Mobile, 3 cột trên Desktop) -->
                         <div class="pk-product-grid">
                             <?php foreach ($cat_accessories as $acc) : 
-                                $a_id    = $acc->ID;
-                                $a_link  = get_permalink($a_id);
-                                $a_badge = $is_vf_cat ? 'VINFAST' : 'ZIN 100%';
+                                $a_id      = $acc->ID;
+                                $a_link    = get_permalink($a_id);
+                                $raw_badge = get_post_meta($a_id, '_accessory_badge', true);
+                                $a_badge   = !empty($raw_badge) ? $raw_badge : ($is_vf_cat ? 'VINFAST' : '');
+                                if (!empty($a_badge) && (mb_stripos($a_badge, 'zin') !== false || mb_stripos($a_badge, 'chính hãng') !== false)) {
+                                    $a_badge = '';
+                                }
 
                                 if (has_post_thumbnail($a_id)) {
                                     $a_thumb = get_the_post_thumbnail_url($a_id, 'medium_large');
@@ -936,7 +940,9 @@ if (!empty($parent_cats) && !is_wp_error($parent_cats)) {
                             ?>
                                 <a href="<?php echo esc_url($a_link); ?>" class="pk-card" title="<?php echo esc_attr($acc->post_title); ?>">
                                     <div class="pk-card-thumb-wrap">
-                                        <span class="pk-card-badge"><?php echo esc_html($a_badge); ?></span>
+                                        <?php if (!empty($a_badge)) : ?>
+                                            <span class="pk-card-badge"><?php echo esc_html($a_badge); ?></span>
+                                        <?php endif; ?>
                                         <img src="<?php echo esc_url($a_thumb); ?>" alt="<?php echo esc_attr($acc->post_title); ?>" loading="lazy">
                                     </div>
 

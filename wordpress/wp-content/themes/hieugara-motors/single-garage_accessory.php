@@ -18,7 +18,11 @@ while (have_posts()) : the_post();
     $is_vf      = get_post_meta($post_id, '_accessory_is_vinfast', true) === '1';
     $price      = get_post_meta($post_id, '_accessory_price', true) ?: 'Liên hệ';
     $old_price  = get_post_meta($post_id, '_accessory_old_price', true);
-    $badge      = get_post_meta($post_id, '_accessory_badge', true) ?: ($is_vf ? 'ĐỐI TÁC CHÍNH HÃNG' : 'CHÍNH HÃNG');
+    $raw_badge  = get_post_meta($post_id, '_accessory_badge', true);
+    $badge      = !empty($raw_badge) ? $raw_badge : '';
+    if (!empty($badge) && (mb_stripos($badge, 'chính hãng') !== false || mb_stripos($badge, 'zin') !== false)) {
+        $badge = '';
+    }
     $brand      = get_post_meta($post_id, '_accessory_brand', true) ?: ($is_vf ? 'VinFast' : 'Chính Hãng Phân Phối');
     $warranty   = get_post_meta($post_id, '_accessory_warranty', true) ?: ($is_vf ? 'Chính hãng VinFast' : '12 tháng 1 đổi 1');
     $origin     = get_post_meta($post_id, '_accessory_origin', true) ?: ($is_vf ? 'Chính hãng VinFast' : 'Chính hãng phân phối');
@@ -610,7 +614,11 @@ html, body {
                     $rel_thumb = get_the_post_thumbnail_url($rel_id, 'full') ?: (get_post_meta($rel_id, '_accessory_img', true) ?: $thumb);
                     $rel_price = get_post_meta($rel_id, '_accessory_price', true) ?: 'Liên hệ';
                     $rel_old   = get_post_meta($rel_id, '_accessory_old_price', true);
-                    $rel_badge = get_post_meta($rel_id, '_accessory_badge', true) ?: 'CHÍNH HÃNG';
+                    $raw_rel_badge = get_post_meta($rel_id, '_accessory_badge', true);
+                    $rel_badge     = !empty($raw_rel_badge) ? $raw_rel_badge : '';
+                    if (!empty($rel_badge) && (mb_stripos($rel_badge, 'chính hãng') !== false || mb_stripos($rel_badge, 'zin') !== false)) {
+                        $rel_badge = '';
+                    }
                 ?>
                     <article class="phukien-card">
                         <?php if (!empty($rel_badge)) : ?>

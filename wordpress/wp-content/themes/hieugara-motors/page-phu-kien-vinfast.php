@@ -93,7 +93,11 @@ if (empty($banner_bg) || strpos($banner_bg, 'default') !== false) {
                                 <a href="<?php echo esc_url($product_url); ?>" title="<?php echo esc_attr($post->post_title); ?>">
                                     <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr($post->post_title); ?> – phụ kiện chính hãng VinFast tại Ô Tô Hải Hà" loading="lazy">
                                 </a>
-                                <span class="vf-badge-tag"><i class="fa-solid fa-certificate"></i> CHÍNH HÃNG</span>
+                                <?php 
+                                $vf_card_badge = get_post_meta($p_id, '_accessory_badge', true);
+                                if (!empty($vf_card_badge) && mb_stripos($vf_card_badge, 'chính hãng') === false && mb_stripos($vf_card_badge, 'zin') === false) : ?>
+                                    <span class="vf-badge-tag"><?php echo esc_html($vf_card_badge); ?></span>
+                                <?php endif; ?>
                                 <?php if (!empty($sku)) : ?>
                                     <span class="vf-sku-tag"><?php echo esc_html($sku); ?></span>
                                 <?php endif; ?>
