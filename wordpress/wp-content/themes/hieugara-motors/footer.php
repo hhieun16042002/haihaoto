@@ -287,24 +287,20 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
         <!-- Header -->
         <div class="rescue-modal-header">
             <div class="rescue-badge-pulsing">
-                <span class="pulse-beacon-ring"></span>
-                <span class="rescue-badge-text"><i class="fa-solid fa-triangle-exclamation"></i> CỨU HỘ GIAO THÔNG 24/7</span>
+                <span class="rescue-badge-text">CỨU HỘ GIAO THÔNG 24/7</span>
             </div>
             <h3 class="rescue-modal-title" id="rescueModalTitle">Gara Ôtô Hải Hà - Phản Ứng Nhanh</h3>
-            <p class="rescue-modal-desc">Đội cứu hộ túc trực xuyên ngày đêm tại Hải Phòng và các tỉnh lân cận. Có mặt sau 15-30 phút.</p>
         </div>
 
         <!-- 1. Direct Emergency Call (High priority) -->
         <div class="rescue-action-call-wrap">
             <a href="tel:<?php echo esc_attr($rescue_clean); ?>" class="rescue-direct-call-btn" id="rescueDirectCallBtn">
-                <span class="call-pulse-dot"></span>
-                <i class="fa-solid fa-phone-volume"></i>
                 <div class="call-btn-info">
                     <span class="call-btn-lead">GỌI CỨU HỘ KHẨN CẤP NGAY</span>
                     <strong class="call-btn-num"><?php echo esc_html($rescue_phone); ?></strong>
                 </div>
             </a>
-            <span class="call-btn-hint"><i class="fa-solid fa-bolt"></i> Bấm để kết nối trực tiếp với đội trưởng cứu hộ</span>
+            <span class="call-btn-hint">Bấm để kết nối trực tiếp với đội trưởng cứu hộ</span>
         </div>
 
         <div class="rescue-divider">
@@ -314,22 +310,21 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
         <!-- 2. One-click GPS Location Share -->
         <div class="rescue-form-group">
             <label class="rescue-form-label">
-                <i class="fa-solid fa-location-crosshairs"></i> 1. Vị trí xe cần cứu hộ:
+                1. Vị trí xe cần cứu hộ:
             </label>
             <div class="rescue-gps-action-row">
                 <button type="button" class="rescue-gps-btn" id="rescueGetGpsBtn">
-                    <i class="fa-solid fa-crosshairs"></i>
                     <span id="rescueGpsBtnText">Lấy Vị Trí Hiện Tại (GPS)</span>
                 </button>
                 <div class="rescue-gps-status" id="rescueGpsStatus">
-                    <span class="gps-status-badge idle"><i class="fa-solid fa-circle-info"></i> Chưa định vị</span>
+                    <span class="gps-status-badge idle">Chưa định vị</span>
                 </div>
             </div>
             <div class="rescue-location-manual-wrap" id="rescueManualWrap">
                 <input type="text" id="rescueManualAddress" class="rescue-input" placeholder="Hoặc nhập địa chỉ / mốc đường (VD: Km 48 QL5, Chân cầu Hàn, TP Hải Dương...)" aria-label="Địa chỉ cụ thể hoặc mốc nhận biết" />
             </div>
             <div class="rescue-quick-landmarks">
-                <span class="landmark-hint"><i class="fa-solid fa-map-pin"></i> Mốc nhanh:</span>
+                <span class="landmark-hint">Mốc nhanh:</span>
                 <button type="button" class="landmark-chip" data-place="Cầu Hàn, TP Hải Dương">Cầu Hàn</button>
                 <button type="button" class="landmark-chip" data-place="Cầu Phú Lương, QL5">Cầu Phú Lương</button>
                 <button type="button" class="landmark-chip" data-place="Ngã 4 Máy Sứ, TP Hải Dương">Ngã 4 Máy Sứ</button>
@@ -341,23 +336,19 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
         <!-- 3. Vehicle Issue Chips -->
         <div class="rescue-form-group">
             <label class="rescue-form-label">
-                <i class="fa-solid fa-wrench"></i> 2. Sự cố đang gặp phải:
+                2. Sự cố đang gặp phải:
             </label>
             <div class="rescue-issue-grid" id="rescueIssueGrid">
                 <button type="button" class="rescue-issue-chip active" data-issue="Thủng lốp / Nổ lốp">
-                    <span class="chip-icon">🛞</span>
                     <span class="chip-text">Thủng / Nổ lốp</span>
                 </button>
                 <button type="button" class="rescue-issue-chip" data-issue="Hết bình / Kích ắc quy">
-                    <span class="chip-icon">🔋</span>
                     <span class="chip-text">Hết bình / Ắc quy</span>
                 </button>
                 <button type="button" class="rescue-issue-chip" data-issue="Chết máy / Ngập nước">
-                    <span class="chip-icon">⚠️</span>
                     <span class="chip-text">Chết máy / Ngập nước</span>
                 </button>
                 <button type="button" class="rescue-issue-chip" data-issue="Va chạm / Cần xe kéo chở sàn">
-                    <span class="chip-icon">💥</span>
                     <span class="chip-text">Xe kéo sàn / Va chạm</span>
                 </button>
             </div>
@@ -392,13 +383,12 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                 <span>GỬI VỊ TRÍ & SỰ CỐ QUA ZALO CỨU HỘ</span>
             </button>
             <button type="button" class="rescue-dispatch-sms" id="rescueDispatchSmsBtn">
-                <i class="fa-solid fa-comment-sms"></i>
                 <span>Gửi Tin Nhắn Khẩn Cấp (SMS Dự Phòng)</span>
             </button>
         </div>
 
         <div class="rescue-modal-footer-note">
-            <span><i class="fa-solid fa-shield-halved"></i> Vị trí được bảo mật & chỉ gửi tới kỹ thuật viên cứu hộ Hải Hà &bull; <a href="<?php echo esc_url(home_url('/chinh-sach-bao-mat/')); ?>" target="_blank" style="color: #94a3b8; text-decoration: underline;">Chính sách bảo mật vị trí</a></span>
+            <span>Vị trí được bảo mật & chỉ gửi tới kỹ thuật viên cứu hộ Hải Hà &bull; <a href="<?php echo esc_url(home_url('/chinh-sach-bao-mat/')); ?>" target="_blank" style="color: #8c6239; text-decoration: underline;">Chính sách bảo mật vị trí</a></span>
         </div>
     </div>
 </div>

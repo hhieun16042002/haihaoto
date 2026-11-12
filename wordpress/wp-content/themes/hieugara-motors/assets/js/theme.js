@@ -790,7 +790,7 @@
             var $status = $('#rescueGpsStatus');
 
             if (!navigator.geolocation) {
-                $status.html('<span class="gps-status-badge error"><i class="fa-solid fa-circle-exclamation"></i> Thiết bị không hỗ trợ GPS. Vui lòng nhập địa chỉ bên dưới:</span>');
+                $status.html('<span class="gps-status-badge error">Thiết bị không hỗ trợ GPS. Vui lòng nhập địa chỉ bên dưới:</span>');
                 $('#rescueManualAddress').focus();
                 return;
             }
@@ -798,8 +798,8 @@
             if (rescueState.isLocating) return;
             rescueState.isLocating = true;
 
-            $btn.prop('disabled', true).html('<i class="fa-solid fa-spinner fa-spin"></i> <span>Đang dò GPS...</span>');
-            $status.html('<span class="gps-status-badge locating"><i class="fa-solid fa-spinner fa-spin"></i> Đang kết nối vệ tinh định vị...</span>');
+            $btn.prop('disabled', true).html('<span>Đang dò GPS...</span>');
+            $status.html('<span class="gps-status-badge locating">Đang kết nối vệ tinh định vị...</span>');
 
             navigator.geolocation.getCurrentPosition(
                 function(pos) {
@@ -819,22 +819,22 @@
                     var lngStr = rescueState.lng.toFixed(5);
                     var mapsUrl = 'https://maps.google.com/?q=' + rescueState.lat + ',' + rescueState.lng;
 
-                    $btn.addClass('is-success').html('<i class="fa-solid fa-circle-check"></i> <span>Đã lấy tọa độ</span>');
+                    $btn.addClass('is-success').html('<span>Đã lấy tọa độ</span>');
 
                     var badgeHtml = '';
                     if (accMeters <= 5) {
                         badgeHtml = '<span class="gps-status-badge success">' +
-                            '<i class="fa-solid fa-satellite-dish"></i> Chuẩn GPS (±' + accMeters + 'm): ' + latStr + ', ' + lngStr + ' ' +
+                            'Chuẩn GPS (±' + accMeters + 'm): ' + latStr + ', ' + lngStr + ' ' +
                             '<a href="' + mapsUrl + '" target="_blank" rel="noopener" class="gps-maps-link">Xem bản đồ</a>' +
                             '</span>';
                     } else if (accMeters <= 30) {
                         badgeHtml = '<span class="gps-status-badge success">' +
-                            '<i class="fa-solid fa-location-dot"></i> Tọa độ GPS (±' + accMeters + 'm): ' + latStr + ', ' + lngStr + ' ' +
+                            'Tọa độ GPS (±' + accMeters + 'm): ' + latStr + ', ' + lngStr + ' ' +
                             '<a href="' + mapsUrl + '" target="_blank" rel="noopener" class="gps-maps-link">Xem bản đồ</a>' +
                             '</span>';
                     } else {
                         badgeHtml = '<span class="gps-status-badge locating">' +
-                            '<i class="fa-solid fa-wifi"></i> Vị trí mạng Wi-Fi (sai số ~' + accMeters + 'm) ' +
+                            'Vị trí mạng Wi-Fi (sai số ~' + accMeters + 'm) ' +
                             '<a href="' + mapsUrl + '" target="_blank" rel="noopener" class="gps-maps-link">Xem bản đồ</a>' +
                             '</span>';
                     }
@@ -885,7 +885,7 @@
                     } else if (err.code === 3) {
                         errMsg = 'Hết thời gian chờ GPS';
                     }
-                    $status.html('<span class="gps-status-badge error"><i class="fa-solid fa-circle-exclamation"></i> ' + errMsg + '. Vui lòng nhập địa chỉ / chọn mốc bên dưới:</span>');
+                    $status.html('<span class="gps-status-badge error">' + errMsg + '. Vui lòng nhập địa chỉ / chọn mốc bên dưới:</span>');
                     $('#rescueManualAddress').focus();
                 },
                 {

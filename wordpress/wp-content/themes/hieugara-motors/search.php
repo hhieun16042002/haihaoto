@@ -16,6 +16,10 @@ global $wp_query;
 $total_results = isset($wp_query->found_posts) ? intval($wp_query->found_posts) : 0;
 $rescue_phone  = get_option('hieugara_rescue_phone', '0911 211 996');
 $rescue_clean  = preg_replace('/[^0-9]/', '', $rescue_phone);
+$banner_bg     = function_exists('hieugara_get_current_page_banner') ? hieugara_get_current_page_banner() : hieugara_get_page_banner_url('services');
+if (empty($banner_bg)) {
+    $banner_bg = function_exists('hieugara_get_page_banner_url') ? hieugara_get_page_banner_url('services') : '';
+}
 ?>
 
 <!-- Schema.org BreadcrumbList & SearchResultsPage for SEO -->
@@ -46,43 +50,21 @@ $rescue_clean  = preg_replace('/[^0-9]/', '', $rescue_phone);
 </script>
 
 <main class="site-main seo-search-results-page">
-    <!-- Hero Header (#141414 Dominant + #F5A300 Accent) -->
-    <section class="portal-hero-header seo-search-hero">
-        <div class="container">
-            <nav class="seo-breadcrumb" aria-label="Breadcrumb">
-                <a href="<?php echo esc_url(home_url('/')); ?>">Trang chủ</a>
+    <!-- Hero Banner (Đức Trí 226 Style: Nền ảnh xưởng sắc nét + Dark Overlay) -->
+    <section class="portal-hero-header" style="background-image: url('<?php echo esc_url($banner_bg); ?>');">
+        <div class="container" style="max-width: 1400px;">
+            <nav class="portal-breadcrumb" aria-label="Breadcrumb">
+                <a href="<?php echo esc_url(home_url('/')); ?>"><?php _e('Trang chủ', 'hieugara-motors'); ?></a>
                 <span class="sep">/</span>
-                <span aria-current="page">Tìm kiếm</span>
+                <span class="current"><?php _e('Tìm kiếm', 'hieugara-motors'); ?></span>
             </nav>
-            <h1 class="portal-hero-title">
+            <h1 class="portal-page-title" style="margin: 0 auto;">
                 <?php if ($search_query !== '') : ?>
-                    KẾT QUẢ TÌM KIẾM: <span class="search-kw-highlight">“<?php echo esc_html($search_query); ?>”</span>
+                    <?php echo esc_html(sprintf(__('KẾT QUẢ TÌM KIẾM: “%s”', 'hieugara-motors'), $search_query)); ?>
                 <?php else : ?>
-                    TRA CỨU DỊCH VỤ &amp; PHỤ TÙNG Ô TÔ
+                    <?php _e('KẾT QUẢ TÌM KIẾM', 'hieugara-motors'); ?>
                 <?php endif; ?>
             </h1>
-            <p class="portal-hero-lead">
-                Tìm thấy <strong><?php echo esc_html($total_results); ?></strong> kết quả phù hợp trong hệ thống dịch vụ kỹ thuật, phụ tùng &amp; cẩm nang Ôtô Hải Hà.
-            </p>
-
-            <!-- Refined Search Box & Popular Tags -->
-            <form class="seo-page-search-box" role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
-                <input type="search" name="s" value="<?php echo esc_attr($search_query); ?>" placeholder="Nhập tên dịch vụ, hạng mục bảo dưỡng, phụ tùng cần tìm..." aria-label="Từ khóa tìm kiếm">
-                <button type="submit" class="seo-search-btn">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <span>TÌM KIẾM</span>
-                </button>
-            </form>
-
-            <div class="seo-popular-keywords">
-                <span>Gợi ý nhanh:</span>
-                <a href="<?php echo esc_url(home_url('/?s=Bảo+dưỡng+định+kỳ')); ?>">Bảo dưỡng định kỳ</a>
-                <a href="<?php echo esc_url(home_url('/?s=Đồng+sơn+ô+tô')); ?>">Đồng sơn phòng sấy</a>
-                <a href="<?php echo esc_url(home_url('/?s=Sửa+chữa+hộp+số')); ?>">Sửa chữa hộp số</a>
-                <a href="<?php echo esc_url(home_url('/?s=Điều+hòa+ô+tô')); ?>">Điện &amp; điều hòa</a>
-                <a href="<?php echo esc_url(home_url('/?s=Phủ+Ceramic')); ?>">Phủ Ceramic 9H</a>
-                <a href="<?php echo esc_url(home_url('/?s=Cứu+hộ+24/7')); ?>">Cứu hộ 24/7</a>
-            </div>
         </div>
     </section>
 

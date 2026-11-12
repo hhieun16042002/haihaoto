@@ -552,8 +552,8 @@ function hieugara_get_current_page_banner() {
         return hieugara_get_page_banner_url('vinfast');
     }
 
-    // 5. Trang Dịch Vụ & Danh Mục Dịch Vụ
-    if (is_post_type_archive('garage_service') || is_tax('service_category') || is_singular('garage_service')) {
+    // 5. Trang Dịch Vụ, Danh Mục Dịch Vụ & Tìm Kiếm
+    if (is_search() || is_post_type_archive('garage_service') || is_tax('service_category') || is_singular('garage_service')) {
         return hieugara_get_page_banner_url('services');
     }
 
