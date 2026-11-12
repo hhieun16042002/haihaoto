@@ -77,7 +77,7 @@ $zalo_phone    = '0911211996';
                     <!-- VinFast Special Electric Notice (Shown when electric is active) -->
                     <div class="vf-electric-notice" id="vfElectricNotice" style="display: none;">
                         <i class="fa-solid fa-bolt-lightning"></i>
-                        <span><strong>Đối tác chính thức của VinFast:</strong> Xưởng Hải Hà trang bị đầy đủ máy chẩn đoán pin chuyên dụng, thiết bị ngắt cao áp chuẩn Châu Âu và kỹ sư được cấp chứng chỉ xe điện.</span>
+                        <span><strong>Đối tác chính thức của VinFast:</strong> Ô Tô Hải Hà trang bị đầy đủ máy móc và trang thiết bị chuyên dụng.</span>
                     </div>
 
                     <!-- Action Bar -->
