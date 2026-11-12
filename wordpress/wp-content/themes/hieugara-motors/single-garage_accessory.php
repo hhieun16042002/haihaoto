@@ -548,34 +548,18 @@ html, body {
                         <div class="acc-cta-stack" style="margin-top: 18px; margin-bottom: 0;">
                             <a href="tel:02203892207" class="btn-acc-primary-book" title="Tư vấn lắp đặt phụ kiện này" style="background: #C5A880; color: #141414; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; gap: 10px;">
                                 <i class="fa-solid fa-phone-volume"></i>
-                                <span>TỔNG ĐÀI TƯ VẤN: 02203 892 207</span>
+                                <span>02203 892 207</span>
                             </a>
 
-                            <a href="https://zalo.me/0911211996" target="_blank" rel="noopener" class="btn-acc-zalo" title="Chat Zalo với kỹ thuật viên" style="background: #0068ff; color: #ffffff; display: inline-flex; align-items: center; justify-content: center; gap: 10px;">
+                            <a href="https://zalo.me/0911211996" target="_blank" rel="noopener" class="btn-acc-zalo" title="Zalo tư vấn lắp đặt" style="background: #0068ff; color: #ffffff; display: inline-flex; align-items: center; justify-content: center; gap: 10px;">
                                 <i class="fa-solid fa-comment-dots"></i>
-                                <span>CHAT ZALO TƯ VẤN LẮP ĐẶT</span>
+                                <span>ZALO TƯ VẤN LẮP ĐẶT</span>
                             </a>
 
                             <a href="<?php echo esc_url(home_url('/lien-he/')); ?>" class="btn-acc-book-modal" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: #0f172a; color: #ffffff; text-decoration: none; padding: 12px; border-radius: 6px; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.88rem; font-weight: 700; text-transform: uppercase;">
                                 <i class="fa-solid fa-location-dot"></i>
                                 <span>LIÊN HỆ ĐẾN XƯỞNG LẮP ĐẶT</span>
                             </a>
-                        </div>
-
-                        <!-- Highlights Box -->
-                        <div class="acc-perks-box">
-                            <h4>ƯU ĐÃI &amp; HỖ TRỢ KÈM THEO:</h4>
-                            <ul>
-                                <li><i class="fa-solid fa-circle-dot text-gold"></i> Miễn phí công kiểm tra tổng quát xe khi lắp phụ kiện</li>
-                                <li><i class="fa-solid fa-circle-dot text-gold"></i> Miễn phí cân chỉnh và hướng dẫn sử dụng chi tiết</li>
-                                <li><i class="fa-solid fa-circle-dot text-gold"></i> Hỗ trợ giao hàng COD tận nơi toàn quốc kiểm tra trước khi thanh toán</li>
-                            </ul>
-                        </div>
-
-                        <!-- Garage Contact Strip -->
-                        <div class="acc-garage-contact">
-                            <div><i class="fa-solid fa-location-dot text-gold mr-1"></i> Xưởng: Km3 + 500, Nguyễn Lương Bằng, Lê Thanh Nghị, Hải Phòng 170000, Việt Nam</div>
-                            <div><i class="fa-solid fa-clock text-gold mr-1"></i> Làm việc: 7h30 - 18h30 (Tất cả các ngày trong tuần)</div>
                         </div>
 
                     </div>
