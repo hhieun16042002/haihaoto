@@ -79,19 +79,35 @@ if (empty($banner_bg)) {
                             $badge_label = 'DỊCH VỤ KỸ THUẬT';
                         } elseif ($pt === 'post') {
                             $badge_label = 'CẨM NANG Ô TÔ';
+                        } elseif ($pt === 'garage_accessory') {
+                            $badge_label = 'PHỤ KIỆN XE';
+                        }
+
+                        // Determine thumbnail with reliable fallbacks so cards never lose their image
+                        $card_thumb_html = '';
+                        if (has_post_thumbnail()) {
+                            $card_thumb_html = get_the_post_thumbnail(get_the_ID(), 'medium_large', array('loading' => 'lazy', 'alt' => get_the_title()));
+                        } else {
+                            $post_content = get_the_content();
+                            if (preg_match('/<img[^>]+src=["\']([^"\']+)["\']/i', $post_content, $img_match)) {
+                                $card_thumb_html = '<img src="' . esc_url($img_match[1]) . '" alt="' . esc_attr(get_the_title()) . '" loading="lazy">';
+                            } elseif (function_exists('hieugara_get_current_page_banner')) {
+                                $banner_fallback = hieugara_get_current_page_banner();
+                                if ($banner_fallback) {
+                                    $card_thumb_html = '<img src="' . esc_url($banner_fallback) . '" alt="' . esc_attr(get_the_title()) . '" loading="lazy">';
+                                }
+                            }
+                            if (empty($card_thumb_html)) {
+                                $default_img = get_template_directory_uri() . '/assets/images/banners/banner-ve-chung-toi.jpg';
+                                $card_thumb_html = '<img src="' . esc_url($default_img) . '" alt="' . esc_attr(get_the_title()) . '" loading="lazy">';
+                            }
                         }
                     ?>
                         <article id="post-<?php the_ID(); ?>" <?php post_class('seo-result-card'); ?>>
-                            <?php if (has_post_thumbnail()) : ?>
-                                <a href="<?php the_permalink(); ?>" class="seo-result-thumb">
-                                    <?php the_post_thumbnail('medium_large', array('loading' => 'lazy')); ?>
-                                    <span class="seo-result-badge"><?php echo esc_html($badge_label); ?></span>
-                                </a>
-                            <?php else : ?>
-                                <div class="seo-result-top-meta">
-                                    <span class="seo-result-badge"><?php echo esc_html($badge_label); ?></span>
-                                </div>
-                            <?php endif; ?>
+                            <a href="<?php the_permalink(); ?>" class="seo-result-thumb">
+                                <?php echo $card_thumb_html; ?>
+                                <span class="seo-result-badge"><?php echo esc_html($badge_label); ?></span>
+                            </a>
 
                             <div class="seo-result-content">
                                 <h2 class="seo-result-title">
