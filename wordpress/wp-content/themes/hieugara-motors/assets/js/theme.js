@@ -1226,7 +1226,7 @@
             ac: {
                 title: 'Điều hòa không mát / Chỉ ra gió nóng',
                 severity: 'warning',
-                severityText: '🟡 Cần xử lý sớm',
+                severityText: 'Cần xử lý sớm',
                 cause: 'Thiếu gas lạnh do rò rỉ ti van hoặc phớt đầu lốc, lốc lạnh (máy nén) không đóng ly hợp từ, tắc phin lọc ga hoặc dàn nóng bám đầy bụi đất không giải nhiệt được.',
                 solution: 'Đo áp suất ga cao áp & thấp áp bằng đồng hồ chuyên dụng, nội soi dàn lạnh khử mùi, kiểm tra điện điều khiển ngắt lốc và xịt rửa vệ sinh dàn nóng tản nhiệt.',
                 zaloMsg: 'Chào Ôtô Hải Hà, xe tôi đang bị: Điều hòa không mát, chỉ ra gió nóng. Kỹ sư tư vấn giúp tôi nguyên nhân và cách khắc phục nhé!'
@@ -1234,7 +1234,7 @@
             underbody: {
                 title: 'Gầm kêu lục cục khi qua gờ giảm tốc',
                 severity: 'danger',
-                severityText: '🔴 Nguy hiểm - Cần kiểm tra ngay',
+                severityText: 'Nguy hiểm - Cần kiểm tra ngay',
                 cause: 'Rách cao su đệm càng A, vỡ bi bát bèo giảm xóc, lỏng rô-tuyn cân bằng hoặc rơ lỏng thanh giằng thước lái. Để lâu có thể rơi rô-tuyn mất lái.',
                 solution: 'Đưa xe lên cầu nâng thủy lực soi gầm 28 điểm tại Hải Hà, dùng thiết bị chuyên dụng kiểm tra độ rơ của từng khớp rô-tuyn, thay thế linh kiện mòn và siết lực chuẩn.',
                 zaloMsg: 'Chào Ôtô Hải Hà, xe tôi đang bị: Gầm kêu lục cục khi đi đường xóc / qua gờ giảm tốc. Xưởng tư vấn kiểm tra giúp tôi với!'
@@ -1242,7 +1242,7 @@
             steering: {
                 title: 'Vô lăng rung lắc / Nhao lái sang bên',
                 severity: 'warning',
-                severityText: '🟡 Nên xử lý ngay',
+                severityText: 'Nên xử lý ngay',
                 cause: 'Mất chì cân bằng động bánh xe, lốp bị chửa/mòn vẹt không đều, hoặc sai lệch các góc đặt bánh xe (Camber, Caster, Toe) do sụp ổ gà.',
                 solution: 'Cân bằng động điện tử 4 bánh và cân chỉnh độ chụm góc đặt bánh xe bằng dàn máy quang học 3D Hunter (Hoa Kỳ) tại Ôtô Hải Hà (xong trong 20 phút).',
                 zaloMsg: 'Chào Ôtô Hải Hà, xe tôi bị: Vô lăng rung lắc khi chạy tốc độ cao / nhao lái sang một bên. Nhờ xưởng hỗ trợ tư vấn cân chỉnh Hunter!'
@@ -1250,7 +1250,7 @@
             brake: {
                 title: 'Phanh rít két két / Đạp phanh bị sâu',
                 severity: 'danger',
-                severityText: '🔴 Cực kỳ nguy hiểm - Dễ mất phanh',
+                severityText: 'Cực kỳ nguy hiểm - Dễ mất phanh',
                 cause: 'Má phanh mòn hết đến cữ cảnh báo kim loại, đĩa phanh bị gờ xước / cong vênh nhiệt, hoặc cúp-pen phanh bị xì dầu gây hụt áp lực dầu phanh.',
                 solution: 'Kiểm tra độ dày má phanh, láng phẳng mặt đĩa phanh bằng máy tự động chống rung giật, thay dầu phanh tuần hoàn DOT4 và xả e hệ thống phanh an toàn.',
                 zaloMsg: 'Chào Ôtô Hải Hà, xe tôi đang bị: Phanh có tiếng kêu rít két két / bàn đạp phanh bị sâu. Kỹ sư hỗ trợ tôi gấp nhé!'
@@ -1258,7 +1258,7 @@
             start: {
                 title: 'Đề dai khó nổ / Chết máy đột ngột',
                 severity: 'danger',
-                severityText: '🔴 Khẩn cấp - Dễ nằm đường',
+                severityText: 'Khẩn cấp - Dễ nằm đường',
                 cause: 'Bình ắc quy tụt áp / hỏng cọc bình, máy phát điện (Dynamo) không nạp, chổi than củ đề mòn, hoặc tắc lọc nhiên liệu / yếu bơm xăng.',
                 solution: 'Đo dòng khởi động CCA của ắc quy bằng máy Midtronics, kiểm tra điện áp sạc máy phát và đo áp suất nhiên liệu đường ống nạp để xử lý triệt để.',
                 zaloMsg: 'Chào Ôtô Hải Hà, xe tôi đang bị: Đề dai khó nổ / chết máy bất ngờ. Xưởng tư vấn kiểm tra giúp tôi với!'
@@ -1266,7 +1266,7 @@
             check_engine: {
                 title: 'Đèn Check Engine sáng (Đèn cá vàng)',
                 severity: 'warning',
-                severityText: '🟡 Cần cắm máy quét lỗi OBD-II',
+                severityText: 'Cần cắm máy quét lỗi OBD-II',
                 cause: 'Cảm biến oxy / cảm biến đo gió (MAF) bẩn hoặc hỏng, bỏ máy (misfire bu-gi/mobin), hỏng van luân hồi khí xả EGR hoặc thủng ống nạp khí.',
                 solution: 'Kỹ sư trưởng Hải Hà kết nối máy chẩn đoán đa năng chuyên hãng quét mã lỗi DTC chuẩn xác, đọc dữ liệu live-data và kiểm tra xóa lỗi miễn phí.',
                 zaloMsg: 'Chào Ôtô Hải Hà, taplo xe tôi đang sáng đèn Check Engine cá vàng. Nhờ xưởng tư vấn quét mã lỗi giúp tôi!'
@@ -1283,11 +1283,11 @@
                 '</div>' +
                 '<div class="diag-body-grid">' +
                 '<div class="diag-col-box">' +
-                '<h5 class="diag-col-heading cause"><i class="fa-solid fa-triangle-exclamation"></i> Nguyên nhân tiềm ẩn:</h5>' +
+                '<h5 class="diag-col-heading cause">Nguyên nhân tiềm ẩn:</h5>' +
                 '<p class="diag-col-text">' + data.cause + '</p>' +
                 '</div>' +
                 '<div class="diag-col-box">' +
-                '<h5 class="diag-col-heading solution"><i class="fa-solid fa-wrench"></i> Giải pháp từ Kỹ Sư Hải Hà:</h5>' +
+                '<h5 class="diag-col-heading solution">Giải pháp từ Kỹ Sư Hải Hà:</h5>' +
                 '<p class="diag-col-text">' + data.solution + '</p>' +
                 '</div>' +
                 '</div>' +

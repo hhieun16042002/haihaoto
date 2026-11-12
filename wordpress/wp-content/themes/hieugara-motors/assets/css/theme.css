@@ -2689,19 +2689,25 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     line-height: 1.6;
 }
 
-/* Marquee Mask and Continuous Smooth Track */
+/* =========================================================================
+   DARK BRAND BAND MARQUEE (Full-width #141414, Text-only, #D4B996 Sep Dots)
+   ========================================================================= */
 .marquee-strip-wrap {
     width: 100%;
     overflow: hidden;
     position: relative;
-    padding: 10px 0;
+    background: #141414;
+    padding: 40px 0;
+    margin: 36px 0 0;
+    opacity: 1 !important;
+    transform: none !important;
 }
 
 .brand-marquee {
     position: relative;
     width: 100%;
     overflow: hidden;
-    padding: 12px 0;
+    padding: 0;
     user-select: none;
     -webkit-user-select: none;
     mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
@@ -2727,49 +2733,54 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 .brand-pills-list {
     display: flex;
     align-items: center;
-    gap: 16px;
     margin: 0;
-    padding: 0 16px 0 0;
+    padding: 0;
     list-style: none;
     flex-shrink: 0;
 }
 
-/* Brand Text Pill Design (Text-only, No Logos, Identical Typography) */
 .brand-pill-item {
     margin: 0;
     padding: 0;
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    flex-shrink: 0;
+}
+
+.brand-pill-item::after {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #D4B996;
+    margin: 0 40px;
+    flex-shrink: 0;
 }
 
 .brand-pill-name {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 64px;
-    padding: 0 32px;
-    background: #FFFFFF;
-    border: 1px solid #E5E5E5;
-    border-radius: 9999px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    display: inline-block;
     font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 22px;
+    font-weight: 700;
     letter-spacing: 0.02em;
-    color: #5F6368;
+    color: rgba(255, 255, 255, 0.85);
     white-space: nowrap;
     line-height: 1;
     cursor: default;
     user-select: none;
-    transition: border-color 200ms ease, color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    transition: color 200ms ease;
 }
 
 .brand-pill-name:hover,
 .brand-pill-item:focus-within .brand-pill-name {
-    border-color: #141414;
-    color: #141414;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    color: #D4B996 !important;
 }
 
 @keyframes brandTextMarquee {
@@ -2781,7 +2792,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     }
 }
 
-/* Legal disclaimer line below the brand marquee strip */
+/* Legal disclaimer line below the brand marquee dark band */
 .brand-legal-disclaimer {
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 13px;
@@ -2794,19 +2805,21 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 }
 
 @media (max-width: 768px) {
+    .marquee-strip-wrap {
+        padding: 28px 0;
+        margin-top: 24px;
+    }
     .brand-marquee {
-        padding: 8px 0;
         mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
         -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
     }
-    .brand-pills-list {
-        gap: 12px;
-        padding-right: 12px;
-    }
     .brand-pill-name {
-        height: 50px;
-        padding: 0 22px;
-        font-size: 15px;
+        font-size: 17px;
+    }
+    .brand-pill-item::after {
+        width: 5px;
+        height: 5px;
+        margin: 0 24px;
     }
     .brand-legal-disclaimer {
         font-size: 12px;
@@ -2826,7 +2839,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
         width: 100% !important;
         justify-content: center !important;
         flex-wrap: wrap !important;
-        gap: 12px !important;
+        gap: 16px 0 !important;
     }
     .brand-pills-list[aria-hidden="true"] {
         display: none !important;
@@ -2834,8 +2847,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     .brand-pills-list {
         flex-wrap: wrap !important;
         justify-content: center !important;
-        padding-right: 0 !important;
-        gap: 12px !important;
+        padding: 0 !important;
         width: 100% !important;
     }
 }
@@ -15956,13 +15968,13 @@ body.rescue-modal-open {
 }
 
 .smart-tool-tab:hover {
-    color: #0f172a;
+    color: #8C6239;
 }
 
 .smart-tool-tab.active {
-    background: #0f172a;
+    background: #b8956b;
     color: #ffffff;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+    box-shadow: 0 4px 12px rgba(184, 149, 107, 0.35);
 }
 
 .smart-tool-tab .tab-icon {
@@ -16037,16 +16049,16 @@ body.rescue-modal-open {
 
 .km-chip:hover,
 .engine-chip:hover {
-    border-color: #94a3b8;
-    background: #f1f5f9;
+    border-color: #b8956b;
+    background: #fbf8f4;
 }
 
 .km-chip.active,
 .engine-chip.active {
-    background: #1e293b;
-    border-color: #1e293b;
+    background: #b8956b;
+    border-color: #a47e53;
     color: #ffffff;
-    box-shadow: 0 2px 8px rgba(30, 41, 59, 0.2);
+    box-shadow: 0 2px 8px rgba(184, 149, 107, 0.35);
 }
 
 /* Checklist Result Box */

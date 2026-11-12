@@ -108,7 +108,6 @@ $zalo_phone    = '0911211996';
         <div class="smart-tool-panel" id="panel-symptoms" role="tabpanel" aria-labelledby="tab-btn-symp">
             <div class="symptom-builder-card">
                 <div class="symptom-prompt-bar">
-                    <span class="prompt-icon">💡</span>
                     <p class="prompt-text">Bấm chọn 1 hiện tượng lạ xe bạn đang gặp phải bên dưới để xem chẩn đoán kỹ thuật sơ bộ &amp; lời khuyên của Kỹ Sư Trưởng Hải Hà:</p>
                 </div>
 
@@ -116,7 +115,6 @@ $zalo_phone    = '0911211996';
                 <div class="symptoms-grid" id="symptomsGrid">
                     <!-- Card 1 -->
                     <button type="button" class="symptom-card active" data-symptom="ac">
-                        <span class="symptom-icon">❄️</span>
                         <div class="symptom-info">
                             <strong class="symptom-name">Điều hòa không mát / Chỉ ra gió nóng</strong>
                             <span class="symptom-short">Bật AC hết cỡ nhưng cabin vẫn ngột ngạt hoặc có mùi hôi ẩm.</span>
@@ -125,7 +123,6 @@ $zalo_phone    = '0911211996';
 
                     <!-- Card 2 -->
                     <button type="button" class="symptom-card" data-symptom="underbody">
-                        <span class="symptom-icon">🔊</span>
                         <div class="symptom-info">
                             <strong class="symptom-name">Gầm kêu lục cục khi qua gờ giảm tốc</strong>
                             <span class="symptom-short">Tiếng va đập kim loại dưới gầm khi đi đường gồ ghề hoặc ôm cua.</span>
@@ -134,7 +131,6 @@ $zalo_phone    = '0911211996';
 
                     <!-- Card 3 -->
                     <button type="button" class="symptom-card" data-symptom="steering">
-                        <span class="symptom-icon">🛞</span>
                         <div class="symptom-info">
                             <strong class="symptom-name">Vô lăng rung lắc / Nhao lái sang bên</strong>
                             <span class="symptom-short">Chạy tốc độ cao vô lăng rung, hoặc buông tay xe tự lạng sang lề.</span>
@@ -143,7 +139,6 @@ $zalo_phone    = '0911211996';
 
                     <!-- Card 4 -->
                     <button type="button" class="symptom-card" data-symptom="brake">
-                        <span class="symptom-icon">🛑</span>
                         <div class="symptom-info">
                             <strong class="symptom-name">Phanh rít két két / Đạp phanh bị sâu</strong>
                             <span class="symptom-short">Tiếng kim loại ken két rít chói tai mỗi khi nhấn bàn đạp phanh.</span>
@@ -152,7 +147,6 @@ $zalo_phone    = '0911211996';
 
                     <!-- Card 5 -->
                     <button type="button" class="symptom-card" data-symptom="start">
-                        <span class="symptom-icon">⚡</span>
                         <div class="symptom-info">
                             <strong class="symptom-name">Đề dai khó nổ / Chết máy đột ngột</strong>
                             <span class="symptom-short">Bấm nút start tiếng đề lịm dần, đồng hồ chớp tắt hoặc hụt ga chết máy.</span>
@@ -161,7 +155,6 @@ $zalo_phone    = '0911211996';
 
                     <!-- Card 6 -->
                     <button type="button" class="symptom-card" data-symptom="check_engine">
-                        <span class="symptom-icon">⚠️</span>
                         <div class="symptom-info">
                             <strong class="symptom-name">Đèn Check Engine sáng (Đèn cá vàng)</strong>
                             <span class="symptom-short">Biểu tượng động cơ màu vàng sáng liên tục trên bảng đồng hồ taplo.</span>
