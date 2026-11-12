@@ -5049,11 +5049,15 @@ p, span, a, li, th, td, label, blockquote, figcaption {
         letter-spacing: 1px;
     }
     .shiftup-brand-marquee-section .marquee-title {
-        font-size: 1.25rem;
-        line-height: 1.3;
-        margin-top: 6px;
-        margin-bottom: 0;
-        padding: 0 8px;
+        font-size: clamp(0.72rem, 4.15vw, 1.25rem) !important;
+        white-space: nowrap !important;
+        line-height: 1.25 !important;
+        letter-spacing: -0.2px !important;
+        margin-top: 6px !important;
+        margin-bottom: 0 !important;
+        padding: 0 4px !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
     }
 
     /* Compact Mobile Footer */
