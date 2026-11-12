@@ -526,7 +526,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
 
         <div class="container">
             <p class="brand-legal-disclaimer">
-                <?php _e('Tên các hãng xe chỉ nhằm mô tả dòng xe mà Ô Tô Hải Hà nhận bảo dưỡng, sửa chữa. Các nhãn hiệu thuộc quyền sở hữu của chủ sở hữu tương ứng. Ô Tô Hải Hà là xưởng dịch vụ độc lập, không phải đại lý ủy quyền của các hãng, ngoại trừ VinFast.', 'hieugara-motors'); ?>
+                <?php _e('Tên các hãng xe chỉ nhằm mô tả dòng xe mà Ô Tô Hải Hà nhận bảo dưỡng, sửa chữa. Các nhãn hiệu thuộc quyền sở hữu của chủ sở hữu tương ứng.', 'hieugara-motors'); ?>
             </p>
         </div>
     </section>
