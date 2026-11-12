@@ -47,7 +47,7 @@ define( 'DB_NAME', getenv_docker('WORDPRESS_DB_NAME', 'garaxe_db') );
 define( 'DB_USER', getenv_docker('WORDPRESS_DB_USER', 'root') );
 
 /** Database password */
-define( 'DB_PASSWORD', getenv_docker('WORDPRESS_DB_PASSWORD', '123456') );
+define( 'DB_PASSWORD', getenv_docker('WORDPRESS_DB_PASSWORD', '') );
 
 /**
  * Docker image fallback values above are sourced from the official WordPress installation wizard:
@@ -56,7 +56,7 @@ define( 'DB_PASSWORD', getenv_docker('WORDPRESS_DB_PASSWORD', '123456') );
  */
 
 /** Database hostname */
-define( 'DB_HOST', getenv_docker('WORDPRESS_DB_HOST', '127.0.0.1') );
+define( 'DB_HOST', getenv_docker('WORDPRESS_DB_HOST', '127.0.0.1:3307') );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', getenv_docker('WORDPRESS_DB_CHARSET', 'utf8mb4') );
