@@ -9816,8 +9816,8 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 }
 
 .kobac-prose strong {
-    color: inherit;
-    font-weight: 400 !important;
+    color: #141414;
+    font-weight: 700 !important;
 }
 
 .kobac-prose em {
@@ -16649,6 +16649,57 @@ body.rescue-modal-open {
 }
 .smart-tool-disclaimer a:hover {
     color: #1e293b;
+}
+
+/* ==========================================================================
+   ARCHIVE GARAGE SERVICE & RESPONSIVE DIAGNOSTICS WIDGET RULES
+   ========================================================================== */
+.archive-service-main {
+    padding: 40px 0 85px;
+    background: #F8FAFC;
+    min-height: 50vh;
+}
+
+.archive-service-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.vehicle-diagnostics-wrapper {
+    margin-bottom: 45px;
+}
+
+/* Mobile: Chỉ giữ tiện ích tra cứu bảo dưỡng & bắt bệnh trên máy tính, ẩn hoàn toàn trên điện thoại */
+@media (max-width: 768px) {
+    .vehicle-diagnostics-wrapper,
+    .haiha-smart-tools-section,
+    #tien-ich-kiem-tra-xe {
+        display: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        visibility: hidden !important;
+    }
+
+    .archive-service-main {
+        padding: 20px 0 60px !important;
+    }
+
+    .archive-service-container {
+        padding: 0 14px !important;
+    }
+
+    .service-cat-block {
+        padding: 20px 16px 24px !important;
+        border-radius: 12px !important;
+    }
+
+    .service-cat-block > div:first-child {
+        padding-bottom: 14px !important;
+        margin-bottom: 18px !important;
+    }
 }
 
 

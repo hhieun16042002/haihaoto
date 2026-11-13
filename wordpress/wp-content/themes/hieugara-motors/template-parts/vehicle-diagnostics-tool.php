@@ -7,7 +7,7 @@
  */
 
 $rescue_phone  = get_option('hieugara_rescue_phone', '0911 211 996');
-$tech_phone    = '02203 892 207';
+$tech_phone    = '0911 211 996';
 $zalo_phone    = '0911211996';
 ?>
 
@@ -93,9 +93,9 @@ $zalo_phone    = '0911211996';
                             </svg>
                             <span>Tư vấn qua Zalo</span>
                         </a>
-                        <a href="tel:02203892207" class="maint-cta-call">
+                        <a href="tel:0911211996" class="maint-cta-call">
                             <i class="fa-solid fa-phone"></i>
-                            <span>Hotline Kỹ Thuật: <strong>02203 892 207</strong></span>
+                            <span>Hotline Kỹ Thuật: <strong>0911 211 996</strong></span>
                         </a>
                     </div>
                 </div>

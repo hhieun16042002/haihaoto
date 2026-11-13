@@ -86,13 +86,13 @@ if (!empty($parent_cats) && !is_wp_error($parent_cats)) {
 <!-- =========================================================================
      MAIN CONTENT
      ========================================================================= -->
-<main id="primary" class="site-main" style="padding: 40px 0 85px; background: #F8FAFC; min-height: 50vh;">
-    <div class="container" style="max-width: 1240px; margin: 0 auto; padding: 0 20px;">
+<main id="primary" class="site-main archive-service-main">
+    <div class="container archive-service-container">
 
         <!-- =========================================================================
-             TIỆN ÍCH KIỂM TRA XE THÔNG MINH (BẢO DƯỠNG THEO KM & BẮT BỆNH XE NHANH)
+             TIỆN ÍCH KIỂM TRA XE THÔNG MINH (CHỈ HIỂN THỊ TRÊN MÁY TÍNH / DESKTOP)
              ========================================================================= -->
-        <div style="margin-bottom: 45px;">
+        <div class="vehicle-diagnostics-wrapper">
             <?php get_template_part('template-parts/vehicle-diagnostics-tool'); ?>
         </div>
 

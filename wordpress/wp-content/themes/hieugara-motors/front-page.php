@@ -297,7 +297,7 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                     <div class="kobac-prose">
                         <p>Chúng tôi hiểu rằng mỗi chiếc xe là một phần quan trọng của cuộc sống, mang theo những hành trình, kỷ niệm và sự an toàn của cả gia đình. Vì thế, từ năm 1995 đến nay, Ô Tô Hải Hà đã dành 31 năm không ngừng đổi mới và hoàn thiện nghề chăm sóc, bảo dưỡng và sửa chữa ô tô, lấy sự chính xác và chữ Tâm của người thợ làm kim chỉ nam.</p>
                         <p>Chúng tôi đầu tư hệ thống thiết bị chẩn đoán hiện đại, chuẩn hóa quy trình bảo dưỡng và đồng sơn, để rút ngắn thời gian chờ đợi mà vẫn giữ vững chất lượng trên từng chiếc xe. Với nhà xưởng 30 cầu nâng chuyên dụng, 6 phòng sơn sấy khép kín và đội ngũ hơn 80 nhân sự giàu kinh nghiệm, Ô Tô Hải Hà đã trở thành địa chỉ bảo dưỡng – sửa chữa ô tô quen thuộc, được hàng chục nghìn chủ xe tin tưởng gửi gắm.</p>
-                        <p>Ô Tô Hải Hà phát triển bền vững suốt hơn ba thập kỷ với kim chỉ nam: Uy tín - chất lượng - hiệu quả là sự tồn tại của doanh nghiệp</p>
+                        <p>Ô Tô Hải Hà phát triển bền vững suốt hơn ba thập kỷ với kim chỉ nam: <strong>Uy tín - chất lượng - hiệu quả là sự tồn tại của doanh nghiệp</strong></p>
                     </div>
                     <div class="kobac-btn-wrap kobac-desktop-only-btn">
                         <a href="<?php echo esc_url(home_url('/ve-chung-toi/')); ?>" class="kobac-cta-btn">

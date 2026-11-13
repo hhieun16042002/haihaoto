@@ -341,8 +341,77 @@ $banner_photo  = function_exists('hieugara_get_current_page_banner') ? hieugara_
         </div>
     </section>
 
-    <!-- Anchor for any existing link to #tiep-nhan to scroll to footer -->
-    <div id="tiep-nhan"></div>
+    <!-- SECTION 7: TIẾP NHẬN TRỰC TIẾP & CHỈ ĐƯỜNG ĐẾN XƯỞNG -->
+    <section class="vinfast-booking-map-section" id="tiep-nhan">
+        <div class="container">
+            <div class="vf-section-header text-center">
+                <span class="vf-section-sub">TIẾP NHẬN TRỰC TIẾP</span>
+                <h2 class="vf-section-title">Tư vấn kỹ thuật &amp; Chỉ đường đến xưởng</h2>
+            </div>
+
+            <div class="vf-booking-map-grid">
+                <!-- Left: Contact & Support Card -->
+                <div class="vf-booking-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div class="vf-booking-card-head">
+                            <span class="vf-badge-gold">TIẾP NHẬN ƯU TIÊN</span>
+                            <h3>Trung Tâm Dịch Vụ Xe VinFast Hải Hà</h3>
+                            <p>Xưởng chuẩn bị sẵn khoang kỹ thuật chuyên biệt cho xe điện và xe xăng VinFast. Quý khách vui lòng liên hệ hotline để được phục vụ nhanh nhất.</p>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 14px; margin: 24px 0;">
+                            <a href="tel:0911211996" class="vf-btn vf-btn-primary" style="justify-content: center; padding: 16px; font-size: 1.05rem; font-weight: 800; border-radius: 8px;">
+                                <i class="fa-solid fa-phone-volume"></i>
+                                <span>Hotline Kỹ Thuật: 0911 211 996</span>
+                            </a>
+                            <a href="https://zalo.me/0911211996" target="_blank" rel="noopener" class="vf-btn vf-btn-zalo" style="justify-content: center; padding: 16px; background: #0068FF !important; color: #ffffff !important; font-size: 1.05rem; font-weight: 800; border: none; border-radius: 8px; box-shadow: 0 4px 14px rgba(0, 104, 255, 0.35); text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                                <i class="fa-solid fa-comment-dots" style="font-size: 1.25rem; color: #ffffff !important;"></i>
+                                <span style="color: #ffffff !important;">Nhắn Tin Zalo: 0911 211 996</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div style="background: rgba(212, 185, 150, 0.15); border-left: 3px solid #D4B996; padding: 14px 16px; border-radius: 6px; margin-top: 10px;">
+                        <small style="color: #4b5563; line-height: 1.6; display: block;">
+                            <strong style="color: #141414;">Cam kết dịch vụ:</strong> 100% phụ tùng xe VinFast chính hãng, kỹ thuật viên có chứng chỉ xe điện, bảo hành điện tử minh bạch.
+                        </small>
+                    </div>
+                </div>
+
+                <!-- Right: Information & Navigation Card (Thay thế bản đồ iframe, sắp xếp lại thông tin) -->
+                <div class="vf-map-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div class="vf-map-head">
+                            <span class="vf-badge-outline"><i class="fa-solid fa-location-dot"></i> ĐỊA CHỈ TRUNG TÂM</span>
+                            <h3 style="margin-top: 6px;">Ô Tô Hải Hà – Trụ sở chính</h3>
+                            <div class="vf-map-address" style="margin-top: 16px; font-size: 0.95rem; line-height: 1.8; color: #374151;">
+                                <p style="margin-bottom: 10px;">
+                                    <strong style="color: #141414;">Địa chỉ:</strong> KM3+500 Nguyễn Lương Bằng, Phường Bình Hàn, TP. Hải Dương
+                                </p>
+                                <p style="margin-bottom: 10px;">
+                                    <strong style="color: #141414;">Hotline tư vấn:</strong> <a href="tel:0911211996" style="color: #141414; font-weight: 700;">0911 211 996</a>
+                                </p>
+                                <p style="margin-bottom: 10px;">
+                                    <strong style="color: #141414;">Giờ làm việc:</strong> Thứ 2 – Chủ Nhật: 07:30 – 18:00 (mở cửa cả tuần)
+                                </p>
+                                <p style="margin-bottom: 0;">
+                                    <strong style="color: #141414;">Quy mô xưởng:</strong> 8 khoang sửa chữa, 2 cầu nâng chuyên dụng xe điện VinFast, phòng sơn sấy hấp kín tiêu chuẩn hãng.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vf-map-actions" style="margin-top: 24px;">
+                        <a href="https://maps.google.com/?cid=962452285112173913" target="_blank" rel="noopener" class="vf-btn vf-btn-outline" style="width: 100%; justify-content: center; padding: 14px; font-weight: 700; border: 1.5px solid #141414; color: #141414; border-radius: 8px; display: flex; align-items: center; gap: 8px; text-decoration: none;">
+                            <i class="fa-solid fa-diamond-turn-right" style="color: #c2410c;"></i>
+                            <span>Mở chỉ đường trên Google Maps</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </main>
 
 <!-- Vanilla JS for FAQ Accordion -->
