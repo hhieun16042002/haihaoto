@@ -1,0 +1,7 @@
+*
+!wordpress/
+!uploads.ini
+wordpress/wp-content/cache/
+wordpress/wp-content/upgrade/
+wordpress/**/*.sql
+wordpress/**/*.log

@@ -1,0 +1,22 @@
+# Khai báo cho Argo CD: "theo dõi thư mục deploy/ trên branch argocd
+# và triển khai vào namespace haihaoto"
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: haihaoto
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/hhieun16042002/haihaoto.git
+    targetRevision: argocd
+    path: deploy
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: haihaoto
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

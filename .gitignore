@@ -15,3 +15,10 @@ wordpress/scripts/create_vf_page.php
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Argo CD / Kubernetes
+!/Dockerfile
+!/.dockerignore
+!/uploads.ini
+!/deploy/
+!/argocd/

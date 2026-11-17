@@ -1,0 +1,57 @@
+# Cơ sở dữ liệu MariaDB
+# Mật khẩu lấy từ Secret "haihaoto-db" (tạo bằng tay, KHÔNG để trong Git)
+apiVersion: v1
+kind: Service
+metadata:
+  name: haiha-db
+spec:
+  selector:
+    app: haiha-db
+  ports:
+    - port: 3306
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: haiha-db
+spec:
+  serviceName: haiha-db
+  replicas: 1
+  selector:
+    matchLabels:
+      app: haiha-db
+  template:
+    metadata:
+      labels:
+        app: haiha-db
+    spec:
+      containers:
+        - name: mariadb
+          image: mariadb:11.8
+          ports:
+            - containerPort: 3306
+          env:
+            - name: MARIADB_DATABASE
+              value: garaxe_db
+            - name: MARIADB_USER
+              valueFrom: { secretKeyRef: { name: haihaoto-db, key: user } }
+            - name: MARIADB_PASSWORD
+              valueFrom: { secretKeyRef: { name: haihaoto-db, key: password } }
+            - name: MARIADB_ROOT_PASSWORD
+              valueFrom: { secretKeyRef: { name: haihaoto-db, key: root-password } }
+          readinessProbe:
+            exec:
+              command: ["healthcheck.sh", "--connect", "--innodb_initialized"]
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/mysql
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 2Gi
