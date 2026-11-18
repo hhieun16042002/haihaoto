@@ -44,10 +44,13 @@ function hieugara_get_about_kobac_images() {
     if (empty($saved) || !is_array($saved)) {
         return $defaults;
     }
+    $norm = function($u) {
+        return function_exists('hieugara_normalize_asset_url') ? hieugara_normalize_asset_url($u) : $u;
+    };
     return array(
-        'img_1' => !empty($saved['img_1']) ? $saved['img_1'] : $defaults['img_1'],
-        'img_2' => !empty($saved['img_2']) ? $saved['img_2'] : $defaults['img_2'],
-        'img_3' => !empty($saved['img_3']) ? $saved['img_3'] : $defaults['img_3'],
+        'img_1' => !empty($saved['img_1']) ? $norm($saved['img_1']) : $defaults['img_1'],
+        'img_2' => !empty($saved['img_2']) ? $norm($saved['img_2']) : $defaults['img_2'],
+        'img_3' => !empty($saved['img_3']) ? $norm($saved['img_3']) : $defaults['img_3'],
     );
 }
 
@@ -101,8 +104,11 @@ function hieugara_get_pano_banners() {
     // Normalizer helper: convert relative or domain-specific URLs to standard canonical full URL
     $normalize_url = function($url) {
         if (empty($url) || !is_string($url)) return $url;
-        if (strpos($url, 'localhost:8080') !== false || strpos($url, 'trycloudflare.com') !== false) {
-            $url = preg_replace('#^https?://[^/]+#', '', $url);
+        if (function_exists('hieugara_normalize_asset_url')) {
+            return hieugara_normalize_asset_url($url);
+        }
+        if (preg_match('#^https?://[^/]+(/.*)$#i', $url, $m)) {
+            return home_url($m[1]);
         }
         if (strpos($url, '/') === 0) {
             return home_url($url);

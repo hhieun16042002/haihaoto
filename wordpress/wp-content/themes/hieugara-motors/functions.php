@@ -416,17 +416,51 @@ function hieugara_send_security_headers() {
 }
 add_action('send_headers', 'hieugara_send_security_headers');
 
-// 5h. Prevent Canonical Port 8080 Redirects on Cloudflare Tunnels
+// 5h. Prevent Canonical Port 8888 / 8080 / Localhost Redirects on Cloudflare Tunnels
 function hieugara_fix_tunnel_canonical_redirect($redirect_url, $requested_url) {
-    if (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'trycloudflare.com') !== false) {
-        // Prevent redirecting to port 8080 over external tunnel HTTPS
-        if (strpos($redirect_url, ':8080') !== false) {
+    if (isset($_SERVER['HTTP_HOST']) && (strpos($_SERVER['HTTP_HOST'], 'trycloudflare.com') !== false || strpos($_SERVER['HTTP_HOST'], 'ngrok') !== false)) {
+        // Prevent redirecting to local ports over external tunnel HTTPS
+        if (strpos($redirect_url, ':8888') !== false || strpos($redirect_url, ':8080') !== false || strpos($redirect_url, 'localhost') !== false) {
             return false;
         }
     }
     return $redirect_url;
 }
 add_filter('redirect_canonical', 'hieugara_fix_tunnel_canonical_redirect', 10, 2);
+
+// 5i. Universal Dynamic Asset URL Normalizer for Cloudflare Tunnels & Staging
+function hieugara_normalize_asset_url($url) {
+    if (empty($url) || !is_string($url)) {
+        return $url;
+    }
+    if (preg_match('#^https?://(?:localhost(?::\d+)?|127\.0\.0\.1(?::\d+)?|[a-zA-Z0-9.\-]+\.trycloudflare\.com|[a-zA-Z0-9.\-]+\.ngrok-free\.app)(/.*)$#i', $url, $m)) {
+        return home_url($m[1]);
+    }
+    if (strpos($url, '/') === 0) {
+        return home_url($url);
+    }
+    return $url;
+}
+add_filter('wp_get_attachment_url', 'hieugara_normalize_asset_url', 99);
+
+// 5j. Frontend HTML Dynamic Domain Rewriter
+function hieugara_dynamic_domain_rewriter($buffer) {
+    if (empty($buffer) || !is_string($buffer) || is_admin()) {
+        return $buffer;
+    }
+    $current_home = home_url();
+    // Rewrite any hardcoded localhost:8888 or previous tunnel domain assets/links
+    return preg_replace(
+        '#https?://(?:localhost(?::\d+)?|127\.0\.0\.1(?::\d+)?|[a-zA-Z0-9.\-]+\.trycloudflare\.com|[a-zA-Z0-9.\-]+\.ngrok-free\.app)(/wp-(?:content|includes)/[^\s"\'<>)]+)#i',
+        $current_home . '$1',
+        $buffer
+    );
+}
+add_action('template_redirect', function() {
+    if (!is_admin() && !wp_doing_ajax() && !wp_doing_cron()) {
+        ob_start('hieugara_dynamic_domain_rewriter');
+    }
+}, 1);
 
 
 
