@@ -34,7 +34,7 @@ function hieugara_admin_bar_customization($wp_admin_bar) {
     $wp_admin_bar->remove_node('menu-toggle');
     $wp_admin_bar->remove_node('customize');
 
-    $site_logo_url = function_exists('hieugara_get_site_logo') ? hieugara_get_site_logo() : get_template_directory_uri() . '/assets/images/haiha-logo.png';
+    $site_logo_url = function_exists('hieugara_get_site_logo') ? hieugara_get_site_logo() : get_template_directory_uri() . '/assets/images/haiha-logo-official.png';
 
     // Add Brand Node with Authentic Hải Hà Logo (With strict inline dimensions so it NEVER blows up anywhere)
     $brand_logo_img = '<img src="' . esc_url($site_logo_url) . '" alt="Ôtô Hải Hà" class="hieugara-topbar-logo-img" width="22" height="22" style="width:22px!important;height:22px!important;max-width:22px!important;max-height:22px!important;min-width:22px!important;min-height:22px!important;object-fit:contain!important;border-radius:50%!important;background:#ffffff!important;padding:1px!important;vertical-align:middle!important;display:inline-block!important;margin-right:6px!important;box-shadow:0 1px 3px rgba(0,0,0,0.3)!important;">';
@@ -449,7 +449,7 @@ add_action('admin_menu', 'hieugara_clean_admin_menu', 999);
 
 // 7. Inject Section Headers & Top Brand Card
 function hieugara_admin_botble_sidebar_script() {
-    $site_logo_url = function_exists('hieugara_get_site_logo') ? hieugara_get_site_logo() : get_template_directory_uri() . '/assets/images/haiha-logo.png';
+    $site_logo_url = function_exists('hieugara_get_site_logo') ? hieugara_get_site_logo() : get_template_directory_uri() . '/assets/images/haiha-logo-official.png';
     ?>
     <script type="text/javascript">
     (function($) {
@@ -556,7 +556,7 @@ function hieugara_render_dashboard_hub_widget() {
     $total_posts = (int) (wp_count_posts('post')->publish ?? 0);
 
     // Contact options & Site Logo
-    $site_logo_url = function_exists('hieugara_get_site_logo') ? hieugara_get_site_logo() : get_template_directory_uri() . '/assets/images/haiha-logo.png';
+    $site_logo_url = function_exists('hieugara_get_site_logo') ? hieugara_get_site_logo() : get_template_directory_uri() . '/assets/images/haiha-logo-official.png';
     $hotline = hieugara_hotline_phone();
     $rescue  = hieugara_rescue_phone();
     $tech    = hieugara_tech_phone();

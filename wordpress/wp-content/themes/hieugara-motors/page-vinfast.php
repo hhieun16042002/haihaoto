@@ -28,7 +28,7 @@ $banner_photo  = function_exists('hieugara_get_current_page_banner') ? hieugara_
       "@id": "<?php echo esc_url(home_url('/#autorepair')); ?>",
       "name": "Ô Tô Hải Hà - Xưởng Dịch Vụ VinFast",
       "url": "<?php echo esc_url($current_url); ?>",
-      "logo": "<?php echo esc_url($theme_uri . '/assets/images/haiha-logo.png'); ?>",
+      "logo": "<?php echo esc_url($theme_uri . '/assets/images/haiha-logo-official.png'); ?>",
       "image": "<?php echo esc_url($sign_photo); ?>",
       "telephone": "+84-911-211-996",
       "priceRange": "$$",

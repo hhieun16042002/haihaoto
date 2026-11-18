@@ -230,7 +230,7 @@ class HieuGara_SEO_Architecture {
         $rescue_phone  = get_option('hieugara_rescue_phone', '0911 211 996');
         $hotline_phone = get_option('hieugara_hotline_phone', '0911 211 996');
         $theme_uri     = get_template_directory_uri();
-        $logo_url      = $theme_uri . '/assets/images/haiha-logo.png';
+        $logo_url      = $theme_uri . '/assets/images/haiha-logo-official.png';
 
         // 1. AutomotiveBusiness (LocalBusiness) on all pages
         $business_schema = array(

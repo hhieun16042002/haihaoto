@@ -10,7 +10,7 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <?php $site_logo_url = function_exists('hieugara_get_site_logo') ? hieugara_get_site_logo() : get_template_directory_uri() . '/assets/images/haiha-logo.png?v=' . HIEUGARA_THEME_VERSION; ?>
+    <?php $site_logo_url = function_exists('hieugara_get_site_logo') ? hieugara_get_site_logo() : get_template_directory_uri() . '/assets/images/haiha-logo-official.png?v=' . HIEUGARA_THEME_VERSION; ?>
     <link rel="icon" type="image/png" href="<?php echo esc_url($site_logo_url); ?>">
     <link rel="apple-touch-icon" href="<?php echo esc_url($site_logo_url); ?>">
     <link rel="profile" href="https://gmpg.org/xfn/11">
