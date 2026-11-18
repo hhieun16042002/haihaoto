@@ -4874,36 +4874,48 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     pointer-events: auto;
 }
 
-/* 1. Button Hotline: Warm Beige #C5A880 with Solid Black Icon */
+/* 1. Button Facebook Fanpage: Official Facebook Blue #1877F2 */
+.dock-fb,
+.dock-facebook,
 .dock-book {
-    background: #C5A880 !important;
-    color: #141414 !important;
-    border: 1.5px solid #B89A74 !important;
-    box-shadow: 0 6px 20px rgba(197, 168, 128, 0.45) !important;
+    background: #1877F2 !important;
+    color: #ffffff !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
+    box-shadow: 0 6px 20px rgba(24, 119, 242, 0.45) !important;
 }
 
+.dock-fb .dock-fa-icon,
+.dock-facebook .dock-fa-icon,
 .dock-book .dock-fa-icon {
-    color: #141414 !important;
+    color: #ffffff !important;
 }
 
+.dock-fb .dock-text-desktop,
+.dock-facebook .dock-text-desktop,
 .dock-book .dock-text-desktop {
-    color: #141414 !important;
+    color: #ffffff !important;
     font-weight: 800 !important;
 }
 
+.dock-fb:hover,
+.dock-facebook:hover,
 .dock-book:hover {
-    background: #baa07a !important;
-    border-color: #a88d67 !important;
-    color: #141414 !important;
-    box-shadow: 0 10px 28px rgba(197, 168, 128, 0.6) !important;
+    background: #166fe5 !important;
+    border-color: #ffffff !important;
+    color: #ffffff !important;
+    box-shadow: 0 10px 28px rgba(24, 119, 242, 0.6) !important;
 }
 
+.dock-fb:hover .dock-fa-icon,
+.dock-facebook:hover .dock-fa-icon,
 .dock-book:hover .dock-fa-icon {
-    color: #141414 !important;
+    color: #ffffff !important;
 }
 
+.dock-fb:hover .dock-text-desktop,
+.dock-facebook:hover .dock-text-desktop,
 .dock-book:hover .dock-text-desktop {
-    color: #141414 !important;
+    color: #ffffff !important;
 }
 
 /* 2. Button Cứu hộ 24/7: Emergency Red with SOS Beacon */
@@ -5156,7 +5168,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
         height: 145px;
     }
     .footer-bottom-bar {
-        padding: 12px 0 75px !important;
+        padding: 12px 0 24px !important;
     }
     .footer-bottom-inner {
         flex-direction: column;
@@ -5175,100 +5187,100 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     .bottom-back-to-top {
         display: none;
     }
-    /* Authentic Lexus Vietnam 3-Column Mobile Bottom Action Bar (Floating Rounded Island) */
+    /* Floating Round Action Buttons on Mobile (Compact & Matching PC Style) */
     .shiftup-floating-dock {
         position: fixed !important;
-        bottom: calc(10px + env(safe-area-inset-bottom, 0px)) !important;
-        left: 12px !important;
-        right: 12px !important;
+        bottom: calc(18px + env(safe-area-inset-bottom, 0px)) !important;
+        right: 14px !important;
+        left: auto !important;
         width: auto !important;
-        max-width: calc(100vw - 24px) !important;
-        margin: 0 auto !important;
-        background: rgba(18, 18, 20, 0.94) !important;
-        backdrop-filter: blur(16px) !important;
-        -webkit-backdrop-filter: blur(16px) !important;
-        border: 1px solid rgba(197, 168, 128, 0.45) !important;
-        border-radius: 24px !important;
-        padding: 6px 8px !important;
-        display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 6px !important;
-        align-items: center !important;
-        z-index: 99990 !important;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
-        height: auto !important;
-    }
-    .float-dock-pill {
+        max-width: none !important;
+        margin: 0 !important;
+        background: transparent !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        justify-content: center !important;
-        gap: 3px !important;
-        padding: 7px 4px !important;
-        border-radius: 16px !important;
-        background: rgba(255, 255, 255, 0.05) !important;
-        border: 1px solid rgba(255, 255, 255, 0.06) !important;
-        color: #ffffff !important;
-        text-decoration: none !important;
-        width: 100% !important;
-        max-width: none !important;
-        min-height: 52px !important;
-        height: auto !important;
+        gap: 8px !important;
+        z-index: 99990 !important;
         box-shadow: none !important;
-        transform: none !important;
-        box-sizing: border-box !important;
-        transition: all 0.2s ease !important;
+        height: auto !important;
     }
-    .float-dock-pill:active {
-        transform: scale(0.96) !important;
-        background: rgba(255, 255, 255, 0.12) !important;
-    }
-    .float-dock-pill .dock-fa-icon,
-    .float-dock-pill .dock-pulse-beacon,
-    .float-dock-pill .dock-text-desktop {
-        display: none !important;
-    }
-    .float-dock-pill .lexus-dock-svg {
+    .float-dock-pill {
+        position: relative !important;
         display: inline-flex !important;
         align-items: center !important;
         justify-content: center !important;
-        height: 22px !important;
-        color: #ffffff !important;
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
+        max-width: 38px !important;
+        min-height: 38px !important;
+        border-radius: 50% !important;
+        padding: 0 !important;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3) !important;
+        border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+        text-decoration: none !important;
+        transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+        box-sizing: border-box !important;
     }
+    .float-dock-pill:active {
+        transform: scale(0.9) !important;
+    }
+    .float-dock-pill .dock-text-desktop,
     .float-dock-pill .dock-text-mobile {
-        display: block !important;
-        font-family: 'Be Vietnam Pro', -apple-system, sans-serif !important;
-        font-size: 0.72rem !important;
-        font-weight: 700 !important;
-        letter-spacing: 0.2px !important;
-        line-height: 1.2 !important;
-        text-transform: none !important;
+        display: none !important;
+    }
+    .float-dock-pill .dock-fa-icon {
+        display: inline-flex !important;
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 0.95rem !important;
+        margin: 0 !important;
         color: #ffffff !important;
-        text-align: center !important;
-        white-space: nowrap !important;
     }
+    .float-dock-pill .dock-zalo-svg-wrap {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    .float-dock-pill .dock-zalo-svg-wrap svg {
+        width: 20px !important;
+        height: 20px !important;
+    }
+    .float-dock-pill.dock-fb,
+    .float-dock-pill.dock-facebook,
     .float-dock-pill.dock-book {
-        border-color: rgba(197, 168, 128, 0.3) !important;
-    }
-    .float-dock-pill.dock-book .lexus-dock-svg {
-        color: #C5A880 !important;
+        background: #1877F2 !important;
+        color: #ffffff !important;
+        box-shadow: 0 4px 14px rgba(24, 119, 242, 0.45) !important;
     }
     .float-dock-pill.dock-rescue {
-        background: rgba(217, 45, 32, 0.25) !important;
-        border-color: rgba(217, 45, 32, 0.5) !important;
-    }
-    .float-dock-pill.dock-rescue .lexus-dock-svg {
-        color: #ff6b6b !important;
+        background: #D92D20 !important;
+        color: #ffffff !important;
+        box-shadow: 0 4px 14px rgba(217, 45, 32, 0.45) !important;
     }
     .float-dock-pill.dock-zalo {
-        background: rgba(0, 104, 255, 0.22) !important;
-        border-color: rgba(0, 104, 255, 0.45) !important;
+        background: #0068FF !important;
+        color: #ffffff !important;
+        box-shadow: 0 4px 14px rgba(0, 104, 255, 0.45) !important;
     }
-    .float-dock-pill.dock-zalo .lexus-dock-svg {
-        color: #60a5fa !important;
-    }
-    .dock-pulse-beacon {
-        display: none !important;
+    .float-dock-pill.dock-rescue .dock-pulse-beacon {
+        display: inline-block !important;
+        position: absolute !important;
+        top: 2px !important;
+        right: 2px !important;
+        width: 7px !important;
+        height: 7px !important;
+        z-index: 3 !important;
+        pointer-events: none !important;
     }
 }
 
