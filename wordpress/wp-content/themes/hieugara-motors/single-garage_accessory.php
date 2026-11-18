@@ -348,6 +348,11 @@ html, body {
         height: 130px !important;
         padding: 8px !important;
         background: #ffffff !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-decoration: none !important;
+        cursor: pointer !important;
     }
 
     .phukien-card-img-wrap img {
@@ -625,9 +630,9 @@ html, body {
                             <span class="phukien-card-badge"><?php echo esc_html($rel_badge); ?></span>
                         <?php endif; ?>
 
-                        <div class="phukien-card-img-wrap">
+                        <a href="<?php echo esc_url(get_permalink($rel_id)); ?>" class="phukien-card-img-wrap" title="<?php echo esc_attr($rel->post_title); ?>">
                             <img src="<?php echo esc_url($rel_thumb); ?>" alt="<?php echo esc_attr($rel->post_title); ?>" loading="lazy">
-                        </div>
+                        </a>
 
                         <div class="phukien-card-body">
                             <h4 class="phukien-card-title">

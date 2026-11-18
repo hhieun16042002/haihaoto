@@ -12244,6 +12244,8 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     align-items: center;
     justify-content: center;
     border-bottom: 1px solid #f1f5f9;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .phukien-card-img-wrap img {
