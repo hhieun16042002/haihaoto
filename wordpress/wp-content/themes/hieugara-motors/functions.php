@@ -542,15 +542,21 @@ function hieugara_get_page_banner_url($page_key = 'default') {
     $custom_url  = get_option($option_name, '');
 
     if (!empty($custom_url)) {
+        if (function_exists('hieugara_normalize_asset_url')) {
+            return hieugara_normalize_asset_url($custom_url);
+        }
         if (function_exists('hieugara_normalize_local_media_urls')) {
-            $custom_url = hieugara_normalize_local_media_urls($custom_url);
+            return hieugara_normalize_local_media_urls($custom_url);
         }
         return $custom_url;
     }
 
     $fallback = $defaults[$page_key] ?? $defaults['default'];
+    if (function_exists('hieugara_normalize_asset_url')) {
+        return hieugara_normalize_asset_url($fallback);
+    }
     if (function_exists('hieugara_normalize_local_media_urls')) {
-        $fallback = hieugara_normalize_local_media_urls($fallback);
+        return hieugara_normalize_local_media_urls($fallback);
     }
     return $fallback;
 }
@@ -559,56 +565,45 @@ function hieugara_get_page_banner_url($page_key = 'default') {
  * Tự động phát hiện trang hiện tại và trả về URL ảnh banner tương ứng
  */
 function hieugara_get_current_page_banner() {
-    // 1. Cho phép ghi đè bằng Ảnh Đại Diện (Featured Image) của trang/bài viết nếu có
-    if (is_singular() && has_post_thumbnail()) {
-        $feat = get_the_post_thumbnail_url(get_the_ID(), 'full');
-        if (!empty($feat)) {
-            if (function_exists('hieugara_normalize_local_media_urls')) {
-                $feat = hieugara_normalize_local_media_urls($feat);
-            }
-            return $feat;
-        }
-    }
-
-    // 2. Trang Về Chúng Tôi & Đội Ngũ Kỹ Thuật
+    // 1. Trang Về Chúng Tôi & Đội Ngũ Kỹ Thuật
     if (is_page('ve-chung-toi') || is_page_template('page-ve-chung-toi.php') || is_page('doi-ngu-ky-thuat') || is_page_template('page-doi-ngu-ky-thuat.php')) {
         return hieugara_get_page_banner_url('about');
     }
 
-    // 3. Trang Phụ Kiện Ô Tô
-    if (is_page('phu-kien') || is_page_template('page-phu-kien.php')) {
+    // 2. Trang Phụ Kiện Ô Tô & Danh Mục Phụ Kiện
+    if (is_page('phu-kien') || is_page_template('page-phu-kien.php') || is_tax('accessory_category')) {
         return hieugara_get_page_banner_url('phukien');
     }
 
-    // 4. Trang Dịch Vụ Xe VinFast & Phụ Kiện VinFast
+    // 3. Trang Dịch Vụ Xe VinFast & Phụ Kiện VinFast
     $request_uri = trim(parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
     if ($request_uri === 'dich-vu/xe-vinfast' || is_page('xe-vinfast') || is_page_template('page-vinfast.php') || $request_uri === 'phu-kien/phu-kien-vinfast' || is_page('phu-kien-vinfast') || is_page_template('page-phu-kien-vinfast.php')) {
         return hieugara_get_page_banner_url('vinfast');
     }
 
-    // 5. Trang Dịch Vụ, Danh Mục Dịch Vụ & Tìm Kiếm
+    // 4. Trang Dịch Vụ, Danh Mục Dịch Vụ & Tìm Kiếm
     if (is_search() || is_post_type_archive('garage_service') || is_tax('service_category') || is_singular('garage_service')) {
         return hieugara_get_page_banner_url('services');
     }
 
-    // 6. Trang Bảng Giá & Dự Toán
+    // 5. Trang Bảng Giá & Dự Toán
     if (is_page('bang-gia') || is_page_template('page-bang-gia.php')) {
         return hieugara_get_page_banner_url('banggia');
     }
 
-    // 7. Trang Đặt Lịch Tiếp Nhận Xe
+    // 6. Trang Đặt Lịch Tiếp Nhận Xe
     if (is_page('dat-lich') || is_page_template('page-dat-lich.php')) {
         return hieugara_get_page_banner_url('datlich');
     }
 
-    // 7.5. Chuyên mục Blog / Tin tức (Category) - Hỗ trợ banner riêng cho từng danh mục
+    // 7. Chuyên mục Blog / Tin tức (Category) - Hỗ trợ banner riêng cho từng danh mục
     if (is_category()) {
         $queried_cat = get_queried_object();
         if ($queried_cat && !empty($queried_cat->term_id)) {
             $cat_custom_banner = get_term_meta($queried_cat->term_id, 'hieugara_category_banner', true);
             if (!empty($cat_custom_banner)) {
-                if (function_exists('hieugara_normalize_local_media_urls')) {
-                    $cat_custom_banner = hieugara_normalize_local_media_urls($cat_custom_banner);
+                if (function_exists('hieugara_normalize_asset_url')) {
+                    return hieugara_normalize_asset_url($cat_custom_banner);
                 }
                 return $cat_custom_banner;
             }
@@ -626,7 +621,21 @@ function hieugara_get_current_page_banner() {
         return hieugara_get_page_banner_url('contact');
     }
 
-    // 10. Mặc định
+    // 10. Cho các trang đơn lẻ hoặc trang tùy biến khác: Cho phép dùng Ảnh Đại Diện (Featured Image) nếu có
+    if (is_singular() && has_post_thumbnail()) {
+        $feat = get_the_post_thumbnail_url(get_the_ID(), 'full');
+        if (!empty($feat)) {
+            if (function_exists('hieugara_normalize_asset_url')) {
+                return hieugara_normalize_asset_url($feat);
+            }
+            if (function_exists('hieugara_normalize_local_media_urls')) {
+                return hieugara_normalize_local_media_urls($feat);
+            }
+            return $feat;
+        }
+    }
+
+    // 11. Mặc định
     return hieugara_get_page_banner_url('default');
 }
 
