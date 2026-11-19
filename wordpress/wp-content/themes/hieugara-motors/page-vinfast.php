@@ -125,7 +125,7 @@ $banner_photo  = function_exists('hieugara_get_current_page_banner') ? hieugara_
             <div class="vf-partnership-box">
                 <div class="vf-partnership-content">
                     <p class="vf-partnership-paragraph">
-                        Từ tháng <strong>08/2026</strong>, Ô Tô Hải Hà chính thức hợp tác với VinFast, cung cấp phụ tùng chính hãng và dịch vụ sửa chữa, bảo dưỡng, đồng sơn cho xe VinFast. Đội ngũ của chúng tôi kết hợp 31 năm kinh nghiệm sửa chữa với kỹ thuật viên xe điện được đào tạo bài bản, phục vụ mọi dòng xe xăng, dầu, điện và hybrid.
+                        Nối dài hành trình 31 năm kinh nghiệm, từ tháng 08/2026, Ô Tô Hải Hà chính thức hợp tác với VinFast để cung cấp phụ tùng chính hãng và dịch vụ sửa chữa, bảo dưỡng, đồng sơn chuẩn mực cho xe VinFast. Vận hành trên quy mô nhà xưởng 3.000m² cùng đội ngũ kỹ thuật viên được đào tạo bài bản, Ô Tô Hải Hà là điểm đến tin cậy cho mọi dòng xe xăng, dầu, điện và hybrid.
                     </p>
                     <p class="vf-partnership-paragraph">
                         Sự kết hợp giữa <strong>31 năm kinh nghiệm kỹ thuật cơ khí gầm máy</strong> của Ô Tô Hải Hà và quy trình tiêu chuẩn chính hãng mang đến chất lượng dịch vụ an tâm và minh bạch tuyệt đối cho mọi chủ xe VinFast.
