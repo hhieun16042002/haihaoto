@@ -1382,7 +1382,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     letter-spacing: 1.5px;
     text-align: center;
     white-space: nowrap;
-    margin: 0 auto 16px auto;
+    margin: 0 auto 24px auto;
     text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
     opacity: 0;
     transform: translateY(22px);
@@ -1393,21 +1393,11 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 }
 
 .lexus-slide-desc {
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 1.05rem;
-    font-weight: 400;
-    line-height: 1.65;
-    color: rgba(255, 255, 255, 0.92);
-    text-align: center;
-    margin: 0 auto 26px auto;
-    max-width: 720px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
-    opacity: 0;
-    transform: translateY(22px);
+    display: none !important;
 }
 
 .lexus-slide.active .lexus-slide-desc {
-    animation: lexusFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
+    display: none !important;
 }
 
 .lexus-slide-actions {

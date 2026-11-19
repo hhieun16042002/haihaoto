@@ -72,12 +72,6 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
                         </h2>
                         <?php endif; ?>
 
-                        <?php if (!empty($s['desc'])) : ?>
-                        <p class="lexus-slide-desc">
-                            <?php echo esc_html($s['desc']); ?>
-                        </p>
-                        <?php endif; ?>
-
                         <?php if (!empty($s['btn_text'])) : 
                             $slide_btn_url = !empty($s['btn_url']) ? $s['btn_url'] : home_url('/bang-gia/');
                             if (function_exists('hieugara_normalize_local_media_urls')) {
