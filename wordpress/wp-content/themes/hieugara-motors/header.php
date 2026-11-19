@@ -141,7 +141,6 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
             <img src="<?php echo esc_url($site_logo_url); ?>" alt="Ôtô Hải Hà" class="navbar-brand-img" width="56" height="56">
             <div class="navbar-brand-text">
                 <span class="navbar-brand-name">ÔTÔ <span class="brand-accent">HẢI HÀ</span></span>
-                <small class="navbar-brand-sub">GARAGE SERVICE</small>
             </div>
         </a>
 

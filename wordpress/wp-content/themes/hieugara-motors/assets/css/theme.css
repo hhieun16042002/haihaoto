@@ -10257,11 +10257,12 @@ p, span, a, li, th, td, label, blockquote, figcaption {
         box-shadow: none !important;
     }
     .mobile-only-brand-header.is-scrolled .brand-title {
-        color: #141414 !important;
+        color: #d8b93b !important;
+        text-shadow: none !important;
     }
     .mobile-only-brand-header.is-scrolled .brand-title .text-orange {
         color: #d8b93b !important;
-        text-shadow: -1px -1px 0 #141414, 0px -1px 0 #141414, 1px -1px 0 #141414, -1px 0px 0 #141414, 1px 0px 0 #141414, -1px 1px 0 #141414, 0px 1px 0 #141414, 1px 1px 0 #141414 !important;
+        text-shadow: none !important;
     }
     .mobile-only-brand-header.is-scrolled .mobile-nav-toggle {
         background: #E5DACB !important;
@@ -10274,11 +10275,12 @@ p, span, a, li, th, td, label, blockquote, figcaption {
         border-color: rgba(217, 45, 32, 0.65) !important;
     }
     .mobile-only-brand-header .brand-title {
-        color: #ffffff !important;
+        color: #d8b93b !important;
+        text-shadow: none !important;
     }
     .mobile-only-brand-header .brand-title .text-orange {
         color: #d8b93b !important;
-        text-shadow: -1px -1px 0 #141414, 0px -1px 0 #141414, 1px -1px 0 #141414, -1px 0px 0 #141414, 1px 0px 0 #141414, -1px 1px 0 #141414, 0px 1px 0 #141414, 1px 1px 0 #141414 !important;
+        text-shadow: none !important;
     }
     .mobile-quick-call {
         background: #D92D20 !important;
@@ -10441,16 +10443,17 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     }
 
     .custom-navbar-strip .navbar-brand-name {
-        color: #1a1a1a !important;
+        color: #d8b93b !important;
+        text-shadow: none !important;
     }
 
     .custom-navbar-strip .navbar-brand-name .brand-accent {
         color: #d8b93b !important;
-        text-shadow: -1px -1px 0 #141414, 0px -1px 0 #141414, 1px -1px 0 #141414, -1px 0px 0 #141414, 1px 0px 0 #141414, -1px 1px 0 #141414, 0px 1px 0 #141414, 1px 1px 0 #141414 !important;
+        text-shadow: none !important;
     }
 
     .custom-navbar-strip .navbar-brand-sub {
-        color: #666666 !important;
+        display: none !important;
     }
 
     .custom-navbar-strip .custom-nav-menu > .nav-item > .nav-link {
@@ -10548,26 +10551,21 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 
     .navbar-brand-name {
         font-family: 'Be Vietnam Pro', sans-serif;
-        font-size: 1.12rem;
+        font-size: 1.18rem;
         font-weight: 800;
-        color: #1a1a1a !important;
+        color: #d8b93b !important;
         letter-spacing: 0.6px;
         white-space: nowrap;
+        text-shadow: none !important;
     }
 
     .navbar-brand-name .brand-accent {
         color: #d8b93b !important;
-        text-shadow: -1px -1px 0 #141414, 0px -1px 0 #141414, 1px -1px 0 #141414, -1px 0px 0 #141414, 1px 0px 0 #141414, -1px 1px 0 #141414, 0px 1px 0 #141414, 1px 1px 0 #141414 !important;
+        text-shadow: none !important;
     }
 
     .navbar-brand-sub {
-        font-family: 'Be Vietnam Pro', sans-serif;
-        font-size: 0.58rem;
-        font-weight: 700;
-        color: #666666 !important;
-        letter-spacing: 1.4px;
-        margin-top: 2px;
-        white-space: nowrap;
+        display: none !important;
     }
 
     /* Center: Navigation Links */
@@ -11001,15 +10999,16 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 
 /* Brand heading with Gold "Hải Hà" */
 .footer-brand-heading .brand-name {
-    color: #0F172A !important;
+    color: #d8b93b !important;
     font-size: 1.4rem !important;
     font-weight: 800 !important;
+    text-shadow: none !important;
 }
 
 .footer-brand-heading .brand-tag {
     background: transparent !important;
     color: #d8b93b !important;
-    text-shadow: -1px -1px 0 #141414, 0px -1px 0 #141414, 1px -1px 0 #141414, -1px 0px 0 #141414, 1px 0px 0 #141414, -1px 1px 0 #141414, 0px 1px 0 #141414, 1px 1px 0 #141414 !important;
+    text-shadow: none !important;
     font-size: inherit !important;
     font-weight: 800 !important;
     padding: 0 !important;
@@ -13923,7 +13922,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 }
 
 .hp-vf-checklist li i {
-    color: #7A5C34;
+    color: #D4B996;
     font-size: 1.1rem;
     flex-shrink: 0;
 }
