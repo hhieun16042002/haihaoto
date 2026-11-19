@@ -461,8 +461,9 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     border-radius: 50%;
     object-fit: contain;
     filter: none !important;
-    background: #141414;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 .brand-title {
@@ -3270,7 +3271,9 @@ p, span, a, li, th, td, label, blockquote, figcaption {
         border-radius: 50%;
         object-fit: contain;
         filter: none !important;
-        background: #141414;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
     }
     .brand-title {
         font-size: 1.15rem;
@@ -4229,10 +4232,10 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     height: 54px;
     border-radius: 50%;
     object-fit: contain;
-    background: #ffffff;
-    border: 1.5px solid #e2e8f0;
-    padding: 4px;
-    box-shadow: 0 6px 16px rgba(20, 20, 20, 0.08);
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
     flex-shrink: 0;
 }
 
@@ -10248,11 +10251,16 @@ p, span, a, li, th, td, label, blockquote, figcaption {
         border-bottom: 1px solid rgba(140, 98, 57, 0.28) !important;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
     }
+    .mobile-only-brand-header.is-scrolled .brand-link .brand-logo-img {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
     .mobile-only-brand-header.is-scrolled .brand-title {
         color: #141414 !important;
     }
     .mobile-only-brand-header.is-scrolled .brand-title .text-orange {
-        color: #8C6239 !important;
+        color: #ffec3d !important;
     }
     .mobile-only-brand-header.is-scrolled .mobile-nav-toggle {
         background: #E5DACB !important;
@@ -10268,7 +10276,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
         color: #ffffff !important;
     }
     .mobile-only-brand-header .brand-title .text-orange {
-        color: #C5A880 !important;
+        color: #ffec3d !important;
     }
     .mobile-quick-call {
         background: #D92D20 !important;
@@ -10435,7 +10443,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     }
 
     .custom-navbar-strip .navbar-brand-name .brand-accent {
-        color: #8C6239 !important;
+        color: #ffec3d !important;
     }
 
     .custom-navbar-strip .navbar-brand-sub {
@@ -10545,7 +10553,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     }
 
     .navbar-brand-name .brand-accent {
-        color: #8C6239 !important;
+        color: #ffec3d !important;
     }
 
     .navbar-brand-sub {
@@ -10996,7 +11004,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 
 .footer-brand-heading .brand-tag {
     background: transparent !important;
-    color: #C5A880 !important;
+    color: #ffec3d !important;
     font-size: inherit !important;
     font-weight: 800 !important;
     padding: 0 !important;
