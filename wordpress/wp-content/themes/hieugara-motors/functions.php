@@ -142,6 +142,14 @@ add_action('after_setup_theme', 'hieugara_theme_setup');
 
 // 2. Enqueue Assets (Ultra-Fast Optimized & Render-Blocking Free)
 function hieugara_enqueue_scripts() {
+    // Google Fonts: Chakra Petch & Be Vietnam Pro
+    wp_enqueue_style(
+        'hieugara-google-fonts',
+        'https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap',
+        array(),
+        null
+    );
+
     // FontAwesome Icons CDN
     wp_enqueue_style(
         'hieugara-fontawesome',
