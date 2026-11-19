@@ -96,11 +96,13 @@ $cache_key  = md5($req_path . ($normalized_query ? '?' . $normalized_query : '')
 $cache_file = $cache_dir . '/' . $cache_key . '.html';
 $cache_ttl  = 604800; // 7 days with instant stale-while-revalidate
 
-// Bypass/Purge cache: Only allowed for logged-in admin or local requests
-if (isset($_GET['nocache']) || isset($_GET['purge'])) {
+// Bypass/Purge cache: Allowed for logged-in admin, local requests, or explicit purge/nocache requests
+if (isset($_GET['nocache']) || isset($_GET['purge']) || 
+    (isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'no-cache' && $is_logged_in_admin)
+) {
     $client_ip = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';
     $is_local = in_array($client_ip, array('127.0.0.1', '::1', '172.18.0.1', '172.19.0.1'));
-    if ($is_logged_in_admin || $is_local) {
+    if ($is_logged_in_admin || $is_local || isset($_GET['purge'])) {
         if (file_exists($cache_file)) {
             @unlink($cache_file);
         }
@@ -112,7 +114,10 @@ if (isset($_GET['nocache']) || isset($_GET['purge'])) {
 if (file_exists($cache_file) && (time() - filemtime($cache_file) < $cache_ttl)) {
     garage_send_security_headers();
     header('X-Garage-Cache: HIT');
-    header('Cache-Control: public, max-age=300, stale-while-revalidate=604800');
+    // Ensure browsers & CDNs revalidate immediately with server so admin changes appear in real-time
+    header('Cache-Control: public, no-cache, must-revalidate, max-age=0');
+    header('Pragma: no-cache');
+    header('Expires: 0');
     header('Content-Type: text/html; charset=UTF-8');
     
     $raw_html = file_get_contents($cache_file);
@@ -136,6 +141,9 @@ if (file_exists($cache_file) && (time() - filemtime($cache_file) < $cache_ttl)) 
 // 7. Record Cache MISS and buffer output
 garage_send_security_headers();
 header('X-Garage-Cache: MISS');
+header('Cache-Control: public, no-cache, must-revalidate, max-age=0');
+header('Pragma: no-cache');
+header('Expires: 0');
 
 function garage_save_page_cache($html) {
     global $cache_file, $cache_dir, $current_origin;

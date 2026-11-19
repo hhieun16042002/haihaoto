@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('HIEUGARA_THEME_VERSION', '6.0.1');
+define('HIEUGARA_THEME_VERSION', '6.0.2');
 define('HIEUGARA_THEME_DIR', get_template_directory());
 define('HIEUGARA_THEME_URI', get_template_directory_uri());
 
@@ -247,9 +247,9 @@ function hieugara_get_service_features($post_id) {
     return array_filter(array_map('trim', explode("\n", str_replace("\r", "", $raw))));
 }
 
-// 5. Automatic Page Cache Invalidation on Save
+// 5. Automatic Page Cache Invalidation on Save & Dynamic Version Busting
 function hieugara_purge_page_cache() {
-    $cache_dir = WP_CONTENT_DIR . '/cache/page-cache';
+    $cache_dir = defined('WP_CONTENT_DIR') ? WP_CONTENT_DIR . '/cache/page-cache' : ABSPATH . 'wp-content/cache/page-cache';
     if (is_dir($cache_dir)) {
         $files = glob($cache_dir . '/*');
         if ($files) {
@@ -260,10 +260,19 @@ function hieugara_purge_page_cache() {
             }
         }
     }
+    // Update theme settings timestamp so browser asset caches are busted immediately
+    if (!defined('HIEUGARA_IN_PURGE')) {
+        define('HIEUGARA_IN_PURGE', true);
+        update_option('hieugara_settings_version', time());
+    }
 }
 add_action('save_post', 'hieugara_purge_page_cache');
 add_action('after_switch_theme', 'hieugara_purge_page_cache');
-add_action('updated_option', 'hieugara_purge_page_cache');
+add_action('updated_option', function($option_name) {
+    if (strpos($option_name, 'hieugara_') === 0 && $option_name !== 'hieugara_settings_version') {
+        hieugara_purge_page_cache();
+    }
+});
 
 // 5b. Auto-create 'phu-kien' page if not exists
 function hieugara_ensure_phu_kien_page() {
@@ -549,24 +558,14 @@ function hieugara_get_page_banner_url($page_key = 'default') {
     $option_name = 'hieugara_banner_' . $page_key;
     $custom_url  = get_option($option_name, '');
 
-    if (!empty($custom_url)) {
-        if (function_exists('hieugara_normalize_asset_url')) {
-            return hieugara_normalize_asset_url($custom_url);
-        }
-        if (function_exists('hieugara_normalize_local_media_urls')) {
-            return hieugara_normalize_local_media_urls($custom_url);
-        }
-        return $custom_url;
-    }
-
-    $fallback = $defaults[$page_key] ?? $defaults['default'];
+    $res_url = !empty($custom_url) ? $custom_url : ($defaults[$page_key] ?? $defaults['default']);
     if (function_exists('hieugara_normalize_asset_url')) {
-        return hieugara_normalize_asset_url($fallback);
+        $res_url = hieugara_normalize_asset_url($res_url);
+    } elseif (function_exists('hieugara_normalize_local_media_urls')) {
+        $res_url = hieugara_normalize_local_media_urls($res_url);
     }
-    if (function_exists('hieugara_normalize_local_media_urls')) {
-        return hieugara_normalize_local_media_urls($fallback);
-    }
-    return $fallback;
+    $settings_ver = get_option('hieugara_settings_version', HIEUGARA_THEME_VERSION);
+    return add_query_arg('v', $settings_ver, $res_url);
 }
 
 /**

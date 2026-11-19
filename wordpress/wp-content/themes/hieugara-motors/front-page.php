@@ -47,11 +47,14 @@ $warranty_url  = get_option('hieugara_warranty_url', home_url('/tra-cuu-bao-hanh
     ?>
     <section class="lexus-banner-slider" id="lexusHeroSlider">
         <div class="lexus-slides-container">
-            <?php foreach ($active_slides as $i => $s) : 
+            <?php 
+            $settings_ver = get_option('hieugara_settings_version', HIEUGARA_THEME_VERSION);
+            foreach ($active_slides as $i => $s) : 
                 $slide_img_url = function_exists('hieugara_normalize_local_media_urls') ? hieugara_normalize_local_media_urls($s['image']) : $s['image'];
+                $img_v = substr(md5($slide_img_url), 0, 6) . '-' . $settings_ver;
             ?>
             <div class="lexus-slide <?php echo $i === 0 ? 'active' : ''; ?>" data-index="<?php echo $i; ?>">
-                <div class="lexus-slide-bg" style="background-image: url('<?php echo esc_url(add_query_arg('v', HIEUGARA_THEME_VERSION, $slide_img_url)); ?>');"></div>
+                <div class="lexus-slide-bg" style="background-image: url('<?php echo esc_url(add_query_arg('v', $img_v, $slide_img_url)); ?>');"></div>
                 <div class="lexus-slide-overlay"></div>
                 <div class="container lexus-slide-container">
                     <div class="lexus-slide-content">

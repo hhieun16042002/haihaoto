@@ -72,16 +72,8 @@ add_action('admin_init', 'hieugara_register_theme_settings');
 
 // Auto-purge Page Cache when any theme settings or posts are updated
 function hieugara_purge_page_cache_on_settings_update() {
-    $cache_dir = defined('WP_CONTENT_DIR') ? WP_CONTENT_DIR . '/cache/page-cache' : '';
-    if (!empty($cache_dir) && is_dir($cache_dir)) {
-        $files = glob($cache_dir . '/*');
-        if (!empty($files)) {
-            foreach ($files as $f) {
-                if (is_file($f)) {
-                    @unlink($f);
-                }
-            }
-        }
+    if (function_exists('hieugara_purge_page_cache')) {
+        hieugara_purge_page_cache();
     }
 }
 add_action('update_option_hieugara_slider_slides', 'hieugara_purge_page_cache_on_settings_update');
@@ -91,6 +83,15 @@ add_action('save_post', 'hieugara_purge_page_cache_on_settings_update');
 foreach (array('about', 'phukien', 'services', 'vinfast', 'banggia', 'datlich', 'blog', 'contact', 'default') as $b_key) {
     add_action('update_option_hieugara_banner_' . $b_key, 'hieugara_purge_page_cache_on_settings_update');
 }
+
+// Hook on settings saved redirect to ensure cache is purged even if options did not change serialized value
+add_action('admin_init', function() {
+    if (is_admin() && isset($_GET['settings-updated']) && isset($_GET['page']) && $_GET['page'] === 'hieugara-theme-settings') {
+        if (function_exists('hieugara_purge_page_cache')) {
+            hieugara_purge_page_cache();
+        }
+    }
+});
 
 // 3A. Helper to Get Default Gallery Items (Hình Ảnh Ôtô Hải Hà)
 function hieugara_get_default_gallery_items() {
