@@ -3613,7 +3613,7 @@ p, span, a, li, th, td, label, blockquote, figcaption {
         display: block !important;
         position: absolute !important;
         inset: 0 !important;
-        background: linear-gradient(180deg, rgba(20, 20, 20, 0.15) 0%, rgba(20, 20, 20, 0.40) 35%, rgba(20, 20, 20, 0.85) 70%, #141414 100%) !important;
+        background: linear-gradient(180deg, rgba(20, 20, 20, 0.40) 0%, rgba(20, 20, 20, 0.60) 45%, rgba(20, 20, 20, 0.85) 85%, #141414 100%) !important;
         z-index: 2;
     }
     .lexus-slide-container {
@@ -3621,28 +3621,28 @@ p, span, a, li, th, td, label, blockquote, figcaption {
         height: 100% !important;
         display: flex !important;
         flex-direction: column !important;
-        justify-content: flex-end !important;
-        align-items: flex-start !important;
-        text-align: left !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
         width: 100% !important;
         max-width: 100% !important;
         background: transparent !important;
-        padding: 0 20px 125px !important;
+        padding: 40px 20px 90px !important;
         z-index: 3;
     }
     .lexus-slide-content {
         display: flex !important;
         flex-direction: column !important;
-        align-items: flex-start !important;
-        text-align: left !important;
+        align-items: center !important;
+        text-align: center !important;
         width: 100% !important;
         max-width: 100% !important;
-        margin: 0 !important;
+        margin: 0 auto !important;
     }
     .lexus-eyebrow {
         display: inline-flex !important;
         align-items: center !important;
-        justify-content: flex-start !important;
+        justify-content: center !important;
         gap: 8px !important;
         font-family: 'Be Vietnam Pro', sans-serif !important;
         font-size: 0.72rem !important;
@@ -3650,7 +3650,8 @@ p, span, a, li, th, td, label, blockquote, figcaption {
         letter-spacing: 2px !important;
         color: #C5A880 !important;
         text-transform: uppercase !important;
-        margin: 0 0 8px 0 !important;
+        margin: 0 auto 10px auto !important;
+        text-align: center !important;
     }
     .lexus-gold-bar {
         width: 18px !important;
@@ -3663,10 +3664,10 @@ p, span, a, li, th, td, label, blockquote, figcaption {
         font-size: 1.65rem !important;
         font-weight: 700 !important;
         letter-spacing: 1.5px !important;
-        line-height: 1.2 !important;
-        text-align: left !important;
+        line-height: 1.25 !important;
+        text-align: center !important;
         white-space: normal !important;
-        margin: 0 0 8px 0 !important;
+        margin: 0 auto 14px auto !important;
         text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9) !important;
         color: #ffffff !important;
     }
@@ -3676,8 +3677,8 @@ p, span, a, li, th, td, label, blockquote, figcaption {
         font-weight: 400 !important;
         line-height: 1.45 !important;
         color: rgba(255, 255, 255, 0.90) !important;
-        text-align: left !important;
-        margin: 0 0 16px 0 !important;
+        text-align: center !important;
+        margin: 0 auto 16px auto !important;
         max-width: 100% !important;
         text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8) !important;
         display: -webkit-box !important;
@@ -3689,10 +3690,10 @@ p, span, a, li, th, td, label, blockquote, figcaption {
         display: flex !important;
         opacity: 1 !important;
         visibility: visible !important;
-        justify-content: flex-start !important;
+        justify-content: center !important;
         align-items: center !important;
         width: 100% !important;
-        margin: 0 !important;
+        margin: 6px auto 0 auto !important;
     }
     /* Authentic Lexus Luxury Outline Button */
     .lexus-outline-btn {
