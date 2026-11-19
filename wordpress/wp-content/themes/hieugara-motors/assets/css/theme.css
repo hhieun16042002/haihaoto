@@ -3265,8 +3265,8 @@ p, span, a, li, th, td, label, blockquote, figcaption {
         padding: 0 16px;
     }
     .brand-link .brand-logo-img {
-        width: 44px;
-        height: 44px;
+        width: 52px;
+        height: 52px;
         border-radius: 50%;
         object-fit: contain;
         filter: none !important;
@@ -10511,8 +10511,8 @@ p, span, a, li, th, td, label, blockquote, figcaption {
     }
 
     .navbar-brand-img {
-        width: 44px;
-        height: 44px;
+        width: 56px;
+        height: 56px;
         border-radius: 50%;
         object-fit: contain;
         background: transparent;
@@ -10524,8 +10524,8 @@ p, span, a, li, th, td, label, blockquote, figcaption {
 
     .custom-navbar-strip.is-sticky .navbar-brand-img,
     .custom-navbar-strip.is-scrolled .navbar-brand-img {
-        width: 38px;
-        height: 38px;
+        width: 46px;
+        height: 46px;
     }
 
     .navbar-brand-text {

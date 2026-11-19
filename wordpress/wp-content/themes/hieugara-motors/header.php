@@ -93,7 +93,7 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
         <!-- Logo -->
         <a href="<?php echo esc_url(home_url('/')); ?>" class="brand-link">
             <div class="brand-logo-wrap">
-                <img src="<?php echo esc_url($site_logo_url); ?>" alt="Ôtô Hải Hà Service" class="brand-logo-img" width="46" height="46">
+                <img src="<?php echo esc_url($site_logo_url); ?>" alt="Ôtô Hải Hà Service" class="brand-logo-img" width="52" height="52">
             </div>
             <div class="brand-text-wrap">
                 <div class="brand-title">ÔTÔ <span class="text-orange">HẢI HÀ</span></div>
@@ -138,7 +138,7 @@ $menu_search   = get_option('hieugara_menu_search_enable', '1');
     <div class="container custom-navbar-inner">
         <!-- Left: Inline Brand Logo on Mega Menu Bar (Desktop) -->
         <a href="<?php echo esc_url(home_url('/')); ?>" class="navbar-inline-brand" title="Ôtô Hải Hà - Trang chủ">
-            <img src="<?php echo esc_url($site_logo_url); ?>" alt="Ôtô Hải Hà" class="navbar-brand-img" width="44" height="44">
+            <img src="<?php echo esc_url($site_logo_url); ?>" alt="Ôtô Hải Hà" class="navbar-brand-img" width="56" height="56">
             <div class="navbar-brand-text">
                 <span class="navbar-brand-name">ÔTÔ <span class="brand-accent">HẢI HÀ</span></span>
                 <small class="navbar-brand-sub">GARAGE SERVICE</small>
