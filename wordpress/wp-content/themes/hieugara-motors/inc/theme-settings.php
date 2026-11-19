@@ -70,6 +70,28 @@ function hieugara_register_theme_settings() {
 }
 add_action('admin_init', 'hieugara_register_theme_settings');
 
+// Auto-purge Page Cache when any theme settings or posts are updated
+function hieugara_purge_page_cache_on_settings_update() {
+    $cache_dir = defined('WP_CONTENT_DIR') ? WP_CONTENT_DIR . '/cache/page-cache' : '';
+    if (!empty($cache_dir) && is_dir($cache_dir)) {
+        $files = glob($cache_dir . '/*');
+        if (!empty($files)) {
+            foreach ($files as $f) {
+                if (is_file($f)) {
+                    @unlink($f);
+                }
+            }
+        }
+    }
+}
+add_action('update_option_hieugara_slider_slides', 'hieugara_purge_page_cache_on_settings_update');
+add_action('update_option_hieugara_brand_logos', 'hieugara_purge_page_cache_on_settings_update');
+add_action('update_option_hieugara_gallery_items', 'hieugara_purge_page_cache_on_settings_update');
+add_action('save_post', 'hieugara_purge_page_cache_on_settings_update');
+foreach (array('about', 'phukien', 'services', 'vinfast', 'banggia', 'datlich', 'blog', 'contact', 'default') as $b_key) {
+    add_action('update_option_hieugara_banner_' . $b_key, 'hieugara_purge_page_cache_on_settings_update');
+}
+
 // 3A. Helper to Get Default Gallery Items (Hình Ảnh Ôtô Hải Hà)
 function hieugara_get_default_gallery_items() {
     $gallery_uri = get_template_directory_uri() . '/assets/images/gallery';
@@ -268,16 +290,12 @@ function hieugara_get_slides() {
         $slide_btn = !empty($saved[$i]['btn_url']) ? $saved[$i]['btn_url'] : $default['btn_url'];
         
         // Strip hardcoded test/tunnel domains and ensure standard home_url
-        if (strpos($slide_img, 'localhost:8080') !== false || strpos($slide_img, 'trycloudflare.com') !== false) {
-            $slide_img = preg_replace('#^https?://[^/]+#', '', $slide_img);
-        }
+        $slide_img = preg_replace('#^https?://(?:localhost|127\.0\.0\.1|[a-z0-9\-]+\.trycloudflare\.com|[a-z0-9\-]+\.ngrok-free\.app)(?::\d+)?#i', '', $slide_img);
         if (strpos($slide_img, '/') === 0) {
             $slide_img = home_url($slide_img);
         }
 
-        if (strpos($slide_btn, 'localhost:8080') !== false || strpos($slide_btn, 'trycloudflare.com') !== false) {
-            $slide_btn = preg_replace('#^https?://[^/]+#', '', $slide_btn);
-        }
+        $slide_btn = preg_replace('#^https?://(?:localhost|127\.0\.0\.1|[a-z0-9\-]+\.trycloudflare\.com|[a-z0-9\-]+\.ngrok-free\.app)(?::\d+)?#i', '', $slide_btn);
         if (strpos($slide_btn, '/') === 0) {
             $slide_btn = home_url($slide_btn);
         }
